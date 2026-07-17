@@ -1,0 +1,465 @@
+
+
+{%- doc -%}
+  Renders an expert/customer testimonial card: an avatar next to a quote,
+  the author's name, an optional "verified" badge and their credentials.
+
+  Layout, sizes, spacing, colors and the verified badge are fully
+  configurable through the block schema.
+{%- enddoc -%}
+
+{% liquid
+  assign block_settings = block.settings
+%}
+
+{% capture style %}
+  --testimonial-card-width: {{ block_settings.width }};
+  --testimonial-card-bg: {{ block_settings.background_color }};
+  --testimonial-card-radius: {{ block_settings.corner_radius }}px;
+  --testimonial-card-padding: {{ block_settings.card_padding }}px;
+  --testimonial-card-avatar-size: {{ block_settings.avatar_size }}px;
+  --testimonial-card-avatar-size-mobile: {{ block_settings.avatar_size_mobile }}px;
+  --testimonial-card-text-color: {{ block_settings.text_color }};
+  --testimonial-card-quote-size: {{ block_settings.quote_font_size }}px;
+  --testimonial-card-name-size: {{ block_settings.name_font_size }}px;
+  --testimonial-card-credentials-size: {{ block_settings.credentials_font_size }}px;
+  --testimonial-card-verified-color: {{ block_settings.verified_text_color }};
+  --testimonial-card-verified-icon-color: {{ block_settings.verified_icon_color }};
+  --testimonial-card-verified-size: {{ block_settings.verified_font_size }}px;
+  {%- render 'gap-style', value: block_settings.gap, name: 'testimonial-card-gap' -%}
+  {%- render 'spacing-style', settings: block_settings -%}
+{% endcapture %}
+
+<div
+  class="
+    testimonial-card gap-style spacing-style
+    {% if block_settings.stack_on_mobile %} testimonial-card--stack-mobile{% endif %}
+  "
+  style="{{ style }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="testimonial-card__avatar-wrap">
+    {%- if block_settings.avatar_image -%}
+      {{
+        block_settings.avatar_image
+        | image_url: width: 200
+        | image_tag:
+          width: 100,
+          height: 100,
+          loading: 'lazy',
+          alt: block_settings.avatar_image.alt | default: block_settings.reviewer_name,
+          class: 'testimonial-card__avatar',
+          sizes: '(min-width: 750px) ' | append: block_settings.avatar_size | append: 'px, ' | append: block_settings.avatar_size_mobile | append: 'px'
+      }}
+    {%- else -%}
+      <div class="testimonial-card__avatar testimonial-card__avatar--placeholder">
+        {{ 'product-apparel-1' | placeholder_svg_tag: 'testimonial-card__avatar-placeholder' }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="testimonial-card__content">
+    {%- if block_settings.quote != blank -%}
+      <div class="testimonial-card__quote rte">{{ block_settings.quote }}</div>
+    {%- endif -%}
+
+    {%- if block_settings.reviewer_name != blank or block_settings.show_verified_badge or block_settings.reviewer_title != blank -%}
+      <div class="testimonial-card__author">
+        <div class="testimonial-card__name-row">
+          {%- if block_settings.reviewer_name != blank -%}
+            <p class="testimonial-card__name">{{ block_settings.reviewer_name }}</p>
+          {%- endif -%}
+
+          {%- if block_settings.show_verified_badge -%}
+            <span class="testimonial-card__verified">
+              <span class="svg-wrapper testimonial-card__verified-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M7.875 14.6283C6.64453 14.6107 5.51953 14.3119 4.5 13.7318C3.48047 13.1343 2.65429 12.308 2.02148 11.2533C1.42383 10.181 1.125 9.05604 1.125 7.8783C1.125 6.70056 1.42383 5.57556 2.02148 4.5033C2.65429 3.4486 3.48047 2.62244 4.5 2.02478C5.51953 1.4447 6.64453 1.14587 7.875 1.1283C9.10547 1.14587 10.2305 1.4447 11.25 2.02478C12.2695 2.62244 13.0957 3.4486 13.7285 4.5033C14.3261 5.57556 14.625 6.70056 14.625 7.8783C14.625 9.05604 14.3261 10.181 13.7285 11.2533C13.0957 12.308 12.2695 13.1343 11.25 13.7318C10.2305 14.3119 9.10547 14.6107 7.875 14.6283ZM10.8545 6.63903C11.1006 6.3402 11.1006 6.04139 10.8545 5.74256C10.5557 5.49645 10.2568 5.49645 9.95805 5.74256L7.03125 8.66931L5.79198 7.43005C5.49316 7.18395 5.19434 7.18395 4.89552 7.43005C4.64941 7.72889 4.64941 8.0277 4.89552 8.32653L6.58302 10.0141C6.88184 10.2601 7.18066 10.2601 7.47948 10.0141L10.8545 6.63903Z"
+                  />
+                </svg>
+              </span>
+              {{- block_settings.verified_badge_text -}}
+            </span>
+          {%- endif -%}
+        </div>
+
+        {%- if block_settings.reviewer_title != blank -%}
+          <p class="testimonial-card__credentials">{{ block_settings.reviewer_title }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .testimonial-card {
+    display: flex;
+    align-items: center;
+    width: var(--testimonial-card-width, 100%);
+    gap: var(--testimonial-card-gap, 1rem);
+    background-color: var(--testimonial-card-bg, #fcfaf5);
+    border-radius: var(--testimonial-card-radius, 0.75rem);
+    padding: var(--testimonial-card-padding, 1rem);
+    color: var(--testimonial-card-text-color, inherit);
+  }
+
+  .testimonial-card__avatar-wrap {
+    flex-shrink: 0;
+    width: var(--testimonial-card-avatar-size, 100px);
+    height: var(--testimonial-card-avatar-size, 100px);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .testimonial-card__avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-card__avatar-placeholder svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-card__content {
+    flex: 1 1 0%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--testimonial-card-gap, 1rem);
+  }
+
+  .testimonial-card__quote {
+    margin: 0;
+    font-size: var(--testimonial-card-quote-size, 0.875rem);
+    line-height: 1.45;
+  }
+
+  .testimonial-card__quote :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .testimonial-card__name-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .testimonial-card__name {
+    margin: 0;
+    font-size: var(--testimonial-card-name-size, 0.9375rem);
+    font-weight: var(--font-weight-semibold, 600);
+    line-height: 1.4;
+  }
+
+  .testimonial-card__credentials {
+    margin: 0;
+    font-size: var(--testimonial-card-credentials-size, 0.75rem);
+    line-height: 1.3;
+    opacity: 0.85;
+  }
+
+  .testimonial-card__verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: var(--testimonial-card-verified-size, 0.6875rem);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--testimonial-card-verified-color, #76af6d);
+  }
+
+  .testimonial-card__verified-icon,
+  .testimonial-card__verified-icon svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    flex-shrink: 0;
+  }
+
+  .testimonial-card__verified-icon {
+    color: var(--testimonial-card-verified-icon-color, #1a8400);
+  }
+
+  /* Mobile layout: stack the avatar above the content and shrink it down,
+     matching the reference component's responsive behavior. */
+  @media screen and (max-width: 749px) {
+    .testimonial-card--stack-mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .testimonial-card--stack-mobile .testimonial-card__avatar-wrap {
+      width: var(--testimonial-card-avatar-size-mobile, 80px);
+      height: var(--testimonial-card-avatar-size-mobile, 80px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonial card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_image",
+      "label": "Avatar image"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote",
+      "default": "<p>\"Add a customer or expert quote here.\"</p>"
+    },
+    {
+      "type": "text",
+      "id": "reviewer_name",
+      "label": "Name",
+      "default": "Full name"
+    },
+    {
+      "type": "text",
+      "id": "reviewer_title",
+      "label": "Title or credentials",
+      "default": "Title or credentials"
+    },
+    {
+      "type": "header",
+      "content": "Verified badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified_badge",
+      "label": "Show verified badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_badge_text",
+      "label": "Badge text",
+      "default": "Verified customer",
+      "visible_if": "{{ block.settings.show_verified_badge }}"
+    },
+    {
+      "type": "color",
+      "id": "verified_text_color",
+      "label": "Badge text color",
+      "default": "#76af6d",
+      "visible_if": "{{ block.settings.show_verified_badge }}"
+    },
+    {
+      "type": "color",
+      "id": "verified_icon_color",
+      "label": "Badge icon color",
+      "default": "#1a8400",
+      "visible_if": "{{ block.settings.show_verified_badge }}"
+    },
+    {
+      "type": "range",
+      "id": "verified_font_size",
+      "label": "Badge font size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 11,
+      "visible_if": "{{ block.settings.show_verified_badge }}"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "fit-content",
+          "label": "Fit content"
+        },
+        {
+          "value": "100%",
+          "label": "Fill"
+        }
+      ],
+      "default": "100%"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_on_mobile",
+      "label": "Stack layout on mobile",
+      "info": "When enabled, the avatar moves above the text and shrinks on small screens, matching the source design.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "label": "Avatar size",
+      "min": 40,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "avatar_size_mobile",
+      "label": "Avatar size (mobile)",
+      "min": 40,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 80,
+      "visible_if": "{{ block.settings.stack_on_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Spacing",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Card appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "quote_font_size",
+      "label": "Quote font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "name_font_size",
+      "label": "Name font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "credentials_font_size",
+      "label": "Credentials font size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial card",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

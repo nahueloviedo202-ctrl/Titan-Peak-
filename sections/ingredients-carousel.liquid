@@ -1,0 +1,1078 @@
+{%- doc -%}
+  Ingredients carousel: a two-tone heading followed by a multi-column,
+  arrow-controlled carousel of ingredient cards (image floating above a
+  rounded card with a title and description), a CTA button and a row of
+  trust badges. Every card is a nested "_ingredients-carousel-card" block,
+  so merchants can add, remove or reorder ingredients freely.
+{%- enddoc -%}
+
+<script
+  src="{{ 'ingredients-carousel.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign card_count = 0
+  for block in section.blocks
+    if block.type == '_ingredients-carousel-card'
+      assign card_count = card_count | plus: 1
+    endif
+  endfor
+
+  assign has_button = section.settings.button_label != blank and section.settings.button_link != blank
+
+  if section.settings.background_color != blank
+    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+<div
+  class="ingredients-carousel spacing-style{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section.settings %}
+    --icc-max-width: {{ section.settings.container_max_width }}px;
+    --icc-padding-x: {{ section.settings.container_padding }}px;
+    --icc-padding-x-tablet: {{ section.settings.container_padding_tablet }}px;
+    --icc-content-gap: {{ section.settings.content_gap }}px;
+    --icc-content-gap-mobile: {{ section.settings.content_gap_mobile }}px;
+    --icc-heading-size: {{ section.settings.heading_size }}px;
+    --icc-heading-weight: {{ section.settings.heading_weight }};
+    --icc-accent-color: {{ section.settings.accent_color }};
+    --icc-heading-color: {{ section.settings.heading_color }};
+    --icc-subheading-color: {{ section.settings.subheading_color }};
+    --icc-subheading-size: {{ section.settings.subheading_size }}px;
+    --icc-columns: {{ section.settings.desktop_columns }};
+    --icc-columns-tablet: {{ section.settings.tablet_columns }};
+    --icc-mobile-slide-width: {{ section.settings.mobile_slide_width }}%;
+    --icc-mobile-edge-padding: {{ section.settings.mobile_edge_padding }}px;
+    --icc-gap: {{ section.settings.items_gap }}px;
+    --icc-card-bg: {{ section.settings.card_background_color }};
+    --icc-card-radius: {{ section.settings.card_radius }}px;
+    --icc-card-padding: {{ section.settings.card_padding }}px;
+    --icc-title-color: {{ section.settings.title_color }};
+    --icc-title-size: {{ section.settings.title_size }}px;
+    --icc-description-color: {{ section.settings.description_color }};
+    --icc-description-size: {{ section.settings.description_size }}px;
+    --icc-image-height: {{ section.settings.image_height }}px;
+    --icc-image-overlap: {{ section.settings.image_overlap }}px;
+    --icc-image-height-mobile: {{ section.settings.image_height_mobile }}px;
+    --icc-image-overlap-mobile: {{ section.settings.image_overlap_mobile }}px;
+    --icc-arrow-color: {{ section.settings.arrow_color }};
+    --icc-arrow-size: {{ section.settings.arrow_size }}px;
+    --icc-arrow-gap: {{ section.settings.arrow_gap }}px;
+    --icc-transition-speed: {{ section.settings.transition_speed }}ms;
+    --icc-button-text-color: {{ section.settings.button_text_color }};
+    --icc-button-gradient-start: {{ section.settings.button_gradient_start }};
+    --icc-button-gradient-end: {{ section.settings.button_gradient_end }};
+    --icc-button-radius: {{ section.settings.button_radius }}px;
+    --icc-button-height: {{ section.settings.button_height }}px;
+    --icc-button-font-size: {{ section.settings.button_font_size }}px;
+    {% if section.settings.background_color != blank %}
+      --icc-bg: {{ section.settings.background_color }};
+    {% endif %}
+  "
+>
+  <div class="ingredients-carousel__container">
+    {%- if section.settings.heading_accent != blank or section.settings.heading != blank -%}
+      <h2 class="ingredients-carousel__heading">
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="ingredients-carousel__heading--accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <span class="ingredients-carousel__heading--normal">{{ section.settings.heading }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <div class="ingredients-carousel__subheading">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
+    {%- if card_count > 0 -%}
+      <ingredients-carousel-component
+        class="ingredients-carousel__component"
+        data-autoplay="{{ section.settings.autoplay }}"
+        data-autoplay-speed="{{ section.settings.autoplay_speed }}"
+      >
+        <div
+          class="ingredients-carousel__wrapper"
+          ref="wrapper"
+        >
+          <div
+            class="ingredients-carousel__track"
+            ref="track"
+          >
+            {% content_for 'blocks' %}
+          </div>
+        </div>
+
+        {%- if section.settings.show_arrows and card_count > 1 -%}
+          <div class="ingredients-carousel__controls">
+            <button
+              type="button"
+              class="ingredients-carousel__arrow ingredients-carousel__arrow--prev"
+              ref="prevButton"
+              on:click="/prev"
+              aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="15.5"
+                  stroke="currentColor"
+                  stroke-opacity="0.3"
+                />
+                <path
+                  d="M18 22L12 16L18 10"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="ingredients-carousel__arrow ingredients-carousel__arrow--next"
+              ref="nextButton"
+              on:click="/next"
+              aria-label="{{ 'accessibility.slideshow_next' | t }}"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="15.5"
+                  stroke="currentColor"
+                  stroke-opacity="0.3"
+                />
+                <path
+                  d="M14 10L20 16L14 22"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        {%- endif -%}
+      </ingredients-carousel-component>
+    {%- endif -%}
+
+    <div class="ingredients-carousel__footer">
+      {%- if has_button -%}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="ingredients-carousel__button"
+          {% if section.settings.button_open_new_tab %}
+            target="_blank"
+            rel="noopener"
+          {% endif %}
+        >
+          {{- section.settings.button_label -}}
+        </a>
+      {%- endif -%}
+
+      {% content_for 'block', type: '_ingredients-carousel-badges', id: 'static-badges' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .ingredients-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--icc-bg, transparent);
+  }
+
+  .ingredients-carousel__container {
+    max-width: var(--icc-max-width, 1440px);
+    margin: 0 auto;
+    padding-inline: var(--icc-padding-x, 74px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--icc-content-gap, 40px);
+    align-items: center;
+  }
+
+  .ingredients-carousel__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: var(--icc-heading-weight, 800);
+    font-size: var(--icc-heading-size, 32px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+  }
+
+  .ingredients-carousel__heading--accent {
+    color: var(--icc-accent-color, currentColor);
+    margin-inline-end: 8px;
+  }
+
+  .ingredients-carousel__heading--normal {
+    color: var(--icc-heading-color, currentColor);
+  }
+
+  .ingredients-carousel__subheading {
+    color: var(--icc-subheading-color, currentColor);
+    text-align: center;
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--icc-subheading-size, 18px);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .ingredients-carousel__component {
+    display: block;
+    width: 100%;
+  }
+
+  .ingredients-carousel__wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ingredients-carousel__track {
+    display: flex;
+    gap: var(--icc-gap, 16px);
+    transition: transform var(--icc-transition-speed, 400ms) ease;
+    will-change: transform;
+  }
+
+  .ingredients-carousel__card {
+    flex: 0 0
+      calc((100% - (var(--icc-gap, 16px) * (var(--icc-columns, 4) - 1))) / var(--icc-columns, 4));
+    min-width: 0;
+    padding-top: calc(var(--icc-image-height, 152px) - var(--icc-image-overlap, 56px));
+  }
+
+  .ingredients-carousel__card-inner {
+    background-color: var(--icc-card-bg, transparent);
+    border-radius: var(--icc-card-radius, 12px);
+    padding: var(--icc-image-overlap, 56px) var(--icc-card-padding, 16px) var(--icc-card-padding, 16px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .ingredients-carousel__image {
+    position: absolute;
+    top: calc(-1 * (var(--icc-image-height, 152px) - var(--icc-image-overlap, 56px)));
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - (var(--icc-card-padding, 16px) * 2));
+    height: var(--icc-image-height, 152px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .ingredients-carousel__image img,
+  .ingredients-carousel__placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .ingredients-carousel__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ingredients-carousel__title {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 700;
+    font-size: var(--icc-title-size, 18px);
+    line-height: 1.44;
+    color: var(--icc-title-color, currentColor);
+    margin: 0;
+  }
+
+  .ingredients-carousel__description {
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--icc-description-size, 16px);
+    line-height: 1.25;
+    color: var(--icc-description-color, currentColor);
+    margin: 0;
+  }
+
+  .ingredients-carousel__controls {
+    display: flex;
+    gap: var(--icc-arrow-gap, 24px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ingredients-carousel__arrow {
+    width: var(--icc-arrow-size, 32px);
+    height: var(--icc-arrow-size, 32px);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--icc-arrow-color, currentColor);
+    transition: opacity 0.3s ease;
+  }
+
+  .ingredients-carousel__arrow:hover:not(:disabled) {
+    opacity: 0.7;
+  }
+
+  .ingredients-carousel__arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ingredients-carousel__arrow svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .ingredients-carousel__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .ingredients-carousel__button {
+    width: 100%;
+    height: var(--icc-button-height, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, var(--icc-button-gradient-start, #e7b944), var(--icc-button-gradient-end, #ffed68));
+    border-radius: var(--icc-button-radius, 12px);
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 700;
+    font-size: var(--icc-button-font-size, 18px);
+    line-height: 1.44;
+    text-transform: uppercase;
+    color: var(--icc-button-text-color, currentColor);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ingredients-carousel__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--icc-button-gradient-start, #e7b944) 30%, transparent);
+  }
+
+  .ingredients-carousel__badges {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--icc-badges-gap, 16px);
+  }
+
+  .ingredients-carousel__badge {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .ingredients-carousel__badge-icon {
+    width: 17px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+    flex-shrink: 0;
+  }
+
+  .ingredients-carousel__badge-icon svg,
+  .ingredients-carousel__badge-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .ingredients-carousel__badge-text {
+    font-family: var(--font-body--family, inherit);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+    color: currentColor;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ingredients-carousel__container {
+      padding-inline: var(--icc-padding-x-tablet, 40px);
+    }
+
+    .ingredients-carousel__heading {
+      font-size: calc(var(--icc-heading-size, 32px) * 0.8125);
+    }
+
+    .ingredients-carousel__card {
+      flex-basis: calc(
+        (100% - (var(--icc-gap, 16px) * (var(--icc-columns-tablet, 2) - 1))) / var(--icc-columns-tablet, 2)
+      );
+    }
+
+    .ingredients-carousel__footer {
+      max-width: 100%;
+    }
+
+    .ingredients-carousel__button {
+      max-width: 400px;
+    }
+
+    .ingredients-carousel__badges {
+      max-width: 400px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ingredients-carousel__container {
+      gap: var(--icc-content-gap-mobile, 24px);
+      padding-inline: 0;
+    }
+
+    .ingredients-carousel__heading {
+      font-size: calc(var(--icc-heading-size, 32px) * 0.75);
+    }
+
+    .ingredients-carousel__subheading {
+      margin-top: -12px;
+    }
+
+    .ingredients-carousel__track {
+      padding-inline: var(--icc-mobile-edge-padding, 16px);
+    }
+
+    .ingredients-carousel__card {
+      flex-basis: var(--icc-mobile-slide-width, 80%);
+      padding-top: calc(var(--icc-image-height-mobile, 120px) - var(--icc-image-overlap-mobile, 48px));
+    }
+
+    .ingredients-carousel__card-inner {
+      padding: var(--icc-image-overlap-mobile, 48px) var(--icc-card-padding, 16px) var(--icc-card-padding, 16px);
+    }
+
+    .ingredients-carousel__image {
+      top: calc(-1 * (var(--icc-image-height-mobile, 120px) - var(--icc-image-overlap-mobile, 48px)));
+      height: var(--icc-image-height-mobile, 120px);
+    }
+
+    .ingredients-carousel__title {
+      font-size: max(16px, calc(var(--icc-title-size, 18px) * 0.9));
+    }
+
+    .ingredients-carousel__description {
+      font-size: max(13px, calc(var(--icc-description-size, 16px) * 0.9));
+    }
+
+    .ingredients-carousel__button {
+      font-size: max(14px, calc(var(--icc-button-font-size, 18px) * 0.9));
+      height: max(44px, calc(var(--icc-button-height, 60px) * 0.87));
+    }
+
+    .ingredients-carousel__badge-text {
+      font-size: 12px;
+    }
+
+    .ingredients-carousel__badges {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ingredients carousel",
+  "class": "section-ingredients-carousel",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_ingredients-carousel-card"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text",
+      "default": "Powerful Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "for Peak Performance"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:names.subheading"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "t:settings.size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        },
+        {
+          "value": "900",
+          "label": "t:options.black"
+        }
+      ],
+      "default": "800"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#a45b2c"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "t:settings.size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.carousel"
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "tablet_columns",
+      "label": "Tablet columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile_slide_width",
+      "label": "Mobile slide width",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Space above carousel",
+      "min": 8,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "label": "Space above carousel (mobile)",
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_edge_padding",
+      "label": "Mobile edge padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 74
+    },
+    {
+      "type": "range",
+      "id": "container_padding_tablet",
+      "label": "Side padding (tablet)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Card appearance"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Default card background",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Ingredient title color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Ingredient title size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Ingredient description color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Ingredient description size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Ingredient image"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Image height",
+      "min": 80,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "default": 152
+    },
+    {
+      "type": "range",
+      "id": "image_overlap",
+      "label": "Image overlap into card",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height (mobile)",
+      "min": 60,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "image_overlap_mobile",
+      "label": "Image overlap into card (mobile)",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "t:content.navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "t:settings.color",
+      "default": "#1a1a1a",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "t:settings.size",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_gap",
+      "label": "t:settings.gap",
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:settings.autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "t:settings.speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5,
+      "visible_if": "{{ section.settings.autoplay }}"
+    },
+    {
+      "type": "range",
+      "id": "transition_speed",
+      "label": "Transition speed",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "ms",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "t:content.buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.link",
+      "default": "shopify://collections/all"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_start",
+      "label": "Gradient start",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_end",
+      "label": "Gradient end",
+      "default": "#ffed68"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "t:settings.height",
+      "min": 40,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "t:settings.size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients carousel",
+      "category": "t:categories.product",
+      "blocks": {
+        "card_1": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "Ashwagandha",
+            "description": "Supports cortisol reduction, boosts free testosterone, helps improve stress resilience."
+          }
+        },
+        "card_2": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "Shilajit",
+            "description": "Supports the increase of total & free testosterone, enhancing mitochondrial ATP."
+          }
+        },
+        "card_3": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "Panax Ginseng",
+            "description": "Helps with LH production, blood flow, anti-inflammatory effect."
+          }
+        },
+        "card_4": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "Saffron",
+            "description": "Sustains PDE5 inhibition and NO increase."
+          }
+        },
+        "card_5": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "Black Maca",
+            "description": "Boosts desire via non-hormonal CNS pathways."
+          }
+        },
+        "card_6": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "title": "L-Arginine",
+            "description": "Converts to NO, supporting vasodilation and blood flow."
+          }
+        },
+        "static-badges": {
+          "type": "_ingredients-carousel-badges",
+          "name": "Badges",
+          "static": true,
+          "blocks": {
+            "badge_1": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "text": "3rd Party Lab Tested"
+              }
+            },
+            "badge_2": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "text": "Pure and Natural Solution"
+              }
+            }
+          },
+          "block_order": ["badge_1", "badge_2"]
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4", "card_5", "card_6"]
+    }
+  ]
+}
+{% endschema %}

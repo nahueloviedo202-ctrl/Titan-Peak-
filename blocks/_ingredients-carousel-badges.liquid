@@ -1,0 +1,43 @@
+{%- doc -%}
+  Static wrapper that renders the row of trust badges below the CTA button
+  in the "ingredients-carousel" section. Wrapping the badges in their own
+  block lets the section expose a separate, independently reorderable list
+  of "_ingredients-carousel-badge" children.
+{%- enddoc -%}
+
+<div
+  class="ingredients-carousel__badges"
+  style="--icc-badges-gap: {{ block.settings.gap }}px;"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Badges",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_ingredients-carousel-badge"
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Badges"
+    }
+  ]
+}
+{% endschema %}

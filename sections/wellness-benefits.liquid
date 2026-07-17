@@ -1,0 +1,432 @@
+{%- doc -%}
+  Renders a "wellness benefits" card: a heading (with an optional accent
+  color highlight on bold text) followed by a responsive grid of benefit
+  items, each made of a circular icon badge and a short line of text.
+
+  Every text, image, icon, color, size, spacing, radius, column count and
+  gap value is configurable through the section and block schemas.
+{%- enddoc -%}
+
+{% liquid
+  assign section_settings = section.settings
+%}
+
+{% capture style %}
+  {%- render 'spacing-style', settings: section_settings -%}
+  --wb-max-width: {{ section_settings.container_max_width }}px;
+  --wb-card-bg: {{ section_settings.card_background_color }};
+  --wb-card-radius: {{ section_settings.card_radius }}px;
+  --wb-card-padding: {{ section_settings.card_padding }}px;
+  --wb-content-gap: {{ section_settings.content_gap }}px;
+  --wb-columns-mobile: {{ section_settings.columns_mobile }};
+  --wb-columns-desktop: {{ section_settings.columns_desktop }};
+  --wb-column-gap-mobile: {{ section_settings.column_gap_mobile }}px;
+  --wb-column-gap-desktop: {{ section_settings.column_gap_desktop }}px;
+  --wb-item-gap: {{ section_settings.item_gap }}px;
+  --wb-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+  --wb-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+  --wb-heading-gap: {{ section_settings.heading_gap }}px;
+  --wb-heading-color: {{ section_settings.heading_color }};
+  --wb-heading-accent-color: {{ section_settings.heading_accent_color }};
+  --wb-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+  --wb-icon-size-desktop: {{ section_settings.icon_size_desktop }}px;
+  --wb-icon-radius: {{ section_settings.icon_radius }}%;
+  --wb-icon-gradient-start: {{ section_settings.icon_gradient_start }};
+  --wb-icon-gradient-end: {{ section_settings.icon_gradient_end }};
+  --wb-icon-color: {{ section_settings.icon_color }};
+  --wb-text-size: {{ section_settings.text_size }}px;
+  --wb-text-color: {{ section_settings.text_color }};
+{% endcapture %}
+
+<div class="section-background"></div>
+
+<div
+  class="section section--{{ section_settings.section_width }} wellness-benefits spacing-style"
+  style="{{ style }}"
+  data-testid="wellness-benefits"
+>
+  <div class="wellness-benefits__card">
+    {%- if section_settings.heading != blank -%}
+      <div class="wellness-benefits__heading">{{ section_settings.heading }}</div>
+    {%- endif -%}
+
+    <div class="wellness-benefits__grid">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .wellness-benefits__card {
+    max-width: var(--wb-max-width, 900px);
+    margin-inline: auto;
+    background-color: var(--wb-card-bg, #fcfaf5);
+    border-radius: var(--wb-card-radius, 12px);
+    padding: var(--wb-card-padding, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wb-content-gap, 24px);
+  }
+
+  .wellness-benefits__heading {
+    margin-bottom: var(--wb-heading-gap, 0px);
+  }
+
+  .wellness-benefits__heading p {
+    margin: 0;
+    font-family: Figtree, sans-serif;
+    font-weight: 700;
+    font-size: var(--wb-heading-size-mobile, 20px);
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--wb-heading-color, #1a1a1a);
+  }
+
+  .wellness-benefits__heading strong {
+    font-weight: 700;
+    color: var(--wb-heading-accent-color, #a45b2c);
+  }
+
+  .wellness-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--wb-columns-mobile, 2), 1fr);
+    gap: var(--wb-column-gap-mobile, 16px);
+  }
+
+  @media screen and (min-width: 990px) {
+    .wellness-benefits__heading p {
+      font-size: var(--wb-heading-size-desktop, 24px);
+    }
+
+    .wellness-benefits__grid {
+      grid-template-columns: repeat(var(--wb-columns-desktop, 4), 1fr);
+      gap: var(--wb-column-gap-desktop, 24px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Wellness benefits",
+  "class": "section-wellness-benefits",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_wellness-benefit-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Bold part of the text is highlighted in the accent color, e.g. \"fuel you **body and mind** naturally\".",
+      "default": "<p>fuel you <strong>body and mind</strong> naturally</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Card max width",
+      "min": 400,
+      "max": 1400,
+      "step": 10,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns (mobile)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Grid gap (desktop)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Grid gap (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Spacing between icon and text",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "t:settings.background_color",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Inner padding",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Spacing between heading and grid",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Heading typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_gap",
+      "label": "Heading bottom spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Heading accent color",
+      "default": "#a45b2c"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Icon size (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "icon_radius",
+      "label": "Icon corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_start",
+      "label": "Icon background (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_end",
+      "label": "Icon background (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Benefit text"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wellness benefits",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_wellness-benefit-item",
+          "settings": {
+            "icon": "heart_pulse",
+            "text": "Supports vitality and wellness"
+          }
+        },
+        "item_2": {
+          "type": "_wellness-benefit-item",
+          "settings": {
+            "icon": "lightning",
+            "text": "Promotes steady energy"
+          }
+        },
+        "item_3": {
+          "type": "_wellness-benefit-item",
+          "settings": {
+            "icon": "focus",
+            "text": "Supports focus and recovery"
+          }
+        },
+        "item_4": {
+          "type": "_wellness-benefit-item",
+          "settings": {
+            "icon": "star",
+            "text": "Boosts confidence"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"]
+    }
+  ]
+}
+{% endschema %}

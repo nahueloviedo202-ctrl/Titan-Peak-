@@ -1,0 +1,79 @@
+{%- doc -%}
+  A single ingredient card (image + title + description) inside the
+  "ingredients-carousel" section carousel. Nested so the carousel supports
+  any number of slides via the block picker.
+{%- enddoc -%}
+
+<div
+  class="ingredients-carousel__card"
+  {{ block.shopify_attributes }}
+>
+  <div
+    class="ingredients-carousel__card-inner"
+    {% if block.settings.background_color != blank %}
+      style="background-color: {{ block.settings.background_color }};"
+    {% endif %}
+  >
+    <div class="ingredients-carousel__image">
+      {%- if block.settings.image != blank -%}
+        {{
+          block.settings.image
+          | image_url: width: 780
+          | image_tag: loading: 'lazy', widths: '260, 390, 520, 780', sizes: '(min-width: 990px) 25vw, (min-width: 750px) 50vw, 80vw', alt: block.settings.title
+        }}
+      {%- else -%}
+        {{ 'product-apparel-1' | placeholder_svg_tag: 'ingredients-carousel__placeholder' }}
+      {%- endif -%}
+    </div>
+    <div class="ingredients-carousel__content">
+      {%- if block.settings.title != blank -%}
+        <h3 class="ingredients-carousel__title">{{ block.settings.title }}</h3>
+      {%- endif -%}
+      {%- if block.settings.description != blank -%}
+        <p class="ingredients-carousel__description">{{ block.settings.description }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredient",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.title",
+      "default": "Ingredient name"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "t:settings.description",
+      "default": "Describe the benefit of this ingredient."
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

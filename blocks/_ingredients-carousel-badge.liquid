@@ -1,0 +1,130 @@
+{%- doc -%}
+  A single icon + label trust badge, nested inside the
+  "_ingredients-carousel-badges" block.
+{%- enddoc -%}
+
+<div
+  class="ingredients-carousel__badge"
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.icon != 'none' or block.settings.image != blank -%}
+    <span
+      class="ingredients-carousel__badge-icon"
+      {% if block.settings.icon_color != blank %}
+        style="color: {{ block.settings.icon_color }};"
+      {% endif %}
+    >
+      {%- if block.settings.image != blank -%}
+        {{
+          block.settings.image
+          | image_url: width: 68
+          | image_tag: loading: 'lazy', widths: '34, 68', alt: block.settings.text
+        }}
+      {%- elsif block.settings.icon == 'seal_check' -%}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 17 20"
+          fill="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M7.1123 2C7.70431 2.00014 8.18085 2.65105 8.75098 2.80273C9.32127 2.95429 10.0682 2.63619 10.5713 2.92676C11.0744 3.21738 11.1779 4.02832 11.5889 4.44238C11.9999 4.85628 12.8248 4.96121 13.1045 5.45801C13.3839 5.95477 13.081 6.73409 13.2275 7.2793C13.3744 7.82461 14.0312 8.3252 14.0312 8.91895C14.0311 9.51256 13.3792 9.98586 13.2275 10.5576C13.076 11.1295 13.3951 11.8783 13.1045 12.3799C12.8138 12.8814 11.9982 12.9877 11.5889 13.3955C11.1795 13.8033 11.0666 14.6314 10.5713 14.9111C10.076 15.1906 9.2962 14.8873 8.75098 15.0342C8.20578 15.1811 7.70592 15.8377 7.1123 15.8379C6.51855 15.8379 6.04453 15.1857 5.47266 15.0342C4.90092 14.8829 4.15281 15.2015 3.65137 14.9111C3.14988 14.6206 3.04339 13.8034 2.63574 13.3955C2.22793 12.9877 1.39629 12.8732 1.11816 12.3779C0.840264 11.8826 1.14295 11.1028 0.996094 10.5576C0.849086 10.0125 0.193503 9.51251 0.193359 8.91895C0.193359 8.3252 0.846094 7.85117 0.996094 7.2793C1.1459 6.70754 0.826255 5.95949 1.11816 5.45801C1.41035 4.95645 2.22793 4.8502 2.63574 4.44238C3.04355 4.03457 3.15605 3.21074 3.65137 2.9248C4.14661 2.63914 4.92744 2.94941 5.47266 2.80273C6.01797 2.65586 6.52012 2 7.1123 2ZM10.0654 6.29102C9.87896 6.29119 9.70011 6.36511 9.56836 6.49707L6.21875 9.85645L4.43066 8.0625C4.36535 7.99724 4.28745 7.94549 4.20215 7.91016C4.11696 7.87493 4.02578 7.85649 3.93359 7.85645C3.84119 7.85645 3.74943 7.8748 3.66406 7.91016C3.57869 7.94552 3.50089 7.99716 3.43555 8.0625C3.3702 8.12785 3.31857 8.20563 3.2832 8.29102C3.24783 8.3764 3.22949 8.46812 3.22949 8.56055C3.22953 8.65288 3.24787 8.74477 3.2832 8.83008C3.31853 8.9152 3.3704 8.99242 3.43555 9.05762L5.71973 11.3408C5.78506 11.4061 5.86292 11.4578 5.94824 11.4932C6.03376 11.5286 6.12619 11.5469 6.21875 11.5469C6.4049 11.5465 6.58311 11.4723 6.71484 11.3408L10.5635 7.49121C10.6953 7.35922 10.7697 7.17967 10.7695 6.99316C10.7693 6.80672 10.6944 6.62783 10.5625 6.49609C10.4305 6.36451 10.2518 6.29087 10.0654 6.29102Z"
+            fill="currentColor"
+          />
+        </svg>
+      {%- else -%}
+        <svg
+          width="17"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          {%- render 'icon', icon: block.settings.icon -%}
+        </svg>
+      {%- endif -%}
+    </span>
+  {%- endif -%}
+  {%- if block.settings.text != blank -%}
+    <span
+      class="ingredients-carousel__badge-text"
+      {% if block.settings.text_color != blank %}
+        style="color: {{ block.settings.text_color }};"
+      {% endif %}
+    >
+      {{- block.settings.text -}}
+    </span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "seal_check",
+          "label": "Certified seal"
+        },
+        {
+          "value": "check_box",
+          "label": "t:options.check_box"
+        },
+        {
+          "value": "star",
+          "label": "t:options.star"
+        },
+        {
+          "value": "lock",
+          "label": "t:options.lock"
+        },
+        {
+          "value": "leaf",
+          "label": "t:options.leaf"
+        },
+        {
+          "value": "none",
+          "label": "t:options.none"
+        }
+      ],
+      "default": "seal_check"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image_icon"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Certified"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Badge"
+    }
+  ]
+}
+{% endschema %}

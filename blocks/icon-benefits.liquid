@@ -1,0 +1,303 @@
+{%- doc -%}
+  Icon benefits: a vertical list of icon + title + description rows.
+  Each row is a nested "_icon-benefits-item" block, so rows can be added,
+  removed, reordered, and re-skinned per row (built-in icon, uploaded
+  image, or no icon at all) from the block picker.
+{%- enddoc -%}
+
+{%- liquid
+  assign list_settings = block.settings
+  assign list_class = 'icon-benefits__list'
+  if list_settings.columns == '2'
+    assign list_class = list_class | append: ' icon-benefits__list--2-col'
+  endif
+-%}
+
+<div
+  class="icon-benefits spacing-style"
+  style="
+    {% render 'spacing-style', settings: list_settings %}
+    --icon-benefits-items-gap: {{ list_settings.items_gap }}px;
+    --icon-benefits-icon-gap: {{ list_settings.icon_gap }}px;
+    --icon-benefits-title-size: {{ list_settings.title_size }}px;
+    --icon-benefits-title-weight: {{ list_settings.title_weight }};
+    --icon-benefits-description-size: {{ list_settings.description_size }}px;
+    {% if list_settings.title_color != blank %}
+      --icon-benefits-title-color: {{ list_settings.title_color }};
+    {% endif %}
+    {% if list_settings.description_color != blank %}
+      --icon-benefits-description-color: {{ list_settings.description_color }};
+    {% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  <div class="{{ list_class }}">
+    {% content_for 'blocks' %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .icon-benefits {
+    display: block;
+  }
+
+  .icon-benefits__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--icon-benefits-items-gap);
+  }
+
+  .icon-benefits__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--icon-benefits-icon-gap);
+  }
+
+  .icon-benefits__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-benefits__icon-svg {
+    display: block;
+  }
+
+  .icon-benefits__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .icon-benefits__title {
+    margin: 0;
+    font-size: var(--icon-benefits-title-size);
+    font-weight: var(--icon-benefits-title-weight);
+    line-height: 1.5;
+    color: var(--icon-benefits-title-color, inherit);
+  }
+
+  .icon-benefits__description {
+    font-size: var(--icon-benefits-description-size);
+    line-height: 1.25;
+    color: var(--icon-benefits-description-color, inherit);
+  }
+
+  .icon-benefits__description p {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .icon-benefits__list--2-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Icon benefits",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_icon-benefits-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "t:settings.columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:options.one_number"
+        },
+        {
+          "value": "2",
+          "label": "t:options.two_number"
+        }
+      ],
+      "default": "1",
+      "info": "Two columns apply on tablet and desktop only. Mobile always shows a single column."
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_gap",
+      "label": "Icon spacing",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "t:options.medium"
+        },
+        {
+          "value": "600",
+          "label": "t:options.semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        },
+        {
+          "value": "900",
+          "label": "t:options.black"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon benefits",
+      "category": "t:categories.product",
+      "blocks": {
+        "item-1": {
+          "type": "_icon-benefits-item",
+          "settings": {
+            "icon": "lightning_bolt",
+            "title": "Daily Energy & Vitality Support",
+            "description": "<p>Ignites daily energy and physical endurance with 2000mg of pure Shilajit.</p>"
+          }
+        },
+        "item-2": {
+          "type": "_icon-benefits-item",
+          "settings": {
+            "icon": "leaf",
+            "title": "Herbal Ingredients for Wellness",
+            "description": "<p>Potent botanicals like Ashwagandha and Maca actively support your body.</p>"
+          }
+        },
+        "item-3": {
+          "type": "_icon-benefits-item",
+          "settings": {
+            "icon": "fire",
+            "title": "Natural Focus & Stamina Blend",
+            "description": "<p>Adaptogens manage daily stress while enhancing mental clarity and mood.</p>"
+          }
+        },
+        "item-4": {
+          "type": "_icon-benefits-item",
+          "settings": {
+            "icon": "check_box",
+            "title": "Clean Formula, Clinically Tested",
+            "description": "<p>Plant-based and third-party lab tested to ensure safety, purity, and trust.</p>"
+          }
+        }
+      },
+      "block_order": ["item-1", "item-2", "item-3", "item-4"]
+    }
+  ]
+}
+{% endschema %}

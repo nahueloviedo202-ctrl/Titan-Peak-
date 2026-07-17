@@ -1,0 +1,481 @@
+
+
+{%- comment -%}
+  Image + checklist section: an image on one side and a kicker heading,
+  an optional description and a list of checkmark/number items on the
+  other side. Image position (desktop and mobile), gaps, colors, sizes
+  and the badge style are all configurable through the section schema.
+{%- endcomment -%}
+
+{% liquid
+  assign settings = section.settings
+
+  assign has_custom_colors = false
+  if settings.background_color != blank or settings.text_color != blank
+    assign has_custom_colors = true
+    render 'contrast-override', background_color: settings.background_color, text_color: settings.text_color, section_id: section.id
+  endif
+
+  assign wrapper_modifier = 'checklist__wrapper--image-' | append: settings.image_position
+  assign wrapper_modifier = wrapper_modifier | append: ' checklist__wrapper--image-mobile-' | append: settings.image_position_mobile
+%}
+
+{% style %}
+  #ChecklistSection-{{ section.id }} {
+    --checklist-padding-block-start: {{ settings.padding_block_start_mobile }}px;
+    --checklist-padding-block-end: {{ settings.padding_block_end_mobile }}px;
+
+    @media screen and (min-width: 990px) {
+      --checklist-padding-block-start: {{ settings.padding_block_start_desktop }}px;
+      --checklist-padding-block-end: {{ settings.padding_block_end_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="section-background{% if has_custom_colors %} color-custom-{{ section.id }}{% endif %}"
+></div>
+<div
+  id="ChecklistSection-{{ section.id }}"
+  class="section section--{{ settings.content_width }} checklist-section{% if has_custom_colors %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    --checklist-column-gap-mobile: {{ settings.column_gap_mobile }}px;
+    --checklist-column-gap-desktop: {{ settings.column_gap_desktop }}px;
+    --checklist-item-gap-mobile: {{ settings.item_gap_mobile }}px;
+    --checklist-item-gap-desktop: {{ settings.item_gap_desktop }}px;
+  "
+  data-testid="image-checklist"
+>
+  <div class="checklist__wrapper {{ wrapper_modifier }}">
+    <div
+      class="checklist__media"
+      style="border-radius: {{ settings.image_radius }}px;"
+    >
+      {%- if settings.image_link != blank -%}
+        <a href="{{ settings.image_link }}" class="checklist__media-link">
+      {%- endif -%}
+
+      {%- if settings.image -%}
+        {{
+          settings.image
+          | image_url: width: 1600
+          | image_tag:
+            widths: '400, 800, 1200, 1600',
+            sizes: '(min-width: 990px) 50vw, 100vw',
+            alt: settings.image_alt | default: settings.image.alt,
+            class: 'checklist__media-image',
+            loading: 'lazy'
+        }}
+      {%- else -%}
+        <div class="checklist__media-placeholder">
+          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'checklist__media-placeholder-image' }}
+        </div>
+      {%- endif -%}
+
+      {%- if settings.image_link != blank -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="checklist__content-col">
+      {%- if settings.kicker != blank -%}
+        <div class="checklist__kicker">{{ settings.kicker }}</div>
+      {%- endif -%}
+
+      {%- if settings.description != blank -%}
+        <div class="checklist__description rte">{{ settings.description }}</div>
+      {%- endif -%}
+
+      <div class="checklist__items">
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .checklist-section {
+    padding-block: var(--checklist-padding-block-start, 0) var(--checklist-padding-block-end, 0);
+  }
+
+  .checklist__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'content';
+    gap: var(--checklist-column-gap-mobile, 24px);
+  }
+
+  .checklist__wrapper--image-mobile-top {
+    grid-template-areas: 'image' 'content';
+  }
+
+  .checklist__wrapper--image-mobile-bottom {
+    grid-template-areas: 'content' 'image';
+  }
+
+  .checklist__media {
+    grid-area: image;
+    overflow: hidden;
+  }
+
+  .checklist__media-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .checklist__media-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .checklist__media-placeholder svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .checklist__media-link {
+    display: block;
+  }
+
+  .checklist__content-col {
+    grid-area: content;
+    height: fit-content;
+    margin-block: auto;
+  }
+
+  .checklist__kicker,
+  .checklist__kicker p {
+    margin: 0 0 1rem;
+    font-family: Figtree, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  .checklist__description,
+  .checklist__description p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .checklist__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--checklist-item-gap-mobile, 16px);
+  }
+
+  @media screen and (min-width: 990px) {
+    .checklist__wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--checklist-column-gap-desktop, 40px);
+    }
+
+    .checklist__wrapper--image-left {
+      grid-template-areas: 'image content';
+    }
+
+    .checklist__wrapper--image-right {
+      grid-template-areas: 'content image';
+    }
+
+    .checklist__kicker,
+    .checklist__kicker p {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    .checklist__description,
+    .checklist__description p {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .checklist__items {
+      gap: var(--checklist-item-gap-desktop, 24px);
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .checklist__kicker,
+    .checklist__kicker p,
+    .checklist__description,
+    .checklist__description p {
+      text-align: center;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image checklist",
+  "blocks": [
+    {
+      "type": "_checklist-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Link"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "kicker",
+      "label": "Kicker heading",
+      "default": "<p>Is This<br>Right For You?</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "Page"
+        },
+        {
+          "value": "full-width",
+          "label": "Full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "image_position_mobile",
+      "label": "Image position (mobile)",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Gap between image and content (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Gap between image and content (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "label": "Gap between items (mobile)",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_gap_desktop",
+      "label": "Gap between items (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Badge appearance"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Badge size",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "badge_gradient_start",
+      "label": "Gradient start",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "badge_gradient_end",
+      "label": "Gradient end",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "badge_ring_color",
+      "label": "Ring color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start_mobile",
+      "label": "Top (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end_mobile",
+      "label": "Bottom (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start_desktop",
+      "label": "Top (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end_desktop",
+      "label": "Bottom (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image checklist",
+      "category": "Image",
+      "blocks": {
+        "item-1": {
+          "type": "_checklist-item",
+          "settings": {
+            "description": "<p>Describe the first reason this applies to your customer.</p>"
+          }
+        },
+        "item-2": {
+          "type": "_checklist-item",
+          "settings": {
+            "description": "<p>Describe the second reason this applies to your customer.</p>"
+          }
+        },
+        "item-3": {
+          "type": "_checklist-item",
+          "settings": {
+            "description": "<p>Describe the third reason this applies to your customer.</p>"
+          }
+        }
+      },
+      "block_order": ["item-1", "item-2", "item-3"]
+    }
+  ]
+}
+{% endschema %}

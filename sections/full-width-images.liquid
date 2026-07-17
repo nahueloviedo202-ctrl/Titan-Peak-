@@ -1,0 +1,123 @@
+{%- doc -%}
+  Renders one or more full-width-image blocks stacked directly on top of
+  each other (no gap by default), edge to edge. Meant to replicate simple
+  full-bleed image banners, optionally with a different image per
+  breakpoint (art direction) set on each block.
+{%- enddoc -%}
+
+{% liquid
+  assign section_settings = section.settings
+  assign background_color = section_settings.background_color
+%}
+
+{% capture style %}
+  {%- render 'spacing-style', settings: section_settings -%}
+  {%- render 'gap-style', value: section_settings.gap, name: 'full-width-images-gap' -%}
+  --full-width-images-bg: {{ background_color }};
+{% endcapture %}
+
+<div class="section-background" style="background-color: {{ background_color }};"></div>
+
+<div
+  class="section section--{{ section_settings.section_width }} full-width-images spacing-style"
+  style="{{ style }}"
+  data-testid="full-width-images"
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% stylesheet %}
+  .full-width-images {
+    background-color: var(--full-width-images-bg, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: var(--full-width-images-gap, 0px);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Full width images",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "full-width-image"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full width images",
+      "category": "t:categories.banners",
+      "blocks": {
+        "image_1": {
+          "type": "full-width-image"
+        },
+        "image_2": {
+          "type": "full-width-image"
+        }
+      },
+      "block_order": ["image_1", "image_2"]
+    }
+  ]
+}
+{% endschema %}

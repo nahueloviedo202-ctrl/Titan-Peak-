@@ -1,0 +1,504 @@
+{%- doc -%}
+  Image popup: an underlined text trigger that opens a centered modal
+  showing a single image (e.g. a supplement facts label), with an optional
+  line of rich text underneath. Built on the theme's native dialog-component
+  / dialog.js, so opening, closing, backdrop click, Escape and scroll
+  locking all come from the theme's existing dialog behavior.
+{%- enddoc -%}
+
+{%- liquid
+  assign popup_settings = block.settings
+
+  assign trigger_decoration = 'none'
+  if popup_settings.trigger_underline
+    assign trigger_decoration = 'underline'
+  endif
+-%}
+
+<script
+  src="{{ 'dialog.js' | asset_url }}"
+  type="module"
+></script>
+
+<dialog-component
+  class="image-popup spacing-style"
+  style="{% render 'spacing-style', settings: popup_settings %}"
+  {{ block.shopify_attributes }}
+>
+  <button
+    type="button"
+    on:click="/showDialog"
+    class="image-popup__trigger button-unstyled"
+    style="
+      --image-popup-trigger-size: {{ popup_settings.trigger_font_size }}px;
+      --image-popup-trigger-weight: {{ popup_settings.trigger_font_weight }};
+      --image-popup-trigger-decoration: {{ trigger_decoration }};
+      {% if popup_settings.trigger_color != blank %}
+        --image-popup-trigger-color: {{ popup_settings.trigger_color }};
+      {% endif %}
+    "
+  >
+    {{- popup_settings.trigger_text -}}
+  </button>
+
+  <dialog
+    ref="dialog"
+    class="image-popup__dialog"
+    scroll-lock
+    aria-labelledby="image-popup-heading-{{ block.id }}"
+    style="
+      --image-popup-modal-width: {{ popup_settings.modal_width }}px;
+      --image-popup-modal-radius: {{ popup_settings.modal_radius }}px;
+      --image-popup-modal-padding: {{ popup_settings.modal_content_padding }}px;
+      --image-popup-image-radius: {{ popup_settings.image_radius }}px;
+      --image-popup-image-fit: {{ popup_settings.image_fit }};
+      --image-popup-close-size: {{ popup_settings.close_button_size }}px;
+      {% if popup_settings.overlay_color != blank %}
+        --image-popup-overlay-color: {{ popup_settings.overlay_color }};
+      {% endif %}
+      {% if popup_settings.close_button_background != blank %}
+        --image-popup-close-background: {{ popup_settings.close_button_background }};
+      {% endif %}
+      {% if popup_settings.close_button_icon_color != blank %}
+        --image-popup-close-icon-color: {{ popup_settings.close_button_icon_color }};
+      {% endif %}
+    "
+  >
+    <h2
+      id="image-popup-heading-{{ block.id }}"
+      class="visually-hidden"
+    >
+      {{ popup_settings.trigger_text }}
+    </h2>
+
+    <button
+      ref="closeButton"
+      type="button"
+      on:click="/closeDialog"
+      class="image-popup__close button-unstyled"
+      aria-label="{{ 'accessibility.close_dialog' | t }}"
+    >
+      {{- 'icon-close.svg' | inline_asset_content -}}
+    </button>
+
+    <div class="image-popup__content">
+      {%- if popup_settings.image != blank -%}
+        {{
+          popup_settings.image
+          | image_url: width: 1200
+          | image_tag:
+            widths: '400, 600, 900, 1200',
+            sizes: '(min-width: 750px) 500px, 90vw',
+            loading: 'lazy',
+            class: 'image-popup__image'
+        }}
+      {%- elsif popup_settings.image == blank and request.visual_preview_mode -%}
+        {{ 'product-1' | placeholder_svg_tag: 'image-popup__image image-popup__image--placeholder' }}
+      {%- endif -%}
+
+      {%- if popup_settings.text != blank -%}
+        <div class="image-popup__text">{{ popup_settings.text }}</div>
+      {%- endif -%}
+    </div>
+  </dialog>
+</dialog-component>
+
+{% stylesheet %}
+  .image-popup {
+    display: inline-block;
+  }
+
+  .image-popup__trigger {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: var(--image-popup-trigger-size);
+    font-weight: var(--image-popup-trigger-weight);
+    line-height: 1.4;
+    color: var(--image-popup-trigger-color, inherit);
+    text-decoration-line: var(--image-popup-trigger-decoration);
+    text-underline-offset: 2px;
+    cursor: pointer;
+    transition: opacity var(--animation-speed, 0.2s) ease;
+  }
+
+  .image-popup__trigger:hover {
+    opacity: 0.7;
+  }
+
+  .image-popup__dialog {
+    border: none;
+    padding: 0;
+    width: 100%;
+    max-width: min(var(--image-popup-modal-width), 90vw);
+    max-height: 90vh;
+    background: var(--color-background, #fff);
+    border-radius: var(--image-popup-modal-radius);
+    box-shadow: 0 10px 40px rgb(0 0 0 / 0.2);
+  }
+
+  .image-popup__dialog::backdrop {
+    background: var(--image-popup-overlay-color, rgb(var(--backdrop-color-rgb) / var(--backdrop-opacity)));
+  }
+
+  .image-popup__dialog[open] {
+    animation: image-popup-scale-in var(--animation-speed, 0.3s) var(--animation-easing, ease) forwards;
+
+    &::backdrop {
+      transition: opacity var(--animation-speed, 0.3s) var(--animation-easing, ease);
+    }
+  }
+
+  .image-popup__dialog.dialog-closing {
+    animation: image-popup-scale-out var(--animation-speed, 0.3s) var(--animation-easing, ease) forwards;
+
+    &::backdrop {
+      opacity: 0;
+    }
+  }
+
+  @keyframes image-popup-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes image-popup-scale-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  .image-popup__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: var(--image-popup-close-size);
+    height: var(--image-popup-close-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--image-popup-close-background, #fff);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    color: var(--image-popup-close-icon-color, inherit);
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .image-popup__close:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.1);
+  }
+
+  .image-popup__close svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .image-popup__content {
+    padding: var(--image-popup-modal-padding);
+    max-height: 90vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .image-popup__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(90vh - (var(--image-popup-modal-padding) * 2));
+    object-fit: var(--image-popup-image-fit);
+    border-radius: var(--image-popup-image-radius);
+    margin: 0 auto;
+  }
+
+  .image-popup__text {
+    margin: 0;
+    text-align: center;
+  }
+
+  .image-popup__text p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .image-popup__trigger {
+      font-size: calc(var(--image-popup-trigger-size) - 2px);
+    }
+
+    .image-popup__dialog {
+      max-width: 95vw;
+      border-radius: calc(var(--image-popup-modal-radius) * 0.67);
+    }
+
+    .image-popup__content {
+      padding: calc(var(--image-popup-modal-padding) * 0.8);
+    }
+
+    .image-popup__close {
+      top: 12px;
+      right: 12px;
+      width: calc(var(--image-popup-close-size) - 4px);
+      height: calc(var(--image-popup-close-size) - 4px);
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .image-popup__trigger {
+      font-size: calc(var(--image-popup-trigger-size) - 4px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .image-popup__dialog[open],
+    .image-popup__dialog.dialog-closing {
+      animation-duration: 0.01ms;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image popup",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "trigger_text",
+      "label": "t:settings.text",
+      "default": "Supplement facts"
+    },
+    {
+      "type": "header",
+      "content": "Trigger text"
+    },
+    {
+      "type": "range",
+      "id": "trigger_font_size",
+      "label": "t:settings.size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "trigger_font_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "t:options.medium"
+        },
+        {
+          "value": "600",
+          "label": "t:options.semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        },
+        {
+          "value": "900",
+          "label": "t:options.black"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "checkbox",
+      "id": "trigger_underline",
+      "label": "Underline",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "trigger_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "Popup image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "t:settings.media_fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "t:options.contain"
+        },
+        {
+          "value": "cover",
+          "label": "t:options.cover"
+        }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Extra text below image"
+    },
+    {
+      "type": "header",
+      "content": "Popup appearance"
+    },
+    {
+      "type": "range",
+      "id": "modal_width",
+      "label": "t:settings.width",
+      "min": 320,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "modal_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "modal_content_padding",
+      "label": "t:settings.padding",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "alpha": true,
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "Close button"
+    },
+    {
+      "type": "range",
+      "id": "close_button_size",
+      "label": "t:settings.size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "close_button_background",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "close_button_icon_color",
+      "label": "t:settings.icon",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image popup",
+      "category": "t:categories.product",
+      "settings": {
+        "trigger_text": "Supplement facts"
+      }
+    }
+  ]
+}
+{% endschema %}

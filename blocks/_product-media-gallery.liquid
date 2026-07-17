@@ -199,6 +199,8 @@
   </product-gallery-thumbs>
 {%- endif -%}
 
+{% content_for 'blocks' %}
+
 {% stylesheet %}
   product-gallery-thumbs {
     display: block;
@@ -379,6 +381,14 @@
 {
   "name": "t:names.product_media",
   "tag": null,
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
   "settings": [
     {
       "type": "header",

@@ -1,0 +1,545 @@
+{%- doc -%}
+  Renders a "results timeline" section: a heading followed by a row of
+  milestone steps (icon, period label, subtitle and bullet points),
+  presented as a horizontal row on desktop and stacked on mobile,
+  connected by a thin horizontal separator with dots at each end.
+
+  Every text, image, icon, color, size, spacing and radius value is
+  configurable through the section and block schemas.
+{%- enddoc -%}
+
+{% liquid
+  assign section_settings = section.settings
+  assign background_color = section_settings.background_color
+%}
+
+{% capture style %}
+  {%- render 'spacing-style', settings: section_settings -%}
+  --rt-bg: {{ background_color }};
+  --rt-heading-color: {{ section_settings.heading_color }};
+  --rt-text-color: {{ section_settings.text_color }};
+  --rt-accent-color: {{ section_settings.accent_color }};
+  --rt-max-width: {{ section_settings.container_max_width }}px;
+  --rt-padding-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+  --rt-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+  --rt-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+  --rt-heading-gap-mobile: {{ section_settings.heading_gap_mobile }}px;
+  --rt-heading-gap-desktop: {{ section_settings.heading_gap_desktop }}px;
+  --rt-content-gap: {{ section_settings.content_gap }}px;
+  --rt-items-gap-mobile: {{ section_settings.items_gap_mobile }}px;
+  --rt-items-row-gap: {{ section_settings.items_gap_desktop }}px;
+  --rt-item-gap: {{ section_settings.item_gap }}px;
+  --rt-item-header-gap: {{ section_settings.item_header_gap }}px;
+  --rt-icon-size: {{ section_settings.icon_size }}px;
+  --rt-icon-gradient-start: {{ section_settings.icon_gradient_start }};
+  --rt-icon-gradient-end: {{ section_settings.icon_gradient_end }};
+  --rt-icon-color: {{ section_settings.icon_color }};
+  --rt-separator-color: {{ section_settings.accent_color }};
+  --rt-separator-thickness: {{ section_settings.separator_thickness }}px;
+  --rt-separator-dot-size: {{ section_settings.separator_dot_size }}px;
+  --rt-period-size-mobile: {{ section_settings.period_size_mobile }}px;
+  --rt-period-size-desktop: {{ section_settings.period_size_desktop }}px;
+  --rt-subtitle-size: {{ section_settings.subtitle_size }}px;
+  --rt-bullets-size-mobile: {{ section_settings.bullets_size_mobile }}px;
+  --rt-bullets-size-desktop: {{ section_settings.bullets_size_desktop }}px;
+  --rt-bullets-gap-mobile: {{ section_settings.bullets_gap_mobile }}px;
+  --rt-bullets-gap-desktop: {{ section_settings.bullets_gap_desktop }}px;
+{% endcapture %}
+
+<div class="section-background" style="background-color: {{ background_color }};"></div>
+
+<div
+  class="section section--{{ section_settings.section_width }} results-timeline spacing-style"
+  style="{{ style }}"
+  data-testid="results-timeline"
+>
+  <div class="results-timeline__container">
+    {%- if section_settings.heading != blank -%}
+      <h2 class="results-timeline__heading">{{ section_settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="results-timeline__content">
+      {%- if section_settings.show_separator -%}
+        <div class="results-timeline__separator"></div>
+      {%- endif -%}
+
+      <div class="results-timeline__list">
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .results-timeline {
+    background-color: var(--rt-bg, transparent);
+    color: var(--rt-text-color, inherit);
+  }
+
+  .results-timeline__container {
+    max-width: var(--rt-max-width, 1440px);
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline__container {
+      padding-inline: var(--rt-padding-inline-desktop, 120px);
+    }
+  }
+
+  .results-timeline__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-size: var(--rt-heading-size-mobile, 24px);
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--rt-heading-color, inherit);
+    margin-block: 0;
+    margin-bottom: var(--rt-heading-gap-mobile, 24px);
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline__heading {
+      font-size: var(--rt-heading-size-desktop, 32px);
+      font-weight: 700;
+      margin-bottom: var(--rt-heading-gap-desktop, 40px);
+      max-width: 94%;
+      margin-inline: auto;
+    }
+  }
+
+  .results-timeline__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rt-content-gap, 20px);
+  }
+
+  .results-timeline__separator {
+    position: relative;
+    height: var(--rt-separator-thickness, 1px);
+    background-color: var(--rt-separator-color, #e9be47);
+    flex-shrink: 0;
+  }
+
+  .results-timeline__separator::before,
+  .results-timeline__separator::after {
+    content: '';
+    position: absolute;
+    width: var(--rt-separator-dot-size, 8px);
+    height: var(--rt-separator-dot-size, 8px);
+    background-color: var(--rt-separator-color, #e9be47);
+    border-radius: 50%;
+    top: 50%;
+  }
+
+  .results-timeline__separator::before {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .results-timeline__separator::after {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .results-timeline__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rt-items-gap-mobile, 16px);
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline__list {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Results timeline",
+  "class": "section-results-timeline",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_results-timeline-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What to expect: example of results timeline"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 10,
+      "unit": "px",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Container horizontal padding (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "items_gap_desktop",
+      "label": "Spacing between items (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "items_gap_mobile",
+      "label": "Spacing between items (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Spacing above item list",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Spacing inside each item",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_header_gap",
+      "label": "Spacing between icon and text",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Separator line"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Show separator line",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "separator_thickness",
+      "label": "Thickness",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "visible_if": "{{ section.settings.show_separator }}"
+    },
+    {
+      "type": "range",
+      "id": "separator_dot_size",
+      "label": "Dot size",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 8,
+      "visible_if": "{{ section.settings.show_separator }}"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 32,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_start",
+      "label": "Icon background (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_end",
+      "label": "Icon background (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_gap_mobile",
+      "label": "Heading bottom spacing (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_gap_desktop",
+      "label": "Heading bottom spacing (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "period_size_mobile",
+      "label": "Period label size (mobile)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "period_size_desktop",
+      "label": "Period label size (desktop)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "bullets_size_mobile",
+      "label": "Bullet text size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "bullets_size_desktop",
+      "label": "Bullet text size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "bullets_gap_mobile",
+      "label": "Spacing between bullets (mobile)",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "bullets_gap_desktop",
+      "label": "Spacing between bullets (desktop)",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "info": "Used for the separator line, dots and any bold text inside period labels.",
+      "default": "#e9be47"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Results timeline",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>Week 1</p>",
+            "subtitle": "Stress & energy reset",
+            "bullets": "<ul><li>Cortisol begins to ease, mental fog lifts</li><li>Sleep improves, mornings feel different</li><li>Mood stabilises, stress feels more manageable</li><li>First signs of returning energy and focus</li></ul>",
+            "icon": "lightning"
+          }
+        },
+        "item_2": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>Month 1</p>",
+            "subtitle": "Hormones & performance returning",
+            "bullets": "<ul><li>Support building noticeably</li><li>Desire re-emerging consistently</li><li>Blood flow and circulation improving daily</li><li>Drive and confidence returning naturally</li></ul>",
+            "icon": "star"
+          }
+        },
+        "item_3": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>Month 3+</p>",
+            "subtitle": "Peak performance & vitality",
+            "bullets": "<ul><li>All ingredients working in full synergy</li><li>Balance restored and sustained</li><li>Energy, stamina & performance as your new baseline</li><li>Results everyone notices</li></ul>",
+            "icon": "heart_pulse"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3"]
+    }
+  ]
+}
+{% endschema %}

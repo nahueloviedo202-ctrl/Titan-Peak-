@@ -1,0 +1,228 @@
+
+
+{%- doc -%}
+  Renders a single row of a checklist-item section: a badge (checkmark icon
+  or auto-incrementing number, styled from the parent section's settings)
+  next to an optional title and a description.
+
+  Private block, scoped to the `image-checklist` section only.
+{%- enddoc -%}
+
+{% liquid
+  assign block_settings = block.settings
+  assign section_settings = section.settings
+  assign block_index = section.blocks | find_index: 'id', block.id
+%}
+
+<div
+  class="checklist-item"
+  style="align-items: {{ block_settings.vertical_alignment }};"
+  {{ block.shopify_attributes }}
+>
+  <div
+    class="checklist-item__badge"
+    style="width: {{ section_settings.badge_size }}px; height: {{ section_settings.badge_size }}px;"
+  >
+    {%- if block_settings.icon_type == 'number' -%}
+      <span
+        class="checklist-item__badge-number"
+        style="background: linear-gradient(180deg, {{ section_settings.badge_gradient_start }}, {{ section_settings.badge_gradient_end }});"
+      >
+        {{- block_index | plus: 1 -}}
+      </span>
+    {%- else -%}
+      <svg
+        class="checklist-item__badge-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 25 25"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          fill="url(#checklist-badge-bg-{{ block.id }})"
+          d="M25 12.5C25 19.4036 19.4036 25 12.5 25C5.59644 25 0 19.4036 0 12.5C0 5.59644 5.59644 0 12.5 0C19.4036 0 25 5.59644 25 12.5Z"
+        />
+        <path
+          fill="{{ section_settings.badge_ring_color }}"
+          d="M20.3452 12.5002C20.3452 16.8396 16.8274 20.3574 12.488 20.3574C8.14861 20.3574 4.63086 16.8396 4.63086 12.5002C4.63086 8.16085 8.14861 4.64307 12.488 4.64307C16.8274 4.64307 20.3452 8.16085 20.3452 12.5002Z"
+        />
+        <path
+          fill="url(#checklist-check-{{ block.id }})"
+          d="M12.4879 21.7858C11.2063 21.7858 10.0032 21.544 8.87876 21.0604C7.74226 20.5767 6.75381 19.9147 5.91351 19.0744C5.0732 18.2341 4.41123 17.2457 3.9276 16.1091C3.44397 14.9847 3.20215 13.7817 3.20215 12.5001C3.20215 11.2184 3.44397 10.0154 3.9276 8.891C4.41123 7.75443 5.0732 6.76602 5.91351 5.92571C6.75381 5.08541 7.74226 4.42343 8.87876 3.9398C10.0032 3.45617 11.2063 3.21436 12.4879 3.21436C13.7695 3.21436 14.9725 3.45617 16.097 3.9398C17.2335 4.42343 18.2219 5.08541 19.0623 5.92571C19.9025 6.76602 20.5645 7.75443 21.0481 8.891C21.5318 10.0154 21.7736 11.2184 21.7736 12.5001C21.7736 13.7817 21.5318 14.9847 21.0481 16.1091C20.5645 17.2457 19.9025 18.2341 19.0623 19.0744C18.2219 19.9147 17.2335 20.5767 16.097 21.0604C14.9725 21.544 13.7695 21.7858 12.4879 21.7858ZM16.496 8.34686L11.0007 13.824L8.38911 11.2306L6.68429 12.9354L11.0007 17.2336L18.2008 10.0517L16.496 8.34686Z"
+        />
+        <defs>
+          <linearGradient
+            id="checklist-badge-bg-{{ block.id }}"
+            x1="12.5"
+            y1="0"
+            x2="12.5"
+            y2="25"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="{{ section_settings.badge_gradient_start }}" />
+            <stop offset="1" stop-color="{{ section_settings.badge_gradient_end }}" />
+          </linearGradient>
+          <linearGradient
+            id="checklist-check-{{ block.id }}"
+            x1="12.4879"
+            y1="3.21436"
+            x2="12.4879"
+            y2="21.7858"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="{{ section_settings.badge_gradient_start }}" />
+            <stop offset="1" stop-color="{{ section_settings.badge_gradient_end }}" />
+          </linearGradient>
+        </defs>
+      </svg>
+    {%- endif -%}
+  </div>
+
+  <div class="checklist-item__content">
+    {%- if block_settings.title != blank -%}
+      <h3 class="checklist-item__title">{{ block_settings.title }}</h3>
+    {%- endif -%}
+
+    {%- if block_settings.description != blank -%}
+      <div
+        class="checklist-item__description rte"
+        style="--checklist-item-description-size: {{ block_settings.description_font_size }}px;"
+      >
+        {{ block_settings.description }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .checklist-item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .checklist-item__badge {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checklist-item__badge-icon {
+    width: 78%;
+    height: 78%;
+  }
+
+  .checklist-item__badge-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: #1a1a1a;
+    font-family: Figtree, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 800;
+  }
+
+  .checklist-item__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .checklist-item__title {
+    margin: 0;
+    font-family: Figtree, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: inherit;
+  }
+
+  .checklist-item__description {
+    margin: 0;
+    font-size: var(--checklist-item-description-size, 0.875rem);
+    line-height: 1.4;
+    color: inherit;
+  }
+
+  .checklist-item__description :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Checklist item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon_type",
+      "label": "Badge style",
+      "options": [
+        {
+          "value": "icon",
+          "label": "Checkmark icon"
+        },
+        {
+          "value": "number",
+          "label": "Auto number"
+        }
+      ],
+      "default": "icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe this point.</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "label": "Description font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Checklist item",
+      "settings": {
+        "description": "<p>Describe this point.</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

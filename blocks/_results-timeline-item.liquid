@@ -1,0 +1,271 @@
+{%- doc -%}
+  Renders a single step of the results-timeline section: an icon badge, a
+  period label (e.g. "Week 1"), a subtitle and a list of bullet points.
+
+  Meant to be used exclusively as a child block of `sections/results-timeline.liquid`.
+{%- enddoc -%}
+
+{% assign block_settings = block.settings %}
+
+<div
+  class="results-timeline-item"
+  {{ block.shopify_attributes }}
+>
+  <div class="results-timeline-item__header">
+    <div class="results-timeline-item__icon">
+      {%- if block_settings.custom_icon != blank -%}
+        {{
+          block_settings.custom_icon
+          | image_url: width: 160
+          | image_tag: width: 56, height: 56, loading: 'lazy', alt: '', class: 'results-timeline-item__icon-image'
+        }}
+      {%- elsif block_settings.icon != 'none' -%}
+        <svg
+          class="results-timeline-item__icon-svg"
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64 64"
+          fill="none"
+        >
+          {%- case block_settings.icon -%}
+            {%- when 'lightning' -%}
+              <path
+                d="M34.1722 8.9375L19.876 36.5681H29.8277V55.0625L44.1238 27.4319H34.1722V8.9375Z"
+                fill="currentColor"
+              />
+              <path d="M48.0557 19.6313L51.1474 16.5397" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M50 24.3253H53.3332" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M43.3613 17.687V14.3539" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M15.9442 44.3686L12.8525 47.4603" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M14.0001 39.6747H10.667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M20.6387 46.3129V49.646" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            {%- when 'star' -%}
+              <path
+                d="M30.8577 14.3322C31.0811 13.7501 31.6344 13.3667 32.2496 13.3667C32.8655 13.3667 33.4187 13.7501 33.6422 14.3322L34.6236 16.8831L37.3165 17.0423C37.931 17.0786 38.4607 17.494 38.6512 18.0885C38.8417 18.683 38.6532 19.3349 38.1767 19.7312L36.0909 21.4669L36.774 24.1162C36.9295 24.7209 36.704 25.3605 36.2059 25.7282C35.7078 26.0958 35.0388 26.1156 34.5206 25.778L32.2496 24.3L29.9793 25.778C29.461 26.1155 28.792 26.0958 28.294 25.7282C27.7952 25.3605 27.5704 24.721 27.7259 24.1162L28.4091 21.4669L26.3233 19.7312C25.8467 19.3349 25.6583 18.683 25.8487 18.0885C26.0391 17.494 26.5689 17.0786 27.1834 17.0423L29.8763 16.8831L30.8577 14.3322Z"
+                fill="currentColor"
+              />
+              <path d="M14.75 20.2H20.1346" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M44.3652 20.2H49.7498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M42.7422 14.05L46.2394 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M18.2607 12L21.758 14.05" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M32.25 42.4958C34.9688 42.4958 37.1729 40.2582 37.1729 37.4979C37.1729 34.7376 34.9688 32.5 32.25 32.5C29.5312 32.5 27.3271 34.7376 27.3271 37.4979C27.3271 40.2582 29.5312 42.4958 32.25 42.4958Z"
+                fill="currentColor"
+              />
+              <path
+                d="M21.481 37.9674C27.4283 44.0054 37.0706 44.0054 43.0178 37.9674C43.0185 37.9667 43.0185 37.9667 43.0185 37.9667V29.7667C43.0185 28.2572 44.224 27.0334 45.7108 27.0334C47.1983 27.0334 48.403 28.2573 48.403 29.7667V37.9667C48.403 39.4168 47.8363 40.8067 46.826 41.8324C44.4757 44.2185 40.3262 48.4313 40.3262 48.4313V53H24.1726V48.4312C24.1726 48.4312 20.023 44.2178 17.6727 41.8316C16.6631 40.8066 16.0957 39.4167 16.0957 37.9674V29.7667C16.0957 28.2572 17.3012 27.0334 18.788 27.0334C20.2755 27.0334 21.4802 28.2573 21.4802 29.7667C21.4802 33.0051 21.4802 37.9667 21.4802 37.9667C21.4802 37.9667 21.481 37.9667 21.481 37.9674Z"
+                fill="currentColor"
+              />
+            {%- when 'heart_pulse' -%}
+              <path
+                d="M20.3975 29.75L21.62 25.1375C21.71 24.8075 22.0025 24.5825 22.3475 24.5825C22.6925 24.5825 22.985 24.815 23.075 25.1375L24.9575 32.2475L27.0875 20.7725C27.155 20.4125 27.4775 20.1575 27.8375 20.1575C28.205 20.165 28.5125 20.435 28.565 20.8025L30.56 34.7825L31.19 30.395C31.2425 30.0275 31.5575 29.75 31.9325 29.75H34.0625L35.3075 23.81C35.3825 23.465 35.69 23.2175 36.0425 23.2175C36.395 23.2175 36.7025 23.465 36.7775 23.81L38.825 33.575L40.79 25.1675C40.865 24.83 41.165 24.59 41.51 24.59C41.855 24.59 42.155 24.815 42.245 25.145L43.4675 29.7575H49.67C51.215 25.5725 51.305 21.245 48.5675 17.2925C44.885 11.96 36.56 12.725 31.9925 17.2925C27.425 12.725 19.1075 11.96 15.4175 17.2925C12.6875 21.245 12.7775 25.5725 14.315 29.7575H20.39L20.3975 29.75Z"
+                fill="currentColor"
+              />
+              <path
+                d="M53 31.25H42.89C42.5525 31.25 42.2525 31.0175 42.1625 30.695L41.5625 28.43L39.5075 37.205C39.425 37.55 39.1325 37.79 38.765 37.7825C38.4125 37.7825 38.1125 37.5275 38.0375 37.19L36.035 27.62L35.3975 30.65C35.3225 30.995 35.015 31.2425 34.6625 31.2425H32.57L31.295 40.1825C31.2425 40.55 30.9275 40.8275 30.5525 40.8275C30.1775 40.8275 29.8625 40.55 29.81 40.1825L27.7175 25.5275L25.8125 35.7875C25.745 36.1325 25.4525 36.3875 25.1 36.4025C24.755 36.4325 24.44 36.185 24.35 35.8475L22.3325 28.25L21.6875 30.68C21.5975 31.01 21.305 31.235 20.96 31.235H11C10.5875 31.235 10.25 31.5725 10.25 31.985C10.25 32.3975 10.5875 32.735 11 32.735H15.68C20.75 42.305 32 50.42 32 50.42C32 50.42 43.2425 42.305 48.32 32.735H53C53.4125 32.735 53.75 32.3975 53.75 31.985C53.75 31.5725 53.4125 31.235 53 31.235V31.25Z"
+                fill="currentColor"
+              />
+          {%- endcase -%}
+        </svg>
+      {%- endif -%}
+    </div>
+    <div class="results-timeline-item__labels">
+      {%- if block_settings.period != blank -%}
+        <div class="results-timeline-item__period">{{ block_settings.period }}</div>
+      {%- endif -%}
+      {%- if block_settings.subtitle != blank -%}
+        <span class="results-timeline-item__subtitle">{{ block_settings.subtitle }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if block_settings.bullets != blank -%}
+    <div class="results-timeline-item__bullets">{{ block_settings.bullets }}</div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .results-timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rt-item-gap, 10px);
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline-item {
+      flex: 1 1 0%;
+      min-width: 0;
+      padding-right: var(--rt-items-row-gap, 32px);
+    }
+
+    .results-timeline-item:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .results-timeline-item__header {
+    display: flex;
+    align-items: center;
+    gap: var(--rt-item-header-gap, 10px);
+  }
+
+  .results-timeline-item__icon {
+    flex-shrink: 0;
+    width: var(--rt-icon-size, 56px);
+    height: var(--rt-icon-size, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--rt-icon-gradient-start, #e7b944), var(--rt-icon-gradient-end, #ffed68));
+    border-radius: 50%;
+    overflow: hidden;
+    color: var(--rt-icon-color, #1a1a1a);
+  }
+
+  .results-timeline-item__icon-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .results-timeline-item__icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .results-timeline-item__labels {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .results-timeline-item__period {
+    font-size: var(--rt-period-size-mobile, 16px);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  .results-timeline-item__period p {
+    margin: 0;
+  }
+
+  .results-timeline-item__period strong {
+    color: var(--rt-accent-color, #e9be47);
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline-item__period {
+      font-size: var(--rt-period-size-desktop, 18px);
+      line-height: 1.44;
+    }
+  }
+
+  .results-timeline-item__subtitle {
+    display: block;
+    font-size: var(--rt-subtitle-size, 18px);
+    font-weight: 700;
+    line-height: 1.44;
+  }
+
+  .results-timeline-item__bullets {
+    font-size: var(--rt-bullets-size-mobile, 14px);
+    line-height: 1.3;
+  }
+
+  .results-timeline-item__bullets :is(ul, ol) {
+    list-style: disc;
+    padding-left: 21px;
+    margin: 0;
+  }
+
+  .results-timeline-item__bullets li {
+    margin-bottom: var(--rt-bullets-gap-mobile, 4px);
+  }
+
+  .results-timeline-item__bullets li:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    .results-timeline-item__bullets {
+      font-size: var(--rt-bullets-size-desktop, 16px);
+      line-height: 1.25;
+    }
+
+    .results-timeline-item__bullets :is(ul, ol) {
+      padding-left: 24px;
+    }
+
+    .results-timeline-item__bullets li {
+      margin-bottom: var(--rt-bullets-gap-desktop, 8px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Timeline item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "period",
+      "label": "Period label",
+      "info": "Bold part of the text to highlight it in the accent color, e.g. \"Week **1**\".",
+      "default": "<p>Week 1</p>"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Add a short milestone title"
+    },
+    {
+      "type": "richtext",
+      "id": "bullets",
+      "label": "Bullet points",
+      "default": "<ul><li>Add a result customers can expect</li><li>Add another result</li></ul>"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "lightning",
+          "label": "Lightning bolt"
+        },
+        {
+          "value": "star",
+          "label": "Star badge"
+        },
+        {
+          "value": "heart_pulse",
+          "label": "Heart pulse"
+        }
+      ],
+      "default": "lightning"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom icon image",
+      "info": "Replaces the icon above when set."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline item"
+    }
+  ]
+}
+{% endschema %}

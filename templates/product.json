@@ -1001,7 +1001,7 @@
         "desktop_columns": 4,
         "tablet_columns": 2,
         "mobile_slide_width": 80,
-        "items_gap": 40,
+        "items_gap": 24,
         "content_gap": 40,
         "content_gap_mobile": 24,
         "mobile_edge_padding": 16,

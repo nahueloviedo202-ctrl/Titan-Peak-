@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -34,29 +35,67 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
-            "media_columns": "two",
-            "image_gap": 4,
-            "large_first_image": false,
-            "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "right",
-            "thumbnail_width": 44,
-            "thumbnail_radius": 0,
             "aspect_ratio": "adapt",
-            "constrain_to_viewport": true,
-            "media_fit": "contain",
             "media_radius": 0,
+            "media_background_color": "#fcfaf5",
             "extend_media": false,
-            "zoom": true,
-            "video_loop": false,
             "hide_variants": true,
+            "video_loop": false,
+            "show_thumbnails": true,
+            "thumbnail_size": 105,
+            "thumbnail_gap": 10,
+            "thumbnail_radius": 0,
+            "active_thumbnail_color": "#a45b2c",
+            "thumbnail_inactive_opacity": 50,
+            "show_nav_arrows": true,
+            "nav_button_size": 44,
+            "nav_button_background": "#ffffffe6",
+            "nav_icon_color": "#1a1a1a",
+            "enable_swipe": true,
+            "loop_navigation": false,
+            "transition_speed": 250,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "testimonial_card_Y3EQqh": {
+              "type": "testimonial-card",
+              "name": "Testimonial card",
+              "settings": {
+                "avatar_image": "shopify://shop_images/reviewr_image_beef_png_1c15e2e2-3afc-444d-9dce-6d3e0578e2d5.png",
+                "quote": "<p>Para hombres que buscan potenciar su energía y deseo, recomiendo un enfoque natural. Esta combinación de Shilajit puro y hierbas adaptógenas ayuda de forma segura a mejorar la resistencia y el bienestar para un rendimiento óptimo.</p>",
+                "reviewer_name": "Dr. Marcos Torres, M.D. ",
+                "reviewer_title": "Médico certificado, especialista en salud masculina",
+                "show_verified_badge": true,
+                "verified_badge_text": "Cliente verificado",
+                "verified_text_color": "#76af6d",
+                "verified_icon_color": "#1a8400",
+                "verified_font_size": 11,
+                "width": "100%",
+                "stack_on_mobile": true,
+                "avatar_size": 100,
+                "avatar_size_mobile": 80,
+                "gap": 16,
+                "background_color": "#fcfaf5",
+                "corner_radius": 12,
+                "card_padding": 16,
+                "text_color": "#1a1a1a",
+                "quote_font_size": 14,
+                "name_font_size": 15,
+                "credentials_font_size": 12,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "testimonial_card_Y3EQqh"
+          ]
         },
         "product-details": {
           "type": "_product-details",
@@ -116,6 +155,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,

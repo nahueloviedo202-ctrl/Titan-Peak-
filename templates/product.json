@@ -107,8 +107,8 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 28,
-            "sticky_details_desktop": true,
+            "gap": 16,
+            "sticky_details_desktop": false,
             "background_media": "none",
             "background_color": "",
             "video_position": "cover",
@@ -124,6 +124,34 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "rating_badge_jfcHVn": {
+              "type": "rating-badge",
+              "name": "Rating badge",
+              "settings": {
+                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "icon_count": 5,
+                "icon_color": "#FF4C01",
+                "icon_size": 18,
+                "icon_gap": 2,
+                "content_gap": 8,
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "group_icgrde": {
               "type": "group",
               "name": "t:names.header",
@@ -190,8 +218,79 @@
                   },
                   "blocks": {}
                 },
+                "icon_benefits_L9Gjr3": {
+                  "type": "icon-benefits",
+                  "name": "Icon benefits",
+                  "settings": {
+                    "columns": "1",
+                    "items_gap": 16,
+                    "icon_gap": 11,
+                    "title_size": 16,
+                    "title_weight": "700",
+                    "description_size": 16,
+                    "title_color": "",
+                    "description_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "icon_benefits_item_jCh4aT": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Energía y Vitalidad Diaria",
+                        "description": "<p>Enciende tu energía y resistencia física con 2000mg de Shilajit puro.</p>",
+                        "icon": "lightning_bolt",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto.svg",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_bDBy68": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Ingredientes Herbales para el Bienestar Masculino",
+                        "description": "<p>Botánicos potentes como Ashwagandha y Maca apoyan activamente la fuerza masculina.</p>",
+                        "icon": "leaf",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto2.svg",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_KVrADW": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Mezcla Natural de Foco y Resistencia",
+                        "description": "<p>Adaptógenos que manejan el estrés diario mientras mejoran la claridad mental y el ánimo.</p>",
+                        "icon": "fire",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_4ja3AY": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Fórmula Limpia, Testeada Clínicamente",
+                        "description": "<p>Origen vegetal y testeado por laboratorios externos para garantizar seguridad, pureza y confianza.</p>",
+                        "icon": "check_box",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4.svg",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icon_benefits_item_jCh4aT",
+                    "icon_benefits_item_bDBy68",
+                    "icon_benefits_item_KVrADW",
+                    "icon_benefits_item_4ja3AY"
+                  ]
+                },
                 "price_tVjtKg": {
                   "type": "price",
+                  "disabled": true,
                   "settings": {
                     "show_sale_price_first": true,
                     "show_installments": false,
@@ -215,8 +314,36 @@
               },
               "block_order": [
                 "text_xrnftG",
+                "icon_benefits_L9Gjr3",
                 "price_tVjtKg"
               ]
+            },
+            "image_popup_fwdVY7": {
+              "type": "image-popup",
+              "name": "Image popup",
+              "settings": {
+                "trigger_text": "Información Suplementaria",
+                "trigger_font_size": 20,
+                "trigger_font_weight": "700",
+                "trigger_underline": true,
+                "trigger_color": "",
+                "image": "shopify://shop_images/Gemini_Generated_Image_ovt39iovt39iovt3-clean.webp",
+                "image_fit": "contain",
+                "image_radius": 8,
+                "text": "",
+                "modal_width": 500,
+                "modal_radius": 12,
+                "modal_content_padding": 20,
+                "overlay_color": "",
+                "close_button_size": 40,
+                "close_button_background": "",
+                "close_button_icon_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -316,6 +443,7 @@
             "text_aEtTtq": {
               "type": "text",
               "name": "t:names.product_description",
+              "disabled": true,
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
@@ -341,7 +469,9 @@
             }
           },
           "block_order": [
+            "rating_badge_jfcHVn",
             "group_icgrde",
+            "image_popup_fwdVY7",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
@@ -355,9 +485,9 @@
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": false,
-        "gap": 48,
+        "gap": 24,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 0,

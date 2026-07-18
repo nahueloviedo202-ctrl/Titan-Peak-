@@ -98,7 +98,7 @@
               "type": "wellness-benefits",
               "name": "Wellness benefits",
               "settings": {
-                "heading": "<p>fuel you <strong>body and mind</strong> naturally</p>",
+                "heading": "<p>ALIMENTA <strong>TU CUERPO Y MENTE</strong> DE FORMA NATURAL</p>",
                 "columns_desktop": 4,
                 "columns_mobile": 2,
                 "column_gap_desktop": 24,
@@ -131,7 +131,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "heart_pulse",
-                    "text": "Supports vitality and wellness"
+                    "text": "Apoya la vitalidad y el bienestar"
                   },
                   "blocks": {}
                 },
@@ -139,7 +139,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "lightning",
-                    "text": "Promotes steady energy"
+                    "text": "Promueve una energía estable"
                   },
                   "blocks": {}
                 },
@@ -147,7 +147,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "focus",
-                    "text": "Supports focus and recovery"
+                    "text": "Favorece el foco y la recuperación"
                   },
                   "blocks": {}
                 },
@@ -155,7 +155,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "star",
-                    "text": "Boosts confidence"
+                    "text": "Aumenta la confianza"
                   },
                   "blocks": {}
                 }

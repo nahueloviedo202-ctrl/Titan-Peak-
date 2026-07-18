@@ -199,7 +199,12 @@
   </product-gallery-thumbs>
 {%- endif -%}
 
-{% content_for 'blocks' %}
+<div
+  class="product-media-gallery__blocks"
+  style="--pmg-blocks-gap: {{ gallery_settings.blocks_gap }}px;"
+>
+  {% content_for 'blocks' %}
+</div>
 
 {% stylesheet %}
   product-gallery-thumbs {
@@ -374,6 +379,16 @@
     .product-gallery-thumbs__thumb {
       transition: none;
     }
+  }
+
+  .product-media-gallery__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pmg-blocks-gap, 16px);
+  }
+
+  .product-media-gallery__blocks:empty {
+    display: none;
   }
 {% endstylesheet %}
 
@@ -574,6 +589,20 @@
       "step": 50,
       "unit": "ms",
       "default": 250
+    },
+    {
+      "type": "header",
+      "content": "Additional blocks"
+    },
+    {
+      "type": "range",
+      "id": "blocks_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 16
     },
     {
       "type": "header",

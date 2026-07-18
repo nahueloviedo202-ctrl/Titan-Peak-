@@ -13,12 +13,7 @@
 ></script>
 
 {%- liquid
-  assign card_count = 0
-  for block in section.blocks
-    if block.type == '_ingredients-carousel-card'
-      assign card_count = card_count | plus: 1
-    endif
-  endfor
+  assign card_count = section.blocks.size
 
   assign has_button = false
   if section.settings.button_label != blank and section.settings.button_link != blank

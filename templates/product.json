@@ -91,10 +91,84 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "wellness_benefits_zyjR8z": {
+              "type": "wellness-benefits",
+              "name": "Wellness benefits",
+              "settings": {
+                "heading": "<p>fuel you <strong>body and mind</strong> naturally</p>",
+                "columns_desktop": 4,
+                "columns_mobile": 2,
+                "column_gap_desktop": 24,
+                "column_gap_mobile": 16,
+                "item_gap": 10,
+                "card_background_color": "#fcfaf5",
+                "card_radius": 12,
+                "card_padding": 24,
+                "content_gap": 24,
+                "heading_size_mobile": 20,
+                "heading_size_desktop": 24,
+                "heading_gap": 0,
+                "heading_color": "#1a1a1a",
+                "heading_accent_color": "#a45b2c",
+                "icon_size_mobile": 38,
+                "icon_size_desktop": 44,
+                "icon_radius": 50,
+                "icon_gradient_start": "#e7b944",
+                "icon_gradient_end": "#ffed68",
+                "icon_color": "#1a1a1a",
+                "text_size": 16,
+                "text_color": "#1a1a1a",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "wellness_benefit_item_AL6mNW": {
+                  "type": "_wellness-benefit-item",
+                  "settings": {
+                    "icon": "heart_pulse",
+                    "text": "Supports vitality and wellness"
+                  },
+                  "blocks": {}
+                },
+                "wellness_benefit_item_fBXhqa": {
+                  "type": "_wellness-benefit-item",
+                  "settings": {
+                    "icon": "lightning",
+                    "text": "Promotes steady energy"
+                  },
+                  "blocks": {}
+                },
+                "wellness_benefit_item_8BfiGj": {
+                  "type": "_wellness-benefit-item",
+                  "settings": {
+                    "icon": "focus",
+                    "text": "Supports focus and recovery"
+                  },
+                  "blocks": {}
+                },
+                "wellness_benefit_item_YfT3Fg": {
+                  "type": "_wellness-benefit-item",
+                  "settings": {
+                    "icon": "star",
+                    "text": "Boosts confidence"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "wellness_benefit_item_AL6mNW",
+                "wellness_benefit_item_fBXhqa",
+                "wellness_benefit_item_8BfiGj",
+                "wellness_benefit_item_YfT3Fg"
+              ]
             }
           },
           "block_order": [
-            "testimonial_card_Y3EQqh"
+            "testimonial_card_Y3EQqh",
+            "wellness_benefits_zyjR8z"
           ]
         },
         "product-details": {

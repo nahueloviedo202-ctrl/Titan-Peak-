@@ -525,7 +525,7 @@
                 "icon": "shopify://shop_images/Capa_1.webp",
                 "icon_alt": "Guarantee",
                 "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
-                "background_color": "#fdf8ec",
+                "background_color": "#FCFAF5",
                 "radius": 12,
                 "gap_desktop": 16,
                 "gap_mobile": 12,

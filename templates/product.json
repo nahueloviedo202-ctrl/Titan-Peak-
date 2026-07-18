@@ -276,7 +276,7 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h1",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -518,6 +518,34 @@
               },
               "block_order": []
             },
+            "guarantee_banner_mN6rWP": {
+              "type": "guarantee-banner",
+              "name": "Guarantee banner",
+              "settings": {
+                "icon": "shopify://shop_images/Capa_1.webp",
+                "icon_alt": "Guarantee",
+                "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
+                "background_color": "#fdf8ec",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block_desktop": 12,
+                "padding_inline_desktop": 14,
+                "padding_block_mobile": 10,
+                "padding_inline_mobile": 12,
+                "icon_size_desktop": 56,
+                "icon_size_mobile": 46,
+                "text_size_desktop": 13,
+                "text_size_mobile": 12,
+                "text_weight": "500",
+                "text_color": "#1a1a1a",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "accordion_group_nHpwkV": {
               "type": "accordion-group",
               "name": "Accordion group",
@@ -616,6 +644,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "guarantee_banner_mN6rWP",
             "accordion_group_nHpwkV",
             "text_aEtTtq"
           ]

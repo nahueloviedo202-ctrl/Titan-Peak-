@@ -708,7 +708,7 @@
         "heading_color": "#1a1a1a",
         "text_color": "#1a1a1a",
         "accent_color": "#e9be47",
-        "padding-block-start": 40,
+        "padding-block-start": 56,
         "padding-block-end": 40
       }
     },

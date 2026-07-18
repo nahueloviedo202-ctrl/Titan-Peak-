@@ -56,6 +56,11 @@
   endif
 
   assign sizes = '(min-width: 750px) 45vw, 100vw'
+
+  assign gallery_margin_bottom = 0
+  if block.blocks.size > 0
+    assign gallery_margin_bottom = gallery_settings.margin_bottom
+  endif
 -%}
 
 {%- if media_count > 0 -%}
@@ -68,6 +73,7 @@
 {%- if product == blank or media_count == 0 -%}
   <div
     class="product-gallery-thumbs-placeholder{% if is_extend %} media-gallery--extend{% endif %}"
+    style="margin-bottom: {{ gallery_margin_bottom }}px;"
     {{ block.shopify_attributes }}
   >
     {{ 'product-apparel-1' | placeholder_svg_tag: 'product-media-gallery__placeholder-image' }}
@@ -84,6 +90,7 @@
     {% endif %}
     style="
       {% render 'spacing-style', settings: gallery_settings %}
+      margin-bottom: {{ gallery_margin_bottom }}px;
       --pgt-media-radius: {{ gallery_settings.media_radius }}px;
       --pgt-media-background: {{ gallery_settings.media_background_color }};
       {% unless gallery_settings.aspect_ratio == 'adapt' %}
@@ -593,6 +600,16 @@
     {
       "type": "header",
       "content": "Additional blocks"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Space below gallery",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 24
     },
     {
       "type": "range",

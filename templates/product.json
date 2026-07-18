@@ -709,7 +709,7 @@
         "text_color": "#1a1a1a",
         "accent_color": "#e9be47",
         "padding-block-start": 56,
-        "padding-block-end": 40
+        "padding-block-end": 56
       }
     },
     "full_width_images_j6d9b3": {
@@ -859,7 +859,7 @@
         "image": "shopify://shop_images/product9-clean.webp",
         "image_alt": "",
         "image_link": "",
-        "image_radius": 0,
+        "image_radius": 10,
         "kicker": "<p>TITANPEAK ES PARA TI SI...</p>",
         "description": "",
         "content_width": "page-width",

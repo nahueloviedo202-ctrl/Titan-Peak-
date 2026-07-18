@@ -775,12 +775,118 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "image_checklist_DaCEnz": {
+      "type": "image-checklist",
+      "blocks": {
+        "checklist_item_X9NDNN": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Sientes menos ganas y deseo que antes — y ya lleva más tiempo del que te gustaría admitir.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_CazK7z": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Tu energía se desploma durante el día y te despiertas ya cansado.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_ijxPPj": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Tu rendimiento es inconsistente y nunca sabes qué esperar de ti mismo.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_TqN9XN": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>El estrés y el bajón de ánimo están matando en silencio tu confianza y motivación.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_wmRNbi": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Has probado pastillas u otros suplementos y no han funcionado, o han dejado de hacerlo.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_qeVUmV": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Quieres atacar la causa real — no solo tapar el síntoma por una noche.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "checklist_item_X9NDNN",
+        "checklist_item_CazK7z",
+        "checklist_item_ijxPPj",
+        "checklist_item_TqN9XN",
+        "checklist_item_wmRNbi",
+        "checklist_item_qeVUmV"
+      ],
+      "name": "Image checklist",
+      "settings": {
+        "image": "shopify://shop_images/product9-clean.webp",
+        "image_alt": "",
+        "image_link": "",
+        "image_radius": 0,
+        "kicker": "<p>TITANPEAK ES PARA TI SI...</p>",
+        "description": "",
+        "content_width": "page-width",
+        "image_position": "right",
+        "image_position_mobile": "bottom",
+        "column_gap_mobile": 24,
+        "column_gap_desktop": 40,
+        "item_gap_mobile": 16,
+        "item_gap_desktop": 24,
+        "badge_size": 32,
+        "badge_gradient_start": "#e7b944",
+        "badge_gradient_end": "#ffed68",
+        "badge_ring_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "background_color": "#fcfaf5",
+        "padding_block_start_mobile": 32,
+        "padding_block_end_mobile": 32,
+        "padding_block_start_desktop": 56,
+        "padding_block_end_desktop": 56
+      }
     }
   },
   "order": [
     "main",
     "product_recommendations_qggXJq",
     "results_timeline_EH8jc9",
-    "full_width_images_j6d9b3"
+    "full_width_images_j6d9b3",
+    "image_checklist_DaCEnz"
   ]
 }

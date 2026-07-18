@@ -3,63 +3,60 @@
   color highlight on bold text) followed by a responsive grid of benefit
   items, each made of a circular icon badge and a short line of text.
 
+  Product information block: add it alongside blocks like description,
+  variant picker or disclosures inside the product details column.
+
   Every text, image, icon, color, size, spacing, radius, column count and
-  gap value is configurable through the section and block schemas.
+  gap value is configurable through the block and child block schemas.
 {%- enddoc -%}
 
 {% liquid
-  assign section_settings = section.settings
+  assign block_settings = block.settings
 %}
 
 {% capture style %}
-  {%- render 'spacing-style', settings: section_settings -%}
-  --wb-max-width: {{ section_settings.container_max_width }}px;
-  --wb-card-bg: {{ section_settings.card_background_color }};
-  --wb-card-radius: {{ section_settings.card_radius }}px;
-  --wb-card-padding: {{ section_settings.card_padding }}px;
-  --wb-content-gap: {{ section_settings.content_gap }}px;
-  --wb-columns-mobile: {{ section_settings.columns_mobile }};
-  --wb-columns-desktop: {{ section_settings.columns_desktop }};
-  --wb-column-gap-mobile: {{ section_settings.column_gap_mobile }}px;
-  --wb-column-gap-desktop: {{ section_settings.column_gap_desktop }}px;
-  --wb-item-gap: {{ section_settings.item_gap }}px;
-  --wb-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
-  --wb-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
-  --wb-heading-gap: {{ section_settings.heading_gap }}px;
-  --wb-heading-color: {{ section_settings.heading_color }};
-  --wb-heading-accent-color: {{ section_settings.heading_accent_color }};
-  --wb-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
-  --wb-icon-size-desktop: {{ section_settings.icon_size_desktop }}px;
-  --wb-icon-radius: {{ section_settings.icon_radius }}%;
-  --wb-icon-gradient-start: {{ section_settings.icon_gradient_start }};
-  --wb-icon-gradient-end: {{ section_settings.icon_gradient_end }};
-  --wb-icon-color: {{ section_settings.icon_color }};
-  --wb-text-size: {{ section_settings.text_size }}px;
-  --wb-text-color: {{ section_settings.text_color }};
+  {%- render 'spacing-style', settings: block_settings -%}
+  --wb-card-bg: {{ block_settings.card_background_color }};
+  --wb-card-radius: {{ block_settings.card_radius }}px;
+  --wb-card-padding: {{ block_settings.card_padding }}px;
+  --wb-content-gap: {{ block_settings.content_gap }}px;
+  --wb-columns-mobile: {{ block_settings.columns_mobile }};
+  --wb-columns-desktop: {{ block_settings.columns_desktop }};
+  --wb-column-gap-mobile: {{ block_settings.column_gap_mobile }}px;
+  --wb-column-gap-desktop: {{ block_settings.column_gap_desktop }}px;
+  --wb-item-gap: {{ block_settings.item_gap }}px;
+  --wb-heading-size-mobile: {{ block_settings.heading_size_mobile }}px;
+  --wb-heading-size-desktop: {{ block_settings.heading_size_desktop }}px;
+  --wb-heading-gap: {{ block_settings.heading_gap }}px;
+  --wb-heading-color: {{ block_settings.heading_color }};
+  --wb-heading-accent-color: {{ block_settings.heading_accent_color }};
+  --wb-icon-size-mobile: {{ block_settings.icon_size_mobile }}px;
+  --wb-icon-size-desktop: {{ block_settings.icon_size_desktop }}px;
+  --wb-icon-radius: {{ block_settings.icon_radius }}%;
+  --wb-icon-gradient-start: {{ block_settings.icon_gradient_start }};
+  --wb-icon-gradient-end: {{ block_settings.icon_gradient_end }};
+  --wb-icon-color: {{ block_settings.icon_color }};
+  --wb-text-size: {{ block_settings.text_size }}px;
+  --wb-text-color: {{ block_settings.text_color }};
 {% endcapture %}
 
-<div class="section-background"></div>
-
 <div
-  class="section section--{{ section_settings.section_width }} wellness-benefits spacing-style"
+  class="wellness-benefits spacing-style"
   style="{{ style }}"
   data-testid="wellness-benefits"
+  {{ block.shopify_attributes }}
 >
-  <div class="wellness-benefits__card">
-    {%- if section_settings.heading != blank -%}
-      <div class="wellness-benefits__heading">{{ section_settings.heading }}</div>
-    {%- endif -%}
+  {%- if block_settings.heading != blank -%}
+    <div class="wellness-benefits__heading">{{ block_settings.heading }}</div>
+  {%- endif -%}
 
-    <div class="wellness-benefits__grid">
-      {% content_for 'blocks' %}
-    </div>
+  <div class="wellness-benefits__grid">
+    {% content_for 'blocks' %}
   </div>
 </div>
 
 {% stylesheet %}
-  .wellness-benefits__card {
-    max-width: var(--wb-max-width, 900px);
-    margin-inline: auto;
+  .wellness-benefits {
     background-color: var(--wb-card-bg, #fcfaf5);
     border-radius: var(--wb-card-radius, 12px);
     padding: var(--wb-card-padding, 24px);
@@ -109,10 +106,8 @@
 {% schema %}
 {
   "name": "Wellness benefits",
-  "class": "section-wellness-benefits",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "tag": null,
+  "class": "wellness-benefits-block",
   "blocks": [
     {
       "type": "_wellness-benefit-item"
@@ -133,32 +128,6 @@
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
-      "type": "select",
-      "id": "section_width",
-      "label": "t:settings.width",
-      "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ],
-      "default": "page-width"
-    },
-    {
-      "type": "range",
-      "id": "container_max_width",
-      "label": "Card max width",
-      "min": 400,
-      "max": 1400,
-      "step": 10,
-      "unit": "px",
-      "default": 900
     },
     {
       "type": "range",
@@ -378,7 +347,7 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 40
+      "default": 0
     },
     {
       "type": "range",
@@ -388,7 +357,27 @@
       "max": 100,
       "step": 1,
       "unit": "px",
-      "default": 40
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [

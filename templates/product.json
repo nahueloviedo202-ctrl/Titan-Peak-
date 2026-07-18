@@ -54,6 +54,8 @@
             "enable_swipe": true,
             "loop_navigation": false,
             "transition_speed": 250,
+            "margin_bottom": 16,
+            "blocks_gap": 16,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,

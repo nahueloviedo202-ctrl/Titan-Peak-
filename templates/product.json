@@ -130,7 +130,7 @@
               "settings": {
                 "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
                 "icon_count": 5,
-                "icon_color": "#FF4C01",
+                "icon_color": "#ff4c01",
                 "icon_size": 18,
                 "icon_gap": 2,
                 "content_gap": 8,
@@ -880,6 +880,165 @@
         "padding_block_start_desktop": 56,
         "padding_block_end_desktop": 56
       }
+    },
+    "ingredients_carousel_34qKD4": {
+      "type": "ingredients-carousel",
+      "blocks": {
+        "ingredients_carousel_card_TwBaUN": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1.webp",
+            "title": "Ashwagandha",
+            "description": "Ayuda a reducir el cortisol, potencia la testosterona libre y mejora la resistencia al estrés.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_4KNepA": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1.webp",
+            "title": "Shilajit",
+            "description": "Apoya el aumento de la testosterona total y libre, potenciando la energía celular (ATP).",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_tnJT7m": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/ginsjen_9c376acb-359a-4149-a743-00cc79cce187.webp",
+            "title": "Panax Ginseng",
+            "description": "Ayuda a la producción de LH, mejora el flujo sanguíneo y tiene efecto antiinflamatorio.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_7ATCqF": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/saffron.webp",
+            "title": "Azafrán",
+            "description": "Favorece la producción de óxido nítrico, mejorando la circulación.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_T8MPrN": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_7954ca93-780a-4ac0-aa31-a7f690a2b3a6.webp",
+            "title": "Maca Negra",
+            "description": "Potencia el deseo a través de vías naturales del sistema nervioso central, sin intervenir en las hormonas.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_QCeHeC": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1_9fc9d08a-a7bf-48af-a123-29d191717d0b.webp",
+            "title": "L-Arginina",
+            "description": "Se convierte en óxido nítrico, favoreciendo la vasodilatación y el flujo sanguíneo hacia zonas íntimas.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "static-badges": {
+          "type": "_ingredients-carousel-badges",
+          "name": "Badges",
+          "static": true,
+          "settings": {
+            "gap": 16
+          },
+          "blocks": {
+            "ingredients_carousel_badge_BmhHnC": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "icon_color": "#1a1a1a",
+                "text": "Testeado por Laboratorios Externos",
+                "text_color": "#1a1a1a"
+              },
+              "blocks": {}
+            },
+            "ingredients_carousel_badge_TXWQqY": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "icon_color": "#1a1a1a",
+                "text": "Solución Pura y Natural",
+                "text_color": "#1a1a1a"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "ingredients_carousel_badge_BmhHnC",
+            "ingredients_carousel_badge_TXWQqY"
+          ]
+        }
+      },
+      "block_order": [
+        "ingredients_carousel_card_TwBaUN",
+        "ingredients_carousel_card_4KNepA",
+        "ingredients_carousel_card_tnJT7m",
+        "ingredients_carousel_card_7ATCqF",
+        "ingredients_carousel_card_T8MPrN",
+        "ingredients_carousel_card_QCeHeC"
+      ],
+      "name": "Ingredients carousel",
+      "settings": {
+        "heading_accent": "INGREDIENTES PODEROSOS",
+        "heading": "PARA UN RENDIMIENTO MÁXIMO",
+        "subheading": "",
+        "heading_size": 32,
+        "heading_weight": "800",
+        "accent_color": "#a45b2c",
+        "heading_color": "#1a1a1a",
+        "subheading_size": 18,
+        "subheading_color": "#1a1a1a",
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 80,
+        "items_gap": 16,
+        "content_gap": 40,
+        "content_gap_mobile": 24,
+        "mobile_edge_padding": 16,
+        "container_max_width": 1440,
+        "container_padding": 74,
+        "container_padding_tablet": 40,
+        "card_background_color": "#fcfaf5",
+        "card_radius": 12,
+        "card_padding": 16,
+        "title_color": "#1a1a1a",
+        "title_size": 18,
+        "description_color": "#1a1a1a",
+        "description_size": 16,
+        "image_height": 152,
+        "image_overlap": 56,
+        "image_height_mobile": 120,
+        "image_overlap_mobile": 48,
+        "show_arrows": true,
+        "arrow_color": "#1a1a1a",
+        "arrow_size": 32,
+        "arrow_gap": 24,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "transition_speed": 400,
+        "button_label": "COMPRAR AHORA",
+        "button_link": "shopify://collections/all",
+        "button_open_new_tab": false,
+        "button_text_color": "#1a1a1a",
+        "button_gradient_start": "#e7b944",
+        "button_gradient_end": "#ffed68",
+        "button_radius": 12,
+        "button_height": 60,
+        "button_font_size": 18,
+        "background_color": "#ffffff",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
     }
   },
   "order": [
@@ -887,6 +1046,7 @@
     "product_recommendations_qggXJq",
     "results_timeline_EH8jc9",
     "full_width_images_j6d9b3",
-    "image_checklist_DaCEnz"
+    "image_checklist_DaCEnz",
+    "ingredients_carousel_34qKD4"
   ]
 }

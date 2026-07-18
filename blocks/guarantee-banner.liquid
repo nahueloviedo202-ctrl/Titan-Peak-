@@ -1,0 +1,353 @@
+{%- doc -%}
+  Renders a "guarantee banner": a badge icon next to a short reassurance
+  message, replicating the PDP "Less than 1% of customers claim our
+  30-Days Money Back Guarantee" banner.
+
+  Product information block: add it inside the product details column,
+  alongside blocks like buy buttons, disclosures or the accordion group.
+
+  Every text, image, color, size, spacing and radius value is
+  configurable through the block schema.
+{%- enddoc -%}
+
+{% liquid
+  assign block_settings = block.settings
+%}
+
+{% capture style %}
+  {%- render 'spacing-style', settings: block_settings -%}
+  --gb-bg: {{ block_settings.background_color }};
+  --gb-radius: {{ block_settings.radius }}px;
+  --gb-gap-desktop: {{ block_settings.gap_desktop }}px;
+  --gb-gap-mobile: {{ block_settings.gap_mobile }}px;
+  --gb-padding-block-desktop: {{ block_settings.padding_block_desktop }}px;
+  --gb-padding-inline-desktop: {{ block_settings.padding_inline_desktop }}px;
+  --gb-padding-block-mobile: {{ block_settings.padding_block_mobile }}px;
+  --gb-padding-inline-mobile: {{ block_settings.padding_inline_mobile }}px;
+  --gb-icon-size-desktop: {{ block_settings.icon_size_desktop }}px;
+  --gb-icon-size-mobile: {{ block_settings.icon_size_mobile }}px;
+  --gb-text-size-desktop: {{ block_settings.text_size_desktop }}px;
+  --gb-text-size-mobile: {{ block_settings.text_size_mobile }}px;
+  --gb-text-color: {{ block_settings.text_color }};
+  --gb-text-weight: {{ block_settings.text_weight }};
+{% endcapture %}
+
+<div
+  class="guarantee-banner spacing-style"
+  style="{{ style }}"
+  data-testid="guarantee-banner"
+  {{ block.shopify_attributes }}
+>
+  {%- if block_settings.icon != blank -%}
+    {{
+      block_settings.icon
+      | image_url: width: 200
+      | image_tag:
+        width: block_settings.icon_size_desktop,
+        height: block_settings.icon_size_desktop,
+        loading: 'lazy',
+        alt: block_settings.icon_alt,
+        class: 'guarantee-banner__icon'
+    }}
+  {%- else -%}
+    {{ 'product-1' | placeholder_svg_tag: 'guarantee-banner__icon guarantee-banner__icon--placeholder' }}
+  {%- endif -%}
+
+  {%- if block_settings.text != blank -%}
+    <p class="guarantee-banner__text">{{ block_settings.text }}</p>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .guarantee-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gb-gap-mobile, 12px);
+    padding: var(--gb-padding-block-mobile, 10px) var(--gb-padding-inline-mobile, 12px);
+    background-color: var(--gb-bg, #fdf8ec);
+    border-radius: var(--gb-radius, 12px);
+    width: 100%;
+  }
+
+  .guarantee-banner__icon {
+    flex-shrink: 0;
+    width: var(--gb-icon-size-mobile, 46px);
+    height: var(--gb-icon-size-mobile, 46px);
+    display: block;
+    object-fit: contain;
+  }
+
+  .guarantee-banner__icon--placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / 0.05);
+    border-radius: 50%;
+    padding: 20%;
+  }
+
+  .guarantee-banner__text {
+    margin: 0;
+    font-size: var(--gb-text-size-mobile, 12px);
+    font-weight: var(--gb-text-weight, 500);
+    line-height: 1.4;
+    color: var(--gb-text-color, #1a1a1a);
+  }
+
+  @media screen and (min-width: 990px) {
+    .guarantee-banner {
+      gap: var(--gb-gap-desktop, 16px);
+      padding: var(--gb-padding-block-desktop, 12px) var(--gb-padding-inline-desktop, 14px);
+    }
+
+    .guarantee-banner__icon {
+      width: var(--gb-icon-size-desktop, 56px);
+      height: var(--gb-icon-size-desktop, 56px);
+    }
+
+    .guarantee-banner__text {
+      font-size: var(--gb-text-size-desktop, 13px);
+      line-height: 1.4;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Guarantee banner",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Badge image"
+    },
+    {
+      "type": "text",
+      "id": "icon_alt",
+      "label": "Badge alt text",
+      "default": "Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Less than 1% of customers claim our 30-Days Money Back Guarantee."
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#fdf8ec"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Spacing between icon and text (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Spacing between icon and text (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_block_desktop",
+      "label": "Card padding top/bottom (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_desktop",
+      "label": "Card padding left/right (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_block_mobile",
+      "label": "Card padding top/bottom (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_mobile",
+      "label": "Card padding left/right (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Icon size (desktop)",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 46
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Text size (desktop)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Text size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee banner",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

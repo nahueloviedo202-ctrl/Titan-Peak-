@@ -490,8 +490,8 @@
         "gap": 24,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "product_recommendations_qggXJq": {
@@ -635,10 +635,87 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "results_timeline_EH8jc9": {
+      "type": "results-timeline",
+      "blocks": {
+        "results_timeline_item_Bkbqxg": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>SEMANA 1</p>",
+            "subtitle": "Reinicio de Estrés y Energía",
+            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Mejora el sueño, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés se vuelve más manejable</li><li>Primeros signos de energía y foco recuperados</li></ul>",
+            "icon": "lightning"
+          },
+          "blocks": {}
+        },
+        "results_timeline_item_nE8Vez": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>MES 1</p>",
+            "subtitle": "Hormonas y Rendimiento en Recuperación",
+            "bullets": "<ul><li>El apoyo a la testosterona empieza a notarse</li><li>El deseo vuelve a aparecer de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día a día</li><li>La confianza y las ganas vuelven de forma natural</li></ul>",
+            "icon": "star"
+          },
+          "blocks": {}
+        },
+        "results_timeline_item_eXFLhN": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>MES 3+</p>",
+            "subtitle": "Rendimiento Máximo y Vitalidad",
+            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Vos lo notás. Todos lo notan.</li></ul>",
+            "icon": "heart_pulse"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "results_timeline_item_Bkbqxg",
+        "results_timeline_item_nE8Vez",
+        "results_timeline_item_eXFLhN"
+      ],
+      "name": "Results timeline",
+      "settings": {
+        "heading": "QUÉ ESPERAR: EJEMPLO DE LÍNEA DE RESULTADOS",
+        "section_width": "full-width",
+        "container_max_width": 1440,
+        "container_padding_desktop": 120,
+        "items_gap_desktop": 32,
+        "items_gap_mobile": 16,
+        "content_gap": 20,
+        "item_gap": 10,
+        "item_header_gap": 10,
+        "show_separator": true,
+        "separator_thickness": 1,
+        "separator_dot_size": 8,
+        "icon_size": 56,
+        "icon_gradient_start": "#e7b944",
+        "icon_gradient_end": "#ffed68",
+        "icon_color": "#1a1a1a",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 32,
+        "heading_gap_mobile": 24,
+        "heading_gap_desktop": 40,
+        "period_size_mobile": 16,
+        "period_size_desktop": 18,
+        "subtitle_size": 18,
+        "bullets_size_mobile": 14,
+        "bullets_size_desktop": 16,
+        "bullets_gap_mobile": 4,
+        "bullets_gap_desktop": 8,
+        "background_color": "#fcfaf5",
+        "heading_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "accent_color": "#e9be47",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "results_timeline_EH8jc9"
   ]
 }

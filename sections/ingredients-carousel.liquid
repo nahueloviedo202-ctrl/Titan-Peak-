@@ -708,7 +708,7 @@
       "id": "container_padding",
       "label": "Side padding",
       "min": 0,
-      "max": 120,
+      "max": 100,
       "step": 1,
       "unit": "px",
       "default": 74
@@ -912,8 +912,7 @@
     {
       "type": "url",
       "id": "button_link",
-      "label": "t:settings.link",
-      "default": "shopify://collections/all"
+      "label": "t:settings.link"
     },
     {
       "type": "checkbox",
@@ -1008,6 +1007,9 @@
     {
       "name": "Ingredients carousel",
       "category": "t:categories.product",
+      "settings": {
+        "button_link": "shopify://collections/all"
+      },
       "blocks": {
         "card_1": {
           "type": "_ingredients-carousel-card",

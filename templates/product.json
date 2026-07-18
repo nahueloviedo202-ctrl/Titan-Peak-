@@ -711,11 +711,76 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "full_width_images_j6d9b3": {
+      "type": "full-width-images",
+      "blocks": {
+        "full_width_image_iNQQVE": {
+          "type": "full-width-image",
+          "name": "Full width image",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_h3azq3h3azq3h3az-clean.webp",
+            "alt": "",
+            "link": "",
+            "open_in_new_tab": false,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "full_width_image_iy43nk": {
+          "type": "full-width-image",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_56mvf956mvf956mv-clean.webp",
+            "alt": "",
+            "link": "",
+            "open_in_new_tab": false,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "full_width_image_kzLaHc": {
+          "type": "full-width-image",
+          "settings": {
+            "image": "shopify://shop_images/16d2d165f19ba798150ae586edd47592.webp",
+            "alt": "",
+            "link": "",
+            "open_in_new_tab": false,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "full_width_image_iNQQVE",
+        "full_width_image_iy43nk",
+        "full_width_image_kzLaHc"
+      ],
+      "name": "Full width images",
+      "settings": {
+        "section_width": "full-width",
+        "gap": 0,
+        "background_color": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
     "product_recommendations_qggXJq",
-    "results_timeline_EH8jc9"
+    "results_timeline_EH8jc9",
+    "full_width_images_j6d9b3"
   ]
 }

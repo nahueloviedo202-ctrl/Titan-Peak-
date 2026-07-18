@@ -20,7 +20,10 @@
     endif
   endfor
 
-  assign has_button = section.settings.button_label != blank and section.settings.button_link != blank
+  assign has_button = false
+  if section.settings.button_label != blank and section.settings.button_link != blank
+    assign has_button = true
+  endif
 
   if section.settings.background_color != blank
     render 'contrast-override', background_color: section.settings.background_color, section_id: section.id

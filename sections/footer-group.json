@@ -71,7 +71,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>En TITAN PEAK, la calidad y la fiabilidad son nuestras prioridades. Nuestros productos están cuidadosamente testados y provienen directamente de la fuente natural, para que puedas confiar en los mejores resultados. ¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!</p>",
+                "text": "<p>En TITAN PEAK, la calidad y la fiabilidad son nuestras prioridades. Nuestros productos están cuidadosamente testados y provienen directamente de la fuente natural, para que puedas confiar en los mejores resultados. </p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",

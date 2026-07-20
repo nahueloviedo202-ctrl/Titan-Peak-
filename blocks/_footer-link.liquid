@@ -8,11 +8,21 @@
   assign link_settings = block.settings
 -%}
 
+{% capture link_style %}
+  {%- if link_settings.text_color != blank -%}color: {{ link_settings.text_color }};{%- endif -%}
+  {%- if link_settings.font_size != blank -%}font-size: {{ link_settings.font_size }}px;{%- endif -%}
+  {%- if link_settings.font_weight != blank -%}font-weight: {{ link_settings.font_weight }};{%- endif -%}
+{% endcapture %}
+{% assign link_style = link_style | strip %}
+
 <li {{ block.shopify_attributes }}>
   {%- if link_settings.link != blank -%}
     <a
       href="{{ link_settings.link }}"
       class="footer-columns__link"
+      {% if link_style != blank %}
+        style="{{ link_style }}"
+      {% endif %}
       {% if link_settings.open_new_tab %}
         target="_blank"
         rel="noopener"
@@ -21,7 +31,12 @@
       {{- link_settings.label -}}
     </a>
   {%- else -%}
-    <span class="footer-columns__link footer-columns__link--disabled">{{- link_settings.label -}}</span>
+    <span
+      class="footer-columns__link footer-columns__link--disabled"
+      {% if link_style != blank %}
+        style="{{ link_style }}"
+      {% endif %}
+    >{{- link_settings.label -}}</span>
   {%- endif -%}
 </li>
 
@@ -46,6 +61,54 @@
       "id": "open_new_tab",
       "label": "t:settings.open_new_tab",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": ""
     }
   ],
   "presets": [

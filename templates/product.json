@@ -972,6 +972,7 @@
           "name": "Full width image",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_h3azq3h3azq3h3az-clean.webp",
+            "mobile_image": "shopify://shop_images/fix10mobile-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,

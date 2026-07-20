@@ -986,7 +986,8 @@
         "full_width_image_iy43nk": {
           "type": "full-width-image",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_19_jul_2026_07_20_28_p.m.webp",
+            "image": "shopify://shop_images/fix9-clean.webp",
+            "mobile_image": "shopify://shop_images/fix9mobile-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,

@@ -29,6 +29,14 @@
     assign transparent_text_color_setting = section.settings.text_color_transparent_collection
   endif
 
+  # Product-template-only layout: fixed nav / centered logo / actions columns,
+  # matching the reference design. Leaves every other template's header
+  # (including the home page) completely unaffected.
+  assign product_page_style = false
+  if section.settings.enable_product_page_style and template.name == 'product'
+    assign product_page_style = true
+  endif
+
   if section.settings.enable_sticky_header == 'always'
     assign sticky = 'always'
   elsif section.settings.enable_sticky_header == 'scroll-up'
@@ -193,6 +201,10 @@
 
   if collapse_header_paddings_class
     assign class = class | append: ' ' | append: collapse_header_paddings_class
+  endif
+
+  if product_page_style
+    assign class = class | append: ' header--product-page-style'
   endif
 
   # Determine transparent background value
@@ -360,6 +372,19 @@
       --header-actions-font-weight: var(--font-{{ section.settings.actions_font | default: 'heading' }}--weight);
       --header-actions-text-case: {{ section.settings.actions_text_case | default: 'none' }};
     {% endif %}
+    {% if product_page_style %}
+      --pph-background: {{ section.settings.product_page_background_color }};
+      --pph-text: {{ section.settings.product_page_text_color }};
+      --header-logo-image-width: {{ section.settings.product_page_logo_width }}px;
+      --header-logo-image-width-mobile: {{ section.settings.product_page_logo_width_mobile }}px;
+      --pph-padding-block: {{ section.settings.product_page_padding_block }}px;
+      --pph-padding-block-mobile: {{ section.settings.product_page_padding_block_mobile }}px;
+      --pph-column-gap: {{ section.settings.product_page_column_gap }}px;
+      --pph-column-gap-mobile: {{ section.settings.product_page_column_gap_mobile }}px;
+      --pph-link-color: {{ section.settings.product_page_link_color }};
+      --pph-link-weight: {{ section.settings.product_page_link_weight }};
+      --pph-icon-gap: {{ section.settings.product_page_icon_gap }}px;
+    {% endif %}
   "
 >
   <div class="header__underlay header__underlay-closed"></div>
@@ -369,98 +394,132 @@
   {%- if request.page_type == 'index' -%}
     <h1 class="visually-hidden">{{ shop.name }}</h1>
   {%- endif -%}
-  {% for row in rows %}
-    {% liquid
-      assign background = 'background_color_' | append: row
-      assign row_setting = 'background_color_' | append: row
-      assign text_setting = 'text_color_' | append: row
-      assign row_class_id = row | append: '-' | append: section.id
-      assign row_class = ' color-custom-' | append: row_class_id
-      assign class = 'header__row header__row--[row] color-[row_background] section section--full-width-margin section--[section-width]' | replace: '[row]', row | replace: '[row_background]', section.settings[background] | replace: '[section-width]', section.settings.section_width
-
-      case row
-        when 'top'
-          assign first = drawer_menu
-
-          if bottom_row_blocks.size > 0 and section.settings.divider_size == 'page-width'
-            assign class = class | append: ' divider--page-width'
-          endif
-
-          if bottom_row_blocks.size > 0
-            assign border_bottom_setting_id = 'divider_width'
-            assign border_bottom_color_setting_id = 'divider_color'
-          else
-            assign border_bottom_setting_id = 'border_width'
-            assign border_bottom_color_setting_id = 'bottom_border_color'
-          endif
-        when 'bottom'
-          assign first = ''
-          assign class = class | append: ' mobile:hidden'
-
-          assign border_bottom_setting_id = 'border_width'
-          assign border_bottom_color_setting_id = 'bottom_border_color'
-      endcase
-
-      assign style = '--border-bottom-width: [width]px; ' | replace: '[width]', section.settings[border_bottom_setting_id]
-
-      assign border_bottom_color_value = section.settings[border_bottom_color_setting_id]
-      if border_bottom_color_value != blank
-        assign style = style | append: '--border-bottom-color: [color]; ' | replace: '[color]', border_bottom_color_value
-      endif
-
-      if row == 'top'
-        assign custom_color_styles = true
-        assign class = class | append: row_class
-        assign style = style | append: '--border-bottom-width-mobile: [width]px; ' | replace: '[width]', section.settings.border_width
-
-        assign mobile_border_color = section.settings.bottom_border_color | default: 'var(--color-border)'
-        assign style = style | append: '--border-bottom-color-mobile: [color]; ' | replace: '[color]', mobile_border_color
-      elsif bottom_row_blocks.size > 0
-        assign custom_color_styles = true
-        assign class = class | append: row_class
-      else
-        assign custom_color_styles = false
-      endif
-    %}
-
-    {% capture content %}
-      {% if custom_color_styles %}
-        {% render 'contrast-override', background_color: section.settings[row_setting], text_color: section.settings[text_setting], section_id: row_class_id %}
-      {% endif %}
-      {% render 'header-row',
-        row: row,
-        order: order,
-        settings: section.settings,
-        first: first,
-        logo: logo,
-        menu: menu,
-        actions: actions,
-        localization: localization_markup,
-        search: search,
-        drawer_search: drawer_search
-      %}
-    {% endcapture %}
-
-    {% assign content = content | strip %}
-    {% if content != blank %}
-      <div
-        class="{{ class | strip }}"
-        ref="headerRowTop"
-        {%- if style != blank -%}
-          style="{{ style | strip }}"
-        {%- endif -%}
-      >
-        <div class="header__columns spacing-style">
-          {{ content }}
+  {% if product_page_style %}
+    {% comment %}
+      Fixed nav / centered logo / actions columns for product templates only.
+      Reuses the theme's existing header__column grid (and, inside logo/menu/
+      actions, its native mobile drawer markup) instead of following the
+      global logo/menu position settings used everywhere else.
+    {% endcomment %}
+    <div class="header__row header__row--top header__row--product-page">
+      <div class="header__columns spacing-style">
+        <div
+          class="header__column header__column--left"
+          data-testid="header-top-left"
+        >
+          {{ drawer_menu }}
+          {{ menu }}
+        </div>
+        <div
+          class="header__column header__column--center"
+          data-testid="header-top-center"
+        >
+          {{ logo }}
+        </div>
+        <div
+          class="header__column header__column--right"
+          data-testid="header-top-right"
+        >
+          {{ search }}
+          {{ localization_markup }}
+          {{ actions }}
         </div>
       </div>
-    {% endif %}
-  {% endfor %}
-
-  {% if navigation_bar != blank %}
-    <div class="header__row header__navigation-bar-row">
-      {{ navigation_bar }}
     </div>
+  {% else %}
+    {% for row in rows %}
+      {% liquid
+        assign background = 'background_color_' | append: row
+        assign row_setting = 'background_color_' | append: row
+        assign text_setting = 'text_color_' | append: row
+        assign row_class_id = row | append: '-' | append: section.id
+        assign row_class = ' color-custom-' | append: row_class_id
+        assign class = 'header__row header__row--[row] color-[row_background] section section--full-width-margin section--[section-width]' | replace: '[row]', row | replace: '[row_background]', section.settings[background] | replace: '[section-width]', section.settings.section_width
+
+        case row
+          when 'top'
+            assign first = drawer_menu
+
+            if bottom_row_blocks.size > 0 and section.settings.divider_size == 'page-width'
+              assign class = class | append: ' divider--page-width'
+            endif
+
+            if bottom_row_blocks.size > 0
+              assign border_bottom_setting_id = 'divider_width'
+              assign border_bottom_color_setting_id = 'divider_color'
+            else
+              assign border_bottom_setting_id = 'border_width'
+              assign border_bottom_color_setting_id = 'bottom_border_color'
+            endif
+          when 'bottom'
+            assign first = ''
+            assign class = class | append: ' mobile:hidden'
+
+            assign border_bottom_setting_id = 'border_width'
+            assign border_bottom_color_setting_id = 'bottom_border_color'
+        endcase
+
+        assign style = '--border-bottom-width: [width]px; ' | replace: '[width]', section.settings[border_bottom_setting_id]
+
+        assign border_bottom_color_value = section.settings[border_bottom_color_setting_id]
+        if border_bottom_color_value != blank
+          assign style = style | append: '--border-bottom-color: [color]; ' | replace: '[color]', border_bottom_color_value
+        endif
+
+        if row == 'top'
+          assign custom_color_styles = true
+          assign class = class | append: row_class
+          assign style = style | append: '--border-bottom-width-mobile: [width]px; ' | replace: '[width]', section.settings.border_width
+
+          assign mobile_border_color = section.settings.bottom_border_color | default: 'var(--color-border)'
+          assign style = style | append: '--border-bottom-color-mobile: [color]; ' | replace: '[color]', mobile_border_color
+        elsif bottom_row_blocks.size > 0
+          assign custom_color_styles = true
+          assign class = class | append: row_class
+        else
+          assign custom_color_styles = false
+        endif
+      %}
+
+      {% capture content %}
+        {% if custom_color_styles %}
+          {% render 'contrast-override', background_color: section.settings[row_setting], text_color: section.settings[text_setting], section_id: row_class_id %}
+        {% endif %}
+        {% render 'header-row',
+          row: row,
+          order: order,
+          settings: section.settings,
+          first: first,
+          logo: logo,
+          menu: menu,
+          actions: actions,
+          localization: localization_markup,
+          search: search,
+          drawer_search: drawer_search
+        %}
+      {% endcapture %}
+
+      {% assign content = content | strip %}
+      {% if content != blank %}
+        <div
+          class="{{ class | strip }}"
+          ref="headerRowTop"
+          {%- if style != blank -%}
+            style="{{ style | strip }}"
+          {%- endif -%}
+        >
+          <div class="header__columns spacing-style">
+            {{ content }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if navigation_bar != blank %}
+      <div class="header__row header__navigation-bar-row">
+        {{ navigation_bar }}
+      </div>
+    {% endif %}
   {% endif %}
 </header-component>
 
@@ -1167,6 +1226,49 @@
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
   }
+
+  /* ================================
+   * Product-template-only header style (see "product_page_style" above).
+   * Every rule below is scoped under .header--product-page-style, so it can
+   * never affect the header on any other template.
+   * ================================ */
+  .header--product-page-style .header__row--product-page {
+    background-color: var(--pph-background, #ffffff);
+    border-bottom: none;
+    padding-block: var(--pph-padding-block-mobile, 12px);
+  }
+
+  .header--product-page-style .header__row--product-page .header__columns {
+    column-gap: var(--pph-column-gap-mobile, 12px);
+    color: var(--pph-text, #1a1a1a);
+  }
+
+  .header--product-page-style .header__row--product-page .header__column--left,
+  .header--product-page-style .header__row--product-page .header__column--right {
+    gap: var(--pph-icon-gap, 16px);
+  }
+
+  .header--product-page-style .header__row--product-page .menu-list__link {
+    color: var(--pph-link-color, inherit);
+    font-weight: var(--pph-link-weight, 700);
+    transition: opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  @media (hover: hover) {
+    .header--product-page-style .header__row--product-page .menu-list__link:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .header--product-page-style .header__row--product-page {
+      padding-block: var(--pph-padding-block, 24px);
+    }
+
+    .header--product-page-style .header__row--product-page .header__columns {
+      column-gap: var(--pph-column-gap, 40px);
+    }
+  }
 {% endstylesheet %}
 
 {% unless request.design_mode %}
@@ -1723,6 +1825,136 @@
       "label": "t:settings.text_color_transparent",
       "placeholder": "t:settings.default",
       "visible_if": "{{ section.settings.enable_transparent_header_product }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_product_page_style",
+      "label": "Use a dedicated layout on product pages",
+      "info": "Replaces the header layout above with a fixed nav / centered logo / actions arrangement, only on product templates. The home page and every other template keep the header settings above unchanged.",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "product_page_logo_width",
+      "label": "Logo width (tablet & desktop)",
+      "min": 60,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 175,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_logo_width_mobile",
+      "label": "Logo width (mobile)",
+      "min": 40,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "default": 140,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_padding_block",
+      "label": "Vertical padding (tablet & desktop)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_padding_block_mobile",
+      "label": "Vertical padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_column_gap",
+      "label": "Gap between columns (tablet & desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_column_gap_mobile",
+      "label": "Gap between columns (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "range",
+      "id": "product_page_icon_gap",
+      "label": "Gap between icons",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16,
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "select",
+      "id": "product_page_link_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": "700",
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "color",
+      "id": "product_page_link_color",
+      "label": "Nav link color",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "color",
+      "id": "product_page_background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
+    },
+    {
+      "type": "color",
+      "id": "product_page_text_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a",
+      "visible_if": "{{ section.settings.enable_product_page_style }}"
     },
     {
       "type": "header",

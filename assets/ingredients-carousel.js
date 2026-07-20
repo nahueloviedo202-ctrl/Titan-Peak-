@@ -1,4 +1,5 @@
 import { Component } from '@theme/component';
+import { scrollIntoView } from '@theme/scrolling';
 
 /**
  * A multi-column carousel that slides a fixed number of cards at a time.
@@ -150,3 +151,26 @@ class IngredientsCarouselComponent extends Component {
 if (!customElements.get('ingredients-carousel-component')) {
   customElements.define('ingredients-carousel-component', IngredientsCarouselComponent);
 }
+
+/**
+ * The CTA button's link can point to an anchor on the same page (e.g. "#reviews").
+ * The page's scrolling container (`.page-wrapper` on desktop) doesn't always
+ * follow the browser's native hash-jump, so intercept the click and scroll to
+ * the target smoothly ourselves instead of relying on default anchor navigation.
+ */
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+
+  const button = target.closest('.ingredients-carousel__button');
+  if (!(button instanceof HTMLAnchorElement)) return;
+
+  const hash = button.getAttribute('href') || '';
+  if (!hash.startsWith('#') || hash.length < 2) return;
+
+  const destination = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!destination) return;
+
+  event.preventDefault();
+  scrollIntoView(destination);
+});

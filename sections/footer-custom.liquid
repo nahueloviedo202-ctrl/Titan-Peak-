@@ -1,8 +1,8 @@
 {%- doc -%}
   Renders a custom multi-column footer: a row of columns (newsletter
   signup, link menus, text) followed by a copyright bar. Every column is a
-  nested block ("_footer-newsletter", "_footer-menu" or "_footer-text"), and
-  every link inside a menu column is its own nested "_footer-link" block, so
+  nested block ("_footer-newsletter", "footer-menu" or "_footer-text"), and
+  every link inside a menu column is its own nested "footer-link" block, so
   merchants can add, remove or reorder everything freely.
 
   Reuses the theme's native `footer-copyright` block (with its
@@ -152,7 +152,7 @@
       "type": "_footer-newsletter"
     },
     {
-      "type": "_footer-menu"
+      "type": "footer-menu"
     },
     {
       "type": "_footer-text"
@@ -469,34 +469,34 @@
           }
         },
         "policy_menu": {
-          "type": "_footer-menu",
+          "type": "footer-menu",
           "settings": {
             "heading": "Our Policy"
           },
           "blocks": {
             "link_1": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Terms and Conditions",
                 "link": "shopify://pages/terms"
               }
             },
             "link_2": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Refund Policy",
                 "link": "shopify://pages/refund-policy"
               }
             },
             "link_3": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Privacy Policy",
                 "link": "shopify://pages/privacy-policy"
               }
             },
             "link_4": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Shipping Policy",
                 "link": "shopify://pages/shipping-policy"
@@ -506,34 +506,34 @@
           "block_order": ["link_1", "link_2", "link_3", "link_4"]
         },
         "useful_menu": {
-          "type": "_footer-menu",
+          "type": "footer-menu",
           "settings": {
             "heading": "Useful Links"
           },
           "blocks": {
             "link_1": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "About Us",
                 "link": "shopify://pages/about-us"
               }
             },
             "link_2": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Contact Us",
                 "link": "shopify://pages/contact-us"
               }
             },
             "link_3": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "Track Your Order",
                 "link": ""
               }
             },
             "link_4": {
-              "type": "_footer-link",
+              "type": "footer-link",
               "settings": {
                 "label": "FAQ's",
                 "link": "shopify://pages/faqs"

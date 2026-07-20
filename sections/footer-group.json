@@ -281,10 +281,41 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "footer_menu_useful_links": {
+              "type": "footer-menu",
+              "settings": {
+                "heading": ""
+              },
+              "blocks": {
+                "link_1": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Sobre Nosotros",
+                    "link": "shopify://pages/about-us"
+                  }
+                },
+                "link_2": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Contacto",
+                    "link": "shopify://pages/contact-us"
+                  }
+                },
+                "link_3": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Nuevo enlace",
+                    "link": ""
+                  }
+                }
+              },
+              "block_order": ["link_1", "link_2", "link_3"]
             }
           },
           "block_order": [
-            "text_icwKzR"
+            "text_icwKzR",
+            "footer_menu_useful_links"
           ]
         },
         "group_dmXwF6": {

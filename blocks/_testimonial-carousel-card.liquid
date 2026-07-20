@@ -1,0 +1,333 @@
+{%- doc -%}
+  Renders a single testimonial slide (photo, name, verified badge, star
+  rating, tag and quote) inside the "testimonial-carousel" section.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-review content plus an
+  optional background color override.
+
+  Meant to be used exclusively as a child block of `sections/testimonial-carousel.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign star_count = block_settings.star_count | default: 0
+  assign rating_label = 'Rating ' | append: star_count | append: ' stars'
+-%}
+
+<article
+  class="testimonial-carousel-card"
+  {% if block_settings.background_color != blank %}
+    style="--tc-card-bg-override: {{ block_settings.background_color }};"
+  {% endif %}
+  {{ block.shopify_attributes }}
+>
+  <div class="testimonial-carousel-card__media">
+    {%- if block_settings.image != blank -%}
+      {{
+        block_settings.image
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '400, 600, 800',
+          sizes: '(min-width: 990px) 320px, 85vw',
+          alt: block_settings.image.alt | default: block_settings.reviewer_name,
+          class: 'testimonial-carousel-card__image'
+      }}
+    {%- else -%}
+      {{ 'product-apparel-1' | placeholder_svg_tag: 'testimonial-carousel-card__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="testimonial-carousel-card__content">
+    {%- if block_settings.reviewer_name != blank or block_settings.show_verified -%}
+      <div class="testimonial-carousel-card__info">
+        {%- if block_settings.reviewer_name != blank -%}
+          <span class="testimonial-carousel-card__name">{{ block_settings.reviewer_name }}</span>
+        {%- endif -%}
+
+        {%- if block_settings.show_verified -%}
+          <span class="testimonial-carousel-card__verified">
+            <svg
+              class="testimonial-carousel-card__verified-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M7.875 14.6283C6.64453 14.6107 5.51953 14.3119 4.5 13.7318C3.48047 13.1343 2.65429 12.308 2.02148 11.2533C1.42383 10.181 1.125 9.05604 1.125 7.8783C1.125 6.70056 1.42383 5.57556 2.02148 4.5033C2.65429 3.4486 3.48047 2.62244 4.5 2.02478C5.51953 1.4447 6.64453 1.14587 7.875 1.1283C9.10547 1.14587 10.2305 1.4447 11.25 2.02478C12.2695 2.62244 13.0957 3.4486 13.7285 4.5033C14.3261 5.57556 14.625 6.70056 14.625 7.8783C14.625 9.05604 14.3261 10.181 13.7285 11.2533C13.0957 12.308 12.2695 13.1343 11.25 13.7318C10.2305 14.3119 9.10547 14.6107 7.875 14.6283ZM10.8545 6.63903C11.1006 6.3402 11.1006 6.04139 10.8545 5.74256C10.5557 5.49645 10.2568 5.49645 9.95805 5.74256L7.03125 8.66931L5.79198 7.43005C5.49316 7.18395 5.19434 7.18395 4.89552 7.43005C4.64941 7.72889 4.64941 8.0277 4.89552 8.32653L6.58302 10.0141C6.88184 10.2601 7.18066 10.2601 7.47948 10.0141L10.8545 6.63903Z"
+              />
+            </svg>
+            {{- block_settings.verified_text -}}
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if star_count > 0 -%}
+      <div
+        class="testimonial-carousel-card__stars"
+        aria-label="{{ rating_label }}"
+      >
+        <svg
+          class="visually-hidden"
+          style="width: 0; height: 0;"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 18 17"
+          role="presentation"
+        >
+          <defs>
+            <symbol
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 18 17"
+              id="testimonial-carousel-star-{{ block.id }}"
+            >
+              <path
+                d="M7.8749 0.445959C8.16835 -0.148637 9.01622 -0.148637 9.30967 0.445959L11.3451 4.57013C11.4616 4.80625 11.6869 4.9699 11.9474 5.00777L16.4987 5.66911C17.1549 5.76445 17.4169 6.57083 16.9421 7.03366L13.6487 10.2439C13.4602 10.4277 13.3742 10.6925 13.4187 10.952L14.1961 15.4849C14.3082 16.1384 13.6223 16.6368 13.0354 16.3282L8.96456 14.1881C8.7315 14.0656 8.45307 14.0656 8.22001 14.1881L4.14921 16.3282C3.56231 16.6368 2.87636 16.1384 2.98845 15.4849L3.7659 10.952C3.81042 10.6925 3.72438 10.4277 3.53583 10.2439L0.24248 7.03366C-0.232334 6.57083 0.0296742 5.76445 0.685851 5.66911L5.23715 5.00776C5.49771 4.9699 5.72297 4.80625 5.8395 4.57013L7.8749 0.445959Z"
+              />
+            </symbol>
+          </defs>
+        </svg>
+
+        {%- for i in (1..star_count) -%}
+          <svg
+            class="testimonial-carousel-card__star"
+            viewBox="0 0 18 17"
+            role="presentation"
+            aria-hidden="true"
+          >
+            <use xlink:href="#testimonial-carousel-star-{{ block.id }}"></use>
+          </svg>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if block_settings.show_tag and block_settings.tag_text != blank -%}
+      <span class="testimonial-carousel-card__tag">{{ block_settings.tag_text }}</span>
+    {%- endif -%}
+
+    {%- if block_settings.quote != blank -%}
+      <div class="testimonial-carousel-card__text rte">{{ block_settings.quote }}</div>
+    {%- endif -%}
+  </div>
+</article>
+
+{% stylesheet %}
+  .testimonial-carousel-card {
+    flex: 0 0 var(--tc-mobile-slide-width, 85%);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tc-card-bg-override, var(--tc-card-bg, #ffffff));
+    border-radius: var(--tc-card-radius, 16px);
+    overflow: hidden;
+  }
+
+  .testimonial-carousel-card__media {
+    aspect-ratio: var(--tc-image-aspect, 1 / 1);
+    flex-shrink: 0;
+  }
+
+  .testimonial-carousel-card__image,
+  .testimonial-carousel-card__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-carousel-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--tc-card-content-gap, 10px);
+    padding: var(--tc-card-padding, 16px);
+  }
+
+  .testimonial-carousel-card__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .testimonial-carousel-card__name {
+    margin: 0;
+    color: var(--tc-name-color, #1a1a1a);
+    font-size: var(--tc-name-size, 15px);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .testimonial-carousel-card__verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--tc-verified-text-color, #28a745);
+    font-size: var(--tc-verified-size, 12px);
+    font-weight: 600;
+  }
+
+  .testimonial-carousel-card__verified-icon {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    color: var(--tc-verified-icon-color, #1a8400);
+  }
+
+  .testimonial-carousel-card__stars {
+    display: flex;
+    gap: var(--tc-star-gap, 2px);
+    color: var(--tc-star-color, #ff6b00);
+  }
+
+  .testimonial-carousel-card__star {
+    width: var(--tc-star-size, 18px);
+    height: var(--tc-star-size, 18px);
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .testimonial-carousel-card__tag {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 2px 8px;
+    border-radius: var(--tc-tag-radius, 8px);
+    background: var(--tc-tag-bg, #473c1f);
+    color: var(--tc-tag-color, #ffffff);
+    font-size: var(--tc-tag-size, 14px);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .testimonial-carousel-card__text {
+    margin: 0;
+    color: var(--tc-quote-color, #1a1a1a);
+    font-size: var(--tc-quote-size, 14px);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .testimonial-carousel-card__text :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonial-carousel-card {
+      flex-basis: calc(
+        (100% - (var(--tc-items-gap, 24px) * (var(--tc-columns-tablet, 2) - 1))) / var(--tc-columns-tablet, 2)
+      );
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .testimonial-carousel-card {
+      flex-basis: calc(
+        (100% - (var(--tc-items-gap, 24px) * (var(--tc-columns, 4) - 1))) / var(--tc-columns, 4)
+      );
+      box-shadow: var(--tc-card-shadow, 0 12px 28px rgba(0, 0, 0, 0.08));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "reviewer_name",
+      "label": "Name",
+      "default": "Full name"
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "range",
+      "id": "star_count",
+      "label": "Number of stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Verified badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "t:settings.label",
+      "default": "Verified",
+      "visible_if": "{{ block.settings.show_verified }}"
+    },
+    {
+      "type": "header",
+      "content": "Tag"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tag",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tag_text",
+      "label": "t:settings.label",
+      "default": "Amazing solution",
+      "visible_if": "{{ block.settings.show_tag }}"
+    },
+    {
+      "type": "header",
+      "content": "Quote"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote",
+      "default": "<p>\"Add a customer quote here.\"</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial"
+    }
+  ]
+}
+{% endschema %}

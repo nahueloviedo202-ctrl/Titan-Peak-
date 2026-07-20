@@ -1,0 +1,166 @@
+{%- doc -%}
+  Renders a single collapsible FAQ card (question + answer), reusing the
+  theme's native `accordion-custom` component for the animated expand/collapse
+  and the native `<details name="...">` grouping for exclusive open/close
+  behavior (only one card open at a time) — no extra JavaScript required.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-question content.
+
+  Meant to be used exclusively as a child block of `sections/faq-accordion.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+  assign group_name = 'faq-accordion-' | append: section.id
+-%}
+
+{% capture faq_item_children %}
+  <details
+    class="faq-item__details"
+    name="{{ group_name }}"
+    {% if item_settings.open_by_default %}
+      open
+    {% endif %}
+  >
+    <summary class="faq-item__trigger">
+      <h3 class="faq-item__question">{{ item_settings.question }}</h3>
+      <span
+        class="faq-item__icon"
+        aria-hidden="true"
+      >
+        {{- 'icon-caret.svg' | inline_asset_content -}}
+      </span>
+    </summary>
+    <div class="details-content">
+      {%- if item_settings.answer != blank -%}
+        <div class="faq-item__answer rte">{{ item_settings.answer }}</div>
+      {%- endif -%}
+    </div>
+  </details>
+{% endcapture %}
+
+<div
+  class="faq-item"
+  {{ block.shopify_attributes }}
+>
+  {% render 'accordion-custom-component',
+    children: faq_item_children,
+    open_by_default_on_desktop: item_settings.open_by_default,
+    open_by_default_on_mobile: item_settings.open_by_default
+  %}
+</div>
+
+{% stylesheet %}
+  .faq-item {
+    display: block;
+    background-color: var(--faq-card-bg, #f9f7f5);
+    border-radius: var(--faq-card-radius, 12px);
+    overflow: hidden;
+  }
+
+  .faq-item__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: var(--faq-trigger-padding-mobile, 16px);
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .faq-item__question {
+    margin: 0;
+    color: var(--faq-question-color, #1a1a1a);
+    font-size: var(--faq-question-size-mobile, 17px);
+    font-weight: var(--faq-question-weight, 500);
+    line-height: 1.4;
+  }
+
+  .faq-item__icon {
+    flex-shrink: 0;
+    width: var(--faq-icon-size, 16px);
+    height: var(--faq-icon-size, 16px);
+    display: flex;
+    color: var(--faq-icon-color, #000000);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faq-item__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .faq-item__details[open] .faq-item__icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__answer {
+    margin: 0;
+    padding: 0 var(--faq-trigger-padding-mobile, 16px) var(--faq-trigger-padding-mobile, 16px);
+    color: var(--faq-answer-color, #1a1a1a);
+    font-size: var(--faq-answer-size-mobile, 14px);
+    font-weight: 500;
+    line-height: var(--faq-answer-line-height, 1.4);
+  }
+
+  .faq-item__answer :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin: 0 0 8px;
+  }
+
+  .faq-item__answer :is(p, ul, ol):last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq-item__trigger {
+      padding: var(--faq-trigger-padding-desktop, 24px);
+    }
+
+    .faq-item__question {
+      font-size: var(--faq-question-size-desktop, 18px);
+    }
+
+    .faq-item__answer {
+      padding: 0 var(--faq-trigger-padding-desktop, 24px) var(--faq-trigger-padding-desktop, 24px);
+      font-size: var(--faq-answer-size-desktop, 17px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question",
+      "default": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "answer",
+      "label": "Answer",
+      "default": "<p>Add the answer to this question.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_by_default",
+      "label": "t:settings.open_by_default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ item"
+    }
+  ]
+}
+{% endschema %}

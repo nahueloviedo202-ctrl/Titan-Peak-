@@ -1,0 +1,488 @@
+{%- doc -%}
+  Renders an "FAQ accordion" section: a centered heading followed by a stack
+  of collapsible question cards. Only one card can be open at a time (native
+  `<details name="...">` grouping — no JavaScript needed).
+
+  Every question/answer is a nested "_faq-item" block, so merchants can add,
+  remove or reorder FAQs freely. All text, colors, sizes, spacing and radius
+  are configurable through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign item_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="faq-accordion spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --faq-max-width: {{ section_settings.container_max_width }}px;
+    --faq-edge-padding: {{ section_settings.container_padding }}px;
+    --faq-header-gap-mobile: {{ section_settings.header_gap_mobile }}px;
+    --faq-header-gap-desktop: {{ section_settings.header_gap_desktop }}px;
+    --faq-heading-color: {{ section_settings.heading_color }};
+    --faq-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --faq-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --faq-list-gap-mobile: {{ section_settings.list_gap_mobile }}px;
+    --faq-list-gap-desktop: {{ section_settings.list_gap_desktop }}px;
+    --faq-card-bg: {{ section_settings.card_background_color }};
+    --faq-card-radius: {{ section_settings.card_radius }}px;
+    --faq-trigger-padding-mobile: {{ section_settings.trigger_padding_mobile }}px;
+    --faq-trigger-padding-desktop: {{ section_settings.trigger_padding_desktop }}px;
+    --faq-question-color: {{ section_settings.question_color }};
+    --faq-question-size-mobile: {{ section_settings.question_size_mobile }}px;
+    --faq-question-size-desktop: {{ section_settings.question_size_desktop }}px;
+    --faq-question-weight: {{ section_settings.question_weight }};
+    --faq-icon-color: {{ section_settings.icon_color }};
+    --faq-icon-size: {{ section_settings.icon_size }}px;
+    --faq-answer-color: {{ section_settings.answer_color }};
+    --faq-answer-size-mobile: {{ section_settings.answer_size_mobile }}px;
+    --faq-answer-size-desktop: {{ section_settings.answer_size_desktop }}px;
+    --faq-answer-line-height: {{ section_settings.answer_line_height }};
+    {% if section_settings.background_color != blank %}
+      --faq-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="faq-accordion"
+>
+  <div class="faq-accordion__container">
+    {%- if section_settings.heading != blank -%}
+      <header class="faq-accordion__header">
+        <h2 class="faq-accordion__heading">{{ section_settings.heading }}</h2>
+      </header>
+    {%- endif -%}
+
+    {%- if item_count > 0 -%}
+      <div class="faq-accordion__list">
+        {% content_for 'blocks' %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .faq-accordion {
+    width: 100%;
+    background-color: var(--faq-bg, transparent);
+  }
+
+  .faq-accordion__container {
+    max-width: var(--faq-max-width, 900px);
+    margin: 0 auto;
+    padding-inline: var(--faq-edge-padding, 16px);
+  }
+
+  .faq-accordion__header {
+    text-align: center;
+    margin-bottom: var(--faq-header-gap-mobile, 24px);
+  }
+
+  .faq-accordion__heading {
+    margin: 0;
+    color: var(--faq-heading-color, #212529);
+    font-size: var(--faq-heading-size-mobile, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .faq-accordion__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--faq-list-gap-mobile, 12px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq-accordion__header {
+      margin-bottom: var(--faq-header-gap-desktop, 40px);
+    }
+
+    .faq-accordion__heading {
+      font-size: var(--faq-heading-size-desktop, 40px);
+    }
+
+    .faq-accordion__list {
+      gap: var(--faq-list-gap-desktop, 16px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "class": "section-faq-accordion",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_faq-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#212529"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_gap_mobile",
+      "label": "Space below heading (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "header_gap_desktop",
+      "label": "Space below heading (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "List"
+    },
+    {
+      "type": "range",
+      "id": "list_gap_mobile",
+      "label": "Gap between items (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "list_gap_desktop",
+      "label": "Gap between items (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "t:settings.background_color",
+      "default": "#f9f7f5"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Trigger"
+    },
+    {
+      "type": "range",
+      "id": "trigger_padding_mobile",
+      "label": "Padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "trigger_padding_desktop",
+      "label": "Padding (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Question"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "question_size_mobile",
+      "label": "Size (mobile)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "question_size_desktop",
+      "label": "Size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "question_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Answer"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "answer_size_mobile",
+      "label": "Size (mobile)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "answer_size_desktop",
+      "label": "Size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "answer_line_height",
+      "label": "t:settings.line_height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.4
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How many gummies should I take daily?",
+            "answer": "<p>We recommend taking one gummy per day. Each gummy contains a powerful performance blend with ingredients designed to support testosterone levels, blood flow, stamina, and performance.<br>Because the formula is highly concentrated, one gummy is enough to support your daily performance, energy, and vitality.</p>",
+            "open_by_default": true
+          }
+        },
+        "item_2": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Will these give me the jitters or an energy crash?",
+            "answer": "<p>No. This formula is completely stimulant free.<br>Instead of relying on caffeine or artificial stimulants, it supports natural energy production, hormone balance, and healthy circulation. This allows you to experience steady energy, improved stamina, and better performance without jitters or crashes.</p>"
+          }
+        },
+        "item_3": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "When is the best time to take my gummy?",
+            "answer": "<p>You can take your gummy at any time of the day, but most men prefer taking it in the morning or early afternoon to support energy, stamina, and confidence throughout the day.<br>Because the ingredients support testosterone balance, nitric oxide production, and circulation, consistent daily use helps build stronger long term results.</p>"
+          }
+        },
+        "item_4": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How quickly will I feel the effects?",
+            "answer": "<p>Some men notice increased energy, confidence, and stamina within the first few days.<br>However, because the formula works by supporting hormone balance, blood flow, and nitric oxide production, the best results typically appear after 4 to 8 weeks of consistent daily use.</p>"
+          }
+        },
+        "item_5": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "How do I know these gummies are high quality?",
+            "answer": "<p>Our gummies are produced in certified GMP facilities and undergo third party testing for purity and safety, using carefully selected ingredients chosen for their long history of supporting male vitality, performance, and circulation.</p>"
+          }
+        },
+        "item_6": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Can I take these with other supplements?",
+            "answer": "<p>Yes. This formula can generally be taken alongside most daily supplements.<br>If you are currently taking prescription medication or have a medical condition, we recommend speaking with your healthcare provider first.</p>"
+          }
+        },
+        "item_7": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "Is this safe for long term use?",
+            "answer": "<p>Yes. This formula is made with naturally derived ingredients traditionally used to support male vitality and hormonal balance, making it suitable for consistent daily use as part of a long term routine.</p>"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5", "item_6", "item_7"]
+    }
+  ]
+}
+{% endschema %}

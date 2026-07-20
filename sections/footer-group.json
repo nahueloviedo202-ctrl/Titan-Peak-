@@ -199,20 +199,73 @@
               },
               "blocks": {}
             },
-            "footer_policy_list_tXBK6b": {
-              "type": "footer-policy-list",
-              "name": "t:names.policy_list",
+            "footer_menu_494JKF": {
+              "type": "footer-menu",
+              "name": "Footer menu",
               "settings": {
-                "text_color": "",
-                "font_size": "1rem",
-                "case": "none"
+                "heading": ""
               },
-              "blocks": {}
+              "blocks": {
+                "footer_link_kiHDWF": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Términos y Condiciones",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                },
+                "footer_link_BzTPHe": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Política de Reembolso",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                },
+                "footer_link_WW8cgN": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Política de Privacidad",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                },
+                "footer_link_cGEhLM": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Política de Envíos",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "footer_link_kiHDWF",
+                "footer_link_BzTPHe",
+                "footer_link_WW8cgN",
+                "footer_link_cGEhLM"
+              ]
             }
           },
           "block_order": [
             "text_LWt8Pz",
-            "footer_policy_list_tXBK6b"
+            "footer_menu_494JKF"
           ]
         },
         "group_cXhiD8": {
@@ -292,25 +345,57 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Sobre Nosotros",
-                    "link": "shopify://pages/about-us"
-                  }
+                    "link": "shopify://pages/about-us",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
                 },
                 "link_2": {
                   "type": "footer-link",
                   "settings": {
                     "label": "Contacto",
-                    "link": "shopify://pages/contact-us"
-                  }
+                    "link": "shopify://pages/contact-us",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
                 },
                 "link_3": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Nuevo enlace",
-                    "link": ""
-                  }
+                    "label": "Opciones de Pago",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                },
+                "footer_link_aPxCig": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Rastrea tu Pedido",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
                 }
               },
-              "block_order": ["link_1", "link_2", "link_3"]
+              "block_order": [
+                "link_1",
+                "link_2",
+                "link_3",
+                "footer_link_aPxCig"
+              ]
             }
           },
           "block_order": [
@@ -384,10 +469,35 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "footer_menu_NbiL8E": {
+              "type": "footer-menu",
+              "name": "Footer menu",
+              "settings": {
+                "heading": "Contáctanos por e-mail:"
+              },
+              "blocks": {
+                "footer_link_VWddgL": {
+                  "type": "footer-link",
+                  "settings": {
+                    "label": "Mail",
+                    "link": "",
+                    "open_new_tab": false,
+                    "text_color": "",
+                    "font_size": 14,
+                    "font_weight": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "footer_link_VWddgL"
+              ]
             }
           },
           "block_order": [
-            "text_EC77XD"
+            "text_EC77XD",
+            "footer_menu_NbiL8E"
           ]
         }
       },

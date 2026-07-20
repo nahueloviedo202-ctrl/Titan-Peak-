@@ -1002,6 +1002,7 @@
           "type": "full-width-image",
           "settings": {
             "image": "shopify://shop_images/fix8-clean.webp",
+            "mobile_image": "shopify://shop_images/fix8mobile-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,

@@ -279,7 +279,7 @@
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
                     "font_size": "2rem",
-                    "font_size_mobile": "",
+                    "font_size_mobile": "1.5rem",
                     "line_height": "tight",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -790,6 +790,7 @@
       "block_order": [
         "text_cbcgyb"
       ],
+      "disabled": true,
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",

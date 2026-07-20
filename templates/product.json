@@ -1282,7 +1282,7 @@
         "autoplay_speed": 5,
         "transition_speed": 400,
         "button_label": "COMPRAR AHORA",
-        "button_link": "shopify://collections/all",
+        "button_link": "#product-information",
         "button_open_new_tab": false,
         "button_text_color": "#1a1a1a",
         "button_gradient_start": "#e7b944",

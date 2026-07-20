@@ -112,8 +112,8 @@
 
   .results-timeline-item__icon {
     flex-shrink: 0;
-    width: var(--rt-icon-size, 56px);
-    height: var(--rt-icon-size, 56px);
+    width: var(--rt-icon-size-mobile, 56px);
+    height: var(--rt-icon-size-mobile, 56px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,6 +158,11 @@
     .results-timeline-item__period {
       font-size: var(--rt-period-size-desktop, 18px);
       line-height: 1.44;
+    }
+
+    .results-timeline-item__icon {
+      width: var(--rt-icon-size-desktop, 56px);
+      height: var(--rt-icon-size-desktop, 56px);
     }
   }
 

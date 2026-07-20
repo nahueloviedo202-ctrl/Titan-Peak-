@@ -1,0 +1,318 @@
+{%- doc -%}
+  Product perks: a compact row of icon + short-label trust perks (e.g.
+  "30 day money back", "Fast shipping", "Cancel anytime"), meant to sit
+  under the buy box on a product page.
+
+  Each perk is a nested "_product-perk-item" block, so perks can be added,
+  removed, reordered and re-skinned (default gradient checkmark, or an
+  uploaded icon) from the block picker.
+
+  On tablet/desktop the perks lay out in a single row. On mobile they wrap
+  into a 2-column grid, with an odd item out spanning the full width — or,
+  optionally, stack in a single column.
+{%- enddoc -%}
+
+{%- liquid
+  assign list_settings = block.settings
+  assign list_class = 'product-perks__list product-perks__list--' | append: list_settings.mobile_layout
+-%}
+
+<div
+  class="product-perks spacing-style"
+  style="
+    {% render 'spacing-style', settings: list_settings %}
+    --pp-gap: {{ list_settings.gap }}px;
+    --pp-alignment: {{ list_settings.desktop_alignment }};
+    --pp-icon-size: {{ list_settings.icon_size }}px;
+    --pp-icon-gradient-start: {{ list_settings.icon_gradient_start }};
+    --pp-icon-gradient-end: {{ list_settings.icon_gradient_end }};
+    --pp-icon-center-color: {{ list_settings.icon_center_color }};
+    --pp-text-color: {{ list_settings.text_color }};
+    --pp-text-size: {{ list_settings.text_size }}px;
+    --pp-text-weight: {{ list_settings.text_weight }};
+  "
+  {{ block.shopify_attributes }}
+>
+  <div class="{{ list_class }}">
+    {% content_for 'blocks' %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-perks {
+    width: 100%;
+  }
+
+  .product-perks__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: var(--pp-gap, 8px);
+  }
+
+  .product-perks__list--stack {
+    grid-template-columns: 1fr;
+  }
+
+  .product-perks__list--grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .product-perks__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .product-perks__icon {
+    width: var(--pp-icon-size, 16px);
+    height: var(--pp-icon-size, 16px);
+    flex-shrink: 0;
+    display: block;
+  }
+
+  .product-perks__icon--custom {
+    object-fit: contain;
+  }
+
+  .product-perks__text {
+    color: var(--pp-text-color, #1a1a1a);
+    font-size: var(--pp-text-size, 12px);
+    font-weight: var(--pp-text-weight, 500);
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-perks__list {
+      display: flex;
+      align-items: center;
+      justify-content: var(--pp-alignment, space-between);
+      flex-wrap: wrap;
+    }
+
+    .product-perks__item {
+      flex-shrink: 0;
+    }
+
+    .product-perks__text {
+      white-space: nowrap;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product perks",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-perk-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "t:settings.layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "2 columns"
+        },
+        {
+          "value": "stack",
+          "label": "1 column"
+        }
+      ],
+      "default": "grid",
+      "info": "Layout used below 750px. On tablet and desktop, perks always lay out in a single row."
+    },
+    {
+      "type": "select",
+      "id": "desktop_alignment",
+      "label": "Alignment (tablet & desktop)",
+      "options": [
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        },
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "space-between"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_start",
+      "label": "Gradient start",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_end",
+      "label": "Gradient end",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "icon_center_color",
+      "label": "Center color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "t:settings.size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product perks",
+      "category": "t:categories.product",
+      "blocks": {
+        "perk_1": {
+          "type": "_product-perk-item",
+          "settings": {
+            "text": "30 day money back"
+          }
+        },
+        "perk_2": {
+          "type": "_product-perk-item",
+          "settings": {
+            "text": "Fast shipping"
+          }
+        },
+        "perk_3": {
+          "type": "_product-perk-item",
+          "settings": {
+            "text": "Cancel Anytime"
+          }
+        }
+      },
+      "block_order": ["perk_1", "perk_2", "perk_3"]
+    }
+  ]
+}
+{% endschema %}

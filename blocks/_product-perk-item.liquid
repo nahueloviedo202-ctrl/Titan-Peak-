@@ -1,0 +1,111 @@
+{%- doc -%}
+  A single perk (icon + short label), nested inside the "product-perks"
+  block. Renders a gradient checkmark seal by default; uploading a custom
+  icon image replaces it for that row only.
+
+  Colors and sizes are controlled by the parent block via CSS custom
+  properties. Meant to be used exclusively as a child block of
+  `blocks/product-perks.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+-%}
+
+<div
+  class="product-perks__item"
+  {{ block.shopify_attributes }}
+>
+  {%- if item_settings.custom_icon != blank -%}
+    {{
+      item_settings.custom_icon
+      | image_url: width: 64
+      | image_tag: loading: 'lazy', width: 32, height: 32, alt: '', class: 'product-perks__icon product-perks__icon--custom'
+    }}
+  {%- else -%}
+    <svg
+      class="product-perks__icon"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M15.3846 7.69231C15.3846 11.9407 11.9407 15.3846 7.69231 15.3846C3.44396 15.3846 0 11.9407 0 7.69231C0 3.44396 3.44396 0 7.69231 0C11.9407 0 15.3846 3.44396 15.3846 7.69231Z"
+        fill="url(#product-perks-gradient-a-{{ block.id }})"
+      />
+      <path
+        d="M12.52 7.69234C12.52 10.3627 10.3552 12.5275 7.6848 12.5275C5.01438 12.5275 2.84961 10.3627 2.84961 7.69234C2.84961 5.02197 5.01438 2.85718 7.6848 2.85718C10.3552 2.85718 12.52 5.02197 12.52 7.69234Z"
+        fill="var(--pp-icon-center-color, #1a1a1a)"
+      />
+      <path
+        d="M7.68501 13.4066C6.89631 13.4066 6.15596 13.2578 5.464 12.9602C4.76462 12.6626 4.15634 12.2552 3.63923 11.7381C3.12212 11.221 2.71475 10.6127 2.41713 9.91328C2.11952 9.22132 1.9707 8.48102 1.9707 7.69231C1.9707 6.90361 2.11952 6.1633 2.41713 5.47135C2.71475 4.77192 3.12212 4.16367 3.63923 3.64655C4.15634 3.12944 4.76462 2.72208 5.464 2.42445C6.15596 2.12684 6.89631 1.97803 7.68501 1.97803C8.47367 1.97803 9.21402 2.12684 9.90598 2.42445C10.6054 2.72208 11.2136 3.12944 11.7308 3.64655C12.2479 4.16367 12.6552 4.77192 12.9528 5.47135C13.2505 6.1633 13.3993 6.90361 13.3993 7.69231C13.3993 8.48102 13.2505 9.22132 12.9528 9.91328C12.6552 10.6127 12.2479 11.221 11.7308 11.7381C11.2136 12.2552 10.6054 12.6626 9.90598 12.9602C9.21402 13.2578 8.47367 13.4066 7.68501 13.4066ZM10.1515 5.13649L6.7698 8.50704L5.16268 6.91108L4.11356 7.96018L6.7698 10.6053L11.2006 6.18563L10.1515 5.13649Z"
+        fill="url(#product-perks-gradient-b-{{ block.id }})"
+      />
+      <defs>
+        <linearGradient
+          id="product-perks-gradient-a-{{ block.id }}"
+          x1="7.6923"
+          y1="0"
+          x2="7.6923"
+          y2="15.3846"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--pp-icon-gradient-start, #e7b944)" />
+          <stop
+            offset="1"
+            stop-color="var(--pp-icon-gradient-end, #ffed68)"
+          />
+        </linearGradient>
+        <linearGradient
+          id="product-perks-gradient-b-{{ block.id }}"
+          x1="7.685"
+          y1="1.97803"
+          x2="7.685"
+          y2="13.4066"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--pp-icon-gradient-start, #e7b944)" />
+          <stop
+            offset="1"
+            stop-color="var(--pp-icon-gradient-end, #ffed68)"
+          />
+        </linearGradient>
+      </defs>
+    </svg>
+  {%- endif -%}
+
+  {%- if item_settings.text != blank -%}
+    <span class="product-perks__text">{{ item_settings.text }}</span>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Perk",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Perk label"
+    },
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "t:settings.image_icon",
+      "info": "Replaces the default gradient checkmark for this item."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Perk"
+    }
+  ]
+}
+{% endschema %}

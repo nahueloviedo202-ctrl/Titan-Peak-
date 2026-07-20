@@ -1,0 +1,303 @@
+{%- doc -%}
+  Renders the footer's newsletter column: a logo, a rich text blurb and a
+  native customer email-signup form (Shopify's built-in `customer` form,
+  the same mechanism `blocks/email-signup.liquid` uses — no custom JS or
+  AJAX added).
+
+  Colors, sizes and spacing are controlled by the parent section via CSS
+  custom properties. Meant to be used exclusively as a child block of
+  `sections/footer-custom.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign newsletter_settings = block.settings
+-%}
+
+<div
+  class="footer-columns__block footer-columns__block--newsletter"
+  style="
+    {% if newsletter_settings.logo != blank %}--fc-logo-width: {{ newsletter_settings.logo_width }}px;{% endif %}
+    --fc-input-radius: {{ newsletter_settings.input_radius }}px;
+    {% if newsletter_settings.submit_background_color != blank %}--fc-submit-bg: {{ newsletter_settings.submit_background_color }};{% endif %}
+    {% if newsletter_settings.submit_icon_color != blank %}--fc-submit-icon-color: {{ newsletter_settings.submit_icon_color }};{% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  {%- if newsletter_settings.logo != blank -%}
+    {{
+      newsletter_settings.logo
+      | image_url: width: 600
+      | image_tag: loading: 'lazy', widths: '150, 300, 450, 600', alt: newsletter_settings.logo.alt | default: shop.name, class: 'footer-columns__logo'
+    }}
+  {%- elsif newsletter_settings.show_shop_name_fallback -%}
+    <p class="footer-columns__heading">{{ shop.name }}</p>
+  {%- endif -%}
+
+  {%- if newsletter_settings.description != blank -%}
+    <div class="footer-columns__description rte">{{ newsletter_settings.description }}</div>
+  {%- endif -%}
+
+  {%- if newsletter_settings.show_form -%}
+    {%- form 'customer', class: 'footer-columns__form' -%}
+      <input
+        type="hidden"
+        name="contact[tags]"
+        value="newsletter"
+      >
+      <div class="footer-columns__input-group">
+        <label
+          for="FooterNewsletter-{{ block.id }}"
+          class="footer-columns__input-label"
+        >
+          {{ newsletter_settings.email_label }}
+        </label>
+        <input
+          id="FooterNewsletter-{{ block.id }}"
+          class="footer-columns__input"
+          type="email"
+          name="contact[email]"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          placeholder=" "
+          required
+          {% if form.errors and form.id == blank %}
+            autofocus
+            aria-invalid="true"
+            aria-describedby="FooterNewsletter-error-{{ block.id }}"
+          {% elsif form.posted_successfully? and form.id == blank %}
+            aria-describedby="FooterNewsletter-success-{{ block.id }}"
+          {% endif %}
+        >
+        <button
+          type="submit"
+          class="footer-columns__submit"
+          aria-label="{{ 'actions.sign_up' | t }}"
+        >
+          <span class="footer-columns__submit-icon">
+            {%- render 'icon', icon: 'arrow' -%}
+          </span>
+        </button>
+      </div>
+
+      {%- if form.errors and form.id == blank -%}
+        <div
+          id="FooterNewsletter-error-{{ block.id }}"
+          class="footer-columns__form-message"
+          tabindex="-1"
+        >
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}
+        </div>
+      {%- endif -%}
+
+      {%- if form.posted_successfully? and form.id == blank -%}
+        <div
+          id="FooterNewsletter-success-{{ block.id }}"
+          class="footer-columns__form-message"
+          tabindex="-1"
+        >
+          {{ 'blocks.email_signup.success' | t }}
+        </div>
+      {%- endif -%}
+    {%- endform -%}
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .footer-columns__block--newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fc-newsletter-gap, 24px);
+  }
+
+  .footer-columns__logo {
+    display: block;
+    width: var(--fc-logo-width, 180px);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-columns__description {
+    opacity: var(--fc-link-opacity, 0.7);
+  }
+
+  .footer-columns__description :is(p, ul, ol) {
+    margin: 0;
+  }
+
+  .footer-columns__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: var(--fc-form-max-width, 400px);
+  }
+
+  .footer-columns__input-group {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .footer-columns__input-label {
+    position: absolute;
+    inset-inline-start: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-columns__input:focus + .footer-columns__input-label,
+  .footer-columns__input:not(:placeholder-shown) + .footer-columns__input-label {
+    opacity: 0;
+  }
+
+  .footer-columns__input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--color-input-border, currentColor);
+    border-radius: var(--fc-input-radius, 40px);
+    background-color: var(--color-input-background, transparent);
+    color: var(--color-input-text, inherit);
+    padding: 14px 56px 14px 16px;
+    font: inherit;
+  }
+
+  .footer-columns__input::placeholder {
+    color: transparent;
+  }
+
+  .footer-columns__submit {
+    position: absolute;
+    inset-inline-end: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--fc-submit-size, 32px);
+    height: var(--fc-submit-size, 32px);
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--fc-submit-bg, var(--color-foreground));
+    color: var(--fc-submit-icon-color, var(--color-background));
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-columns__submit:hover {
+    opacity: 0.8;
+  }
+
+  .footer-columns__submit-icon {
+    width: 55%;
+    height: 55%;
+    display: flex;
+  }
+
+  .footer-columns__submit-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .footer-columns__form-message {
+    font-size: 0.8125rem;
+    opacity: 0.85;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Footer newsletter",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:settings.logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "t:settings.width",
+      "min": 60,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 180,
+      "visible_if": "{{ block.settings.logo != blank }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shop_name_fallback",
+      "label": "Show store name when no logo is set",
+      "default": true,
+      "visible_if": "{{ block.settings.logo == blank }}"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Add a short paragraph about your store here.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.email_signup"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_form",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "t:settings.label",
+      "default": "E-mail",
+      "visible_if": "{{ block.settings.show_form }}"
+    },
+    {
+      "type": "header",
+      "content": "Form appearance"
+    },
+    {
+      "type": "range",
+      "id": "input_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ block.settings.show_form }}"
+    },
+    {
+      "type": "color",
+      "id": "submit_background_color",
+      "label": "Submit button background",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ block.settings.show_form }}"
+    },
+    {
+      "type": "color",
+      "id": "submit_icon_color",
+      "label": "Submit button icon",
+      "placeholder": "t:settings.default",
+      "visible_if": "{{ block.settings.show_form }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer newsletter"
+    }
+  ]
+}
+{% endschema %}

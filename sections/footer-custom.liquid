@@ -1,0 +1,557 @@
+{%- doc -%}
+  Renders a custom multi-column footer: a row of columns (newsletter
+  signup, link menus, text) followed by a copyright bar. Every column is a
+  nested block ("_footer-newsletter", "_footer-menu" or "_footer-text"), and
+  every link inside a menu column is its own nested "_footer-link" block, so
+  merchants can add, remove or reorder everything freely.
+
+  Reuses the theme's native `footer-copyright` block (with its
+  "Powered by Shopify" link and smart color contrast) for the bottom bar,
+  and the native `customer` form tag for the newsletter signup — no custom
+  JavaScript is added.
+
+  All text, images, colors, sizes, spacing and column layout are
+  configurable through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign column_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="footer-columns spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --fc-max-width: {{ section_settings.container_max_width }}px;
+    --fc-edge-padding: {{ section_settings.container_padding }}px;
+    --fc-wrapper-gap-mobile: {{ section_settings.wrapper_gap_mobile }}px;
+    --fc-wrapper-gap-desktop: {{ section_settings.wrapper_gap_desktop }}px;
+    --fc-list-gap-mobile: {{ section_settings.list_gap_mobile }}px;
+    --fc-list-row-gap: {{ section_settings.list_row_gap }}px;
+    --fc-list-col-gap: {{ section_settings.list_col_gap }}px;
+    --fc-heading-color: {{ section_settings.heading_color }};
+    --fc-heading-size: {{ section_settings.heading_size }}px;
+    --fc-heading-weight: {{ section_settings.heading_weight }};
+    --fc-heading-gap: {{ section_settings.heading_gap }}px;
+    --fc-link-gap: {{ section_settings.link_gap }}px;
+    --fc-link-opacity: {{ section_settings.text_opacity | divided_by: 100.0 }};
+    --fc-menu-max-width: {{ section_settings.menu_max_width }}px;
+    --fc-text-basis: {{ section_settings.text_column_width }}%;
+    --fc-text-max-width: {{ section_settings.text_column_max_width }}px;
+    --fc-newsletter-gap: {{ section_settings.newsletter_gap }}px;
+    --fc-logo-width: {{ section_settings.default_logo_width }}px;
+    --fc-form-max-width: {{ section_settings.form_max_width }}px;
+    --fc-submit-size: {{ section_settings.submit_size }}px;
+    --fc-aside-gap-mobile: {{ section_settings.aside_gap_mobile }}px;
+    --fc-aside-gap-desktop: {{ section_settings.aside_gap_desktop }}px;
+    {% if section_settings.background_color != blank %}
+      --fc-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="footer-columns"
+>
+  <div class="footer-columns__container">
+    <div class="footer-columns__wrapper">
+      {%- if column_count > 0 -%}
+        <div class="footer-columns__list">
+          {% content_for 'blocks' %}
+        </div>
+      {%- endif -%}
+
+      {%- if section_settings.show_copyright -%}
+        <div class="footer-columns__aside">
+          {% content_for 'block', type: 'footer-copyright', id: 'static-copyright' %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .footer-columns {
+    width: 100%;
+    background-color: var(--fc-bg, #000000);
+  }
+
+  .footer-columns__container {
+    max-width: var(--fc-max-width, 1320px);
+    margin: 0 auto;
+    padding-inline: var(--fc-edge-padding, 16px);
+  }
+
+  .footer-columns__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fc-wrapper-gap-mobile, 40px);
+  }
+
+  .footer-columns__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--fc-list-gap-mobile, 32px);
+  }
+
+  .footer-columns__aside {
+    padding-block-start: var(--fc-aside-gap-mobile, 32px);
+    border-top: 1px solid rgb(var(--color-border-rgb, 128 128 128) / 0.2);
+  }
+
+  .footer-columns__list .footer-columns__heading {
+    margin: 0 0 var(--fc-heading-gap, 12px);
+    color: var(--fc-heading-color, currentColor);
+    font-size: var(--fc-heading-size, 16px);
+    font-weight: var(--fc-heading-weight, 700);
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer-columns__wrapper {
+      gap: var(--fc-wrapper-gap-desktop, 64px);
+    }
+
+    .footer-columns__list {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: var(--fc-list-row-gap, 40px);
+      column-gap: var(--fc-list-col-gap, 48px);
+    }
+
+    .footer-columns__list > * {
+      flex: 1 1 auto;
+    }
+
+    .footer-columns__aside {
+      padding-block-start: var(--fc-aside-gap-desktop, 48px);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .footer-columns__list {
+      flex-wrap: nowrap;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Footer columns",
+  "class": "section-footer-columns",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "blocks": [
+    {
+      "type": "_footer-newsletter"
+    },
+    {
+      "type": "_footer-menu"
+    },
+    {
+      "type": "_footer-text"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1320
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "wrapper_gap_mobile",
+      "label": "Space above copyright bar (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "wrapper_gap_desktop",
+      "label": "Space above copyright bar (desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "list_gap_mobile",
+      "label": "Gap between columns (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "list_row_gap",
+      "label": "Row gap between columns (tablet & desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "list_col_gap",
+      "label": "Column gap between columns (tablet & desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "menu_max_width",
+      "label": "Menu column max width",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "text_column_width",
+      "label": "Text column width",
+      "min": 15,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "text_column_max_width",
+      "label": "Text column max width",
+      "min": 160,
+      "max": 480,
+      "step": 10,
+      "unit": "px",
+      "default": 320
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "heading_gap",
+      "label": "Space below heading",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Links & text"
+    },
+    {
+      "type": "range",
+      "id": "link_gap",
+      "label": "Gap between links",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "text_opacity",
+      "label": "t:settings.opacity",
+      "info": "Applied to links and body text so they read as secondary against the heading.",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Newsletter column"
+    },
+    {
+      "type": "range",
+      "id": "default_logo_width",
+      "label": "Default logo width",
+      "min": 60,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "newsletter_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "form_max_width",
+      "label": "Form max width",
+      "min": 240,
+      "max": 560,
+      "step": 10,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "submit_size",
+      "label": "Submit button size",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Copyright bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copyright",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "aside_gap_mobile",
+      "label": "Space above (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32,
+      "visible_if": "{{ section.settings.show_copyright }}"
+    },
+    {
+      "type": "range",
+      "id": "aside_gap_desktop",
+      "label": "Space above (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 48,
+      "visible_if": "{{ section.settings.show_copyright }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer columns",
+      "category": "t:categories.footer",
+      "blocks": {
+        "newsletter": {
+          "type": "_footer-newsletter",
+          "settings": {
+            "description": "<p>Quality and reliability are our priorities. Our products are carefully tested, so you can count on the best results. Have any questions? We're here to help!</p>"
+          }
+        },
+        "policy_menu": {
+          "type": "_footer-menu",
+          "settings": {
+            "heading": "Our Policy"
+          },
+          "blocks": {
+            "link_1": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Terms and Conditions",
+                "link": "shopify://pages/terms"
+              }
+            },
+            "link_2": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Refund Policy",
+                "link": "shopify://pages/refund-policy"
+              }
+            },
+            "link_3": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Privacy Policy",
+                "link": "shopify://pages/privacy-policy"
+              }
+            },
+            "link_4": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Shipping Policy",
+                "link": "shopify://pages/shipping-policy"
+              }
+            }
+          },
+          "block_order": ["link_1", "link_2", "link_3", "link_4"]
+        },
+        "useful_menu": {
+          "type": "_footer-menu",
+          "settings": {
+            "heading": "Useful Links"
+          },
+          "blocks": {
+            "link_1": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "About Us",
+                "link": "shopify://pages/about-us"
+              }
+            },
+            "link_2": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Contact Us",
+                "link": "shopify://pages/contact-us"
+              }
+            },
+            "link_3": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "Track Your Order",
+                "link": ""
+              }
+            },
+            "link_4": {
+              "type": "_footer-link",
+              "settings": {
+                "label": "FAQ's",
+                "link": "shopify://pages/faqs"
+              }
+            }
+          },
+          "block_order": ["link_1", "link_2", "link_3", "link_4"]
+        },
+        "contact_text": {
+          "type": "_footer-text",
+          "settings": {
+            "heading": "Get in Touch",
+            "content": "<p>Contact us via e-mail:<br>support@example.com</p>"
+          }
+        }
+      },
+      "block_order": ["newsletter", "policy_menu", "useful_menu", "contact_text"]
+    }
+  ]
+}
+{% endschema %}

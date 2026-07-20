@@ -160,6 +160,26 @@
     .product-details {
       grid-column: 2 / 3;
     }
+
+    /* Push blocks nested inside the media gallery (e.g. testimonial card,
+       wellness benefits) below the buy button on mobile, instead of
+       between the gallery and the product details. Scoped to the live
+       page (not the quick-add modal, which clones the grid without this
+       ancestor) since it needs its own layout. */
+    .product-information .product-information__media {
+      display: contents;
+    }
+
+    .product-information product-gallery-thumbs,
+    .product-information .product-gallery-thumbs-placeholder {
+      grid-column: 1 / -1;
+      order: 0;
+    }
+
+    .product-information .product-media-gallery__blocks {
+      grid-column: 2 / 3;
+      order: 2;
+    }
   }
 
   /* Desktop styles */

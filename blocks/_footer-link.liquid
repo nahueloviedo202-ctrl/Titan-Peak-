@@ -1,0 +1,57 @@
+{%- doc -%}
+  Renders a single link row inside a "_footer-menu" column.
+
+  Meant to be used exclusively as a child block of `blocks/_footer-menu.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign link_settings = block.settings
+-%}
+
+<li {{ block.shopify_attributes }}>
+  {%- if link_settings.link != blank -%}
+    <a
+      href="{{ link_settings.link }}"
+      class="footer-columns__link"
+      {% if link_settings.open_new_tab %}
+        target="_blank"
+        rel="noopener"
+      {% endif %}
+    >
+      {{- link_settings.label -}}
+    </a>
+  {%- else -%}
+    <span class="footer-columns__link footer-columns__link--disabled">{{- link_settings.label -}}</span>
+  {%- endif -%}
+</li>
+
+{% schema %}
+{
+  "name": "Footer link",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer link"
+    }
+  ]
+}
+{% endschema %}

@@ -30,7 +30,8 @@
   --rt-items-row-gap: {{ section_settings.items_gap_desktop }}px;
   --rt-item-gap: {{ section_settings.item_gap }}px;
   --rt-item-header-gap: {{ section_settings.item_header_gap }}px;
-  --rt-icon-size: {{ section_settings.icon_size }}px;
+  --rt-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+  --rt-icon-size-desktop: {{ section_settings.icon_size_desktop }}px;
   --rt-icon-gradient-start: {{ section_settings.icon_gradient_start }};
   --rt-icon-gradient-end: {{ section_settings.icon_gradient_end }};
   --rt-icon-color: {{ section_settings.icon_color }};
@@ -311,8 +312,18 @@
     },
     {
       "type": "range",
-      "id": "icon_size",
-      "label": "Icon size",
+      "id": "icon_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Icon size (desktop)",
       "min": 32,
       "max": 96,
       "step": 2,

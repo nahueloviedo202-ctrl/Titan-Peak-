@@ -59,7 +59,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/image.png",
+                "image_upload": "shopify://shop_images/logonegro-clean.webp",
                 "width": 200,
                 "link": "",
                 "open_in_new_tab": false,

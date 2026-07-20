@@ -519,6 +519,54 @@
               },
               "block_order": []
             },
+            "product_perks_AtCRD4": {
+              "type": "product-perks",
+              "name": "Product perks",
+              "settings": {
+                "mobile_layout": "grid",
+                "desktop_alignment": "space-between",
+                "gap": 8,
+                "icon_size": 16,
+                "icon_gradient_start": "#e7b944",
+                "icon_gradient_end": "#ffed68",
+                "icon_center_color": "#1a1a1a",
+                "text_color": "#1a1a1a",
+                "text_size": 12,
+                "text_weight": "500",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_perk_item_xGcHyk": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "30 day money back"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_MmL3Hr": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Fast shipping"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_JL9G9Y": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Cancel Anytime"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_perk_item_xGcHyk",
+                "product_perk_item_MmL3Hr",
+                "product_perk_item_JL9G9Y"
+              ]
+            },
             "guarantee_banner_mN6rWP": {
               "type": "guarantee-banner",
               "name": "Guarantee banner",
@@ -542,6 +590,32 @@
                 "text_color": "#1a1a1a",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_stock_delivery_aBe8eb": {
+              "type": "product-stock-delivery",
+              "name": "Product stock & delivery",
+              "settings": {
+                "show_stock": true,
+                "inventory_threshold": 10,
+                "show_inventory_quantity": false,
+                "pulse_animation": true,
+                "in_stock_color": "",
+                "low_stock_color": "",
+                "out_of_stock_color": "",
+                "show_delivery": true,
+                "delivery_icon_size": 24,
+                "delivery_text": "Expected delivery in 3 to 6 business days",
+                "alignment": "center",
+                "gap": 20,
+                "font_size_desktop": 14,
+                "font_size_mobile": 11,
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 8,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -646,7 +720,9 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "product_perks_AtCRD4",
             "guarantee_banner_mN6rWP",
+            "product_stock_delivery_aBe8eb",
             "accordion_group_nHpwkV",
             "text_aEtTtq"
           ]
@@ -1032,11 +1108,11 @@
       ],
       "name": "Image checklist",
       "settings": {
-        "image": "shopify://shop_images/product9-clean.webp",
+        "image": "shopify://shop_images/fix2-clean.webp",
         "image_alt": "",
         "image_link": "",
         "image_radius": 10,
-        "kicker": "<p>TITANPEAK ES PARA TI SI...</p>",
+        "kicker": "<p>TITAN PEAK ES PARA TI SI...</p>",
         "description": "",
         "content_width": "page-width",
         "image_position": "right",

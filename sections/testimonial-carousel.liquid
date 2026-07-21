@@ -217,7 +217,13 @@
   }
 
   .testimonial-carousel__wrapper {
-    width: 100%;
+    /* Must stay `auto` (not 100%): an explicit width is resolved against the
+       container's already-padded content box and ignores margins, so the
+       negative margin-inline below would only shift the box's position, not
+       actually widen it — leaving the wrapper short of the true edge on the
+       right. `auto` lets the browser solve the width so it properly expands
+       to fill the bled space on both sides. */
+    width: auto;
     overflow: hidden;
     position: relative;
     margin-inline: calc(-1 * var(--tc-edge-padding, 16px));

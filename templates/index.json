@@ -1048,6 +1048,7 @@
         "heading_letter_spacing": -0.6,
         "heading_gap": 24,
         "image_desktop": "shopify://shop_images/Gemini_Generated_Image_tcks9ytcks9ytcks-clean.webp",
+        "image_mobile": "shopify://shop_images/mobile2.webp",
         "image_max_width": 1100,
         "image_radius": 0,
         "padding_block_mobile": 24,

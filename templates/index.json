@@ -1048,9 +1048,9 @@
       "type": "rich-image",
       "name": "Rich image",
       "settings": {
-        "heading": "<p>Por qué Miles de Clientes en Todo el Mundo Confían en TITAN PEAK Antes que en Otras Marcas</p>",
+        "heading": "<p>POR QUÉ MILES DE CLIENTES CONFÍAN EN TITAN PEAK</p>",
         "heading_color": "#24222a",
-        "heading_size_mobile": 20,
+        "heading_size_mobile": 28,
         "heading_size_desktop": 36,
         "heading_weight": "700",
         "heading_letter_spacing": -0.6,
@@ -1302,7 +1302,7 @@
       "name": "Product features tabs",
       "settings": {
         "eyebrow": "NUTRICIÓN DIARIA DE LA NATURALEZA",
-        "heading": "Apoyo Integral para Todo tu Cuerpo con Cuatro Fórmulas Poderosas",
+        "heading": "APOYO INTEGRAL PARA TODO TU CUERPO CON CUATRO FÓRMULAS PODEROSAS",
         "container_max_width": 1440,
         "container_padding": 32,
         "container_padding_mobile": 16,
@@ -1387,7 +1387,7 @@
       ],
       "name": "Products carousel",
       "settings": {
-        "heading": "Los Más Vendidos de TITAN PEAK",
+        "heading": "LOS MÁS VENDIDOS",
         "heading_color": "#1a1a1a",
         "heading_size": 32,
         "desktop_columns": 4,

@@ -18,6 +18,7 @@
           "settings": {
             "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
             "uppercase": true,
+            "max_width": 24,
             "font_size_mobile": 24,
             "font_size_desktop": 38,
             "font_weight": "800",
@@ -243,6 +244,7 @@
           "settings": {
             "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
             "uppercase": true,
+            "max_width": 30,
             "font_size_mobile": 24,
             "font_size_desktop": 38,
             "font_weight": "800",

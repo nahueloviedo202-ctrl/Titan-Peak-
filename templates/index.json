@@ -1218,6 +1218,7 @@
               "type": "_product-features-item",
               "name": "Feature",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Apoyo diario multi-beneficio",
                 "text": "<p>Una gominola potencia la energía, el foco y la circulación en una dosis diaria cómoda.</p>",
                 "column": "right"
@@ -1227,6 +1228,7 @@
             "product_features_item_dHEVhL": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84.avif",
                 "title": "6 ingredientes estudiados clínicamente",
                 "text": "<p>Shilajit, Ashwagandha y Maca potencian la energía y la circulación para tu vitalidad diaria.</p>",
                 "column": "left"
@@ -1236,6 +1238,7 @@
             "product_features_item_p4P7Lx": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Fórmula libre de estimulantes",
                 "text": "<p>Sin cafeína ni estimulantes artificiales; promueve la energía natural y el equilibrio hormonal sin nerviosismo.</p>",
                 "column": "left"
@@ -1245,6 +1248,7 @@
             "product_features_item_3MKxqG": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84_2.avif",
                 "title": "Testeado por terceros",
                 "text": "<p>Fabricado en instalaciones certificadas GMP, garantizando pureza, potencia y seguridad en las que puedes confiar.</p>",
                 "column": "right"
@@ -1452,7 +1456,7 @@
         "card_padding_mobile": 16,
         "card_gap_desktop": 20,
         "card_gap_mobile": 16,
-        "icon_size_desktop": 36,
+        "icon_size_desktop": 44,
         "icon_size_mobile": 31,
         "feature_title_size_desktop": 22,
         "feature_title_size_mobile": 16,

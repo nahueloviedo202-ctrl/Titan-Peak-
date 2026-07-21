@@ -411,7 +411,7 @@
         "vertical_alignment_mobile_flex_direction_column": "flex-start",
         "gap": 18,
         "section_width": "page-width",
-        "section_height": "full-screen",
+        "section_height": "large",
         "section_height_custom": 50,
         "background_color": "",
         "toggle_overlay": false,

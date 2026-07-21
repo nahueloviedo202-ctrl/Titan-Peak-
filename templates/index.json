@@ -207,7 +207,7 @@
         "hero_cta_button_iQmUEn": {
           "type": "_hero-cta-button",
           "settings": {
-            "label": "COMPRA NUESTROS MÁS VENDIDOS",
+            "label": "MÁS VENDIDOS",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "show_icon": true,

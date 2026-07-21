@@ -887,7 +887,7 @@
         "dot_active_color": "#121212",
         "dot_size": 8,
         "dot_gap": 8,
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "images_gap": 4,
         "image_radius": 6,
         "image_border_width": 0,

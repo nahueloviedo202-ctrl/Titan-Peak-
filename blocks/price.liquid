@@ -48,6 +48,14 @@
       --color-rgb: {{ block_settings.text_color.rgb }};
     {% endif %}
     --width: {{ block_settings.width }};
+    {% if template.name == 'collection' %}
+      {% if block_settings.collection_sale_price_color != blank %}
+        --price-sale-color: {{ block_settings.collection_sale_price_color }};
+      {% endif %}
+      {% if block_settings.collection_regular_price_color != blank %}
+        --price-regular-color: {{ block_settings.collection_regular_price_color }};
+      {% endif %}
+    {% endif %}
   "
   {{ block.shopify_attributes }}
 >
@@ -89,6 +97,22 @@
 </product-price>
 
 {% render 'payment-terms-styles' %}
+
+{% stylesheet %}
+  /* Only meaningful on collection pages: the section/template sets
+     --price-sale-color / --price-regular-color inline (see the Liquid
+     above), scoped to template.name == 'collection'. Everywhere else those
+     variables are never set, so these rules fall back to the exact same
+     values the theme already uses for `.price` and `.compare-at-price`,
+     leaving product pages, cart, search, etc. untouched. */
+  product-price .price {
+    color: var(--price-sale-color, var(--color, var(--color-foreground)));
+  }
+
+  product-price .compare-at-price {
+    color: var(--price-regular-color, rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text)));
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -361,6 +385,24 @@
       "type": "color",
       "id": "text_color",
       "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "Collection pages"
+    },
+    {
+      "type": "color",
+      "id": "collection_sale_price_color",
+      "label": "Sale price color",
+      "info": "Only applies when this block is shown on a collection page.",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "collection_regular_price_color",
+      "label": "Regular price color",
+      "info": "Only applies when this block is shown on a collection page.",
       "placeholder": "t:settings.default"
     },
     {

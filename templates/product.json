@@ -1408,7 +1408,7 @@
         "header_gap_desktop": 40,
         "desktop_columns": 4,
         "tablet_columns": 2,
-        "mobile_slide_width": 85,
+        "mobile_slide_width": 100,
         "items_gap_desktop": 24,
         "items_gap_mobile": 16,
         "autoplay": false,

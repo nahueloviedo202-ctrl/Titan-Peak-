@@ -1137,19 +1137,19 @@
         "product_features_tab_XKhHAF": {
           "type": "_product-features-tab",
           "settings": {
-            "tab_label": "Performance Gummies",
+            "tab_label": "Gummies de rendimiento",
             "image": "shopify://shop_images/Gemini_Generated_Image_6j8h2w6j8h2w6j8h-clean.png",
             "image_alt": "",
-            "cta_text": "Shop now",
-            "cta_url": ""
+            "cta_text": "Comprar ahora",
+            "cta_url": "shopify://products/titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
           },
           "blocks": {
             "product_features_item_U3PjRB": {
               "type": "_product-features-item",
               "name": "Feature",
               "settings": {
-                "title": "Feature title",
-                "text": "<p>Describe this feature.</p>",
+                "title": "Apoyo diario multi-beneficio",
+                "text": "<p>Una gominola potencia la energía, el foco y la circulación en una dosis diaria cómoda.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1157,8 +1157,8 @@
             "product_features_item_dHEVhL": {
               "type": "_product-features-item",
               "settings": {
-                "title": "6 clinically studied ingredients",
-                "text": "<p>Shilajit, Ashwagandha, and Maca boost energy and circulation for daily vitality.</p>",
+                "title": "6 ingredientes estudiados clínicamente",
+                "text": "<p>Shilajit, Ashwagandha y Maca potencian la energía y la circulación para tu vitalidad diaria.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1166,8 +1166,8 @@
             "product_features_item_p4P7Lx": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Multi-benefit daily support",
-                "text": "<p>One gummy enhances energy, focus, and circulation in a convenient daily dose.</p>",
+                "title": "Fórmula libre de estimulantes",
+                "text": "<p>Sin cafeína ni estimulantes artificiales; promueve la energía natural y el equilibrio hormonal sin nerviosismo.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1175,8 +1175,8 @@
             "product_features_item_3MKxqG": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Third-party tested",
-                "text": "<p>Manufactured in GMP-certified facilities, ensuring purity, potency, and safety you can trust.</p>",
+                "title": "Testeado por terceros",
+                "text": "<p>Fabricado en instalaciones certificadas GMP, garantizando pureza, potencia y seguridad en las que puedes confiar.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1360,8 +1360,8 @@
       ],
       "name": "Product features tabs",
       "settings": {
-        "eyebrow": "Daily Nutrition From Nature",
-        "heading": "Whole-body support from four powerful formulas",
+        "eyebrow": "NUTRICIÓN DIARIA DE LA NATURALEZA",
+        "heading": "Apoyo Integral para Todo tu Cuerpo con Cuatro Fórmulas Poderosas",
         "container_max_width": 1440,
         "container_padding": 32,
         "container_padding_mobile": 16,

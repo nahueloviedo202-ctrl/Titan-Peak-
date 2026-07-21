@@ -20,6 +20,7 @@
       --hero-heading-size-mobile: {{ heading_settings.font_size_mobile }}px;
       --hero-heading-size-desktop: {{ heading_settings.font_size_desktop }}px;
       --hero-heading-weight: {{ heading_settings.font_weight }};
+      --hero-heading-max-width: {{ heading_settings.max_width }}ch;
     "
     {{ block.shopify_attributes }}
   >
@@ -30,10 +31,12 @@
 {% stylesheet %}
   .hero-heading {
     margin: 0;
+    max-width: var(--hero-heading-max-width, none);
     color: var(--hero-heading-color, #ffffff);
     font-size: var(--hero-heading-size-mobile, 24px);
     font-weight: var(--hero-heading-weight, 800);
     line-height: 1.2;
+    text-wrap: balance;
   }
 
   .hero-heading--uppercase {
@@ -72,6 +75,21 @@
       "id": "uppercase",
       "label": "t:options.uppercase",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "info": "Narrower forces the heading to wrap onto more lines. Measured in characters, so it scales with the font size.",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "ch",
+      "default": 24
     },
     {
       "type": "header",

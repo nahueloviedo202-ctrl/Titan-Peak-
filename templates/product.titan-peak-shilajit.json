@@ -844,7 +844,7 @@
       ],
       "name": "Before/after slider",
       "settings": {
-        "heading": "<p>Mi Testosterona se Triplicó <strong>y Mi Mujer Lo Notó Enseguida</strong></p>",
+        "heading": "<p>MI TESTOSTERONA SE TRIPLICÓ <strong>Y MI MUJER LO NOTÓ ENSEGUIDA</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_accent_color": "#c9a84c",
         "heading_size_mobile": 30,
@@ -1394,7 +1394,7 @@
         "cards_grid_item_AG6dAF": {
           "type": "_cards-grid-item",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
+            "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
             "image_alt": "",
             "title": "CORTISOL Y ESTRÉS",
             "description": "<p>Menos hinchazón, menos fatiga, mejor recuperación.</p>"
@@ -1404,6 +1404,7 @@
         "cards_grid_item_TYttpE": {
           "type": "_cards-grid-item",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
             "image_alt": "",
             "title": "TESTOSTERONA Y DESEO",
             "description": "<p>Ayuda a mantener niveles saludables de testosterona y vitalidad masculina.</p>"
@@ -1413,6 +1414,7 @@
         "cards_grid_item_NHTjXq": {
           "type": "_cards-grid-item",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
             "image_alt": "",
             "title": "CIRCULACIÓN Y RENDIMIENTO",
             "description": "<p>Apoya el flujo sanguíneo, la resistencia y el rendimiento físico general.</p>"
@@ -1447,7 +1449,7 @@
         "grid_gap_mobile": 15,
         "grid_gap_tablet": 18,
         "grid_gap_desktop": 25,
-        "card_background_color": "#E8D5A3",
+        "card_background_color": "#e8d5a3",
         "card_border_color": "#c9a84c",
         "card_border_width": 1,
         "card_border_radius": 12,

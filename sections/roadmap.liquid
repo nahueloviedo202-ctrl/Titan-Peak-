@@ -39,43 +39,35 @@
   style="
     {% render 'spacing-style', settings: section_settings %}
     --rm-max-width: {{ section_settings.container_max_width }}px;
+    --rm-container-padding: {{ section_settings.container_padding }}px;
     --rm-bg-gradient-start: {{ section_settings.background_gradient_start }};
     --rm-bg-gradient-end: {{ section_settings.background_gradient_end }};
     --rm-heading-color: {{ section_settings.heading_color }};
-    --rm-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
-    --rm-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --rm-heading-size: {{ section_settings.heading_size }}px;
     --rm-accent-gradient-start: {{ section_settings.accent_gradient_start }};
-    --rm-accent-gradient-mid: {{ section_settings.accent_gradient_mid }};
     --rm-accent-gradient-end: {{ section_settings.accent_gradient_end }};
     --rm-subheading-color: {{ section_settings.subheading_color }};
     --rm-subheading-size: {{ section_settings.subheading_size }}px;
     --rm-header-gap: {{ section_settings.header_gap }}px;
-    --rm-layout-gap: {{ section_settings.layout_gap }}px;
     --rm-image-radius: {{ section_settings.image_radius }}px;
-    --rm-image-gap-mobile: {{ section_settings.image_gap_mobile }}px;
+    --rm-image-gap: {{ section_settings.image_gap }}px;
     --rm-line-color: {{ section_settings.line_color }};
     --rm-line-width: {{ section_settings.line_width }}px;
-    --rm-fill-color: {{ section_settings.fill_color }};
     --rm-indent: {{ section_settings.item_indent }}px;
     --rm-item-gap-mobile: {{ section_settings.item_gap_mobile }}px;
     --rm-item-gap-desktop: {{ section_settings.item_gap_desktop }}px;
     --rm-circle-bg: {{ section_settings.circle_bg_color }};
     --rm-circle-size: {{ section_settings.circle_size }}px;
     --rm-circle-icon-color: {{ section_settings.circle_icon_color }};
-    --rm-circle-icon-size: {{ section_settings.circle_icon_size }}px;
+    --rm-circle-icon-size: calc(var(--rm-circle-size) * 0.53);
     --rm-badge-bg: {{ section_settings.badge_bg_color }};
     --rm-badge-text: {{ section_settings.badge_text_color }};
-    --rm-badge-border: {{ section_settings.badge_border_color }};
     --rm-badge-radius: {{ section_settings.badge_radius }}px;
-    --rm-badge-size-mobile: {{ section_settings.badge_size_mobile }}px;
-    --rm-badge-size-desktop: {{ section_settings.badge_size_desktop }}px;
+    --rm-badge-size: {{ section_settings.badge_size }}px;
     --rm-title-color: {{ section_settings.title_color }};
-    --rm-title-size-mobile: {{ section_settings.title_size_mobile }}px;
-    --rm-title-size-desktop: {{ section_settings.title_size_desktop }}px;
+    --rm-title-size: {{ section_settings.title_size }}px;
     --rm-description-color: {{ section_settings.description_color }};
-    --rm-description-size-mobile: {{ section_settings.description_size_mobile }}px;
-    --rm-description-size-desktop: {{ section_settings.description_size_desktop }}px;
-    --rm-description-opacity: {{ section_settings.description_opacity | divided_by: 100.0 }};
+    --rm-description-size: {{ section_settings.description_size }}px;
     --rm-bullet-color: {{ section_settings.bullet_color }};
     {% if section_settings.background_color != blank %}
       --rm-bg: {{ section_settings.background_color }};
@@ -155,6 +147,7 @@
   .roadmap__container {
     max-width: var(--rm-max-width, 1400px);
     margin: 0 auto;
+    padding-inline: calc(var(--rm-container-padding, 80px) * 0.15);
   }
 
   .roadmap__header {
@@ -165,7 +158,7 @@
   .roadmap__heading {
     margin: 0 0 15px;
     color: var(--rm-heading-color, #ffffff);
-    font-size: var(--rm-heading-size-mobile, 34px);
+    font-size: calc(var(--rm-heading-size, 52px) * 0.65);
     font-weight: 700;
     line-height: 1.2;
   }
@@ -174,9 +167,8 @@
     font-weight: 700;
     background: linear-gradient(
       180deg,
-      var(--rm-accent-gradient-start, #b8b8b8) 1%,
-      var(--rm-accent-gradient-mid, #ffffff) 55%,
-      var(--rm-accent-gradient-end, #a3a3a3) 100%
+      var(--rm-accent-gradient-start, #b8b8b8),
+      var(--rm-accent-gradient-end, #a3a3a3)
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -197,7 +189,7 @@
 
   .roadmap__image-mobile {
     width: 100%;
-    margin-bottom: var(--rm-image-gap-mobile, 30px);
+    margin-bottom: calc(var(--rm-image-gap, 60px) * 0.5);
   }
 
   .roadmap__image-column {
@@ -237,7 +229,7 @@
     top: var(--rm-circle-size, 30px);
     width: var(--rm-line-width, 2px);
     height: 0%;
-    background-color: var(--rm-fill-color, #c9a84c);
+    background-color: var(--rm-line-color, #c9a84c);
     border-radius: var(--rm-line-width, 2px);
     transition: height 0.3s ease-out;
     transform-origin: top;
@@ -255,10 +247,14 @@
   }
 
   @media screen and (min-width: 750px) {
+    .roadmap__container {
+      padding-inline: var(--rm-container-padding, 80px);
+    }
+
     .roadmap__layout {
       flex-direction: row-reverse;
       align-items: flex-start;
-      gap: var(--rm-layout-gap, 60px);
+      gap: var(--rm-image-gap, 60px);
     }
 
     .roadmap__layout--image-left {
@@ -282,7 +278,7 @@
     }
 
     .roadmap__heading {
-      font-size: var(--rm-heading-size-desktop, 52px);
+      font-size: var(--rm-heading-size, 52px);
     }
 
     .roadmap__subheading {
@@ -323,35 +319,20 @@
     },
     {
       "type": "range",
-      "id": "heading_size_mobile",
-      "label": "Heading size (mobile)",
-      "min": 20,
-      "max": 48,
-      "step": 1,
-      "unit": "px",
-      "default": 34
-    },
-    {
-      "type": "range",
-      "id": "heading_size_desktop",
+      "id": "heading_size",
       "label": "Heading size (desktop)",
       "min": 28,
       "max": 72,
       "step": 1,
       "unit": "px",
-      "default": 52
+      "default": 52,
+      "info": "Scales down automatically on mobile."
     },
     {
       "type": "color",
       "id": "accent_gradient_start",
       "label": "Accent gradient (top)",
       "default": "#b8b8b8"
-    },
-    {
-      "type": "color",
-      "id": "accent_gradient_mid",
-      "label": "Accent gradient (middle)",
-      "default": "#ffffff"
     },
     {
       "type": "color",
@@ -430,24 +411,14 @@
     },
     {
       "type": "range",
-      "id": "image_gap_mobile",
-      "label": "Space below image (mobile)",
-      "min": 0,
-      "max": 60,
-      "step": 1,
-      "unit": "px",
-      "default": 30,
-      "visible_if": "{{ section.settings.image != blank }}"
-    },
-    {
-      "type": "range",
-      "id": "layout_gap",
+      "id": "image_gap",
       "label": "Gap between image and timeline (desktop)",
       "min": 0,
       "max": 120,
-      "step": 1,
+      "step": 2,
       "unit": "px",
       "default": 60,
+      "info": "Scales down automatically on mobile, where it becomes the space below the image.",
       "visible_if": "{{ section.settings.image != blank }}"
     },
     {
@@ -463,13 +434,8 @@
     {
       "type": "color",
       "id": "line_color",
-      "label": "Base line color",
-      "default": "#c9a84c"
-    },
-    {
-      "type": "color",
-      "id": "fill_color",
-      "label": "Scroll progress color",
+      "label": "Line color",
+      "info": "Used for both the base line and the scroll progress fill.",
       "default": "#c9a84c"
     },
     {
@@ -539,16 +505,6 @@
       "default": "#ffffff"
     },
     {
-      "type": "range",
-      "id": "circle_icon_size",
-      "label": "Icon size",
-      "min": 10,
-      "max": 32,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
       "type": "header",
       "content": "Badge"
     },
@@ -565,12 +521,6 @@
       "default": "#ffffff"
     },
     {
-      "type": "color",
-      "id": "badge_border_color",
-      "label": "t:settings.border_color",
-      "default": "#333030"
-    },
-    {
       "type": "range",
       "id": "badge_radius",
       "label": "t:settings.corner_radius",
@@ -582,23 +532,14 @@
     },
     {
       "type": "range",
-      "id": "badge_size_mobile",
-      "label": "Text size (mobile)",
-      "min": 8,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "badge_size_desktop",
+      "id": "badge_size",
       "label": "Text size (desktop)",
       "min": 8,
       "max": 22,
       "step": 1,
       "unit": "px",
-      "default": 13
+      "default": 13,
+      "info": "Scales down automatically on mobile."
     },
     {
       "type": "header",
@@ -612,23 +553,14 @@
     },
     {
       "type": "range",
-      "id": "title_size_mobile",
-      "label": "Size (mobile)",
-      "min": 12,
-      "max": 32,
-      "step": 1,
-      "unit": "px",
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "title_size_desktop",
+      "id": "title_size",
       "label": "Size (desktop)",
       "min": 14,
       "max": 40,
       "step": 1,
       "unit": "px",
-      "default": 23
+      "default": 23,
+      "info": "Scales down automatically on mobile."
     },
     {
       "type": "header",
@@ -642,33 +574,14 @@
     },
     {
       "type": "range",
-      "id": "description_size_mobile",
-      "label": "Size (mobile)",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "description_size_desktop",
+      "id": "description_size",
       "label": "Size (desktop)",
       "min": 10,
       "max": 22,
       "step": 1,
       "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "description_opacity",
-      "label": "t:settings.opacity",
-      "min": 50,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "default": 90
+      "default": 14,
+      "info": "Scales down automatically on mobile."
     },
     {
       "type": "color",
@@ -700,6 +613,17 @@
       "step": 20,
       "unit": "px",
       "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 80,
+      "info": "Scales down automatically on mobile."
     },
     {
       "type": "header",
@@ -747,26 +671,6 @@
       "step": 1,
       "unit": "px",
       "default": 72
-    },
-    {
-      "type": "range",
-      "id": "padding-inline-start",
-      "label": "t:settings.left",
-      "min": 0,
-      "max": 120,
-      "step": 1,
-      "unit": "px",
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "padding-inline-end",
-      "label": "t:settings.right",
-      "min": 0,
-      "max": 120,
-      "step": 1,
-      "unit": "px",
-      "default": 80
     }
   ],
   "presets": [

@@ -1,0 +1,870 @@
+{%- doc -%}
+  Renders a "testimonial peek carousel" section: a centered header (heading
+  with a metallic accent word + subheading) followed by a horizontally
+  scrollable row of fixed-width testimonial cards. The next card always
+  peeks partially at the edge; desktop adds prev/next arrows, mobile relies
+  on native touch swipe.
+
+  Every testimonial is a nested "_testimonial-peek-card" block, so merchants
+  can add, remove or reorder reviews freely. All text, images, icons,
+  colors, sizes, spacing, radius, card width and autoplay are configurable
+  through the section and block schemas.
+{%- enddoc -%}
+
+<script
+  src="{{ 'testimonial-peek-carousel.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign section_settings = section.settings
+  assign card_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="testimonial-peek-carousel spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --tpc-max-width: {{ section_settings.container_max_width }}px;
+    --tpc-container-padding: {{ section_settings.container_padding }}px;
+    --tpc-container-padding-mobile: {{ section_settings.container_padding_mobile }}px;
+    --tpc-heading-color: {{ section_settings.heading_color }};
+    --tpc-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --tpc-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --tpc-accent-dark: {{ section_settings.heading_accent_dark }};
+    --tpc-accent-light: {{ section_settings.heading_accent_light }};
+    --tpc-subheading-color: {{ section_settings.subheading_color }};
+    --tpc-subheading-size: {{ section_settings.subheading_size }}px;
+    --tpc-header-gap: {{ section_settings.header_gap }}px;
+    --tpc-header-bottom-gap-mobile: {{ section_settings.header_bottom_gap_mobile }}px;
+    --tpc-header-bottom-gap-desktop: {{ section_settings.header_bottom_gap_desktop }}px;
+    --tpc-card-width-mobile: {{ section_settings.card_width_mobile }}%;
+    --tpc-card-width-desktop: {{ section_settings.card_width_desktop }}px;
+    --tpc-items-gap: {{ section_settings.items_gap }}px;
+    --tpc-card-bg: {{ section_settings.card_background_color }};
+    --tpc-card-border-color: {{ section_settings.card_border_color }};
+    --tpc-card-border-width: {{ section_settings.card_border_width }}px;
+    --tpc-card-radius: {{ section_settings.card_radius }}px;
+    --tpc-card-padding: {{ section_settings.card_padding }}px;
+    --tpc-card-content-gap: {{ section_settings.card_content_gap }}px;
+    --tpc-card-min-height: {{ section_settings.card_min_height }}px;
+    --tpc-star-color: {{ section_settings.star_color }};
+    --tpc-star-size: {{ section_settings.star_size }}px;
+    --tpc-star-gap: {{ section_settings.star_gap }}px;
+    --tpc-quote-color: {{ section_settings.quote_color }};
+    --tpc-quote-size: {{ section_settings.quote_font_size }}px;
+    --tpc-avatar-size: {{ section_settings.avatar_size }}px;
+    --tpc-avatar-bg: {{ section_settings.avatar_background_color }};
+    --tpc-avatar-color: {{ section_settings.avatar_text_color }};
+    --tpc-name-color: {{ section_settings.name_color }};
+    --tpc-name-size: {{ section_settings.name_font_size }}px;
+    --tpc-verified-color: {{ section_settings.verified_color }};
+    --tpc-verified-check-color: {{ section_settings.verified_check_color }};
+    --tpc-verified-size: {{ section_settings.verified_font_size }}px;
+    --tpc-arrow-size: {{ section_settings.arrow_size }}px;
+    --tpc-arrow-bg: {{ section_settings.arrow_background_color }};
+    --tpc-arrow-border-color: {{ section_settings.arrow_border_color }};
+    --tpc-arrow-border-width: {{ section_settings.arrow_border_width }}px;
+    --tpc-arrow-radius: {{ section_settings.arrow_radius }}px;
+    --tpc-arrow-icon-color: {{ section_settings.arrow_icon_color }};
+    --tpc-arrow-gap: {{ section_settings.arrow_gap }}px;
+    {% if section_settings.background_color != blank %}
+      --tpc-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="testimonial-peek-carousel"
+>
+  <div class="testimonial-peek-carousel__container">
+    <header class="testimonial-peek-carousel__header">
+      {%- if section_settings.heading != blank -%}
+        <h2 class="testimonial-peek-carousel__heading">{{ section_settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section_settings.subheading != blank -%}
+        <p class="testimonial-peek-carousel__subheading">{{ section_settings.subheading }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if card_count > 0 -%}
+      <testimonial-peek-carousel-component
+        class="testimonial-peek-carousel__component"
+        data-autoplay="{{ section_settings.autoplay }}"
+        data-autoplay-speed="{{ section_settings.autoplay_speed }}"
+      >
+        <div
+          class="testimonial-peek-carousel__track"
+          ref="track"
+        >
+          {% content_for 'blocks' %}
+        </div>
+
+        {%- if section_settings.show_arrows and card_count > 1 -%}
+          <div class="testimonial-peek-carousel__controls">
+            <button
+              type="button"
+              class="testimonial-peek-carousel__arrow testimonial-peek-carousel__arrow--prev"
+              ref="prevButton"
+              on:click="/prev"
+              aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="testimonial-peek-carousel__arrow testimonial-peek-carousel__arrow--next"
+              ref="nextButton"
+              on:click="/next"
+              aria-label="{{ 'accessibility.slideshow_next' | t }}"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        {%- endif -%}
+      </testimonial-peek-carousel-component>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .testimonial-peek-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--tpc-bg, transparent);
+  }
+
+  .testimonial-peek-carousel__container {
+    max-width: var(--tpc-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--tpc-container-padding-mobile, 15px);
+  }
+
+  .testimonial-peek-carousel__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--tpc-header-gap, 20px);
+    text-align: center;
+    margin-bottom: var(--tpc-header-bottom-gap-mobile, 30px);
+  }
+
+  .testimonial-peek-carousel__heading {
+    margin: 0;
+    max-width: 46ch;
+    color: var(--tpc-heading-color, currentColor);
+    font-size: var(--tpc-heading-size-mobile, 34px);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .testimonial-peek-carousel__heading strong {
+    font-weight: 800;
+    background: linear-gradient(180deg, var(--tpc-accent-dark, #a3a3a3), var(--tpc-accent-light, #ffffff) 50%, var(--tpc-accent-dark, #a3a3a3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .testimonial-peek-carousel__subheading {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--tpc-subheading-color, currentColor);
+    font-size: var(--tpc-subheading-size, 14px);
+    line-height: 1.4;
+  }
+
+  .testimonial-peek-carousel__component {
+    display: block;
+    width: 100%;
+  }
+
+  .testimonial-peek-carousel__track {
+    display: flex;
+    gap: var(--tpc-items-gap, 20px);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .testimonial-peek-carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-peek-carousel__controls {
+    display: none;
+    justify-content: center;
+    gap: var(--tpc-arrow-gap, 12px);
+    margin-top: 20px;
+  }
+
+  .testimonial-peek-carousel__arrow {
+    width: var(--tpc-arrow-size, 40px);
+    height: var(--tpc-arrow-size, 40px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: var(--tpc-arrow-bg, transparent);
+    color: var(--tpc-arrow-icon-color, currentColor);
+    border: var(--tpc-arrow-border-width, 1px) solid var(--tpc-arrow-border-color, currentColor);
+    border-radius: var(--tpc-arrow-radius, 25px);
+    cursor: pointer;
+    transition:
+      opacity 0.3s ease,
+      transform 0.2s ease;
+  }
+
+  .testimonial-peek-carousel__arrow:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  .testimonial-peek-carousel__arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .testimonial-peek-carousel__arrow svg {
+    width: 60%;
+    height: 60%;
+    display: block;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonial-peek-carousel__container {
+      padding-inline: var(--tpc-container-padding, 20px);
+    }
+
+    .testimonial-peek-carousel__header {
+      margin-bottom: var(--tpc-header-bottom-gap-desktop, 40px);
+    }
+
+    .testimonial-peek-carousel__heading {
+      font-size: var(--tpc-heading-size-desktop, 52px);
+    }
+
+    .testimonial-peek-carousel__controls {
+      display: flex;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-peek-carousel__track {
+      scroll-behavior: auto;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonial peek carousel",
+  "class": "section-testimonial-peek-carousel",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_testimonial-peek-card"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "Wrap a word in bold to apply the metallic accent effect below.",
+      "default": "<p>The upgrade men over 40 <strong>actually notice</strong></p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_dark",
+      "label": "Accent gradient (dark)",
+      "default": "#a3a3a3"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_light",
+      "label": "Accent gradient (light)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Trusted by men who wanted a real solution, not another letdown."
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Space between heading and subheading",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_gap_mobile",
+      "label": "Space below header (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_gap_desktop",
+      "label": "Space below header (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "t:content.carousel"
+    },
+    {
+      "type": "range",
+      "id": "card_width_desktop",
+      "label": "Card width (desktop)",
+      "min": 220,
+      "max": 420,
+      "step": 5,
+      "unit": "px",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "card_width_mobile",
+      "label": "Card width (mobile)",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 85
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:settings.auto_rotate_slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "t:settings.speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5,
+      "visible_if": "{{ section.settings.autoplay }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "t:settings.show",
+      "info": "Arrows are hidden on mobile; visitors can swipe instead.",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "arrow_background_color",
+      "label": "t:settings.background_color",
+      "default": "#0f203e",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "color",
+      "id": "arrow_border_color",
+      "label": "Border color",
+      "default": "#c9a84c",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "color",
+      "id": "arrow_icon_color",
+      "label": "Icon color",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_size",
+      "label": "t:settings.size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 25,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "range",
+      "id": "arrow_gap",
+      "label": "t:settings.gap",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "header",
+      "content": "Card appearance"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "t:settings.background_color",
+      "default": "#0f203e"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap",
+      "label": "Content spacing",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_min_height",
+      "label": "Minimum card height",
+      "min": 120,
+      "max": 360,
+      "step": 4,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "header",
+      "content": "Star rating"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "t:settings.color",
+      "default": "#ffc347"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "t:settings.size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "star_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Quote"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "quote_font_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Avatar"
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "label": "t:settings.size",
+      "min": 28,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "avatar_background_color",
+      "label": "t:settings.background_color",
+      "default": "#0c0c0d"
+    },
+    {
+      "type": "color",
+      "id": "avatar_text_color",
+      "label": "t:settings.text_color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "header",
+      "content": "Name & verified badge"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Name color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "name_font_size",
+      "label": "Name size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "verified_color",
+      "label": "Badge text & icon color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "color",
+      "id": "verified_check_color",
+      "label": "Badge checkmark color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "verified_font_size",
+      "label": "Badge text size",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial peek carousel",
+      "category": "t:categories.product",
+      "blocks": {
+        "card_1": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Mark M., 52 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>"
+          }
+        },
+        "card_2": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Mark M., 52 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>"
+          }
+        },
+        "card_3": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Jason T., 42 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p>\"Within 10 days my energy was noticeably higher. No more mid-day crashes, and I feel way more driven overall. Even my workouts feel stronger. This stuff is legit.\"</p>"
+          }
+        },
+        "card_4": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Marcus M., 36 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p><strong>\"My stamina is on another level.</strong><br>Biggest difference for me is endurance. Whether it's the gym or bedroom, I last longer and feel more in control. Haven't felt like this in years.\"</p>"
+          }
+        },
+        "card_5": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Kevin R., 54 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p><strong>\"Leaner face, more confidence.</strong><br>I started for energy but noticed my face looked less puffy and more defined. That alone boosted my confidence like crazy.\"</p>"
+          }
+        },
+        "card_6": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Omar H., 49 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p><strong>\"This fixed what I thought was just aging.</strong><br>I figured feeling tired all the time was normal. After a few weeks on this, my energy came back, my workouts improved, and I just feel like myself again.\"</p>"
+          }
+        },
+        "card_7": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "reviewer_name": "Brandon C., 37 y.o.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verified Buyer",
+            "quote": "<p><strong>\"My girl keeps asking what changed.</strong> Didn't tell her I started this, but she noticed. More energy, better performance, and just more presence overall. That says enough.\"</p>"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4", "card_5", "card_6", "card_7"]
+    }
+  ]
+}
+{% endschema %}

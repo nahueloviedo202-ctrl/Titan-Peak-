@@ -1,0 +1,532 @@
+{%- doc -%}
+  Renders an "Image with text" section: an image on one side and a stack of
+  content on the other (rich text paragraphs and pill-style list items, in
+  any order and quantity).
+
+  Every paragraph is a nested "_image-text-paragraph" block and every list
+  entry is a nested "_image-text-list-item" block, so merchants can add,
+  remove or reorder them freely; consecutive list items automatically wrap
+  into a one or two column grid. All text, images, icons, colors, sizes,
+  spacing, radius and column count are configurable through the section and
+  block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+
+  assign list_item_basis = '100%'
+  if section_settings.list_columns == '2'
+    assign list_item_basis = 'calc(50% - (var(--itw-list-gap) / 2))'
+  endif
+
+  assign content_justify = 'flex-start'
+  assign text_align = 'left'
+  if section_settings.text_alignment == 'center'
+    assign content_justify = 'center'
+    assign text_align = 'center'
+  endif
+-%}
+
+<div class="section-background"></div>
+
+<div
+  class="image-with-text"
+  style="
+    --itw-bg-start: {{ section_settings.background_gradient_start }};
+    --itw-bg-end: {{ section_settings.background_gradient_end }};
+    --itw-bg-angle: {{ section_settings.background_gradient_angle }}deg;
+    --itw-radius: {{ section_settings.corner_radius }}px;
+    --itw-max-width: {{ section_settings.container_max_width }}px;
+    --itw-pad-inline-mobile: {{ section_settings.container_padding_mobile }}px;
+    --itw-pad-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+    --itw-pad-block-start-mobile: {{ section_settings.padding_top_mobile }}px;
+    --itw-pad-block-end-mobile: {{ section_settings.padding_bottom_mobile }}px;
+    --itw-pad-block-start-desktop: {{ section_settings.padding_top_desktop }}px;
+    --itw-pad-block-end-desktop: {{ section_settings.padding_bottom_desktop }}px;
+    --itw-gap-mobile: {{ section_settings.column_gap_mobile }}px;
+    --itw-gap-desktop: {{ section_settings.column_gap_desktop }}px;
+    --itw-media-radius: {{ section_settings.image_radius }}px;
+    --itw-media-max-width: {{ section_settings.image_max_width }}px;
+    --itw-list-gap: {{ section_settings.list_gap }}px;
+    --itw-list-item-basis: {{ list_item_basis }};
+    --itw-list-font-mobile: {{ section_settings.list_font_size_mobile }}rem;
+    --itw-list-font-desktop: {{ section_settings.list_font_size_desktop }}rem;
+    --itw-content-justify: {{ content_justify }};
+    --itw-text-align: {{ text_align }};
+  "
+  data-testid="image-with-text"
+>
+  <div class="image-with-text__container">
+    <div class="image-with-text__layout image-with-text__layout--{{ section_settings.image_position }}">
+      <div class="image-with-text__media">
+        {%- if section_settings.image_link != blank -%}
+          <a href="{{ section_settings.image_link }}" class="image-with-text__media-link">
+        {%- endif -%}
+
+        {%- if section_settings.image -%}
+          {{
+            section_settings.image
+            | image_url: width: 1600
+            | image_tag:
+              widths: '400, 800, 1200, 1600',
+              sizes: '(min-width: 750px) 50vw, 100vw',
+              alt: section_settings.image_alt | default: section_settings.image.alt,
+              class: 'image-with-text__image',
+              loading: 'lazy'
+          }}
+        {%- else -%}
+          <div class="image-with-text__placeholder">
+            {{ 'hero-apparel-2' | placeholder_svg_tag: 'image-with-text__placeholder-image' }}
+          </div>
+        {%- endif -%}
+
+        {%- if section_settings.image_link != blank -%}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="image-with-text__content">
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .image-with-text {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--itw-radius, 0px);
+    background: linear-gradient(var(--itw-bg-angle, 180deg), var(--itw-bg-start, #141720), var(--itw-bg-end, #172437));
+    padding-block: var(--itw-pad-block-start-mobile, 40px) var(--itw-pad-block-end-mobile, 40px);
+  }
+
+  .image-with-text__container {
+    max-width: var(--itw-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--itw-pad-inline-mobile, 20px);
+  }
+
+  .image-with-text__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itw-gap-mobile, 30px);
+  }
+
+  .image-with-text__media {
+    width: 100%;
+    border-radius: var(--itw-media-radius, 8px);
+    overflow: hidden;
+  }
+
+  .image-with-text__media-link {
+    display: block;
+  }
+
+  .image-with-text__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: var(--itw-media-max-width, 800px);
+    margin-inline: auto;
+    border-radius: var(--itw-media-radius, 8px);
+    object-fit: cover;
+  }
+
+  .image-with-text__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--itw-media-radius, 8px);
+    overflow: hidden;
+    background-color: rgb(255 255 255 / 0.08);
+  }
+
+  .image-with-text__placeholder-image {
+    width: 40%;
+    height: 40%;
+  }
+
+  .image-with-text__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: var(--itw-list-gap, 8px);
+    justify-content: var(--itw-content-justify, center);
+    text-align: var(--itw-text-align, center);
+  }
+
+  .image-with-text__content > .image-with-text__paragraph {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .image-with-text {
+      padding-block: var(--itw-pad-block-start-desktop, 60px) var(--itw-pad-block-end-desktop, 60px);
+    }
+
+    .image-with-text__container {
+      padding-inline: var(--itw-pad-inline-desktop, 80px);
+    }
+
+    .image-with-text__layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--itw-gap-desktop, 40px);
+    }
+
+    .image-with-text__layout--right .image-with-text__media {
+      order: 2;
+    }
+
+    .image-with-text__layout--right .image-with-text__content {
+      order: 1;
+    }
+
+    .image-with-text__media,
+    .image-with-text__content {
+      width: 50%;
+      flex: 1 1 50%;
+      min-width: 0;
+    }
+
+    .image-with-text__media {
+      flex-shrink: 0;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image with text",
+  "class": "section-image-with-text",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_image-text-paragraph"
+    },
+    {
+      "type": "_image-text-list-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Link"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "Image max width",
+      "min": 200,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "left",
+      "info": "On mobile the image always appears above the content."
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "left",
+          "label": "t:options.left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Gap between image and content (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Gap between image and content (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "List items"
+    },
+    {
+      "type": "select",
+      "id": "list_columns",
+      "label": "Columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2",
+      "info": "Consecutive list item blocks wrap automatically into this many columns."
+    },
+    {
+      "type": "range",
+      "id": "list_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "list_font_size_mobile",
+      "label": "List text size (mobile)",
+      "min": 0.8,
+      "max": 2.4,
+      "step": 0.1,
+      "unit": "rem",
+      "default": 1.2
+    },
+    {
+      "type": "range",
+      "id": "list_font_size_desktop",
+      "label": "List text size (desktop)",
+      "min": 0.8,
+      "max": 2.4,
+      "step": 0.1,
+      "unit": "rem",
+      "default": 1.6
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_start",
+      "label": "Gradient start",
+      "default": "#141720"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_end",
+      "label": "Gradient end",
+      "default": "#172437"
+    },
+    {
+      "type": "range",
+      "id": "background_gradient_angle",
+      "label": "Gradient angle",
+      "min": 0,
+      "max": 360,
+      "step": 5,
+      "unit": "deg",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "category": "t:categories.product",
+      "blocks": {
+        "paragraph_1": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p><strong>As men age, essential minerals become depleted due to stress, poor sleep, and modern toxins.</strong><br><br>These minerals are critical for energy production, hormone balance, and circulation.</p><p>When your body runs low, everything slows down — from your stamina and recovery to your focus and performance.</p>",
+            "margin_bottom": 12
+          }
+        },
+        "item_1": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Low Energy & Fatigue"
+          }
+        },
+        "item_2": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Reduced Focus & Mental Clarity"
+          }
+        },
+        "item_3": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Slower Recovery & Endurance"
+          }
+        },
+        "item_4": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Weaker Circulation & Performance"
+          }
+        },
+        "paragraph_2": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p><em>Results vary. Product benefits are based on ingredient research and consumer-reported experiences.</em></p>",
+            "font_size_mobile": 0.9,
+            "font_size_desktop": 1.1,
+            "margin_top": 12
+          }
+        }
+      },
+      "block_order": ["paragraph_1", "item_1", "item_2", "item_3", "item_4", "paragraph_2"]
+    }
+  ]
+}
+{% endschema %}

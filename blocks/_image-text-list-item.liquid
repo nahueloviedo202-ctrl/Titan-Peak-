@@ -1,0 +1,239 @@
+
+
+{%- doc -%}
+  Renders a single pill/row item for the "Image with text" section: an
+  optional icon (cross, check, or a custom uploaded image) next to a label.
+
+  The item's width (single column vs. two columns), gap and font size are
+  shared across every item and controlled by the parent section through the
+  `--itw-list-item-basis`, `--itw-list-gap`, `--itw-list-font-mobile` and
+  `--itw-list-font-desktop` custom properties, so the whole list stays
+  visually consistent no matter how many items are added.
+
+  Meant to be used exclusively as a child block of `sections/image-with-text.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign has_icon = false
+  if block_settings.custom_icon != blank or block_settings.icon_style != 'none'
+    assign has_icon = true
+  endif
+-%}
+
+<div
+  class="image-with-text__list-item"
+  style="
+    background-color: {{ block_settings.background_color }};
+    color: {{ block_settings.text_color }};
+    border: {{ block_settings.border_width }}px solid {{ block_settings.border_color }};
+    border-radius: {{ block_settings.border_radius }}px;
+    padding: {{ block_settings.padding_block }}px {{ block_settings.padding_inline }}px;
+  "
+  {{ block.shopify_attributes }}
+>
+  {%- if has_icon -%}
+    <span class="image-with-text__list-item-icon">
+      {%- if block_settings.custom_icon != blank -%}
+        {{
+          block_settings.custom_icon
+          | image_url: width: 64
+          | image_tag: width: 16, height: 16, loading: 'lazy', alt: '', class: 'image-with-text__list-item-icon-image'
+        }}
+      {%- elsif block_settings.icon_style == 'check' -%}
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+          <path
+            d="M3 8.5L6.5 12L13 4.5"
+            stroke="{{ block_settings.icon_color }}"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      {%- else -%}
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+          <path
+            d="M12 4L4 12"
+            stroke="{{ block_settings.icon_color }}"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M4 4L12 12"
+            stroke="{{ block_settings.icon_color }}"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      {%- endif -%}
+    </span>
+  {%- endif -%}
+
+  {%- if block_settings.label != blank -%}
+    <span class="image-with-text__list-item-text">{{ block_settings.label }}</span>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .image-with-text__list-item {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 var(--itw-list-item-basis, 100%);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .image-with-text__list-item-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+
+  .image-with-text__list-item-icon svg,
+  .image-with-text__list-item-icon-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .image-with-text__list-item-text {
+    font-size: var(--itw-list-font-mobile, 1rem);
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .image-with-text__list-item-text {
+      font-size: var(--itw-list-font-desktop, 1rem);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "List item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "List item"
+    },
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "select",
+      "id": "icon_style",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "check",
+          "label": "Check mark"
+        }
+      ],
+      "default": "cross"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#BA3030"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "t:settings.image_icon",
+      "info": "Replaces the icon above when set."
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "alpha": true,
+      "default": "#c54e4e33"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "alpha": true,
+      "default": "#00000000"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "t:settings.thickness",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_block",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "padding_inline",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "List item",
+      "settings": {
+        "label": "List item"
+      }
+    }
+  ]
+}
+{% endschema %}

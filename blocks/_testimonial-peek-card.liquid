@@ -1,0 +1,299 @@
+{%- doc -%}
+  Renders a single testimonial slide (star rating, quote, avatar, name and
+  verified badge) inside the "testimonial-peek-carousel" section.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-review content.
+
+  Meant to be used exclusively as a child block of `sections/testimonial-peek-carousel.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign star_count = block_settings.star_count | default: 0
+  assign rating_label = 'Rating ' | append: star_count | append: ' stars'
+  assign initial = block_settings.reviewer_name | slice: 0, 1 | upcase
+-%}
+
+<article
+  class="testimonial-peek-card"
+  {{ block.shopify_attributes }}
+>
+  {%- if star_count > 0 -%}
+    <div
+      class="testimonial-peek-card__stars"
+      aria-label="{{ rating_label }}"
+    >
+      <svg
+        class="visually-hidden"
+        style="width: 0; height: 0;"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 18 17"
+        role="presentation"
+      >
+        <defs>
+          <symbol
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 17"
+            id="testimonial-peek-star-{{ block.id }}"
+          >
+            <path
+              d="M7.8749 0.445959C8.16835 -0.148637 9.01622 -0.148637 9.30967 0.445959L11.3451 4.57013C11.4616 4.80625 11.6869 4.9699 11.9474 5.00777L16.4987 5.66911C17.1549 5.76445 17.4169 6.57083 16.9421 7.03366L13.6487 10.2439C13.4602 10.4277 13.3742 10.6925 13.4187 10.952L14.1961 15.4849C14.3082 16.1384 13.6223 16.6368 13.0354 16.3282L8.96456 14.1881C8.7315 14.0656 8.45307 14.0656 8.22001 14.1881L4.14921 16.3282C3.56231 16.6368 2.87636 16.1384 2.98845 15.4849L3.7659 10.952C3.81042 10.6925 3.72438 10.4277 3.53583 10.2439L0.24248 7.03366C-0.232334 6.57083 0.0296742 5.76445 0.685851 5.66911L5.23715 5.00776C5.49771 4.9699 5.72297 4.80625 5.8395 4.57013L7.8749 0.445959Z"
+            />
+          </symbol>
+        </defs>
+      </svg>
+
+      {%- for i in (1..star_count) -%}
+        <svg
+          class="testimonial-peek-card__star"
+          viewBox="0 0 18 17"
+          role="presentation"
+          aria-hidden="true"
+        >
+          <use xlink:href="#testimonial-peek-star-{{ block.id }}"></use>
+        </svg>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if block_settings.quote != blank -%}
+    <div class="testimonial-peek-card__quote rte">{{ block_settings.quote }}</div>
+  {%- endif -%}
+
+  {%- if block_settings.reviewer_name != blank -%}
+    <div class="testimonial-peek-card__author">
+      <div
+        class="testimonial-peek-card__avatar"
+        aria-hidden="true"
+      >
+        {%- if block_settings.avatar_image != blank -%}
+          {{
+            block_settings.avatar_image
+            | image_url: width: 160
+            | image_tag: loading: 'lazy', widths: '80, 160', sizes: '40px', alt: '', class: 'testimonial-peek-card__avatar-image'
+          }}
+        {%- else -%}
+          {{- initial -}}
+        {%- endif -%}
+      </div>
+
+      <div class="testimonial-peek-card__info">
+        <span class="testimonial-peek-card__name">{{ block_settings.reviewer_name }}</span>
+
+        {%- if block_settings.show_verified -%}
+          <span class="testimonial-peek-card__verified">
+            <svg
+              class="testimonial-peek-card__verified-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="12"
+                fill="currentColor"
+              />
+              <path
+                d="M7 12.5L10.25 15.75L17 8.5"
+                stroke="var(--tpc-verified-check-color, #ffffff)"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            {{- block_settings.verified_text -}}
+          </span>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</article>
+
+{% stylesheet %}
+  .testimonial-peek-card {
+    flex: 0 0 var(--tpc-card-width-mobile, 85%);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tpc-card-content-gap, 8px);
+    min-height: var(--tpc-card-min-height, 200px);
+    padding: var(--tpc-card-padding, 24px);
+    background-color: var(--tpc-card-bg, #0f203e);
+    border: var(--tpc-card-border-width, 1px) solid var(--tpc-card-border-color, #e8d5a3);
+    border-radius: var(--tpc-card-radius, 6px);
+  }
+
+  .testimonial-peek-card__stars {
+    display: flex;
+    gap: var(--tpc-star-gap, 0px);
+    color: var(--tpc-star-color, #ffc347);
+  }
+
+  .testimonial-peek-card__star {
+    width: var(--tpc-star-size, 20px);
+    height: var(--tpc-star-size, 20px);
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .testimonial-peek-card__quote {
+    flex: 1;
+    margin: 0;
+    color: var(--tpc-quote-color, #ffffff);
+    font-size: var(--tpc-quote-size, 14px);
+    line-height: 1.5;
+  }
+
+  .testimonial-peek-card__quote :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  .testimonial-peek-card__quote :is(p, ul, ol) + :is(p, ul, ol) {
+    margin-top: 0.75em;
+  }
+
+  .testimonial-peek-card__author {
+    margin-top: auto;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-peek-card__avatar {
+    width: var(--tpc-avatar-size, 40px);
+    height: var(--tpc-avatar-size, 40px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--tpc-avatar-bg, #0c0c0d);
+    color: var(--tpc-avatar-color, #c9a84c);
+    font-size: calc(var(--tpc-avatar-size, 40px) * 0.4);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .testimonial-peek-card__avatar-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-peek-card__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    column-gap: 8px;
+  }
+
+  .testimonial-peek-card__name {
+    color: var(--tpc-name-color, #ffffff);
+    font-size: var(--tpc-name-size, 14px);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .testimonial-peek-card__verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--tpc-verified-color, #c9a84c);
+    font-size: var(--tpc-verified-size, 12px);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .testimonial-peek-card__verified-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonial-peek-card {
+      flex-basis: var(--tpc-card-width-desktop, 300px);
+      max-width: var(--tpc-card-width-desktop, 300px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Quote"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote",
+      "default": "<p>\"Add a customer quote here.\"</p>"
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "range",
+      "id": "star_count",
+      "label": "Number of stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Author"
+    },
+    {
+      "type": "text",
+      "id": "reviewer_name",
+      "label": "Name",
+      "info": "Displayed as-is, e.g. \"Mark M., 52 y.o.\"",
+      "default": "Full name"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_image",
+      "label": "t:settings.image",
+      "info": "Optional. Shows the name's first letter when empty."
+    },
+    {
+      "type": "header",
+      "content": "Verified badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "t:settings.label",
+      "default": "Verified Buyer",
+      "visible_if": "{{ block.settings.show_verified }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial"
+    }
+  ]
+}
+{% endschema %}

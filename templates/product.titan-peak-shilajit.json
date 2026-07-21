@@ -61,117 +61,7 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-            "testimonial_card_Y3EQqh": {
-              "type": "testimonial-card",
-              "name": "Testimonial card",
-              "settings": {
-                "avatar_image": "shopify://shop_images/reviewr_image_beef_png_1c15e2e2-3afc-444d-9dce-6d3e0578e2d5.png",
-                "quote": "<p>Para hombres que buscan potenciar su energía y deseo, recomiendo un enfoque natural. Esta combinación de Shilajit puro y hierbas adaptógenas ayuda de forma segura a mejorar la resistencia y el bienestar para un rendimiento óptimo.</p>",
-                "reviewer_name": "Dr. Marcos Torres, M.D. ",
-                "reviewer_title": "Médico certificado, especialista en salud masculina",
-                "show_verified_badge": true,
-                "verified_badge_text": "Cliente verificado",
-                "verified_text_color": "#76af6d",
-                "verified_icon_color": "#1a8400",
-                "verified_font_size": 11,
-                "width": "100%",
-                "stack_on_mobile": true,
-                "avatar_size": 100,
-                "avatar_size_mobile": 80,
-                "gap": 16,
-                "background_color": "#fcfaf5",
-                "corner_radius": 12,
-                "card_padding": 16,
-                "text_color": "#1a1a1a",
-                "quote_font_size": 14,
-                "name_font_size": 15,
-                "credentials_font_size": 12,
-                "padding-block-start": 16,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "wellness_benefits_zyjR8z": {
-              "type": "wellness-benefits",
-              "name": "Wellness benefits",
-              "settings": {
-                "heading": "<p>ALIMENTA <strong>TU CUERPO Y MENTE</strong> DE FORMA NATURAL</p>",
-                "columns_desktop": 4,
-                "columns_mobile": 2,
-                "column_gap_desktop": 24,
-                "column_gap_mobile": 16,
-                "item_gap": 10,
-                "card_background_color": "#fcfaf5",
-                "card_radius": 12,
-                "card_padding": 24,
-                "content_gap": 24,
-                "heading_size_mobile": 20,
-                "heading_size_desktop": 24,
-                "heading_gap": 0,
-                "heading_color": "#1a1a1a",
-                "heading_accent_color": "#a45b2c",
-                "icon_size_mobile": 38,
-                "icon_size_desktop": 44,
-                "icon_radius": 50,
-                "icon_gradient_start": "#e7b944",
-                "icon_gradient_end": "#ffed68",
-                "icon_color": "#1a1a1a",
-                "text_size": 16,
-                "text_color": "#1a1a1a",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "wellness_benefit_item_AL6mNW": {
-                  "type": "_wellness-benefit-item",
-                  "settings": {
-                    "icon": "heart_pulse",
-                    "text": "Apoya la vitalidad y el bienestar"
-                  },
-                  "blocks": {}
-                },
-                "wellness_benefit_item_fBXhqa": {
-                  "type": "_wellness-benefit-item",
-                  "settings": {
-                    "icon": "lightning",
-                    "text": "Promueve una energía estable"
-                  },
-                  "blocks": {}
-                },
-                "wellness_benefit_item_8BfiGj": {
-                  "type": "_wellness-benefit-item",
-                  "settings": {
-                    "icon": "focus",
-                    "text": "Favorece el foco y la recuperación"
-                  },
-                  "blocks": {}
-                },
-                "wellness_benefit_item_YfT3Fg": {
-                  "type": "_wellness-benefit-item",
-                  "settings": {
-                    "icon": "star",
-                    "text": "Aumenta la confianza"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "wellness_benefit_item_AL6mNW",
-                "wellness_benefit_item_fBXhqa",
-                "wellness_benefit_item_8BfiGj",
-                "wellness_benefit_item_YfT3Fg"
-              ]
-            }
-          },
-          "block_order": [
-            "testimonial_card_Y3EQqh",
-            "wellness_benefits_zyjR8z"
-          ]
+          "blocks": {}
         },
         "product-details": {
           "type": "_product-details",
@@ -896,6 +786,121 @@
         "padding-block-end": 48
       }
     },
+    "before_after_slider_iCKGyt": {
+      "type": "before-after-slider",
+      "blocks": {
+        "before_after_slide_WxBRmW": {
+          "type": "_before-after-slide",
+          "name": "Before/after slide",
+          "settings": {
+            "category": "",
+            "before_label": "Before",
+            "after_label": "After"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_BGDt7q": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Body composition",
+            "before_label": "Antes",
+            "after_label": "Después de 4 semanas"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_tx8fma": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Energy levels",
+            "before_label": "Antes",
+            "after_label": "Después de 6 semanas"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_A3PpB9": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Body composition",
+            "before_label": "Antes",
+            "after_label": "Después de 8 semanas"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "before_after_slide_WxBRmW",
+        "before_after_slide_BGDt7q",
+        "before_after_slide_tx8fma",
+        "before_after_slide_A3PpB9"
+      ],
+      "name": "Before/after slider",
+      "settings": {
+        "heading": "<p>Mi Testosterona se Triplicó y<strong> Mi Mujer No Para de Decirme lo Distinto que Estoy</strong></p>",
+        "heading_color": "{{ settings.color_palette.background }}",
+        "heading_accent_color": "#c9a84c",
+        "heading_size_mobile": 30,
+        "heading_size_desktop": 42,
+        "subheading": "<p>Mira las increíbles transformaciones y resultados de nuestras gominolas.</p>",
+        "subheading_color": "#666666",
+        "subheading_size": 18,
+        "header_gap_mobile": 20,
+        "header_gap_desktop": 30,
+        "show_filters": true,
+        "all_filter_label": "All",
+        "filter_group_label": "Filter results by category",
+        "filter_bg_color": "{{ settings.color_palette.background }}",
+        "filter_text_color": "#333333",
+        "filter_border_color": "#e0e0e0",
+        "filter_active_bg_color": "{{ settings.color_palette.background }}",
+        "filter_active_text_color": "#ffffff",
+        "filter_active_border_color": "{{ settings.color_palette.background }}",
+        "filter_radius": 8,
+        "desktop_columns": 3,
+        "tablet_columns": 2,
+        "mobile_slide_width": 100,
+        "items_gap_desktop": 24,
+        "items_gap_mobile": 16,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_bg_color": "#ffffff",
+        "arrow_icon_color": "#000000",
+        "arrow_border_color": "#e0e0e0",
+        "arrow_hover_bg_color": "#eaeaea",
+        "arrow_hover_icon_color": "#000000",
+        "arrow_hover_border_color": "#cccccc",
+        "arrow_size": 40,
+        "arrow_border_width": 1,
+        "arrow_radius": 50,
+        "arrow_gap": 20,
+        "show_pagination": true,
+        "pagination_label": "Slide navigation",
+        "dot_color": "#cccccc",
+        "dot_active_color": "#121212",
+        "dot_size": 8,
+        "dot_gap": 8,
+        "image_ratio": "portrait",
+        "images_gap": 4,
+        "image_radius": 6,
+        "image_border_width": 0,
+        "image_border_color": "#e0e0e0",
+        "before_label_bg_color": "#e8e8e8",
+        "before_label_text_color": "#000000",
+        "after_label_bg_color": "#c9a84c",
+        "after_label_text_color": "#ffffff",
+        "label_radius": 6,
+        "label_font_size": 13,
+        "card_background_color": "",
+        "card_radius": 6,
+        "card_padding": 8,
+        "container_max_width": 1400,
+        "background_color": "#13141D",
+        "padding-block-start": 50,
+        "padding-block-end": 50,
+        "padding-inline-start": 40,
+        "padding-inline-end": 40
+      }
+    },
     "results_timeline_EH8jc9": {
       "type": "results-timeline",
       "blocks": {
@@ -1569,6 +1574,7 @@
   "order": [
     "main",
     "product_recommendations_qggXJq",
+    "before_after_slider_iCKGyt",
     "results_timeline_EH8jc9",
     "full_width_images_j6d9b3",
     "image_checklist_DaCEnz",

@@ -1132,9 +1132,9 @@
         },
         "product_features_tab_FVmcbm": {
           "type": "_product-features-tab",
-          "disabled": true,
           "settings": {
-            "tab_label": "Organic Beetroot Gummies",
+            "tab_label": "PURE SHILAJIT GUMMIES",
+            "image": "shopify://shop_images/Gemini_Generated_Image_by5q4vby5q4vby5q-clean.webp",
             "image_alt": "",
             "cta_text": "Shop now",
             "cta_url": ""

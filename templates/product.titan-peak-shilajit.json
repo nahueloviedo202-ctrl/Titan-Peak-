@@ -1162,8 +1162,8 @@
           "settings": {
             "text": "<p><strong>A medida que los hombres envejecen, los minerales esenciales se agotan por el estrés, el mal sueño y las toxinas modernas</strong></p><p>Estos minerales son fundamentales para la producción de energía, el equilibrio hormonal y la circulación.<br/><br/>Cuando tu cuerpo se queda sin ellos, todo se ralentiza — desde tu resistencia y recuperación hasta tu concentración y rendimiento.</p>",
             "text_color": "#ffffff",
-            "font_size_mobile": 1.4,
-            "font_size_desktop": 1.5,
+            "font_size_mobile": 1,
+            "font_size_desktop": 1.4,
             "margin_top": 0,
             "margin_bottom": 12
           },

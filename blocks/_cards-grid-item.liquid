@@ -15,6 +15,8 @@
   assign block_settings = block.settings
   assign image_position = section.settings.card_image_position
   assign image_alt = block_settings.image_alt | default: block_settings.image.alt | default: block_settings.title
+
+  assign image_sizes = '(min-width: 990px) ' | append: section.settings.card_image_size_desktop | append: 'px, (min-width: 750px) ' | append: section.settings.card_image_size_tablet | append: 'px, ' | append: section.settings.card_image_size_mobile | append: 'px'
 -%}
 
 <div
@@ -29,7 +31,7 @@
         | image_url: width: 600
         | image_tag:
           widths: '150, 220, 300, 440, 600',
-          sizes: '(min-width: 990px) ' | append: section.settings.card_image_size_desktop | append: 'px, (min-width: 750px) ' | append: section.settings.card_image_size_tablet | append: 'px, ' | append: section.settings.card_image_size_mobile | append: 'px',
+          sizes: image_sizes,
           alt: image_alt,
           class: 'cards-grid-item__image-element',
           loading: 'lazy'

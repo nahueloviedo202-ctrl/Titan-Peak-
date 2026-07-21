@@ -793,9 +793,11 @@
           "type": "_before-after-slide",
           "name": "Before/after slide",
           "settings": {
-            "category": "",
-            "before_label": "Before",
-            "after_label": "After"
+            "category": "All",
+            "before_image": "shopify://shop_images/persona.webp",
+            "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona2.webp",
+            "after_label": "Después de 3 meses"
           },
           "blocks": {}
         },
@@ -803,7 +805,9 @@
           "type": "_before-after-slide",
           "settings": {
             "category": "Body composition",
+            "before_image": "shopify://shop_images/persona3antes.webp",
             "before_label": "Antes",
+            "after_image": "shopify://shop_images/Gemini_Generated_Image_2hghy52hghy52hgh-clean.webp",
             "after_label": "Después de 4 semanas"
           },
           "blocks": {}
@@ -812,7 +816,9 @@
           "type": "_before-after-slide",
           "settings": {
             "category": "Energy levels",
+            "before_image": "shopify://shop_images/persona4antes.webp",
             "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona4despues.webp",
             "after_label": "Después de 6 semanas"
           },
           "blocks": {}
@@ -821,7 +827,9 @@
           "type": "_before-after-slide",
           "settings": {
             "category": "Body composition",
+            "before_image": "shopify://shop_images/persona5antes.webp",
             "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona5despues.webp",
             "after_label": "Después de 8 semanas"
           },
           "blocks": {}

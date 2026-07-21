@@ -1371,10 +1371,19 @@
             "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
           },
           "blocks": {}
+        },
+        "product_carousel_card_cCLn6Y": {
+          "type": "_product-carousel-card",
+          "name": "Product",
+          "settings": {
+            "product": "titan-peak-shilajit®-potenciador-de-testosterona-10-en-1-definitivo"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "product_carousel_card_38wMi6"
+        "product_carousel_card_38wMi6",
+        "product_carousel_card_cCLn6Y"
       ],
       "name": "Products carousel",
       "settings": {

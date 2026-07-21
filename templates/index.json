@@ -342,108 +342,37 @@
         "padding-block-end": 0
       }
     },
-    "products_carousel_7VJyYx": {
-      "type": "products-carousel",
-      "blocks": {
-        "product_carousel_card_38wMi6": {
-          "type": "_product-carousel-card",
-          "settings": {
-            "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "product_carousel_card_38wMi6"
-      ],
-      "name": "Products carousel",
-      "settings": {
-        "heading": "Los Más Vendidos de TITAN PEAK",
-        "heading_color": "#1a1a1a",
-        "heading_size": 32,
-        "desktop_columns": 4,
-        "tablet_columns": 2,
-        "mobile_slide_width": 85,
-        "items_gap": 20,
-        "items_gap_mobile": 16,
-        "header_gap": 32,
-        "transition_speed": 400,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "show_arrows": true,
-        "arrow_size": 40,
-        "arrow_gap": 12,
-        "arrow_icon_color": "#1a1a1a",
-        "arrow_prev_background": "#f7f4f2",
-        "arrow_next_gradient_start": "#ffed68",
-        "arrow_next_gradient_end": "#e4b948",
-        "container_max_width": 1600,
-        "container_padding": 32,
-        "container_padding_mobile": 16,
-        "card_background_color": "",
-        "card_radius": 0,
-        "card_padding": 0,
-        "card_content_gap": 12,
-        "image_aspect_ratio": "1 / 1",
-        "image_fit": "contain",
-        "title_color": "#1a1a1a",
-        "title_size": 22,
-        "title_case": "capitalize",
-        "compare_price_color": "#1a1a1ab3",
-        "compare_price_size": 14,
-        "price_color": "#1a1a1a",
-        "price_size": 16,
-        "show_discount_badge": true,
-        "discount_label": "AHORRA",
-        "badge_background_color": "#1a1a1a",
-        "badge_text_color": "#ffffff",
-        "badge_size": 12,
-        "badge_radius": 20,
-        "button_label": "AÑADIR AL CARRITO",
-        "button_open_new_tab": false,
-        "button_text_color": "#1a1a1a",
-        "button_gradient_start": "#e7b944",
-        "button_gradient_end": "#ffed68",
-        "button_radius": 12,
-        "button_font_size": 18,
-        "button_padding_block": 16,
-        "button_padding_inline": 24,
-        "background_color": "#ffffff",
-        "padding-block-start": 80,
-        "padding-block-end": 80
-      }
-    },
     "customer_reviews_tabs_CqTfmC": {
       "type": "customer-reviews-tabs",
       "blocks": {
         "customer_reviews_tab_nUmhez": {
           "type": "_customer-reviews-tab",
           "settings": {
-            "tab_label": "Performance Gummies"
+            "tab_label": "GUMMIES DE RENDIMIENTO"
           },
           "blocks": {
             "customer_review_card_VCk9ay": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Jordan M.",
+                "customer_name": "Jorge M.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "All-day energy",
-                "review_text": "<p>I've tried every energy supplement under the sun and nothing stuck - until these. By week three I was waking up ready to go, no afternoon crash, no jitters. The Ashwagandha and Shilajit combo just quietly does its job. My workouts feel stronger and my focus at work is noticeably sharper. One gummy a day really is all it takes.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "ENERGÍA TODO EL DÍA",
+                "review_text": "<p>He probado todos los suplementos de energía habidos y por haber, y nada me funcionó — hasta esto. Para la tercera semana ya me despertaba con ganas, sin bajón por la tarde, sin nerviosismo. La combinación de Ashwagandha y Shilajit hace su trabajo en silencio. Mis entrenamientos se sienten más fuertes y mi concentración en el trabajo es notablemente más aguda. Una gominola al día es todo lo que hace falta.</p>"
               },
               "blocks": {
                 "customer_review_tag_7eEqcT": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Sustained Energy"
+                    "text": "Energía Sostenida"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_AWzhWr": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mental Clarity"
+                    "text": "Claridad Mental"
                   },
                   "blocks": {}
                 }
@@ -459,22 +388,22 @@
                 "customer_name": "Alex R.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Stamina booster",
-                "review_text": "<p>My endurance during workouts has genuinely improved since starting these. I'm hitting PRs I thought were behind me, and recovery feels faster too. The fact that it's stimulant-free means I can take it any time - no racing heart, no sleep issues. Just steady, reliable performance support that compounds over time.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "POTENCIADOR DE RESISTENCIA",
+                "review_text": "<p>Mi resistencia en los entrenamientos ha mejorado de verdad desde que empecé con esto. Estoy superando marcas personales que creía imposibles, y la recuperación también es más rápida. Al no llevar estimulantes, puedo tomarlo a cualquier hora — sin taquicardia, sin problemas de sueño. Solo un apoyo constante y fiable al rendimiento que se acumula con el tiempo.</p>"
               },
               "blocks": {
                 "customer_review_tag_qJEbfY": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Workout Performance"
+                    "text": "Rendimiento en el Entrenamiento"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_BRLghN": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Faster Recovery"
+                    "text": "Recuperación Más Rápida"
                   },
                   "blocks": {}
                 }
@@ -487,32 +416,32 @@
             "customer_review_card_N378KN": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Taylor K.",
+                "customer_name": "Fernando K.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Complete wellness",
-                "review_text": "<p>I picked these up primarily for the stress support - the Ashwagandha was a big draw - and they've exceeded my expectations on every front. My skin looks clearer, my sleep is deeper, and my energy through the day is much more balanced. The gummies taste great too, which means I actually remember to take them.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "BIENESTAR COMPLETO",
+                "review_text": "<p>Los compré principalmente por el apoyo contra el estrés — la Ashwagandha fue lo que más me llamó la atención — y superaron mis expectativas en todos los sentidos. Mi piel se ve más clara, duermo más profundo y mi energía durante el día está mucho más equilibrada. Las gominolas también saben genial, así que la verdad me acuerdo de tomarlas.</p>"
               },
               "blocks": {
                 "customer_review_tag_Wz9zUQ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Stress Relief"
+                    "text": "Alivio del Estrés"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_qaEDKa": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Clearer Skin"
+                    "text": "Piel Más Clara"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_H8Vdzd": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Better Sleep"
+                    "text": "Mejor Sueño"
                   },
                   "blocks": {}
                 }
@@ -526,25 +455,25 @@
             "customer_review_card_mgQyPx": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Casey L.",
+                "customer_name": "Carlos L.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Drive & vitality",
-                "review_text": "<p>About two months in and the difference is noticeable. More drive, better circulation, and a general sense of vitality that had been missing for a while. I appreciate that the ingredients are clearly listed and clinically studied - not some mystery proprietary blend. The L-Arginine and Maca combination really delivers.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "DESEO Y VITALIDAD",
+                "review_text": "<p>Llevo unos dos meses y la diferencia se nota. Más deseo, mejor circulación y una sensación general de vitalidad que llevaba tiempo sin sentir. Valoro que los ingredientes estén claramente listados y estudiados clínicamente, no una mezcla misteriosa registrada. La combinación de L-Arginina y Maca realmente cumple.</p>"
               },
               "blocks": {
                 "customer_review_tag_FTgGwy": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Increased Drive"
+                    "text": "Más Deseo"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_bXTETJ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Better Circulation"
+                    "text": "Mejor Circulación"
                   },
                   "blocks": {}
                 }
@@ -564,6 +493,7 @@
         },
         "customer_reviews_tab_89zqP6": {
           "type": "_customer-reviews-tab",
+          "disabled": true,
           "settings": {
             "tab_label": "Organic Beetroot Gummies"
           },
@@ -710,6 +640,7 @@
         },
         "customer_reviews_tab_Hy8DKe": {
           "type": "_customer-reviews-tab",
+          "disabled": true,
           "settings": {
             "tab_label": "Pumpkin Seed Oil Softgels"
           },
@@ -864,6 +795,7 @@
         },
         "customer_reviews_tab_QVrjxE": {
           "type": "_customer-reviews-tab",
+          "disabled": true,
           "settings": {
             "tab_label": "Beef Organs Complex"
           },
@@ -1034,8 +966,8 @@
       "name": "Customer reviews tabs",
       "settings": {
         "header_rating_stars": 5,
-        "rating_text": "<p>Rated <strong>4.8/5</strong> by <strong>thousands</strong> of happy customers</p>",
-        "heading": "Real Stories of Our Customers",
+        "rating_text": "<p>Valorado <strong>4.8/5</strong> por<strong> miles</strong> de clientes satisfechos</p>",
+        "heading": "Historias reales de nuestros clientes de TITAN PEAK",
         "container_max_width": 1320,
         "container_padding": 32,
         "container_padding_mobile": 16,
@@ -1094,12 +1026,83 @@
         "padding-block-start": 80,
         "padding-block-end": 80
       }
+    },
+    "products_carousel_7VJyYx": {
+      "type": "products-carousel",
+      "blocks": {
+        "product_carousel_card_38wMi6": {
+          "type": "_product-carousel-card",
+          "settings": {
+            "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_carousel_card_38wMi6"
+      ],
+      "name": "Products carousel",
+      "settings": {
+        "heading": "Los Más Vendidos de TITAN PEAK",
+        "heading_color": "#1a1a1a",
+        "heading_size": 32,
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 85,
+        "items_gap": 20,
+        "items_gap_mobile": 16,
+        "header_gap": 32,
+        "transition_speed": 400,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_size": 40,
+        "arrow_gap": 12,
+        "arrow_icon_color": "#1a1a1a",
+        "arrow_prev_background": "#f7f4f2",
+        "arrow_next_gradient_start": "#ffed68",
+        "arrow_next_gradient_end": "#e4b948",
+        "container_max_width": 1600,
+        "container_padding": 32,
+        "container_padding_mobile": 16,
+        "card_background_color": "",
+        "card_radius": 0,
+        "card_padding": 0,
+        "card_content_gap": 12,
+        "image_aspect_ratio": "1 / 1",
+        "image_fit": "contain",
+        "title_color": "#1a1a1a",
+        "title_size": 22,
+        "title_case": "capitalize",
+        "compare_price_color": "#1a1a1ab3",
+        "compare_price_size": 14,
+        "price_color": "#1a1a1a",
+        "price_size": 16,
+        "show_discount_badge": true,
+        "discount_label": "AHORRA",
+        "badge_background_color": "#1a1a1a",
+        "badge_text_color": "#ffffff",
+        "badge_size": 12,
+        "badge_radius": 20,
+        "button_label": "AÑADIR AL CARRITO",
+        "button_open_new_tab": false,
+        "button_text_color": "#1a1a1a",
+        "button_gradient_start": "#e7b944",
+        "button_gradient_end": "#ffed68",
+        "button_radius": 12,
+        "button_font_size": 18,
+        "button_padding_block": 16,
+        "button_padding_inline": 24,
+        "background_color": "#ffffff",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "hero_JW8iHz",
-    "products_carousel_7VJyYx",
-    "customer_reviews_tabs_CqTfmC"
+    "customer_reviews_tabs_CqTfmC",
+    "products_carousel_7VJyYx"
   ]
 }

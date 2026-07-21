@@ -1036,6 +1036,30 @@
         "padding-block-end": 80
       }
     },
+    "rich_image_Eygtif": {
+      "type": "rich-image",
+      "name": "Rich image",
+      "settings": {
+        "heading": "<p>Por qué Miles de Clientes en Todo el Mundo Confían en TITAN PEAK Antes que en Otras Marcas</p>",
+        "heading_color": "#24222a",
+        "heading_size_mobile": 20,
+        "heading_size_desktop": 36,
+        "heading_weight": "700",
+        "heading_letter_spacing": -0.6,
+        "heading_gap": 24,
+        "image_desktop": "shopify://shop_images/Gemini_Generated_Image_tcks9ytcks9ytcks-clean.webp",
+        "image_max_width": 1100,
+        "image_radius": 0,
+        "padding_block_mobile": 24,
+        "padding_inline_mobile": 12,
+        "padding_block_desktop": 60,
+        "padding_inline_desktop": 60,
+        "background_color": "{{ settings.color_palette.background }}",
+        "background_image": "shopify://shop_images/Results_Section_User_Testimonials.webp",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "products_carousel_7VJyYx": {
       "type": "products-carousel",
       "blocks": {
@@ -1107,28 +1131,294 @@
         "padding-block-end": 80
       }
     },
-    "rich_image_Eygtif": {
-      "type": "rich-image",
-      "name": "Rich image",
+    "product_features_tabs_77LpPd": {
+      "type": "product-features-tabs",
+      "blocks": {
+        "product_features_tab_XKhHAF": {
+          "type": "_product-features-tab",
+          "settings": {
+            "tab_label": "Performance Gummies",
+            "image": "shopify://shop_images/Gemini_Generated_Image_6j8h2w6j8h2w6j8h-clean.png",
+            "image_alt": "",
+            "cta_text": "Shop now",
+            "cta_url": ""
+          },
+          "blocks": {
+            "product_features_item_U3PjRB": {
+              "type": "_product-features-item",
+              "name": "Feature",
+              "settings": {
+                "title": "Feature title",
+                "text": "<p>Describe this feature.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            },
+            "product_features_item_dHEVhL": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "6 clinically studied ingredients",
+                "text": "<p>Shilajit, Ashwagandha, and Maca boost energy and circulation for daily vitality.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_p4P7Lx": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Multi-benefit daily support",
+                "text": "<p>One gummy enhances energy, focus, and circulation in a convenient daily dose.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_3MKxqG": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Third-party tested",
+                "text": "<p>Manufactured in GMP-certified facilities, ensuring purity, potency, and safety you can trust.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_features_item_U3PjRB",
+            "product_features_item_dHEVhL",
+            "product_features_item_p4P7Lx",
+            "product_features_item_3MKxqG"
+          ]
+        },
+        "product_features_tab_FVmcbm": {
+          "type": "_product-features-tab",
+          "disabled": true,
+          "settings": {
+            "tab_label": "Organic Beetroot Gummies",
+            "image_alt": "",
+            "cta_text": "Shop now",
+            "cta_url": ""
+          },
+          "blocks": {
+            "product_features_item_yDPgb4": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Natural nitric oxide support",
+                "text": "<p>Beetroot is rich in nitrates, boosting circulation and blood flow.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_qB7Y8P": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Exercise endurance",
+                "text": "<p>Better oxygen delivery enhances performance and recovery naturally.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_JaXWcB": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "100% organic, clean formula",
+                "text": "<p>Only organic beetroot in vegan, gluten-free gummies - no fillers or additives.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            },
+            "product_features_item_ig6VDT": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Antioxidant-rich daily nutrition",
+                "text": "<p>Contains antioxidants for heart health and reduced oxidative stress.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_features_item_yDPgb4",
+            "product_features_item_qB7Y8P",
+            "product_features_item_JaXWcB",
+            "product_features_item_ig6VDT"
+          ]
+        },
+        "product_features_tab_R37Gmd": {
+          "type": "_product-features-tab",
+          "disabled": true,
+          "settings": {
+            "tab_label": "Pumpkin Seed Oil Softgels",
+            "image_alt": "",
+            "cta_text": "Shop now",
+            "cta_url": ""
+          },
+          "blocks": {
+            "product_features_item_LtEwpF": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Essential fatty acids & phytosterols",
+                "text": "<p>Cold-pressed pumpkin seed oil supports skin, hair, nails, and urinary tract health.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_hVgByi": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Hair, skin & nail support",
+                "text": "<p>Pumpkin seed oil nourishes for stronger nails, shinier hair, and even skin tone.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_U4EPzc": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Urinary comfort & bladder health",
+                "text": "<p>Phytosterols in pumpkin seed oil support urinary tract comfort & bladder function.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            },
+            "product_features_item_wkgqMt": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "No taste, no fillers",
+                "text": "<p>Pure cold-pressed oil in softgels, with no aftertaste or additives.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_features_item_LtEwpF",
+            "product_features_item_hVgByi",
+            "product_features_item_U4EPzc",
+            "product_features_item_wkgqMt"
+          ]
+        },
+        "product_features_tab_Hwtgcg": {
+          "type": "_product-features-tab",
+          "disabled": true,
+          "settings": {
+            "tab_label": "Beef Organs Complex",
+            "image_alt": "",
+            "cta_text": "Shop now",
+            "cta_url": ""
+          },
+          "blocks": {
+            "product_features_item_izcWjz": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Ancestral nutrition, modern format",
+                "text": "<p>Nutrient-rich, freeze-dried beef liver, heart, and spleen in convenient daily capsules.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_nrnXwU": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Cognitive & energy support",
+                "text": "<p>Supports cognitive function and energy with B12, iron, and CoQ10.</p>",
+                "column": "left"
+              },
+              "blocks": {}
+            },
+            "product_features_item_MnikJY": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Bioavailable micronutrients",
+                "text": "<p>Freeze-drying retains nutrients, providing iron, B vitamins, and zinc in absorbable forms.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            },
+            "product_features_item_67hbY6": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Clean, single-source protein",
+                "text": "<p>100% grass-fed New Zealand beef, free from fillers, hormones, and antibiotics.</p>",
+                "column": "right"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_features_item_izcWjz",
+            "product_features_item_nrnXwU",
+            "product_features_item_MnikJY",
+            "product_features_item_67hbY6"
+          ]
+        }
+      },
+      "block_order": [
+        "product_features_tab_XKhHAF",
+        "product_features_tab_FVmcbm",
+        "product_features_tab_R37Gmd",
+        "product_features_tab_Hwtgcg"
+      ],
+      "name": "Product features tabs",
       "settings": {
-        "heading": "<p>Por qué Miles de Clientes en Todo el Mundo Confían en TITAN PEAK Antes que en Otras Marcas</p>",
-        "heading_color": "#24222a",
-        "heading_size_mobile": 20,
-        "heading_size_desktop": 36,
-        "heading_weight": "700",
-        "heading_letter_spacing": -0.6,
-        "heading_gap": 24,
-        "image_desktop": "shopify://shop_images/Gemini_Generated_Image_tcks9ytcks9ytcks-clean.webp",
-        "image_max_width": 1100,
+        "eyebrow": "Daily Nutrition From Nature",
+        "heading": "Whole-body support from four powerful formulas",
+        "container_max_width": 1440,
+        "container_padding": 32,
+        "container_padding_mobile": 16,
+        "header_gap": 16,
+        "section_gap_desktop": 56,
+        "section_gap_mobile": 24,
+        "content_gap_desktop": 20,
+        "content_gap_mobile": 20,
+        "tabs_gap_desktop": 16,
+        "tabs_gap_mobile": 10,
+        "tab_radius": 8,
+        "tab_padding_inline": 20,
+        "tab_padding_block": 8,
+        "tab_font_size_desktop": 14,
+        "tab_font_size_mobile": 10,
+        "card_radius": 12,
+        "card_padding_desktop": 20,
+        "card_padding_mobile": 16,
+        "card_gap_desktop": 20,
+        "card_gap_mobile": 16,
+        "icon_size_desktop": 36,
+        "icon_size_mobile": 31,
+        "feature_title_size_desktop": 22,
+        "feature_title_size_mobile": 16,
+        "feature_text_size_desktop": 16,
+        "feature_text_size_mobile": 14,
+        "image_width_desktop": 600,
+        "image_height_desktop": 575,
+        "image_height_mobile": 380,
         "image_radius": 0,
-        "padding_block_mobile": 24,
-        "padding_inline_mobile": 12,
-        "padding_block_desktop": 60,
-        "padding_inline_desktop": 60,
-        "background_color": "{{ settings.color_palette.background }}",
-        "background_image": "shopify://shop_images/Results_Section_User_Testimonials.webp",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "show_image_fade": true,
+        "image_fade_height_desktop": 80,
+        "image_fade_height_mobile": 60,
+        "cta_radius": 12,
+        "cta_padding_inline": 64,
+        "cta_padding_block": 16,
+        "cta_font_size_desktop": 18,
+        "cta_font_size_mobile": 16,
+        "eyebrow_font_size_desktop": 14,
+        "eyebrow_font_size_mobile": 12,
+        "heading_font_size_desktop": 36,
+        "heading_font_size_mobile": 28,
+        "background_color": "#ffffff",
+        "eyebrow_color": "#1a1a1a",
+        "heading_color": "#1a1a1a",
+        "tab_bg_color": "#f7f4f2",
+        "tab_text_color": "#1a1a1a",
+        "tab_active_gradient_start": "#e7b944",
+        "tab_active_gradient_end": "#ffed68",
+        "card_bg_color": "#f7f4f2",
+        "card_title_color": "#1a1a1a",
+        "card_text_color": "#1a1a1a",
+        "cta_gradient_start": "#e7b944",
+        "cta_gradient_end": "#ffed68",
+        "cta_text_color": "#1a1a1a",
+        "padding-block-start": 80,
+        "padding-block-end": 80
       }
     }
   },
@@ -1137,6 +1427,7 @@
     "hero_JW8iHz",
     "customer_reviews_tabs_CqTfmC",
     "rich_image_Eygtif",
-    "products_carousel_7VJyYx"
+    "products_carousel_7VJyYx",
+    "product_features_tabs_77LpPd"
   ]
 }

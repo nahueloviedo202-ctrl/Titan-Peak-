@@ -208,44 +208,44 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Energía y Vitalidad Diaria",
-                        "description": "<p>Enciende tu energía y resistencia física con 2000mg de Shilajit puro.</p>",
+                        "title": "Energía Explosiva",
+                        "description": "<p>Mejora la resistencia física y el flujo sanguíneo</p>",
                         "icon": "lightning_bolt",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto.svg",
-                        "icon_size": 40
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
                       },
                       "blocks": {}
                     },
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Ingredientes Herbales para el Bienestar Masculino",
-                        "description": "<p>Botánicos potentes como Ashwagandha y Maca apoyan activamente la fuerza masculina.</p>",
+                        "title": "Testosterona y Fuerza",
+                        "description": "<p>Aumenta tu deseo y tu fuerza masculina de forma natural.</p>",
                         "icon": "leaf",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto2.svg",
-                        "icon_size": 40
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
                       },
                       "blocks": {}
                     },
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mezcla Natural de Foco y Resistencia",
-                        "description": "<p>Adaptógenos que manejan el estrés diario mientras mejoran la claridad mental y el ánimo.</p>",
+                        "title": "Menos Cortisol, Más Confianza",
+                        "description": "<p>Recuperá el control total con niveles de estrés más equilibrados.</p>",
                         "icon": "fire",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
-                        "icon_size": 40
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
                       },
                       "blocks": {}
                     },
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Fórmula Limpia, Testeada Clínicamente",
-                        "description": "<p>Origen vegetal y testeado por laboratorios externos para garantizar seguridad, pureza y confianza.</p>",
+                        "title": "Mejor Circulación",
+                        "description": "<p>Apoya un flujo sanguíneo óptimo para tu rendimiento diario.</p>",
                         "icon": "check_box",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4.svg",
-                        "icon_size": 40
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
                       },
                       "blocks": {}
                     }
@@ -292,6 +292,7 @@
             "image_popup_fwdVY7": {
               "type": "image-popup",
               "name": "Image popup",
+              "disabled": true,
               "settings": {
                 "trigger_text": "Información Suplementaria",
                 "trigger_font_size": 20,
@@ -983,6 +984,7 @@
         "image_gap": 60,
         "enable_scroll_animation": true,
         "line_color": "#c9a84c",
+        "fill_color": "#f0d78c",
         "line_width": 2,
         "item_indent": 50,
         "item_gap_desktop": 35,
@@ -1174,10 +1176,10 @@
           "settings": {
             "label": "Poca Energía y Fatiga",
             "icon_style": "cross",
-            "icon_color": "#BA3030",
+            "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
             "text_color": "#ffffff",
-            "border_color": "#00000000",
+            "border_color": "rgba(0,0,0,0)",
             "border_width": 1,
             "border_radius": 6,
             "padding_block": 11,
@@ -1190,10 +1192,10 @@
           "settings": {
             "label": "Menos Concentración y Claridad Mental",
             "icon_style": "cross",
-            "icon_color": "#BA3030",
+            "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
             "text_color": "#ffffff",
-            "border_color": "#00000000",
+            "border_color": "rgba(0,0,0,0)",
             "border_width": 1,
             "border_radius": 6,
             "padding_block": 11,
@@ -1206,10 +1208,10 @@
           "settings": {
             "label": "Recuperación y Resistencia Más Lentas",
             "icon_style": "cross",
-            "icon_color": "#BA3030",
+            "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
             "text_color": "#ffffff",
-            "border_color": "#00000000",
+            "border_color": "rgba(0,0,0,0)",
             "border_width": 1,
             "border_radius": 6,
             "padding_block": 11,
@@ -1222,10 +1224,10 @@
           "settings": {
             "label": "Peor Circulación y Rendimiento",
             "icon_style": "cross",
-            "icon_color": "#BA3030",
+            "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
             "text_color": "#ffffff",
-            "border_color": "#00000000",
+            "border_color": "rgba(0,0,0,0)",
             "border_width": 1,
             "border_radius": 6,
             "padding_block": 11,
@@ -1280,6 +1282,194 @@
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60
+      }
+    },
+    "benefits_grid_fzhgP8": {
+      "type": "benefits-grid",
+      "blocks": {
+        "benefit_item_ztFTYB": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "lock",
+            "title": "Energy",
+            "description": "<p>Supports sustained daily energy, stamina, and physical output</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_kMpVTt": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "lock",
+            "title": "Focus",
+            "description": "<p>Helps improve mental clarity, drive, and sharpness</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_C7b7ni": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "recycle",
+            "title": "Recovery",
+            "description": "<p>Supports faster recovery, endurance, and resilience</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_atiEbM": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "check_box",
+            "title": "Vitality",
+            "description": "<p>Promotes testosterone support, strength, and male performance</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "benefit_item_ztFTYB",
+        "benefit_item_kMpVTt",
+        "benefit_item_C7b7ni",
+        "benefit_item_atiEbM"
+      ],
+      "name": "Benefits grid",
+      "settings": {
+        "heading": "<p>LO QUE TU CUERPO ESTÁ<strong> PERDIENDO</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 42,
+        "subheading": "Your energy, drive, and performance don't just fade — they decline as your body loses essential minerals",
+        "subheading_color": "#d1d1d1",
+        "subheading_size_mobile": 14,
+        "subheading_size_desktop": 16,
+        "header_gap_mobile": 0,
+        "header_gap_desktop": 0,
+        "image": "shopify://shop_images/personasi-clean.webp",
+        "desktop_image_position": "right",
+        "mobile_image_position": "after_header",
+        "image_radius": 15,
+        "container_max_width": 1200,
+        "container_padding": 20,
+        "content_gap_mobile": 30,
+        "content_gap_desktop": 40,
+        "columns_mobile": "2",
+        "columns_desktop": 2,
+        "items_gap": 20,
+        "icon_background_start": "#c9a84c",
+        "icon_background_end": "#e8d5a3",
+        "icon_border_color": "#c9a84c",
+        "icon_border_width": 1,
+        "icon_radius": 22,
+        "icon_color": "#ffffff",
+        "icon_size_mobile": 60,
+        "icon_size_desktop": 80,
+        "icon_inner_size_mobile": 30,
+        "icon_inner_size_desktop": 32,
+        "icon_gap": 20,
+        "title_color": "#ffffff",
+        "title_size_mobile": 18,
+        "title_size_desktop": 20,
+        "description_color": "#bababa",
+        "description_size_mobile": 12,
+        "description_size_desktop": 15,
+        "background_color_start": "#1c3353",
+        "background_color_end": "#131820",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "cards_grid_g9pUdw": {
+      "type": "cards-grid",
+      "blocks": {
+        "cards_grid_item_WBBMiB": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image_alt": "",
+            "title": "ENERGY & STAMINA",
+            "description": "<p>Supports steady energy, endurance, and all-day performance</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_AG6dAF": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image_alt": "",
+            "title": "TESTOSTERONE & DRIVE",
+            "description": "<p>Helps support healthy testosterone levels and male vitality</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_TYttpE": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image_alt": "",
+            "title": "CORTISOL & STRESS",
+            "description": "<p>Less bloat, less fatigue, better recovery</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_NHTjXq": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image_alt": "",
+            "title": "CIRCULATION & PERFORMANCE",
+            "description": "<p>Supports blood flow, stamina, and overall physical performance</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "cards_grid_item_WBBMiB",
+        "cards_grid_item_AG6dAF",
+        "cards_grid_item_TYttpE",
+        "cards_grid_item_NHTjXq"
+      ],
+      "name": "Cards grid",
+      "settings": {
+        "heading": "<p>THE BENEFITS MEN ACTUALLY <strong>FEEL</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 52,
+        "heading_accent_gradient_start": "#b8b8b8",
+        "heading_accent_gradient_end": "#ffffff",
+        "subtitle": "<p>Real support for energy, hormones, and performance as you age</p>",
+        "subtitle_color": "#ffffff",
+        "subtitle_size_mobile": 16,
+        "subtitle_size_desktop": 18,
+        "header_gap_mobile": 40,
+        "header_gap_desktop": 60,
+        "card_image_position": "left",
+        "columns_mobile": 1,
+        "columns_tablet": 4,
+        "columns_desktop": 2,
+        "grid_gap_mobile": 15,
+        "grid_gap_tablet": 18,
+        "grid_gap_desktop": 25,
+        "card_background_color": "#E8D5A3",
+        "card_border_color": "#c9a84c",
+        "card_border_width": 1,
+        "card_border_radius": 12,
+        "card_image_size_mobile": 100,
+        "card_image_size_tablet": 150,
+        "card_image_size_desktop": 152,
+        "card_image_radius": 8,
+        "card_image_inset": 10,
+        "card_title_color": "#0e101a",
+        "card_title_size_mobile": 14,
+        "card_title_size_desktop": 22,
+        "card_description_color": "#0e101a",
+        "card_description_size_mobile": 12,
+        "card_description_size_desktop": 14,
+        "card_content_padding_mobile": 15,
+        "card_content_padding_tablet": 20,
+        "card_content_padding_desktop": 25,
+        "container_max_width": 1200,
+        "background_color": "#1c3353",
+        "corner_radius": 0,
+        "padding_top": 30,
+        "padding_right": 20,
+        "padding_bottom": 60,
+        "padding_left": 20
       }
     },
     "faq_accordion_nVx7Xp": {
@@ -1397,6 +1587,8 @@
     "roadmap_QB8dKq",
     "testimonial_peek_carousel_x93CVU",
     "image_with_text_x998Hz",
+    "benefits_grid_fzhgP8",
+    "cards_grid_g9pUdw",
     "faq_accordion_nVx7Xp"
   ]
 }

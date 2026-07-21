@@ -1059,7 +1059,7 @@
         "testimonial_peek_card_FWMByT": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"Rostro más definido, más confianza.\"</p><p>\"Empecé por la energía, pero noté que mi cara se veía menos hinchada y más marcada. Solo eso ya me subió la confianza una barbaridad.\"</p>",
+            "quote": "<p><strong>\"Rostro más definido, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que mi cara se veía menos hinchada y más marcada. Solo eso ya me subió la confianza una barbaridad.\"</p>",
             "star_count": 5,
             "reviewer_name": "Kevin R. 54 años",
             "show_verified": true,

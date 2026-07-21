@@ -64,12 +64,19 @@
   /* Pinned to the bottom of the hero banner, edge-to-edge, regardless of the
      hero's content_direction (row/column) or alignment settings — it's taken
      out of the content-wrapper's flex flow so it never shifts with layout
-     changes. */
+     changes.
+
+     `bottom` cancels out the section's own --padding-block-end (inherited
+     from .hero__container, which is where the section's bottom padding is
+     actually applied) instead of using a plain `0`; otherwise this block
+     would sit that many pixels above the section's true bottom edge, since
+     its positioning ancestor (.hero__content-wrapper) lives inside that
+     padded area. */
   .hero-stats-marquee {
     display: block;
     position: absolute;
     inset-inline: 0;
-    bottom: 0;
+    bottom: calc(-1 * var(--padding-block-end, 0px));
     overflow: hidden;
     margin-inline: var(--full-page-margin-inline-offset, 0);
     background-color: var(--hero-stats-marquee-bg, #f7f4f2);

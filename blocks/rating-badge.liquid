@@ -28,8 +28,12 @@
     --rating-badge-align: {{ justify_align }};
     --rating-badge-icon-color: {{ badge_settings.icon_color }};
     --rating-badge-icon-size: {{ badge_settings.icon_size }}px;
+    --rating-badge-icon-size-mobile: {{ badge_settings.icon_size_mobile | default: badge_settings.icon_size }}px;
     --rating-badge-icon-gap: {{ badge_settings.icon_gap }}px;
     --rating-badge-content-gap: {{ badge_settings.content_gap }}px;
+    {% if badge_settings.type_preset == 'custom' -%}
+      --rating-badge-font-size-mobile: {{ badge_settings.font_size_mobile | default: badge_settings.font_size }};
+    {%- endif %}
   "
   {{ block.shopify_attributes }}
 >
@@ -101,6 +105,23 @@
   .rating-badge__text {
     margin: 0;
   }
+
+  @media screen and (max-width: 749px) {
+    .rating-badge__star {
+      width: var(--rating-badge-icon-size-mobile);
+      height: var(--rating-badge-icon-size-mobile);
+    }
+
+    /* Higher specificity than the theme's shared `.custom-font-size` rule
+       (base.css), so it wins without needing !important - the shared "text"
+       snippet sets `--font-size` inline, which only the desktop size reads
+       by default. Scoped under `.rating-badge` so it can't affect any other
+       block using the same shared typography classes. */
+    .rating-badge .custom-font-size,
+    .rating-badge .custom-font-size > * {
+      font-size: var(--rating-badge-font-size-mobile);
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -136,7 +157,18 @@
     {
       "type": "range",
       "id": "icon_size",
-      "label": "Star size",
+      "label": "Star size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18,
+      "visible_if": "{{ block.settings.icon_count > 0 }}"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Star size (mobile)",
       "min": 12,
       "max": 32,
       "step": 1,
@@ -326,6 +358,48 @@
         }
       ],
       "default": "1rem",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "font_size_mobile",
+      "label": "Font size (mobile)",
+      "info": "Defaults to the desktop font size when left blank.",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        },
+        {
+          "value": "1.5rem",
+          "label": "24px"
+        }
+      ],
+      "default": "",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
     },
     {

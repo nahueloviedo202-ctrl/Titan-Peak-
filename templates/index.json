@@ -167,10 +167,10 @@
         "hero_heading_4iWJbj": {
           "type": "_hero-heading",
           "settings": {
-            "heading": "<p><strong>Peak performance</strong> starts with better nutrition</p>",
+            "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
             "uppercase": true,
             "font_size_mobile": 24,
-            "font_size_desktop": 48,
+            "font_size_desktop": 38,
             "font_weight": "800",
             "text_color": "#ffffff",
             "gradient_start": "#ffed68",
@@ -181,7 +181,7 @@
         "text_gDVUmi": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Daily essentials support circulation, hydration, and overall wellness,</strong> helping you stay energized, promote healthy blood flow, and recover after exercise.*</p>",
+            "text": "<p><strong>Los esenciales diarios de TITAN PEAK apoyan la circulación, la hidratación y el bienestar genera</strong>l, ayudándote a mantenerte con energía, favorecer un flujo sanguíneo saludable y recuperarte mejor después del ejercicio.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -207,7 +207,7 @@
         "hero_cta_button_iQmUEn": {
           "type": "_hero-cta-button",
           "settings": {
-            "label": "Shop our best sellers",
+            "label": "COMPRA NUESTROS MÁS VENDIDOS",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "show_icon": true,
@@ -224,7 +224,7 @@
         "hero_guarantee_badge_7NMFM7": {
           "type": "_hero-guarantee-badge",
           "settings": {
-            "text": "30-Day Satisfaction Guarantee",
+            "text": "Garantía de Satisfacción de 30 Días",
             "icon_color": "#eed454",
             "text_color": "#ffffff",
             "icon_size": 16,

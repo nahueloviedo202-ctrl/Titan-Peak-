@@ -902,573 +902,383 @@
         "card_radius": 6,
         "card_padding": 8,
         "container_max_width": 1400,
-        "background_color": "#13141D",
+        "background_color": "#13141d",
         "padding-block-start": 50,
         "padding-block-end": 50,
         "padding-inline-start": 40,
         "padding-inline-end": 40
       }
     },
-    "results_timeline_EH8jc9": {
-      "type": "results-timeline",
+    "roadmap_QB8dKq": {
+      "type": "roadmap",
       "blocks": {
-        "results_timeline_item_Bkbqxg": {
-          "type": "_results-timeline-item",
+        "roadmap_step_FGXRgP": {
+          "type": "_roadmap-step",
           "settings": {
-            "period": "<p>SEMANA 1</p>",
-            "subtitle": "Reinicio de Estrés y Energía",
-            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Mejora el sueño, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés se vuelve más manejable</li><li>Primeros signos de energía y foco recuperados</li></ul>",
-            "icon": "lightning"
+            "icon": "fire",
+            "badge": "Día 7",
+            "title": "Ignición",
+            "description": "<p>✓ El Shilajit empieza a restaurar los minerales agotados<br/>✓ El cortisol empieza a equilibrarse → menos hinchazón y retención<br/>✓ Menos fatiga, más impulso durante el día</p>"
           },
           "blocks": {}
         },
-        "results_timeline_item_nE8Vez": {
-          "type": "_results-timeline-item",
+        "roadmap_step_6bmYCK": {
+          "type": "_roadmap-step",
           "settings": {
-            "period": "<p>MES 1</p>",
-            "subtitle": "Hormonas y Rendimiento en Recuperación",
-            "bullets": "<ul><li>El apoyo a la testosterona empieza a notarse</li><li>El deseo vuelve a aparecer de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día a día</li><li>La confianza y las ganas vuelven de forma natural</li></ul>",
-            "icon": "star"
+            "icon": "lightning_bolt",
+            "badge": "Día 21",
+            "title": "Chispa",
+            "description": "<p>✓ El ácido fúlvico apoya la absorción de nutrientes y la energía celular<br/>✓ El apoyo a la testosterona empieza a notarse → más deseo y confianza<br/>✓ Notas mejor circulación y rendimiento<br/>✓ El cuerpo empieza a verse más firme — menos volumen en vientre y pecho</p>"
           },
           "blocks": {}
         },
-        "results_timeline_item_eXFLhN": {
-          "type": "_results-timeline-item",
+        "roadmap_step_MtraAg": {
+          "type": "_roadmap-step",
           "settings": {
-            "period": "<p>MES 3+</p>",
-            "subtitle": "Rendimiento Máximo y Vitalidad",
-            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Vos lo notás. Todos lo notan.</li></ul>",
-            "icon": "heart_pulse"
+            "icon": "plane",
+            "badge": "Semana 8",
+            "title": "DESPEGUE",
+            "description": "<p>✓ Testosterona, energía y rendimiento se sienten elevados de forma constante<br/>✓ Mejor circulación y resistencia física<br/>✓ Aspecto más definido, mejor recuperación y energía todo el día</p>"
+          },
+          "blocks": {}
+        },
+        "static-roadmap-button": {
+          "type": "button",
+          "static": true,
+          "settings": {
+            "label": "Shop now",
+            "link": "",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "results_timeline_item_Bkbqxg",
-        "results_timeline_item_nE8Vez",
-        "results_timeline_item_eXFLhN"
+        "roadmap_step_FGXRgP",
+        "roadmap_step_6bmYCK",
+        "roadmap_step_MtraAg"
       ],
-      "name": "Results timeline",
+      "name": "Roadmap",
       "settings": {
-        "heading": "QUÉ ESPERAR: EJEMPLO DE LÍNEA DE RESULTADOS",
-        "section_width": "full-width",
-        "container_max_width": 1440,
-        "container_padding_desktop": 120,
-        "items_gap_desktop": 32,
-        "items_gap_mobile": 16,
-        "content_gap": 20,
-        "item_gap": 10,
-        "item_header_gap": 10,
-        "show_separator": true,
-        "separator_thickness": 1,
-        "separator_dot_size": 8,
-        "icon_size_mobile": 46,
-        "icon_size_desktop": 56,
-        "icon_gradient_start": "#e7b944",
-        "icon_gradient_end": "#ffed68",
-        "icon_color": "#1a1a1a",
-        "heading_size_mobile": 24,
-        "heading_size_desktop": 32,
-        "heading_gap_mobile": 24,
-        "heading_gap_desktop": 40,
-        "period_size_mobile": 16,
-        "period_size_desktop": 18,
-        "subtitle_size": 18,
-        "bullets_size_mobile": 14,
-        "bullets_size_desktop": 16,
-        "bullets_gap_mobile": 4,
-        "bullets_gap_desktop": 8,
-        "background_color": "#fcfaf5",
-        "heading_color": "#1a1a1a",
-        "text_color": "#1a1a1a",
-        "accent_color": "#e9be47",
-        "padding-block-start": 56,
-        "padding-block-end": 56
-      }
-    },
-    "full_width_images_j6d9b3": {
-      "type": "full-width-images",
-      "blocks": {
-        "full_width_image_iNQQVE": {
-          "type": "full-width-image",
-          "name": "Full width image",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_h3azq3h3azq3h3az-clean.webp",
-            "mobile_image": "shopify://shop_images/fix10mobile-clean.webp",
-            "alt": "",
-            "link": "",
-            "open_in_new_tab": false,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "full_width_image_iy43nk": {
-          "type": "full-width-image",
-          "settings": {
-            "image": "shopify://shop_images/fix9-clean.webp",
-            "mobile_image": "shopify://shop_images/Gemini_Generated_Image_dv8j7ndv8j7ndv8j-clean.webp",
-            "alt": "",
-            "link": "",
-            "open_in_new_tab": false,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "full_width_image_kzLaHc": {
-          "type": "full-width-image",
-          "settings": {
-            "image": "shopify://shop_images/fix8-clean.webp",
-            "mobile_image": "shopify://shop_images/fix8mobile-clean.webp",
-            "alt": "",
-            "link": "",
-            "open_in_new_tab": false,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "full_width_image_iNQQVE",
-        "full_width_image_iy43nk",
-        "full_width_image_kzLaHc"
-      ],
-      "name": "Full width images",
-      "settings": {
-        "section_width": "full-width",
-        "gap": 0,
+        "heading": "<p>QUÉ ESPERAR EN <strong>MENOS DE 8 SEMANAS</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_size": 42,
+        "accent_gradient_start": "#b8b8b8",
+        "accent_gradient_end": "#a3a3a3",
+        "subheading": "",
+        "subheading_color": "#ffffff",
+        "subheading_size": 14,
+        "header_gap": 40,
+        "image_position": "right",
+        "image_radius": 10,
+        "image_gap": 60,
+        "enable_scroll_animation": true,
+        "line_color": "#c9a84c",
+        "line_width": 2,
+        "item_indent": 50,
+        "item_gap_desktop": 35,
+        "item_gap_mobile": 15,
+        "circle_bg_color": "#c9a84c",
+        "circle_size": 30,
+        "circle_icon_color": "#ffffff",
+        "badge_bg_color": "#c9a84c",
+        "badge_text_color": "#ffffff",
+        "badge_radius": 50,
+        "badge_size": 13,
+        "title_color": "#ffffff",
+        "title_size": 23,
+        "description_color": "#ffffff",
+        "description_size": 14,
+        "bullet_color": "#c9a84c",
+        "show_button": false,
+        "container_max_width": 1400,
+        "container_padding": 80,
         "background_color": "",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "background_gradient_start": "#1c3353",
+        "background_gradient_end": "#141720",
+        "padding-block-start": 72,
+        "padding-block-end": 72
       }
     },
-    "image_checklist_DaCEnz": {
-      "type": "image-checklist",
+    "testimonial_peek_carousel_x93CVU": {
+      "type": "testimonial-peek-carousel",
       "blocks": {
-        "checklist_item_X9NDNN": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_fEVKKU": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>Sientes menos ganas y deseo que antes — y ya lleva más tiempo del que te gustaría admitir.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Mark M., 52 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         },
-        "checklist_item_CazK7z": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_YDkHEr": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>Tu energía se desploma durante el día y te despiertas ya cansado.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Mark M., 52 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         },
-        "checklist_item_ijxPPj": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_jTWxeG": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>Tu rendimiento es inconsistente y nunca sabes qué esperar de ti mismo.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p>\"Within 10 days my energy was noticeably higher. No more mid-day crashes, and I feel way more driven overall. Even my workouts feel stronger. This stuff is legit.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Jason T., 42 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         },
-        "checklist_item_TqN9XN": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_hBtJPV": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>El estrés y el bajón de ánimo están matando en silencio tu confianza y motivación.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p><strong>\"My stamina is on another level.</strong><br>Biggest difference for me is endurance. Whether it's the gym or bedroom, I last longer and feel more in control. Haven't felt like this in years.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Marcus M., 36 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         },
-        "checklist_item_wmRNbi": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_FWMByT": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>Has probado pastillas u otros suplementos y no han funcionado, o han dejado de hacerlo.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p><strong>\"Leaner face, more confidence.</strong><br>I started for energy but noticed my face looked less puffy and more defined. That alone boosted my confidence like crazy.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Kevin R., 54 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         },
-        "checklist_item_qeVUmV": {
-          "type": "_checklist-item",
+        "testimonial_peek_card_mf6N8b": {
+          "type": "_testimonial-peek-card",
           "settings": {
-            "icon_type": "icon",
-            "title": "",
-            "description": "<p>Quieres atacar la causa real — no solo tapar el síntoma por una noche.</p>",
-            "description_font_size": 16,
-            "vertical_alignment": "center"
+            "quote": "<p><strong>\"This fixed what I thought was just aging.</strong><br>I figured feeling tired all the time was normal. After a few weeks on this, my energy came back, my workouts improved, and I just feel like myself again.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Omar H., 49 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_fMeJwF": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"My girl keeps asking what changed.</strong> Didn't tell her I started this, but she noticed. More energy, better performance, and just more presence overall. That says enough.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Brandon C., 37 y.o.",
+            "show_verified": true,
+            "verified_text": "Verified Buyer"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "checklist_item_X9NDNN",
-        "checklist_item_CazK7z",
-        "checklist_item_ijxPPj",
-        "checklist_item_TqN9XN",
-        "checklist_item_wmRNbi",
-        "checklist_item_qeVUmV"
+        "testimonial_peek_card_fEVKKU",
+        "testimonial_peek_card_YDkHEr",
+        "testimonial_peek_card_jTWxeG",
+        "testimonial_peek_card_hBtJPV",
+        "testimonial_peek_card_FWMByT",
+        "testimonial_peek_card_mf6N8b",
+        "testimonial_peek_card_fMeJwF"
       ],
-      "name": "Image checklist",
+      "name": "Testimonial peek carousel",
       "settings": {
-        "image": "shopify://shop_images/fix2-clean.webp",
+        "heading": "<p>The upgrade men over 40 <strong>actually notice</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 34,
+        "heading_size_desktop": 52,
+        "subheading": "Trusted by men who wanted a real solution, not another letdown.",
+        "subheading_color": "#ffffff",
+        "subheading_size": 14,
+        "header_gap": 20,
+        "header_bottom_gap_mobile": 30,
+        "header_bottom_gap_desktop": 40,
+        "container_max_width": 1440,
+        "container_padding": 20,
+        "container_padding_mobile": 15,
+        "card_width_desktop": 300,
+        "card_width_mobile": 85,
+        "items_gap": 20,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_background_color": "#0f203e",
+        "arrow_border_color": "#c9a84c",
+        "arrow_border_width": 1,
+        "arrow_icon_color": "#ffffff",
+        "arrow_size": 40,
+        "arrow_radius": 25,
+        "arrow_gap": 12,
+        "card_background_color": "#0f203e",
+        "card_border_color": "#e8d5a3",
+        "card_border_width": 1,
+        "card_radius": 6,
+        "card_padding": 24,
+        "card_content_gap": 8,
+        "card_min_height": 200,
+        "star_color": "#ffc347",
+        "star_size": 20,
+        "star_gap": 0,
+        "quote_color": "#ffffff",
+        "quote_font_size": 14,
+        "avatar_size": 40,
+        "avatar_background_color": "#0c0c0d",
+        "avatar_text_color": "#c9a84c",
+        "name_color": "#ffffff",
+        "name_font_size": 14,
+        "verified_color": "#c9a84c",
+        "verified_check_color": "#ffffff",
+        "verified_font_size": 12,
+        "background_color": "#141720",
+        "padding-block-start": 20,
+        "padding-block-end": 60
+      }
+    },
+    "image_with_text_x998Hz": {
+      "type": "image-with-text",
+      "blocks": {
+        "image_text_paragraph_A8DRRB": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p><strong>As men age, essential minerals become depleted due to stress, poor sleep, and modern toxins.</strong><br><br>These minerals are critical for energy production, hormone balance, and circulation.</p><p>When your body runs low, everything slows down — from your stamina and recovery to your focus and performance.</p>",
+            "text_color": "#ffffff",
+            "font_size_mobile": 1.4,
+            "font_size_desktop": 1.7,
+            "margin_top": 0,
+            "margin_bottom": 12
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_HDVqdr": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Low Energy & Fatigue",
+            "icon_style": "cross",
+            "icon_color": "#BA3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "#00000000",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_KLWmbJ": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Reduced Focus & Mental Clarity",
+            "icon_style": "cross",
+            "icon_color": "#BA3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "#00000000",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_3HTTYM": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Slower Recovery & Endurance",
+            "icon_style": "cross",
+            "icon_color": "#BA3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "#00000000",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_79T9Ab": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Weaker Circulation & Performance",
+            "icon_style": "cross",
+            "icon_color": "#BA3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "#00000000",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_paragraph_RBM7ie": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p><em>Results vary. Product benefits are based on ingredient research and consumer-reported experiences.</em></p>",
+            "text_color": "#ffffff",
+            "font_size_mobile": 0.9,
+            "font_size_desktop": 1.1,
+            "margin_top": 12,
+            "margin_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_text_paragraph_A8DRRB",
+        "image_text_list_item_HDVqdr",
+        "image_text_list_item_KLWmbJ",
+        "image_text_list_item_3HTTYM",
+        "image_text_list_item_79T9Ab",
+        "image_text_paragraph_RBM7ie"
+      ],
+      "name": "Image with text",
+      "settings": {
         "image_alt": "",
         "image_link": "",
-        "image_radius": 10,
-        "kicker": "<p>TITAN PEAK ES PARA TI SI...</p>",
-        "description": "",
-        "content_width": "page-width",
-        "image_position": "right",
-        "image_position_mobile": "bottom",
-        "column_gap_mobile": 24,
+        "image_max_width": 800,
+        "image_radius": 8,
+        "image_position": "left",
+        "text_alignment": "center",
+        "column_gap_mobile": 30,
         "column_gap_desktop": 40,
-        "item_gap_mobile": 16,
-        "item_gap_desktop": 24,
-        "badge_size": 32,
-        "badge_gradient_start": "#e7b944",
-        "badge_gradient_end": "#ffed68",
-        "badge_ring_color": "#1a1a1a",
-        "text_color": "#1a1a1a",
-        "background_color": "#fcfaf5",
-        "padding_block_start_mobile": 32,
-        "padding_block_end_mobile": 32,
-        "padding_block_start_desktop": 56,
-        "padding_block_end_desktop": 56
-      }
-    },
-    "ingredients_carousel_34qKD4": {
-      "type": "ingredients-carousel",
-      "blocks": {
-        "ingredients_carousel_card_TwBaUN": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1.webp",
-            "title": "Ashwagandha",
-            "description": "Ayuda a reducir el cortisol, potencia la testosterona libre y mejora la resistencia al estrés.",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "ingredients_carousel_card_4KNepA": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1.webp",
-            "title": "Shilajit",
-            "description": "Apoya el aumento de la testosterona total y libre, potenciando la energía celular (ATP).",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "ingredients_carousel_card_tnJT7m": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/ginsjen_9c376acb-359a-4149-a743-00cc79cce187.webp",
-            "title": "Panax Ginseng",
-            "description": "Ayuda a la producción de LH, mejora el flujo sanguíneo y tiene efecto antiinflamatorio.",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "ingredients_carousel_card_7ATCqF": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/saffron.webp",
-            "title": "Azafrán",
-            "description": "Favorece la producción de óxido nítrico, mejorando la circulación.",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "ingredients_carousel_card_T8MPrN": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_7954ca93-780a-4ac0-aa31-a7f690a2b3a6.webp",
-            "title": "Maca Negra",
-            "description": "Potencia el deseo a través de vías naturales del sistema nervioso central, sin intervenir en las hormonas.",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "ingredients_carousel_card_QCeHeC": {
-          "type": "_ingredients-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1_9fc9d08a-a7bf-48af-a123-29d191717d0b.webp",
-            "title": "L-Arginina",
-            "description": "Se convierte en óxido nítrico, favoreciendo la vasodilatación y el flujo sanguíneo hacia zonas íntimas.",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "static-badges": {
-          "type": "_ingredients-carousel-badges",
-          "name": "Badges",
-          "static": true,
-          "settings": {
-            "gap": 16
-          },
-          "blocks": {
-            "ingredients_carousel_badge_BmhHnC": {
-              "type": "_ingredients-carousel-badge",
-              "settings": {
-                "icon": "seal_check",
-                "icon_color": "#1a1a1a",
-                "text": "Testeado por Laboratorios Externos",
-                "text_color": "#1a1a1a"
-              },
-              "blocks": {}
-            },
-            "ingredients_carousel_badge_TXWQqY": {
-              "type": "_ingredients-carousel-badge",
-              "settings": {
-                "icon": "seal_check",
-                "icon_color": "#1a1a1a",
-                "text": "Solución Pura y Natural",
-                "text_color": "#1a1a1a"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "ingredients_carousel_badge_BmhHnC",
-            "ingredients_carousel_badge_TXWQqY"
-          ]
-        }
-      },
-      "block_order": [
-        "ingredients_carousel_card_TwBaUN",
-        "ingredients_carousel_card_4KNepA",
-        "ingredients_carousel_card_tnJT7m",
-        "ingredients_carousel_card_7ATCqF",
-        "ingredients_carousel_card_T8MPrN",
-        "ingredients_carousel_card_QCeHeC"
-      ],
-      "name": "Ingredients carousel",
-      "settings": {
-        "heading_accent": "INGREDIENTES PODEROSOS",
-        "heading": "PARA UN RENDIMIENTO MÁXIMO",
-        "subheading": "",
-        "heading_size": 32,
-        "heading_weight": "800",
-        "accent_color": "#a45b2c",
-        "heading_color": "#1a1a1a",
-        "subheading_size": 18,
-        "subheading_color": "#1a1a1a",
-        "desktop_columns": 4,
-        "tablet_columns": 2,
-        "mobile_slide_width": 80,
-        "items_gap": 24,
-        "content_gap": 40,
-        "content_gap_mobile": 24,
-        "mobile_edge_padding": 16,
-        "container_max_width": 1440,
-        "container_padding": 74,
-        "container_padding_tablet": 40,
-        "card_background_color": "#fcfaf5",
-        "card_radius": 12,
-        "card_padding": 16,
-        "title_color": "#1a1a1a",
-        "title_size": 18,
-        "description_color": "#1a1a1a",
-        "description_size": 16,
-        "image_height": 152,
-        "image_overlap": 56,
-        "image_height_mobile": 120,
-        "image_overlap_mobile": 48,
-        "show_arrows": true,
-        "arrow_color": "#1a1a1a",
-        "arrow_size": 32,
-        "arrow_gap": 24,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "transition_speed": 400,
-        "button_label": "COMPRAR AHORA",
-        "button_link": "#product-information",
-        "button_open_new_tab": false,
-        "button_text_color": "#1a1a1a",
-        "button_gradient_start": "#e7b944",
-        "button_gradient_end": "#ffed68",
-        "button_radius": 12,
-        "button_height": 60,
-        "button_font_size": 18,
-        "background_color": "#ffffff",
-        "padding-block-start": 12,
-        "padding-block-end": 12
-      }
-    },
-    "testimonial_carousel_FNeL7L": {
-      "type": "testimonial-carousel",
-      "blocks": {
-        "testimonial_carousel_card_37jQRF": {
-          "type": "_testimonial-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/persona2-clean.webp",
-            "reviewer_name": "Andy G.",
-            "star_count": 5,
-            "show_verified": true,
-            "verified_text": "Verificado",
-            "show_tag": true,
-            "tag_text": "Una solución increíble",
-            "quote": "<p>Soy entrenador personal y recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, deseo — mis clientes dicen que sienten que su testosterona volvió.</p>",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "testimonial_carousel_card_awgqff": {
-          "type": "_testimonial-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/persona3-clean.webp",
-            "reviewer_name": "Jorge T.",
-            "star_count": 5,
-            "show_verified": true,
-            "verified_text": "Verificado",
-            "show_tag": true,
-            "tag_text": "Es esencial para mí",
-            "quote": "<p>Es todo lo que necesito. Apoya mi energía y mi concentración. Perfecto antes de trabajar a fondo o entrenar. Se lo recomiendo a todo el mundo.</p>",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "testimonial_carousel_card_nyFDzR": {
-          "type": "_testimonial-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/persona-clean_403f6d1b-ae97-4fa4-9193-7e5a38744b17.webp",
-            "reviewer_name": "Brian P.",
-            "star_count": 5,
-            "show_verified": true,
-            "verified_text": "Verificado",
-            "show_tag": true,
-            "tag_text": "Potente",
-            "quote": "<p>¿Quién iba a decir que una gominola podía hacer tanto? Me siento más despierto, mi energía está por las nubes y en general me siento mejor. Se ha vuelto esencial en mi día a día. Enganchado.</p>",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "testimonial_carousel_card_8PX6WW": {
-          "type": "_testimonial-carousel-card",
-          "settings": {
-            "image": "shopify://shop_images/persona4-clean.webp",
-            "reviewer_name": "Pedro",
-            "star_count": 5,
-            "show_verified": true,
-            "verified_text": "Verificado",
-            "show_tag": true,
-            "tag_text": "Lo mejor",
-            "quote": "<p>Llevo unas 10 semanas tomándolas y honestamente siento que volví a ser yo mismo: la energía, el deseo, la motivación para entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
-            "background_color": ""
-          },
-          "blocks": {}
-        },
-        "static-rating": {
-          "type": "rating-badge",
-          "name": "Rating badge",
-          "static": true,
-          "settings": {
-            "text": "<p>Valorado <strong>4.5/5 </strong>por <strong>Miles de Clientes</strong></p>",
-            "icon_count": 5,
-            "icon_color": "#ff4c01",
-            "icon_size": 18,
-            "icon_size_mobile": 18,
-            "icon_gap": 5,
-            "content_gap": 10,
-            "width": "100%",
-            "max_width": "none",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "0.875rem",
-            "font_size_mobile": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "#444444",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "testimonial_carousel_card_37jQRF",
-        "testimonial_carousel_card_awgqff",
-        "testimonial_carousel_card_nyFDzR",
-        "testimonial_carousel_card_8PX6WW"
-      ],
-      "name": "Testimonial carousel",
-      "settings": {
-        "heading": "<p>TANTOS HOMBRES ESTÁN RECUPERANDO SU VIDA CON SHILAJIT GOLD DE TITAN PEAK</p>",
-        "heading_color": "#1a1a1a",
-        "heading_accent_color": "#a45b2c",
-        "heading_size_mobile": 24,
-        "heading_size_desktop": 40,
+        "list_columns": "2",
+        "list_gap": 8,
+        "list_font_size_mobile": 1.2,
+        "list_font_size_desktop": 1.6,
         "container_max_width": 1200,
-        "container_padding": 16,
-        "header_gap_mobile": 24,
-        "header_gap_desktop": 40,
-        "desktop_columns": 4,
-        "tablet_columns": 2,
-        "mobile_slide_width": 85,
-        "items_gap_desktop": 24,
-        "items_gap_mobile": 16,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "show_arrows": true,
-        "arrow_icon_color": "#1a1a1a",
-        "arrow_prev_background": "#ffffff",
-        "arrow_next_gradient_start": "#ffed68",
-        "arrow_next_gradient_end": "#e4b948",
-        "arrow_size": 40,
-        "arrow_gap": 20,
-        "image_aspect_ratio": "square",
-        "card_background_color": "{{ settings.color_palette.color2 }}",
-        "card_radius": 16,
-        "card_padding": 16,
-        "card_content_gap": 10,
-        "card_shadow_color": "#000000",
-        "card_shadow_opacity": 0,
-        "card_shadow_blur": 28,
-        "card_shadow_y": 12,
-        "name_color": "#1a1a1a",
-        "name_font_size": 15,
-        "verified_text_color": "#28a745",
-        "verified_icon_color": "#1a8400",
-        "verified_font_size": 12,
-        "star_color": "#ff6b00",
-        "star_size": 18,
-        "star_gap": 2,
-        "tag_background_color": "#473c1f",
-        "tag_text_color": "#ffffff",
-        "tag_font_size": 14,
-        "tag_radius": 8,
-        "quote_color": "#1a1a1a",
-        "quote_font_size": 14,
-        "background_color": "#ffffff",
-        "padding-block-start": 56,
-        "padding-block-end": 24
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 80,
+        "background_gradient_start": "#141720",
+        "background_gradient_end": "#172437",
+        "background_gradient_angle": 180,
+        "corner_radius": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
       }
     },
     "faq_accordion_nVx7Xp": {
@@ -1583,11 +1393,9 @@
     "main",
     "product_recommendations_qggXJq",
     "before_after_slider_iCKGyt",
-    "results_timeline_EH8jc9",
-    "full_width_images_j6d9b3",
-    "image_checklist_DaCEnz",
-    "ingredients_carousel_34qKD4",
-    "testimonial_carousel_FNeL7L",
+    "roadmap_QB8dKq",
+    "testimonial_peek_carousel_x93CVU",
+    "image_with_text_x998Hz",
     "faq_accordion_nVx7Xp"
   ]
 }

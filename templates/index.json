@@ -1130,77 +1130,6 @@
         "padding-block-end": 0
       }
     },
-    "products_carousel_7VJyYx": {
-      "type": "products-carousel",
-      "blocks": {
-        "product_carousel_card_38wMi6": {
-          "type": "_product-carousel-card",
-          "settings": {
-            "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "product_carousel_card_38wMi6"
-      ],
-      "name": "Products carousel",
-      "settings": {
-        "heading": "Los Más Vendidos de TITAN PEAK",
-        "heading_color": "#1a1a1a",
-        "heading_size": 32,
-        "desktop_columns": 4,
-        "tablet_columns": 2,
-        "mobile_slide_width": 85,
-        "items_gap": 20,
-        "items_gap_mobile": 16,
-        "header_gap": 32,
-        "transition_speed": 400,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "show_arrows": true,
-        "arrow_size": 40,
-        "arrow_gap": 12,
-        "arrow_icon_color": "#1a1a1a",
-        "arrow_prev_background": "#f7f4f2",
-        "arrow_next_gradient_start": "#ffed68",
-        "arrow_next_gradient_end": "#e4b948",
-        "container_max_width": 1600,
-        "container_padding": 32,
-        "container_padding_mobile": 16,
-        "card_background_color": "",
-        "card_radius": 0,
-        "card_padding": 0,
-        "card_content_gap": 12,
-        "image_aspect_ratio": "1 / 1",
-        "image_fit": "contain",
-        "title_color": "#1a1a1a",
-        "title_size": 22,
-        "title_case": "capitalize",
-        "compare_price_color": "#1a1a1ab3",
-        "compare_price_size": 14,
-        "price_color": "#1a1a1a",
-        "price_size": 16,
-        "show_discount_badge": true,
-        "discount_label": "AHORRA",
-        "badge_background_color": "#1a1a1a",
-        "badge_text_color": "#ffffff",
-        "badge_size": 12,
-        "badge_radius": 20,
-        "button_label": "VER PRODUCTO",
-        "button_open_new_tab": false,
-        "button_text_color": "#1a1a1a",
-        "button_gradient_start": "#e7b944",
-        "button_gradient_end": "#ffed68",
-        "button_radius": 12,
-        "button_font_size": 18,
-        "button_padding_block": 16,
-        "button_padding_inline": 24,
-        "background_color": "#ffffff",
-        "padding-block-start": 80,
-        "padding-block-end": 80
-      }
-    },
     "product_features_tabs_77LpPd": {
       "type": "product-features-tabs",
       "blocks": {
@@ -1495,6 +1424,77 @@
         "padding-block-end": 80
       }
     },
+    "products_carousel_7VJyYx": {
+      "type": "products-carousel",
+      "blocks": {
+        "product_carousel_card_38wMi6": {
+          "type": "_product-carousel-card",
+          "settings": {
+            "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_carousel_card_38wMi6"
+      ],
+      "name": "Products carousel",
+      "settings": {
+        "heading": "Los Más Vendidos de TITAN PEAK",
+        "heading_color": "#1a1a1a",
+        "heading_size": 32,
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 85,
+        "items_gap": 20,
+        "items_gap_mobile": 16,
+        "header_gap": 32,
+        "transition_speed": 400,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_size": 40,
+        "arrow_gap": 12,
+        "arrow_icon_color": "#1a1a1a",
+        "arrow_prev_background": "#f7f4f2",
+        "arrow_next_gradient_start": "#ffed68",
+        "arrow_next_gradient_end": "#e4b948",
+        "container_max_width": 1600,
+        "container_padding": 32,
+        "container_padding_mobile": 16,
+        "card_background_color": "",
+        "card_radius": 0,
+        "card_padding": 0,
+        "card_content_gap": 12,
+        "image_aspect_ratio": "1 / 1",
+        "image_fit": "contain",
+        "title_color": "#1a1a1a",
+        "title_size": 22,
+        "title_case": "capitalize",
+        "compare_price_color": "#1a1a1ab3",
+        "compare_price_size": 14,
+        "price_color": "#1a1a1a",
+        "price_size": 16,
+        "show_discount_badge": true,
+        "discount_label": "AHORRA",
+        "badge_background_color": "#1a1a1a",
+        "badge_text_color": "#ffffff",
+        "badge_size": 12,
+        "badge_radius": 20,
+        "button_label": "VER PRODUCTO",
+        "button_open_new_tab": false,
+        "button_text_color": "#1a1a1a",
+        "button_gradient_start": "#e7b944",
+        "button_gradient_end": "#ffed68",
+        "button_radius": 12,
+        "button_font_size": 18,
+        "button_padding_block": 16,
+        "button_padding_inline": 24,
+        "background_color": "#ffffff",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
+    },
     "faq_accordion_JVAGAB": {
       "type": "faq-accordion",
       "blocks": {
@@ -1588,8 +1588,8 @@
     "hero_JW8iHz",
     "customer_reviews_tabs_CqTfmC",
     "rich_image_Eygtif",
-    "products_carousel_7VJyYx",
     "product_features_tabs_77LpPd",
+    "products_carousel_7VJyYx",
     "faq_accordion_JVAGAB"
   ]
 }

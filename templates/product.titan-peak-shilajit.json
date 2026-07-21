@@ -873,7 +873,7 @@
         "arrow_border_width": 1,
         "arrow_radius": 50,
         "arrow_gap": 20,
-        "show_pagination": true,
+        "show_pagination": false,
         "pagination_label": "Slide navigation",
         "dot_color": "#cccccc",
         "dot_active_color": "#121212",

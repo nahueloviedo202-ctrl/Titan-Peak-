@@ -983,7 +983,7 @@
       "name": "Customer reviews tabs",
       "settings": {
         "header_rating_stars": 5,
-        "rating_text": "<p>Valorado <strong>4.8/5</strong> por<strong> miles</strong> de clientes satisfechos</p>",
+        "rating_text": "<p>Valorado <strong>4.8/5</strong> por<strong> miles</strong> de clientes </p>",
         "heading": "Historias reales de nuestros clientes de TITAN PEAK",
         "container_max_width": 1320,
         "container_padding": 32,

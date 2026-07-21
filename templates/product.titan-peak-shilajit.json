@@ -1160,10 +1160,10 @@
         "image_text_paragraph_A8DRRB": {
           "type": "_image-text-paragraph",
           "settings": {
-            "text": "<p><strong>As men age, essential minerals become depleted due to stress, poor sleep, and modern toxins.</strong><br><br>These minerals are critical for energy production, hormone balance, and circulation.</p><p>When your body runs low, everything slows down — from your stamina and recovery to your focus and performance.</p>",
+            "text": "<p><strong>A medida que los hombres envejecen, los minerales esenciales se agotan por el estrés, el mal sueño y las toxinas modernas</strong></p><p>Estos minerales son fundamentales para la producción de energía, el equilibrio hormonal y la circulación.<br/><br/>Cuando tu cuerpo se queda sin ellos, todo se ralentiza — desde tu resistencia y recuperación hasta tu concentración y rendimiento.</p>",
             "text_color": "#ffffff",
             "font_size_mobile": 1.4,
-            "font_size_desktop": 1.7,
+            "font_size_desktop": 1.5,
             "margin_top": 0,
             "margin_bottom": 12
           },

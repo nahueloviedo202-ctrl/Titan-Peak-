@@ -1127,7 +1127,6 @@
         "padding_block_desktop": 60,
         "padding_inline_desktop": 60,
         "background_color": "{{ settings.color_palette.background }}",
-        "background_image": "shopify://shop_images/Results_Section_User_Testimonials.webp",
         "padding-block-start": 0,
         "padding-block-end": 0
       }

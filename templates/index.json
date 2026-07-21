@@ -402,7 +402,7 @@
         "vertical_alignment_mobile": "center",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
-        "horizontal_alignment_mobile_flex_direction_column": "flex-start",
+        "horizontal_alignment_mobile_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "vertical_alignment_mobile_flex_direction_column": "flex-start",
         "gap": 24,

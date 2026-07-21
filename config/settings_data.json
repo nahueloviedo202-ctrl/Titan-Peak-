@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/logoblanco2.png",
     "logo_height": 60,
-    "logo_height_mobile": 40,
+    "logo_height_mobile": 50,
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "figtree_n4",
     "type_subheading_font": "inter_n5",

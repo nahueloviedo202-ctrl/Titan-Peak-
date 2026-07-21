@@ -1291,6 +1291,7 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "stopwatch",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_5.svg",
             "title": "Energía",
             "description": "<p>Apoya una energía sostenida durante el día, resistencia y rendimiento físico.</p>"
           },
@@ -1300,6 +1301,7 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "lock",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_6.svg",
             "title": "Concentración",
             "description": "<p>Ayuda a mejorar la claridad mental, el impulso y la agudeza.</p>"
           },
@@ -1309,6 +1311,7 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "recycle",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_7.svg",
             "title": "Recuperación",
             "description": "<p>Apoya una recuperación más rápida, resistencia y capacidad de aguante.</p>"
           },
@@ -1318,6 +1321,7 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "check_box",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_8.svg",
             "title": "Vitalidad",
             "description": "<p>Promueve el apoyo a la testosterona, la fuerza y el rendimiento masculino.</p>"
           },

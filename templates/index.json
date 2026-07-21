@@ -1490,6 +1490,93 @@
         "padding-block-start": 80,
         "padding-block-end": 80
       }
+    },
+    "faq_accordion_JVAGAB": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_jKtgWk": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Vuestros productos están testados y son seguros?",
+            "answer": "<p>Cada producto de <strong>TITAN PEAK</strong> está formulado con ingredientes estudiados clínicamente en dosis respaldadas por la investigación. Puedes confiar en que lo que pone en la etiqueta es lo que hay en la gominola.</p>",
+            "open_by_default": true
+          },
+          "blocks": {}
+        },
+        "faq_item_xe3a9a": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cuánto tarda el envío?",
+            "answer": "<p>Los pedidos se procesan en 1-2 días laborables y suelen llegar en 3-5 días laborables mediante envío estándar. Hay opciones de envío exprés disponibles al finalizar la compra. Los pedidos internacionales suelen llegar en 7-14 días laborables. Recibirás un enlace de seguimiento en cuanto tu pedido sea enviado.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_KFHWWd": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cuál es la política de devoluciones y reembolsos?",
+            "answer": "<p>Respaldamos cada producto con una garantía de satisfacción de 30 días. Si por cualquier motivo no estás contento, contáctanos dentro de los 30 días posteriores a la entrega y lo solucionaremos.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_ckRXza": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Hacéis envíos internacionales?",
+            "answer": "<p>Sí, enviamos a la mayoría de los países del mundo. Los costes de envío internacional y los tiempos estimados de entrega se calculan al finalizar la compra. Ten en cuenta que pueden aplicarse aranceles de importación o tasas aduaneras según tu país, que son responsabilidad del comprador.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_p9nNdE": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Tienes más preguntas?",
+            "answer": "<p>Estamos aquí para ayudarte. Nuestro equipo responde a cada mensaje, normalmente en pocas horas. Contáctanos en soporte@titanpeak.com.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "faq_item_jKtgWk",
+        "faq_item_xe3a9a",
+        "faq_item_KFHWWd",
+        "faq_item_ckRXza",
+        "faq_item_p9nNdE"
+      ],
+      "name": "FAQ accordion",
+      "settings": {
+        "heading": "PREGUNTAS FRECUENTES",
+        "heading_color": "#212529",
+        "heading_size_mobile": 32,
+        "heading_size_desktop": 40,
+        "container_max_width": 900,
+        "container_padding": 16,
+        "header_gap_mobile": 24,
+        "header_gap_desktop": 40,
+        "list_gap_mobile": 12,
+        "list_gap_desktop": 16,
+        "card_background_color": "{{ settings.color_palette.background }}",
+        "card_radius": 12,
+        "trigger_padding_mobile": 16,
+        "trigger_padding_desktop": 24,
+        "question_color": "#1a1a1a",
+        "question_size_mobile": 17,
+        "question_size_desktop": 18,
+        "question_weight": "500",
+        "icon_color": "#000000",
+        "icon_size": 16,
+        "answer_color": "#1a1a1a",
+        "answer_size_mobile": 14,
+        "answer_size_desktop": 17,
+        "answer_line_height": 1.4,
+        "background_color": "#F9F7F5",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
   "order": [
@@ -1498,6 +1585,7 @@
     "customer_reviews_tabs_CqTfmC",
     "rich_image_Eygtif",
     "products_carousel_7VJyYx",
-    "product_features_tabs_77LpPd"
+    "product_features_tabs_77LpPd",
+    "faq_accordion_JVAGAB"
   ]
 }

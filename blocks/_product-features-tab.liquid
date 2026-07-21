@@ -1,0 +1,149 @@
+{%- doc -%}
+  Renders one tab of the "Product features tabs" section: a tab button plus
+  its matching panel (a centered product image flanked by feature cards, and
+  a "shop now" style CTA button). Each feature card is its own nested
+  `_product-features-item` block.
+
+  The button and panel are rendered together so every tab stays a single
+  block in the editor, then laid out into two separate rows (all buttons,
+  then the active panel) using `display: contents` + flex `order` on the
+  parent `.product-features-tabs__tabset`. See the section stylesheet.
+
+  Meant to be used exclusively as a child block of
+  `sections/product-features-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'PFT-Panel-' | append: block.id
+  assign is_first_tab = false
+  if section.blocks.first.id == block.id
+    assign is_first_tab = true
+  endif
+  assign image_alt = tab_settings.image_alt | default: tab_settings.tab_label
+-%}
+
+<div class="product-features-tabs__tab-group">
+  <button
+    type="button"
+    class="product-features-tabs__tab-btn{% if is_first_tab %} is-active{% endif %}"
+    data-tab-target="{{ panel_id }}"
+    role="tab"
+    aria-selected="{{ is_first_tab }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="product-features-tabs__panel{% if is_first_tab %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    <div class="product-features-tabs__content">
+      <div class="product-features-tabs__image-wrapper{% if section.settings.show_image_fade %} has-fade{% endif %}">
+        {%- if tab_settings.image != blank -%}
+          {{
+            tab_settings.image
+            | image_url: width: 1000
+            | image_tag:
+              widths: '352, 500, 704, 1000',
+              sizes: '(min-width: 1024px) 421px, 90vw',
+              alt: image_alt,
+              loading: 'lazy',
+              class: 'product-features-tabs__image'
+          }}
+        {%- else -%}
+          {{ 'detailed-apparel-1' | placeholder_svg_tag: 'product-features-tabs__image product-features-tabs__image-placeholder' }}
+        {%- endif -%}
+      </div>
+
+      {%- if block.blocks.size > 0 -%}
+        {% content_for 'blocks' %}
+      {%- endif -%}
+    </div>
+
+    {%- if tab_settings.cta_text != blank -%}
+      <div class="product-features-tabs__cta-wrapper">
+        <a
+          {% if tab_settings.cta_url != blank %}
+            href="{{ tab_settings.cta_url }}"
+          {% else %}
+            role="link"
+            aria-disabled="true"
+          {% endif %}
+          class="product-features-tabs__cta"
+        >
+          {{- tab_settings.cta_text -}}
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M2.5 8H13.5M13.5 8L9 3.5M13.5 8L9 12.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tab",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-features-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "Product name"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:content.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text",
+      "info": "Defaults to the tab label when left blank."
+    },
+    {
+      "type": "header",
+      "content": "t:content.buttons"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product tab"
+    }
+  ]
+}
+{% endschema %}

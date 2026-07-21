@@ -61,19 +61,19 @@
 </marquee-component>
 
 {% stylesheet %}
+  /* Pinned to the bottom of the hero banner, edge-to-edge, regardless of the
+     hero's content_direction (row/column) or alignment settings — it's taken
+     out of the content-wrapper's flex flow so it never shifts with layout
+     changes. */
   .hero-stats-marquee {
     display: block;
-    width: 100%;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
     overflow: hidden;
+    margin-inline: var(--full-page-margin-inline-offset, 0);
     background-color: var(--hero-stats-marquee-bg, #f7f4f2);
     padding-block: var(--hero-stats-marquee-padding, 20px);
-  }
-
-  /* Break out of the hero's centered/padded content column so the strip
-     runs edge-to-edge, matching the reference design. */
-  .hero__content-wrapper.layout-panel-flex--column .hero-stats-marquee {
-    width: -webkit-fill-available;
-    margin-inline: var(--full-page-margin-inline-offset, 0);
   }
 
   .hero-stats-marquee__wrapper {

@@ -1,0 +1,119 @@
+{%- doc -%}
+  Renders a single feature card (icon + title + text) inside a product
+  features tab panel. The "column" setting places the card on the left or
+  right side of the centered product image on desktop; on mobile every card
+  stacks in a single column, grouped left-then-right.
+
+  Colors, sizes and spacing are controlled by the parent section via CSS
+  custom properties. Meant to be used exclusively as a child block of
+  `blocks/_product-features-tab.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+-%}
+
+<div
+  class="product-features-tabs__feature-card product-features-tabs__feature-card--{{ item_settings.column }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="product-features-tabs__feature-icon">
+    {%- if item_settings.icon != blank -%}
+      {{
+        item_settings.icon
+        | image_url: width: 120
+        | image_tag:
+          width: 60,
+          height: 60,
+          loading: 'lazy',
+          alt: item_settings.icon.alt,
+          class: 'product-features-tabs__feature-icon-img'
+      }}
+    {%- else -%}
+      <svg
+        class="product-features-tabs__feature-icon-placeholder"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="11"
+          stroke="currentColor"
+          stroke-width="1.5"
+        />
+        <path
+          d="M7.5 12.5L10.2 15.2L16.5 8.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    {%- endif -%}
+  </div>
+
+  <div class="product-features-tabs__feature-body">
+    {%- if item_settings.title != blank -%}
+      <p class="product-features-tabs__feature-title">{{ item_settings.title }}</p>
+    {%- endif -%}
+
+    {%- if item_settings.text != blank -%}
+      <div class="product-features-tabs__feature-text rte">{{ item_settings.text }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Feature",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "t:content.icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Feature title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Describe this feature.</p>"
+    },
+    {
+      "type": "select",
+      "id": "column",
+      "label": "Column (desktop)",
+      "info": "On mobile, cards stack in a single column, grouped left then right.",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature",
+      "settings": {
+        "title": "Feature title",
+        "text": "<p>Describe this feature.</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

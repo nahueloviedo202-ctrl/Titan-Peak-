@@ -1,0 +1,1214 @@
+{%- doc -%}
+  Product features tabs: an eyebrow + heading above a row of product tabs;
+  clicking a tab reveals its own panel with a centered product image flanked
+  by feature cards (two on each side) and a "shop now" style CTA button.
+
+  Every tab is a nested "_product-features-tab" block, and every feature
+  card is its own nested "_product-features-item" block (inside a tab) - so
+  merchants can add, remove or reorder everything freely.
+
+  Every text, image, icon, color, size, spacing, radius and column
+  assignment is configurable through the section and block schemas.
+{%- enddoc -%}
+
+<script
+  src="{{ 'product-features-tabs.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- liquid
+  assign section_settings = section.settings
+  assign tab_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="product-features-tabs spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --pft-max-width: {{ section_settings.container_max_width }}px;
+    --pft-padding-x: {{ section_settings.container_padding }}px;
+    --pft-padding-x-mobile: {{ section_settings.container_padding_mobile }}px;
+    --pft-header-gap: {{ section_settings.header_gap }}px;
+    --pft-section-gap: {{ section_settings.section_gap_desktop }}px;
+    --pft-section-gap-mobile: {{ section_settings.section_gap_mobile }}px;
+    --pft-content-gap: {{ section_settings.content_gap_desktop }}px;
+    --pft-content-gap-mobile: {{ section_settings.content_gap_mobile }}px;
+    --pft-tabs-gap: {{ section_settings.tabs_gap_desktop }}px;
+    --pft-tabs-gap-mobile: {{ section_settings.tabs_gap_mobile }}px;
+    --pft-tab-radius: {{ section_settings.tab_radius }}px;
+    --pft-tab-padding-inline: {{ section_settings.tab_padding_inline }}px;
+    --pft-tab-padding-block: {{ section_settings.tab_padding_block }}px;
+    --pft-tab-font-size: {{ section_settings.tab_font_size_desktop }}px;
+    --pft-tab-font-size-mobile: {{ section_settings.tab_font_size_mobile }}px;
+    --pft-card-radius: {{ section_settings.card_radius }}px;
+    --pft-card-padding: {{ section_settings.card_padding_desktop }}px;
+    --pft-card-padding-mobile: {{ section_settings.card_padding_mobile }}px;
+    --pft-card-gap: {{ section_settings.card_gap_desktop }}px;
+    --pft-card-gap-mobile: {{ section_settings.card_gap_mobile }}px;
+    --pft-icon-size: {{ section_settings.icon_size_desktop }}px;
+    --pft-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+    --pft-feature-title-size: {{ section_settings.feature_title_size_desktop }}px;
+    --pft-feature-title-size-mobile: {{ section_settings.feature_title_size_mobile }}px;
+    --pft-feature-text-size: {{ section_settings.feature_text_size_desktop }}px;
+    --pft-feature-text-size-mobile: {{ section_settings.feature_text_size_mobile }}px;
+    --pft-image-width: {{ section_settings.image_width_desktop }}px;
+    --pft-image-height: {{ section_settings.image_height_desktop }}px;
+    --pft-image-height-mobile: {{ section_settings.image_height_mobile }}px;
+    --pft-image-radius: {{ section_settings.image_radius }}px;
+    --pft-fade-height: {{ section_settings.image_fade_height_desktop }}px;
+    --pft-fade-height-mobile: {{ section_settings.image_fade_height_mobile }}px;
+    --pft-cta-radius: {{ section_settings.cta_radius }}px;
+    --pft-cta-padding-inline: {{ section_settings.cta_padding_inline }}px;
+    --pft-cta-padding-block: {{ section_settings.cta_padding_block }}px;
+    --pft-cta-font-size: {{ section_settings.cta_font_size_desktop }}px;
+    --pft-cta-font-size-mobile: {{ section_settings.cta_font_size_mobile }}px;
+    --pft-eyebrow-size: {{ section_settings.eyebrow_font_size_desktop }}px;
+    --pft-eyebrow-size-mobile: {{ section_settings.eyebrow_font_size_mobile }}px;
+    --pft-heading-size: {{ section_settings.heading_font_size_desktop }}px;
+    --pft-heading-size-mobile: {{ section_settings.heading_font_size_mobile }}px;
+    --pft-bg: {{ section_settings.background_color }};
+    --pft-eyebrow-color: {{ section_settings.eyebrow_color }};
+    --pft-heading-color: {{ section_settings.heading_color }};
+    --pft-tab-bg: {{ section_settings.tab_bg_color }};
+    --pft-tab-text-color: {{ section_settings.tab_text_color }};
+    --pft-tab-gradient-start: {{ section_settings.tab_active_gradient_start }};
+    --pft-tab-gradient-end: {{ section_settings.tab_active_gradient_end }};
+    --pft-card-bg: {{ section_settings.card_bg_color }};
+    --pft-card-title-color: {{ section_settings.card_title_color }};
+    --pft-card-text-color: {{ section_settings.card_text_color }};
+    --pft-cta-gradient-start: {{ section_settings.cta_gradient_start }};
+    --pft-cta-gradient-end: {{ section_settings.cta_gradient_end }};
+    --pft-cta-text-color: {{ section_settings.cta_text_color }};
+  "
+  data-testid="product-features-tabs"
+>
+  <div class="product-features-tabs__container">
+    <product-features-tabs-component class="product-features-tabs__component">
+      <div class="product-features-tabs__header">
+        {%- if section_settings.eyebrow != blank -%}
+          <p class="product-features-tabs__eyebrow">{{ section_settings.eyebrow }}</p>
+        {%- endif -%}
+
+        {%- if section_settings.heading != blank -%}
+          <h2 class="product-features-tabs__heading">{{ section_settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if tab_count > 0 -%}
+          <div
+            class="product-features-tabs__tabset"
+            role="tablist"
+          >
+            {% content_for 'blocks' %}
+          </div>
+        {%- endif -%}
+      </div>
+    </product-features-tabs-component>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-features-tabs {
+    background-color: var(--pft-bg, #ffffff);
+    font-family: var(--font-body--family, inherit);
+  }
+
+  .product-features-tabs__container {
+    max-width: var(--pft-max-width, 1600px);
+    margin-inline: auto;
+    padding-inline: var(--pft-padding-x-mobile, 16px);
+  }
+
+  .product-features-tabs__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pft-section-gap-mobile, 24px);
+    width: 100%;
+  }
+
+  .product-features-tabs__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pft-header-gap, 16px);
+    text-align: center;
+    width: 100%;
+  }
+
+  .product-features-tabs__eyebrow {
+    font-size: var(--pft-eyebrow-size-mobile, 12px);
+    font-weight: 400;
+    color: var(--pft-eyebrow-color, #1a1a1a);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .product-features-tabs__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-size: var(--pft-heading-size-mobile, 28px);
+    font-weight: 700;
+    color: var(--pft-heading-color, #1a1a1a);
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .product-features-tabs__tabset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--pft-tabs-gap-mobile, 10px);
+    width: 100%;
+  }
+
+  /* Each tab block renders a button + panel pair; promoting the wrapper to
+     `display: contents` lets flex `order` regroup every button into one row
+     and the active panel below it, regardless of how the blocks interleave. */
+  .product-features-tabs__tab-group {
+    display: contents;
+  }
+
+  .product-features-tabs__tab-btn {
+    order: 1;
+    flex: 1 1 calc(50% - (var(--pft-tabs-gap-mobile, 10px) / 2));
+    padding: var(--pft-tab-padding-block, 8px) var(--pft-tab-padding-inline, 20px);
+    border-radius: var(--pft-tab-radius, 8px);
+    background: var(--pft-tab-bg, #f7f4f2);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--pft-tab-font-size-mobile, 10px);
+    font-weight: 400;
+    color: var(--pft-tab-text-color, #1a1a1a);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition:
+      background 0.2s ease,
+      font-weight 0s;
+  }
+
+  .product-features-tabs__tab-btn.is-active {
+    background: linear-gradient(
+      to bottom,
+      var(--pft-tab-gradient-start, #e7b944),
+      var(--pft-tab-gradient-end, #ffed68)
+    );
+    font-weight: 700;
+  }
+
+  .product-features-tabs__panel {
+    order: 2;
+    flex: 1 0 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--pft-section-gap-mobile, 24px);
+  }
+
+  .product-features-tabs__panel.is-active {
+    display: flex;
+  }
+
+  .product-features-tabs__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pft-content-gap-mobile, 20px);
+    width: 100%;
+  }
+
+  .product-features-tabs__image-wrapper {
+    position: relative;
+    order: 0;
+    width: 100%;
+    height: var(--pft-image-height-mobile, 380px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--pft-image-radius, 0);
+    overflow: hidden;
+  }
+
+  .product-features-tabs__image-wrapper.has-fade::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--pft-fade-height-mobile, 60px);
+    background: linear-gradient(to bottom, transparent, var(--pft-bg, #ffffff));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .product-features-tabs__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .product-features-tabs__feature-card {
+    order: 2;
+    background: var(--pft-card-bg, #f7f4f2);
+    border-radius: var(--pft-card-radius, 12px);
+    padding: var(--pft-card-padding-mobile, 16px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--pft-card-gap-mobile, 16px);
+  }
+
+  .product-features-tabs__feature-card--left {
+    order: 1;
+  }
+
+  .product-features-tabs__feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .product-features-tabs__feature-icon-img,
+  .product-features-tabs__feature-icon-placeholder {
+    width: var(--pft-icon-size-mobile, 31px);
+    height: var(--pft-icon-size-mobile, 31px);
+    object-fit: contain;
+    display: block;
+  }
+
+  .product-features-tabs__feature-icon-placeholder {
+    color: var(--pft-card-title-color, #1a1a1a);
+    opacity: 0.35;
+  }
+
+  .product-features-tabs__feature-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .product-features-tabs__feature-title {
+    font-family: var(--font-heading--family, inherit);
+    font-size: var(--pft-feature-title-size-mobile, 16px);
+    font-weight: 600;
+    color: var(--pft-card-title-color, #1a1a1a);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .product-features-tabs__feature-text,
+  .product-features-tabs__feature-text p {
+    font-size: var(--pft-feature-text-size-mobile, 14px);
+    font-weight: 400;
+    color: var(--pft-card-text-color, #1a1a1a);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .product-features-tabs__cta-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .product-features-tabs__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: var(--pft-cta-padding-block, 16px) var(--pft-cta-padding-inline, 64px);
+    background: linear-gradient(
+      to bottom,
+      var(--pft-cta-gradient-start, #e7b944),
+      var(--pft-cta-gradient-end, #ffed68)
+    );
+    border-radius: var(--pft-cta-radius, 12px);
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--pft-cta-font-size-mobile, 16px);
+    font-weight: 700;
+    color: var(--pft-cta-text-color, #1a1a1a);
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .product-features-tabs__cta:not([href]) {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .product-features-tabs__cta svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .product-features-tabs__container {
+      padding-inline: var(--pft-padding-x, 32px);
+    }
+
+    .product-features-tabs__component {
+      gap: var(--pft-section-gap, 56px);
+    }
+
+    .product-features-tabs__eyebrow {
+      font-size: var(--pft-eyebrow-size, 14px);
+    }
+
+    .product-features-tabs__heading {
+      font-size: var(--pft-heading-size, 36px);
+    }
+
+    .product-features-tabs__tabset {
+      gap: var(--pft-tabs-gap, 16px);
+    }
+
+    .product-features-tabs__tab-btn {
+      flex: 0 0 auto;
+      font-size: var(--pft-tab-font-size, 14px);
+      white-space: nowrap;
+    }
+
+    .product-features-tabs__panel {
+      gap: var(--pft-section-gap, 56px);
+    }
+
+    .product-features-tabs__content {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      column-gap: var(--pft-content-gap, 40px);
+      row-gap: var(--pft-content-gap, 40px);
+      align-items: center;
+    }
+
+    .product-features-tabs__image-wrapper {
+      grid-column: 2;
+      grid-row: 1 / -1;
+      width: var(--pft-image-width, 421px);
+      height: var(--pft-image-height, 575px);
+    }
+
+    .product-features-tabs__image-wrapper.has-fade::after {
+      height: var(--pft-fade-height, 80px);
+    }
+
+    .product-features-tabs__feature-card {
+      grid-column: 3;
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--pft-card-gap, 20px);
+      padding: var(--pft-card-padding, 20px);
+    }
+
+    .product-features-tabs__feature-card--left {
+      grid-column: 1;
+    }
+
+    .product-features-tabs__feature-icon {
+      justify-content: flex-start;
+    }
+
+    .product-features-tabs__feature-icon-img,
+    .product-features-tabs__feature-icon-placeholder {
+      width: var(--pft-icon-size, 36px);
+      height: var(--pft-icon-size, 36px);
+    }
+
+    .product-features-tabs__feature-title {
+      font-size: var(--pft-feature-title-size, 22px);
+    }
+
+    .product-features-tabs__feature-text,
+    .product-features-tabs__feature-text p {
+      font-size: var(--pft-feature-text-size, 16px);
+    }
+
+    .product-features-tabs__cta-wrapper {
+      width: auto;
+    }
+
+    .product-features-tabs__cta {
+      width: auto;
+      font-size: var(--pft-cta-font-size, 18px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product features tabs",
+  "class": "section-product-features-tabs",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_product-features-tab"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Daily Nutrition From Nature"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Whole-body support from four powerful formulas"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1920,
+      "step": 20,
+      "unit": "px",
+      "default": 1600
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Space between eyebrow and heading",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_gap_desktop",
+      "label": "Space between header, tabs and panel content (desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "section_gap_mobile",
+      "label": "Space between header, tabs and panel content (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_gap_desktop",
+      "label": "Gap between image and feature cards (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "label": "Gap between image and feature cards (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "range",
+      "id": "tabs_gap_desktop",
+      "label": "Gap between tabs (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tabs_gap_mobile",
+      "label": "Gap between tabs (mobile)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "tab_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_inline",
+      "label": "Tab horizontal padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_block",
+      "label": "Tab vertical padding",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_desktop",
+      "label": "Tab label size (desktop)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_mobile",
+      "label": "Tab label size (mobile)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Feature cards"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding_desktop",
+      "label": "Card padding (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Card padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_gap_desktop",
+      "label": "Space inside card (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_gap_mobile",
+      "label": "Space inside card (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Icon size (desktop)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 31
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size_desktop",
+      "label": "Feature title size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size_mobile",
+      "label": "Feature title size (mobile)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size_desktop",
+      "label": "Feature text size (desktop)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "feature_text_size_mobile",
+      "label": "Feature text size (mobile)",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "range",
+      "id": "image_width_desktop",
+      "label": "Image width (desktop)",
+      "min": 200,
+      "max": 600,
+      "step": 1,
+      "unit": "px",
+      "default": 421
+    },
+    {
+      "type": "range",
+      "id": "image_height_desktop",
+      "label": "Image height (desktop)",
+      "min": 300,
+      "max": 800,
+      "step": 1,
+      "unit": "px",
+      "default": 575
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "label": "Image height (mobile)",
+      "min": 200,
+      "max": 500,
+      "step": 1,
+      "unit": "px",
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_fade",
+      "label": "Fade image into background",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_fade_height_desktop",
+      "label": "Fade height (desktop)",
+      "min": 20,
+      "max": 160,
+      "step": 1,
+      "unit": "px",
+      "default": 80,
+      "visible_if": "{{ section.settings.show_image_fade }}"
+    },
+    {
+      "type": "range",
+      "id": "image_fade_height_mobile",
+      "label": "Fade height (mobile)",
+      "min": 20,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 60,
+      "visible_if": "{{ section.settings.show_image_fade }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.buttons"
+    },
+    {
+      "type": "range",
+      "id": "cta_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_inline",
+      "label": "Button horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_block",
+      "label": "Button vertical padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size_desktop",
+      "label": "Button text size (desktop)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size_mobile",
+      "label": "Button text size (mobile)",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size_desktop",
+      "label": "Eyebrow size (desktop)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size_mobile",
+      "label": "Eyebrow size (mobile)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg_color",
+      "label": "Tab background",
+      "default": "#f7f4f2"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_start",
+      "label": "Active tab gradient (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_end",
+      "label": "Active tab gradient (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#f7f4f2"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "cta_gradient_start",
+      "label": "Button gradient (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "cta_gradient_end",
+      "label": "Button gradient (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Button text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product features tabs",
+      "category": "t:categories.product",
+      "blocks": {
+        "tab_1": {
+          "type": "_product-features-tab",
+          "settings": {
+            "tab_label": "Performance Gummies",
+            "cta_text": "Shop now"
+          },
+          "blocks": {
+            "item_1": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "6 clinically studied ingredients",
+                "text": "<p>Shilajit, Ashwagandha, and Maca boost energy and circulation for daily vitality.</p>",
+                "column": "left"
+              }
+            },
+            "item_2": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Stimulant-free formula",
+                "text": "<p>No caffeine or artificial stimulants; promotes natural energy and hormonal balance without jitters.</p>",
+                "column": "left"
+              }
+            },
+            "item_3": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Multi-benefit daily support",
+                "text": "<p>One gummy enhances energy, focus, and circulation in a convenient daily dose.</p>",
+                "column": "right"
+              }
+            },
+            "item_4": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Third-party tested",
+                "text": "<p>Manufactured in GMP-certified facilities, ensuring purity, potency, and safety you can trust.</p>",
+                "column": "right"
+              }
+            }
+          },
+          "block_order": ["item_1", "item_2", "item_3", "item_4"]
+        },
+        "tab_2": {
+          "type": "_product-features-tab",
+          "settings": {
+            "tab_label": "Organic Beetroot Gummies",
+            "cta_text": "Shop now"
+          },
+          "blocks": {
+            "item_1": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Natural nitric oxide support",
+                "text": "<p>Beetroot is rich in nitrates, boosting circulation and blood flow.</p>",
+                "column": "left"
+              }
+            },
+            "item_2": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Exercise endurance",
+                "text": "<p>Better oxygen delivery enhances performance and recovery naturally.</p>",
+                "column": "left"
+              }
+            },
+            "item_3": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "100% organic, clean formula",
+                "text": "<p>Only organic beetroot in vegan, gluten-free gummies - no fillers or additives.</p>",
+                "column": "right"
+              }
+            },
+            "item_4": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Antioxidant-rich daily nutrition",
+                "text": "<p>Contains antioxidants for heart health and reduced oxidative stress.</p>",
+                "column": "right"
+              }
+            }
+          },
+          "block_order": ["item_1", "item_2", "item_3", "item_4"]
+        },
+        "tab_3": {
+          "type": "_product-features-tab",
+          "settings": {
+            "tab_label": "Pumpkin Seed Oil Softgels",
+            "cta_text": "Shop now"
+          },
+          "blocks": {
+            "item_1": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Essential fatty acids & phytosterols",
+                "text": "<p>Cold-pressed pumpkin seed oil supports skin, hair, nails, and urinary tract health.</p>",
+                "column": "left"
+              }
+            },
+            "item_2": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Hair, skin & nail support",
+                "text": "<p>Pumpkin seed oil nourishes for stronger nails, shinier hair, and even skin tone.</p>",
+                "column": "left"
+              }
+            },
+            "item_3": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Urinary comfort & bladder health",
+                "text": "<p>Phytosterols in pumpkin seed oil support urinary tract comfort & bladder function.</p>",
+                "column": "right"
+              }
+            },
+            "item_4": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "No taste, no fillers",
+                "text": "<p>Pure cold-pressed oil in softgels, with no aftertaste or additives.</p>",
+                "column": "right"
+              }
+            }
+          },
+          "block_order": ["item_1", "item_2", "item_3", "item_4"]
+        },
+        "tab_4": {
+          "type": "_product-features-tab",
+          "settings": {
+            "tab_label": "Beef Organs Complex",
+            "cta_text": "Shop now"
+          },
+          "blocks": {
+            "item_1": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Ancestral nutrition, modern format",
+                "text": "<p>Nutrient-rich, freeze-dried beef liver, heart, and spleen in convenient daily capsules.</p>",
+                "column": "left"
+              }
+            },
+            "item_2": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Cognitive & energy support",
+                "text": "<p>Supports cognitive function and energy with B12, iron, and CoQ10.</p>",
+                "column": "left"
+              }
+            },
+            "item_3": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Bioavailable micronutrients",
+                "text": "<p>Freeze-drying retains nutrients, providing iron, B vitamins, and zinc in absorbable forms.</p>",
+                "column": "right"
+              }
+            },
+            "item_4": {
+              "type": "_product-features-item",
+              "settings": {
+                "title": "Clean, single-source protein",
+                "text": "<p>100% grass-fed New Zealand beef, free from fillers, hormones, and antibiotics.</p>",
+                "column": "right"
+              }
+            }
+          },
+          "block_order": ["item_1", "item_2", "item_3", "item_4"]
+        }
+      },
+      "block_order": ["tab_1", "tab_2", "tab_3", "tab_4"]
+    }
+  ]
+}
+{% endschema %}

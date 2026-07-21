@@ -112,6 +112,14 @@
   if section.index == 1
     assign fetch_priority = 'high'
   endif
+
+  # Horizontal and vertical alignment of the content wrapper can differ between mobile and desktop.
+  assign horizontal_alignment_mobile = section.settings.horizontal_alignment_mobile
+  assign vertical_alignment_mobile = section.settings.vertical_alignment_mobile
+  unless section.settings.content_direction == 'row'
+    assign horizontal_alignment_mobile = section.settings.horizontal_alignment_mobile_flex_direction_column
+    assign vertical_alignment_mobile = section.settings.vertical_alignment_mobile_flex_direction_column
+  endunless
 %}
 
 {% capture media_slot_1 %}
@@ -538,7 +546,7 @@
         {{section.settings.section_width}}
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
       "
-      style="{% render 'layout-panel-style', settings: section.settings %}"
+      style="{% render 'layout-panel-style', settings: section.settings %} --horizontal-alignment-mobile: {{ horizontal_alignment_mobile }}; --vertical-alignment-mobile: {{ vertical_alignment_mobile }};"
     >
       {% content_for 'blocks' %}
     </div>
@@ -566,18 +574,24 @@
     min-height: 600px;
   }
 
+  @media screen and (max-width: 749px) {
+    .hero {
+      min-height: calc(100svh - var(--hero-height-offset));
+    }
+  }
+
   .hero__container {
     position: relative;
     overflow: hidden;
     border: var(--hero-border-width) var(--hero-border-style) rgb(var(--color-border-rgb) / var(--hero-border-opacity));
     min-height: inherit;
-    align-items: var(--vertical-alignment-mobile);
+    /* Always stretch so .hero__content-wrapper spans the full banner height;
+       actual vertical positioning of the content is handled by its own flex
+       alignment (below) so blocks like the stats marquee can reliably anchor
+       to the true bottom of the banner regardless of vertical_alignment. */
+    align-items: stretch;
     justify-content: var(--horizontal-alignment);
     z-index: var(--layer-base);
-
-    @media screen and (min-width: 750px) {
-      align-items: var(--vertical-alignment);
-    }
   }
 
   .hero__content-wrapper.page-width {
@@ -660,6 +674,27 @@
     .hero--stack-mobile .hero__media-grid {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(var(--hero-media-count-mobile, 1), calc(100% / var(--hero-media-count-mobile, 1)));
+    }
+
+    /* Horizontal alignment of the content wrapper can be set independently on mobile. */
+    .hero__content-wrapper.layout-panel-flex--column,
+    .hero__content-wrapper.mobile-column {
+      align-items: var(--horizontal-alignment-mobile, var(--horizontal-alignment));
+    }
+
+    .hero__content-wrapper.layout-panel-flex--row:not(.mobile-column) {
+      justify-content: var(--horizontal-alignment-mobile, var(--horizontal-alignment));
+    }
+
+    /* Vertical alignment of the content wrapper can be set independently on mobile.
+       The row+stacked (.mobile-column) case is already covered by the shared
+       --vertical-alignment-mobile variable read in base.css. */
+    .hero__content-wrapper.layout-panel-flex--column {
+      justify-content: var(--vertical-alignment-mobile, var(--vertical-alignment));
+    }
+
+    .hero__content-wrapper.layout-panel-flex--row:not(.mobile-column) {
+      align-items: var(--vertical-alignment-mobile, var(--vertical-alignment));
     }
   }
 
@@ -1016,8 +1051,54 @@
     },
     {
       "type": "select",
+      "id": "horizontal_alignment_mobile",
+      "label": "t:settings.alignment_mobile",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        },
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        }
+      ],
+      "default": "flex-start",
+      "visible_if": "{{ section.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
       "id": "vertical_alignment",
       "label": "t:settings.position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ section.settings.content_direction == 'row' }}"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_mobile",
+      "label": "t:settings.position_mobile",
       "options": [
         {
           "value": "flex-start",
@@ -1065,6 +1146,27 @@
     },
     {
       "type": "select",
+      "id": "horizontal_alignment_mobile_flex_direction_column",
+      "label": "t:settings.alignment_mobile",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "flex-start",
+      "visible_if": "{{ section.settings.content_direction != 'row' }}"
+    },
+    {
+      "type": "select",
       "id": "vertical_alignment_flex_direction_column",
       "label": "t:settings.position",
       "options": [
@@ -1087,6 +1189,31 @@
       ],
       "default": "center",
       "visible_if": "{{ section.settings.content_direction == 'column' }}"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment_mobile_flex_direction_column",
+      "label": "t:settings.position_mobile",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.top"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.bottom"
+        },
+        {
+          "value": "space-between",
+          "label": "t:options.space_between"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ section.settings.content_direction != 'row' }}"
     },
     {
       "type": "range",

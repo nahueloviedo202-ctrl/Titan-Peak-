@@ -843,7 +843,7 @@
       ],
       "name": "Before/after slider",
       "settings": {
-        "heading": "<p>Mi Testosterona se Triplicó y<strong> Mi Mujer No Para de Decirme lo Distinto que Estoy</strong></p>",
+        "heading": "<p>Mi Testosterona se Triplicó <strong>y Mi Mujer Lo Notó Enseguida</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_accent_color": "#c9a84c",
         "heading_size_mobile": 30,

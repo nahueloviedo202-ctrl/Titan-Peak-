@@ -744,8 +744,10 @@
         "gap": 24,
         "enable_sticky_add_to_cart": true,
         "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 0,
-        "padding-block-end": 64
+        "padding-block-start": 64,
+        "padding-block-start-mobile": 0,
+        "padding-block-end": 64,
+        "padding-block-end-mobile": 0
       }
     },
     "product_recommendations_qggXJq": {

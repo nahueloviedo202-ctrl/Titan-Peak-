@@ -1,0 +1,728 @@
+{%- doc -%}
+  Renders a "benefits grid" section: a heading (with a metallic accent word)
+  and subheading, an optional image, and a grid of benefit items (icon
+  badge, title, description). On mobile, everything stacks in a single
+  column and the image can sit before or after the header; on tablet and
+  desktop the image sits beside the content, on either side.
+
+  Every benefit is a nested "_benefit-item" block, so merchants can add,
+  remove or reorder them freely. All text, images, icons, colors, sizes,
+  spacing, radius, column counts and image position are configurable
+  through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign item_count = section.blocks.size
+  assign has_image = false
+  if section_settings.image != blank
+    assign has_image = true
+    assign image_alt = section_settings.image.alt | default: section_settings.heading | strip_html
+  endif
+
+  if section_settings.background_color_start != blank
+    render 'contrast-override', background_color: section_settings.background_color_start, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color_start != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="benefits-grid spacing-style{% if section_settings.background_color_start != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --bg-max-width: {{ section_settings.container_max_width }}px;
+    --bg-container-padding: {{ section_settings.container_padding }}px;
+    --bg-content-gap-mobile: {{ section_settings.content_gap_mobile }}px;
+    --bg-content-gap-desktop: {{ section_settings.content_gap_desktop }}px;
+    --bg-header-gap-mobile: {{ section_settings.header_gap_mobile }}px;
+    --bg-header-gap-desktop: {{ section_settings.header_gap_desktop }}px;
+    --bg-heading-color: {{ section_settings.heading_color }};
+    --bg-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --bg-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --bg-accent-dark: {{ section_settings.heading_accent_dark }};
+    --bg-accent-light: {{ section_settings.heading_accent_light }};
+    --bg-subtitle-color: {{ section_settings.subheading_color }};
+    --bg-subtitle-size-mobile: {{ section_settings.subheading_size_mobile }}px;
+    --bg-subtitle-size-desktop: {{ section_settings.subheading_size_desktop }}px;
+    --bg-columns-mobile: {{ section_settings.columns_mobile }};
+    --bg-columns-desktop: {{ section_settings.columns_desktop }};
+    --bg-items-gap: {{ section_settings.items_gap }}px;
+    --bg-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+    --bg-icon-size-desktop: {{ section_settings.icon_size_desktop }}px;
+    --bg-icon-inner-size-mobile: {{ section_settings.icon_inner_size_mobile }}px;
+    --bg-icon-inner-size-desktop: {{ section_settings.icon_inner_size_desktop }}px;
+    --bg-icon-gap: {{ section_settings.icon_gap }}px;
+    --bg-icon-bg-start: {{ section_settings.icon_background_start }};
+    --bg-icon-bg-end: {{ section_settings.icon_background_end }};
+    --bg-icon-border-color: {{ section_settings.icon_border_color }};
+    --bg-icon-border-width: {{ section_settings.icon_border_width }}px;
+    --bg-icon-radius: {{ section_settings.icon_radius }}%;
+    --bg-icon-color: {{ section_settings.icon_color }};
+    --bg-title-color: {{ section_settings.title_color }};
+    --bg-title-size-mobile: {{ section_settings.title_size_mobile }}px;
+    --bg-title-size-desktop: {{ section_settings.title_size_desktop }}px;
+    --bg-description-color: {{ section_settings.description_color }};
+    --bg-description-size-mobile: {{ section_settings.description_size_mobile }}px;
+    --bg-description-size-desktop: {{ section_settings.description_size_desktop }}px;
+    --bg-image-radius: {{ section_settings.image_radius }}px;
+    {% if section_settings.background_color_start != blank %}
+      --bg-bg: linear-gradient(180deg, {{ section_settings.background_color_start }}, {{ section_settings.background_color_end | default: section_settings.background_color_start }});
+    {% endif %}
+  "
+  data-testid="benefits-grid"
+>
+  <div class="benefits-grid__container">
+    <div
+      class="benefits-grid__content-wrapper"
+      data-has-image="{{ has_image }}"
+      {% if has_image %}
+        data-mobile-image-position="{{ section_settings.mobile_image_position }}"
+        data-desktop-image-position="{{ section_settings.desktop_image_position }}"
+      {% endif %}
+    >
+      {%- if section_settings.heading != blank or section_settings.subheading != blank -%}
+        <header class="benefits-grid__header">
+          {%- if section_settings.heading != blank -%}
+            <h2 class="benefits-grid__heading">{{ section_settings.heading }}</h2>
+          {%- endif -%}
+
+          {%- if section_settings.subheading != blank -%}
+            <p class="benefits-grid__subtitle">{{ section_settings.subheading }}</p>
+          {%- endif -%}
+        </header>
+      {%- endif -%}
+
+      {%- if has_image -%}
+        <div class="benefits-grid__image">
+          {{
+            section_settings.image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              widths: '600, 800, 1000, 1200, 1600',
+              sizes: '(min-width: 750px) 50vw, 100vw',
+              alt: image_alt,
+              class: 'benefits-grid__image-element'
+          }}
+        </div>
+      {%- endif -%}
+
+      {%- if item_count > 0 -%}
+        <div class="benefits-grid__items">
+          {% content_for 'blocks' %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .benefits-grid {
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-bg, transparent);
+  }
+
+  .benefits-grid__container {
+    max-width: var(--bg-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--bg-container-padding, 20px);
+  }
+
+  .benefits-grid__content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'items';
+    gap: var(--bg-content-gap-mobile, 30px);
+  }
+
+  .benefits-grid__content-wrapper[data-mobile-image-position='before_header'] {
+    grid-template-areas: 'image' 'header' 'items';
+  }
+
+  .benefits-grid__content-wrapper[data-mobile-image-position='after_header'] {
+    grid-template-areas: 'header' 'image' 'items';
+  }
+
+  .benefits-grid__header {
+    grid-area: header;
+    margin-bottom: var(--bg-header-gap-mobile, 0px);
+    text-align: center;
+  }
+
+  .benefits-grid__heading {
+    margin: 0 0 16px;
+    color: var(--bg-heading-color, currentColor);
+    font-size: var(--bg-heading-size-mobile, 36px);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .benefits-grid__heading strong {
+    display: inline-block;
+    font-weight: 800;
+    background: linear-gradient(180deg, var(--bg-accent-dark, #a3a3a3), var(--bg-accent-light, #ffffff) 55%, var(--bg-accent-dark, #a3a3a3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .benefits-grid__subtitle {
+    margin: 0;
+    color: var(--bg-subtitle-color, currentColor);
+    font-size: var(--bg-subtitle-size-mobile, 14px);
+    line-height: 1.5;
+  }
+
+  .benefits-grid__image {
+    grid-area: image;
+  }
+
+  .benefits-grid__image-element {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--bg-image-radius, 15px);
+  }
+
+  .benefits-grid__items {
+    grid-area: items;
+    display: grid;
+    grid-template-columns: repeat(var(--bg-columns-mobile, 2), 1fr);
+    gap: var(--bg-items-gap, 20px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .benefits-grid__content-wrapper {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      gap: var(--bg-content-gap-desktop, 40px);
+    }
+
+    .benefits-grid__content-wrapper[data-desktop-image-position='left'] {
+      grid-template-areas: 'image header' 'image items';
+    }
+
+    .benefits-grid__content-wrapper[data-desktop-image-position='right'] {
+      grid-template-areas: 'header image' 'items image';
+    }
+
+    .benefits-grid__content-wrapper[data-has-image='false'] {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'header' 'items';
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .benefits-grid__header {
+      margin-bottom: var(--bg-header-gap-desktop, 0px);
+      text-align: left;
+    }
+
+    .benefits-grid__heading {
+      font-size: var(--bg-heading-size-desktop, 52px);
+    }
+
+    .benefits-grid__subtitle {
+      font-size: var(--bg-subtitle-size-desktop, 16px);
+    }
+
+    .benefits-grid__items {
+      grid-template-columns: repeat(var(--bg-columns-desktop, 2), 1fr);
+      align-content: center;
+    }
+
+    .benefits-grid__image-element {
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Benefits grid",
+  "class": "section-benefits-grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_benefit-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "Wrap a word in bold to apply the metallic accent effect below.",
+      "default": "<p>What your body <strong>is losing</strong></p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_dark",
+      "label": "Accent gradient (dark)",
+      "default": "#a3a3a3"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_light",
+      "label": "Accent gradient (light)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your energy, drive, and performance don't just fade — they decline as your body loses essential minerals"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#d1d1d1"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_gap_mobile",
+      "label": "Space below header (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "header_gap_desktop",
+      "label": "Space below header (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "Image position (tablet & desktop)",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "right",
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Image position (mobile)",
+      "options": [
+        {
+          "value": "before_header",
+          "label": "Before heading"
+        },
+        {
+          "value": "after_header",
+          "label": "After heading"
+        }
+      ],
+      "default": "after_header",
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15,
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "label": "Space between blocks (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "content_gap_desktop",
+      "label": "Space between content and image (desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.grid"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns (mobile)",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "t:settings.columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Icon badge"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_start",
+      "label": "Background gradient (start)",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_end",
+      "label": "Background gradient (end)",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "color",
+      "id": "icon_border_color",
+      "label": "Border color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "range",
+      "id": "icon_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "icon_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "%",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Badge size (mobile)",
+      "min": 32,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Badge size (desktop)",
+      "min": 40,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 12,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "icon_inner_size_desktop",
+      "label": "Icon size (desktop)",
+      "min": 12,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_gap",
+      "label": "Space below badge",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Title & description"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title size (desktop)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#bababa"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Description size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Description size (desktop)",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color_start",
+      "label": "Background gradient (top)",
+      "default": "#1c3353"
+    },
+    {
+      "type": "color",
+      "id": "background_color_end",
+      "label": "Background gradient (bottom)",
+      "default": "#131820"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits grid",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "lightning_bolt",
+            "title": "Energy",
+            "description": "<p>Supports sustained daily energy, stamina, and physical output</p>"
+          }
+        },
+        "item_2": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "lock",
+            "title": "Focus",
+            "description": "<p>Helps improve mental clarity, drive, and sharpness</p>"
+          }
+        },
+        "item_3": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "recycle",
+            "title": "Recovery",
+            "description": "<p>Supports faster recovery, endurance, and resilience</p>"
+          }
+        },
+        "item_4": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "check_box",
+            "title": "Vitality",
+            "description": "<p>Promotes testosterone support, strength, and male performance</p>"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"]
+    }
+  ]
+}
+{% endschema %}

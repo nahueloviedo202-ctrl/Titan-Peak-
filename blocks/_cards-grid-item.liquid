@@ -1,0 +1,260 @@
+
+
+{%- doc -%}
+  Renders a single card (image + title + description) for the "Cards grid"
+  section. Every visual property that must stay consistent across the whole
+  grid (image size, card colors, radius, text sizes, content padding, image
+  position) is controlled by the parent section through CSS custom
+  properties and the shared `data-position` attribute, so the grid always
+  looks cohesive no matter how many cards are added.
+
+  Meant to be used exclusively as a child block of `sections/cards-grid.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign image_position = section.settings.card_image_position
+  assign image_alt = block_settings.image_alt | default: block_settings.image.alt | default: block_settings.title
+-%}
+
+<div
+  class="cards-grid-item"
+  data-position="{{ image_position }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="cards-grid-item__image">
+    {%- if block_settings.image -%}
+      {{
+        block_settings.image
+        | image_url: width: 600
+        | image_tag:
+          widths: '150, 220, 300, 440, 600',
+          sizes: '(min-width: 990px) ' | append: section.settings.card_image_size_desktop | append: 'px, (min-width: 750px) ' | append: section.settings.card_image_size_tablet | append: 'px, ' | append: section.settings.card_image_size_mobile | append: 'px',
+          alt: image_alt,
+          class: 'cards-grid-item__image-element',
+          loading: 'lazy'
+      }}
+    {%- else -%}
+      <div class="cards-grid-item__placeholder">
+        {{ 'hero-apparel-2' | placeholder_svg_tag: 'cards-grid-item__placeholder-image' }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="cards-grid-item__content">
+    {%- if block_settings.title != blank -%}
+      <h3 class="cards-grid-item__title">{{ block_settings.title }}</h3>
+    {%- endif -%}
+
+    {%- if block_settings.description != blank -%}
+      <div class="cards-grid-item__description rte">{{ block_settings.description }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .cards-grid-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cg-card-bg, #ffffff);
+    border: var(--cg-card-border-width, 1px) solid var(--cg-card-border-color, #f0f0f0);
+    border-radius: var(--cg-card-radius, 12px);
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: cards-grid-item-in 0.6s ease-out forwards;
+  }
+
+  .cards-grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgb(0 0 0 / 0.1);
+  }
+
+  .cards-grid-item:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .cards-grid-item:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .cards-grid-item:nth-child(3) {
+    animation-delay: 0.25s;
+  }
+
+  .cards-grid-item:nth-child(4) {
+    animation-delay: 0.35s;
+  }
+
+  .cards-grid-item:nth-child(n + 5) {
+    animation-delay: 0.45s;
+  }
+
+  @keyframes cards-grid-item-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cards-grid-item {
+      opacity: 1;
+      transform: none;
+      animation: none;
+      transition: none;
+    }
+
+    .cards-grid-item:hover {
+      transform: none;
+    }
+  }
+
+  .cards-grid-item__image {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: rgb(0 0 0 / 0.04);
+    border-radius: var(--cg-image-radius, 8px);
+  }
+
+  .cards-grid-item__image-element,
+  .cards-grid-item__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .cards-grid-item:hover .cards-grid-item__image-element {
+    transform: scale(1.05);
+  }
+
+  .cards-grid-item__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards-grid-item__placeholder-image {
+    width: 40%;
+    height: 40%;
+  }
+
+  .cards-grid-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--cg-content-padding-mobile, 15px);
+  }
+
+  .cards-grid-item__title {
+    margin: 0 0 8px;
+    font-weight: var(--font-weight-bold, 700);
+    line-height: 1.2;
+    font-size: var(--cg-title-size-mobile, 14px);
+    color: var(--cg-title-color, #1a1a1a);
+  }
+
+  .cards-grid-item__description {
+    margin: 0;
+    line-height: 1.5;
+    font-size: var(--cg-description-size-mobile, 12px);
+    color: var(--cg-description-color, #1a1a1a);
+  }
+
+  .cards-grid-item__description p {
+    margin: 0;
+  }
+
+  /* Image left of content ("horizontal" layout) */
+  .cards-grid-item[data-position='left'] {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .cards-grid-item[data-position='left'] .cards-grid-item__image {
+    width: var(--cg-image-size-mobile, 100px);
+    height: auto;
+    margin: var(--cg-image-inset, 10px) 0 var(--cg-image-inset, 10px) var(--cg-image-inset, 10px);
+  }
+
+  /* Image above content ("vertical" layout) */
+  .cards-grid-item[data-position='top'] .cards-grid-item__image {
+    width: calc(100% - (var(--cg-image-inset, 10px) * 2));
+    aspect-ratio: 1 / 1;
+    margin: var(--cg-image-inset, 10px) var(--cg-image-inset, 10px) 0 var(--cg-image-inset, 10px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .cards-grid-item__content {
+      padding: var(--cg-content-padding-tablet, 20px);
+    }
+
+    .cards-grid-item[data-position='left'] .cards-grid-item__image {
+      width: var(--cg-image-size-tablet, 150px);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .cards-grid-item__content {
+      padding: var(--cg-content-padding-desktop, 25px);
+    }
+
+    .cards-grid-item__title {
+      font-size: var(--cg-title-size-desktop, 22px);
+    }
+
+    .cards-grid-item__description {
+      font-size: var(--cg-description-size-desktop, 14px);
+    }
+
+    .cards-grid-item[data-position='left'] .cards-grid-item__image {
+      width: var(--cg-image-size-desktop, 150px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.title",
+      "default": "Card title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe this benefit.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card",
+      "settings": {
+        "title": "Card title",
+        "description": "<p>Describe this benefit.</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -52,6 +52,7 @@
     --rm-image-radius: {{ section_settings.image_radius }}px;
     --rm-image-gap: {{ section_settings.image_gap }}px;
     --rm-line-color: {{ section_settings.line_color }};
+    --rm-fill-color: {{ section_settings.fill_color }};
     --rm-line-width: {{ section_settings.line_width }}px;
     --rm-indent: {{ section_settings.item_indent }}px;
     --rm-item-gap-mobile: {{ section_settings.item_gap_mobile }}px;
@@ -229,7 +230,7 @@
     top: var(--rm-circle-size, 30px);
     width: var(--rm-line-width, 2px);
     height: 0%;
-    background-color: var(--rm-line-color, #c9a84c);
+    background-color: var(--rm-fill-color, #f0d78c);
     border-radius: var(--rm-line-width, 2px);
     transition: height 0.3s ease-out;
     transform-origin: top;
@@ -434,9 +435,16 @@
     {
       "type": "color",
       "id": "line_color",
-      "label": "Line color",
-      "info": "Used for both the base line and the scroll progress fill.",
-      "default": "#c9a84c"
+      "label": "Base line color",
+      "alpha": true,
+      "default": "#c9a84c4d"
+    },
+    {
+      "type": "color",
+      "id": "fill_color",
+      "label": "Scroll progress color",
+      "info": "Fills over the base line as the visitor scrolls through the timeline.",
+      "default": "#f0d78c"
     },
     {
       "type": "range",

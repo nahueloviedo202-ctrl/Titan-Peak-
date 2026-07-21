@@ -1,0 +1,653 @@
+{%- doc -%}
+  Renders a "Cards grid" section: a centered header (heading with an
+  optional gradient accent word + subheading) followed by a responsive grid
+  of cards, each showing an image next to (or above) a title and
+  description.
+
+  Every card is a nested "_cards-grid-item" block, so merchants can add,
+  remove or reorder cards freely. Column counts, gaps, image size/position,
+  colors, sizes, spacing and radius are all configurable through the section
+  and block schemas. This is a static grid (not a carousel), so autoplay,
+  slide count and transition speed settings do not apply here.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign card_count = section.blocks.size
+-%}
+
+<div class="section-background"></div>
+
+<div
+  class="cards-grid"
+  style="
+    --cg-max-width: {{ section_settings.container_max_width }}px;
+    --cg-radius: {{ section_settings.corner_radius }}px;
+    --cg-pad-top: {{ section_settings.padding_top }}px;
+    --cg-pad-right: {{ section_settings.padding_right }}px;
+    --cg-pad-bottom: {{ section_settings.padding_bottom }}px;
+    --cg-pad-left: {{ section_settings.padding_left }}px;
+    --cg-heading-color: {{ section_settings.heading_color }};
+    --cg-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --cg-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --cg-accent-gradient-start: {{ section_settings.heading_accent_gradient_start }};
+    --cg-accent-gradient-end: {{ section_settings.heading_accent_gradient_end }};
+    --cg-subtitle-color: {{ section_settings.subtitle_color }};
+    --cg-subtitle-size-mobile: {{ section_settings.subtitle_size_mobile }}px;
+    --cg-subtitle-size-desktop: {{ section_settings.subtitle_size_desktop }}px;
+    --cg-header-gap-mobile: {{ section_settings.header_gap_mobile }}px;
+    --cg-header-gap-desktop: {{ section_settings.header_gap_desktop }}px;
+    --cg-columns-mobile: {{ section_settings.columns_mobile }};
+    --cg-columns-tablet: {{ section_settings.columns_tablet }};
+    --cg-columns-desktop: {{ section_settings.columns_desktop }};
+    --cg-gap-mobile: {{ section_settings.grid_gap_mobile }}px;
+    --cg-gap-tablet: {{ section_settings.grid_gap_tablet }}px;
+    --cg-gap-desktop: {{ section_settings.grid_gap_desktop }}px;
+    --cg-card-bg: {{ section_settings.card_background_color }};
+    --cg-card-border-color: {{ section_settings.card_border_color }};
+    --cg-card-border-width: {{ section_settings.card_border_width }}px;
+    --cg-card-radius: {{ section_settings.card_border_radius }}px;
+    --cg-image-radius: {{ section_settings.card_image_radius }}px;
+    --cg-image-inset: {{ section_settings.card_image_inset }}px;
+    --cg-image-size-mobile: {{ section_settings.card_image_size_mobile }}px;
+    --cg-image-size-tablet: {{ section_settings.card_image_size_tablet }}px;
+    --cg-image-size-desktop: {{ section_settings.card_image_size_desktop }}px;
+    --cg-title-color: {{ section_settings.card_title_color }};
+    --cg-title-size-mobile: {{ section_settings.card_title_size_mobile }}px;
+    --cg-title-size-desktop: {{ section_settings.card_title_size_desktop }}px;
+    --cg-description-color: {{ section_settings.card_description_color }};
+    --cg-description-size-mobile: {{ section_settings.card_description_size_mobile }}px;
+    --cg-description-size-desktop: {{ section_settings.card_description_size_desktop }}px;
+    --cg-content-padding-mobile: {{ section_settings.card_content_padding_mobile }}px;
+    --cg-content-padding-tablet: {{ section_settings.card_content_padding_tablet }}px;
+    --cg-content-padding-desktop: {{ section_settings.card_content_padding_desktop }}px;
+    {% if section_settings.background_color != blank %}
+      --cg-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="cards-grid"
+>
+  <div class="cards-grid__container">
+    {%- if section_settings.heading != blank or section_settings.subtitle != blank -%}
+      <header class="cards-grid__header">
+        {%- if section_settings.heading != blank -%}
+          <h2 class="cards-grid__heading">{{ section_settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section_settings.subtitle != blank -%}
+          <div class="cards-grid__subtitle rte">{{ section_settings.subtitle }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if card_count > 0 -%}
+      <div class="cards-grid__items">
+        {% content_for 'blocks' %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .cards-grid {
+    width: 100%;
+    background: var(--cg-bg, #1c3353);
+    border-radius: var(--cg-radius, 0px);
+    padding: var(--cg-pad-top, 30px) var(--cg-pad-right, 20px) var(--cg-pad-bottom, 60px) var(--cg-pad-left, 20px);
+  }
+
+  .cards-grid__container {
+    max-width: var(--cg-max-width, 1200px);
+    margin: 0 auto;
+  }
+
+  .cards-grid__header {
+    text-align: center;
+    margin-bottom: var(--cg-header-gap-mobile, 40px);
+  }
+
+  .cards-grid__heading {
+    margin: 0 0 8px;
+    color: var(--cg-heading-color, #ffffff);
+    font-size: var(--cg-heading-size-mobile, 36px);
+    font-weight: var(--font-weight-bold, 700);
+    line-height: 1.2;
+  }
+
+  .cards-grid__heading strong {
+    font-weight: inherit;
+    background: linear-gradient(180deg, var(--cg-accent-gradient-start, #b8b8b8), var(--cg-accent-gradient-end, #ffffff));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .cards-grid__subtitle {
+    color: var(--cg-subtitle-color, #ffffff);
+    font-size: var(--cg-subtitle-size-mobile, 16px);
+    opacity: 0.85;
+  }
+
+  .cards-grid__items {
+    display: grid;
+    grid-template-columns: repeat(var(--cg-columns-mobile, 1), 1fr);
+    gap: var(--cg-gap-mobile, 15px);
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: 750px) {
+    .cards-grid__header {
+      margin-bottom: var(--cg-header-gap-desktop, 60px);
+    }
+
+    .cards-grid__heading {
+      font-size: var(--cg-heading-size-desktop, 52px);
+    }
+
+    .cards-grid__subtitle {
+      font-size: var(--cg-subtitle-size-desktop, 18px);
+    }
+
+    .cards-grid__items {
+      grid-template-columns: repeat(var(--cg-columns-tablet, 4), 1fr);
+      gap: var(--cg-gap-tablet, 18px);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .cards-grid__items {
+      grid-template-columns: repeat(var(--cg-columns-desktop, 2), 1fr);
+      gap: var(--cg-gap-desktop, 25px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Cards grid",
+  "class": "section-cards-grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_cards-grid-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "Wrap a word in bold to color it with the accent gradient below.",
+      "default": "<p>THE BENEFITS MEN ACTUALLY <strong>FEEL</strong></p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_gradient_start",
+      "label": "Accent gradient (top)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_gradient_end",
+      "label": "Accent gradient (bottom)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "t:names.subheading",
+      "default": "<p>Real support for energy, hormones, and performance as you age</p>"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Subtitle size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "label": "Subtitle size (desktop)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "header_gap_mobile",
+      "label": "Space below header (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "header_gap_desktop",
+      "label": "Space below header (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Grid layout"
+    },
+    {
+      "type": "select",
+      "id": "card_image_position",
+      "label": "Image position in card",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "top",
+          "label": "t:options.top"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "t:settings.mobile_columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns (tablet)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "label": "Gap (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_tablet",
+      "label": "Gap (tablet)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_desktop",
+      "label": "Gap (desktop)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Card appearance"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "t:settings.background_color",
+      "default": "#E8D5A3"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "t:settings.thickness",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Card image"
+    },
+    {
+      "type": "range",
+      "id": "card_image_size_mobile",
+      "label": "Size (mobile)",
+      "min": 40,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 100,
+      "info": "Only applies when the image sits to the left of the content."
+    },
+    {
+      "type": "range",
+      "id": "card_image_size_tablet",
+      "label": "Size (tablet)",
+      "min": 60,
+      "max": 260,
+      "step": 2,
+      "unit": "px",
+      "default": 150,
+      "info": "Only applies when the image sits to the left of the content."
+    },
+    {
+      "type": "range",
+      "id": "card_image_size_desktop",
+      "label": "Size (desktop)",
+      "min": 60,
+      "max": 300,
+      "step": 2,
+      "unit": "px",
+      "default": 150,
+      "info": "Only applies when the image sits to the left of the content."
+    },
+    {
+      "type": "range",
+      "id": "card_image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_image_inset",
+      "label": "Image inset",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Card text"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title color",
+      "default": "#0e101a"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_desktop",
+      "label": "Title size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Description color",
+      "default": "#0e101a"
+    },
+    {
+      "type": "range",
+      "id": "card_description_size_mobile",
+      "label": "Description size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_description_size_desktop",
+      "label": "Description size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_content_padding_mobile",
+      "label": "Content padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "card_content_padding_tablet",
+      "label": "Content padding (tablet)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_content_padding_desktop",
+      "label": "Content padding (desktop)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 800,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#1c3353"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards grid",
+      "category": "t:categories.product",
+      "blocks": {
+        "card_1": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "title": "ENERGY & STAMINA",
+            "description": "<p>Supports steady energy, endurance, and all-day performance</p>"
+          }
+        },
+        "card_2": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "title": "TESTOSTERONE & DRIVE",
+            "description": "<p>Helps support healthy testosterone levels and male vitality</p>"
+          }
+        },
+        "card_3": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "title": "CORTISOL & STRESS",
+            "description": "<p>Less bloat, less fatigue, better recovery</p>"
+          }
+        },
+        "card_4": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "title": "CIRCULATION & PERFORMANCE",
+            "description": "<p>Supports blood flow, stamina, and overall physical performance</p>"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,237 @@
+{%- doc -%}
+  Renders a single benefit item: a gradient icon badge, a title and a
+  description, inside the "benefits-grid" section.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-item content.
+
+  Meant to be used exclusively as a child block of `sections/benefits-grid.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+-%}
+
+<div
+  class="benefit-item"
+  {{ block.shopify_attributes }}
+>
+  {%- if block_settings.custom_icon != blank or block_settings.icon != 'none' -%}
+    <div
+      class="benefit-item__icon"
+      aria-hidden="true"
+    >
+      {%- if block_settings.custom_icon != blank -%}
+        {{
+          block_settings.custom_icon
+          | image_url: width: 160
+          | image_tag: width: 80, height: 80, loading: 'lazy', alt: '', class: 'benefit-item__icon-image'
+        }}
+      {%- elsif block_settings.icon != 'none' -%}
+        <svg
+          class="benefit-item__icon-svg"
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="none"
+        >
+          {%- render 'icon', icon: block_settings.icon -%}
+        </svg>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if block_settings.title != blank -%}
+    <h3 class="benefit-item__title">{{ block_settings.title }}</h3>
+  {%- endif -%}
+
+  {%- if block_settings.description != blank -%}
+    <div class="benefit-item__description rte">{{ block_settings.description }}</div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .benefit-item__icon {
+    width: var(--bg-icon-size-mobile, 60px);
+    height: var(--bg-icon-size-mobile, 60px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--bg-icon-gap, 20px);
+    background: linear-gradient(135deg, var(--bg-icon-bg-start, #c9a84c), var(--bg-icon-bg-end, #e8d5a3));
+    border: var(--bg-icon-border-width, 1px) solid var(--bg-icon-border-color, #c9a84c);
+    border-radius: var(--bg-icon-radius, 22%);
+  }
+
+  .benefit-item__icon-svg,
+  .benefit-item__icon-image {
+    width: var(--bg-icon-inner-size-mobile, 30px);
+    height: var(--bg-icon-inner-size-mobile, 30px);
+    color: var(--bg-icon-color, #ffffff);
+    object-fit: contain;
+  }
+
+  .benefit-item__title {
+    margin: 0 0 8px;
+    color: var(--bg-title-color, #ffffff);
+    font-size: var(--bg-title-size-mobile, 18px);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .benefit-item__description {
+    margin: 0;
+    color: var(--bg-description-color, #bababa);
+    font-size: var(--bg-description-size-mobile, 12px);
+    line-height: 1.4;
+  }
+
+  .benefit-item__description :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  .benefit-item__description :is(p, ul, ol) + :is(p, ul, ol) {
+    margin-top: 0.5em;
+  }
+
+  @media screen and (min-width: 750px) {
+    .benefit-item {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .benefit-item__icon {
+      width: var(--bg-icon-size-desktop, 80px);
+      height: var(--bg-icon-size-desktop, 80px);
+    }
+
+    .benefit-item__icon-svg,
+    .benefit-item__icon-image {
+      width: var(--bg-icon-inner-size-desktop, 32px);
+      height: var(--bg-icon-inner-size-desktop, 32px);
+    }
+
+    .benefit-item__title {
+      font-size: var(--bg-title-size-desktop, 20px);
+    }
+
+    .benefit-item__description {
+      font-size: var(--bg-description-size-desktop, 15px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Benefit item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "lightning_bolt",
+          "label": "Lightning bolt"
+        },
+        {
+          "value": "lock",
+          "label": "Lock"
+        },
+        {
+          "value": "recycle",
+          "label": "Recycle"
+        },
+        {
+          "value": "check_box",
+          "label": "t:options.check_box"
+        },
+        {
+          "value": "fire",
+          "label": "Fire"
+        },
+        {
+          "value": "star",
+          "label": "t:options.star"
+        },
+        {
+          "value": "stopwatch",
+          "label": "Stopwatch"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "leaf",
+          "label": "Leaf"
+        },
+        {
+          "value": "eye",
+          "label": "Eye"
+        },
+        {
+          "value": "map_pin",
+          "label": "Map pin"
+        },
+        {
+          "value": "price_tag",
+          "label": "Price tag"
+        },
+        {
+          "value": "truck",
+          "label": "Truck"
+        }
+      ],
+      "default": "lightning_bolt"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom icon image",
+      "info": "Replaces the icon above when set."
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Benefit"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe this benefit.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefit item"
+    }
+  ]
+}
+{% endschema %}

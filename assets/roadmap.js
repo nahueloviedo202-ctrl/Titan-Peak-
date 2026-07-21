@@ -33,13 +33,14 @@ class RoadmapComponent extends Component {
     this.#intersectionObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          entry.target.toggleAttribute('data-animate', !entry.isIntersecting);
+          entry.target.classList.toggle('roadmap-step--out', !entry.isIntersecting);
         }
       },
       { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
     );
 
     for (const step of this.refs.step ?? []) {
+      step.classList.add('roadmap-step--out');
       this.#intersectionObserver.observe(step);
     }
 

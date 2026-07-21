@@ -366,6 +366,14 @@
       white-space: nowrap;
     }
   }
+
+  /* Block padding can be set independently on mobile. */
+  @media screen and (max-width: 749px) {
+    .product-information.spacing-style {
+      padding-block: calc(var(--padding-block-start-mobile, var(--padding-block-start)) + var(--section-top-offset, 0px))
+        var(--padding-block-end-mobile, var(--padding-block-end));
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -480,8 +488,28 @@
     },
     {
       "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "t:settings.top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
       "id": "padding-block-end",
       "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "t:settings.bottom_mobile",
       "min": 0,
       "max": 100,
       "step": 1,

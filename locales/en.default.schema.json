@@ -777,6 +777,7 @@
     "border_width": "Border thickness",
     "borders": "Borders",
     "bottom": "Bottom",
+    "bottom_mobile": "Bottom (mobile)",
     "bottom_border_color": "Bottom border color",
     "bullseye_color": "Inner color",
     "bottom_row": "Bottom row",
@@ -1127,6 +1128,7 @@
     "title_preset": "Title preset",
     // Label for range input controlling top spacing/margin
     "top": "Top",
+    "top_mobile": "Top (mobile)",
     "top_level_size": "Top level size",
     "top_padding": "Top padding",
     "top_row": "Top row",

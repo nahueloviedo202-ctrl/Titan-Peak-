@@ -6,76 +6,119 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "hero_heading_HNpxLY": {
+          "type": "_hero-heading",
+          "name": "Hero heading",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
+            "uppercase": true,
+            "font_size_mobile": 24,
+            "font_size_desktop": 38,
+            "font_weight": "800",
+            "text_color": "#ffffff",
+            "gradient_start": "#ffed68",
+            "gradient_end": "#e4b948"
           },
           "blocks": {}
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "hero_stats_marquee_VXqUQQ": {
+          "type": "_hero-stats-marquee",
+          "name": "Hero stats marquee",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "enable_autoplay": true,
+            "speed_factor": 25,
+            "movement_direction": "normal",
+            "item_gap": 64,
+            "padding_block": 20,
+            "value_gradient_start": "#1a1a1a",
+            "value_gradient_end": "#646464",
+            "value_font_size": 38,
+            "value_font_size_mobile": 28,
+            "label_color": "#1a1a1a",
+            "label_font_size": 16,
+            "label_font_size_mobile": 14,
+            "background_color": "#f7f4f2"
           },
-          "blocks": {}
+          "blocks": {
+            "hero_stat_item_j8VUeM": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "4K+",
+                "label": "Customers Worldwide"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_dUMjHA": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "95%",
+                "label": "Increased energy & focus"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_PyJjYf": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "2750+",
+                "label": "5 Star Reviews"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_8JdeGp": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "93%",
+                "label": "Experienced Better Recovery"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_jY94KU": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "100%",
+                "label": "Naturally Sourced Ingredients"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "hero_stat_item_j8VUeM",
+            "hero_stat_item_dUMjHA",
+            "hero_stat_item_PyJjYf",
+            "hero_stat_item_8JdeGp",
+            "hero_stat_item_jY94KU"
+          ]
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
+        "hero_heading_HNpxLY",
+        "hero_stats_marquee_VXqUQQ"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/66034c352179b227589b5ffa9ce2f4024a8817ed.webp",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
         "media_type_1_mobile": "image",
         "media_type_2_mobile": "image",
+        "link": "",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "space-between",
         "vertical_alignment": "flex-end",
         "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "space-between",
         "gap": 24,
         "section_width": "page-width",
         "section_height": "medium",
@@ -88,198 +131,975 @@
         "blurred_reflection": false,
         "reflection_opacity": 75,
         "padding-block-start": 100,
-        "padding-block-end": 72
+        "padding-block-end": 0
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "hero_JW8iHz": {
+      "type": "hero",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "rating_badge_KrA9R4": {
+          "type": "rating-badge",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
+            "text": "<p><strong>THOUSANDS</strong> OF HAPPY CUSTOMERS</p>",
+            "icon_count": 5,
+            "icon_color": "#e7b944",
+            "icon_size": 21,
+            "icon_gap": 4,
+            "content_gap": 16,
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#ffffff",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+          "blocks": {}
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "hero_heading_4iWJbj": {
+          "type": "_hero-heading",
           "settings": {
-            "product_card_gap": 4,
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
+            "heading": "<p><strong>Peak performance</strong> starts with better nutrition</p>",
+            "uppercase": true,
+            "font_size_mobile": 24,
+            "font_size_desktop": 48,
+            "font_weight": "800",
+            "text_color": "#ffffff",
+            "gradient_start": "#ffed68",
+            "gradient_end": "#e4b948"
+          },
+          "blocks": {}
+        },
+        "text_gDVUmi": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Daily essentials support circulation, hydration, and overall wellness,</strong> helping you stay energized, promote healthy blood flow, and recover after exercise.*</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1.125rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#ffffff",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
+          "blocks": {}
+        },
+        "hero_cta_button_iQmUEn": {
+          "type": "_hero-cta-button",
+          "settings": {
+            "label": "Shop our best sellers",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "show_icon": true,
+            "gradient_start": "#e7b944",
+            "gradient_end": "#ffed68",
+            "text_color": "#1a1a1a",
+            "corner_radius": 12,
+            "font_size": 18,
+            "padding_block": 16,
+            "padding_inline": 64
+          },
+          "blocks": {}
+        },
+        "hero_guarantee_badge_7NMFM7": {
+          "type": "_hero-guarantee-badge",
+          "settings": {
+            "text": "30-Day Satisfaction Guarantee",
+            "icon_color": "#eed454",
+            "text_color": "#ffffff",
+            "icon_size": 16,
+            "font_size": 14
+          },
+          "blocks": {}
+        },
+        "hero_stats_marquee_N7gGCa": {
+          "type": "_hero-stats-marquee",
+          "disabled": true,
+          "settings": {
+            "enable_autoplay": true,
+            "speed_factor": 25,
+            "movement_direction": "normal",
+            "item_gap": 64,
+            "padding_block": 20,
+            "value_gradient_start": "#1a1a1a",
+            "value_gradient_end": "#646464",
+            "value_font_size": 38,
+            "value_font_size_mobile": 28,
+            "label_color": "#1a1a1a",
+            "label_font_size": 16,
+            "label_font_size_mobile": 14,
+            "background_color": "#f7f4f2"
+          },
           "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
+            "hero_stat_item_wLCkEe": {
+              "type": "_hero-stat-item",
               "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "value": "4K+",
+                "label": "Customers Worldwide"
               },
               "blocks": {}
             },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
+            "hero_stat_item_zgkQWU": {
+              "type": "_hero-stat-item",
               "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "value": "95%",
+                "label": "Increased energy & focus"
               },
               "blocks": {}
             },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
+            "hero_stat_item_aMthh9": {
+              "type": "_hero-stat-item",
               "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "value": "2750+",
+                "label": "5 Star Reviews"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_T4rq7w": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "93%",
+                "label": "Experienced Better Recovery"
+              },
+              "blocks": {}
+            },
+            "hero_stat_item_MbpAEf": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "100%",
+                "label": "Naturally Sourced Ingredients"
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
+            "hero_stat_item_wLCkEe",
+            "hero_stat_item_zgkQWU",
+            "hero_stat_item_aMthh9",
+            "hero_stat_item_T4rq7w",
+            "hero_stat_item_MbpAEf"
           ]
         }
       },
-      "name": "t:names.product_list",
+      "block_order": [
+        "rating_badge_KrA9R4",
+        "hero_heading_4iWJbj",
+        "text_gDVUmi",
+        "hero_cta_button_iQmUEn",
+        "hero_guarantee_badge_7NMFM7",
+        "hero_stats_marquee_N7gGCa"
+      ],
+      "name": "Hero banner",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/66034c352179b227589b5ffa9ce2f4024a8817ed.webp",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "background_color": "",
+        "toggle_overlay": true,
+        "overlay_color": "#1a1a1a99",
+        "overlay_style": "gradient",
+        "gradient_direction": "to left",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "products_carousel_7VJyYx": {
+      "type": "products-carousel",
+      "blocks": {
+        "product_carousel_card_38wMi6": {
+          "type": "_product-carousel-card",
+          "settings": {
+            "product": "titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_carousel_card_38wMi6"
+      ],
+      "name": "Products carousel",
+      "settings": {
+        "heading": "Los Más Vendidos de TITAN PEAK",
+        "heading_color": "#1a1a1a",
+        "heading_size": 32,
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 85,
+        "items_gap": 20,
+        "items_gap_mobile": 16,
+        "header_gap": 32,
+        "transition_speed": 400,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_size": 40,
+        "arrow_gap": 12,
+        "arrow_icon_color": "#1a1a1a",
+        "arrow_prev_background": "#f7f4f2",
+        "arrow_next_gradient_start": "#ffed68",
+        "arrow_next_gradient_end": "#e4b948",
+        "container_max_width": 1600,
+        "container_padding": 32,
+        "container_padding_mobile": 16,
+        "card_background_color": "",
+        "card_radius": 0,
+        "card_padding": 0,
+        "card_content_gap": 12,
+        "image_aspect_ratio": "1 / 1",
+        "image_fit": "contain",
+        "title_color": "#1a1a1a",
+        "title_size": 22,
+        "title_case": "capitalize",
+        "compare_price_color": "#1a1a1ab3",
+        "compare_price_size": 14,
+        "price_color": "#1a1a1a",
+        "price_size": 16,
+        "show_discount_badge": true,
+        "discount_label": "AHORRA",
+        "badge_background_color": "#1a1a1a",
+        "badge_text_color": "#ffffff",
+        "badge_size": 12,
+        "badge_radius": 20,
+        "button_label": "AÑADIR AL CARRITO",
+        "button_open_new_tab": false,
+        "button_text_color": "#1a1a1a",
+        "button_gradient_start": "#e7b944",
+        "button_gradient_end": "#ffed68",
+        "button_radius": 12,
+        "button_font_size": 18,
+        "button_padding_block": 16,
+        "button_padding_inline": 24,
+        "background_color": "#ffffff",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
+    },
+    "customer_reviews_tabs_CqTfmC": {
+      "type": "customer-reviews-tabs",
+      "blocks": {
+        "customer_reviews_tab_nUmhez": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Performance Gummies"
+          },
+          "blocks": {
+            "customer_review_card_VCk9ay": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Jordan M.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "All-day energy",
+                "review_text": "<p>I've tried every energy supplement under the sun and nothing stuck - until these. By week three I was waking up ready to go, no afternoon crash, no jitters. The Ashwagandha and Shilajit combo just quietly does its job. My workouts feel stronger and my focus at work is noticeably sharper. One gummy a day really is all it takes.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_7eEqcT": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Sustained Energy"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_AWzhWr": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Mental Clarity"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_7eEqcT",
+                "customer_review_tag_AWzhWr"
+              ]
+            },
+            "customer_review_card_XikKRR": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Alex R.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Stamina booster",
+                "review_text": "<p>My endurance during workouts has genuinely improved since starting these. I'm hitting PRs I thought were behind me, and recovery feels faster too. The fact that it's stimulant-free means I can take it any time - no racing heart, no sleep issues. Just steady, reliable performance support that compounds over time.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_qJEbfY": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Workout Performance"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_BRLghN": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Faster Recovery"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_qJEbfY",
+                "customer_review_tag_BRLghN"
+              ]
+            },
+            "customer_review_card_N378KN": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Taylor K.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Complete wellness",
+                "review_text": "<p>I picked these up primarily for the stress support - the Ashwagandha was a big draw - and they've exceeded my expectations on every front. My skin looks clearer, my sleep is deeper, and my energy through the day is much more balanced. The gummies taste great too, which means I actually remember to take them.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_Wz9zUQ": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Stress Relief"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_qaEDKa": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Clearer Skin"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_H8Vdzd": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Better Sleep"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_Wz9zUQ",
+                "customer_review_tag_qaEDKa",
+                "customer_review_tag_H8Vdzd"
+              ]
+            },
+            "customer_review_card_mgQyPx": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Casey L.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Drive & vitality",
+                "review_text": "<p>About two months in and the difference is noticeable. More drive, better circulation, and a general sense of vitality that had been missing for a while. I appreciate that the ingredients are clearly listed and clinically studied - not some mystery proprietary blend. The L-Arginine and Maca combination really delivers.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_FTgGwy": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Increased Drive"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_bXTETJ": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Better Circulation"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_FTgGwy",
+                "customer_review_tag_bXTETJ"
+              ]
+            }
+          },
+          "block_order": [
+            "customer_review_card_VCk9ay",
+            "customer_review_card_XikKRR",
+            "customer_review_card_N378KN",
+            "customer_review_card_mgQyPx"
+          ]
+        },
+        "customer_reviews_tab_89zqP6": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Organic Beetroot Gummies"
+          },
+          "blocks": {
+            "customer_review_card_9xLhXQ": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Morgan S.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Heart & circulation",
+                "review_text": "<p>I started these to support my cardio health and within a few weeks my resting heart rate dropped and my runs felt easier - like my blood was flowing more freely. The natural nitrates in beetroot genuinely work, and the gummy format makes it effortless to stay consistent. Much better than choking down beet juice every morning.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_AKcxAC": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Cardiovascular Support"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_CRkJLq": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Better Blood Flow"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_AKcxAC",
+                "customer_review_tag_CRkJLq"
+              ]
+            },
+            "customer_review_card_YKMGqB": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Riley P.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Pre-workout natural",
+                "review_text": "<p>These have replaced my pre-workout. The natural nitric oxide boost gives me a great pump at the gym without any artificial stimulants or that awful tingly feeling. My endurance during HIIT sessions has improved a lot, and I feel less wiped out afterward. Love that they're organic - clean ingredients, clean results.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_iG3eqj": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Nitric Oxide"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_UhdpyJ": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Endurance"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_jmCeXj": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Organic"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_iG3eqj",
+                "customer_review_tag_UhdpyJ",
+                "customer_review_tag_jmCeXj"
+              ]
+            },
+            "customer_review_card_PRHH4b": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Sam W.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Daily energy",
+                "review_text": "<p>I was skeptical about beet gummies doing much, but a month in and I'm a convert. My energy is more consistent throughout the day - not a burst and crash, just a steady, natural lift. My blood pressure readings have also improved, which my doctor noticed at my last check-up. A simple, clean supplement that genuinely delivers.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_e3qKTR": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Stable Energy"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_KQUAzT": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Blood Pressure Support"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_e3qKTR",
+                "customer_review_tag_KQUAzT"
+              ]
+            },
+            "customer_review_card_LMcE6W": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Drew N.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Recovery support",
+                "review_text": "<p>Post-workout soreness used to linger for days. Since adding the Beetroot Gummies to my routine, muscle recovery is noticeably quicker and my legs feel fresher going into back-to-back training sessions. The antioxidant content must be doing its job. Taste is genuinely good too - not earthy at all, which was my biggest worry.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_btcRUt": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Muscle Recovery"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_rKkGCg": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Antioxidants"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_btcRUt",
+                "customer_review_tag_rKkGCg"
+              ]
+            }
+          },
+          "block_order": [
+            "customer_review_card_9xLhXQ",
+            "customer_review_card_YKMGqB",
+            "customer_review_card_PRHH4b",
+            "customer_review_card_LMcE6W"
+          ]
+        },
+        "customer_reviews_tab_Hy8DKe": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Pumpkin Seed Oil Softgels"
+          },
+          "blocks": {
+            "customer_review_card_XYLyyV": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Parker A.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Hair & skin glow",
+                "review_text": "<p>Three months in and my hair has never looked better - thicker, shinier, and much less breakage. My skin tone has also evened out significantly. I was already taking a fish oil capsule daily and swapped it out for these; the essential fatty acid profile is excellent and the softgels are easy to swallow with no fishy aftertaste.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_aLqrYi": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Hair Health"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_cbTKMe": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Skin Quality"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_pj7ydw": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Essential Fatty Acids"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_aLqrYi",
+                "customer_review_tag_cbTKMe",
+                "customer_review_tag_pj7ydw"
+              ]
+            },
+            "customer_review_card_tY6THF": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Finley B.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Bladder & urinary support",
+                "review_text": "<p>I started these on my naturopath's suggestion for bladder health and the results have been quietly impressive. Fewer urgent trips, much better overnight comfort. The phytosterols in pumpkin seed oil are well-studied for urinary tract support and this formula clearly uses a quality source. Noticeable improvement within six weeks.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_jVKW7j": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Urinary Comfort"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_HHtzAK": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Phytosterols"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_jVKW7j",
+                "customer_review_tag_HHtzAK"
+              ]
+            },
+            "customer_review_card_eaWeTX": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Quinn V.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Immune & gut health",
+                "review_text": "<p>These softgels fit seamlessly into my supplement stack. I take them with breakfast and they've contributed noticeably to better digestion and stronger immunity - I haven't had a cold since starting. Clean, cold-pressed oil, no fillers, and the capsules are consistent quality. A genuinely underrated daily supplement.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_TpPYgV": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Immune Support"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_ChdjN9": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Digestive Health"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_TpPYgV",
+                "customer_review_tag_ChdjN9"
+              ]
+            },
+            "customer_review_card_zfP4wn": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Emery C.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Nails & joints",
+                "review_text": "<p>My nails used to peel and break constantly. Within two months of taking the pumpkin seed oil softgels they've become noticeably stronger and grow faster. As a bonus, my knees feel less stiff after long runs - the anti-inflammatory properties of the fatty acids must be contributing. Simple, effective, no fuss.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_3C7YR8": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Stronger Nails"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_qKdHp4": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Joint Comfort"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_wtpM8G": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Anti-Inflammatory"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_3C7YR8",
+                "customer_review_tag_qKdHp4",
+                "customer_review_tag_wtpM8G"
+              ]
+            }
+          },
+          "block_order": [
+            "customer_review_card_XYLyyV",
+            "customer_review_card_tY6THF",
+            "customer_review_card_eaWeTX",
+            "customer_review_card_zfP4wn"
+          ]
+        },
+        "customer_reviews_tab_QVrjxE": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Beef Organs Complex"
+          },
+          "blocks": {
+            "customer_review_card_6LjKMQ": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Noel T.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Iron & vitality",
+                "review_text": "<p>My iron levels have been low for years and I've struggled to bring them up through diet alone. These capsules have genuinely moved the needle - my last blood panel showed significant improvement and my energy is no longer hitting a wall at 2pm. The freeze-dried grass-fed sourcing means maximum nutrient retention without any synthetic additives.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_8zBcFG": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Iron Levels"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_m3EWrx": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Sustained Energy"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_8zBcFG",
+                "customer_review_tag_m3EWrx"
+              ]
+            },
+            "customer_review_card_jDVbmc": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Harper G.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Cognitive edge",
+                "review_text": "<p>I've been taking this for three months and the brain fog I'd accepted as normal is largely gone. Sharper recall, faster thinking, better focus during long work sessions. The nutrient density of grass-fed liver and heart in one capsule is hard to replicate any other way. No taste, no smell - just clean, ancestral nutrition in a modern format.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_FDdENw": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Mental Clarity"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_JJUFpz": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Focus"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_xgqHGY": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Grass-Fed"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_FDdENw",
+                "customer_review_tag_JJUFpz",
+                "customer_review_tag_xgqHGY"
+              ]
+            },
+            "customer_review_card_FGYRKg": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Val O.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Athletic recovery",
+                "review_text": "<p>As someone training five days a week, recovery nutrition is everything. The Beef Organs Complex has become essential for me - muscle repair feels faster, strength gains have picked up, and overall body composition has improved. The combination of heart for CoQ10, liver for B12, and spleen for iron is a genuinely well-rounded formula.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_VyffkV": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Muscle Repair"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_aEVFgy": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Strength"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_bKc7X7": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "CoQ10"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_VyffkV",
+                "customer_review_tag_aEVFgy",
+                "customer_review_tag_bKc7X7"
+              ]
+            },
+            "customer_review_card_JqUaTC": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Emery C.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Nutrient-dense daily",
+                "review_text": "<p>I eat a balanced diet but wanted to fill in the micronutrient gaps that are hard to get consistently from food. This complex is the cleanest, most bioavailable way to do that. The freeze-drying process preserves enzymes and cofactors that you simply don't get from synthetic vitamins. I feel the difference - more grounded, more resilient, better mood.</p>"
+              },
+              "blocks": {
+                "customer_review_tag_FWdKHP": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Micronutrients"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_YmwFMh": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Bioavailability"
+                  },
+                  "blocks": {}
+                },
+                "customer_review_tag_iFFhAg": {
+                  "type": "_customer-review-tag",
+                  "settings": {
+                    "text": "Mood Support"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "customer_review_tag_FWdKHP",
+                "customer_review_tag_YmwFMh",
+                "customer_review_tag_iFFhAg"
+              ]
+            }
+          },
+          "block_order": [
+            "customer_review_card_6LjKMQ",
+            "customer_review_card_jDVbmc",
+            "customer_review_card_FGYRKg",
+            "customer_review_card_JqUaTC"
+          ]
+        }
+      },
+      "block_order": [
+        "customer_reviews_tab_nUmhez",
+        "customer_reviews_tab_89zqP6",
+        "customer_reviews_tab_Hy8DKe",
+        "customer_reviews_tab_QVrjxE"
+      ],
+      "name": "Customer reviews tabs",
+      "settings": {
+        "header_rating_stars": 5,
+        "rating_text": "<p>Rated <strong>4.8/5</strong> by <strong>thousands</strong> of happy customers</p>",
+        "heading": "Real Stories of Our Customers",
+        "container_max_width": 1320,
+        "container_padding": 32,
+        "container_padding_mobile": 16,
+        "header_gap": 16,
+        "header_bottom_gap_desktop": 56,
+        "header_bottom_gap_mobile": 24,
+        "tabs_gap_desktop": 16,
+        "tabs_gap_mobile": 10,
+        "cards_gap_desktop": 20,
+        "cards_gap_mobile": 16,
+        "card_padding": 20,
+        "card_content_gap_desktop": 20,
+        "card_content_gap_mobile": 16,
+        "card_radius": 12,
+        "card_width_mobile": 320,
+        "show_nav_arrows": true,
+        "nav_button_size": 40,
+        "heading_size_desktop": 36,
+        "heading_size_mobile": 28,
+        "rating_text_size_desktop": 16,
+        "rating_text_size_mobile": 13,
+        "rating_star_size_desktop": 16,
+        "rating_star_size_mobile": 13,
+        "tab_font_size_desktop": 14,
+        "tab_font_size_mobile": 10,
+        "card_star_size": 16,
+        "card_name_size_desktop": 20,
+        "card_name_size_mobile": 16,
+        "card_text_size_desktop": 16,
+        "card_text_size_mobile": 14,
+        "card_label_size_desktop": 14,
+        "card_label_size_mobile": 12,
+        "card_tag_size": 12,
+        "background_color": "#ffffff",
+        "tab_bg_color": "#f7f4f2",
+        "tab_text_color": "#1a1a1a",
+        "tab_active_gradient_start": "#e7b944",
+        "tab_active_gradient_end": "#ffed68",
+        "star_gradient_start": "#e7b944",
+        "star_gradient_end": "#ffed68",
+        "card_bg_color": "#f7f4f2",
+        "card_name_color": "#1a1a1a",
+        "card_text_color": "#1a1a1a",
+        "badge_color": "#16a34a",
+        "badge_check_color": "#ffffff",
+        "label_bg_color": "#1a1a1a",
+        "label_text_color": "#ffffff",
+        "tag_bg_color": "#ffffff",
+        "tag_text_color": "#1a1a1a",
+        "tag_border_color": "#1a1a1a",
+        "tag_border_opacity": 10,
+        "nav_prev_bg_color": "#f7f4f2",
+        "nav_next_gradient_start": "#ffed68",
+        "nav_next_gradient_end": "#e4b948",
+        "nav_icon_color": "#1a1a1a",
+        "padding-block-start": 80,
+        "padding-block-end": 80
       }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "hero_JW8iHz",
+    "products_carousel_7VJyYx",
+    "customer_reviews_tabs_CqTfmC"
   ]
 }

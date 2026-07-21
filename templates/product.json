@@ -1413,7 +1413,7 @@
         "items_gap_mobile": 16,
         "autoplay": false,
         "autoplay_speed": 5,
-        "show_arrows": false,
+        "show_arrows": true,
         "arrow_icon_color": "#1a1a1a",
         "arrow_prev_background": "#ffffff",
         "arrow_next_gradient_start": "#ffed68",

@@ -1,0 +1,149 @@
+{%- doc -%}
+  Two-tone hero heading: wrap any part of the text in bold to render it with
+  a gradient fill, the rest renders in a solid color. Matches the reference
+  design's "gradient word(s) + white text" treatment.
+
+  Meant to be used exclusively as a child block of `sections/hero.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign heading_settings = block.settings
+-%}
+
+{%- if heading_settings.heading != blank -%}
+  <h1
+    class="hero-heading{% if heading_settings.uppercase %} hero-heading--uppercase{% endif %}"
+    style="
+      --hero-heading-color: {{ heading_settings.text_color }};
+      --hero-heading-gradient-start: {{ heading_settings.gradient_start }};
+      --hero-heading-gradient-end: {{ heading_settings.gradient_end }};
+      --hero-heading-size-mobile: {{ heading_settings.font_size_mobile }}px;
+      --hero-heading-size-desktop: {{ heading_settings.font_size_desktop }}px;
+      --hero-heading-weight: {{ heading_settings.font_weight }};
+    "
+    {{ block.shopify_attributes }}
+  >
+    {{- heading_settings.heading -}}
+  </h1>
+{%- endif -%}
+
+{% stylesheet %}
+  .hero-heading {
+    margin: 0;
+    color: var(--hero-heading-color, #ffffff);
+    font-size: var(--hero-heading-size-mobile, 24px);
+    font-weight: var(--hero-heading-weight, 800);
+    line-height: 1.2;
+  }
+
+  .hero-heading--uppercase {
+    text-transform: uppercase;
+  }
+
+  .hero-heading strong {
+    font-weight: inherit;
+    background: linear-gradient(to right, var(--hero-heading-gradient-start, #ffed68), var(--hero-heading-gradient-end, #e4b948));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-heading {
+      font-size: var(--hero-heading-size-desktop, 48px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero heading",
+  "tag": null,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "Wrap a word in bold to render it with the gradient below.",
+      "default": "<p><strong>Peak performance</strong> starts with better nutrition</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "t:options.uppercase",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Size (mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Size (desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        },
+        {
+          "value": "900",
+          "label": "t:options.black"
+        }
+      ],
+      "default": "800"
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end",
+      "default": "#e4b948"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero heading"
+    }
+  ]
+}
+{% endschema %}

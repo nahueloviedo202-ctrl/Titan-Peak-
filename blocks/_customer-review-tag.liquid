@@ -1,0 +1,30 @@
+{%- doc -%}
+  Renders a single small pill tag inside a "_customer-review-card" (e.g.
+  "Sustained Energy"). Meant to be used exclusively as a child block of
+  `blocks/_customer-review-card.liquid`.
+{%- enddoc -%}
+
+<span
+  class="customer-reviews-tabs__tag"
+  {{ block.shopify_attributes }}
+>{{- block.settings.text -}}</span>
+
+{% schema %}
+{
+  "name": "Tag",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "Tag"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tag"
+    }
+  ]
+}
+{% endschema %}

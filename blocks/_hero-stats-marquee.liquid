@@ -1,0 +1,321 @@
+{%- doc -%}
+  Auto-scrolling strip of stats, reusing the theme's native `marquee-component`
+  custom element (same one `blocks/_marquee.liquid` and `sections/marquee.liquid`
+  use) for the seamless infinite-scroll behavior, speed calculation and
+  pause-on-hover — no new JavaScript is added.
+
+  Every stat is a nested "_hero-stat-item" block, so merchants can add,
+  remove or reorder them freely.
+
+  Meant to be used exclusively as a child block of `sections/hero.liquid`.
+{%- enddoc -%}
+
+<script
+  src="{{ 'marquee.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign marquee_settings = block.settings
+-%}
+
+<marquee-component
+  class="hero-stats-marquee"
+  style="
+    --hero-stats-marquee-bg: {{ marquee_settings.background_color }};
+    --hero-stats-marquee-gap: {{ marquee_settings.item_gap }}px;
+    --hero-stats-marquee-padding: {{ marquee_settings.padding_block }}px;
+    --marquee-direction: {{ marquee_settings.movement_direction }};
+    --hsm-value-gradient-start: {{ marquee_settings.value_gradient_start }};
+    --hsm-value-gradient-end: {{ marquee_settings.value_gradient_end }};
+    --hsm-value-size: {{ marquee_settings.value_font_size }}px;
+    --hsm-value-size-mobile: {{ marquee_settings.value_font_size_mobile }}px;
+    --hsm-label-color: {{ marquee_settings.label_color }};
+    --hsm-label-size: {{ marquee_settings.label_font_size }}px;
+    --hsm-label-size-mobile: {{ marquee_settings.label_font_size_mobile }}px;
+  "
+  data-speed-factor="{{ marquee_settings.speed_factor }}"
+  data-movement-direction="{{ marquee_settings.movement_direction }}"
+  {% unless marquee_settings.enable_autoplay %}
+    data-disabled
+  {% endunless %}
+  {{ block.shopify_attributes }}
+>
+  <div
+    class="hero-stats-marquee__wrapper"
+    ref="wrapper"
+  >
+    <div
+      class="hero-stats-marquee__content"
+      ref="content"
+    >
+      <div
+        class="hero-stats-marquee__repeated-items"
+        ref="marqueeItems[]"
+      >
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</marquee-component>
+
+{% stylesheet %}
+  .hero-stats-marquee {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--hero-stats-marquee-bg, #f7f4f2);
+    padding-block: var(--hero-stats-marquee-padding, 20px);
+  }
+
+  /* Break out of the hero's centered/padded content column so the strip
+     runs edge-to-edge, matching the reference design. */
+  .hero__content-wrapper.layout-panel-flex--column .hero-stats-marquee {
+    width: -webkit-fill-available;
+    margin-inline: var(--full-page-margin-inline-offset, 0);
+  }
+
+  .hero-stats-marquee__wrapper {
+    display: flex;
+    gap: var(--hero-stats-marquee-gap, 64px);
+    width: fit-content;
+  }
+
+  .hero-stats-marquee__content {
+    min-width: max-content;
+    display: flex;
+    gap: var(--hero-stats-marquee-gap, 64px);
+  }
+
+  .hero-stats-marquee__repeated-items {
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--hero-stats-marquee-gap, 64px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-stats-marquee:not([data-disabled]) .hero-stats-marquee__wrapper {
+      animation: hero-stats-marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
+    }
+  }
+
+  .hero-stats-marquee[data-disabled] .hero-stats-marquee__wrapper {
+    animation: none;
+  }
+
+  @keyframes hero-stats-marquee-motion {
+    to {
+      transform: translate3d(calc(-50% - (var(--hero-stats-marquee-gap) / 2)), 0, 0);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-stats-marquee {
+      padding-block: calc(var(--hero-stats-marquee-padding, 20px) * 0.8);
+    }
+
+    .hero-stats-marquee__wrapper,
+    .hero-stats-marquee__content,
+    .hero-stats-marquee__repeated-items {
+      gap: calc(var(--hero-stats-marquee-gap, 64px) / 2);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero stats marquee",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_hero-stat-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "t:settings.autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed_factor",
+      "label": "t:settings.speed",
+      "info": "Lower is faster.",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 25,
+      "visible_if": "{{ block.settings.enable_autoplay }}"
+    },
+    {
+      "type": "select",
+      "id": "movement_direction",
+      "label": "t:settings.motion_direction",
+      "options": [
+        {
+          "value": "normal",
+          "label": "t:options.forward"
+        },
+        {
+          "value": "reverse",
+          "label": "t:options.reverse"
+        }
+      ],
+      "default": "normal",
+      "visible_if": "{{ block.settings.enable_autoplay }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "t:settings.gap",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_block",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Value"
+    },
+    {
+      "type": "color",
+      "id": "value_gradient_start",
+      "label": "Gradient start",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "value_gradient_end",
+      "label": "Gradient end",
+      "default": "#646464"
+    },
+    {
+      "type": "range",
+      "id": "value_font_size",
+      "label": "Size (tablet & desktop)",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "value_font_size_mobile",
+      "label": "Size (mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Label"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Size (tablet & desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "label_font_size_mobile",
+      "label": "Size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#f7f4f2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero stats marquee",
+      "blocks": {
+        "stat_1": {
+          "type": "_hero-stat-item",
+          "settings": {
+            "value": "4K+",
+            "label": "Customers Worldwide"
+          }
+        },
+        "stat_2": {
+          "type": "_hero-stat-item",
+          "settings": {
+            "value": "95%",
+            "label": "Increased energy & focus"
+          }
+        },
+        "stat_3": {
+          "type": "_hero-stat-item",
+          "settings": {
+            "value": "2750+",
+            "label": "5 Star Reviews"
+          }
+        },
+        "stat_4": {
+          "type": "_hero-stat-item",
+          "settings": {
+            "value": "93%",
+            "label": "Experienced Better Recovery"
+          }
+        },
+        "stat_5": {
+          "type": "_hero-stat-item",
+          "settings": {
+            "value": "100%",
+            "label": "Naturally Sourced Ingredients"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4", "stat_5"]
+    }
+  ]
+}
+{% endschema %}

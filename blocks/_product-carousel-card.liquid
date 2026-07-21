@@ -1,0 +1,252 @@
+{%- doc -%}
+  Renders a single product card (image, title, price, discount badge, CTA
+  button) inside the "products-carousel" section's carousel. Every product is
+  a nested "_product-carousel-card" block referencing a real product resource,
+  so merchants can add, remove or reorder products freely.
+
+  Colors, sizes, spacing, radius and column counts are controlled by the
+  parent section via CSS custom properties; this block only carries the
+  product reference. The button label and discount label are shared, section-
+  level settings so every card in the carousel stays visually consistent.
+
+  Meant to be used exclusively as a child block of `sections/products-carousel.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign card_product = block.settings.product
+  assign has_product = false
+  if card_product != blank
+    assign has_product = true
+  endif
+
+  if has_product
+    assign card_variant = card_product.selected_or_first_available_variant
+    assign card_price = card_variant.price
+    assign card_compare_at_price = card_variant.compare_at_price
+    assign card_image = card_product.featured_media.preview_image
+
+    assign show_compare = false
+    if card_compare_at_price > card_price
+      assign show_compare = true
+    endif
+
+    assign show_badge = false
+    if show_compare and section.settings.show_discount_badge
+      assign savings_amount = card_compare_at_price | minus: card_price
+      assign show_badge = true
+    endif
+  endif
+-%}
+
+<article
+  class="products-carousel-card"
+  {{ block.shopify_attributes }}
+>
+  <div class="products-carousel-card__media">
+    {%- if card_image != blank -%}
+      {{
+        card_image
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '300, 400, 600, 800',
+          sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 80vw',
+          alt: card_image.alt | default: card_product.title,
+          class: 'products-carousel-card__image'
+      }}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag: 'products-carousel-card__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="products-carousel-card__content">
+    {%- if has_product -%}
+      <a
+        href="{{ card_product.url }}"
+        class="products-carousel-card__title"
+      >
+        {{- card_product.title -}}
+      </a>
+
+      <div class="products-carousel-card__prices">
+        {%- if show_compare -%}
+          <s class="products-carousel-card__compare-price">{{ card_compare_at_price | money }}</s>
+        {%- endif -%}
+        <span class="products-carousel-card__price">{{ card_price | money }}</span>
+        {%- if show_badge -%}
+          <span class="products-carousel-card__badge">
+            {{- section.settings.discount_label }} {{ savings_amount | money -}}
+          </span>
+        {%- endif -%}
+      </div>
+
+      <a
+        href="{{ card_product.url }}"
+        class="products-carousel-card__button"
+        {% if section.settings.button_open_new_tab %}
+          target="_blank"
+          rel="noopener"
+        {% endif %}
+      >
+        {{- section.settings.button_label -}}
+      </a>
+    {%- else -%}
+      <span class="products-carousel-card__title">{{ 'placeholders.product_title' | t }}</span>
+    {%- endif -%}
+  </div>
+</article>
+
+{% stylesheet %}
+  .products-carousel-card {
+    flex: 0 0 var(--prc-mobile-slide-width, 85%);
+    min-width: 0;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--prc-card-bg, transparent);
+    border-radius: var(--prc-card-radius, 0px);
+    padding: var(--prc-card-padding, 0px);
+    gap: var(--prc-card-content-gap, 12px);
+  }
+
+  .products-carousel-card__media {
+    aspect-ratio: var(--prc-image-aspect, 1 / 1);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .products-carousel-card__image,
+  .products-carousel-card__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: var(--prc-image-fit, contain);
+  }
+
+  .products-carousel-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .products-carousel-card__title {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 600;
+    font-size: var(--prc-title-size, 22px);
+    line-height: 1.2;
+    color: var(--prc-title-color, #1a1a1a);
+    text-transform: var(--prc-title-case, capitalize);
+    text-decoration: none;
+  }
+
+  a.products-carousel-card__title:hover {
+    text-decoration: underline;
+  }
+
+  .products-carousel-card__prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .products-carousel-card__compare-price {
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--prc-compare-size, 14px);
+    font-weight: 400;
+    color: var(--prc-compare-color, rgba(26, 26, 26, 0.7));
+  }
+
+  .products-carousel-card__price {
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--prc-price-size, 16px);
+    font-weight: 700;
+    color: var(--prc-price-color, #1a1a1a);
+  }
+
+  .products-carousel-card__badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--prc-badge-bg, #1a1a1a);
+    color: var(--prc-badge-color, #ffffff);
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--prc-badge-size, 12px);
+    font-weight: 600;
+    line-height: normal;
+    border-radius: var(--prc-badge-radius, 99px);
+    padding: 2px 8px;
+  }
+
+  .products-carousel-card__button {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background: linear-gradient(to bottom, var(--prc-button-gradient-start, #e7b944), var(--prc-button-gradient-end, #ffed68));
+    color: var(--prc-button-text-color, #1a1a1a);
+    border-radius: var(--prc-button-radius, 12px);
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 700;
+    font-size: var(--prc-button-font-size, 18px);
+    padding: var(--prc-button-padding-block, 16px) var(--prc-button-padding-inline, 24px);
+    line-height: 1.2;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .products-carousel-card__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--prc-button-gradient-start, #e7b944) 30%, transparent);
+  }
+
+  @media screen and (min-width: 750px) {
+    .products-carousel-card {
+      flex-basis: calc(
+        (100% - (var(--prc-gap, 20px) * (var(--prc-columns-tablet, 2) - 1))) / var(--prc-columns-tablet, 2)
+      );
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .products-carousel-card {
+      flex-basis: calc((100% - (var(--prc-gap, 20px) * (var(--prc-columns, 4) - 1))) / var(--prc-columns, 4));
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .products-carousel-card__title {
+      font-size: max(16px, calc(var(--prc-title-size, 22px) * 0.82));
+    }
+
+    .products-carousel-card__button {
+      font-size: max(14px, calc(var(--prc-button-font-size, 18px) * 0.89));
+      padding: max(12px, calc(var(--prc-button-padding-block, 16px) * 0.875))
+        max(16px, calc(var(--prc-button-padding-inline, 24px) * 0.833));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:settings.product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product"
+    }
+  ]
+}
+{% endschema %}

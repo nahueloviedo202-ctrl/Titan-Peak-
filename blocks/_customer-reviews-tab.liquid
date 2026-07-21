@@ -1,0 +1,76 @@
+{%- doc -%}
+  Renders one tab of the "Customer reviews tabs" section: a tab button plus
+  its matching panel of review cards (each card is its own nested block).
+
+  The button and panel are rendered together so every tab stays a single
+  block in the editor, then laid out into two separate rows (all buttons,
+  then the active panel) using `display: contents` + flex `order` on the
+  parent `.customer-reviews-tabs__tabset`. See the section stylesheet.
+
+  Meant to be used exclusively as a child block of
+  `sections/customer-reviews-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'CRT-Panel-' | append: block.id
+  assign is_first_tab = false
+  if section.blocks.first.id == block.id
+    assign is_first_tab = true
+  endif
+-%}
+
+<div class="customer-reviews-tabs__tab-group">
+  <button
+    type="button"
+    class="customer-reviews-tabs__tab-btn{% if is_first_tab %} is-active{% endif %}"
+    data-tab-target="{{ panel_id }}"
+    role="tab"
+    aria-selected="{{ is_first_tab }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="customer-reviews-tabs__panel{% if is_first_tab %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    {%- if block.blocks.size > 0 -%}
+      <div
+        class="customer-reviews-tabs__cards"
+        ref="cards[]"
+      >
+        {% content_for 'blocks' %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product tab",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_customer-review-card"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "Product name"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product tab"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1431 @@
+{%- doc -%}
+  Customer reviews tabs: a header (star rating + heading) followed by a row
+  of product tabs; clicking a tab reveals its own panel of review cards.
+  Desktop shows every card in an evenly-flexed row, mobile becomes a
+  horizontal swipe/scroll carousel with prev/next arrows.
+
+  Every tab is a nested "_customer-reviews-tab" block, every review card is
+  its own nested "_customer-review-card" block (inside a tab), and every
+  small tag pill is its own nested "_customer-review-tag" block (inside a
+  card) — so merchants can add, remove or reorder everything freely.
+
+  Every text, color, size, spacing, radius and visibility toggle is
+  configurable through the section and block schemas.
+{%- enddoc -%}
+
+<script
+  src="{{ 'customer-reviews-tabs.js' | asset_url }}"
+  type="module"
+></script>
+
+{%- liquid
+  assign section_settings = section.settings
+  assign tab_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="customer-reviews-tabs spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --crt-max-width: {{ section_settings.container_max_width }}px;
+    --crt-padding-x: {{ section_settings.container_padding }}px;
+    --crt-padding-x-mobile: {{ section_settings.container_padding_mobile }}px;
+    --crt-header-gap: {{ section_settings.header_gap }}px;
+    --crt-header-bottom-gap: {{ section_settings.header_bottom_gap_desktop }}px;
+    --crt-header-bottom-gap-mobile: {{ section_settings.header_bottom_gap_mobile }}px;
+    --crt-tabs-gap: {{ section_settings.tabs_gap_desktop }}px;
+    --crt-tabs-gap-mobile: {{ section_settings.tabs_gap_mobile }}px;
+    --crt-cards-gap: {{ section_settings.cards_gap_desktop }}px;
+    --crt-cards-gap-mobile: {{ section_settings.cards_gap_mobile }}px;
+    --crt-card-padding: {{ section_settings.card_padding }}px;
+    --crt-card-content-gap: {{ section_settings.card_content_gap_desktop }}px;
+    --crt-card-content-gap-mobile: {{ section_settings.card_content_gap_mobile }}px;
+    --crt-card-radius: {{ section_settings.card_radius }}px;
+    --crt-card-width-mobile: {{ section_settings.card_width_mobile }}px;
+    --crt-nav-btn-size: {{ section_settings.nav_button_size }}px;
+    --crt-heading-size: {{ section_settings.heading_size_desktop }}px;
+    --crt-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --crt-rating-text-size: {{ section_settings.rating_text_size_desktop }}px;
+    --crt-rating-text-size-mobile: {{ section_settings.rating_text_size_mobile }}px;
+    --crt-rating-star-size: {{ section_settings.rating_star_size_desktop }}px;
+    --crt-rating-star-size-mobile: {{ section_settings.rating_star_size_mobile }}px;
+    --crt-tab-font-size: {{ section_settings.tab_font_size_desktop }}px;
+    --crt-tab-font-size-mobile: {{ section_settings.tab_font_size_mobile }}px;
+    --crt-card-star-size: {{ section_settings.card_star_size }}px;
+    --crt-card-name-size: {{ section_settings.card_name_size_desktop }}px;
+    --crt-card-name-size-mobile: {{ section_settings.card_name_size_mobile }}px;
+    --crt-card-text-size: {{ section_settings.card_text_size_desktop }}px;
+    --crt-card-text-size-mobile: {{ section_settings.card_text_size_mobile }}px;
+    --crt-card-label-size: {{ section_settings.card_label_size_desktop }}px;
+    --crt-card-label-size-mobile: {{ section_settings.card_label_size_mobile }}px;
+    --crt-card-tag-size: {{ section_settings.card_tag_size }}px;
+    --crt-bg: {{ section_settings.background_color }};
+    --crt-tab-bg: {{ section_settings.tab_bg_color }};
+    --crt-tab-text-color: {{ section_settings.tab_text_color }};
+    --crt-tab-active-gradient-start: {{ section_settings.tab_active_gradient_start }};
+    --crt-tab-active-gradient-end: {{ section_settings.tab_active_gradient_end }};
+    --crt-card-bg: {{ section_settings.card_bg_color }};
+    --crt-card-name-color: {{ section_settings.card_name_color }};
+    --crt-card-text-color: {{ section_settings.card_text_color }};
+    --crt-badge-color: {{ section_settings.badge_color }};
+    --crt-badge-check-color: {{ section_settings.badge_check_color }};
+    --crt-label-bg: {{ section_settings.label_bg_color }};
+    --crt-label-text-color: {{ section_settings.label_text_color }};
+    --crt-tag-bg: {{ section_settings.tag_bg_color }};
+    --crt-tag-text-color: {{ section_settings.tag_text_color }};
+    --crt-tag-border-color-rgb: {{ section_settings.tag_border_color.rgb }};
+    --crt-tag-border-opacity: {{ section_settings.tag_border_opacity | divided_by: 100.0 }};
+    --crt-nav-prev-bg: {{ section_settings.nav_prev_bg_color }};
+    --crt-nav-next-gradient-start: {{ section_settings.nav_next_gradient_start }};
+    --crt-nav-next-gradient-end: {{ section_settings.nav_next_gradient_end }};
+    --crt-nav-icon-color: {{ section_settings.nav_icon_color }};
+  "
+  data-testid="customer-reviews-tabs"
+>
+  <svg
+    width="0"
+    height="0"
+    style="position: absolute;"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <defs>
+      <linearGradient
+        id="customer-reviews-tabs-star-{{ section.id }}"
+        x1="10.4941"
+        y1="-1.00763"
+        x2="10.4941"
+        y2="22.9924"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="{{ section_settings.star_gradient_start }}" />
+        <stop
+          offset="1"
+          stop-color="{{ section_settings.star_gradient_end }}"
+        />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="customer-reviews-tabs__container">
+    <customer-reviews-tabs-component class="customer-reviews-tabs__component">
+      <div class="customer-reviews-tabs__header">
+        {%- if section_settings.header_rating_stars > 0 or section_settings.rating_text != blank -%}
+          <div class="customer-reviews-tabs__rating-row">
+            {%- if section_settings.header_rating_stars > 0 -%}
+              <div
+                class="customer-reviews-tabs__rating-stars"
+                aria-hidden="true"
+              >
+                {%- for i in (1..section_settings.header_rating_stars) -%}
+                  {%- render 'customer-reviews-tabs-star', section_id: section.id -%}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+
+            {%- if section_settings.rating_text != blank -%}
+              <div class="customer-reviews-tabs__rating-text rte">{{ section_settings.rating_text }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section_settings.heading != blank -%}
+          <h2 class="customer-reviews-tabs__heading">{{ section_settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if tab_count > 0 -%}
+          <div
+            class="customer-reviews-tabs__tabset"
+            role="tablist"
+          >
+            {% content_for 'blocks' %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section_settings.show_nav_arrows and tab_count > 0 -%}
+        <div class="customer-reviews-tabs__nav">
+          <button
+            type="button"
+            class="customer-reviews-tabs__nav-btn customer-reviews-tabs__nav-btn--prev"
+            ref="prevButton"
+            on:click="/prev"
+            aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M8 5L13 10L8 15"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="customer-reviews-tabs__nav-btn customer-reviews-tabs__nav-btn--next"
+            ref="nextButton"
+            on:click="/next"
+            aria-label="{{ 'accessibility.slideshow_next' | t }}"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M8 5L13 10L8 15"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      {%- endif -%}
+    </customer-reviews-tabs-component>
+  </div>
+</div>
+
+{% stylesheet %}
+  .customer-reviews-tabs {
+    background-color: var(--crt-bg, #fff);
+    font-family: var(--font-body--family, inherit);
+  }
+
+  .customer-reviews-tabs__container {
+    max-width: var(--crt-max-width, 1320px);
+    margin-inline: auto;
+    padding-inline: var(--crt-padding-x-mobile, 16px);
+  }
+
+  .customer-reviews-tabs__component {
+    display: block;
+  }
+
+  .customer-reviews-tabs__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--crt-header-gap, 16px);
+    text-align: center;
+    margin-bottom: var(--crt-header-bottom-gap-mobile, 24px);
+  }
+
+  .customer-reviews-tabs__rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .customer-reviews-tabs__rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .customer-reviews-tabs__rating-stars svg {
+    width: var(--crt-rating-star-size-mobile, 13px);
+    height: var(--crt-rating-star-size-mobile, 13px);
+    display: block;
+  }
+
+  .customer-reviews-tabs__rating-text,
+  .customer-reviews-tabs__rating-text p {
+    font-size: var(--crt-rating-text-size-mobile, 13px);
+    font-weight: 500;
+    color: var(--crt-tab-text-color, #1a1a1a);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .customer-reviews-tabs__rating-text strong {
+    font-weight: 700;
+  }
+
+  .customer-reviews-tabs__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-size: var(--crt-heading-size-mobile, 28px);
+    font-weight: 700;
+    color: var(--crt-tab-text-color, #1a1a1a);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .customer-reviews-tabs__tabset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--crt-tabs-gap-mobile, 10px);
+    width: 100%;
+  }
+
+  /* Each tab block renders a button + panel pair; promoting the wrapper to
+     `display: contents` lets flex `order` regroup every button into one row
+     and every panel below it, regardless of how the blocks interleave. */
+  .customer-reviews-tabs__tab-group {
+    display: contents;
+  }
+
+  .customer-reviews-tabs__tab-btn {
+    order: 1;
+    flex: 1 1 calc(50% - (var(--crt-tabs-gap-mobile, 10px) / 2));
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: var(--crt-tab-bg, #f7f4f2);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--crt-tab-font-size-mobile, 10px);
+    font-weight: 400;
+    color: var(--crt-tab-text-color, #1a1a1a);
+    text-transform: uppercase;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition:
+      background 0.2s ease,
+      font-weight 0s;
+  }
+
+  .customer-reviews-tabs__tab-btn.is-active {
+    background: linear-gradient(
+      to bottom,
+      var(--crt-tab-active-gradient-start, #e7b944),
+      var(--crt-tab-active-gradient-end, #ffed68)
+    );
+    font-weight: 700;
+  }
+
+  .customer-reviews-tabs__panel {
+    order: 2;
+    flex: 1 0 100%;
+    width: 100%;
+    display: none;
+  }
+
+  .customer-reviews-tabs__panel.is-active {
+    display: block;
+  }
+
+  .customer-reviews-tabs__cards {
+    display: flex;
+    align-items: stretch;
+    gap: var(--crt-cards-gap-mobile, 16px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .customer-reviews-tabs__cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .customer-reviews-tabs__card {
+    flex: 0 0 var(--crt-card-width-mobile, 321px);
+    min-width: var(--crt-card-width-mobile, 321px);
+    scroll-snap-align: start;
+    background: var(--crt-card-bg, #f7f4f2);
+    border-radius: var(--crt-card-radius, 12px);
+    padding: var(--crt-card-padding, 20px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--crt-card-content-gap-mobile, 16px);
+  }
+
+  .customer-reviews-tabs__card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .customer-reviews-tabs__card-customer-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .customer-reviews-tabs__card-name {
+    font-size: var(--crt-card-name-size-mobile, 16px);
+    font-weight: 600;
+    color: var(--crt-card-name-color, #1a1a1a);
+    line-height: 1.2;
+  }
+
+  .customer-reviews-tabs__verified-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--crt-badge-color, #16a34a);
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .customer-reviews-tabs__verified-icon,
+  .customer-reviews-tabs__verified-icon svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .customer-reviews-tabs__verified-icon {
+    color: var(--crt-badge-color, #16a34a);
+  }
+
+  .customer-reviews-tabs__card-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .customer-reviews-tabs__card-stars svg {
+    width: var(--crt-card-star-size, 16px);
+    height: var(--crt-card-star-size, 16px);
+    display: block;
+  }
+
+  .customer-reviews-tabs__card-label {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 4px 16px;
+    background: var(--crt-label-bg, #1a1a1a);
+    border-radius: 8px;
+  }
+
+  .customer-reviews-tabs__card-label span {
+    font-size: var(--crt-card-label-size-mobile, 12px);
+    font-weight: 600;
+    color: var(--crt-label-text-color, #fff);
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+
+  .customer-reviews-tabs__card-text {
+    font-size: var(--crt-card-text-size-mobile, 14px);
+    font-weight: 400;
+    color: var(--crt-card-text-color, #1a1a1a);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+  }
+
+  .customer-reviews-tabs__card-text :is(p, ul, ol) {
+    margin: 0;
+  }
+
+  .customer-reviews-tabs__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .customer-reviews-tabs__tag {
+    padding: 6px 10px;
+    background: var(--crt-tag-bg, #fff);
+    border: 1px solid rgb(var(--crt-tag-border-color-rgb, 26 26 26) / var(--crt-tag-border-opacity, 0.1));
+    border-radius: 6px;
+    font-size: var(--crt-card-tag-size, 12px);
+    font-weight: 400;
+    color: var(--crt-tag-text-color, #1a1a1a);
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .customer-reviews-tabs__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .customer-reviews-tabs__nav-btn {
+    width: var(--crt-nav-btn-size, 40px);
+    height: var(--crt-nav-btn-size, 40px);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--crt-nav-icon-color, #1a1a1a);
+    transition: opacity 0.2s ease;
+  }
+
+  .customer-reviews-tabs__nav-btn--prev {
+    background: var(--crt-nav-prev-bg, #f7f4f2);
+    opacity: 0.35;
+  }
+
+  .customer-reviews-tabs__nav-btn--prev.is-enabled {
+    opacity: 1;
+  }
+
+  .customer-reviews-tabs__nav-btn--next {
+    background: linear-gradient(
+      to right,
+      var(--crt-nav-next-gradient-start, #ffed68),
+      var(--crt-nav-next-gradient-end, #e4b948)
+    );
+  }
+
+  .customer-reviews-tabs__nav-btn--next:disabled {
+    opacity: 0.35;
+  }
+
+  .customer-reviews-tabs__nav-btn svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .customer-reviews-tabs__nav-btn--prev svg {
+    transform: scaleX(-1);
+  }
+
+  @media screen and (min-width: 750px) {
+    .customer-reviews-tabs__container {
+      padding-inline: var(--crt-padding-x, 32px);
+    }
+
+    .customer-reviews-tabs__header {
+      margin-bottom: var(--crt-header-bottom-gap, 56px);
+    }
+
+    .customer-reviews-tabs__rating-stars svg {
+      width: var(--crt-rating-star-size, 16px);
+      height: var(--crt-rating-star-size, 16px);
+    }
+
+    .customer-reviews-tabs__rating-text,
+    .customer-reviews-tabs__rating-text p {
+      font-size: var(--crt-rating-text-size, 16px);
+    }
+
+    .customer-reviews-tabs__heading {
+      font-size: var(--crt-heading-size, 36px);
+    }
+
+    .customer-reviews-tabs__tabset {
+      gap: var(--crt-tabs-gap, 16px);
+    }
+
+    .customer-reviews-tabs__tab-btn {
+      flex: 0 0 auto;
+      font-size: var(--crt-tab-font-size, 14px);
+    }
+
+    .customer-reviews-tabs__cards {
+      gap: var(--crt-cards-gap, 20px);
+      overflow-x: visible;
+    }
+
+    .customer-reviews-tabs__card {
+      flex: 1 0 0;
+      min-width: 0;
+      gap: var(--crt-card-content-gap, 20px);
+    }
+
+    .customer-reviews-tabs__card-name {
+      font-size: var(--crt-card-name-size, 20px);
+    }
+
+    .customer-reviews-tabs__card-label span {
+      font-size: var(--crt-card-label-size, 14px);
+    }
+
+    .customer-reviews-tabs__card-text {
+      font-size: var(--crt-card-text-size, 16px);
+    }
+
+    .customer-reviews-tabs__nav {
+      display: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Customer reviews tabs",
+  "class": "section-customer-reviews-tabs",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_customer-reviews-tab"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "range",
+      "id": "header_rating_stars",
+      "label": "Rating stars shown",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "richtext",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "<p>Rated <strong>4.8/5</strong> by <strong>thousands</strong> of happy customers</p>"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Real Stories of Our Customers"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1320
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Space between header elements",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_gap_desktop",
+      "label": "Space below header (desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_gap_mobile",
+      "label": "Space below header (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "range",
+      "id": "tabs_gap_desktop",
+      "label": "Gap between tabs (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tabs_gap_mobile",
+      "label": "Gap between tabs (mobile)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "range",
+      "id": "cards_gap_desktop",
+      "label": "Gap between cards (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "cards_gap_mobile",
+      "label": "Gap between cards (mobile)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Card padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap_desktop",
+      "label": "Space inside card (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap_mobile",
+      "label": "Space inside card (mobile)",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_width_mobile",
+      "label": "Card width (mobile)",
+      "min": 240,
+      "max": 400,
+      "step": 1,
+      "unit": "px",
+      "default": 321
+    },
+    {
+      "type": "header",
+      "content": "t:content.navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_nav_arrows",
+      "label": "Show mobile arrows",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "nav_button_size",
+      "label": "Arrow button size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.show_nav_arrows }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "rating_text_size_desktop",
+      "label": "Rating text size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "rating_text_size_mobile",
+      "label": "Rating text size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "rating_star_size_desktop",
+      "label": "Header star size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "rating_star_size_mobile",
+      "label": "Header star size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_desktop",
+      "label": "Tab label size (desktop)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_mobile",
+      "label": "Tab label size (mobile)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_star_size",
+      "label": "Card star size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_name_size_desktop",
+      "label": "Card name size (desktop)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_name_size_mobile",
+      "label": "Card name size (mobile)",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_desktop",
+      "label": "Card text size (desktop)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_text_size_mobile",
+      "label": "Card text size (mobile)",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_label_size_desktop",
+      "label": "Card highlight label size (desktop)",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_label_size_mobile",
+      "label": "Card highlight label size (mobile)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_tag_size",
+      "label": "Tag text size",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg_color",
+      "label": "Tab background",
+      "default": "#f7f4f2"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Heading & tab text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_start",
+      "label": "Active tab gradient (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_end",
+      "label": "Active tab gradient (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "star_gradient_start",
+      "label": "Star gradient (top)",
+      "default": "#e7b944"
+    },
+    {
+      "type": "color",
+      "id": "star_gradient_end",
+      "label": "Star gradient (bottom)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#f7f4f2"
+    },
+    {
+      "type": "color",
+      "id": "card_name_color",
+      "label": "Card name color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Verified badge color",
+      "default": "#16a34a"
+    },
+    {
+      "type": "color",
+      "id": "badge_check_color",
+      "label": "Verified badge checkmark color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "Highlight label background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "label_text_color",
+      "label": "Highlight label text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_color",
+      "label": "Tag background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tag_text_color",
+      "label": "Tag text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tag_border_color",
+      "label": "Tag border color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "tag_border_opacity",
+      "label": "Tag border opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "nav_prev_bg_color",
+      "label": "Previous arrow background",
+      "default": "#f7f4f2"
+    },
+    {
+      "type": "color",
+      "id": "nav_next_gradient_start",
+      "label": "Next arrow gradient (start)",
+      "default": "#ffed68"
+    },
+    {
+      "type": "color",
+      "id": "nav_next_gradient_end",
+      "label": "Next arrow gradient (end)",
+      "default": "#e4b948"
+    },
+    {
+      "type": "color",
+      "id": "nav_icon_color",
+      "label": "Arrow icon color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 150,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 150,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews tabs",
+      "category": "t:categories.product",
+      "blocks": {
+        "tab_1": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Performance Gummies"
+          },
+          "blocks": {
+            "card_1": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Jordan M.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "All-day energy",
+                "review_text": "<p>I've tried every energy supplement under the sun and nothing stuck - until these. By week three I was waking up ready to go, no afternoon crash, no jitters. The Ashwagandha and Shilajit combo just quietly does its job. My workouts feel stronger and my focus at work is noticeably sharper. One gummy a day really is all it takes.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Sustained Energy" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Mental Clarity" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_2": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Alex R.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Stamina booster",
+                "review_text": "<p>My endurance during workouts has genuinely improved since starting these. I'm hitting PRs I thought were behind me, and recovery feels faster too. The fact that it's stimulant-free means I can take it any time - no racing heart, no sleep issues. Just steady, reliable performance support that compounds over time.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Workout Performance" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Faster Recovery" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_3": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Taylor K.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Complete wellness",
+                "review_text": "<p>I picked these up primarily for the stress support - the Ashwagandha was a big draw - and they've exceeded my expectations on every front. My skin looks clearer, my sleep is deeper, and my energy through the day is much more balanced. The gummies taste great too, which means I actually remember to take them.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Stress Relief" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Clearer Skin" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Better Sleep" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            },
+            "card_4": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Casey L.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Drive & vitality",
+                "review_text": "<p>About two months in and the difference is noticeable. More drive, better circulation, and a general sense of vitality that had been missing for a while. I appreciate that the ingredients are clearly listed and clinically studied - not some mystery proprietary blend. The L-Arginine and Maca combination really delivers.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Increased Drive" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Better Circulation" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            }
+          },
+          "block_order": ["card_1", "card_2", "card_3", "card_4"]
+        },
+        "tab_2": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Organic Beetroot Gummies"
+          },
+          "blocks": {
+            "card_1": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Morgan S.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Heart & circulation",
+                "review_text": "<p>I started these to support my cardio health and within a few weeks my resting heart rate dropped and my runs felt easier - like my blood was flowing more freely. The natural nitrates in beetroot genuinely work, and the gummy format makes it effortless to stay consistent. Much better than choking down beet juice every morning.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Cardiovascular Support" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Better Blood Flow" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_2": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Riley P.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Pre-workout natural",
+                "review_text": "<p>These have replaced my pre-workout. The natural nitric oxide boost gives me a great pump at the gym without any artificial stimulants or that awful tingly feeling. My endurance during HIIT sessions has improved a lot, and I feel less wiped out afterward. Love that they're organic - clean ingredients, clean results.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Nitric Oxide" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Endurance" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Organic" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            },
+            "card_3": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Sam W.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Daily energy",
+                "review_text": "<p>I was skeptical about beet gummies doing much, but a month in and I'm a convert. My energy is more consistent throughout the day - not a burst and crash, just a steady, natural lift. My blood pressure readings have also improved, which my doctor noticed at my last check-up. A simple, clean supplement that genuinely delivers.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Stable Energy" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Blood Pressure Support" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_4": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Drew N.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Recovery support",
+                "review_text": "<p>Post-workout soreness used to linger for days. Since adding the Beetroot Gummies to my routine, muscle recovery is noticeably quicker and my legs feel fresher going into back-to-back training sessions. The antioxidant content must be doing its job. Taste is genuinely good too - not earthy at all, which was my biggest worry.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Muscle Recovery" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Antioxidants" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            }
+          },
+          "block_order": ["card_1", "card_2", "card_3", "card_4"]
+        },
+        "tab_3": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Pumpkin Seed Oil Softgels"
+          },
+          "blocks": {
+            "card_1": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Parker A.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Hair & skin glow",
+                "review_text": "<p>Three months in and my hair has never looked better - thicker, shinier, and much less breakage. My skin tone has also evened out significantly. I was already taking a fish oil capsule daily and swapped it out for these; the essential fatty acid profile is excellent and the softgels are easy to swallow with no fishy aftertaste.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Hair Health" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Skin Quality" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Essential Fatty Acids" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            },
+            "card_2": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Finley B.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Bladder & urinary support",
+                "review_text": "<p>I started these on my naturopath's suggestion for bladder health and the results have been quietly impressive. Fewer urgent trips, much better overnight comfort. The phytosterols in pumpkin seed oil are well-studied for urinary tract support and this formula clearly uses a quality source. Noticeable improvement within six weeks.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Urinary Comfort" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Phytosterols" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_3": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Quinn V.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Immune & gut health",
+                "review_text": "<p>These softgels fit seamlessly into my supplement stack. I take them with breakfast and they've contributed noticeably to better digestion and stronger immunity - I haven't had a cold since starting. Clean, cold-pressed oil, no fillers, and the capsules are consistent quality. A genuinely underrated daily supplement.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Immune Support" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Digestive Health" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_4": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Emery C.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Nails & joints",
+                "review_text": "<p>My nails used to peel and break constantly. Within two months of taking the pumpkin seed oil softgels they've become noticeably stronger and grow faster. As a bonus, my knees feel less stiff after long runs - the anti-inflammatory properties of the fatty acids must be contributing. Simple, effective, no fuss.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Stronger Nails" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Joint Comfort" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Anti-Inflammatory" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            }
+          },
+          "block_order": ["card_1", "card_2", "card_3", "card_4"]
+        },
+        "tab_4": {
+          "type": "_customer-reviews-tab",
+          "settings": {
+            "tab_label": "Beef Organs Complex"
+          },
+          "blocks": {
+            "card_1": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Noel T.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Iron & vitality",
+                "review_text": "<p>My iron levels have been low for years and I've struggled to bring them up through diet alone. These capsules have genuinely moved the needle - my last blood panel showed significant improvement and my energy is no longer hitting a wall at 2pm. The freeze-dried grass-fed sourcing means maximum nutrient retention without any synthetic additives.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Iron Levels" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Sustained Energy" } }
+              },
+              "block_order": ["tag_1", "tag_2"]
+            },
+            "card_2": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Harper G.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Cognitive edge",
+                "review_text": "<p>I've been taking this for three months and the brain fog I'd accepted as normal is largely gone. Sharper recall, faster thinking, better focus during long work sessions. The nutrient density of grass-fed liver and heart in one capsule is hard to replicate any other way. No taste, no smell - just clean, ancestral nutrition in a modern format.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Mental Clarity" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Focus" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Grass-Fed" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            },
+            "card_3": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Val O.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Athletic recovery",
+                "review_text": "<p>As someone training five days a week, recovery nutrition is everything. The Beef Organs Complex has become essential for me - muscle repair feels faster, strength gains have picked up, and overall body composition has improved. The combination of heart for CoQ10, liver for B12, and spleen for iron is a genuinely well-rounded formula.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Muscle Repair" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Strength" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "CoQ10" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            },
+            "card_4": {
+              "type": "_customer-review-card",
+              "settings": {
+                "customer_name": "Emery C.",
+                "rating": 5,
+                "show_verified_badge": true,
+                "verified_badge_text": "Verified Customer",
+                "label_text": "Nutrient-dense daily",
+                "review_text": "<p>I eat a balanced diet but wanted to fill in the micronutrient gaps that are hard to get consistently from food. This complex is the cleanest, most bioavailable way to do that. The freeze-drying process preserves enzymes and cofactors that you simply don't get from synthetic vitamins. I feel the difference - more grounded, more resilient, better mood.</p>"
+              },
+              "blocks": {
+                "tag_1": { "type": "_customer-review-tag", "settings": { "text": "Micronutrients" } },
+                "tag_2": { "type": "_customer-review-tag", "settings": { "text": "Bioavailability" } },
+                "tag_3": { "type": "_customer-review-tag", "settings": { "text": "Mood Support" } }
+              },
+              "block_order": ["tag_1", "tag_2", "tag_3"]
+            }
+          },
+          "block_order": ["card_1", "card_2", "card_3", "card_4"]
+        }
+      },
+      "block_order": ["tab_1", "tab_2", "tab_3", "tab_4"]
+    }
+  ]
+}
+{% endschema %}

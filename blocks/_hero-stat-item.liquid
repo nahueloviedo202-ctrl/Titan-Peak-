@@ -1,0 +1,88 @@
+{%- doc -%}
+  A single stat (big gradient value + label), nested inside the
+  "_hero-stats-marquee" block. Colors, sizes and spacing are controlled by
+  the parent block via CSS custom properties; this block only carries the
+  per-stat content.
+
+  Meant to be used exclusively as a child block of `_hero-stats-marquee`.
+{%- enddoc -%}
+
+{%- liquid
+  assign stat_settings = block.settings
+-%}
+
+<div
+  class="hero-stat-item"
+  {{ block.shopify_attributes }}
+>
+  {%- if stat_settings.value != blank -%}
+    <span class="hero-stat-item__value">{{ stat_settings.value }}</span>
+  {%- endif -%}
+  {%- if stat_settings.label != blank -%}
+    <span class="hero-stat-item__label">{{ stat_settings.label }}</span>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .hero-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-stat-item__value {
+    display: block;
+    font-size: var(--hsm-value-size, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(to left, var(--hsm-value-gradient-start, #1a1a1a), var(--hsm-value-gradient-end, #646464) 70.673%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-stat-item__label {
+    display: block;
+    font-size: var(--hsm-label-size, 16px);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--hsm-label-color, #1a1a1a);
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-stat-item__value {
+      font-size: var(--hsm-value-size-mobile, 28px);
+    }
+
+    .hero-stat-item__label {
+      font-size: var(--hsm-label-size-mobile, 14px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Stat",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "value",
+      "label": "Value",
+      "default": "100+"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Stat label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stat"
+    }
+  ]
+}
+{% endschema %}

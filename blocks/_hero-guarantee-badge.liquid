@@ -1,0 +1,136 @@
+{%- doc -%}
+  Small icon + text trust badge (e.g. "30-Day Satisfaction Guarantee"),
+  meant to sit next to the hero CTA button.
+
+  Meant to be used exclusively as a child block of `sections/hero.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign badge_settings = block.settings
+-%}
+
+{%- if badge_settings.text != blank -%}
+  <div
+    class="hero-guarantee-badge"
+    style="
+      --hero-guarantee-icon-color: {{ badge_settings.icon_color }};
+      --hero-guarantee-text-color: {{ badge_settings.text_color }};
+      --hero-guarantee-icon-size: {{ badge_settings.icon_size }}px;
+      --hero-guarantee-font-size: {{ badge_settings.font_size }}px;
+    "
+    {{ block.shopify_attributes }}
+  >
+    <svg
+      class="hero-guarantee-badge__icon"
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M8 15.375C7.42069 15.375 6.86378 15.1621 6.43181 14.7756C5.94959 14.3442 5.32784 14.1065 4.68116 14.1065C4.60637 14.1065 4.53069 14.1098 4.45619 14.1162C4.38803 14.122 4.31862 14.125 4.25 14.125C2.94044 14.125 1.875 13.0596 1.875 11.75C1.875 11.6814 1.87797 11.612 1.88381 11.5438C1.94559 10.8257 1.70522 10.1056 1.22437 9.56819C0.837875 9.13622 0.625 8.57931 0.625 8C0.625 7.42069 0.837875 6.86378 1.22437 6.43181C1.70522 5.89444 1.94559 5.17434 1.88381 4.45616C1.87797 4.388 1.875 4.31863 1.875 4.25C1.875 2.94041 2.94044 1.875 4.25 1.875C4.31862 1.875 4.38803 1.87797 4.45622 1.88381C4.53059 1.89022 4.60619 1.89347 4.68087 1.89347C5.32778 1.89344 5.94962 1.65584 6.43181 1.22438C6.86378 0.837876 7.42069 0.625001 8 0.625001C8.57931 0.625001 9.13622 0.837876 9.56819 1.22438C10.0504 1.65588 10.6722 1.8935 11.3188 1.89347C11.3936 1.89347 11.4693 1.89022 11.5438 1.88381C11.612 1.87797 11.6814 1.875 11.75 1.875C13.0596 1.875 14.125 2.94041 14.125 4.25C14.125 4.31863 14.122 4.388 14.1162 4.45619C14.0544 5.17434 14.2948 5.89444 14.7756 6.43181C15.1621 6.86378 15.375 7.42069 15.375 8C15.375 8.57931 15.1621 9.13622 14.7756 9.56819C14.2948 10.1056 14.0544 10.8257 14.1162 11.5438C14.122 11.612 14.125 11.6814 14.125 11.75C14.125 13.0596 13.0596 14.125 11.75 14.125C11.6814 14.125 11.612 14.122 11.5438 14.1162C11.4694 14.1098 11.3938 14.1065 11.3191 14.1065C10.6722 14.1065 10.0504 14.3442 9.56819 14.7756C9.13622 15.1621 8.57931 15.375 8 15.375Z"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+      />
+      <path
+        d="M6.125 8L7.375 9.25L9.875 6.75"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+      />
+      <path
+        d="M8 12.375C5.58787 12.375 3.625 10.4121 3.625 8C3.625 5.58791 5.58787 3.625 8 3.625C10.4121 3.625 12.375 5.58791 12.375 8C12.375 10.4121 10.4121 12.375 8 12.375Z"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span>{{ badge_settings.text }}</span>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .hero-guarantee-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--hero-guarantee-text-color, #ffffff);
+    font-size: var(--hero-guarantee-font-size, 14px);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .hero-guarantee-badge__icon {
+    width: var(--hero-guarantee-icon-size, 16px);
+    height: var(--hero-guarantee-icon-size, 16px);
+    flex-shrink: 0;
+    color: var(--hero-guarantee-icon-color, #eed454);
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-guarantee-badge {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Hero guarantee badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "default": "30-Day Satisfaction Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.icon",
+      "default": "#eed454"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero guarantee badge"
+    }
+  ]
+}
+{% endschema %}

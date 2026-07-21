@@ -1,0 +1,24 @@
+{%- doc -%}
+  Renders a single gradient-filled star icon for the "Customer reviews tabs"
+  section. All stars in the section share one <linearGradient> (defined once
+  by the section itself) to avoid repeating/duplicating SVG ids.
+
+  @param {string} section_id - The id of the gradient to reference.
+  @param {string} [class] - Optional extra class on the <svg>.
+
+  @example
+  {% render 'customer-reviews-tabs-star', section_id: section.id %}
+{%- enddoc -%}
+
+<svg
+  class="{{ class }}"
+  viewBox="0 0 21 21"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path
+    d="M9.77675 0.44596C10.0702 -0.148637 10.9181 -0.148637 11.2115 0.445959L13.8347 5.76111C13.9512 5.99723 14.1765 6.16089 14.4371 6.19875L20.3027 7.05107C20.9589 7.14642 21.2209 7.9528 20.7461 8.41563L16.5017 12.5529C16.3131 12.7367 16.2271 13.0015 16.2716 13.261L17.2735 19.1029C17.3856 19.7565 16.6997 20.2548 16.1128 19.9463L10.8664 17.1881C10.6334 17.0656 10.3549 17.0656 10.1219 17.1881L4.8755 19.9463C4.28859 20.2548 3.60265 19.7565 3.71474 19.1029L4.7167 13.261C4.76121 13.0015 4.67518 12.7367 4.48663 12.5529L0.242223 8.41563C-0.23259 7.9528 0.0294169 7.14642 0.685593 7.05107L6.55121 6.19875C6.81178 6.16089 7.03704 5.99723 7.15357 5.76111L9.77675 0.44596Z"
+    fill="url(#customer-reviews-tabs-star-{{ section_id }})"
+  />
+</svg>

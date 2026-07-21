@@ -781,6 +781,18 @@
     },
     {
       "type": "_marquee"
+    },
+    {
+      "type": "_hero-heading"
+    },
+    {
+      "type": "_hero-cta-button"
+    },
+    {
+      "type": "_hero-guarantee-badge"
+    },
+    {
+      "type": "_hero-stats-marquee"
     }
   ],
   "disabled_on": {
@@ -1197,6 +1209,14 @@
         {
           "value": "to bottom",
           "label": "t:options.down"
+        },
+        {
+          "value": "to left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "to right",
+          "label": "t:options.right"
         }
       ],
       "default": "to top",
@@ -1479,6 +1499,113 @@
         "toggle_overlay": true,
         "overlay_style": "gradient",
         "gradient_direction": "to top"
+      }
+    },
+    {
+      "name": "Hero banner",
+      "category": "t:categories.banners",
+      "blocks": {
+        "rating": {
+          "type": "rating-badge",
+          "settings": {
+            "text": "<p><strong>THOUSANDS</strong> OF HAPPY CUSTOMERS</p>",
+            "icon_count": 5,
+            "icon_color": "#e7b944",
+            "icon_size": 21,
+            "icon_gap": 4,
+            "content_gap": 16,
+            "width": "fit-content",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "text_color": "#ffffff"
+          }
+        },
+        "heading": {
+          "type": "_hero-heading",
+          "settings": {
+            "heading": "<p><strong>Peak performance</strong> starts with better nutrition</p>"
+          }
+        },
+        "subheading": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Daily essentials support circulation, hydration, and overall wellness,</strong> helping you stay energized, promote healthy blood flow, and recover after exercise.*</p>",
+            "type_preset": "paragraph",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "font_size": "1.125rem",
+            "text_color": "#ffffff"
+          }
+        },
+        "cta_button": {
+          "type": "_hero-cta-button",
+          "settings": {
+            "label": "Shop our best sellers",
+            "link": "shopify://collections/all"
+          }
+        },
+        "guarantee": {
+          "type": "_hero-guarantee-badge"
+        },
+        "stats": {
+          "type": "_hero-stats-marquee",
+          "blocks": {
+            "stat_1": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "4K+",
+                "label": "Customers Worldwide"
+              }
+            },
+            "stat_2": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "95%",
+                "label": "Increased energy & focus"
+              }
+            },
+            "stat_3": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "2750+",
+                "label": "5 Star Reviews"
+              }
+            },
+            "stat_4": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "93%",
+                "label": "Experienced Better Recovery"
+              }
+            },
+            "stat_5": {
+              "type": "_hero-stat-item",
+              "settings": {
+                "value": "100%",
+                "label": "Naturally Sourced Ingredients"
+              }
+            }
+          },
+          "block_order": ["stat_1", "stat_2", "stat_3", "stat_4", "stat_5"]
+        }
+      },
+      "block_order": ["rating", "heading", "subheading", "cta_button", "guarantee", "stats"],
+      "settings": {
+        "media_type_1": "image",
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 24,
+        "section_width": "full-width",
+        "section_height": "large",
+        "toggle_overlay": true,
+        "overlay_style": "gradient",
+        "overlay_color": "#1a1a1a99",
+        "gradient_direction": "to left",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     }
   ]

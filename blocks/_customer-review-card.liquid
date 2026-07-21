@@ -1,0 +1,152 @@
+{%- doc -%}
+  Renders a single customer review card: reviewer name, an optional
+  "verified" badge, a star rating, an optional highlight label, the review
+  text and a row of small tag pills (each its own nested block).
+
+  Colors, sizes and spacing are controlled by the parent section via CSS
+  custom properties. Meant to be used exclusively as a child block of
+  `blocks/_customer-reviews-tab.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign card_settings = block.settings
+  assign tag_count = block.blocks.size
+-%}
+
+<div
+  class="customer-reviews-tabs__card"
+  {{ block.shopify_attributes }}
+>
+  <div class="customer-reviews-tabs__card-top">
+    {%- if card_settings.customer_name != blank or card_settings.show_verified_badge -%}
+      <div class="customer-reviews-tabs__card-customer-row">
+        {%- if card_settings.customer_name != blank -%}
+          <span class="customer-reviews-tabs__card-name">{{ card_settings.customer_name }}</span>
+        {%- endif -%}
+
+        {%- if card_settings.show_verified_badge -%}
+          <span class="customer-reviews-tabs__verified-badge">
+            <span class="svg-wrapper customer-reviews-tabs__verified-icon">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="8"
+                  fill="currentColor"
+                />
+                <path
+                  d="M4.5 8.5L7 11L11.5 5.5"
+                  stroke="var(--crt-badge-check-color, #ffffff)"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            {{- card_settings.verified_badge_text -}}
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if card_settings.rating > 0 -%}
+      <div
+        class="customer-reviews-tabs__card-stars"
+        aria-label="{{ card_settings.rating }} out of 5 stars"
+      >
+        {%- for i in (1..card_settings.rating) -%}
+          {%- render 'customer-reviews-tabs-star', section_id: section.id -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if card_settings.label_text != blank -%}
+    <div class="customer-reviews-tabs__card-label">
+      <span>{{ card_settings.label_text }}</span>
+    </div>
+  {%- endif -%}
+
+  {%- if card_settings.review_text != blank -%}
+    <div class="customer-reviews-tabs__card-text rte">{{ card_settings.review_text }}</div>
+  {%- endif -%}
+
+  {%- if tag_count > 0 -%}
+    <div class="customer-reviews-tabs__card-tags">
+      {% content_for 'blocks' %}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Review card",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_customer-review-tag"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Customer"
+    },
+    {
+      "type": "text",
+      "id": "customer_name",
+      "label": "Name",
+      "default": "Customer name"
+    },
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Rating",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified_badge",
+      "label": "Show verified badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "verified_badge_text",
+      "label": "Badge text",
+      "default": "Verified Customer",
+      "visible_if": "{{ block.settings.show_verified_badge }}"
+    },
+    {
+      "type": "header",
+      "content": "Review"
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Highlight label",
+      "info": "Optional short tag shown above the review, e.g. \"All-day energy\".",
+      "default": "All-day energy"
+    },
+    {
+      "type": "richtext",
+      "id": "review_text",
+      "label": "Review text",
+      "default": "<p>Add a customer review here.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review card"
+    }
+  ]
+}
+{% endschema %}

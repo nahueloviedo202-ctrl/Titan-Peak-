@@ -1113,7 +1113,7 @@
         "header_gap": 20,
         "header_bottom_gap_mobile": 30,
         "header_bottom_gap_desktop": 40,
-        "container_max_width": 1440,
+        "container_max_width": 1600,
         "container_padding": 20,
         "container_padding_mobile": 15,
         "card_width_desktop": 300,

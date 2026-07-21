@@ -1269,7 +1269,7 @@
         "column_gap_desktop": 40,
         "list_columns": "2",
         "list_gap": 8,
-        "list_font_size_mobile": 1.2,
+        "list_font_size_mobile": 0.9,
         "list_font_size_desktop": 1,
         "container_max_width": 1200,
         "container_padding_mobile": 20,

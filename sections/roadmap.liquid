@@ -1,0 +1,809 @@
+{%- doc -%}
+  Renders a "roadmap" section: a centered header (heading with an optional
+  gradient accent word + subheading) followed by a vertical timeline of
+  milestones, each with a circular icon marker, a period badge, a title and
+  a description. An optional image can run alongside the timeline (beside it
+  on desktop, above it on mobile), and an optional button can be added below
+  the timeline via the native "button" block.
+
+  Every milestone is a nested "_roadmap-step" block, so merchants can add,
+  remove or reorder steps freely. As the section scrolls into view, the
+  accent line fills to track progress and each step fades in; both effects
+  respect the visitor's reduced-motion preference and can be turned off from
+  the schema.
+
+  All text, images, icons, colors, sizes, spacing, radius and the scroll
+  animation are configurable through the section and block schemas.
+{%- enddoc -%}
+
+<script
+  src="{{ 'roadmap.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign section_settings = section.settings
+  assign step_count = section.blocks.size
+
+  assign has_image = false
+  if section_settings.image != blank
+    assign has_image = true
+  endif
+-%}
+
+<div class="section-background"></div>
+
+<div
+  class="roadmap spacing-style"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --rm-max-width: {{ section_settings.container_max_width }}px;
+    --rm-bg-gradient-start: {{ section_settings.background_gradient_start }};
+    --rm-bg-gradient-end: {{ section_settings.background_gradient_end }};
+    --rm-heading-color: {{ section_settings.heading_color }};
+    --rm-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --rm-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --rm-accent-gradient-start: {{ section_settings.accent_gradient_start }};
+    --rm-accent-gradient-mid: {{ section_settings.accent_gradient_mid }};
+    --rm-accent-gradient-end: {{ section_settings.accent_gradient_end }};
+    --rm-subheading-color: {{ section_settings.subheading_color }};
+    --rm-subheading-size: {{ section_settings.subheading_size }}px;
+    --rm-header-gap: {{ section_settings.header_gap }}px;
+    --rm-layout-gap: {{ section_settings.layout_gap }}px;
+    --rm-image-radius: {{ section_settings.image_radius }}px;
+    --rm-image-gap-mobile: {{ section_settings.image_gap_mobile }}px;
+    --rm-line-color: {{ section_settings.line_color }};
+    --rm-line-width: {{ section_settings.line_width }}px;
+    --rm-fill-color: {{ section_settings.fill_color }};
+    --rm-indent: {{ section_settings.item_indent }}px;
+    --rm-item-gap-mobile: {{ section_settings.item_gap_mobile }}px;
+    --rm-item-gap-desktop: {{ section_settings.item_gap_desktop }}px;
+    --rm-circle-bg: {{ section_settings.circle_bg_color }};
+    --rm-circle-size: {{ section_settings.circle_size }}px;
+    --rm-circle-icon-color: {{ section_settings.circle_icon_color }};
+    --rm-circle-icon-size: {{ section_settings.circle_icon_size }}px;
+    --rm-badge-bg: {{ section_settings.badge_bg_color }};
+    --rm-badge-text: {{ section_settings.badge_text_color }};
+    --rm-badge-border: {{ section_settings.badge_border_color }};
+    --rm-badge-radius: {{ section_settings.badge_radius }}px;
+    --rm-badge-size-mobile: {{ section_settings.badge_size_mobile }}px;
+    --rm-badge-size-desktop: {{ section_settings.badge_size_desktop }}px;
+    --rm-title-color: {{ section_settings.title_color }};
+    --rm-title-size-mobile: {{ section_settings.title_size_mobile }}px;
+    --rm-title-size-desktop: {{ section_settings.title_size_desktop }}px;
+    --rm-description-color: {{ section_settings.description_color }};
+    --rm-description-size-mobile: {{ section_settings.description_size_mobile }}px;
+    --rm-description-size-desktop: {{ section_settings.description_size_desktop }}px;
+    --rm-description-opacity: {{ section_settings.description_opacity | divided_by: 100.0 }};
+    --rm-bullet-color: {{ section_settings.bullet_color }};
+    {% if section_settings.background_color != blank %}
+      --rm-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="roadmap"
+>
+  <div class="roadmap__container">
+    {%- if section_settings.heading != blank or section_settings.subheading != blank -%}
+      <header class="roadmap__header">
+        {%- if section_settings.heading != blank -%}
+          <h2 class="roadmap__heading">{{ section_settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section_settings.subheading != blank -%}
+          <div class="roadmap__subheading">{{ section_settings.subheading }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <div class="roadmap__layout{% if section_settings.image_position == 'left' %} roadmap__layout--image-left{% endif %}">
+      {%- if has_image -%}
+        <div class="roadmap__image-mobile">
+          {{
+            section_settings.image
+            | image_url: width: 1200
+            | image_tag: loading: 'lazy', widths: '600, 900, 1200', sizes: '100vw', alt: section_settings.image.alt, class: 'roadmap__image'
+          }}
+        </div>
+      {%- endif -%}
+
+      <div class="roadmap__content">
+        {%- if step_count > 0 -%}
+          <roadmap-component
+            class="roadmap__timeline"
+            data-animate="{{ section_settings.enable_scroll_animation }}"
+          >
+            <div class="roadmap__line"></div>
+            <div
+              class="roadmap__fill"
+              ref="fill"
+            ></div>
+
+            <div class="roadmap__list">
+              {% content_for 'blocks' %}
+            </div>
+          </roadmap-component>
+        {%- endif -%}
+
+        {%- if section_settings.show_button -%}
+          <div class="roadmap__button">
+            {% content_for 'block', type: 'button', id: 'static-roadmap-button' %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if has_image -%}
+        <div class="roadmap__image-column">
+          {{
+            section_settings.image
+            | image_url: width: 1200
+            | image_tag: loading: 'lazy', widths: '400, 700, 1000, 1200', sizes: '(min-width: 750px) 50vw, 100vw', alt: section_settings.image.alt, class: 'roadmap__image'
+          }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .roadmap {
+    position: relative;
+    width: 100%;
+    background: var(--rm-bg, linear-gradient(0deg, var(--rm-bg-gradient-start, #1c3353), var(--rm-bg-gradient-end, #141720) 100%));
+  }
+
+  .roadmap__container {
+    max-width: var(--rm-max-width, 1400px);
+    margin: 0 auto;
+  }
+
+  .roadmap__header {
+    text-align: center;
+    margin-bottom: var(--rm-header-gap, 40px);
+  }
+
+  .roadmap__heading {
+    margin: 0 0 15px;
+    color: var(--rm-heading-color, #ffffff);
+    font-size: var(--rm-heading-size-mobile, 34px);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .roadmap__heading strong {
+    font-weight: 700;
+    background: linear-gradient(
+      180deg,
+      var(--rm-accent-gradient-start, #b8b8b8) 1%,
+      var(--rm-accent-gradient-mid, #ffffff) 55%,
+      var(--rm-accent-gradient-end, #a3a3a3) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .roadmap__subheading {
+    color: var(--rm-subheading-color, #ffffff);
+    opacity: 0.8;
+    font-size: var(--rm-subheading-size, 14px);
+  }
+
+  .roadmap__layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .roadmap__image-mobile {
+    width: 100%;
+    margin-bottom: var(--rm-image-gap-mobile, 30px);
+  }
+
+  .roadmap__image-column {
+    display: none;
+  }
+
+  .roadmap__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--rm-image-radius, 10px);
+  }
+
+  .roadmap__content {
+    min-width: 0;
+  }
+
+  .roadmap__timeline {
+    position: relative;
+    display: block;
+    max-width: 100%;
+  }
+
+  .roadmap__line {
+    position: absolute;
+    inset-inline-start: calc((var(--rm-circle-size, 30px) / 2) - (var(--rm-line-width, 2px) / 2));
+    top: var(--rm-circle-size, 30px);
+    bottom: 0;
+    width: var(--rm-line-width, 2px);
+    background-color: var(--rm-line-color, #c9a84c);
+    border-radius: var(--rm-line-width, 2px);
+  }
+
+  .roadmap__fill {
+    position: absolute;
+    inset-inline-start: calc((var(--rm-circle-size, 30px) / 2) - (var(--rm-line-width, 2px) / 2));
+    top: var(--rm-circle-size, 30px);
+    width: var(--rm-line-width, 2px);
+    height: 0%;
+    background-color: var(--rm-fill-color, #c9a84c);
+    border-radius: var(--rm-line-width, 2px);
+    transition: height 0.3s ease-out;
+    transform-origin: top;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .roadmap__list {
+    position: relative;
+    z-index: 2;
+  }
+
+  .roadmap__button {
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .roadmap__layout {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      gap: var(--rm-layout-gap, 60px);
+    }
+
+    .roadmap__layout--image-left {
+      flex-direction: row;
+    }
+
+    .roadmap__image-mobile {
+      display: none;
+    }
+
+    .roadmap__content {
+      flex: 1;
+    }
+
+    .roadmap__image-column {
+      display: block;
+      flex: 0 0 50%;
+      max-width: 50%;
+      position: sticky;
+      top: 20px;
+    }
+
+    .roadmap__heading {
+      font-size: var(--rm-heading-size-desktop, 52px);
+    }
+
+    .roadmap__subheading {
+      font-size: calc(var(--rm-subheading-size, 14px) * 1.14);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Roadmap",
+  "class": "section-roadmap",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_roadmap-step"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "Wrap a word in bold to color it with the accent gradient below.",
+      "default": "<p>What to expect <strong>in less than 8 weeks</strong></p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 28,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "color",
+      "id": "accent_gradient_start",
+      "label": "Accent gradient (top)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "accent_gradient_mid",
+      "label": "Accent gradient (middle)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_gradient_end",
+      "label": "Accent gradient (bottom)",
+      "default": "#a3a3a3"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:names.subheading"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Space below header",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image",
+      "info": "Shown above the timeline on mobile, and beside it on desktop."
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Desktop image position",
+      "options": [
+        {
+          "value": "right",
+          "label": "t:options.right"
+        },
+        {
+          "value": "left",
+          "label": "t:options.left"
+        }
+      ],
+      "default": "right",
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10,
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "image_gap_mobile",
+      "label": "Space below image (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 30,
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "range",
+      "id": "layout_gap",
+      "label": "Gap between image and timeline (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 60,
+      "visible_if": "{{ section.settings.image != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "Timeline line"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll_animation",
+      "label": "Animate line fill and steps on scroll",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Base line color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "color",
+      "id": "fill_color",
+      "label": "Scroll progress color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "range",
+      "id": "line_width",
+      "label": "t:settings.thickness",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "item_indent",
+      "label": "Content indent from line",
+      "min": 30,
+      "max": 90,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "item_gap_desktop",
+      "label": "Spacing between steps (desktop)",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "label": "Spacing between steps (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Circle marker"
+    },
+    {
+      "type": "color",
+      "id": "circle_bg_color",
+      "label": "t:settings.background_color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "range",
+      "id": "circle_size",
+      "label": "t:settings.size",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "circle_icon_color",
+      "label": "Icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "circle_icon_size",
+      "label": "Icon size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "t:settings.background_color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "t:settings.border_color",
+      "default": "#333030"
+    },
+    {
+      "type": "range",
+      "id": "badge_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Text size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "badge_size_desktop",
+      "label": "Text size (desktop)",
+      "min": 8,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Size (mobile)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Size (desktop)",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 23
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Size (desktop)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_opacity",
+      "label": "t:settings.opacity",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 90
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet / number color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "header",
+      "content": "t:content.buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "info": "Add and configure the button's label, link and style from the block that appears in the section list once enabled.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Solid background color",
+      "info": "Overrides the gradient below when set.",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_start",
+      "label": "Gradient top color",
+      "default": "#1c3353"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_end",
+      "label": "Gradient bottom color",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "Roadmap",
+      "category": "t:categories.product",
+      "blocks": {
+        "step_1": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "fire",
+            "badge": "Day 7",
+            "title": "Ignition",
+            "description": "<p>✓ Begins restoring depleted minerals</p><p>✓ Less fatigue, more drive throughout the day</p>"
+          }
+        },
+        "step_2": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "lightning_bolt",
+            "badge": "Day 21",
+            "title": "Spark",
+            "description": "<p>✓ Supports nutrient absorption and cellular energy</p><p>✓ Stronger drive and confidence</p>"
+          }
+        },
+        "step_3": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "plane",
+            "badge": "Week 8",
+            "title": "Liftoff",
+            "description": "<p>✓ Energy and performance feel consistently elevated</p><p>✓ Leaner look, better recovery</p>"
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3"]
+    }
+  ]
+}
+{% endschema %}

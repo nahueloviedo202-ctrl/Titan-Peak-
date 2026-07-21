@@ -1,0 +1,300 @@
+{%- doc -%}
+  Renders a single roadmap milestone: a circular icon marker on the vertical
+  timeline, a small period badge (e.g. "Day 7"), a title and a description.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-step content.
+
+  Meant to be used exclusively as a child block of `sections/roadmap.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+-%}
+
+<div
+  class="roadmap-step"
+  ref="step[]"
+  {{ block.shopify_attributes }}
+>
+  <div class="roadmap-step__circle">
+    {%- if block_settings.custom_icon != blank -%}
+      {{
+        block_settings.custom_icon
+        | image_url: width: 96
+        | image_tag: width: 32, height: 32, loading: 'lazy', alt: '', class: 'roadmap-step__icon-image'
+      }}
+    {%- elsif block_settings.icon != 'none' -%}
+      <svg
+        class="roadmap-step__icon-svg"
+        aria-hidden="true"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="none"
+      >
+        {%- render 'icon', icon: block_settings.icon -%}
+      </svg>
+    {%- endif -%}
+  </div>
+
+  {%- if block_settings.badge != blank -%}
+    <div class="roadmap-step__badge">{{ block_settings.badge }}</div>
+  {%- endif -%}
+
+  {%- if block_settings.title != blank -%}
+    <h3 class="roadmap-step__title">{{ block_settings.title }}</h3>
+  {%- endif -%}
+
+  {%- if block_settings.description != blank -%}
+    <div class="roadmap-step__description rte">{{ block_settings.description }}</div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .roadmap-step {
+    position: relative;
+    padding-inline-start: var(--rm-indent, 50px);
+    margin-bottom: var(--rm-item-gap-mobile, 15px);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .roadmap-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .roadmap-step[data-animate='out'] {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .roadmap-step {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .roadmap-step__circle {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    width: var(--rm-circle-size, 30px);
+    height: var(--rm-circle-size, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--rm-circle-bg, #c9a84c);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .roadmap-step__icon-svg {
+    width: var(--rm-circle-icon-size, 16px);
+    height: var(--rm-circle-icon-size, 16px);
+    color: var(--rm-circle-icon-color, #ffffff);
+  }
+
+  .roadmap-step__icon-image {
+    width: var(--rm-circle-icon-size, 16px);
+    height: var(--rm-circle-icon-size, 16px);
+    object-fit: contain;
+  }
+
+  .roadmap-step__badge {
+    display: inline-block;
+    background-color: var(--rm-badge-bg, #c9a84c);
+    color: var(--rm-badge-text, #ffffff);
+    border: 1px solid var(--rm-badge-border, transparent);
+    padding: 4px 12px;
+    border-radius: var(--rm-badge-radius, 50px);
+    font-size: var(--rm-badge-size-mobile, 11px);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .roadmap-step__title {
+    font-size: var(--rm-title-size-mobile, 18px);
+    font-weight: 700;
+    color: var(--rm-title-color, #ffffff);
+    line-height: 1.3;
+    margin: 0 0 8px;
+  }
+
+  .roadmap-step__description {
+    font-size: var(--rm-description-size-mobile, 12px);
+    line-height: 1.6;
+    color: var(--rm-description-color, #ffffff);
+    opacity: var(--rm-description-opacity, 0.9);
+  }
+
+  .roadmap-step__description :is(p, ul, ol) {
+    margin: 0 0 4px;
+  }
+
+  .roadmap-step__description :is(p, ul, ol):last-child {
+    margin-bottom: 0;
+  }
+
+  .roadmap-step__description ul,
+  .roadmap-step__description ol {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  .roadmap-step__description ul li,
+  .roadmap-step__description ol li {
+    position: relative;
+    padding-inline-start: 24px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .roadmap-step__description ul li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.4em;
+    width: 6px;
+    height: 6px;
+    background-color: var(--rm-bullet-color, #c9a84c);
+    border-radius: 50%;
+  }
+
+  .roadmap-step__description ol {
+    counter-reset: roadmap-step-counter;
+  }
+
+  .roadmap-step__description ol li::before {
+    counter-increment: roadmap-step-counter;
+    content: counter(roadmap-step-counter) '.';
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    font-weight: 600;
+    color: var(--rm-bullet-color, #c9a84c);
+  }
+
+  @media screen and (min-width: 750px) {
+    .roadmap-step {
+      margin-bottom: var(--rm-item-gap-desktop, 35px);
+    }
+
+    .roadmap-step__badge {
+      font-size: var(--rm-badge-size-desktop, 13px);
+    }
+
+    .roadmap-step__title {
+      font-size: var(--rm-title-size-desktop, 23px);
+    }
+
+    .roadmap-step__description {
+      font-size: var(--rm-description-size-desktop, 14px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Roadmap step",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.none"
+        },
+        {
+          "value": "fire",
+          "label": "Fire"
+        },
+        {
+          "value": "lightning_bolt",
+          "label": "Lightning bolt"
+        },
+        {
+          "value": "star",
+          "label": "t:options.star"
+        },
+        {
+          "value": "stopwatch",
+          "label": "Stopwatch"
+        },
+        {
+          "value": "plane",
+          "label": "Plane"
+        },
+        {
+          "value": "map_pin",
+          "label": "Map pin"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "check_box",
+          "label": "t:options.check_box"
+        },
+        {
+          "value": "recycle",
+          "label": "Recycle"
+        },
+        {
+          "value": "price_tag",
+          "label": "Price tag"
+        },
+        {
+          "value": "truck",
+          "label": "Truck"
+        }
+      ],
+      "default": "fire"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom icon image",
+      "info": "Replaces the icon above when set."
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge label",
+      "default": "Day 1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Milestone title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe what customers can expect at this milestone.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Roadmap step"
+    }
+  ]
+}
+{% endschema %}

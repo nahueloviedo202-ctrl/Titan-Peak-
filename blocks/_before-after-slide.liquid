@@ -1,0 +1,217 @@
+{%- doc -%}
+  Renders a single before/after slide (two side-by-side images, each with its
+  own label pill) inside the "before-after-slider" section's carousel track.
+
+  An optional category powers the parent section's filter buttons: slides
+  whose category matches the active filter stay visible, others are hidden.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-slide content.
+
+  Meant to be used exclusively as a child block of `sections/before-after-slider.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign category_handle = block_settings.category | strip | handleize
+-%}
+
+<div
+  class="before-after-slide"
+  {% if category_handle != blank %}
+    data-category="ba-{{ category_handle }}"
+  {% endif %}
+  ref="slide[]"
+  {{ block.shopify_attributes }}
+>
+  <div class="before-after-slide__pair">
+    <div class="before-after-slide__item before-after-slide__item--before">
+      {%- if block_settings.before_label != blank -%}
+        <span class="before-after-slide__label before-after-slide__label--before">{{ block_settings.before_label }}</span>
+      {%- endif -%}
+
+      <div class="before-after-slide__media">
+        {%- if block_settings.before_image != blank -%}
+          {{
+            block_settings.before_image
+            | image_url: width: 800
+            | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800',
+              sizes: '(min-width: 990px) 400px, 50vw',
+              alt: block_settings.before_image.alt | default: block_settings.before_label,
+              class: 'before-after-slide__image'
+          }}
+        {%- else -%}
+          {{ 'product-apparel-1' | placeholder_svg_tag: 'before-after-slide__placeholder' }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="before-after-slide__item before-after-slide__item--after">
+      {%- if block_settings.after_label != blank -%}
+        <span class="before-after-slide__label before-after-slide__label--after">{{ block_settings.after_label }}</span>
+      {%- endif -%}
+
+      <div class="before-after-slide__media">
+        {%- if block_settings.after_image != blank -%}
+          {{
+            block_settings.after_image
+            | image_url: width: 800
+            | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800',
+              sizes: '(min-width: 990px) 400px, 50vw',
+              alt: block_settings.after_image.alt | default: block_settings.after_label,
+              class: 'before-after-slide__image'
+          }}
+        {%- else -%}
+          {{ 'product-apparel-2' | placeholder_svg_tag: 'before-after-slide__placeholder' }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .before-after-slide {
+    flex: 0 0 var(--ba-mobile-slide-width, 100%);
+    min-width: 0;
+    background-color: var(--ba-card-bg, transparent);
+    border-radius: var(--ba-card-radius, 6px);
+    padding: var(--ba-card-padding, 8px);
+  }
+
+  .before-after-slide[hidden] {
+    display: none;
+  }
+
+  .before-after-slide__pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ba-images-gap, 4px);
+  }
+
+  .before-after-slide__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .before-after-slide__label {
+    width: fit-content;
+    max-width: 100%;
+    padding: 3px 20px;
+    margin: 0 auto;
+    border-radius: var(--ba-label-radius, 6px) var(--ba-label-radius, 6px) 0 0;
+    font-size: var(--ba-label-font-size, 13px);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .before-after-slide__label--before {
+    background-color: var(--ba-before-label-bg, #e8e8e8);
+    color: var(--ba-before-label-text, #000000);
+  }
+
+  .before-after-slide__label--after {
+    background-color: var(--ba-after-label-bg, #19bdff);
+    color: var(--ba-after-label-text, #ffffff);
+  }
+
+  .before-after-slide__media {
+    width: 100%;
+    aspect-ratio: var(--ba-image-ratio, 4 / 5);
+    overflow: hidden;
+    border-radius: var(--ba-image-radius, 6px);
+    border: var(--ba-image-border-width, 0px) solid var(--ba-image-border-color, transparent);
+  }
+
+  .before-after-slide__image,
+  .before-after-slide__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .before-after-slide__placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .before-after-slide {
+      flex-basis: calc(
+        (100% - (var(--ba-items-gap, 24px) * (var(--ba-columns-tablet, 2) - 1))) / var(--ba-columns-tablet, 2)
+      );
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .before-after-slide {
+      flex-basis: calc(
+        (100% - (var(--ba-items-gap, 24px) * (var(--ba-columns, 3) - 1))) / var(--ba-columns, 3)
+      );
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Before/after slide",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "category",
+      "label": "Filter category",
+      "info": "Optional. Slides sharing the same category are grouped under one filter button. Leave blank to always show this slide."
+    },
+    {
+      "type": "header",
+      "content": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "t:settings.label",
+      "default": "Before"
+    },
+    {
+      "type": "header",
+      "content": "After image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "t:settings.label",
+      "default": "After"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before/after slide"
+    }
+  ]
+}
+{% endschema %}

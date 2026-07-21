@@ -1073,7 +1073,6 @@
       "blocks": {
         "product_features_tab_XKhHAF": {
           "type": "_product-features-tab",
-          "disabled": true,
           "settings": {
             "tab_label": "Gummies de rendimiento",
             "image": "shopify://shop_images/Gemini_Generated_Image_6j8h2w6j8h2w6j8h-clean.webp",
@@ -1137,8 +1136,8 @@
             "tab_label": "PURE SHILAJIT GUMMIES",
             "image": "shopify://shop_images/Gemini_Generated_Image_by5q4vby5q4vby5q-clean.webp",
             "image_alt": "",
-            "cta_text": "Shop now",
-            "cta_url": ""
+            "cta_text": "Comprar ahora",
+            "cta_url": "shopify://products/titan-peak-shilajit®-potenciador-de-testosterona-10-en-1-definitivo"
           },
           "blocks": {
             "product_features_item_yDPgb4": {

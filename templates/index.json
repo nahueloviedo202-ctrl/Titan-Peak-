@@ -1187,7 +1187,7 @@
         "badge_text_color": "#ffffff",
         "badge_size": 12,
         "badge_radius": 20,
-        "button_label": "AÑADIR AL CARRITO",
+        "button_label": "VER PRODUCTO",
         "button_open_new_tab": false,
         "button_text_color": "#1a1a1a",
         "button_gradient_start": "#e7b944",

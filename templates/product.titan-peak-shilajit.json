@@ -1015,77 +1015,77 @@
         "testimonial_peek_card_fEVKKU": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>",
+            "quote": "<p><strong>\"Esto arregló lo que creía que era solo envejecer.\"</strong></p><p>\"Pensaba que sentirme cansado todo el tiempo era normal. Después de unas semanas volvió la energía, mejoraron mis entrenamientos y volví a sentirme yo mismo.\"<br/></p>",
             "star_count": 5,
-            "reviewer_name": "Mark M., 52 y.o.",
+            "reviewer_name": "Omar H. 49 Años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_YDkHEr": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"I honestly didn't expect much, but the circulation boost is real. I'm warmer, more energized, and the difference in the bedroom has been surprising, stronger performance, better stamina, and a lot more confidence.\"</p>",
+            "quote": "<p><strong>\"Mi chica no para de preguntar qué cambió.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya está todo dicho.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Mark M., 52 y.o.",
+            "reviewer_name": "Bruno C 37 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_jTWxeG": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"Within 10 days my energy was noticeably higher. No more mid-day crashes, and I feel way more driven overall. Even my workouts feel stronger. This stuff is legit.\"</p>",
+            "quote": "<p>\"Sinceramente no esperaba mucho, pero la mejora en circulación es real. Estoy más despierto, con más energía, y la diferencia se nota — mejor rendimiento, más resistencia y bastante más confianza.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Jason T., 42 y.o.",
+            "reviewer_name": "Marcos M. 52 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_hBtJPV": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"My stamina is on another level.</strong><br>Biggest difference for me is endurance. Whether it's the gym or bedroom, I last longer and feel more in control. Haven't felt like this in years.\"</p>",
+            "quote": "<p>\"En 10 días mi energía ya era notablemente más alta. Sin bajones a media tarde, y me siento mucho más motivado en general. Hasta mis entrenamientos se sienten más fuertes. Esto funciona de verdad.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Marcus M., 36 y.o.",
+            "reviewer_name": "Jaime T. 42 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_FWMByT": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Leaner face, more confidence.</strong><br>I started for energy but noticed my face looked less puffy and more defined. That alone boosted my confidence like crazy.\"</p>",
+            "quote": "<p>\"Rostro más definido, más confianza.\"</p><p>\"Empecé por la energía, pero noté que mi cara se veía menos hinchada y más marcada. Solo eso ya me subió la confianza una barbaridad.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Kevin R., 54 y.o.",
+            "reviewer_name": "Kevin R. 54 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_mf6N8b": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"This fixed what I thought was just aging.</strong><br>I figured feeling tired all the time was normal. After a few weeks on this, my energy came back, my workouts improved, and I just feel like myself again.\"</p>",
+            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome por las tardes. Con esto recuperé las ganas de hacer cosas después del trabajo, no solo tirarme en el sofá.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Omar H., 49 y.o.",
+            "reviewer_name": "Rubén A. 45 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         },
         "testimonial_peek_card_fMeJwF": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"My girl keeps asking what changed.</strong> Didn't tell her I started this, but she noticed. More energy, better performance, and just more presence overall. That says enough.\"</p>",
+            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba más. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Brandon C., 37 y.o.",
+            "reviewer_name": "Iván G. 44 años",
             "show_verified": true,
-            "verified_text": "Verified Buyer"
+            "verified_text": "Comprador Verificado"
           },
           "blocks": {}
         }
@@ -1101,13 +1101,13 @@
       ],
       "name": "Testimonial peek carousel",
       "settings": {
-        "heading": "<p>The upgrade men over 40 <strong>actually notice</strong></p>",
+        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40<strong> REALMENTE NOTAN</strong></p>",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 34,
-        "heading_size_desktop": 52,
-        "subheading": "Trusted by men who wanted a real solution, not another letdown.",
+        "heading_size_desktop": 42,
+        "subheading": "Confiado por hombres que buscaban una solución real, no otra decepción",
         "subheading_color": "#ffffff",
         "subheading_size": 14,
         "header_gap": 20,

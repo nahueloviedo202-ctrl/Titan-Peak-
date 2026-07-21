@@ -312,11 +312,12 @@
       "name": "Hero banner",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/66034c352179b227589b5ffa9ce2f4024a8817ed.webp",
+        "image_1": "shopify://shop_images/desktop-clean.webp",
         "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
+        "stack_media_on_mobile": true,
+        "custom_mobile_media": true,
         "media_type_1_mobile": "image",
+        "image_1_mobile": "shopify://shop_images/mobile-clean.webp",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -329,7 +330,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 24,
         "section_width": "page-width",
-        "section_height": "medium",
+        "section_height": "full-screen",
         "section_height_custom": 50,
         "background_color": "",
         "toggle_overlay": true,
@@ -338,8 +339,8 @@
         "gradient_direction": "to left",
         "blurred_reflection": false,
         "reflection_opacity": 75,
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 50,
+        "padding-block-end": 50
       }
     },
     "customer_reviews_tabs_CqTfmC": {

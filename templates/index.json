@@ -1125,7 +1125,7 @@
         "padding_inline_mobile": 12,
         "padding_block_desktop": 60,
         "padding_inline_desktop": 60,
-        "background_color": "#f7f7f7",
+        "background_color": "rgba(0,0,0,0)",
         "background_image": "shopify://shop_images/Results_Section_User_Testimonials.webp",
         "padding-block-start": 0,
         "padding-block-end": 0

@@ -1290,9 +1290,9 @@
         "benefit_item_ztFTYB": {
           "type": "_benefit-item",
           "settings": {
-            "icon": "lock",
-            "title": "Energy",
-            "description": "<p>Supports sustained daily energy, stamina, and physical output</p>"
+            "icon": "stopwatch",
+            "title": "Energía",
+            "description": "<p>Apoya una energía sostenida durante el día, resistencia y rendimiento físico.</p>"
           },
           "blocks": {}
         },
@@ -1300,8 +1300,8 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "lock",
-            "title": "Focus",
-            "description": "<p>Helps improve mental clarity, drive, and sharpness</p>"
+            "title": "Concentración",
+            "description": "<p>Ayuda a mejorar la claridad mental, el impulso y la agudeza.</p>"
           },
           "blocks": {}
         },
@@ -1309,8 +1309,8 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "recycle",
-            "title": "Recovery",
-            "description": "<p>Supports faster recovery, endurance, and resilience</p>"
+            "title": "Recuperación",
+            "description": "<p>Apoya una recuperación más rápida, resistencia y capacidad de aguante.</p>"
           },
           "blocks": {}
         },
@@ -1318,8 +1318,8 @@
           "type": "_benefit-item",
           "settings": {
             "icon": "check_box",
-            "title": "Vitality",
-            "description": "<p>Promotes testosterone support, strength, and male performance</p>"
+            "title": "Vitalidad",
+            "description": "<p>Promueve el apoyo a la testosterona, la fuerza y el rendimiento masculino.</p>"
           },
           "blocks": {}
         }
@@ -1338,7 +1338,7 @@
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 42,
-        "subheading": "Your energy, drive, and performance don't just fade — they decline as your body loses essential minerals",
+        "subheading": "Tu energía, tu deseo y tu rendimiento no solo se desvanecen — declinan a medida que tu cuerpo pierde minerales esenciales.",
         "subheading_color": "#d1d1d1",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 16,
@@ -1384,18 +1384,20 @@
         "cards_grid_item_WBBMiB": {
           "type": "_cards-grid-item",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
             "image_alt": "",
-            "title": "ENERGY & STAMINA",
-            "description": "<p>Supports steady energy, endurance, and all-day performance</p>"
+            "title": "ENERGÍA Y RESISTENCIA",
+            "description": "<p>Apoya una energía estable, resistencia y rendimiento durante todo el día.</p>"
           },
           "blocks": {}
         },
         "cards_grid_item_AG6dAF": {
           "type": "_cards-grid-item",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
             "image_alt": "",
-            "title": "TESTOSTERONE & DRIVE",
-            "description": "<p>Helps support healthy testosterone levels and male vitality</p>"
+            "title": "CORTISOL Y ESTRÉS",
+            "description": "<p>Menos hinchazón, menos fatiga, mejor recuperación.</p>"
           },
           "blocks": {}
         },
@@ -1403,8 +1405,8 @@
           "type": "_cards-grid-item",
           "settings": {
             "image_alt": "",
-            "title": "CORTISOL & STRESS",
-            "description": "<p>Less bloat, less fatigue, better recovery</p>"
+            "title": "TESTOSTERONA Y DESEO",
+            "description": "<p>Ayuda a mantener niveles saludables de testosterona y vitalidad masculina.</p>"
           },
           "blocks": {}
         },
@@ -1412,8 +1414,8 @@
           "type": "_cards-grid-item",
           "settings": {
             "image_alt": "",
-            "title": "CIRCULATION & PERFORMANCE",
-            "description": "<p>Supports blood flow, stamina, and overall physical performance</p>"
+            "title": "CIRCULACIÓN Y RENDIMIENTO",
+            "description": "<p>Apoya el flujo sanguíneo, la resistencia y el rendimiento físico general.</p>"
           },
           "blocks": {}
         }
@@ -1426,13 +1428,13 @@
       ],
       "name": "Cards grid",
       "settings": {
-        "heading": "<p>THE BENEFITS MEN ACTUALLY <strong>FEEL</strong></p>",
+        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
         "heading_color": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
         "heading_accent_gradient_start": "#b8b8b8",
         "heading_accent_gradient_end": "#ffffff",
-        "subtitle": "<p>Real support for energy, hormones, and performance as you age</p>",
+        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento a medida que envejeces.</p>",
         "subtitle_color": "#ffffff",
         "subtitle_size_mobile": 16,
         "subtitle_size_desktop": 18,

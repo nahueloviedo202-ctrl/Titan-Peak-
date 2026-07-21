@@ -216,6 +216,7 @@
             "icon_count": 5,
             "icon_color": "#e7b944",
             "icon_size": 21,
+            "icon_size_mobile": 14,
             "icon_gap": 4,
             "content_gap": 16,
             "width": "fit-content",
@@ -224,6 +225,7 @@
             "type_preset": "custom",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
+            "font_size_mobile": "0.75rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -1577,7 +1579,7 @@
         "answer_size_mobile": 14,
         "answer_size_desktop": 17,
         "answer_line_height": 1.4,
-        "background_color": "#F9F7F5",
+        "background_color": "#f9f7f5",
         "padding-block-start": 40,
         "padding-block-end": 40
       }

@@ -221,7 +221,11 @@
     overflow: hidden;
     position: relative;
     margin-inline: calc(-1 * var(--tc-edge-padding, 16px));
-    padding-inline: var(--tc-edge-padding, 16px);
+    /* Start-only: the first card still lines up with the container's own
+       side padding, but the end has no padding reserved, so a peeking card
+       bleeds and clips flush against the true edge of the screen instead of
+       stopping short with an empty gap before it. */
+    padding-inline-start: var(--tc-edge-padding, 16px);
   }
 
   .testimonial-carousel__track {

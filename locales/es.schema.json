@@ -309,6 +309,7 @@
     "collection_templates": "Plantillas de colección",
     "content": "Contenido",
     "corner_radius": "Radio de las esquinas",
+    "corner_radius_mobile": "Radio de las esquinas en móviles",
     "country_region": "País/región",
     "currency_code": "Código de moneda",
     "custom_height": "Altura personalizada",

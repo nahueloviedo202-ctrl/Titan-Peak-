@@ -815,6 +815,7 @@
     "content_position": "Content position",
     "content_width": "Content width",
     "corner_radius": "Corner radius",
+    "corner_radius_mobile": "Mobile corner radius",
     "country_region": "Country/Region",
     "cover_image": "Cover image",
     "cover_image_size": "Cover image size",

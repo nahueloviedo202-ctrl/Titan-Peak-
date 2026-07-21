@@ -18,9 +18,13 @@
       --hero-cta-gradient-end: {{ cta_settings.gradient_end }};
       --hero-cta-text-color: {{ cta_settings.text_color }};
       --hero-cta-radius: {{ cta_settings.corner_radius }}px;
+      --hero-cta-radius-mobile: {{ cta_settings.corner_radius_mobile }}px;
       --hero-cta-font-size: {{ cta_settings.font_size }}px;
+      --hero-cta-font-size-mobile: {{ cta_settings.font_size_mobile }}px;
       --hero-cta-padding-block: {{ cta_settings.padding_block }}px;
+      --hero-cta-padding-block-mobile: {{ cta_settings.padding_block_mobile }}px;
       --hero-cta-padding-inline: {{ cta_settings.padding_inline }}px;
+      --hero-cta-padding-inline-mobile: {{ cta_settings.padding_inline_mobile }}px;
     "
     {% if cta_settings.open_in_new_tab %}
       target="_blank"
@@ -86,6 +90,10 @@
   @media screen and (max-width: 749px) {
     .hero-cta-button {
       width: 100%;
+      border-radius: var(--hero-cta-radius-mobile, var(--hero-cta-radius, 12px));
+      font-size: var(--hero-cta-font-size-mobile, var(--hero-cta-font-size, 18px));
+      padding: var(--hero-cta-padding-block-mobile, var(--hero-cta-padding-block, 16px))
+        var(--hero-cta-padding-inline-mobile, var(--hero-cta-padding-inline, 64px));
     }
   }
 {% endstylesheet %}
@@ -152,6 +160,16 @@
     },
     {
       "type": "range",
+      "id": "corner_radius_mobile",
+      "label": "t:settings.corner_radius_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
       "id": "font_size",
       "label": "t:settings.size",
       "min": 12,
@@ -162,8 +180,28 @@
     },
     {
       "type": "range",
+      "id": "font_size_mobile",
+      "label": "t:settings.size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
       "id": "padding_block",
       "label": "Vertical padding",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_block_mobile",
+      "label": "Vertical padding (mobile)",
       "min": 8,
       "max": 32,
       "step": 1,
@@ -179,6 +217,16 @@
       "step": 1,
       "unit": "px",
       "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_mobile",
+      "label": "Horizontal padding (mobile)",
+      "min": 16,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
     }
   ],
   "presets": [

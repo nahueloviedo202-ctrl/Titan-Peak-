@@ -1073,6 +1073,7 @@
       "blocks": {
         "product_features_tab_XKhHAF": {
           "type": "_product-features-tab",
+          "disabled": true,
           "settings": {
             "tab_label": "Gummies de rendimiento",
             "image": "shopify://shop_images/Gemini_Generated_Image_6j8h2w6j8h2w6j8h-clean.webp",
@@ -1143,8 +1144,9 @@
             "product_features_item_yDPgb4": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Natural nitric oxide support",
-                "text": "<p>Beetroot is rich in nitrates, boosting circulation and blood flow.</p>",
+                "icon": "shopify://shop_images/Frame_173.png",
+                "title": "Fórmula limpia y natural",
+                "text": "<p>Ingredientes de origen vegetal, sin rellenos ni aditivos innecesarios.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1152,8 +1154,9 @@
             "product_features_item_qB7Y8P": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Exercise endurance",
-                "text": "<p>Better oxygen delivery enhances performance and recovery naturally.</p>",
+                "icon": "shopify://shop_images/Frame_84.avif",
+                "title": "Nutrición diaria rica en antioxidantes",
+                "text": "<p>Contiene antioxidantes que apoyan la salud general y reducen el estrés oxidativo.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1161,8 +1164,9 @@
             "product_features_item_JaXWcB": {
               "type": "_product-features-item",
               "settings": {
-                "title": "100% organic, clean formula",
-                "text": "<p>Only organic beetroot in vegan, gluten-free gummies - no fillers or additives.</p>",
+                "icon": "shopify://shop_images/Frame_174.png",
+                "title": "Apoyo natural al óxido nítrico",
+                "text": "<p>El Shilajit favorece la circulación y el flujo sanguíneo de forma natural.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1170,8 +1174,9 @@
             "product_features_item_ig6VDT": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Antioxidant-rich daily nutrition",
-                "text": "<p>Contains antioxidants for heart health and reduced oxidative stress.</p>",
+                "icon": "shopify://shop_images/Frame_84_1.avif",
+                "title": "Resistencia en el entrenamiento",
+                "text": "<p>Una mejor oxigenación potencia el rendimiento y la recuperación de forma natural.</p>",
                 "column": "right"
               },
               "blocks": {}

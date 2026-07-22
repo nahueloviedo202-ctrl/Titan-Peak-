@@ -45,7 +45,7 @@
             "thumbnail_size": 110,
             "thumbnail_gap": 10,
             "thumbnail_radius": 10,
-            "active_thumbnail_color": "#C9A84C",
+            "active_thumbnail_color": "#c9a84c",
             "thumbnail_inactive_opacity": 50,
             "show_nav_arrows": true,
             "nav_button_size": 44,
@@ -1480,6 +1480,137 @@
         "padding_left": 20
       }
     },
+    "image_with_text_accordion_UUVGUG": {
+      "type": "image-with-text-accordion",
+      "blocks": {
+        "image_text_accordion_paragraph_gYmm3Y": {
+          "type": "_image-text-accordion-paragraph",
+          "settings": {
+            "text": "<p>La mayoría de los suplementos se esconden detrás de etiquetas vagas. Vita Suplementos Shilajit está testado de forma independiente y es totalmente transparente — para que sepas exactamente qué estás poniendo en tu cuerpo.</p>",
+            "text_color": "#e8d5a3",
+            "font_size_mobile": 0.8,
+            "font_size_desktop": 0.9,
+            "margin_top": 10,
+            "margin_bottom": 10
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_6nKKR3": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Testado por Laboratorios Externos para Pureza y Seguridad",
+            "answer": "<p>Cada lote es analizado por laboratorios independientes en busca de metales pesados, contaminantes y autenticidad.</p>",
+            "open_by_default": true
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_Nik8ej": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "82.8% de Ácido Fúlvico de Potencia Verificada",
+            "answer": "<p>Una de las concentraciones de ácido fúlvico más altas del mercado — el indicador clave de un Shilajit del Himalaya real y potente.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_4AtheR": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Transparencia Total — Informes de Laboratorio Disponibles",
+            "answer": "<p>Mostramos con orgullo nuestros resultados de análisis online, para que nunca tengas que adivinar sobre la calidad o la potencia.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "divider_ENnn3p": {
+          "type": "_divider",
+          "settings": {
+            "thickness": 2,
+            "corner_radius": "square",
+            "divider_color": "#000000",
+            "width_percent": 50,
+            "padding-block-start": 20,
+            "padding-block-end": 20
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_button_JhX6Yi": {
+          "type": "_image-text-accordion-button",
+          "settings": {
+            "label": "Shop now",
+            "link": "",
+            "open_in_new_tab": false,
+            "full_width": true,
+            "background_color": "#ef4a65",
+            "text_color": "#ffffff",
+            "corner_radius": 0,
+            "font_size_mobile": 16,
+            "font_size_desktop": 16,
+            "padding_block": 12,
+            "padding_inline": 24,
+            "margin_top": 0,
+            "margin_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_text_accordion_paragraph_gYmm3Y",
+        "image_text_accordion_item_6nKKR3",
+        "image_text_accordion_item_Nik8ej",
+        "image_text_accordion_item_4AtheR",
+        "divider_ENnn3p",
+        "image_text_accordion_button_JhX6Yi"
+      ],
+      "name": "Image with accordion",
+      "settings": {
+        "image": "shopify://shop_images/productfix7-clean.webp",
+        "image_alt": "",
+        "image_link": "",
+        "image_max_width": 800,
+        "image_radius": 8,
+        "image_position": "left",
+        "text_alignment": "center",
+        "heading_above_image_mobile": true,
+        "column_gap_mobile": 16,
+        "column_gap_desktop": 40,
+        "heading": "PUREZA VERIFICADA. POTENCIA COMPROBADA.",
+        "heading_accent": "CERO INCERTIDUMBRE.",
+        "heading_color": "#ffffff",
+        "heading_accent_color": "#e8d5a3",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 38,
+        "heading_margin_bottom": 25,
+        "accordion_single_open": true,
+        "accordion_header_bg": "#000000",
+        "accordion_header_text_color": "#e8d5a3",
+        "accordion_content_bg": "#e8d5a3",
+        "accordion_content_text_color": "#ffffff",
+        "accordion_border_color": "#c9a84c",
+        "accordion_border_width": 1,
+        "accordion_radius": 8,
+        "accordion_item_spacing": 8,
+        "accordion_header_font_size_mobile": 16,
+        "accordion_header_font_size_desktop": 18,
+        "accordion_content_font_size_mobile": 14,
+        "accordion_content_font_size_desktop": 16,
+        "accordion_header_padding_mobile": 16,
+        "accordion_header_padding_desktop": 20,
+        "accordion_content_padding_mobile": 16,
+        "accordion_content_padding_desktop": 20,
+        "accordion_toggle_size_mobile": 20,
+        "accordion_toggle_size_desktop": 24,
+        "container_max_width": 1200,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 20,
+        "background_color": "#1c3353",
+        "corner_radius": 0,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 36
+      }
+    },
     "faq_accordion_nVx7Xp": {
       "type": "faq-accordion",
       "blocks": {
@@ -1597,6 +1728,7 @@
     "image_with_text_x998Hz",
     "benefits_grid_fzhgP8",
     "cards_grid_g9pUdw",
+    "image_with_text_accordion_UUVGUG",
     "faq_accordion_nVx7Xp"
   ]
 }

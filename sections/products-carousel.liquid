@@ -358,6 +358,17 @@
       width: 100%;
       margin-top: 24px;
     }
+
+    .products-carousel__track {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .products-carousel__track::-webkit-scrollbar {
+      display: none;
+    }
   }
 {% endstylesheet %}
 

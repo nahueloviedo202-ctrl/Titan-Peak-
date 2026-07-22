@@ -1,0 +1,178 @@
+
+
+{%- doc -%}
+  Renders a single collapsible accordion row (question + answer) for the
+  "Image with accordion" section, reusing the theme's native `accordion-custom`
+  component for the animated expand/collapse and the native
+  `<details name="...">` grouping for exclusive open/close behavior — no
+  extra JavaScript required.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-question content.
+
+  Meant to be used exclusively as a child block of `sections/image-with-text-accordion.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+  assign group_name = 'itwa-accordion-' | append: section.id
+-%}
+
+{% capture accordion_children %}
+  <details
+    class="itwa-accordion-item__details"
+    {% if section.settings.accordion_single_open %}
+      name="{{ group_name }}"
+    {% endif %}
+    {% if item_settings.open_by_default %}
+      open
+    {% endif %}
+  >
+    <summary class="itwa-accordion-item__trigger">
+      <span class="itwa-accordion-item__question">{{ item_settings.question }}</span>
+      <span
+        class="itwa-accordion-item__toggle"
+        aria-hidden="true"
+      >+</span>
+    </summary>
+    <div class="details-content">
+      {%- if item_settings.answer != blank -%}
+        <div class="itwa-accordion-item__answer rte">{{ item_settings.answer }}</div>
+      {%- endif -%}
+    </div>
+  </details>
+{% endcapture %}
+
+<div
+  class="itwa-accordion-item"
+  {{ block.shopify_attributes }}
+>
+  {% render 'accordion-custom-component',
+    children: accordion_children,
+    open_by_default_on_desktop: item_settings.open_by_default,
+    open_by_default_on_mobile: item_settings.open_by_default
+  %}
+</div>
+
+{% stylesheet %}
+  .itwa-accordion-item {
+    display: block;
+    background-color: var(--itwa-accordion-header-bg, #000000);
+    border: var(--itwa-accordion-border-width, 1px) solid var(--itwa-accordion-border-color, transparent);
+    border-radius: var(--itwa-accordion-radius, 8px);
+    margin-bottom: var(--itwa-accordion-item-gap, 8px);
+    overflow: hidden;
+  }
+
+  .itwa-accordion-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .itwa-accordion-item__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: var(--itwa-accordion-header-padding-mobile, 16px);
+    background: none;
+    color: var(--itwa-accordion-header-text, #e8d5a3);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .itwa-accordion-item__question {
+    font-size: var(--itwa-accordion-header-size-mobile, 16px);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .itwa-accordion-item__toggle {
+    flex-shrink: 0;
+    font-size: var(--itwa-accordion-toggle-size-mobile, 20px);
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .itwa-accordion-item__details[open] .itwa-accordion-item__toggle {
+    transform: rotate(45deg);
+  }
+
+  .itwa-accordion-item__answer {
+    padding: 0 var(--itwa-accordion-content-padding-mobile, 16px) var(--itwa-accordion-content-padding-mobile, 16px);
+    background-color: var(--itwa-accordion-content-bg, #e8d5a3);
+    color: var(--itwa-accordion-content-text, #ffffff);
+    font-size: var(--itwa-accordion-content-size-mobile, 14px);
+    line-height: 1.6;
+  }
+
+  .itwa-accordion-item__details[open] .itwa-accordion-item__answer {
+    padding-top: var(--itwa-accordion-content-padding-mobile, 16px);
+  }
+
+  .itwa-accordion-item__answer :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 0.5em;
+  }
+
+  .itwa-accordion-item__answer :is(p, ul, ol):last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .itwa-accordion-item__trigger {
+      padding: var(--itwa-accordion-header-padding-desktop, 20px);
+    }
+
+    .itwa-accordion-item__question {
+      font-size: var(--itwa-accordion-header-size-desktop, 18px);
+    }
+
+    .itwa-accordion-item__toggle {
+      font-size: var(--itwa-accordion-toggle-size-desktop, 24px);
+    }
+
+    .itwa-accordion-item__answer {
+      padding: 0 var(--itwa-accordion-content-padding-desktop, 20px) var(--itwa-accordion-content-padding-desktop, 20px);
+      font-size: var(--itwa-accordion-content-size-desktop, 16px);
+    }
+
+    .itwa-accordion-item__details[open] .itwa-accordion-item__answer {
+      padding-top: var(--itwa-accordion-content-padding-desktop, 20px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Accordion item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question",
+      "default": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "answer",
+      "label": "Answer",
+      "default": "<p>Add the answer to this question.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_by_default",
+      "label": "t:settings.open_by_default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion item"
+    }
+  ]
+}
+{% endschema %}

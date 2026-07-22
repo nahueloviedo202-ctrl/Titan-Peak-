@@ -1,0 +1,787 @@
+{%- doc -%}
+  Renders an "Image with accordion" section: an image on one side and a
+  heading, rich text paragraphs and a collapsible FAQ-style accordion on the
+  other, followed by an optional divider and call-to-action button.
+
+  Every paragraph is a nested "_image-text-accordion-paragraph" block, every
+  question/answer row is a nested "_image-text-accordion-item" block, the
+  divider is the shared "_divider" theme block and the call-to-action is a
+  nested "_image-text-accordion-button" block — merchants can add, remove or
+  reorder them freely. All text, images, colors, sizes, spacing, radius and
+  accordion behavior are configurable through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+
+  assign content_justify = 'flex-start'
+  assign text_align = 'left'
+  if section_settings.text_alignment == 'center'
+    assign content_justify = 'center'
+    assign text_align = 'center'
+  endif
+
+  assign has_heading = false
+  if section_settings.heading != blank or section_settings.heading_accent != blank
+    assign has_heading = true
+  endif
+-%}
+
+{%- capture heading_markup -%}
+  {%- if has_heading -%}
+    <h2 class="itwa-heading">
+      {{- section_settings.heading -}}
+      {%- if section_settings.heading_accent != blank -%}
+        <span class="itwa-heading-accent">{{ section_settings.heading_accent }}</span>
+      {%- endif -%}
+    </h2>
+  {%- endif -%}
+{%- endcapture -%}
+
+<div class="section-background"></div>
+
+<div
+  class="image-with-text-accordion"
+  style="
+    --itwa-bg: {{ section_settings.background_color }};
+    --itwa-radius: {{ section_settings.corner_radius }}px;
+    --itwa-max-width: {{ section_settings.container_max_width }}px;
+    --itwa-pad-inline-mobile: {{ section_settings.container_padding_mobile }}px;
+    --itwa-pad-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+    --itwa-pad-block-start-mobile: {{ section_settings.padding_top_mobile }}px;
+    --itwa-pad-block-end-mobile: {{ section_settings.padding_bottom_mobile }}px;
+    --itwa-pad-block-start-desktop: {{ section_settings.padding_top_desktop }}px;
+    --itwa-pad-block-end-desktop: {{ section_settings.padding_bottom_desktop }}px;
+    --itwa-gap-mobile: {{ section_settings.column_gap_mobile }}px;
+    --itwa-gap-desktop: {{ section_settings.column_gap_desktop }}px;
+    --itwa-media-radius: {{ section_settings.image_radius }}px;
+    --itwa-media-max-width: {{ section_settings.image_max_width }}px;
+    --itwa-content-justify: {{ content_justify }};
+    --itwa-text-align: {{ text_align }};
+    --itwa-heading-color: {{ section_settings.heading_color }};
+    --itwa-heading-accent-color: {{ section_settings.heading_accent_color }};
+    --itwa-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --itwa-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --itwa-heading-margin-bottom: {{ section_settings.heading_margin_bottom }}px;
+    --itwa-accordion-header-bg: {{ section_settings.accordion_header_bg }};
+    --itwa-accordion-header-text: {{ section_settings.accordion_header_text_color }};
+    --itwa-accordion-content-bg: {{ section_settings.accordion_content_bg }};
+    --itwa-accordion-content-text: {{ section_settings.accordion_content_text_color }};
+    --itwa-accordion-border-color: {{ section_settings.accordion_border_color }};
+    --itwa-accordion-border-width: {{ section_settings.accordion_border_width }}px;
+    --itwa-accordion-radius: {{ section_settings.accordion_radius }}px;
+    --itwa-accordion-item-gap: {{ section_settings.accordion_item_spacing }}px;
+    --itwa-accordion-header-size-mobile: {{ section_settings.accordion_header_font_size_mobile }}px;
+    --itwa-accordion-header-size-desktop: {{ section_settings.accordion_header_font_size_desktop }}px;
+    --itwa-accordion-content-size-mobile: {{ section_settings.accordion_content_font_size_mobile }}px;
+    --itwa-accordion-content-size-desktop: {{ section_settings.accordion_content_font_size_desktop }}px;
+    --itwa-accordion-header-padding-mobile: {{ section_settings.accordion_header_padding_mobile }}px;
+    --itwa-accordion-header-padding-desktop: {{ section_settings.accordion_header_padding_desktop }}px;
+    --itwa-accordion-content-padding-mobile: {{ section_settings.accordion_content_padding_mobile }}px;
+    --itwa-accordion-content-padding-desktop: {{ section_settings.accordion_content_padding_desktop }}px;
+    --itwa-accordion-toggle-size-mobile: {{ section_settings.accordion_toggle_size_mobile }}px;
+    --itwa-accordion-toggle-size-desktop: {{ section_settings.accordion_toggle_size_desktop }}px;
+  "
+  data-testid="image-with-text-accordion"
+>
+  <div class="itwa-container">
+    <div class="itwa-layout itwa-layout--{{ section_settings.image_position }}">
+      {%- if section_settings.heading_above_image_mobile and has_heading -%}
+        <div class="itwa-mobile-heading">
+          {{ heading_markup }}
+        </div>
+      {%- endif -%}
+
+      <div class="itwa-media">
+        {%- if section_settings.image_link != blank -%}
+          <a href="{{ section_settings.image_link }}" class="itwa-media-link">
+        {%- endif -%}
+
+        {%- if section_settings.image -%}
+          {{
+            section_settings.image
+            | image_url: width: 1600
+            | image_tag:
+              widths: '400, 800, 1200, 1600',
+              sizes: '(min-width: 750px) 50vw, 100vw',
+              alt: section_settings.image_alt | default: section_settings.image.alt,
+              class: 'itwa-image',
+              loading: 'lazy'
+          }}
+        {%- else -%}
+          <div class="itwa-placeholder">
+            {{ 'hero-apparel-2' | placeholder_svg_tag: 'itwa-placeholder-image' }}
+          </div>
+        {%- endif -%}
+
+        {%- if section_settings.image_link != blank -%}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="itwa-content">
+        {%- if has_heading -%}
+          <div class="itwa-heading-wrapper{% if section_settings.heading_above_image_mobile %} itwa-heading-wrapper--hide-mobile{% endif %}">
+            {{ heading_markup }}
+          </div>
+        {%- endif -%}
+
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .image-with-text-accordion {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--itwa-radius, 0px);
+    background-color: var(--itwa-bg, #1c3353);
+    padding-block: var(--itwa-pad-block-start-mobile, 15px) var(--itwa-pad-block-end-mobile, 40px);
+  }
+
+  .itwa-container {
+    max-width: var(--itwa-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--itwa-pad-inline-mobile, 20px);
+  }
+
+  .itwa-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--itwa-gap-mobile, 15px);
+  }
+
+  .itwa-mobile-heading {
+    order: -1;
+  }
+
+  .itwa-media {
+    width: 100%;
+    border-radius: var(--itwa-media-radius, 8px);
+    overflow: hidden;
+  }
+
+  .itwa-media-link {
+    display: block;
+  }
+
+  .itwa-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: var(--itwa-media-max-width, 800px);
+    margin-inline: auto;
+    border-radius: var(--itwa-media-radius, 8px);
+    object-fit: cover;
+  }
+
+  .itwa-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--itwa-media-radius, 8px);
+    overflow: hidden;
+    background-color: rgb(255 255 255 / 0.08);
+  }
+
+  .itwa-placeholder-image {
+    width: 40%;
+    height: 40%;
+  }
+
+  .itwa-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: var(--itwa-content-justify, center);
+    text-align: var(--itwa-text-align, center);
+    gap: 15px;
+  }
+
+  .itwa-content > * {
+    width: 100%;
+  }
+
+  .itwa-heading-wrapper--hide-mobile {
+    display: none;
+  }
+
+  .itwa-heading,
+  .itwa-mobile-heading .itwa-heading {
+    margin: 0 0 var(--itwa-heading-margin-bottom, 25px);
+    color: var(--itwa-heading-color, #ffffff);
+    font-size: var(--itwa-heading-size-mobile, 32px);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .itwa-heading-accent {
+    color: var(--itwa-heading-accent-color, #e8d5a3);
+  }
+
+  @media screen and (min-width: 750px) {
+    .image-with-text-accordion {
+      padding-block: var(--itwa-pad-block-start-desktop, 35px) var(--itwa-pad-block-end-desktop, 35px);
+    }
+
+    .itwa-container {
+      padding-inline: var(--itwa-pad-inline-desktop, 20px);
+    }
+
+    .itwa-mobile-heading {
+      display: none;
+    }
+
+    .itwa-heading-wrapper--hide-mobile {
+      display: block;
+    }
+
+    .itwa-layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--itwa-gap-desktop, 40px);
+    }
+
+    .itwa-layout--right .itwa-media {
+      order: 2;
+    }
+
+    .itwa-layout--right .itwa-content {
+      order: 1;
+    }
+
+    .itwa-media,
+    .itwa-content {
+      width: 50%;
+      flex: 1 1 50%;
+      min-width: 0;
+    }
+
+    .itwa-media {
+      flex-shrink: 0;
+    }
+
+    .itwa-heading {
+      font-size: var(--itwa-heading-size-desktop, 48px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image with accordion",
+  "class": "section-image-with-text-accordion",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_image-text-accordion-paragraph"
+    },
+    {
+      "type": "_image-text-accordion-item"
+    },
+    {
+      "type": "_divider"
+    },
+    {
+      "type": "_image-text-accordion-button"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "Image max width",
+      "min": 200,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "left",
+      "info": "On mobile the image always appears below the heading."
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:settings.alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "left",
+          "label": "t:options.left"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_above_image_mobile",
+      "label": "Show heading above image on mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Gap between image and content (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Gap between image and content (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Verified Purity. Proven Potency. "
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text",
+      "default": "Zero Guesswork.",
+      "info": "Rendered in a different color, right after the heading."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_color",
+      "label": "Accent color",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Space below heading",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Accordion"
+    },
+    {
+      "type": "checkbox",
+      "id": "accordion_single_open",
+      "label": "Only allow one item open at a time",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "accordion_header_bg",
+      "label": "Header background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "accordion_header_text_color",
+      "label": "Header text color",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "color",
+      "id": "accordion_content_bg",
+      "label": "Content background",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "color",
+      "id": "accordion_content_text_color",
+      "label": "Content text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accordion_border_color",
+      "label": "Border color",
+      "default": "#c9a84c"
+    },
+    {
+      "type": "range",
+      "id": "accordion_border_width",
+      "label": "t:settings.thickness",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "accordion_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "accordion_item_spacing",
+      "label": "Space between items",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "accordion_header_font_size_mobile",
+      "label": "Header font size (mobile)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "accordion_header_font_size_desktop",
+      "label": "Header font size (desktop)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "accordion_content_font_size_mobile",
+      "label": "Content font size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "accordion_content_font_size_desktop",
+      "label": "Content font size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "accordion_header_padding_mobile",
+      "label": "Header padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "accordion_header_padding_desktop",
+      "label": "Header padding (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "accordion_content_padding_mobile",
+      "label": "Content padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "accordion_content_padding_desktop",
+      "label": "Content padding (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "accordion_toggle_size_mobile",
+      "label": "Toggle icon size (mobile)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "accordion_toggle_size_desktop",
+      "label": "Toggle icon size (desktop)",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#1c3353"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 35
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with accordion",
+      "category": "t:categories.product",
+      "blocks": {
+        "paragraph_1": {
+          "type": "_image-text-accordion-paragraph",
+          "settings": {
+            "text": "<p>Most supplements hide behind vague labels. Xara Shilajit is independently tested and fully transparent — so you know exactly what you're putting into your body.</p>",
+            "text_color": "#e8d5a3",
+            "font_size_mobile": 1,
+            "font_size_desktop": 1.1,
+            "margin_top": -16,
+            "margin_bottom": -10
+          }
+        },
+        "item_1": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Third-Party Lab Tested For Purity & Safety",
+            "answer": "<p>Every batch is screened by independent labs for heavy metals, contaminants, and authenticity.</p>",
+            "open_by_default": true
+          }
+        },
+        "item_2": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "82.8% Fulvic Acid Verified Potency",
+            "answer": "<p>One of the highest tested fulvic acid concentrations available — the key marker of real, potent Himalayan shilajit.</p>"
+          }
+        },
+        "item_3": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Full Transparency — Lab Reports Available",
+            "answer": "<p>We proudly show our testing results online so you never have to guess about quality or strength.</p>"
+          }
+        },
+        "divider_1": {
+          "type": "_divider",
+          "settings": {
+            "thickness": 2,
+            "divider_color": "#000000",
+            "width_percent": 50,
+            "padding-block-start": 20,
+            "padding-block-end": 20
+          }
+        },
+        "button_1": {
+          "type": "_image-text-accordion-button",
+          "settings": {
+            "label": "Shop now"
+          }
+        }
+      },
+      "block_order": ["paragraph_1", "item_1", "item_2", "item_3", "divider_1", "button_1"]
+    }
+  ]
+}
+{% endschema %}

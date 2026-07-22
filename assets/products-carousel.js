@@ -2,9 +2,12 @@ import { Component } from '@theme/component';
 
 /**
  * A multi-column product carousel that slides a fixed number of cards at a
- * time. Visible card count is derived from the rendered card width (set via
- * CSS custom properties in the section schema), so it stays correct at any
- * breakpoint without hardcoded widths in JS.
+ * time on desktop (via a JS-driven translateX on the track) and becomes a
+ * native touch-swipeable horizontal scroller on mobile (the track itself
+ * scrolls, with CSS scroll-snap, like customer-reviews-tabs). Visible card
+ * count is derived from the rendered card width (set via CSS custom
+ * properties in the section schema), so it stays correct at any breakpoint
+ * without hardcoded widths in JS.
  *
  * The section renders two identical sets of prev/next buttons (one shown on
  * desktop above the track, one shown on mobile below it); both sets use
@@ -42,6 +45,7 @@ class ProductsCarouselComponent extends Component {
 
     this.#resizeObserver = new ResizeObserver(() => this.#update());
     this.#resizeObserver.observe(this.refs.wrapper);
+    this.refs.track.addEventListener('scroll', this.#handleScroll);
 
     if (this.dataset.autoplay === 'true') {
       this.#intersectionObserver = new IntersectionObserver(([entry]) => {
@@ -67,6 +71,7 @@ class ProductsCarouselComponent extends Component {
     super.disconnectedCallback();
     this.#resizeObserver?.disconnect();
     this.#intersectionObserver?.disconnect();
+    this.refs.track.removeEventListener('scroll', this.#handleScroll);
     this.#stopAutoplay();
   }
 
@@ -75,7 +80,11 @@ class ProductsCarouselComponent extends Component {
    */
   next() {
     this.#stopAutoplay();
-    this.#goTo(this.currentIndex + 1);
+    if (this.#isMobile) {
+      this.#scrollByCard(1);
+    } else {
+      this.#goTo(this.currentIndex + 1);
+    }
   }
 
   /**
@@ -83,7 +92,20 @@ class ProductsCarouselComponent extends Component {
    */
   prev() {
     this.#stopAutoplay();
-    this.#goTo(this.currentIndex - 1);
+    if (this.#isMobile) {
+      this.#scrollByCard(-1);
+    } else {
+      this.#goTo(this.currentIndex - 1);
+    }
+  }
+
+  /**
+   * Below this breakpoint the track becomes a native horizontal scroller
+   * (touch-swipeable, like customer-reviews-tabs) instead of a JS-driven
+   * translateX slider.
+   */
+  get #isMobile() {
+    return window.matchMedia('(max-width: 749px)').matches;
   }
 
   get #slides() {
@@ -94,11 +116,14 @@ class ProductsCarouselComponent extends Component {
     return parseFloat(getComputedStyle(this.refs.track).columnGap || '0');
   }
 
-  get #maxIndex() {
+  get #slideStep() {
     const [firstSlide] = this.#slides;
     if (!firstSlide) return 0;
+    return firstSlide.getBoundingClientRect().width + this.#gap;
+  }
 
-    const slideWidth = firstSlide.getBoundingClientRect().width + this.#gap;
+  get #maxIndex() {
+    const slideWidth = this.#slideStep;
     if (slideWidth <= 0) return 0;
 
     const visibleCount = Math.max(1, Math.round(this.refs.wrapper.clientWidth / slideWidth));
@@ -114,15 +139,38 @@ class ProductsCarouselComponent extends Component {
     this.#update();
   }
 
+  /**
+   * @param {1 | -1} direction
+   */
+  #scrollByCard(direction) {
+    const step = this.#slideStep;
+    if (step <= 0) return;
+    this.refs.track.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
+
   #update() {
     const { track, prevButton, nextButton } = this.refs;
+
+    if (this.#isMobile) {
+      track.style.transform = '';
+      const maxScroll = track.scrollWidth - track.clientWidth;
+
+      (prevButton || []).forEach((button) => {
+        button.disabled = track.scrollLeft <= 4;
+      });
+      (nextButton || []).forEach((button) => {
+        button.disabled = track.scrollLeft >= maxScroll - 4;
+      });
+      return;
+    }
+
     const [firstSlide] = this.#slides;
     const maxIndex = this.#maxIndex;
 
     this.currentIndex = Math.min(this.currentIndex, maxIndex);
 
     if (firstSlide) {
-      const offset = this.currentIndex * (firstSlide.getBoundingClientRect().width + this.#gap);
+      const offset = this.currentIndex * this.#slideStep;
       track.style.transform = `translateX(-${offset}px)`;
     }
 
@@ -134,13 +182,27 @@ class ProductsCarouselComponent extends Component {
     });
   }
 
+  #handleScroll = () => {
+    if (this.#isMobile) this.#update();
+  };
+
   #startAutoplay = () => {
     if (this.#autoplayTimer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const speed = Number(this.dataset.autoplaySpeed) || 5;
 
     this.#autoplayTimer = window.setInterval(() => {
-      this.#goTo(this.currentIndex >= this.#maxIndex ? 0 : this.currentIndex + 1);
+      if (this.#isMobile) {
+        const { track } = this.refs;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 4) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          this.#scrollByCard(1);
+        }
+      } else {
+        this.#goTo(this.currentIndex >= this.#maxIndex ? 0 : this.currentIndex + 1);
+      }
     }, speed * 1000);
   };
 

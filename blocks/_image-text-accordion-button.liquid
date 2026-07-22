@@ -1,0 +1,220 @@
+
+
+{%- doc -%}
+  Renders a call-to-action button for the "Image with accordion" section.
+  Colors, size, radius and spacing are all self-contained on the block so
+  several buttons with different styles could be added if needed.
+
+  Meant to be used exclusively as a child block of `sections/image-with-text-accordion.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign button_settings = block.settings
+-%}
+
+{%- if button_settings.label != blank -%}
+  <div
+    class="itwa-button-wrapper{% if button_settings.full_width %} itwa-button-wrapper--full{% endif %}"
+    style="
+      margin-top: {{ button_settings.margin_top }}px;
+      margin-bottom: {{ button_settings.margin_bottom }}px;
+    "
+    {{ block.shopify_attributes }}
+  >
+    <a
+      href="{{ button_settings.link | default: '#' }}"
+      class="itwa-button{% if button_settings.full_width %} itwa-button--full{% endif %}"
+      style="
+        --itwa-button-bg: {{ button_settings.background_color }};
+        --itwa-button-text: {{ button_settings.text_color }};
+        --itwa-button-radius: {{ button_settings.corner_radius }}px;
+        --itwa-button-padding-block: {{ button_settings.padding_block }}px;
+        --itwa-button-padding-inline: {{ button_settings.padding_inline }}px;
+        --itwa-button-font-size-mobile: {{ button_settings.font_size_mobile }}px;
+        --itwa-button-font-size-desktop: {{ button_settings.font_size_desktop }}px;
+      "
+      {% if button_settings.open_in_new_tab %}
+        target="_blank"
+        rel="noopener noreferrer"
+      {% endif %}
+    >
+      {{ button_settings.label }}
+    </a>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .itwa-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .itwa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: var(--itwa-button-padding-block, 12px) var(--itwa-button-padding-inline, 24px);
+    background-color: var(--itwa-button-bg, #ef4a65);
+    color: var(--itwa-button-text, #ffffff);
+    border-radius: var(--itwa-button-radius, 0px);
+    font-size: var(--itwa-button-font-size-mobile, 16px);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .itwa-button:hover {
+    opacity: 0.9;
+    color: var(--itwa-button-text, #ffffff);
+  }
+
+  .itwa-button-wrapper--full {
+    width: 100%;
+  }
+
+  .itwa-button--full {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .itwa-button {
+      font-size: var(--itwa-button-font-size-desktop, 16px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Button",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "t:settings.label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#ef4a65"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Font size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_block",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_inline",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Space above",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Space below",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Button",
+      "settings": {
+        "label": "Shop now"
+      }
+    }
+  ]
+}
+{% endschema %}

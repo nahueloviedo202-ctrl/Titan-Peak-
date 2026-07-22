@@ -23,8 +23,13 @@
 
 {%- liquid
   assign section_settings = section.settings
-  assign columns = section.blocks | where: 'type', '_comparison-column'
-  assign column_count = columns.size
+
+  assign column_count = 0
+  for block in section.blocks
+    if block.type == '_comparison-column'
+      assign column_count = column_count | plus: 1
+    endif
+  endfor
 -%}
 
 <div
@@ -195,10 +200,7 @@
 
   .product-comparison__table {
     display: grid;
-    grid-template-columns: minmax(0, var(--pcp-feature-col-width-mobile, 150px)) repeat(
-        var(--pcp-columns, 2),
-        minmax(0, 1fr)
-      );
+    grid-template-columns: minmax(0, var(--pcp-feature-col-width-mobile, 150px)) repeat(var(--pcp-columns, 2), minmax(0, 1fr));
     width: 100%;
   }
 
@@ -400,10 +402,7 @@
     }
 
     .product-comparison__table {
-      grid-template-columns: minmax(0, var(--pcp-feature-col-width, 100px)) repeat(
-          var(--pcp-columns, 2),
-          minmax(0, 1fr)
-        );
+      grid-template-columns: minmax(0, var(--pcp-feature-col-width, 100px)) repeat(var(--pcp-columns, 2), minmax(0, 1fr));
     }
 
     .product-comparison__product-title {

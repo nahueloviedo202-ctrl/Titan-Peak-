@@ -18,11 +18,15 @@
 
 {%- liquid
   assign feature_settings = block.settings
-  assign columns = section.blocks | where: 'type', '_comparison-column'
-  assign features = section.blocks | where: 'type', '_comparison-feature'
 
+  assign last_feature_id = ''
+  for section_block in section.blocks
+    if section_block.type == '_comparison-feature'
+      assign last_feature_id = section_block.id
+    endif
+  endfor
   assign is_last_row = false
-  if features.last.id == block.id
+  if last_feature_id == block.id
     assign is_last_row = true
   endif
 -%}
@@ -42,55 +46,58 @@
     </div>
   </div>
 
-  {%- for column in columns -%}
-    {%- liquid
-      assign col_index = forloop.index
-      assign value_key = 'column_' | append: col_index | append: '_value'
-      assign text_key = 'column_' | append: col_index | append: '_text'
-      assign cell_value = feature_settings[value_key]
-      assign cell_text = feature_settings[text_key]
-      assign is_highlighted = column.settings.highlighted
-    -%}
-    <div class="product-comparison__cell product-comparison__cell--value{% if is_highlighted %} is-highlighted{% endif %}">
-      {%- case cell_value -%}
-        {%- when 'yes' -%}
-          <span
-            class="product-comparison__check product-comparison__check--yes"
-            aria-label="Yes"
-          >
-            <svg
-              viewBox="0 0 256 256"
-              aria-hidden="true"
-              focusable="false"
+  {%- assign col_index = 0 -%}
+  {%- for column in section.blocks -%}
+    {%- if column.type == '_comparison-column' -%}
+      {%- liquid
+        assign col_index = col_index | plus: 1
+        assign value_key = 'column_' | append: col_index | append: '_value'
+        assign text_key = 'column_' | append: col_index | append: '_text'
+        assign cell_value = feature_settings[value_key]
+        assign cell_text = feature_settings[text_key]
+        assign is_highlighted = column.settings.highlighted
+      -%}
+      <div class="product-comparison__cell product-comparison__cell--value{% if is_highlighted %} is-highlighted{% endif %}">
+        {%- case cell_value -%}
+          {%- when 'yes' -%}
+            <span
+              class="product-comparison__check product-comparison__check--yes"
+              aria-label="Yes"
             >
-              <path
-                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-        {%- when 'no' -%}
-          <span
-            class="product-comparison__check product-comparison__check--no"
-            aria-label="No"
-          >
-            <svg
-              viewBox="0 0 256 256"
-              aria-hidden="true"
-              focusable="false"
+              <svg
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          {%- when 'no' -%}
+            <span
+              class="product-comparison__check product-comparison__check--no"
+              aria-label="No"
             >
-              <path
-                d="M128,24A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm36.44,132.88a8,8,0,0,1,0,11.31,8.17,8.17,0,0,1-11.31,0L128,143.31l-25.13,24.88a8.17,8.17,0,0,1-11.31,0,8,8,0,0,1,0-11.31L116.69,132,91.56,107.13a8,8,0,0,1,11.31-11.32L128,120.69l25.13-24.88a8,8,0,0,1,11.31,11.32L139.31,132Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-        {%- when 'text' -%}
-          {%- if cell_text != blank -%}
-            <span class="product-comparison__text-value">{{ cell_text }}</span>
-          {%- endif -%}
-      {%- endcase -%}
-    </div>
+              <svg
+                viewBox="0 0 256 256"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm36.44,132.88a8,8,0,0,1,0,11.31,8.17,8.17,0,0,1-11.31,0L128,143.31l-25.13,24.88a8.17,8.17,0,0,1-11.31,0,8,8,0,0,1,0-11.31L116.69,132,91.56,107.13a8,8,0,0,1,11.31-11.32L128,120.69l25.13-24.88a8,8,0,0,1,11.31,11.32L139.31,132Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          {%- when 'text' -%}
+            {%- if cell_text != blank -%}
+              <span class="product-comparison__text-value">{{ cell_text }}</span>
+            {%- endif -%}
+        {%- endcase -%}
+      </div>
+    {%- endif -%}
   {%- endfor -%}
 </div>
 

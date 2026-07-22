@@ -904,8 +904,8 @@
         "card_padding": 8,
         "container_max_width": 1400,
         "background_color": "#13141d",
-        "padding-block-start": 50,
-        "padding-block-end": 50,
+        "padding-block-start": 60,
+        "padding-block-end": 40,
         "padding-inline-start": 40,
         "padding-inline-end": 40
       }
@@ -1007,8 +1007,8 @@
         "background_color": "",
         "background_gradient_start": "#1c3353",
         "background_gradient_end": "#141720",
-        "padding-block-start": 72,
-        "padding-block-end": 72
+        "padding-block-start": 60,
+        "padding-block-end": 40
       }
     },
     "testimonial_peek_carousel_x93CVU": {
@@ -1152,8 +1152,8 @@
         "verified_check_color": "#ffffff",
         "verified_font_size": 12,
         "background_color": "#141720",
-        "padding-block-start": 20,
-        "padding-block-end": 60
+        "padding-block-start": 60,
+        "padding-block-end": 40
       }
     },
     "image_with_text_x998Hz": {
@@ -1279,7 +1279,7 @@
         "background_gradient_angle": 180,
         "corner_radius": 0,
         "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
+        "padding_bottom_mobile": 20,
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60
       }
@@ -1379,7 +1379,7 @@
         "background_color_start": "#1c3353",
         "background_color_end": "#131820",
         "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-end": 60
       }
     },
     "cards_grid_g9pUdw": {
@@ -1474,7 +1474,7 @@
         "container_max_width": 1200,
         "background_color": "#1c3353",
         "corner_radius": 0,
-        "padding_top": 30,
+        "padding_top": 40,
         "padding_right": 20,
         "padding_bottom": 60,
         "padding_left": 20
@@ -1605,10 +1605,10 @@
         "container_padding_desktop": 20,
         "background_color": "#1c3353",
         "corner_radius": 0,
-        "padding_top_mobile": 16,
-        "padding_bottom_mobile": 40,
-        "padding_top_desktop": 36,
-        "padding_bottom_desktop": 36
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 60
       }
     },
     "statistics_grid_nd3JDq": {
@@ -1621,7 +1621,7 @@
             "value": "94%",
             "percentage": 90,
             "title": "",
-            "description": "<p>reported smoother daily energy within the first month.</p>",
+            "description": "<p>reportó una energía diaria más estable durante el primer mes.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1633,7 +1633,7 @@
             "value": "91%",
             "percentage": 90,
             "title": "",
-            "description": "<p>felt improved overall mood and emotional balance.</p>",
+            "description": "<p>sintió una mejora en su ánimo y equilibrio emocional general.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1645,7 +1645,7 @@
             "value": "96%",
             "percentage": 90,
             "title": "",
-            "description": "<p>experienced clearer focus and sharper thinking.</p>",
+            "description": "<p>experimentó mayor claridad mental y concentración.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1657,7 +1657,7 @@
             "value": "90%",
             "percentage": 90,
             "title": "",
-            "description": "<p>reported improved blood flow and sexual vitality.</p>",
+            "description": "<p>reportó mejor circulación y vitalidad sexual.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1671,14 +1671,14 @@
       ],
       "name": "Statistics grid",
       "settings": {
-        "heading": "The proof is in",
-        "heading_accent": "the numbers",
+        "heading": "LA PRUEBA ESTÁ",
+        "heading_accent": "EN LOS NÚMEROS",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
-        "subheading": "Self-reported improvements from men who made Xara part of their daily routine.",
+        "subheading": "Mejoras autoreportadas por hombres que hicieron de TITAN PEAK parte de su rutina diaria.",
         "subheading_color": "#ffffff",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 14,
@@ -1719,9 +1719,9 @@
         "container_padding_desktop": 40,
         "background_color_start": "#1c3353",
         "background_color_end": "#141720",
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 20,
         "padding_bottom_mobile": 40,
-        "padding_top_desktop": 0,
+        "padding_top_desktop": 40,
         "padding_bottom_desktop": 60
       }
     },
@@ -1892,8 +1892,76 @@
         "container_padding_mobile": 16,
         "background_gradient_top": "#1c3353",
         "background_gradient_bottom": "#141720",
-        "padding-block-start": 0,
-        "padding-block-end": 60
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
+    "satisfaction_guarantee_dVqwga": {
+      "type": "satisfaction-guarantee",
+      "blocks": {
+        "photos": {
+          "type": "_satisfaction-guarantee-photos",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        },
+        "benefits": {
+          "type": "_satisfaction-guarantee-benefits",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "name": "Satisfaction guarantee",
+      "settings": {
+        "icon_color": "#ffffff",
+        "icon_size_mobile": 60,
+        "icon_size_desktop": 80,
+        "icon_margin_bottom": 10,
+        "heading": "PRUEBA TITAN PEAK 100% SIN RIESGO DURANTE 30 DÍAS",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 44,
+        "heading_line_height": 1,
+        "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia por ti mismo, o te devolvemos tu dinero sin hacer preguntas.</p>",
+        "description_color": "#ffffff",
+        "description_size_mobile": 14,
+        "description_size_desktop": 14,
+        "description_line_height": 1.5,
+        "button_label": "PRUÉBALO SIN RIESGO",
+        "button_link": "#product-information",
+        "button_open_in_new_tab": false,
+        "button_gradient_start": "#e9e9e9",
+        "button_gradient_end": "#e8d5a3",
+        "button_hover_gradient_start": "#d0d0d0",
+        "button_hover_gradient_end": "#dec27a",
+        "button_text_color": "#ffffff",
+        "button_radius": 8,
+        "button_font_size": 14,
+        "button_padding_block": 12,
+        "button_padding_inline": 20,
+        "benefits_layout": "row",
+        "benefit_text_color": "#ffffff",
+        "benefit_checkmark_color": "#ef4a65",
+        "benefit_icon_size": 16,
+        "benefit_size_mobile": 14,
+        "benefit_size_desktop": 14,
+        "benefit_gap": 16,
+        "photo_size_mobile": 100,
+        "photo_size_desktop": 180,
+        "photo_gap": 8,
+        "photo_margin_bottom": -10,
+        "container_max_width": 1200,
+        "content_max_width": 450,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 20,
+        "background_color_start": "#141720",
+        "background_color_end": "#1c3353",
+        "background_angle": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 50
       }
     },
     "faq_accordion_nVx7Xp": {
@@ -2001,74 +2069,6 @@
         "background_color": "#ffffff",
         "padding-block-start": 40,
         "padding-block-end": 40
-      }
-    },
-    "satisfaction_guarantee_dVqwga": {
-      "type": "satisfaction-guarantee",
-      "blocks": {
-        "photos": {
-          "type": "_satisfaction-guarantee-photos",
-          "static": true,
-          "settings": {},
-          "blocks": {}
-        },
-        "benefits": {
-          "type": "_satisfaction-guarantee-benefits",
-          "static": true,
-          "settings": {},
-          "blocks": {}
-        }
-      },
-      "name": "Satisfaction guarantee",
-      "settings": {
-        "icon_color": "#ffffff",
-        "icon_size_mobile": 60,
-        "icon_size_desktop": 80,
-        "icon_margin_bottom": 10,
-        "heading": "Try Xara 100% risk-free for 30 days",
-        "heading_color": "#ffffff",
-        "heading_size_mobile": 36,
-        "heading_size_desktop": 44,
-        "heading_line_height": 1,
-        "description": "<p>Your vitality shouldn't be a gamble. Try our product for 60 days and feel the difference for yourself or get your money back with no questions asked.</p>",
-        "description_color": "#ffffff",
-        "description_size_mobile": 14,
-        "description_size_desktop": 14,
-        "description_line_height": 1.5,
-        "button_label": "Try it, risk-free",
-        "button_link": "",
-        "button_open_in_new_tab": false,
-        "button_gradient_start": "#e9e9e9",
-        "button_gradient_end": "#e8d5a3",
-        "button_hover_gradient_start": "#d0d0d0",
-        "button_hover_gradient_end": "#dec27a",
-        "button_text_color": "#ffffff",
-        "button_radius": 8,
-        "button_font_size": 14,
-        "button_padding_block": 12,
-        "button_padding_inline": 20,
-        "benefits_layout": "row",
-        "benefit_text_color": "#ffffff",
-        "benefit_checkmark_color": "#ef4a65",
-        "benefit_icon_size": 16,
-        "benefit_size_mobile": 14,
-        "benefit_size_desktop": 14,
-        "benefit_gap": 16,
-        "photo_size_mobile": 100,
-        "photo_size_desktop": 180,
-        "photo_gap": 8,
-        "photo_margin_bottom": -10,
-        "container_max_width": 1200,
-        "content_max_width": 450,
-        "container_padding_mobile": 20,
-        "container_padding_desktop": 20,
-        "background_color_start": "#141720",
-        "background_color_end": "#1c3353",
-        "background_angle": 0,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top_desktop": 60,
-        "padding_bottom_desktop": 50
       }
     }
   },

@@ -1541,7 +1541,7 @@
             "link": "#product-information",
             "open_in_new_tab": false,
             "full_width": true,
-            "background_color": "#C9A84C",
+            "background_color": "#c9a84c",
             "text_color": "#ffffff",
             "corner_radius": 5,
             "font_size_mobile": 16,
@@ -1609,6 +1609,177 @@
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 36,
         "padding_bottom_desktop": 36
+      }
+    },
+    "ingredient_steps_tXfBEq": {
+      "type": "ingredient-steps",
+      "blocks": {
+        "ingredient_step_card_LFeWWR": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/6cwoZI9fOflTkAYN.webp",
+            "title": "SHILAJIT (Alto en Ácido Fúlvico)",
+            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y potencia la energía, la resistencia y la circulación.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_FHDaF3": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.14.13_AM.webp",
+            "title": "KSM-66 ASHWAGANDHA",
+            "description": "<p>Control del cortisol + apoyo a la testosterona. Reduce las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_EKMd7h": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.13.33_AM.webp",
+            "title": "RAÍZ DE MACA",
+            "description": "<p>Potenciador natural del deseo y la resistencia. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_EdBxP3": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.06_AM.webp",
+            "title": "TONGKAT ALI",
+            "description": "<p>Amplificador de testosterona y fuerza. Estudiado clínicamente para apoyar los niveles de testosterona libre, mejorar la fuerza muscular y potenciar la vitalidad y el rendimiento masculino.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_xUhKzp": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.28_AM.webp",
+            "title": "BLACK MUSLI",
+            "description": "<p>Powerful vitality enhancer. Traditionally used to support sexual health, stamina, and overall male performance while promoting strength and recovery.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_pq7QLD": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.53_AM.webp",
+            "title": "GOKSHURA",
+            "description": "<p>Apoyo al rendimiento y la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y potencia la resistencia y el rendimiento físico.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_w6X9tH": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.49_AM.webp",
+            "title": "KAUNCH (MUCUNA PRURIENS)",
+            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, la libido y el impulso mental.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_UAKGgp": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.09_AM.webp",
+            "title": "JENGIBRE",
+            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y reduce la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_a7iYXY": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/C5POF3zft9M7_Apq.avif",
+            "title": "SEMILLA DE FENOGRECO",
+            "description": "<p>Potenciador natural de testosterona. Rico en compuestos que apoyan niveles saludables de testosterona, fuerza y resistencia física.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ingredient_step_card_LFeWWR",
+        "ingredient_step_card_FHDaF3",
+        "ingredient_step_card_EKMd7h",
+        "ingredient_step_card_EdBxP3",
+        "ingredient_step_card_xUhKzp",
+        "ingredient_step_card_pq7QLD",
+        "ingredient_step_card_w6X9tH",
+        "ingredient_step_card_UAKGgp",
+        "ingredient_step_card_a7iYXY"
+      ],
+      "name": "Ingredient steps",
+      "settings": {
+        "heading_line_1": "INGREDIENTES QUE",
+        "heading_highlight": "CUMPLEN",
+        "subheading": "<p>Apoyo diario para tu energía, testosterona y rendimiento a nivel celular.</p>",
+        "heading_size_desktop": 52,
+        "heading_size_mobile": 36,
+        "heading_color": "#ffffff",
+        "highlight_color_start": "#b8b8b8",
+        "highlight_color_mid": "#ffffff",
+        "highlight_color_end": "#b8b8b8",
+        "subheading_size_desktop": 18,
+        "subheading_size_mobile": 14,
+        "subheading_color": "#ffffff",
+        "step_title_size_desktop": 18,
+        "step_title_size_mobile": 16,
+        "step_title_color": "#ffffff",
+        "step_description_size_desktop": 12,
+        "step_description_size_mobile": 10,
+        "step_description_color": "#ffffff",
+        "columns_desktop": 4,
+        "items_gap": 5,
+        "mobile_slide_padding": 8,
+        "mobile_layout": "horizontal",
+        "transition_speed": 300,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "nav_button_size": 40,
+        "nav_button_bg_color": "#0e203e",
+        "nav_button_border_color": "#0954bc",
+        "nav_button_icon_color": "#ffffff",
+        "show_numbers": false,
+        "number_circle_size": 40,
+        "number_size_desktop": 20,
+        "number_size_mobile": 24,
+        "number_bg_color": "#ffffff",
+        "number_border_color": "#000000",
+        "number_text_color": "#000000",
+        "card_border_radius": 6,
+        "card_border_width": 1,
+        "card_border_color": "#404040",
+        "image_aspect_ratio": "4 / 3",
+        "image_fit": "cover",
+        "default_image_background_color": "#0e203e",
+        "default_content_background_color": "#0e203e",
+        "content_padding_vertical": 16,
+        "content_padding_horizontal": 12,
+        "container_max_width": 1200,
+        "container_padding": 20,
+        "container_padding_mobile": 16,
+        "background_gradient_top": "#1c3353",
+        "background_gradient_bottom": "#141720",
+        "padding-block-start": 0,
+        "padding-block-end": 60
       }
     },
     "faq_accordion_nVx7Xp": {
@@ -1729,6 +1900,7 @@
     "benefits_grid_fzhgP8",
     "cards_grid_g9pUdw",
     "image_with_text_accordion_UUVGUG",
+    "ingredient_steps_tXfBEq",
     "faq_accordion_nVx7Xp"
   ]
 }

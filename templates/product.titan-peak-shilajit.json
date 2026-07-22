@@ -1611,6 +1611,120 @@
         "padding_bottom_desktop": 36
       }
     },
+    "statistics_grid_nd3JDq": {
+      "type": "statistics-grid",
+      "blocks": {
+        "statistics_grid_item_tdEwTq": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "94%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>reported smoother daily energy within the first month.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_qm6pK3": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "91%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>felt improved overall mood and emotional balance.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_PFCirN": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "96%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>experienced clearer focus and sharper thinking.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_AzEgA7": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "90%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>reported improved blood flow and sexual vitality.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "statistics_grid_item_tdEwTq",
+        "statistics_grid_item_qm6pK3",
+        "statistics_grid_item_PFCirN",
+        "statistics_grid_item_AzEgA7"
+      ],
+      "name": "Statistics grid",
+      "settings": {
+        "heading": "The proof is in",
+        "heading_accent": "the numbers",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 52,
+        "subheading": "Self-reported improvements from men who made Xara part of their daily routine.",
+        "subheading_color": "#ffffff",
+        "subheading_size_mobile": 14,
+        "subheading_size_desktop": 14,
+        "header_gap": 40,
+        "columns_mobile": "2",
+        "columns_tablet": 2,
+        "columns_desktop": 4,
+        "items_gap_mobile": 8,
+        "items_gap_tablet": 20,
+        "items_gap_desktop": 20,
+        "grid_max_width_mobile": 500,
+        "grid_max_width_tablet": 600,
+        "card_background_color": "#ffffff",
+        "card_radius": 10,
+        "card_shadow": true,
+        "card_padding_mobile": 14,
+        "card_padding_desktop": 18,
+        "card_min_height_mobile": 140,
+        "card_min_height_desktop": 180,
+        "value_color": "#e8d5a3",
+        "value_size_mobile": 54,
+        "value_size_desktop": 82,
+        "circle_track_color": "#ffffff26",
+        "circle_progress_color": "#e8d5a3",
+        "circle_stroke_width": 8,
+        "circle_size_mobile": 90,
+        "circle_size_desktop": 120,
+        "circle_value_size_mobile": 18,
+        "circle_value_size_desktop": 30,
+        "title_color": "#ffffff",
+        "title_size_mobile": 15,
+        "title_size_desktop": 18,
+        "description_color": "#ffffff",
+        "description_size_mobile": 12,
+        "description_size_desktop": 14,
+        "container_max_width": 1200,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 40,
+        "background_color_start": "#1c3353",
+        "background_color_end": "#141720",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 60
+      }
+    },
     "ingredient_steps_tXfBEq": {
       "type": "ingredient-steps",
       "blocks": {
@@ -1888,6 +2002,74 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "satisfaction_guarantee_dVqwga": {
+      "type": "satisfaction-guarantee",
+      "blocks": {
+        "photos": {
+          "type": "_satisfaction-guarantee-photos",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        },
+        "benefits": {
+          "type": "_satisfaction-guarantee-benefits",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "name": "Satisfaction guarantee",
+      "settings": {
+        "icon_color": "#ffffff",
+        "icon_size_mobile": 60,
+        "icon_size_desktop": 80,
+        "icon_margin_bottom": 10,
+        "heading": "Try Xara 100% risk-free for 30 days",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 44,
+        "heading_line_height": 1,
+        "description": "<p>Your vitality shouldn't be a gamble. Try our product for 60 days and feel the difference for yourself or get your money back with no questions asked.</p>",
+        "description_color": "#ffffff",
+        "description_size_mobile": 14,
+        "description_size_desktop": 14,
+        "description_line_height": 1.5,
+        "button_label": "Try it, risk-free",
+        "button_link": "",
+        "button_open_in_new_tab": false,
+        "button_gradient_start": "#e9e9e9",
+        "button_gradient_end": "#e8d5a3",
+        "button_hover_gradient_start": "#d0d0d0",
+        "button_hover_gradient_end": "#dec27a",
+        "button_text_color": "#ffffff",
+        "button_radius": 8,
+        "button_font_size": 14,
+        "button_padding_block": 12,
+        "button_padding_inline": 20,
+        "benefits_layout": "row",
+        "benefit_text_color": "#ffffff",
+        "benefit_checkmark_color": "#ef4a65",
+        "benefit_icon_size": 16,
+        "benefit_size_mobile": 14,
+        "benefit_size_desktop": 14,
+        "benefit_gap": 16,
+        "photo_size_mobile": 100,
+        "photo_size_desktop": 180,
+        "photo_gap": 8,
+        "photo_margin_bottom": -10,
+        "container_max_width": 1200,
+        "content_max_width": 450,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 20,
+        "background_color_start": "#141720",
+        "background_color_end": "#1c3353",
+        "background_angle": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 50
+      }
     }
   },
   "order": [
@@ -1900,7 +2082,9 @@
     "benefits_grid_fzhgP8",
     "cards_grid_g9pUdw",
     "image_with_text_accordion_UUVGUG",
+    "statistics_grid_nd3JDq",
     "ingredient_steps_tXfBEq",
+    "satisfaction_guarantee_dVqwga",
     "faq_accordion_nVx7Xp"
   ]
 }

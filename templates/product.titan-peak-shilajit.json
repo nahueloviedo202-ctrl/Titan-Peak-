@@ -219,8 +219,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Testosterona y Fuerza",
-                        "description": "<p>Aumenta tu deseo y tu fuerza masculina de forma natural.</p>",
+                        "title": "Erecciones más firmes y duraderas, con flujo sanguíneo máximo",
+                        "description": "<p>Un extra de circulación y rendimiento para sentirte al 100% en todo momento.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -230,8 +230,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Menos Cortisol, Más Confianza",
-                        "description": "<p>Recuperá el control total con niveles de estrés más equilibrados.</p>",
+                        "title": "Aumento de testosterona, libido y masculinidad.",
+                        "description": "<p>Recuperá tu fuerza, tu deseo y tu confianza de forma natural.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -241,8 +241,8 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mejor Circulación",
-                        "description": "<p>Apoya un flujo sanguíneo óptimo para tu rendimiento diario.</p>",
+                        "title": "Mayor confianza",
+                        "description": "<p>Menor cortisol, mayor confianza, control total</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -1348,7 +1348,7 @@
         "subheading_size_desktop": 16,
         "header_gap_mobile": 0,
         "header_gap_desktop": 0,
-        "image": "shopify://shop_images/personasi-clean.webp",
+        "image": "shopify://shop_images/porductfix9-clean.webp",
         "desktop_image_position": "right",
         "mobile_image_position": "after_header",
         "image_radius": 15,

@@ -45,7 +45,7 @@
             "thumbnail_size": 110,
             "thumbnail_gap": 10,
             "thumbnail_radius": 10,
-            "active_thumbnail_color": "#a45b2c",
+            "active_thumbnail_color": "#C9A84C",
             "thumbnail_inactive_opacity": 50,
             "show_nav_arrows": true,
             "nav_button_size": 44,

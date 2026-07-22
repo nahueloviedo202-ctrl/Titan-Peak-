@@ -1,0 +1,209 @@
+{%- doc -%}
+  Renders one feature row inside the "Product comparison" section's grid: a
+  feature name plus one value per product column (checkmark, X, short custom
+  text, or empty), set independently for up to 4 columns.
+
+  The row itself is `display: contents` (see the section stylesheet), so its
+  cells become direct children of the CSS grid defined on the section while
+  the row element still exists in the DOM as a styling hook (e.g.
+  `.is-last-row`, `block.shopify_attributes` for the editor outline).
+
+  "Column 1" / "Column 2" / etc. map to "_comparison-column" blocks by
+  position (1st column block in the list = "Column 1"), not by any ID, so
+  reordering column blocks changes what each value applies to.
+
+  Meant to be used exclusively as a child block of
+  `sections/product-comparison.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign feature_settings = block.settings
+  assign columns = section.blocks | where: 'type', '_comparison-column'
+  assign features = section.blocks | where: 'type', '_comparison-feature'
+
+  assign is_last_row = false
+  if features.last.id == block.id
+    assign is_last_row = true
+  endif
+-%}
+
+<div
+  class="product-comparison__row{% if is_last_row %} is-last-row{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="product-comparison__cell product-comparison__cell--name">
+    <div class="product-comparison__feature-content">
+      {%- if feature_settings.feature_icon != blank -%}
+        <span class="product-comparison__feature-icon">
+          {{ feature_settings.feature_icon | image_url: width: 48 | image_tag: loading: 'lazy', alt: '' }}
+        </span>
+      {%- endif -%}
+      <span class="product-comparison__feature-name">{{ feature_settings.feature_name }}</span>
+    </div>
+  </div>
+
+  {%- for column in columns -%}
+    {%- liquid
+      assign col_index = forloop.index
+      assign value_key = 'column_' | append: col_index | append: '_value'
+      assign text_key = 'column_' | append: col_index | append: '_text'
+      assign cell_value = feature_settings[value_key]
+      assign cell_text = feature_settings[text_key]
+      assign is_highlighted = column.settings.highlighted
+    -%}
+    <div class="product-comparison__cell product-comparison__cell--value{% if is_highlighted %} is-highlighted{% endif %}">
+      {%- case cell_value -%}
+        {%- when 'yes' -%}
+          <span
+            class="product-comparison__check product-comparison__check--yes"
+            aria-label="Yes"
+          >
+            <svg
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        {%- when 'no' -%}
+          <span
+            class="product-comparison__check product-comparison__check--no"
+            aria-label="No"
+          >
+            <svg
+              viewBox="0 0 256 256"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M128,24A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm36.44,132.88a8,8,0,0,1,0,11.31,8.17,8.17,0,0,1-11.31,0L128,143.31l-25.13,24.88a8.17,8.17,0,0,1-11.31,0,8,8,0,0,1,0-11.31L116.69,132,91.56,107.13a8,8,0,0,1,11.31-11.32L128,120.69l25.13-24.88a8,8,0,0,1,11.31,11.32L139.31,132Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        {%- when 'text' -%}
+          {%- if cell_text != blank -%}
+            <span class="product-comparison__text-value">{{ cell_text }}</span>
+          {%- endif -%}
+      {%- endcase -%}
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Feature row",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "feature_name",
+      "label": "Feature name",
+      "default": "Feature name"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_icon",
+      "label": "Feature icon",
+      "info": "Optional icon shown before the feature name."
+    },
+    {
+      "type": "header",
+      "content": "Column 1 value"
+    },
+    {
+      "type": "select",
+      "id": "column_1_value",
+      "label": "Value",
+      "options": [
+        { "value": "yes", "label": "Checkmark" },
+        { "value": "no", "label": "X" },
+        { "value": "text", "label": "Custom text" },
+        { "value": "none", "label": "Empty" }
+      ],
+      "default": "yes"
+    },
+    {
+      "type": "text",
+      "id": "column_1_text",
+      "label": "Custom text",
+      "visible_if": "{{ block.settings.column_1_value == 'text' }}"
+    },
+    {
+      "type": "header",
+      "content": "Column 2 value"
+    },
+    {
+      "type": "select",
+      "id": "column_2_value",
+      "label": "Value",
+      "options": [
+        { "value": "yes", "label": "Checkmark" },
+        { "value": "no", "label": "X" },
+        { "value": "text", "label": "Custom text" },
+        { "value": "none", "label": "Empty" }
+      ],
+      "default": "no"
+    },
+    {
+      "type": "text",
+      "id": "column_2_text",
+      "label": "Custom text",
+      "visible_if": "{{ block.settings.column_2_value == 'text' }}"
+    },
+    {
+      "type": "header",
+      "content": "Column 3 value"
+    },
+    {
+      "type": "select",
+      "id": "column_3_value",
+      "label": "Value",
+      "options": [
+        { "value": "yes", "label": "Checkmark" },
+        { "value": "no", "label": "X" },
+        { "value": "text", "label": "Custom text" },
+        { "value": "none", "label": "Empty" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "text",
+      "id": "column_3_text",
+      "label": "Custom text",
+      "visible_if": "{{ block.settings.column_3_value == 'text' }}"
+    },
+    {
+      "type": "header",
+      "content": "Column 4 value"
+    },
+    {
+      "type": "select",
+      "id": "column_4_value",
+      "label": "Value",
+      "options": [
+        { "value": "yes", "label": "Checkmark" },
+        { "value": "no", "label": "X" },
+        { "value": "text", "label": "Custom text" },
+        { "value": "none", "label": "Empty" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "text",
+      "id": "column_4_text",
+      "label": "Custom text",
+      "visible_if": "{{ block.settings.column_4_value == 'text' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature row"
+    }
+  ]
+}
+{% endschema %}

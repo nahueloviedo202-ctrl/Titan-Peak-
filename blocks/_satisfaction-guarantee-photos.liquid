@@ -1,0 +1,32 @@
+
+
+{%- doc -%}
+  Fixed slot that renders the scattered "polaroid" photo cluster above the
+  content in the "Satisfaction guarantee" section. Every photo inside is a
+  nested "_satisfaction-guarantee-photo" block, so merchants can add, remove
+  or reorder them freely, or leave the slot empty to hide the cluster
+  entirely (matching the section's default, photo-less look).
+
+  Meant to be used exclusively as a fixed slot inside `sections/satisfaction-guarantee.liquid`.
+{%- enddoc -%}
+
+{%- if block.blocks.size > 0 -%}
+  <div
+    class="sgt-photos"
+    {{ block.shopify_attributes }}
+  >
+    {% content_for 'blocks' %}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Photos",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_satisfaction-guarantee-photo"
+    }
+  ]
+}
+{% endschema %}

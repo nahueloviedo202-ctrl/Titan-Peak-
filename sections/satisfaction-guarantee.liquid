@@ -1,0 +1,742 @@
+{%- doc -%}
+  Renders a "Satisfaction guarantee" section: an optional cluster of
+  scattered "polaroid" photos, a shield/checkmark icon, an accent-colored
+  heading, a description, a gradient call-to-action button and an optional
+  row of checkmark benefits.
+
+  Every photo is a nested "_satisfaction-guarantee-photo" block and every
+  benefit line is a nested "_satisfaction-guarantee-benefit" block, so
+  merchants can add, remove or reorder them freely. All text, images, icons,
+  colors, sizes, spacing and radius are configurable through the section and
+  block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+-%}
+
+<div class="section-background"></div>
+
+<div
+  class="satisfaction-guarantee"
+  style="
+    --sgt-bg-start: {{ section_settings.background_color_start }};
+    --sgt-bg-end: {{ section_settings.background_color_end }};
+    --sgt-bg-angle: {{ section_settings.background_angle }}deg;
+    --sgt-max-width: {{ section_settings.container_max_width }}px;
+    --sgt-content-max-width: {{ section_settings.content_max_width }}px;
+    --sgt-pad-inline-mobile: {{ section_settings.container_padding_mobile }}px;
+    --sgt-pad-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+    --sgt-pad-block-start-mobile: {{ section_settings.padding_top_mobile }}px;
+    --sgt-pad-block-end-mobile: {{ section_settings.padding_bottom_mobile }}px;
+    --sgt-pad-block-start-desktop: {{ section_settings.padding_top_desktop }}px;
+    --sgt-pad-block-end-desktop: {{ section_settings.padding_bottom_desktop }}px;
+    --sgt-icon-color: {{ section_settings.icon_color }};
+    --sgt-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+    --sgt-icon-size-desktop: {{ section_settings.icon_size_desktop }}px;
+    --sgt-icon-gap: {{ section_settings.icon_margin_bottom }}px;
+    --sgt-heading-color: {{ section_settings.heading_color }};
+    --sgt-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --sgt-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --sgt-heading-line-height: {{ section_settings.heading_line_height }};
+    --sgt-description-color: {{ section_settings.description_color }};
+    --sgt-description-size-mobile: {{ section_settings.description_size_mobile }}px;
+    --sgt-description-size-desktop: {{ section_settings.description_size_desktop }}px;
+    --sgt-description-line-height: {{ section_settings.description_line_height }};
+    --sgt-button-gradient-start: {{ section_settings.button_gradient_start }};
+    --sgt-button-gradient-end: {{ section_settings.button_gradient_end }};
+    --sgt-button-hover-gradient-start: {{ section_settings.button_hover_gradient_start }};
+    --sgt-button-hover-gradient-end: {{ section_settings.button_hover_gradient_end }};
+    --sgt-button-text-color: {{ section_settings.button_text_color }};
+    --sgt-button-radius: {{ section_settings.button_radius }}px;
+    --sgt-button-font-size: {{ section_settings.button_font_size }}px;
+    --sgt-button-padding-block: {{ section_settings.button_padding_block }}px;
+    --sgt-button-padding-inline: {{ section_settings.button_padding_inline }}px;
+    --sgt-benefit-text-color: {{ section_settings.benefit_text_color }};
+    --sgt-benefit-checkmark-color: {{ section_settings.benefit_checkmark_color }};
+    --sgt-benefit-icon-size: {{ section_settings.benefit_icon_size }}px;
+    --sgt-benefit-size-mobile: {{ section_settings.benefit_size_mobile }}px;
+    --sgt-benefit-size-desktop: {{ section_settings.benefit_size_desktop }}px;
+    --sgt-benefit-gap: {{ section_settings.benefit_gap }}px;
+    --sgt-photo-size-mobile: {{ section_settings.photo_size_mobile }}px;
+    --sgt-photo-size-desktop: {{ section_settings.photo_size_desktop }}px;
+    --sgt-photo-gap: {{ section_settings.photo_gap }}px;
+    --sgt-photo-margin-bottom: {{ section_settings.photo_margin_bottom }}px;
+  "
+  data-testid="satisfaction-guarantee"
+>
+  <div class="sgt-container">
+    <div class="sgt-content">
+      {% content_for 'block', type: '_satisfaction-guarantee-photos', id: 'photos' %}
+
+      <div class="sgt-icon">
+        {%- if section_settings.custom_icon != blank -%}
+          {{
+            section_settings.custom_icon
+            | image_url: width: 200
+            | image_tag: width: section_settings.icon_size_desktop, loading: 'lazy', alt: '', class: 'sgt-icon__image'
+          }}
+        {%- else -%}
+          <svg
+            class="sgt-icon__svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 16L4.35009 13.3929C2.24773 11.8912 1 9.46667 1 6.88306V3L8 0L15 3V6.88306C15 9.46667 13.7523 11.8912 11.6499 13.3929L8 16ZM12.2071 5.70711L10.7929 4.29289L7 8.08579L5.20711 6.29289L3.79289 7.70711L7 10.9142L12.2071 5.70711Z"
+              fill="currentColor"
+            />
+          </svg>
+        {%- endif -%}
+      </div>
+
+      {%- if section_settings.heading != blank -%}
+        <h2 class="sgt-heading">{{ section_settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section_settings.description != blank -%}
+        <div class="sgt-description rte">{{ section_settings.description }}</div>
+      {%- endif -%}
+
+      {%- if section_settings.button_label != blank -%}
+        <a
+          href="{{ section_settings.button_link | default: '#' }}"
+          class="sgt-button"
+          {% if section_settings.button_open_in_new_tab %}
+            target="_blank"
+            rel="noopener noreferrer"
+          {% endif %}
+        >
+          {{ section_settings.button_label }}
+        </a>
+      {%- endif -%}
+
+      {% content_for 'block', type: '_satisfaction-guarantee-benefits', id: 'benefits' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .satisfaction-guarantee {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(var(--sgt-bg-angle, 0deg), var(--sgt-bg-start, #141720), var(--sgt-bg-end, #1c3353));
+    padding-block: var(--sgt-pad-block-start-mobile, 40px) var(--sgt-pad-block-end-mobile, 40px);
+  }
+
+  .sgt-container {
+    max-width: var(--sgt-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--sgt-pad-inline-mobile, 20px);
+  }
+
+  .sgt-content {
+    max-width: var(--sgt-content-max-width, 450px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sgt-photos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--sgt-photo-gap, 8px);
+    margin-bottom: var(--sgt-photo-margin-bottom, -10px);
+  }
+
+  .sgt-icon {
+    color: var(--sgt-icon-color, #ffffff);
+    width: var(--sgt-icon-size-mobile, 60px);
+    height: var(--sgt-icon-size-mobile, 60px);
+    margin-bottom: var(--sgt-icon-gap, 10px);
+  }
+
+  .sgt-icon__svg,
+  .sgt-icon__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .sgt-heading {
+    margin: 0 0 12px;
+    color: var(--sgt-heading-color, #ffffff);
+    font-size: var(--sgt-heading-size-mobile, 36px);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--sgt-heading-line-height, 1);
+  }
+
+  .sgt-description {
+    margin: 0 0 20px;
+    color: var(--sgt-description-color, #ffffff);
+    font-size: var(--sgt-description-size-mobile, 14px);
+    line-height: var(--sgt-description-line-height, 1.5);
+  }
+
+  .sgt-description p {
+    margin: 0 0 0.5em;
+  }
+
+  .sgt-description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sgt-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sgt-button-padding-block, 12px) var(--sgt-button-padding-inline, 20px);
+    background: linear-gradient(to bottom, var(--sgt-button-gradient-start, #e9e9e9), var(--sgt-button-gradient-end, #e8d5a3));
+    color: var(--sgt-button-text-color, #ffffff);
+    border-radius: var(--sgt-button-radius, 8px);
+    font-size: var(--sgt-button-font-size, 14px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .sgt-button:hover {
+    background: linear-gradient(to bottom, var(--sgt-button-hover-gradient-start, #d0d0d0), var(--sgt-button-hover-gradient-end, #dec27a));
+    color: var(--sgt-button-text-color, #ffffff);
+  }
+
+  .sgt-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sgt-benefit-gap, 16px);
+    margin-top: 20px;
+  }
+
+  .sgt-benefits--column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sgt-icon {
+      width: var(--sgt-icon-size-desktop, 80px);
+      height: var(--sgt-icon-size-desktop, 80px);
+    }
+
+    .sgt-heading {
+      font-size: var(--sgt-heading-size-desktop, 44px);
+    }
+
+    .sgt-description {
+      font-size: var(--sgt-description-size-desktop, 14px);
+    }
+
+    .satisfaction-guarantee {
+      padding-block: var(--sgt-pad-block-start-desktop, 60px) var(--sgt-pad-block-end-desktop, 50px);
+    }
+
+    .sgt-container {
+      padding-inline: var(--sgt-pad-inline-desktop, 20px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Satisfaction guarantee",
+  "class": "section-satisfaction-guarantee",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_satisfaction-guarantee-photos"
+    },
+    {
+      "type": "_satisfaction-guarantee-benefits"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom icon image",
+      "info": "Replaces the default shield icon when set."
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon size (mobile)",
+      "min": 24,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Icon size (desktop)",
+      "min": 24,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "icon_margin_bottom",
+      "label": "Space below icon",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Try Xara 100% risk-free for 30 days"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "heading_line_height",
+      "label": "t:settings.line_height",
+      "min": 0.8,
+      "max": 1.6,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:settings.text",
+      "default": "<p>Your vitality shouldn't be a gamble. Try our product for 60 days and feel the difference for yourself or get your money back with no questions asked.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Text size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Text size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_line_height",
+      "label": "t:settings.line_height",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.label",
+      "default": "Try it, risk-free"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_in_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_start",
+      "label": "Gradient start",
+      "default": "#e9e9e9"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_end",
+      "label": "Gradient end",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_gradient_start",
+      "label": "Hover gradient start",
+      "default": "#d0d0d0"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_gradient_end",
+      "label": "Hover gradient end",
+      "default": "#dec27a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "t:settings.size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_block",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_inline",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Benefits list"
+    },
+    {
+      "type": "select",
+      "id": "benefits_layout",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "t:options.horizontal"
+        },
+        {
+          "value": "column",
+          "label": "t:options.vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "color",
+      "id": "benefit_text_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "benefit_checkmark_color",
+      "label": "Checkmark color",
+      "default": "#ef4a65"
+    },
+    {
+      "type": "range",
+      "id": "benefit_icon_size",
+      "label": "Checkmark size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "benefit_size_mobile",
+      "label": "Text size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefit_size_desktop",
+      "label": "Text size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefit_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Photos"
+    },
+    {
+      "type": "range",
+      "id": "photo_size_mobile",
+      "label": "Photo size (mobile)",
+      "min": 40,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "photo_size_desktop",
+      "label": "Photo size (desktop)",
+      "min": 60,
+      "max": 260,
+      "step": 2,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "photo_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "photo_margin_bottom",
+      "label": "Space below photos",
+      "min": -40,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": -10
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 280,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 450
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color_start",
+      "label": "Gradient start",
+      "default": "#141720"
+    },
+    {
+      "type": "color",
+      "id": "background_color_end",
+      "label": "Gradient end",
+      "default": "#1c3353"
+    },
+    {
+      "type": "range",
+      "id": "background_angle",
+      "label": "Gradient angle",
+      "min": 0,
+      "max": 360,
+      "step": 5,
+      "unit": "deg",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Satisfaction guarantee",
+      "category": "t:categories.product",
+      "blocks": {
+        "photos": {
+          "type": "_satisfaction-guarantee-photos",
+          "static": true
+        },
+        "benefits": {
+          "type": "_satisfaction-guarantee-benefits",
+          "static": true
+        }
+      }
+    }
+  ]
+}
+{% endschema %}

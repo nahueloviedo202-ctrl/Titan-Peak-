@@ -1,0 +1,963 @@
+{%- doc -%}
+  Product comparison: a two-tone heading (plain text + a gradient-highlighted
+  word) and subheading beside a comparison grid — one column per product
+  (image + title + optional badge) and one row per feature, each cell a
+  checkmark, an X, or short custom text. One column can be highlighted (e.g.
+  the merchant's own product) with an accent box spanning the full table
+  height.
+
+  Built with CSS grid instead of an HTML `<table>`: Shopify's theme-block
+  system only supports rendering a section's blocks through a single
+  `content_for 'blocks'` insertion point, so a real `<table>` with `_column`
+  blocks in `<thead>` and `_feature` blocks in `<tbody>` isn't possible.
+  Every "_comparison-column" and "_comparison-feature" block instead renders
+  its own grid cell(s) directly (feature rows use `display: contents` so
+  their cells become direct grid children while the row element itself
+  still exists in the DOM), all emitted from one flat block list — column
+  blocks must stay above feature blocks in the block order.
+
+  Every product column is a nested "_comparison-column" block (max 4) and
+  every feature is a nested "_comparison-feature" block, so merchants can
+  add, remove or reorder both freely.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign columns = section.blocks | where: 'type', '_comparison-column'
+  assign column_count = columns.size
+-%}
+
+<div
+  class="product-comparison spacing-style"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --pcp-bg-top: {{ section_settings.background_gradient_top }};
+    --pcp-bg-bottom: {{ section_settings.background_gradient_bottom }};
+    --pcp-max-width: {{ section_settings.container_max_width }}px;
+    --pcp-padding-x: {{ section_settings.container_padding }}px;
+    --pcp-padding-x-mobile: {{ section_settings.container_padding_mobile }}px;
+    --pcp-heading-size: {{ section_settings.heading_size_desktop }}px;
+    --pcp-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --pcp-heading-color: {{ section_settings.heading_color }};
+    --pcp-highlight-start: {{ section_settings.highlight_color_start }};
+    --pcp-highlight-mid: {{ section_settings.highlight_color_mid }};
+    --pcp-highlight-end: {{ section_settings.highlight_color_end }};
+    --pcp-subheading-size: {{ section_settings.subheading_size }}px;
+    --pcp-subheading-color: {{ section_settings.subheading_color }};
+    --pcp-description-size: {{ section_settings.description_size }}px;
+    --pcp-description-color: {{ section_settings.description_color }};
+    --pcp-text-width: {{ section_settings.text_column_width_desktop }}%;
+    --pcp-gap-desktop: {{ section_settings.column_gap_desktop }}px;
+    --pcp-gap-mobile: {{ section_settings.column_gap_mobile }}px;
+    --pcp-columns: {{ column_count }};
+    --pcp-product-title-size: {{ section_settings.product_title_size_desktop }}px;
+    --pcp-product-title-size-mobile: {{ section_settings.product_title_size_mobile }}px;
+    --pcp-product-title-color: {{ section_settings.product_title_color }};
+    --pcp-subtitle-size: {{ section_settings.subtitle_size }}px;
+    --pcp-subtitle-text-color: {{ section_settings.subtitle_text_color }};
+    --pcp-subtitle-bg: {{ section_settings.default_subtitle_bg_color }};
+    --pcp-subtitle-border: {{ section_settings.default_subtitle_border_color }};
+    --pcp-highlight-bg: {{ section_settings.highlight_bg_color }};
+    --pcp-highlight-border: {{ section_settings.highlight_border_color }};
+    --pcp-highlight-radius: {{ section_settings.highlight_radius }}px;
+    --pcp-highlight-check-yes: {{ section_settings.highlighted_check_yes_color }};
+    --pcp-highlight-check-no: {{ section_settings.highlighted_check_no_color }};
+    --pcp-feature-name-size: {{ section_settings.feature_name_size_desktop }}px;
+    --pcp-feature-name-size-mobile: {{ section_settings.feature_name_size_mobile }}px;
+    --pcp-feature-name-color: {{ section_settings.feature_name_color }};
+    --pcp-feature-col-width: {{ section_settings.feature_column_width_desktop }}px;
+    --pcp-feature-col-width-mobile: {{ section_settings.feature_column_width_mobile }}px;
+    --pcp-cell-padding-v: {{ section_settings.cell_padding_vertical }}px;
+    --pcp-cell-padding-h: {{ section_settings.cell_padding_horizontal }}px;
+    --pcp-row-border-color: {{ section_settings.row_border_color }};
+    --pcp-icon-size: {{ section_settings.icon_size_desktop }}px;
+    --pcp-icon-size-mobile: {{ section_settings.icon_size_mobile }}px;
+    --pcp-check-yes: {{ section_settings.default_check_yes_color }};
+    --pcp-check-no: {{ section_settings.default_check_no_color }};
+  "
+  data-testid="product-comparison"
+>
+  <div class="product-comparison__container">
+    <div class="product-comparison__layout">
+      {%- if section_settings.heading_line_1 != blank or section_settings.heading_highlight != blank or section_settings.subheading != blank -%}
+        <div class="product-comparison__text">
+          {%- if section_settings.heading_line_1 != blank or section_settings.heading_highlight != blank -%}
+            <h2 class="product-comparison__heading">
+              {%- if section_settings.heading_line_1 != blank -%}
+                {{- section_settings.heading_line_1 -}}
+              {%- endif -%}
+              {%- if section_settings.heading_highlight != blank -%}
+                {{ ' ' }}<span class="product-comparison__heading-highlight">{{- section_settings.heading_highlight -}}</span>
+              {%- endif -%}
+            </h2>
+          {%- endif -%}
+
+          {%- if section_settings.subheading != blank -%}
+            <div class="product-comparison__subheading rte">{{ section_settings.subheading }}</div>
+          {%- endif -%}
+
+          {%- if section_settings.description != blank -%}
+            <div class="product-comparison__description rte">{{ section_settings.description }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if column_count > 0 -%}
+        <div class="product-comparison__table-column">
+          <div class="product-comparison__table-wrapper">
+            <div class="product-comparison__table">
+              <div
+                class="product-comparison__cell product-comparison__cell--corner"
+                aria-hidden="true"
+              ></div>
+              {% content_for 'blocks' %}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-comparison {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--pcp-bg-top, #1c3353), var(--pcp-bg-bottom, #141720));
+    font-family: var(--font-body--family, inherit);
+  }
+
+  .product-comparison__container {
+    max-width: var(--pcp-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--pcp-padding-x-mobile, 16px);
+  }
+
+  .product-comparison__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pcp-gap-mobile, 32px);
+    width: 100%;
+  }
+
+  .product-comparison__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-comparison__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 700;
+    font-size: var(--pcp-heading-size-mobile, 36px);
+    line-height: 1.1;
+    color: var(--pcp-heading-color, #ffffff);
+    margin: 0 0 15px;
+  }
+
+  .product-comparison__heading-highlight {
+    background: linear-gradient(
+      180deg,
+      var(--pcp-highlight-start, #b8b8b8),
+      var(--pcp-highlight-mid, #ffffff),
+      var(--pcp-highlight-end, #b8b8b8)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .product-comparison__subheading,
+  .product-comparison__subheading p {
+    font-size: var(--pcp-subheading-size, 12px);
+    color: var(--pcp-subheading-color, #ffffff);
+    margin: 0;
+  }
+
+  .product-comparison__description,
+  .product-comparison__description p {
+    display: none;
+    font-size: var(--pcp-description-size, 12px);
+    color: var(--pcp-description-color, #ffffff);
+    line-height: 1.5;
+    margin: 15px 0 0;
+  }
+
+  .product-comparison__table-column {
+    width: 100%;
+  }
+
+  .product-comparison__table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .product-comparison__table {
+    display: grid;
+    grid-template-columns: minmax(0, var(--pcp-feature-col-width-mobile, 150px)) repeat(
+        var(--pcp-columns, 2),
+        minmax(0, 1fr)
+      );
+    width: 100%;
+  }
+
+  .product-comparison__cell {
+    padding: var(--pcp-cell-padding-v, 16px) var(--pcp-cell-padding-h, 12px);
+    border-bottom: 1px solid var(--pcp-row-border-color, #9dc7ff);
+  }
+
+  .product-comparison__cell--corner {
+    border-bottom: 1px solid var(--pcp-row-border-color, #9dc7ff);
+  }
+
+  .product-comparison__cell--header {
+    text-align: center;
+  }
+
+  .product-comparison__cell--name {
+    text-align: left;
+  }
+
+  .product-comparison__cell--value {
+    text-align: center;
+  }
+
+  .product-comparison__row {
+    display: contents;
+  }
+
+  .product-comparison__cell.is-highlighted {
+    border-bottom: none;
+    background: var(--pcp-highlight-bg, #1d3a65);
+    border-left: 1px solid var(--pcp-highlight-border, #0954bc);
+    border-right: 1px solid var(--pcp-highlight-border, #0954bc);
+  }
+
+  .product-comparison__cell--header.is-highlighted {
+    border-top: 1px solid var(--pcp-highlight-border, #0954bc);
+    border-radius: var(--pcp-highlight-radius, 6px) var(--pcp-highlight-radius, 6px) 0 0;
+  }
+
+  .product-comparison__row.is-last-row .product-comparison__cell--value.is-highlighted {
+    border-bottom: 1px solid var(--pcp-highlight-border, #0954bc);
+    border-radius: 0 0 var(--pcp-highlight-radius, 6px) var(--pcp-highlight-radius, 6px);
+  }
+
+  .product-comparison__image-wrapper {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-comparison__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  .product-comparison__product-title {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 600;
+    font-size: var(--pcp-product-title-size-mobile, 16px);
+    line-height: 1.2;
+    color: var(--pcp-product-title-color, #ffffff);
+    margin-bottom: 4px;
+  }
+
+  .product-comparison__subtitle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 1px 8px;
+    font-size: var(--pcp-subtitle-size, 10px);
+    color: var(--pcp-subtitle-text-color, #ffffff);
+    background: var(--pcp-subtitle-bg, rgb(255 255 255 / 0.2));
+    border: 1px solid var(--pcp-subtitle-border, rgb(255 255 255 / 0.3));
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .product-comparison__subtitle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 11px;
+    height: 11px;
+  }
+
+  .product-comparison__subtitle-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-comparison__feature-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-comparison__feature-icon {
+    flex-shrink: 0;
+    width: var(--pcp-icon-size-mobile, 20px);
+    height: var(--pcp-icon-size-mobile, 20px);
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-comparison__feature-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-comparison__feature-name {
+    font-size: var(--pcp-feature-name-size-mobile, 12px);
+    color: var(--pcp-feature-name-color, #ffffff);
+    line-height: 1.4;
+  }
+
+  .product-comparison__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-comparison__check svg {
+    width: var(--pcp-icon-size-mobile, 20px);
+    height: var(--pcp-icon-size-mobile, 20px);
+    display: block;
+  }
+
+  .product-comparison__cell--value:not(.is-highlighted) .product-comparison__check--yes {
+    color: var(--pcp-check-yes, #ffffff);
+  }
+
+  .product-comparison__cell--value:not(.is-highlighted) .product-comparison__check--no {
+    color: var(--pcp-check-no, #fc5f5e);
+  }
+
+  .product-comparison__cell--value.is-highlighted .product-comparison__check--yes {
+    color: var(--pcp-highlight-check-yes, #01a02c);
+  }
+
+  .product-comparison__cell--value.is-highlighted .product-comparison__check--no {
+    color: var(--pcp-highlight-check-no, #ffffff);
+  }
+
+  .product-comparison__text-value {
+    font-size: var(--pcp-feature-name-size-mobile, 12px);
+    color: var(--pcp-feature-name-color, #ffffff);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-comparison__container {
+      padding-inline: var(--pcp-padding-x, 20px);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-comparison__container {
+      padding-inline: var(--pcp-padding-x, 20px);
+    }
+
+    .product-comparison__layout {
+      flex-direction: row;
+      align-items: stretch;
+      gap: var(--pcp-gap-desktop, 64px);
+    }
+
+    .product-comparison__text {
+      flex: 0 0 var(--pcp-text-width, 60%);
+      max-width: var(--pcp-text-width, 60%);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-comparison__description,
+    .product-comparison__description p {
+      display: block;
+    }
+
+    .product-comparison__table-column {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product-comparison__heading {
+      font-size: var(--pcp-heading-size, 52px);
+    }
+
+    .product-comparison__table {
+      grid-template-columns: minmax(0, var(--pcp-feature-col-width, 100px)) repeat(
+          var(--pcp-columns, 2),
+          minmax(0, 1fr)
+        );
+    }
+
+    .product-comparison__product-title {
+      font-size: var(--pcp-product-title-size, 21px);
+    }
+
+    .product-comparison__feature-name,
+    .product-comparison__text-value {
+      font-size: var(--pcp-feature-name-size, 15px);
+    }
+
+    .product-comparison__feature-icon {
+      width: var(--pcp-icon-size, 24px);
+      height: var(--pcp-icon-size, 24px);
+    }
+
+    .product-comparison__check svg {
+      width: var(--pcp-icon-size, 24px);
+      height: var(--pcp-icon-size, 24px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product comparison",
+  "class": "section-product-comparison",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_comparison-column",
+      "limit": 4
+    },
+    {
+      "type": "_comparison-feature"
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Keep product columns above feature rows in the block list below — the table's first row comes from column blocks (in order), then one row per feature."
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading",
+      "default": "What Makes Xara Shilajit Stand"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Heading highlight word",
+      "info": "Shown in a gradient accent color right after the heading.",
+      "default": "Above The Rest"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:names.subheading",
+      "default": "<p>Superior science. Higher standards. Proven outcomes.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Extra description",
+      "info": "Optional. Only shown on desktop, below the subheading."
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 18,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_start",
+      "label": "Highlight gradient (start)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_mid",
+      "label": "Highlight gradient (middle)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_end",
+      "label": "Highlight gradient (end)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "range",
+      "id": "text_column_width_desktop",
+      "label": "Text column width (desktop)",
+      "min": 30,
+      "max": 70,
+      "step": 1,
+      "unit": "%",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Gap between text and table (desktop)",
+      "min": 16,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Gap between text and table (mobile)",
+      "min": 8,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Product columns"
+    },
+    {
+      "type": "range",
+      "id": "product_title_size_desktop",
+      "label": "Product title size (desktop)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 21
+    },
+    {
+      "type": "range",
+      "id": "product_title_size_mobile",
+      "label": "Product title size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "Product title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Badge text size",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "subtitle_text_color",
+      "label": "Badge text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "default_subtitle_bg_color",
+      "label": "Default badge background",
+      "default": "#ffffff33"
+    },
+    {
+      "type": "color",
+      "id": "default_subtitle_border_color",
+      "label": "Default badge border",
+      "default": "#ffffff4d"
+    },
+    {
+      "type": "header",
+      "content": "Highlighted column"
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg_color",
+      "label": "t:settings.background_color",
+      "default": "#1d3a65"
+    },
+    {
+      "type": "color",
+      "id": "highlight_border_color",
+      "label": "t:settings.border_color",
+      "default": "#0954bc"
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "color",
+      "id": "highlighted_check_yes_color",
+      "label": "Checkmark color",
+      "default": "#01a02c"
+    },
+    {
+      "type": "color",
+      "id": "highlighted_check_no_color",
+      "label": "X color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Features & checkmarks"
+    },
+    {
+      "type": "range",
+      "id": "feature_name_size_desktop",
+      "label": "Feature name size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "feature_name_size_mobile",
+      "label": "Feature name size (mobile)",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "feature_name_color",
+      "label": "Feature name color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "feature_column_width_desktop",
+      "label": "Feature column width (desktop)",
+      "min": 60,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "feature_column_width_mobile",
+      "label": "Feature column width (mobile)",
+      "min": 80,
+      "max": 240,
+      "step": 2,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "cell_padding_vertical",
+      "label": "Cell padding (vertical)",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cell_padding_horizontal",
+      "label": "Cell padding (horizontal)",
+      "min": 2,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "row_border_color",
+      "label": "Row divider color",
+      "default": "#9dc7ff"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "label": "Checkmark/X size (desktop)",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Checkmark/X size (mobile)",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "default_check_yes_color",
+      "label": "Checkmark color (non-highlighted)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "default_check_no_color",
+      "label": "X color (non-highlighted)",
+      "default": "#fc5f5e"
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_top",
+      "label": "Background gradient (top)",
+      "default": "#1c3353"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_bottom",
+      "label": "Background gradient (bottom)",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product comparison",
+      "category": "t:categories.product",
+      "blocks": {
+        "column_1": {
+          "type": "_comparison-column",
+          "settings": {
+            "title": "XARA SHILAJIT",
+            "highlighted": true
+          }
+        },
+        "column_2": {
+          "type": "_comparison-column",
+          "settings": {
+            "title": "OTHER SHILAJIT BRANDS & DRUGSTORES",
+            "highlighted": false
+          }
+        },
+        "feature_1": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "82.8% Fulvic Acid Potency (Verified)",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_2": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "High-Altitude Himalayan Source",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_3": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "Third-Party Lab Tested",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_4": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "Zero Fillers or Synthetic Additives",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_5": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "Precision Daily Dosing",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_6": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "Enhanced Absorption Formula (Gummy Delivery)",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        },
+        "feature_7": {
+          "type": "_comparison-feature",
+          "settings": {
+            "feature_name": "Designed for Testosterone, Energy & Performance",
+            "column_1_value": "yes",
+            "column_2_value": "no"
+          }
+        }
+      },
+      "block_order": [
+        "column_1",
+        "column_2",
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6",
+        "feature_7"
+      ]
+    }
+  ]
+}
+{% endschema %}

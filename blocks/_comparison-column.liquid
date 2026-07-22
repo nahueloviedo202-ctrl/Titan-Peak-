@@ -1,0 +1,123 @@
+{%- doc -%}
+  Renders one product column header (image + title + optional subtitle
+  badge) inside the "Product comparison" section's grid. Add up to 4
+  columns; mark exactly one as "Highlight this column" to call out your own
+  product with an accent-colored box that runs the full height of the table.
+
+  IMPORTANT: keep every "_comparison-column" block above all
+  "_comparison-feature" blocks in the block list — the grid lays out its
+  first row from the columns (in block order), then one row per feature
+  below, and a feature's "Column 1 / 2 / 3 / 4" settings map to columns by
+  that same position.
+
+  Meant to be used exclusively as a child block of
+  `sections/product-comparison.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign col_settings = block.settings
+  assign highlighted = col_settings.highlighted
+-%}
+
+<div
+  class="product-comparison__cell product-comparison__cell--header{% if highlighted %} is-highlighted{% endif %}"
+  style="
+    {% if col_settings.subtitle_bg_color != blank %}
+      --pcp-subtitle-bg: {{ col_settings.subtitle_bg_color }};
+    {% endif %}
+    {% if col_settings.subtitle_border_color != blank %}
+      --pcp-subtitle-border: {{ col_settings.subtitle_border_color }};
+    {% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  {%- if col_settings.image != blank -%}
+    <div class="product-comparison__image-wrapper">
+      {{
+        col_settings.image
+        | image_url: width: 300
+        | image_tag:
+          loading: 'lazy',
+          widths: '150, 300',
+          sizes: '150px',
+          alt: col_settings.image.alt | default: col_settings.title,
+          class: 'product-comparison__image'
+      }}
+    </div>
+  {%- endif -%}
+
+  {%- if col_settings.title != blank -%}
+    <div class="product-comparison__product-title">{{ col_settings.title }}</div>
+  {%- endif -%}
+
+  {%- if col_settings.subtitle_text != blank -%}
+    <div class="product-comparison__subtitle">
+      {%- if col_settings.subtitle_icon != blank -%}
+        <span class="product-comparison__subtitle-icon">
+          {{ col_settings.subtitle_icon | image_url: width: 32 | image_tag: loading: 'lazy', alt: '' }}
+        </span>
+      {%- endif -%}
+      {{- col_settings.subtitle_text -}}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Product column",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Product name"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlighted",
+      "label": "Highlight this column",
+      "info": "Use this for your own product. Only one column should typically be highlighted.",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Subtitle badge"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_text",
+      "label": "Badge text"
+    },
+    {
+      "type": "image_picker",
+      "id": "subtitle_icon",
+      "label": "Badge icon"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_bg_color",
+      "label": "t:settings.background_color",
+      "info": "Leave blank to use the section default.",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_border_color",
+      "label": "t:settings.border_color",
+      "info": "Leave blank to use the section default.",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product column"
+    }
+  ]
+}
+{% endschema %}

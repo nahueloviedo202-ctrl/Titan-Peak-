@@ -1,0 +1,32 @@
+
+
+{%- doc -%}
+  Fixed slot that renders the row of checkmark benefits below the
+  call-to-action button in the "Satisfaction guarantee" section. Every
+  benefit inside is a nested "_satisfaction-guarantee-benefit" block, so
+  merchants can add, remove or reorder them freely, or leave the slot empty
+  to hide the row entirely.
+
+  Meant to be used exclusively as a fixed slot inside `sections/satisfaction-guarantee.liquid`.
+{%- enddoc -%}
+
+{%- if block.blocks.size > 0 -%}
+  <div
+    class="sgt-benefits sgt-benefits--{{ section.settings.benefits_layout }}"
+    {{ block.shopify_attributes }}
+  >
+    {% content_for 'blocks' %}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Benefits",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_satisfaction-guarantee-benefit"
+    }
+  ]
+}
+{% endschema %}

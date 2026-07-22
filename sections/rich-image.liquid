@@ -61,10 +61,11 @@
     <div class="rich-image__image">
       <picture>
         {%- if has_mobile_image and section_settings.image_desktop != blank -%}
+          {%- assign desktop_widths = '800,1200,1600,2000,2560' | split: ',' -%}
           <source
             media="(min-width: 768px)"
             srcset="
-              {%- for width in '800,1200,1600,2000,2560' | split: ',' -%}
+              {%- for width in desktop_widths -%}
                 {{ section_settings.image_desktop | image_url: width: width }} {{ width }}w{% unless forloop.last %}, {% endunless %}
               {%- endfor -%}
             "

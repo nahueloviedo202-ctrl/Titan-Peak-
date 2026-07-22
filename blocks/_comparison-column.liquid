@@ -1,14 +1,17 @@
 {%- doc -%}
   Renders one product column header (image + title + optional subtitle
-  badge) inside the "Product comparison" section's grid. Add up to 4
-  columns; mark exactly one as "Highlight this column" to call out your own
-  product with an accent-colored box that runs the full height of the table.
+  badge) inside the "Product comparison" section's grid. Mark exactly one as
+  "Highlight this column" to call out your own product with an
+  accent-colored box that runs the full height of the table.
 
   IMPORTANT: keep every "_comparison-column" block above all
   "_comparison-feature" blocks in the block list — the grid lays out its
   first row from the columns (in block order), then one row per feature
   below, and a feature's "Column 1 / 2 / 3 / 4" settings map to columns by
-  that same position.
+  that same position. Shopify's theme-block schema has no way to cap how
+  many "_comparison-column" blocks can be added, but each
+  "_comparison-feature" only has values for the first 4 columns — a 5th
+  column would render header-only, with empty cells in every feature row.
 
   Meant to be used exclusively as a child block of
   `sections/product-comparison.liquid`.

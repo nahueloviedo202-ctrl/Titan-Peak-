@@ -318,10 +318,10 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Energía y Vitalidad Diaria",
-                        "description": "<p>Enciende tu energía y resistencia física con 2000mg de Shilajit puro.</p>",
+                        "title": "Más fuerte",
+                        "description": "<p>Ella siente erecciones más duras y completas</p>",
                         "icon": "lightning_bolt",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto.svg",
+                        "image_upload": "shopify://shop_images/icon-harder-fuller-erections-she-feels.png",
                         "icon_size": 40
                       },
                       "blocks": {}
@@ -329,10 +329,10 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Ingredientes Herbales para el Bienestar Masculino",
-                        "description": "<p>Botánicos potentes como Ashwagandha y Maca apoyan activamente la fuerza masculina.</p>",
+                        "title": "De vuelta al ruedo",
+                        "description": "<p>Un deseo sexual insaciable que no cesa.</p>",
                         "icon": "leaf",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto2.svg",
+                        "image_upload": "shopify://shop_images/icon-day-30-she-notices.avif",
                         "icon_size": 40
                       },
                       "blocks": {}
@@ -340,10 +340,10 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mezcla Natural de Foco y Resistencia",
-                        "description": "<p>Adaptógenos que manejan el estrés diario mientras mejoran la claridad mental y el ánimo.</p>",
+                        "title": "Incansable",
+                        "description": "<p>Ella termina primero. Tú sigue adelante.</p>",
                         "icon": "fire",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
+                        "image_upload": "shopify://shop_images/icon-she-finishes-first.png",
                         "icon_size": 40
                       },
                       "blocks": {}
@@ -351,10 +351,10 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Fórmula Limpia, Testeada Clínicamente",
-                        "description": "<p>Origen vegetal y testeado por laboratorios externos para garantizar seguridad, pureza y confianza.</p>",
+                        "title": "Absorción rápida",
+                        "description": "<p>Se disuelve debajo de la lengua y entra en el torrente sanguíneo en minutos, en lugar de permanecer en el estómago durante horas.</p>",
                         "icon": "check_box",
-                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4.svg",
+                        "image_upload": "shopify://shop_images/Frame_174.png",
                         "icon_size": 40
                       },
                       "blocks": {}
@@ -903,8 +903,8 @@
           "type": "_results-timeline-item",
           "settings": {
             "period": "<p>SEMANA 1</p>",
-            "subtitle": "Reinicio de Estrés y Energía",
-            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Mejora el sueño, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés se vuelve más manejable</li><li>Primeros signos de energía y foco recuperados</li></ul>",
+            "subtitle": "Encendido",
+            "bullets": "<ul><li>Las erecciones matutinas reaparecen de repente</li><li>Te sientes más lleno con solo estar en la ducha</li><li>El deseo de tocarla comienza a resurgir</li><li>La energía es diferente, te despiertas antes de que suene la alarma</li></ul>",
             "icon": "lightning"
           },
           "blocks": {}
@@ -913,8 +913,8 @@
           "type": "_results-timeline-item",
           "settings": {
             "period": "<p>MES 1</p>",
-            "subtitle": "Hormonas y Rendimiento en Recuperación",
-            "bullets": "<ul><li>El apoyo a la testosterona empieza a notarse</li><li>El deseo vuelve a aparecer de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día a día</li><li>La confianza y las ganas vuelven de forma natural</li></ul>",
+            "subtitle": "Ella lo nota",
+            "bullets": "<ul><li>Te siente más duro que en años</li><li>Dice \"algo es diferente\" sin que le digas nada</li><li>Duras lo suficiente como para que ella termine primero</li><li>Pasan de tener sexo una vez por semana a que te busque todas las noches</li></ul>",
             "icon": "star"
           },
           "blocks": {}
@@ -923,8 +923,8 @@
           "type": "_results-timeline-item",
           "settings": {
             "period": "<p>MES 3+</p>",
-            "subtitle": "Rendimiento Máximo y Vitalidad",
-            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Vos lo notás. Todos lo notan.</li></ul>",
+            "subtitle": "Su nueva adicción",
+            "bullets": "<ul><li>Dura como una roca , tamaño completo, todo el tiempo</li><li>Ella toma la iniciativa antes que tú</li><li>Varias rondas y es ella la que se rinde</li><li>Se lo cuenta a sus amigas. Te enteras después. No te importa.</li></ul>",
             "icon": "heart_pulse"
           },
           "blocks": {}
@@ -980,24 +980,8 @@
           "type": "full-width-image",
           "name": "Full width image",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_h3azq3h3azq3h3az-clean.webp",
-            "mobile_image": "shopify://shop_images/fix10mobile-clean.webp",
-            "alt": "",
-            "link": "",
-            "open_in_new_tab": false,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "full_width_image_iy43nk": {
-          "type": "full-width-image",
-          "settings": {
-            "image": "shopify://shop_images/arreglado14.webp",
-            "mobile_image": "shopify://shop_images/fox.webp",
+            "image": "shopify://shop_images/imagen1-clean.webp",
+            "mobile_image": "shopify://shop_images/imagen1mobile-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
@@ -1012,7 +996,7 @@
         "full_width_image_kzLaHc": {
           "type": "full-width-image",
           "settings": {
-            "image": "shopify://shop_images/fix14.webp",
+            "image": "shopify://shop_images/imagen2-clean.webp",
             "mobile_image": "shopify://shop_images/fix8mobile-clean.webp",
             "alt": "",
             "link": "",
@@ -1028,7 +1012,6 @@
       },
       "block_order": [
         "full_width_image_iNQQVE",
-        "full_width_image_iy43nk",
         "full_width_image_kzLaHc"
       ],
       "name": "Full width images",
@@ -1048,7 +1031,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Sientes menos ganas y deseo que antes — y ya lleva más tiempo del que te gustaría admitir.</p>",
+            "description": "<p>Tus erecciones ya no son tan firmes ni tan grandes como antes.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1059,7 +1042,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu energía se desploma durante el día y te despiertas ya cansado.</p>",
+            "description": "<p>Has perdido el deseo sexual.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1070,7 +1053,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu rendimiento es inconsistente y nunca sabes qué esperar de ti mismo.</p>",
+            "description": "<p>Pierdes la erección durante el sexo o no puedes mantenerla.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1081,7 +1064,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>El estrés y el bajón de ánimo están matando en silencio tu confianza y motivación.</p>",
+            "description": "<p>Has notado que tu pene es más pequeño que cuando tenías veinte años.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1092,7 +1075,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Has probado pastillas u otros suplementos y no han funcionado, o han dejado de hacerlo.</p>",
+            "description": "<p>Has probado otras soluciones y no te han funcionado, te han causado efectos secundarios o te han generado dependencia.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1103,7 +1086,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Quieres atacar la causa real — no solo tapar el síntoma por una noche.</p>",
+            "description": "<p>Deseas recuperar la circulación sanguínea de forma natural para que tu cuerpo funcione por sí solo sin necesidad de tomar pastillas.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1120,7 +1103,7 @@
       ],
       "name": "Image checklist",
       "settings": {
-        "image": "shopify://shop_images/arreglado3-clean_2d3294f7-4582-4c9c-a666-4d83ece1de2f.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_d6ksz6d6ksz6d6ks_1.webp",
         "image_alt": "",
         "image_link": "",
         "image_radius": 10,
@@ -1310,7 +1293,7 @@
         "testimonial_carousel_card_37jQRF": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/persona2-clean.webp",
+            "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e3.webp",
             "reviewer_name": "Andy G.",
             "star_count": 5,
             "show_verified": true,
@@ -1355,7 +1338,7 @@
         "testimonial_carousel_card_8PX6WW": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/arreglado9-clean.webp",
+            "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e4.webp",
             "reviewer_name": "Pedro",
             "star_count": 5,
             "show_verified": true,

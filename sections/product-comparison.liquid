@@ -11,10 +11,13 @@
   `content_for 'blocks'` insertion point, so a real `<table>` with `_column`
   blocks in `<thead>` and `_feature` blocks in `<tbody>` isn't possible.
   Every "_comparison-column" and "_comparison-feature" block instead renders
-  its own grid cell(s) directly (feature rows use `display: contents` so
-  their cells become direct grid children while the row element itself
-  still exists in the DOM), all emitted from one flat block list — column
-  blocks must stay above feature blocks in the block order.
+  its own grid cell(s) directly (feature rows are themselves a nested CSS
+  subgrid spanning the full width, so their cells align to the same column
+  tracks as the header without needing `display: contents` — which would
+  leave the row with no rendered box, and Shopify's editor needs a real box
+  on a block's root element to make it selectable), all emitted from one
+  flat block list — column blocks must stay above feature blocks in the
+  block order.
 
   Every product column is a nested "_comparison-column" block (max 4) and
   every feature is a nested "_comparison-feature" block, so merchants can
@@ -25,8 +28,8 @@
   assign section_settings = section.settings
 
   assign column_count = 0
-  for block in section.blocks
-    if block.type == '_comparison-column'
+  for section_block in section.blocks
+    if section_block.type == '_comparison-column'
       assign column_count = column_count | plus: 1
     endif
   endfor
@@ -226,7 +229,9 @@
   }
 
   .product-comparison__row {
-    display: contents;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
   }
 
   .product-comparison__cell.is-highlighted {

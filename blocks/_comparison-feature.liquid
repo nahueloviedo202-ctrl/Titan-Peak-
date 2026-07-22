@@ -3,10 +3,12 @@
   feature name plus one value per product column (checkmark, X, short custom
   text, or empty), set independently for up to 4 columns.
 
-  The row itself is `display: contents` (see the section stylesheet), so its
-  cells become direct children of the CSS grid defined on the section while
-  the row element still exists in the DOM as a styling hook (e.g.
-  `.is-last-row`, `block.shopify_attributes` for the editor outline).
+  The row itself is a nested CSS subgrid spanning the full table width (see
+  the section stylesheet: `grid-template-columns: subgrid; grid-column: 1 /
+  -1;`), so its cells align to the exact same column tracks as the header
+  row above. Deliberately not `display: contents` — that would leave the
+  row with no rendered box of its own, and Shopify's theme editor needs a
+  real box on a block's root element to make it selectable/clickable.
 
   "Column 1" / "Column 2" / etc. map to "_comparison-column" blocks by
   position (1st column block in the list = "Column 1"), not by any ID, so

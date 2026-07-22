@@ -1537,13 +1537,13 @@
         "image_text_accordion_button_JhX6Yi": {
           "type": "_image-text-accordion-button",
           "settings": {
-            "label": "Shop now",
-            "link": "",
+            "label": "COMPRAR AHORA",
+            "link": "#product-information",
             "open_in_new_tab": false,
             "full_width": true,
-            "background_color": "#ef4a65",
+            "background_color": "#C9A84C",
             "text_color": "#ffffff",
-            "corner_radius": 0,
+            "corner_radius": 5,
             "font_size_mobile": 16,
             "font_size_desktop": 16,
             "padding_block": 12,

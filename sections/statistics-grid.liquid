@@ -1,0 +1,757 @@
+{%- doc -%}
+  Renders a "Statistics grid" section: a centered header (heading with a
+  metallic accent word + subheading) followed by a responsive grid of stat
+  cards, each showing either a large standalone value or a circular progress
+  ring, with an optional title and description.
+
+  Every stat is a nested "_statistics-grid-item" block, so merchants can add,
+  remove or reorder them freely. All text, colors, sizes, spacing, radius,
+  column counts (mobile/tablet/desktop) and card style are configurable
+  through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign item_count = section.blocks.size
+
+  assign has_heading = false
+  if section_settings.heading != blank or section_settings.heading_accent != blank
+    assign has_heading = true
+  endif
+-%}
+
+<div class="section-background"></div>
+
+<div
+  class="statistics-grid"
+  style="
+    --sg-bg-start: {{ section_settings.background_color_start }};
+    --sg-bg-end: {{ section_settings.background_color_end }};
+    --sg-max-width: {{ section_settings.container_max_width }}px;
+    --sg-pad-inline-mobile: {{ section_settings.container_padding_mobile }}px;
+    --sg-pad-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+    --sg-pad-block-start-mobile: {{ section_settings.padding_top_mobile }}px;
+    --sg-pad-block-end-mobile: {{ section_settings.padding_bottom_mobile }}px;
+    --sg-pad-block-start-desktop: {{ section_settings.padding_top_desktop }}px;
+    --sg-pad-block-end-desktop: {{ section_settings.padding_bottom_desktop }}px;
+    --sg-heading-color: {{ section_settings.heading_color }};
+    --sg-heading-accent-dark: {{ section_settings.heading_accent_dark }};
+    --sg-heading-accent-light: {{ section_settings.heading_accent_light }};
+    --sg-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --sg-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --sg-subheading-color: {{ section_settings.subheading_color }};
+    --sg-subheading-size-mobile: {{ section_settings.subheading_size_mobile }}px;
+    --sg-subheading-size-desktop: {{ section_settings.subheading_size_desktop }}px;
+    --sg-header-gap: {{ section_settings.header_gap }}px;
+    --sg-columns-mobile: {{ section_settings.columns_mobile }};
+    --sg-columns-tablet: {{ section_settings.columns_tablet }};
+    --sg-columns-desktop: {{ section_settings.columns_desktop }};
+    --sg-grid-gap-mobile: {{ section_settings.items_gap_mobile }}px;
+    --sg-grid-gap-tablet: {{ section_settings.items_gap_tablet }}px;
+    --sg-grid-gap-desktop: {{ section_settings.items_gap_desktop }}px;
+    --sg-grid-max-width-tablet: {{ section_settings.grid_max_width_tablet }}px;
+    --sg-grid-max-width-mobile: {{ section_settings.grid_max_width_mobile }}px;
+    --sg-card-bg: {{ section_settings.card_background_color }};
+    --sg-card-radius: {{ section_settings.card_radius }}px;
+    --sg-card-shadow: {% if section_settings.card_shadow %}0 2px 10px rgba(0, 0, 0, 0.08){% else %}none{% endif %};
+    --sg-card-padding-mobile: {{ section_settings.card_padding_mobile }}px;
+    --sg-card-padding-desktop: {{ section_settings.card_padding_desktop }}px;
+    --sg-card-min-height-mobile: {{ section_settings.card_min_height_mobile }}px;
+    --sg-card-min-height-desktop: {{ section_settings.card_min_height_desktop }}px;
+    --sg-value-color: {{ section_settings.value_color }};
+    --sg-value-size-mobile: {{ section_settings.value_size_mobile }}px;
+    --sg-value-size-desktop: {{ section_settings.value_size_desktop }}px;
+    --sg-circle-track-color: {{ section_settings.circle_track_color }};
+    --sg-circle-progress-color: {{ section_settings.circle_progress_color }};
+    --sg-circle-stroke-width: {{ section_settings.circle_stroke_width }};
+    --sg-circle-size-mobile: {{ section_settings.circle_size_mobile }}px;
+    --sg-circle-size-desktop: {{ section_settings.circle_size_desktop }}px;
+    --sg-circle-value-size-mobile: {{ section_settings.circle_value_size_mobile }}px;
+    --sg-circle-value-size-desktop: {{ section_settings.circle_value_size_desktop }}px;
+    --sg-title-color: {{ section_settings.title_color }};
+    --sg-title-size-mobile: {{ section_settings.title_size_mobile }}px;
+    --sg-title-size-desktop: {{ section_settings.title_size_desktop }}px;
+    --sg-description-color: {{ section_settings.description_color }};
+    --sg-description-size-mobile: {{ section_settings.description_size_mobile }}px;
+    --sg-description-size-desktop: {{ section_settings.description_size_desktop }}px;
+  "
+  data-testid="statistics-grid"
+>
+  <div class="sg-container">
+    {%- if has_heading or section_settings.subheading != blank -%}
+      <header class="sg-header">
+        {%- if has_heading -%}
+          <h2 class="sg-heading">
+            {{- section_settings.heading -}}
+            {%- if section_settings.heading_accent != blank -%}
+              <span class="sg-heading-accent">{{ section_settings.heading_accent }}</span>
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+        {%- if section_settings.subheading != blank -%}
+          <p class="sg-subheading">{{ section_settings.subheading }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if item_count > 0 -%}
+      <div class="sg-grid">
+        {% content_for 'blocks' %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .statistics-grid {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(180deg, var(--sg-bg-start, #1c3353), var(--sg-bg-end, #141720) 97%);
+    padding-block: var(--sg-pad-block-start-mobile, 0px) var(--sg-pad-block-end-mobile, 40px);
+  }
+
+  .sg-container {
+    max-width: var(--sg-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--sg-pad-inline-mobile, 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sg-header {
+    margin-bottom: var(--sg-header-gap, 40px);
+    width: 100%;
+  }
+
+  .sg-heading {
+    margin: 0 0 15px;
+    color: var(--sg-heading-color, #ffffff);
+    font-size: var(--sg-heading-size-mobile, 36px);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+  }
+
+  .sg-heading-accent {
+    display: inline-block;
+    margin-left: 5px;
+    background: linear-gradient(180deg, var(--sg-heading-accent-dark, #a3a3a3), var(--sg-heading-accent-light, #ffffff) 55%, var(--sg-heading-accent-dark, #a3a3a3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sg-subheading {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--sg-subheading-color, #ffffff);
+    font-size: var(--sg-subheading-size-mobile, 14px);
+    line-height: 1.5;
+  }
+
+  .sg-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--sg-columns-mobile, 2), 1fr);
+    grid-auto-rows: 1fr;
+    gap: var(--sg-grid-gap-mobile, 8px);
+    width: 100%;
+    max-width: var(--sg-grid-max-width-mobile, 500px);
+    margin-inline: auto;
+    box-sizing: border-box;
+    place-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .sg-grid {
+      grid-template-columns: repeat(var(--sg-columns-tablet, 2), 1fr);
+      gap: var(--sg-grid-gap-tablet, 20px);
+      max-width: var(--sg-grid-max-width-tablet, 600px);
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .statistics-grid {
+      padding-block: var(--sg-pad-block-start-desktop, 0px) var(--sg-pad-block-end-desktop, 60px);
+    }
+
+    .sg-container {
+      padding-inline: var(--sg-pad-inline-desktop, 40px);
+    }
+
+    .sg-heading {
+      font-size: var(--sg-heading-size-desktop, 52px);
+    }
+
+    .sg-subheading {
+      font-size: var(--sg-subheading-size-desktop, 14px);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .sg-grid {
+      grid-template-columns: repeat(var(--sg-columns-desktop, 4), 1fr);
+      gap: var(--sg-grid-gap-desktop, 20px);
+      max-width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Statistics grid",
+  "class": "section-statistics-grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_statistics-grid-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "The proof is in "
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent text",
+      "default": "the numbers",
+      "info": "Rendered with a metallic gradient effect, right after the heading."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_dark",
+      "label": "Accent gradient (dark)",
+      "default": "#a3a3a3"
+    },
+    {
+      "type": "color",
+      "id": "heading_accent_light",
+      "label": "Accent gradient (light)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Self-reported improvements from men who made Xara part of their daily routine."
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "label": "Space below header",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.grid"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns (mobile)",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:options.one_number"
+        },
+        {
+          "value": "2",
+          "label": "t:options.two_number"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns (tablet)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "t:settings.columns",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "items_gap_mobile",
+      "label": "Gap (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "items_gap_tablet",
+      "label": "Gap (tablet)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "items_gap_desktop",
+      "label": "Gap (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "grid_max_width_mobile",
+      "label": "Grid max width (mobile)",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "grid_max_width_tablet",
+      "label": "Grid max width (tablet)",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "t:settings.background_color",
+      "default": "#ffffff",
+      "info": "Used on items with \"Show card background\" enabled."
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "card_shadow",
+      "label": "Card shadow",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Card padding (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_padding_desktop",
+      "label": "Card padding (desktop)",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_mobile",
+      "label": "Card min height (mobile)",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "card_min_height_desktop",
+      "label": "Card min height (desktop)",
+      "min": 0,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "header",
+      "content": "Value"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "t:settings.color",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "range",
+      "id": "value_size_mobile",
+      "label": "Value size (mobile)",
+      "min": 20,
+      "max": 90,
+      "step": 1,
+      "unit": "px",
+      "default": 54
+    },
+    {
+      "type": "range",
+      "id": "value_size_desktop",
+      "label": "Value size (desktop)",
+      "min": 30,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 82
+    },
+    {
+      "type": "header",
+      "content": "Progress ring"
+    },
+    {
+      "type": "color",
+      "id": "circle_track_color",
+      "label": "Track color",
+      "alpha": true,
+      "default": "#ffffff26"
+    },
+    {
+      "type": "color",
+      "id": "circle_progress_color",
+      "label": "Progress color",
+      "default": "#e8d5a3"
+    },
+    {
+      "type": "range",
+      "id": "circle_stroke_width",
+      "label": "t:settings.thickness",
+      "min": 2,
+      "max": 16,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "circle_size_mobile",
+      "label": "Ring size (mobile)",
+      "min": 50,
+      "max": 160,
+      "step": 1,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "circle_size_desktop",
+      "label": "Ring size (desktop)",
+      "min": 60,
+      "max": 220,
+      "step": 1,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "circle_value_size_mobile",
+      "label": "Ring text size (mobile)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "circle_value_size_desktop",
+      "label": "Ring text size (desktop)",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Title & description"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title size (desktop)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Description size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Description size (desktop)",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color_start",
+      "label": "Background gradient (top)",
+      "default": "#1c3353"
+    },
+    {
+      "type": "color",
+      "id": "background_color_end",
+      "label": "Background gradient (bottom)",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom (mobile)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom (desktop)",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statistics grid",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "94%",
+            "description": "<p>reported smoother daily energy within the first month.</p>"
+          }
+        },
+        "item_2": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "91%",
+            "description": "<p>felt improved overall mood and emotional balance.</p>"
+          }
+        },
+        "item_3": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "96%",
+            "description": "<p>experienced clearer focus and sharper thinking.</p>"
+          }
+        },
+        "item_4": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "90%",
+            "description": "<p>reported improved blood flow and sexual vitality.</p>"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"]
+    }
+  ]
+}
+{% endschema %}

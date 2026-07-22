@@ -1,0 +1,282 @@
+{%- doc -%}
+  Renders a single ingredient card (image + title + description) inside the
+  "Ingredient steps" section's carousel: a bordered card with the image on
+  top (desktop) or to the left (mobile, when horizontal layout is enabled).
+
+  Image and content background colors can be overridden per card; when left
+  blank they fall back to the section-level defaults so merchants can, e.g.,
+  alternate a dark and a light card without setting colors on every block.
+
+  Meant to be used exclusively as a child block of
+  `sections/ingredient-steps.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign card_settings = block.settings
+  assign show_numbers = section.settings.show_numbers
+
+  assign step_number = 0
+  if show_numbers
+    for step_block in section.blocks
+      assign step_number = forloop.index
+      if step_block.id == block.id
+        break
+      endif
+    endfor
+  endif
+-%}
+
+<div
+  class="ingredient-step-card"
+  style="
+    {% if card_settings.image_background_color != blank %}
+      --iks-card-image-bg: {{ card_settings.image_background_color }};
+    {% endif %}
+    {% if card_settings.content_background_color != blank %}
+      --iks-card-content-bg: {{ card_settings.content_background_color }};
+    {% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  <div class="ingredient-step-card__card">
+    <div class="ingredient-step-card__media">
+      {%- if card_settings.image != blank -%}
+        {{
+          card_settings.image
+          | image_url: width: 800
+          | image_tag:
+            loading: 'lazy',
+            widths: '300, 400, 600, 800',
+            sizes: '(max-width: 749px) 40vw, 25vw',
+            alt: card_settings.image.alt | default: card_settings.title,
+            class: 'ingredient-step-card__image',
+            draggable: 'false'
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'ingredient-step-card__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="ingredient-step-card__content">
+      <div class="ingredient-step-card__title-row">
+        {%- if show_numbers -%}
+          <span class="ingredient-step-card__number{% if card_settings.custom_icon != blank %} has-custom-icon{% endif %}">
+            {%- if card_settings.custom_icon != blank -%}
+              {{
+                card_settings.custom_icon
+                | image_url: width: 64
+                | image_tag: loading: 'lazy', alt: '', class: 'ingredient-step-card__number-icon'
+              }}
+            {%- else -%}
+              {{- step_number -}}
+            {%- endif -%}
+          </span>
+        {%- endif -%}
+
+        {%- if card_settings.title != blank -%}
+          <h3 class="ingredient-step-card__title">{{ card_settings.title }}</h3>
+        {%- endif -%}
+      </div>
+
+      {%- if card_settings.description != blank -%}
+        <div class="ingredient-step-card__description rte">{{ card_settings.description }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .ingredient-step-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+    padding: var(--iks-mobile-slide-padding, 8px);
+  }
+
+  .ingredient-step-card__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--iks-card-border-radius, 6px);
+    border: var(--iks-card-border-width, 1px) solid var(--iks-card-border-color, #404040);
+  }
+
+  .ingredient-step-card__media {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: var(--iks-image-aspect, 1 / 1);
+    background-color: var(--iks-card-image-bg, var(--iks-default-image-bg, #0e203e));
+  }
+
+  @media screen and (max-width: 749px) {
+    .ingredient-steps[data-mobile-layout='horizontal'] .ingredient-step-card__card {
+      flex-direction: row;
+    }
+
+    .ingredient-steps[data-mobile-layout='horizontal'] .ingredient-step-card__media {
+      width: 33%;
+      min-width: 30%;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    .ingredient-steps[data-mobile-layout='horizontal'] .ingredient-step-card__media {
+      width: 37%;
+    }
+  }
+
+  .ingredient-step-card__image,
+  .ingredient-step-card__placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: var(--iks-image-fit, cover);
+    object-position: center;
+  }
+
+  .ingredient-step-card__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: var(--iks-content-padding-v, 16px) var(--iks-content-padding-h, 12px);
+    background-color: var(--iks-card-content-bg, var(--iks-default-content-bg, #0e203e));
+  }
+
+  .ingredient-step-card__title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ingredient-step-card__number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--iks-number-circle-size, 40px);
+    height: var(--iks-number-circle-size, 40px);
+    border-radius: 50%;
+    border: 2px solid var(--iks-number-border-color, #000000);
+    background-color: var(--iks-number-bg, #ffffff);
+    color: var(--iks-number-text-color, #000000);
+    font-weight: 600;
+    font-size: var(--iks-number-size-mobile, 24px);
+  }
+
+  .ingredient-step-card__number.has-custom-icon {
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+  }
+
+  .ingredient-step-card__number-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .ingredient-step-card__title {
+    margin: 0;
+    overflow-wrap: break-word;
+    color: var(--iks-step-title-color, #ffffff);
+    font-size: var(--iks-step-title-size-mobile, 16px);
+    line-height: 1.2;
+  }
+
+  .ingredient-step-card__description,
+  .ingredient-step-card__description p {
+    margin: 0;
+    overflow-wrap: break-word;
+    color: var(--iks-step-description-color, #ffffff);
+    font-size: var(--iks-step-description-size-mobile, 10px);
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ingredient-step-card {
+      flex: 0 0 calc((100% - (var(--iks-gap, 5px) * (var(--iks-columns, 4) - 1))) / var(--iks-columns, 4));
+      padding: 0;
+    }
+
+    .ingredient-step-card__number {
+      font-size: var(--iks-number-size, 20px);
+    }
+
+    .ingredient-step-card__title {
+      font-size: var(--iks-step-title-size, 18px);
+    }
+
+    .ingredient-step-card__description,
+    .ingredient-step-card__description p {
+      font-size: var(--iks-step-description-size, 12px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ingredient card",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Ingredient name"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe what this ingredient does and why it matters.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_icon",
+      "label": "Custom step icon",
+      "info": "Optional. Replaces the number with a small icon. Only visible when \"Show step numbers\" is enabled in the section settings."
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "image_background_color",
+      "label": "Image background",
+      "info": "Leave blank to use the section default.",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "Content background",
+      "info": "Leave blank to use the section default.",
+      "placeholder": "t:settings.default"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient card"
+    }
+  ]
+}
+{% endschema %}

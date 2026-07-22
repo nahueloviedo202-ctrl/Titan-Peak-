@@ -1,0 +1,921 @@
+{%- doc -%}
+  Ingredient steps: a two-tone heading (plain text + a gradient-highlighted
+  word) and subheading, followed by an arrow-controlled carousel of
+  ingredient cards (image + title + description). On desktop a fixed number
+  of cards page at a time; on mobile the track becomes a native
+  touch-swipeable horizontal scroller with one full-width card per view.
+
+  Every ingredient is its own nested "_ingredient-step-card" block, so
+  merchants can add, remove or reorder ingredients freely. Optional numbered
+  badges can be enabled to label each step.
+{%- enddoc -%}
+
+<script
+  src="{{ 'ingredient-steps.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{%- liquid
+  assign section_settings = section.settings
+  assign card_count = section.blocks.size
+-%}
+
+<div
+  class="ingredient-steps spacing-style"
+  data-mobile-layout="{{ section_settings.mobile_layout }}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --iks-bg-top: {{ section_settings.background_gradient_top }};
+    --iks-bg-bottom: {{ section_settings.background_gradient_bottom }};
+    --iks-max-width: {{ section_settings.container_max_width }}px;
+    --iks-padding-x: {{ section_settings.container_padding }}px;
+    --iks-padding-x-mobile: {{ section_settings.container_padding_mobile }}px;
+    --iks-heading-size: {{ section_settings.heading_size_desktop }}px;
+    --iks-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --iks-heading-color: {{ section_settings.heading_color }};
+    --iks-highlight-start: {{ section_settings.highlight_color_start }};
+    --iks-highlight-mid: {{ section_settings.highlight_color_mid }};
+    --iks-highlight-end: {{ section_settings.highlight_color_end }};
+    --iks-subheading-size: {{ section_settings.subheading_size_desktop }}px;
+    --iks-subheading-size-mobile: {{ section_settings.subheading_size_mobile }}px;
+    --iks-subheading-color: {{ section_settings.subheading_color }};
+    --iks-step-title-size: {{ section_settings.step_title_size_desktop }}px;
+    --iks-step-title-size-mobile: {{ section_settings.step_title_size_mobile }}px;
+    --iks-step-title-color: {{ section_settings.step_title_color }};
+    --iks-step-description-size: {{ section_settings.step_description_size_desktop }}px;
+    --iks-step-description-size-mobile: {{ section_settings.step_description_size_mobile }}px;
+    --iks-step-description-color: {{ section_settings.step_description_color }};
+    --iks-columns: {{ section_settings.columns_desktop }};
+    --iks-gap: {{ section_settings.items_gap }}px;
+    --iks-mobile-slide-padding: {{ section_settings.mobile_slide_padding }}px;
+    --iks-transition-speed: {{ section_settings.transition_speed }}ms;
+    --iks-nav-btn-size: {{ section_settings.nav_button_size }}px;
+    --iks-nav-btn-bg: {{ section_settings.nav_button_bg_color }};
+    --iks-nav-btn-border-color: {{ section_settings.nav_button_border_color }};
+    --iks-nav-btn-icon-color: {{ section_settings.nav_button_icon_color }};
+    --iks-number-bg: {{ section_settings.number_bg_color }};
+    --iks-number-border-color: {{ section_settings.number_border_color }};
+    --iks-number-text-color: {{ section_settings.number_text_color }};
+    --iks-number-size: {{ section_settings.number_size_desktop }}px;
+    --iks-number-size-mobile: {{ section_settings.number_size_mobile }}px;
+    --iks-number-circle-size: {{ section_settings.number_circle_size }}px;
+    --iks-card-border-radius: {{ section_settings.card_border_radius }}px;
+    --iks-card-border-width: {{ section_settings.card_border_width }}px;
+    --iks-card-border-color: {{ section_settings.card_border_color }};
+    --iks-image-aspect: {{ section_settings.image_aspect_ratio }};
+    --iks-image-fit: {{ section_settings.image_fit }};
+    --iks-default-image-bg: {{ section_settings.default_image_background_color }};
+    --iks-default-content-bg: {{ section_settings.default_content_background_color }};
+    --iks-content-padding-v: {{ section_settings.content_padding_vertical }}px;
+    --iks-content-padding-h: {{ section_settings.content_padding_horizontal }}px;
+  "
+  data-testid="ingredient-steps"
+>
+  <div class="ingredient-steps__container">
+    {%- if section_settings.heading_line_1 != blank or section_settings.heading_highlight != blank -%}
+      <h2 class="ingredient-steps__heading">
+        {%- if section_settings.heading_line_1 != blank -%}
+          {{- section_settings.heading_line_1 -}}
+        {%- endif -%}
+        {%- if section_settings.heading_highlight != blank -%}
+          {{ ' ' }}<span class="ingredient-steps__heading-highlight">{{- section_settings.heading_highlight -}}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    {%- if section_settings.subheading != blank -%}
+      <div class="ingredient-steps__subheading rte">{{ section_settings.subheading }}</div>
+    {%- endif -%}
+
+    {%- if card_count > 0 -%}
+      <ingredient-steps-component
+        class="ingredient-steps__component"
+        data-autoplay="{{ section_settings.autoplay }}"
+        data-autoplay-speed="{{ section_settings.autoplay_speed }}"
+      >
+        <div
+          class="ingredient-steps__wrapper"
+          ref="wrapper"
+        >
+          <div
+            class="ingredient-steps__track"
+            ref="track"
+          >
+            {% content_for 'blocks' %}
+          </div>
+        </div>
+
+        {%- if section_settings.show_arrows and card_count > 1 -%}
+          <div class="ingredient-steps__nav">
+            <button
+              type="button"
+              class="ingredient-steps__nav-btn ingredient-steps__nav-btn--prev"
+              ref="prevButton"
+              on:click="/prev"
+              aria-label="{{ 'accessibility.slideshow_previous' | t }}"
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M8 5L13 10L8 15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="ingredient-steps__nav-btn ingredient-steps__nav-btn--next"
+              ref="nextButton"
+              on:click="/next"
+              aria-label="{{ 'accessibility.slideshow_next' | t }}"
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M8 5L13 10L8 15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        {%- endif -%}
+      </ingredient-steps-component>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .ingredient-steps {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--iks-bg-top, #1c3353), var(--iks-bg-bottom, #141720));
+    font-family: var(--font-body--family, inherit);
+  }
+
+  .ingredient-steps__container {
+    max-width: var(--iks-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--iks-padding-x-mobile, 16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredient-steps__heading {
+    font-family: var(--font-heading--family, inherit);
+    font-weight: 700;
+    font-size: var(--iks-heading-size-mobile, 36px);
+    line-height: 1.2;
+    color: var(--iks-heading-color, #ffffff);
+    text-align: center;
+    margin: 0 0 10px;
+  }
+
+  .ingredient-steps__heading-highlight {
+    background: linear-gradient(
+      180deg,
+      var(--iks-highlight-start, #b8b8b8),
+      var(--iks-highlight-mid, #ffffff),
+      var(--iks-highlight-end, #b8b8b8)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .ingredient-steps__subheading,
+  .ingredient-steps__subheading p {
+    font-size: var(--iks-subheading-size-mobile, 14px);
+    color: var(--iks-subheading-color, #ffffff);
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.4;
+    margin: 0 0 20px;
+  }
+
+  .ingredient-steps__component {
+    display: block;
+    width: 100%;
+  }
+
+  .ingredient-steps__wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ingredient-steps__track {
+    display: flex;
+    gap: 0px;
+    transition: transform var(--iks-transition-speed, 300ms) ease;
+    will-change: transform;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ingredient-steps__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ingredient-steps__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .ingredient-steps__nav-btn {
+    width: var(--iks-nav-btn-size, 40px);
+    height: var(--iks-nav-btn-size, 40px);
+    border-radius: 50%;
+    border: 1px solid var(--iks-nav-btn-border-color, #0954bc);
+    background: var(--iks-nav-btn-bg, #0e203e);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--iks-nav-btn-icon-color, #ffffff);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .ingredient-steps__nav-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  .ingredient-steps__nav-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .ingredient-steps__nav-btn svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .ingredient-steps__nav-btn--prev svg {
+    transform: scaleX(-1);
+  }
+
+  @media screen and (min-width: 750px) {
+    .ingredient-steps__container {
+      padding-inline: var(--iks-padding-x, 20px);
+    }
+
+    .ingredient-steps__heading {
+      font-size: var(--iks-heading-size, 52px);
+      margin-bottom: 16px;
+    }
+
+    .ingredient-steps__subheading,
+    .ingredient-steps__subheading p {
+      font-size: var(--iks-subheading-size, 18px);
+      margin-bottom: 32px;
+    }
+
+    .ingredient-steps__track {
+      gap: var(--iks-gap, 5px);
+      overflow-x: visible;
+      scroll-snap-type: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ingredient steps",
+  "class": "section-ingredient-steps",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_ingredient-step-card"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading",
+      "default": "Ingredients That"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Heading highlight word",
+      "info": "Shown in a gradient accent color right after the heading.",
+      "default": "Deliver"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:names.subheading",
+      "default": "<p>Daily support for energy, testosterone, and performance at the cellular level.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 18,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_start",
+      "label": "Highlight gradient (start)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_mid",
+      "label": "Highlight gradient (middle)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color_end",
+      "label": "Highlight gradient (end)",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_desktop",
+      "label": "Ingredient title size (desktop)",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "step_title_size_mobile",
+      "label": "Ingredient title size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "step_title_color",
+      "label": "Ingredient title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "step_description_size_desktop",
+      "label": "Ingredient description size (desktop)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "step_description_size_mobile",
+      "label": "Ingredient description size (mobile)",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "step_description_color",
+      "label": "Ingredient description color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:content.carousel"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "t:settings.columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "mobile_slide_padding",
+      "label": "Mobile slide padding",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "t:content.mobile_layout",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal (image left)"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical (image top)"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "range",
+      "id": "transition_speed",
+      "label": "Transition speed",
+      "min": 150,
+      "max": 800,
+      "step": 50,
+      "unit": "ms",
+      "default": 300
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:settings.autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "t:settings.speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5,
+      "visible_if": "{{ section.settings.autoplay }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "t:settings.show",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "nav_button_size",
+      "label": "t:settings.size",
+      "min": 28,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_bg_color",
+      "label": "t:settings.background_color",
+      "default": "#0e203e",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_border_color",
+      "label": "t:settings.border_color",
+      "default": "#0954bc",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_icon_color",
+      "label": "Icon color",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.show_arrows }}"
+    },
+    {
+      "type": "header",
+      "content": "Step numbers"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_numbers",
+      "label": "Show step numbers",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "number_circle_size",
+      "label": "Number circle size",
+      "min": 24,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "range",
+      "id": "number_size_desktop",
+      "label": "Number text size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "range",
+      "id": "number_size_mobile",
+      "label": "Number text size (mobile)",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "color",
+      "id": "number_bg_color",
+      "label": "Number background",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "color",
+      "id": "number_border_color",
+      "label": "Number border",
+      "default": "#000000",
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "color",
+      "id": "number_text_color",
+      "label": "Number text color",
+      "default": "#000000",
+      "visible_if": "{{ section.settings.show_numbers }}"
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "t:settings.border_thickness",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "t:settings.border_color",
+      "default": "#404040"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "4 / 3",
+          "label": "Landscape (4:3)"
+        }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "color",
+      "id": "default_image_background_color",
+      "label": "Default image background",
+      "info": "Used when a card doesn't set its own image background.",
+      "default": "#0e203e"
+    },
+    {
+      "type": "color",
+      "id": "default_content_background_color",
+      "label": "Default content background",
+      "info": "Used when a card doesn't set its own content background.",
+      "default": "#0e203e"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_vertical",
+      "label": "Content padding (vertical)",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_padding_horizontal",
+      "label": "Content padding (horizontal)",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "label": "Side padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_top",
+      "label": "Background gradient (top)",
+      "default": "#1c3353"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_bottom",
+      "label": "Background gradient (bottom)",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient steps",
+      "category": "t:categories.product",
+      "blocks": {
+        "step_1": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "SHILAJIT (High Fulvic Acid)",
+            "description": "<p>Deep mineral restoration for peak male performance. Replenishes essential trace minerals, supports testosterone production, and enhances energy, stamina, and blood flow.</p>"
+          }
+        },
+        "step_2": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "KSM-66 ASHWAGANDHA",
+            "description": "<p>Cortisol control + testosterone support. Reduces stress hormones, improves recovery, enhances strength, and supports healthy testosterone levels.</p>"
+          }
+        },
+        "step_3": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "MACA ROOT",
+            "description": "<p>Natural drive + endurance booster. Supports libido, stamina, and physical performance while helping balance hormones and improve daily energy output.</p>"
+          }
+        },
+        "step_4": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "TONGKAT ALI",
+            "description": "<p>Testosterone + strength amplifier. Clinically studied to support free testosterone levels, enhance muscle strength, and improve male vitality and performance.</p>"
+          }
+        },
+        "step_5": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "BLACK MUSLI",
+            "description": "<p>Powerful vitality enhancer. Traditionally used to support sexual health, stamina, and overall male performance while promoting strength and recovery.</p>"
+          }
+        },
+        "step_6": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "GOKSHURA",
+            "description": "<p>Performance + circulation support. Helps improve blood flow, supports testosterone levels, and enhances endurance and physical output.</p>"
+          }
+        },
+        "step_7": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "KAUNCH (MUCUNA PRURIENS)",
+            "description": "<p>Mood + dopamine optimizer. Naturally rich in L-Dopa to support dopamine levels, boosting mood, motivation, libido, and mental drive.</p>"
+          }
+        },
+        "step_8": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "GINGER ROOT",
+            "description": "<p>Absorption + circulation booster. Improves nutrient delivery, supports digestion, and enhances blood flow for better performance and recovery.</p>",
+            "image_background_color": "#f5f5f5",
+            "content_background_color": "#ffffff"
+          }
+        },
+        "step_9": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "BLACK PEPPER EXTRACT",
+            "description": "<p>Bioavailability enhancer. Increases absorption of key ingredients, ensuring your body fully utilizes every compound for maximum results.</p>",
+            "image_background_color": "#f5f5f5",
+            "content_background_color": "#ffffff"
+          }
+        },
+        "step_10": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "title": "AKARKARA",
+            "description": "<p>Stimulation + performance activator. Traditionally used to enhance arousal, nerve sensitivity, and overall male performance.</p>",
+            "image_background_color": "#f5f5f5",
+            "content_background_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5",
+        "step_6",
+        "step_7",
+        "step_8",
+        "step_9",
+        "step_10"
+      ]
+    }
+  ]
+}
+{% endschema %}

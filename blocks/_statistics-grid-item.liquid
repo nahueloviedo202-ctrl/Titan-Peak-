@@ -1,0 +1,289 @@
+
+
+{%- doc -%}
+  Renders a single stat card for the "Statistics grid" section, in one of two
+  styles: a large standalone percentage/value, or a circular progress ring
+  with the percentage inside it (pure CSS/SVG, no JavaScript). Both styles
+  can be followed by an optional title and description.
+
+  Colors, sizes, radius and spacing are controlled by the parent section via
+  CSS custom properties; this block only carries per-item content and style.
+
+  Meant to be used exclusively as a child block of `sections/statistics-grid.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+  assign circumference = 282.743
+
+  assign percentage = item_settings.percentage
+  if percentage < 0
+    assign percentage = 0
+  endif
+  if percentage > 100
+    assign percentage = 100
+  endif
+  assign offset = 100 | minus: percentage | times: circumference | divided_by: 100.0
+-%}
+
+<div
+  class="sg-item{% if item_settings.show_card_background %} sg-item--card{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {%- if item_settings.display_style == 'circle' -%}
+    <div class="sg-circle-container">
+      <div class="sg-circle">
+        <svg
+          class="sg-circle-svg"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle
+            class="sg-circle-track"
+            cx="50"
+            cy="50"
+            r="45"
+          />
+          <circle
+            class="sg-circle-progress"
+            cx="50"
+            cy="50"
+            r="45"
+            style="
+              stroke-dasharray: {{ circumference }};
+              stroke-dashoffset: {{ offset }};
+            "
+          />
+        </svg>
+        <span class="sg-circle-value">{{ percentage }}%</span>
+      </div>
+    </div>
+  {%- else -%}
+    {%- if item_settings.value != blank -%}
+      <div class="sg-value">{{ item_settings.value }}</div>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if item_settings.title != blank or item_settings.description != blank -%}
+    <div class="sg-content">
+      {%- if item_settings.title != blank -%}
+        <h3 class="sg-title">{{ item_settings.title }}</h3>
+      {%- endif -%}
+
+      {%- if item_settings.description != blank -%}
+        <div class="sg-description rte">{{ item_settings.description }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .sg-item {
+    width: 100%;
+    height: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .sg-item--card {
+    background-color: var(--sg-card-bg, #ffffff);
+    border-radius: var(--sg-card-radius, 10px);
+    box-shadow: var(--sg-card-shadow, none);
+    padding: var(--sg-card-padding-mobile, 12px);
+    min-height: var(--sg-card-min-height-mobile, 140px);
+  }
+
+  .sg-value {
+    font-weight: var(--font-weight-bold);
+    color: var(--sg-value-color, #e8d5a3);
+    font-size: var(--sg-value-size-mobile, 54px);
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .sg-circle-container {
+    width: var(--sg-circle-size-mobile, 90px);
+    height: var(--sg-circle-size-mobile, 90px);
+    margin-bottom: 5px;
+  }
+
+  .sg-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sg-circle-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .sg-circle-track {
+    fill: none;
+    stroke: var(--sg-circle-track-color, rgb(255 255 255 / 0.15));
+    stroke-width: var(--sg-circle-stroke-width, 8);
+  }
+
+  .sg-circle-progress {
+    fill: none;
+    stroke: var(--sg-circle-progress-color, #e8d5a3);
+    stroke-width: var(--sg-circle-stroke-width, 8);
+    stroke-linecap: round;
+  }
+
+  .sg-circle-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--sg-value-color, #e8d5a3);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--sg-circle-value-size-mobile, 18px);
+  }
+
+  .sg-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sg-title {
+    margin: 8px 0 4px;
+    color: var(--sg-title-color, #ffffff);
+    font-size: var(--sg-title-size-mobile, 15px);
+    font-weight: 700;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .sg-description {
+    margin: 0;
+    color: var(--sg-description-color, #ffffff);
+    font-size: var(--sg-description-size-mobile, 12px);
+    line-height: 1.3;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .sg-description :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  .sg-description :is(p, ul, ol) + :is(p, ul, ol) {
+    margin-top: 0.4em;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sg-item--card {
+      padding: var(--sg-card-padding-desktop, 17.5px 15px);
+      min-height: var(--sg-card-min-height-desktop, 180px);
+    }
+
+    .sg-value {
+      font-size: var(--sg-value-size-desktop, 82px);
+      margin-bottom: 10px;
+    }
+
+    .sg-circle-container {
+      width: var(--sg-circle-size-desktop, 120px);
+      height: var(--sg-circle-size-desktop, 120px);
+    }
+
+    .sg-circle-value {
+      font-size: var(--sg-circle-value-size-desktop, 30px);
+    }
+
+    .sg-title {
+      font-size: var(--sg-title-size-desktop, 18px);
+    }
+
+    .sg-description {
+      font-size: var(--sg-description-size-desktop, 14px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Stat item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "display_style",
+      "label": "t:settings.style",
+      "options": [
+        {
+          "value": "number",
+          "label": "Number"
+        },
+        {
+          "value": "circle",
+          "label": "Progress ring"
+        }
+      ],
+      "default": "number"
+    },
+    {
+      "type": "text",
+      "id": "value",
+      "label": "Value",
+      "default": "90%",
+      "info": "Shown for the \"Number\" style.",
+      "visible_if": "{{ block.settings.display_style == 'number' }}"
+    },
+    {
+      "type": "range",
+      "id": "percentage",
+      "label": "Percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 90,
+      "info": "Fills the ring and is shown inside it for the \"Progress ring\" style.",
+      "visible_if": "{{ block.settings.display_style == 'circle' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Describe this statistic.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_card_background",
+      "label": "Show card background",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stat item"
+    }
+  ]
+}
+{% endschema %}

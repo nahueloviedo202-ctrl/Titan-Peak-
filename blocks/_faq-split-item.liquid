@@ -1,0 +1,185 @@
+{%- doc -%}
+  Renders a single collapsible FAQ card (question + answer) for the
+  "faq-split" section, reusing the theme's native `accordion-custom`
+  component for the animated expand/collapse (no extra JavaScript).
+
+  When the parent section's "One open at a time" setting is enabled, all
+  sibling items share a `name` attribute so the native `<details>` grouping
+  keeps only one card open at a time — otherwise each card toggles freely.
+
+  Colors, sizes, padding, radius and icon style are controlled by the parent
+  section via CSS custom properties; this block only carries per-question
+  content.
+
+  Meant to be used exclusively as a child block of `sections/faq-split.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+  assign group_name = 'faq-split-' | append: section.id
+-%}
+
+{% capture faq_split_item_children %}
+  <details
+    class="faq-split-item__details"
+    {% if section.settings.one_at_a_time %}
+      name="{{ group_name }}"
+    {% endif %}
+    {% if item_settings.open_by_default %}
+      open
+    {% endif %}
+  >
+    <summary class="faq-split-item__trigger">
+      <span class="faq-split-item__question">{{ item_settings.question }}</span>
+      <span
+        class="faq-split-item__icon faq-split-item__icon--{{ section.settings.toggle_icon }}"
+        aria-hidden="true"
+      >
+        {%- if section.settings.toggle_icon == 'caret' -%}
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        {%- else -%}
+          {{- 'icon-plus.svg' | inline_asset_content -}}
+        {%- endif -%}
+      </span>
+    </summary>
+    <div class="details-content">
+      {%- if item_settings.answer != blank -%}
+        <div class="faq-split-item__answer rte">{{ item_settings.answer }}</div>
+      {%- endif -%}
+    </div>
+  </details>
+{% endcapture %}
+
+<div
+  class="faq-split-item"
+  {{ block.shopify_attributes }}
+>
+  {% render 'accordion-custom-component',
+    children: faq_split_item_children,
+    open_by_default_on_desktop: item_settings.open_by_default,
+    open_by_default_on_mobile: item_settings.open_by_default
+  %}
+</div>
+
+{% stylesheet %}
+  .faq-split-item {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .faq-split-item__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: var(--faq-split-question-pad-top, 15px) var(--faq-split-question-pad-right, 20px)
+      var(--faq-split-question-pad-bottom, 15px) var(--faq-split-question-pad-left, 20px);
+    background-color: var(--faq-split-question-bg, transparent);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .faq-split-item__question {
+    margin: 0;
+    flex: 1;
+    color: var(--faq-split-question-color, #ffffff);
+    font-size: var(--faq-split-question-size-mobile, 14px);
+    font-weight: var(--faq-split-question-weight, 600);
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .faq-split-item__icon {
+    flex-shrink: 0;
+    width: var(--faq-split-icon-size, 18px);
+    height: var(--faq-split-icon-size, 18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--faq-split-icon-color, #ffffff);
+    transition: transform var(--animation-speed-slow, 0.3s) ease;
+  }
+
+  .faq-split-item__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .faq-split-item__details[open] .faq-split-item__icon--plus {
+    transform: rotate(45deg);
+  }
+
+  .faq-split-item__details[open] .faq-split-item__icon--caret {
+    transform: rotate(180deg);
+  }
+
+  .faq-split-item__answer {
+    margin: 0;
+    padding: 0 var(--faq-split-answer-pad-right, 20px) var(--faq-split-answer-pad-bottom, 15px)
+      var(--faq-split-answer-pad-left, 20px);
+    padding-top: var(--faq-split-answer-pad-top, 10px);
+    color: var(--faq-split-answer-color, #ffffff);
+    background-color: var(--faq-split-answer-bg, transparent);
+    font-size: var(--faq-split-answer-size-mobile, 13px);
+    line-height: 1.5;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .faq-split-item__answer :is(p, ul, ol) {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 1em;
+  }
+
+  .faq-split-item__answer :is(p, ul, ol):last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq-split-item__question {
+      font-size: var(--faq-split-question-size-desktop, 16px);
+    }
+
+    .faq-split-item__answer {
+      font-size: var(--faq-split-answer-size-desktop, 14px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question",
+      "default": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "answer",
+      "label": "Answer",
+      "default": "<p>Add the answer to this question.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_by_default",
+      "label": "t:settings.open_by_default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ item"
+    }
+  ]
+}
+{% endschema %}

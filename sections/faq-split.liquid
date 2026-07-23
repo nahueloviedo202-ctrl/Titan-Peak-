@@ -1,0 +1,891 @@
+{%- doc -%}
+  Renders a "FAQ split" section: a heading (with optional subtitle) followed
+  by a grid of collapsible FAQ cards, with an optional image running
+  alongside the whole block on desktop.
+
+  Every question/answer is a nested "_faq-split-item" block, so merchants can
+  add, remove or reorder FAQs freely. All text, images, icons, colors, sizes,
+  spacing, radius, column count and accordion behavior are configurable
+  through the section and block schemas.
+{%- enddoc -%}
+
+{%- liquid
+  assign section_settings = section.settings
+  assign item_count = section.blocks.size
+
+  if section_settings.background_color != blank
+    render 'contrast-override', background_color: section_settings.background_color, section_id: section.id
+  endif
+
+  assign image_side = 'right'
+  if section_settings.image_position == 'left'
+    assign image_side = 'left'
+  endif
+-%}
+
+<div
+  class="section-background{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+></div>
+
+<div
+  class="faq-split spacing-style{% if section_settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  style="
+    {% render 'spacing-style', settings: section_settings %}
+    --faq-split-max-width: {{ section_settings.container_max_width }}px;
+    --faq-split-pad-inline-mobile: {{ section_settings.container_padding_mobile }}px;
+    --faq-split-pad-inline-desktop: {{ section_settings.container_padding_desktop }}px;
+    --faq-split-column-gap-mobile: {{ section_settings.column_gap_mobile }}px;
+    --faq-split-column-gap-desktop: {{ section_settings.column_gap_desktop }}px;
+    --faq-split-heading-color: {{ section_settings.heading_color }};
+    --faq-split-heading-size-mobile: {{ section_settings.heading_size_mobile }}px;
+    --faq-split-heading-size-desktop: {{ section_settings.heading_size_desktop }}px;
+    --faq-split-subtitle-color: {{ section_settings.subtitle_color }};
+    --faq-split-subtitle-size-mobile: {{ section_settings.subtitle_size_mobile }}px;
+    --faq-split-subtitle-size-desktop: {{ section_settings.subtitle_size_desktop }}px;
+    --faq-split-cols-desktop: {{ section_settings.columns_desktop }};
+    --faq-split-items-gap: {{ section_settings.items_gap }}px;
+    --faq-split-border-color: {{ section_settings.border_color }};
+    --faq-split-border-width: {{ section_settings.border_width }}px;
+    --faq-split-radius: {{ section_settings.corner_radius }}px;
+    --faq-split-question-color: {{ section_settings.question_color }};
+    --faq-split-question-bg: {{ section_settings.question_background_color | default: 'transparent' }};
+    --faq-split-question-size-mobile: {{ section_settings.question_size_mobile }}px;
+    --faq-split-question-size-desktop: {{ section_settings.question_size_desktop }}px;
+    --faq-split-question-weight: {{ section_settings.question_weight }};
+    --faq-split-question-pad-top: {{ section_settings.question_padding_top }}px;
+    --faq-split-question-pad-right: {{ section_settings.question_padding_right }}px;
+    --faq-split-question-pad-bottom: {{ section_settings.question_padding_bottom }}px;
+    --faq-split-question-pad-left: {{ section_settings.question_padding_left }}px;
+    --faq-split-answer-color: {{ section_settings.answer_color }};
+    --faq-split-answer-bg: {{ section_settings.answer_background_color | default: 'transparent' }};
+    --faq-split-answer-size-mobile: {{ section_settings.answer_size_mobile }}px;
+    --faq-split-answer-size-desktop: {{ section_settings.answer_size_desktop }}px;
+    --faq-split-answer-pad-top: {{ section_settings.answer_padding_top }}px;
+    --faq-split-answer-pad-right: {{ section_settings.answer_padding_right }}px;
+    --faq-split-answer-pad-bottom: {{ section_settings.answer_padding_bottom }}px;
+    --faq-split-answer-pad-left: {{ section_settings.answer_padding_left }}px;
+    --faq-split-icon-color: {{ section_settings.icon_color }};
+    --faq-split-icon-size: {{ section_settings.icon_size }}px;
+    --faq-split-media-radius: {{ section_settings.image_radius }}px;
+    {% if section_settings.background_color != blank %}
+      --faq-split-bg: {{ section_settings.background_color }};
+    {% endif %}
+  "
+  data-testid="faq-split"
+>
+  <div class="faq-split__container">
+    <div class="faq-split__layout faq-split__layout--{{ section_settings.layout }} faq-split__layout--image-{{ image_side }}">
+      <div class="faq-split__header">
+        {%- if section_settings.heading != blank -%}
+          <h2 class="faq-split__heading">{{ section_settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section_settings.subtitle != blank -%}
+          <div class="faq-split__subtitle rte">{{ section_settings.subtitle }}</div>
+        {%- endif -%}
+
+        {%- if item_count > 0 -%}
+          <div
+            class="faq-split__items faq-split__items--{{ section_settings.border_style }}"
+            data-testid="faq-split-items"
+          >
+            {% content_for 'blocks' %}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section_settings.layout == 'image' -%}
+        <div class="faq-split__media{% if section_settings.image_full_height %} faq-split__media--full-height{% endif %}">
+          {%- if section_settings.image -%}
+            {{
+              section_settings.image
+              | image_url: width: 1200
+              | image_tag:
+                widths: '400, 600, 900, 1200',
+                sizes: '(min-width: 750px) 48vw, 100vw',
+                alt: section_settings.image_alt | default: section_settings.image.alt,
+                class: 'faq-split__image',
+                loading: 'lazy'
+            }}
+          {%- else -%}
+            <div class="faq-split__placeholder">
+              {{ 'image' | placeholder_svg_tag: 'faq-split__placeholder-image' }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .faq-split {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--faq-split-bg, transparent);
+  }
+
+  .faq-split__container {
+    max-width: var(--faq-split-max-width, 1200px);
+    margin: 0 auto;
+    padding-inline: var(--faq-split-pad-inline-mobile, 15px);
+    box-sizing: border-box;
+  }
+
+  .faq-split__layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .faq-split__layout--centered {
+    align-items: center;
+  }
+
+  .faq-split__header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .faq-split__layout--centered .faq-split__header {
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  .faq-split__heading {
+    margin: 0 0 15px;
+    color: var(--faq-split-heading-color, #141720);
+    font-size: var(--faq-split-heading-size-mobile, 32px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .faq-split__subtitle {
+    margin: 0 0 24px;
+    max-width: 100%;
+    color: var(--faq-split-subtitle-color, currentColor);
+    font-size: var(--faq-split-subtitle-size-mobile, 14px);
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .faq-split__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--faq-split-items-gap, 6px);
+    width: 100%;
+  }
+
+  /* Boxed container: one outer border, dividers between items */
+  .faq-split__items--container {
+    border: var(--faq-split-border-width, 1px) solid var(--faq-split-border-color, #9c9c9c);
+    border-radius: var(--faq-split-radius, 6px);
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .faq-split__items--container .faq-split-item:not(:last-child) {
+    border-bottom: var(--faq-split-border-width, 1px) solid var(--faq-split-border-color, #9c9c9c);
+  }
+
+  /* Individual: every item is its own bordered card */
+  .faq-split__items--individual .faq-split-item {
+    border: var(--faq-split-border-width, 1px) solid var(--faq-split-border-color, #9c9c9c);
+    border-radius: var(--faq-split-radius, 6px);
+    overflow: hidden;
+  }
+
+  /* Lines: no outer border, just a rule between items */
+  .faq-split__items--lines .faq-split-item:not(:last-child) {
+    border-bottom: var(--faq-split-border-width, 1px) solid var(--faq-split-border-color, #9c9c9c);
+  }
+
+  .faq-split__media {
+    width: 100%;
+    margin-top: var(--faq-split-column-gap-mobile, 30px);
+    border-radius: var(--faq-split-media-radius, 8px);
+    overflow: hidden;
+  }
+
+  .faq-split__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--faq-split-media-radius, 8px);
+    object-fit: cover;
+  }
+
+  .faq-split__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--faq-split-media-radius, 8px);
+    overflow: hidden;
+    background-color: rgb(128 128 128 / 0.08);
+  }
+
+  .faq-split__placeholder-image {
+    width: 40%;
+    height: 40%;
+  }
+
+  .faq-split__media--full-height {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .faq-split__media--full-height .faq-split__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 750px) {
+    .faq-split__container {
+      padding-inline: var(--faq-split-pad-inline-desktop, 15px);
+    }
+
+    .faq-split__heading {
+      font-size: var(--faq-split-heading-size-desktop, 36px);
+    }
+
+    .faq-split__subtitle {
+      font-size: var(--faq-split-subtitle-size-desktop, 16px);
+    }
+
+    .faq-split__items {
+      grid-template-columns: repeat(var(--faq-split-cols-desktop, 1), 1fr);
+      align-items: start;
+    }
+
+    .faq-split__layout--image {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--faq-split-column-gap-desktop, 40px);
+    }
+
+    .faq-split__layout--image .faq-split__header {
+      flex: 0 0 calc(50% - (var(--faq-split-column-gap-desktop, 40px) / 2));
+      max-width: calc(50% - (var(--faq-split-column-gap-desktop, 40px) / 2));
+    }
+
+    .faq-split__layout--image .faq-split__media {
+      flex: 0 0 calc(50% - (var(--faq-split-column-gap-desktop, 40px) / 2));
+      max-width: calc(50% - (var(--faq-split-column-gap-desktop, 40px) / 2));
+      margin-top: 0;
+    }
+
+    .faq-split__layout--image .faq-split__media--full-height {
+      align-self: stretch;
+    }
+
+    .faq-split__layout--image-left .faq-split__media {
+      order: -1;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .faq-split__heading,
+    .faq-split__subtitle {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ split",
+  "class": "section-faq-split",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "_faq-split-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Subtitle size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "label": "Subtitle size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:settings.layout",
+      "options": [
+        {
+          "value": "centered",
+          "label": "Centered (no image)"
+        },
+        {
+          "value": "image",
+          "label": "With image"
+        }
+      ],
+      "default": "centered"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image",
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text",
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:settings.image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "right",
+      "info": "On mobile the image always appears below the questions.",
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_full_height",
+      "label": "Full height image",
+      "default": false,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 8,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "label": "Gap above image (mobile)",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 30,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "label": "Gap between questions and image (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "header",
+      "content": "Questions"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "t:settings.columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "2",
+      "info": "Always a single column on mobile."
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "one_at_a_time",
+      "label": "One open at a time",
+      "default": true,
+      "info": "Opening a question closes any other open question."
+    },
+    {
+      "type": "select",
+      "id": "border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "individual",
+          "label": "Individual item borders"
+        },
+        {
+          "value": "container",
+          "label": "Boxed container"
+        },
+        {
+          "value": "lines",
+          "label": "Lines between items"
+        }
+      ],
+      "default": "individual"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:settings.border_color",
+      "default": "#9c9c9c"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "t:settings.border_width",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Question"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "question_background_color",
+      "label": "t:settings.background_color"
+    },
+    {
+      "type": "range",
+      "id": "question_size_mobile",
+      "label": "Size (mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "question_size_desktop",
+      "label": "Size (desktop)",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "question_weight",
+      "label": "t:settings.weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:options.regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:options.bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "question_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "question_padding_right",
+      "label": "Padding right",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "question_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "question_padding_left",
+      "label": "Padding left",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "header",
+      "content": "Answer"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "t:settings.text_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "answer_background_color",
+      "label": "t:settings.background_color"
+    },
+    {
+      "type": "range",
+      "id": "answer_size_mobile",
+      "label": "Size (mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "answer_size_desktop",
+      "label": "Size (desktop)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_right",
+      "label": "Padding right",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "answer_padding_left",
+      "label": "Padding left",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:content.icon"
+    },
+    {
+      "type": "select",
+      "id": "toggle_icon",
+      "label": "t:settings.icon",
+      "options": [
+        {
+          "value": "plus",
+          "label": "Plus (rotates into a cross)"
+        },
+        {
+          "value": "caret",
+          "label": "Caret"
+        }
+      ],
+      "default": "plus"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:settings.color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "t:settings.size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "t:content.size"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 600,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "label": "Side padding (mobile)",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "container_padding_desktop",
+      "label": "Side padding (desktop)",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "t:content.background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#141720"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ split",
+      "category": "t:categories.product",
+      "blocks": {
+        "item_1": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "How soon will I see a difference?",
+            "answer": "<p>Most men notice a surge in energy and improved blood flow within the first 7-14 days. For maximum results and full support, we recommend consistent daily use over a 90-day period to allow the ingredients to fully saturate your system.</p>"
+          }
+        },
+        "item_2": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "Is this really different from cheap alternatives?",
+            "answer": "<p>Yes. Most low-cost alternatives sold online use cheap, low-quality ingredients. Ours is sourced from premium, verified suppliers and third-party tested for purity — something most budget brands can't show you.</p>"
+          }
+        },
+        "item_3": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "Is it safe?",
+            "answer": "<p>Yes. It's made in a <strong>cGMP certified, FDA-registered facility</strong>, using non-GMO ingredients and third-party lab testing for purity and potency. No artificial fillers, no sugar, no stimulants.</p>"
+          }
+        },
+        "item_4": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "Can I take this with other supplements?",
+            "answer": "<p>Yes, it can be taken alongside most common supplements. However, if you have existing health conditions, it's best to consult your doctor before combining with other products.</p>"
+          }
+        },
+        "item_5": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "How long do I need to take it?",
+            "answer": "<p>Most customers continue daily for maintained benefits. This isn't a cure but ongoing nutritional support, so consistent use gives the best results.</p>"
+          }
+        },
+        "item_6": {
+          "type": "_faq-split-item",
+          "settings": {
+            "question": "What is your refund policy?",
+            "answer": "<p>30-day money back guarantee. If you don't see results, return the empty bottle for a full refund. No forms, no phone calls — just email support.</p>"
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5", "item_6"]
+    }
+  ]
+}
+{% endschema %}

@@ -461,6 +461,32 @@
               },
               "blocks": {}
             },
+            "product_stock_delivery_aBe8eb": {
+              "type": "product-stock-delivery",
+              "name": "Product stock & delivery",
+              "settings": {
+                "show_stock": true,
+                "inventory_threshold": 10,
+                "show_inventory_quantity": false,
+                "pulse_animation": true,
+                "in_stock_color": "",
+                "low_stock_color": "",
+                "out_of_stock_color": "",
+                "show_delivery": true,
+                "delivery_icon_size": 24,
+                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "alignment": "center",
+                "gap": 20,
+                "font_size_desktop": 14,
+                "font_size_mobile": 11,
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
@@ -523,34 +549,6 @@
               },
               "block_order": []
             },
-            "product_guarantee_banner_6TMbki": {
-              "type": "product-guarantee-banner",
-              "name": "Guarantee banner (badge)",
-              "settings": {
-                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
-                "badge_alt": "",
-                "badge_size_desktop": 68,
-                "badge_size_mobile": 48,
-                "title": "Haz que sus piernas tiemblen o te devolvemos el dinero.",
-                "title_color": "#1a1a1a",
-                "title_size_desktop": 14,
-                "title_size_mobile": 12,
-                "description": "Pruébalo durante 60 días. Si no quedas completamente satisfecho, te devolvemos el importe íntegro. Así de seguros estamos.",
-                "description_color": "#1a1a1a",
-                "description_size": 12,
-                "background_color": "#fdf8ec",
-                "radius": 12,
-                "gap_desktop": 16,
-                "gap_mobile": 12,
-                "padding_block": 12,
-                "padding_inline": 14,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "product_perks_AtCRD4": {
               "type": "product-perks",
               "name": "Product perks",
@@ -599,121 +597,222 @@
                 "product_perk_item_JL9G9Y"
               ]
             },
-            "guarantee_banner_mN6rWP": {
-              "type": "guarantee-banner",
-              "name": "Guarantee banner",
+            "product_guarantee_banner_6TMbki": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
               "settings": {
-                "icon": "shopify://shop_images/Capa_1.webp",
-                "icon_alt": "Guarantee",
-                "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
-                "background_color": "#fcfaf5",
+                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "Haz que sus piernas tiemblen o te devolvemos el dinero.",
+                "title_color": "#1a1a1a",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "Pruébalo durante 60 días. Si no quedas completamente satisfecho, te devolvemos el importe íntegro. Así de seguros estamos.",
+                "description_color": "#1a1a1a",
+                "description_size": 12,
+                "background_color": "#fdf8ec",
                 "radius": 12,
                 "gap_desktop": 16,
                 "gap_mobile": 12,
-                "padding_block_desktop": 12,
-                "padding_inline_desktop": 14,
-                "padding_block_mobile": 10,
-                "padding_inline_mobile": 12,
-                "icon_size_desktop": 56,
-                "icon_size_mobile": 46,
-                "text_size_desktop": 13,
-                "text_size_mobile": 12,
-                "text_weight": "500",
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_info_tabs_JFY4WC": {
+              "type": "product-info-tabs",
+              "name": "Product info tabs",
+              "settings": {
+                "tab_background_color": "#f7f7f7",
+                "tab_text_color": "#1a1a1a",
+                "tab_active_gradient_start": "#ddaf3a",
+                "tab_active_gradient_end": "#f5e35e",
+                "tab_font_size_mobile": 12,
+                "tab_font_size_desktop": 14,
+                "border_color": "#ddaf3a",
+                "border_width": 1,
+                "corner_radius": 12,
+                "panel_background_color": "#fcfaf5",
+                "panel_padding": 16,
+                "panel_gap": 12,
                 "text_color": "#1a1a1a",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_stock_delivery_aBe8eb": {
-              "type": "product-stock-delivery",
-              "name": "Product stock & delivery",
-              "settings": {
-                "show_stock": true,
-                "inventory_threshold": 10,
-                "show_inventory_quantity": false,
-                "pulse_animation": true,
-                "in_stock_color": "",
-                "low_stock_color": "",
-                "out_of_stock_color": "",
-                "show_delivery": true,
-                "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
-                "alignment": "center",
-                "gap": 20,
-                "font_size_desktop": 14,
-                "font_size_mobile": 11,
-                "text_color": "",
-                "padding-block-start": 4,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "accordion_group_nHpwkV": {
-              "type": "accordion-group",
-              "name": "Accordion group",
-              "settings": {
-                "item_gap": 24,
-                "card_background_color": "#fcfaf5",
-                "card_radius": 12,
-                "trigger_padding_block": 20,
-                "trigger_padding_inline": 24,
-                "trigger_gap": 20,
-                "trigger_hover_color": "#00000008",
-                "focus_color": "#a45b2c",
-                "icon_style": "chevron",
-                "icon_size": 24,
-                "icon_color": "#212529",
-                "title_size": 16,
-                "title_weight": "500",
-                "title_color": "#1a1a1a",
-                "content_padding": 20,
-                "content_size": 15,
-                "content_line_height": 1.6,
-                "content_color": "#212529",
-                "transition_speed": 250,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "muted_text_color": "#1a1a1ac2",
+                "card_background_color": "#ffffff",
+                "highlight_background_color": "#eeeeee",
+                "divider_color": "#d1d1d1",
+                "positive_color": "#4fa250",
+                "negative_color": "#e34e36",
+                "brand_column_width_mobile": 58,
+                "brand_column_width_desktop": 156,
+                "padding-block-start": 12,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_item_enahEm": {
-                  "type": "_accordion-item",
+                "product_info_tab_quote_fE4JwN": {
+                  "type": "_product-info-tab-quote",
                   "settings": {
-                    "title": "Detalles del producto",
-                    "content": "<p><strong>TITANPEAK</strong> Gominolas De Rendimiento son una solución pura, testeada en laboratorio y natural para que los hombres mantengan un rendimiento físico óptimo, claridad mental, vitalidad y resistencia.</p>",
-                    "open_by_default": false
+                    "tab_label": "Aprobado por médicos",
+                    "default_open": true,
+                    "quote": "\"La mayoría de los hombres no tienen problemas en la cama, sino problemas de circulación sanguínea. Esta fórmula combate ambos, utilizando L-arginina para estimular la producción de óxido nítrico y azafrán para potenciar la excitación, mejorando el rendimiento sexual de forma natural y sin los efectos secundarios del Viagra.\"",
+                    "avatar": "shopify://shop_images/reviewr_image_beef_png_26cc6583-7863-4d49-84f7-34233b5a9dbc.png",
+                    "author_name": "Dr. Marcos Torres, M.D.",
+                    "author_specialty": "Médico certificado y especialista en salud masculina."
                   },
                   "blocks": {}
                 },
-                "accordion_item_M8kypY": {
-                  "type": "_accordion-item",
+                "product_info_tab_comparison_JMAPXW": {
+                  "type": "_product-info-tab-comparison",
                   "settings": {
-                    "title": "Ingredientes",
-                    "content": "<ul><li><strong>Ashwagandha KSM-66®</strong> ayuda a reducir el cortisol hasta un 27,9%, ayudándote a mantenerte relajado, seguro y presente.</li><li><strong>L-Arginina y Azafrán</strong> ayudan a potenciar la producción de óxido nítrico y la circulación, favoreciendo el flujo sanguíneo.</li><li><strong>Extracto de Shilajit</strong> junto a <strong>Maca y Azafrán</strong> contribuyen al aumento de la testosterona total y libre, y apoyan una buena calidad espermática.</li></ul>",
-                    "open_by_default": false
+                    "tab_label": "Tabla comparativa",
+                    "default_open": false,
+                    "brand_name": "TITAN PEAK",
+                    "others_label": "Otros"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "product_info_comparison_row_wwRKHf": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Funciona todos los días, no solo en una cita romántica.",
+                        "feature_sub": "Erección matutina, todo el día",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_fpYbhz": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Te pone cachondo sin receta",
+                        "feature_sub": "Ingredientes naturales, nada de pastillas sospechosas",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_zq4xNk": {
+                      "type": "_product-info-comparison-row",
+                      "name": "Comparison row",
+                      "settings": {
+                        "feature_name": "Sabe realmente bien.",
+                        "feature_sub": "Fácil de disfrutar cada día",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_comparison_row_wwRKHf",
+                    "product_info_comparison_row_fpYbhz",
+                    "product_info_comparison_row_zq4xNk"
+                  ]
                 },
-                "accordion_item_zCtkXE": {
-                  "type": "_accordion-item",
+                "product_info_tab_ingredients_YHQ9f3": {
+                  "type": "_product-info-tab-ingredients",
                   "settings": {
-                    "title": "Envíos y Devoluciones",
-                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de España. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p></p><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 14 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
-                    "open_by_default": false
+                    "tab_label": "Ingredients",
+                    "default_open": false,
+                    "name_column_label": "Name",
+                    "mg_column_label": "MG"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "product_info_ingredient_row_ibygji": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Maca Root Extract (10:1)",
+                        "ingredient_sub": "La razón por la que se rinde en la cama",
+                        "ingredient_mg": "500mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_EKRFfd": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Extracto de Raíz de Ashwagandha",
+                        "ingredient_sub": "Bloquea el cortisol. Desbloquea tu energía.",
+                        "ingredient_mg": "450mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_XDBWpC": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Panax Ginseng",
+                        "ingredient_sub": "Mejora la producción de LH, el flujo sanguíneo y tiene propiedades antiinflamatorias.",
+                        "ingredient_mg": "200mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_h9fEBU": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Azafrán",
+                        "ingredient_sub": "El azafrán inhibe la PDE5, aumenta el NO → erecciones más fuertes",
+                        "ingredient_mg": "30mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_KhzMMi": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "L-Arginine",
+                        "ingredient_sub": "La razón de tú mayor erección",
+                        "ingredient_mg": "60mg"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_ingredient_row_ibygji",
+                    "product_info_ingredient_row_EKRFfd",
+                    "product_info_ingredient_row_XDBWpC",
+                    "product_info_ingredient_row_h9fEBU",
+                    "product_info_ingredient_row_KhzMMi"
+                  ]
+                },
+                "product_info_tab_faq_TMAQz9": {
+                  "type": "_product-info-tab-faq",
+                  "settings": {
+                    "tab_label": "FAQ's",
+                    "default_open": false
+                  },
+                  "blocks": {
+                    "product_info_faq_item_VHbUr7": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cómo tomo las TITAN PEAK Shilajit Gold?",
+                        "answer": "<p>Toma 2 gomitas al día, preferiblemente con una comida. La constancia es clave: el uso diario ayuda a tu cuerpo a aprovechar al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_hdxi7P": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "Question",
+                        "answer": "<p>Add the answer to this question.</p>"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_faq_item_VHbUr7",
+                    "product_info_faq_item_hdxi7P"
+                  ]
                 }
               },
               "block_order": [
-                "accordion_item_enahEm",
-                "accordion_item_M8kypY",
-                "accordion_item_zCtkXE"
+                "product_info_tab_quote_fE4JwN",
+                "product_info_tab_comparison_JMAPXW",
+                "product_info_tab_ingredients_YHQ9f3",
+                "product_info_tab_faq_TMAQz9"
               ]
             },
             "text_aEtTtq": {
@@ -751,12 +850,11 @@
             "image_popup_fwdVY7",
             "divider_VJhene",
             "variant_picker_R3rGDr",
-            "buy_buttons_eYQEYi",
-            "product_guarantee_banner_6TMbki",
-            "product_perks_AtCRD4",
-            "guarantee_banner_mN6rWP",
             "product_stock_delivery_aBe8eb",
-            "accordion_group_nHpwkV",
+            "buy_buttons_eYQEYi",
+            "product_perks_AtCRD4",
+            "product_guarantee_banner_6TMbki",
+            "product_info_tabs_JFY4WC",
             "text_aEtTtq"
           ]
         }

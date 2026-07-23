@@ -718,9 +718,9 @@
                 "product_info_tab_ingredients_YHQ9f3": {
                   "type": "_product-info-tab-ingredients",
                   "settings": {
-                    "tab_label": "Ingredients",
+                    "tab_label": "Ingredientes",
                     "default_open": false,
-                    "name_column_label": "Name",
+                    "name_column_label": "Nombre",
                     "mg_column_label": "MG"
                   },
                   "blocks": {

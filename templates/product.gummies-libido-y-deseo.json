@@ -796,15 +796,60 @@
                     "product_info_faq_item_hdxi7P": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "Question",
-                        "answer": "<p>Add the answer to this question.</p>"
+                        "question": "¿Qué pasa si no me funciona?",
+                        "answer": "<p>Tu compra está respaldada por nuestra garantía de devolución de dinero de 60 días. Te recomendamos usar TITAN PEAK de forma constante durante al menos 90 a 120 días para experimentar todos los beneficios de la fórmula.<br/><br/>Si no estás completamente satisfecho, simplemente contacta con nuestro equipo de soporte y lo solucionaremos.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_tFqbAp": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cuándo veré resultados?",
+                        "answer": "<p>Los resultados varían de persona a persona. Algunos clientes reportan mejoras en su energía, concentración y vitalidad general durante las primeras semanas de uso constante.<br/><br/>Para obtener resultados óptimos, recomendamos tomar TITAN PEAK diariamente durante al menos 8 a 12 semanas.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_hWMxkd": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Qué tan rápido es el envío?",
+                        "answer": "<p>Los pedidos se procesan rápidamente y se envían directamente desde nuestro centro logístico. La mayoría de los pedidos se envían en un plazo de 24 horas hábiles y se proporciona información de seguimiento en cuanto se realiza el envío.<br/><br/>Los plazos de entrega pueden variar según su ubicación.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_wHTXPq": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿TITAN PEAK está testeado por terceros?",
+                        "answer": "<p>Sí. Cada lote se fabrica en una instalación que cumple con las Buenas Prácticas de Fabricación (BPF) y se somete a pruebas de calidad, pureza y seguridad realizadas por terceros. Creemos que usted debe saber exactamente qué consume.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_JpDpAC": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Para quién es TITAN PEAK?",
+                        "answer": "<p>TITAN PEAK está diseñado para hombres que desean potenciar su energía, concentración, vitalidad, confianza y rendimiento general. Ya sea que compagines el trabajo, el ejercicio, la vida familiar o las tres cosas, TITAN PEAK está formulado para ayudarte a rendir al máximo cada día.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_wfgfPq": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Es perjudicial tomarlo junto a medicación?",
+                        "answer": "<p>No. Normalmente se puede tomar con la mayoría de los medicamentos recetados.</p>"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
                     "product_info_faq_item_VHbUr7",
-                    "product_info_faq_item_hdxi7P"
+                    "product_info_faq_item_hdxi7P",
+                    "product_info_faq_item_tFqbAp",
+                    "product_info_faq_item_hWMxkd",
+                    "product_info_faq_item_wHTXPq",
+                    "product_info_faq_item_JpDpAC",
+                    "product_info_faq_item_wfgfPq"
                   ]
                 }
               },

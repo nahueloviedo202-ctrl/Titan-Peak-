@@ -2070,124 +2070,6 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
-    },
-    "faq_split_6wxE7e": {
-      "type": "faq-split",
-      "blocks": {
-        "faq_split_item_T64m9H": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "How soon will I see a difference?",
-            "answer": "<p>Most men notice a surge in energy and improved blood flow within the first 7-14 days. For maximum results and full support, we recommend consistent daily use over a 90-day period to allow the ingredients to fully saturate your system.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
-        "faq_split_item_aQCHJX": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "Is this really different from cheap alternatives?",
-            "answer": "<p>Yes. Most low-cost alternatives sold online use cheap, low-quality ingredients. Ours is sourced from premium, verified suppliers and third-party tested for purity — something most budget brands can't show you.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
-        "faq_split_item_FBxTxF": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "Is it safe?",
-            "answer": "<p>Yes. It's made in a <strong>cGMP certified, FDA-registered facility</strong>, using non-GMO ingredients and third-party lab testing for purity and potency. No artificial fillers, no sugar, no stimulants.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
-        "faq_split_item_87KxfG": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "Can I take this with other supplements?",
-            "answer": "<p>Yes, it can be taken alongside most common supplements. However, if you have existing health conditions, it's best to consult your doctor before combining with other products.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
-        "faq_split_item_Ppq9Fq": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "How long do I need to take it?",
-            "answer": "<p>Most customers continue daily for maintained benefits. This isn't a cure but ongoing nutritional support, so consistent use gives the best results.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
-        "faq_split_item_VR8n6j": {
-          "type": "_faq-split-item",
-          "settings": {
-            "question": "What is your refund policy?",
-            "answer": "<p>30-day money back guarantee. If you don't see results, return the empty bottle for a full refund. No forms, no phone calls — just email support.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "faq_split_item_T64m9H",
-        "faq_split_item_aQCHJX",
-        "faq_split_item_FBxTxF",
-        "faq_split_item_87KxfG",
-        "faq_split_item_Ppq9Fq",
-        "faq_split_item_VR8n6j"
-      ],
-      "name": "FAQ split",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "heading_color": "#ffffff",
-        "heading_size_mobile": 32,
-        "heading_size_desktop": 36,
-        "subtitle": "",
-        "subtitle_color": "#ffffff",
-        "subtitle_size_mobile": 14,
-        "subtitle_size_desktop": 16,
-        "layout": "centered",
-        "image_alt": "",
-        "image_position": "right",
-        "image_full_height": false,
-        "image_radius": 8,
-        "column_gap_mobile": 30,
-        "column_gap_desktop": 40,
-        "columns_desktop": "2",
-        "items_gap": 6,
-        "one_at_a_time": true,
-        "border_style": "individual",
-        "border_color": "#9c9c9c",
-        "border_width": 1,
-        "corner_radius": 6,
-        "question_color": "#ffffff",
-        "question_background_color": "",
-        "question_size_mobile": 14,
-        "question_size_desktop": 16,
-        "question_weight": "600",
-        "question_padding_top": 10,
-        "question_padding_right": 14,
-        "question_padding_bottom": 10,
-        "question_padding_left": 17,
-        "answer_color": "#ffffff",
-        "answer_background_color": "",
-        "answer_size_mobile": 13,
-        "answer_size_desktop": 14,
-        "answer_padding_top": 10,
-        "answer_padding_right": 20,
-        "answer_padding_bottom": 15,
-        "answer_padding_left": 20,
-        "toggle_icon": "plus",
-        "icon_color": "#ffffff",
-        "icon_size": 18,
-        "container_max_width": 1200,
-        "container_padding_mobile": 15,
-        "container_padding_desktop": 16,
-        "background_color": "#141720",
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      }
     }
   },
   "order": [
@@ -2203,7 +2085,6 @@
     "statistics_grid_nd3JDq",
     "ingredient_steps_tXfBEq",
     "satisfaction_guarantee_dVqwga",
-    "faq_accordion_nVx7Xp",
-    "faq_split_6wxE7e"
+    "faq_accordion_nVx7Xp"
   ]
 }

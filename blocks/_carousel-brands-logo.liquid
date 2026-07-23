@@ -1,0 +1,101 @@
+{%- doc -%}
+  Renders a single brand/press logo tile for the "Carousel brands" marquee
+  section. Each logo can have its own width on mobile and desktop, matching
+  the source design where every press mention is sized individually.
+
+  Meant to be used exclusively as a child block of `sections/carousel-brands.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign logo = block_settings.image
+-%}
+
+<div
+  class="carousel-brands-logo"
+  style="
+    --carousel-brands-logo-width-mobile: {{ block_settings.width_mobile }}px;
+    --carousel-brands-logo-width-desktop: {{ block_settings.width_desktop }}px;
+  "
+  {{ block.shopify_attributes }}
+>
+  {%- if logo != blank -%}
+    {{
+      logo
+      | image_url: width: 400
+      | image_tag:
+        loading: 'lazy',
+        widths: '100, 150, 200, 300, 400',
+        sizes: '(min-width: 750px) 200px, 120px',
+        alt: block_settings.alt | default: logo.alt,
+        class: 'carousel-brands-logo__image'
+    }}
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .carousel-brands-logo {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--carousel-brands-logo-width-mobile, 70px);
+  }
+
+  .carousel-brands-logo__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .carousel-brands-logo {
+      width: var(--carousel-brands-logo-width-desktop, 110px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Brand logo",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text",
+      "info": "Describes the logo for screen readers"
+    },
+    {
+      "type": "range",
+      "id": "width_mobile",
+      "label": "Width (mobile)",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "width_desktop",
+      "label": "Width (desktop)",
+      "min": 20,
+      "max": 280,
+      "step": 2,
+      "unit": "px",
+      "default": 110
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand logo"
+    }
+  ]
+}
+{% endschema %}

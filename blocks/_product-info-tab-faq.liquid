@@ -1,0 +1,80 @@
+{%- doc -%}
+  Renders the "FAQ" tab of the product info tabs block: a stack of
+  collapsible question/answer items.
+
+  Every item is a nested "_product-info-faq-item" block, so merchants can
+  add, remove or reorder questions freely. Reuses the theme's native
+  `accordion-custom` component for the expand/collapse behavior, so no
+  extra JavaScript is added.
+
+  Meant to be used exclusively as a child block of `blocks/product-info-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'PIT-Panel-' | append: block.id
+-%}
+
+<div class="product-info-tabs__tab-group">
+  <button
+    type="button"
+    class="product-info-tabs__tab{% if tab_settings.default_open %} is-active{% endif %}"
+    role="tab"
+    aria-selected="{{ tab_settings.default_open }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="product-info-tabs__panel{% if tab_settings.default_open %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    <div class="product-info-tabs__faq">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__faq {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Tab: FAQ",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-info-faq-item"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "FAQ's"
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Show this tab by default",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab: FAQ"
+    }
+  ]
+}
+{% endschema %}

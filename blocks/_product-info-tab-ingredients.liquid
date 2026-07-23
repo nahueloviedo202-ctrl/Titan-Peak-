@@ -1,0 +1,155 @@
+{%- doc -%}
+  Renders the "Ingredients" tab of the product info tabs block: a
+  two-column table of ingredient names/descriptions and their amount.
+
+  Every row is a nested "_product-info-ingredient-row" block, so merchants
+  can add, remove or reorder ingredients freely.
+
+  Meant to be used exclusively as a child block of `blocks/product-info-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'PIT-Panel-' | append: block.id
+-%}
+
+<div class="product-info-tabs__tab-group">
+  <button
+    type="button"
+    class="product-info-tabs__tab{% if tab_settings.default_open %} is-active{% endif %}"
+    role="tab"
+    aria-selected="{{ tab_settings.default_open }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="product-info-tabs__panel{% if tab_settings.default_open %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    <div class="product-info-tabs__ingredients">
+      <div class="product-info-tabs__ingredients-header">
+        <div class="product-info-tabs__ingredients-col product-info-tabs__ingredients-col--name">
+          {{ tab_settings.name_column_label }}
+        </div>
+        <div
+          class="product-info-tabs__ingredients-divider"
+          aria-hidden="true"
+        ></div>
+        <div class="product-info-tabs__ingredients-col product-info-tabs__ingredients-col--mg">
+          {{ tab_settings.mg_column_label }}
+        </div>
+      </div>
+
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__ingredients {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--pit-radius, 12px);
+  }
+
+  .product-info-tabs__ingredients-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--pit-highlight-bg, #eeeeee);
+    border-bottom: 1px solid var(--pit-divider-color, #d1d1d1);
+  }
+
+  .product-info-tabs__ingredients-col {
+    padding: 10px 12px;
+    font-family: var(--font-body--family, inherit);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__ingredients-col--name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .product-info-tabs__ingredients-col--mg {
+    position: relative;
+    flex-shrink: 0;
+    width: var(--pit-brand-col-width-mobile, 58px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .product-info-tabs__ingredients-col--mg::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 24px;
+    background-color: var(--pit-text-color, #1a1a1a);
+    opacity: 0.2;
+  }
+
+  .product-info-tabs__ingredients-divider {
+    flex-shrink: 0;
+    align-self: stretch;
+    width: 0;
+    background-color: var(--pit-divider-color, #d1d1d1);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-info-tabs__ingredients-col--mg {
+      width: var(--pit-brand-col-width-desktop, 156px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Tab: Ingredients",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-info-ingredient-row"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "Ingredients"
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Show this tab by default",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "name_column_label",
+      "label": "\"Name\" column label",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "mg_column_label",
+      "label": "\"Amount\" column label",
+      "default": "MG"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab: Ingredients"
+    }
+  ]
+}
+{% endschema %}

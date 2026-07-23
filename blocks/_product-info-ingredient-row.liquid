@@ -1,0 +1,112 @@
+{%- doc -%}
+  Renders one ingredient row of the product info tabs ingredients table:
+  name/description plus amount.
+
+  Meant to be used exclusively as a child block of `_product-info-tab-ingredients`.
+{%- enddoc -%}
+
+{%- liquid
+  assign row_settings = block.settings
+-%}
+
+<div
+  class="product-info-tabs__ingredients-row"
+  {{ block.shopify_attributes }}
+>
+  <div class="product-info-tabs__ingredients-col product-info-tabs__ingredients-col--name">
+    <p class="product-info-tabs__ingredient-name">{{ row_settings.ingredient_name }}</p>
+    {%- if row_settings.ingredient_sub != blank -%}
+      <p class="product-info-tabs__ingredient-sub">{{ row_settings.ingredient_sub }}</p>
+    {%- endif -%}
+  </div>
+  <div
+    class="product-info-tabs__ingredients-divider"
+    aria-hidden="true"
+  ></div>
+  <div class="product-info-tabs__ingredients-col product-info-tabs__ingredients-col--mg">
+    <p class="product-info-tabs__ingredient-mg">{{ row_settings.ingredient_mg }}</p>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__ingredients-row {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--pit-card-bg, #ffffff);
+    border-top: 1px solid var(--pit-divider-color, #d1d1d1);
+  }
+
+  .product-info-tabs__ingredients-row .product-info-tabs__ingredients-col {
+    font-weight: 400;
+  }
+
+  .product-info-tabs__ingredient-name {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__ingredient-sub {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-muted-text, #1a1a1ac2);
+  }
+
+  .product-info-tabs__ingredient-mg {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-info-tabs__ingredient-name,
+    .product-info-tabs__ingredient-sub {
+      font-size: 14px;
+    }
+
+    .product-info-tabs__ingredient-mg {
+      font-size: 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ingredient row",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "ingredient_name",
+      "label": "Ingredient name",
+      "default": "Ingredient name"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_sub",
+      "label": "Description",
+      "default": "Short supporting detail"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_mg",
+      "label": "Amount",
+      "default": "500mg"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredient row"
+    }
+  ]
+}
+{% endschema %}

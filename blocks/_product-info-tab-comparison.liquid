@@ -1,0 +1,190 @@
+{%- doc -%}
+  Renders the "Comparison table" tab of the product info tabs block: a
+  feature-by-feature comparison between this brand and competitors.
+
+  Every row is a nested "_product-info-comparison-row" block, so merchants
+  can add, remove or reorder features freely.
+
+  Meant to be used exclusively as a child block of `blocks/product-info-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'PIT-Panel-' | append: block.id
+-%}
+
+<div class="product-info-tabs__tab-group">
+  <button
+    type="button"
+    class="product-info-tabs__tab{% if tab_settings.default_open %} is-active{% endif %}"
+    role="tab"
+    aria-selected="{{ tab_settings.default_open }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="product-info-tabs__panel{% if tab_settings.default_open %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    <div class="product-info-tabs__comparison">
+      <div class="product-info-tabs__comparison-header">
+        <div class="product-info-tabs__comparison-col product-info-tabs__comparison-col--feature"></div>
+        <div class="product-info-tabs__comparison-col product-info-tabs__comparison-col--brand">
+          {%- if tab_settings.brand_logo != blank -%}
+            {{
+              tab_settings.brand_logo
+              | image_url: width: 200
+              | image_tag:
+                widths: '44, 88, 128, 200',
+                alt: tab_settings.brand_name,
+                loading: 'lazy',
+                class: 'product-info-tabs__comparison-logo'
+            }}
+          {%- else -%}
+            <span class="product-info-tabs__comparison-brand-text">{{ tab_settings.brand_name }}</span>
+          {%- endif -%}
+        </div>
+        <div class="product-info-tabs__comparison-col product-info-tabs__comparison-col--others">
+          {{ tab_settings.others_label }}
+        </div>
+      </div>
+
+      {%- if block.blocks.size > 0 -%}
+        <div class="product-info-tabs__comparison-body">
+          {% content_for 'blocks' %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__comparison {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--pit-radius, 12px);
+  }
+
+  .product-info-tabs__comparison-header {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .product-info-tabs__comparison-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--pit-text-color, #1a1a1a);
+    text-align: center;
+  }
+
+  .product-info-tabs__comparison-col--feature {
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .product-info-tabs__comparison-col--brand,
+  .product-info-tabs__comparison-col--others {
+    flex-shrink: 0;
+    width: var(--pit-brand-col-width-mobile, 58px);
+  }
+
+  .product-info-tabs__comparison-header .product-info-tabs__comparison-col--brand {
+    flex-direction: column;
+    gap: 4px;
+    height: 56px;
+    background-color: var(--pit-text-color, #1a1a1a);
+    color: #ffffff;
+    border-radius: calc(var(--pit-radius, 12px) - 1px) calc(var(--pit-radius, 12px) - 1px) 0 0;
+  }
+
+  .product-info-tabs__comparison-logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 44px;
+    max-height: 29px;
+    object-fit: contain;
+  }
+
+  .product-info-tabs__comparison-brand-text {
+    font-family: var(--font-heading--family, inherit);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .product-info-tabs__comparison-body {
+    overflow: hidden;
+    border-radius: 0 0 var(--pit-radius, 12px) var(--pit-radius, 12px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-info-tabs__comparison-col--brand,
+    .product-info-tabs__comparison-col--others {
+      width: var(--pit-brand-col-width-desktop, 156px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Tab: Comparison table",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-info-comparison-row"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "Comparison Table"
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Show this tab by default",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_logo",
+      "label": "Your brand logo"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Your brand name",
+      "info": "Used as the logo's alt text, or shown as text if no logo is set.",
+      "default": "Your Brand"
+    },
+    {
+      "type": "text",
+      "id": "others_label",
+      "label": "Competitor column label",
+      "default": "Others"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab: Comparison table"
+    }
+  ]
+}
+{% endschema %}

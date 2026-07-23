@@ -239,6 +239,14 @@
     gap: var(--tc-items-gap-mobile, 16px);
     transition: transform 0.4s ease;
     will-change: transform;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testimonial-carousel__track::-webkit-scrollbar {
+    display: none;
   }
 
   .testimonial-carousel__controls {
@@ -283,6 +291,8 @@
   @media screen and (min-width: 750px) {
     .testimonial-carousel__track {
       gap: var(--tc-items-gap, 24px);
+      overflow-x: visible;
+      scroll-snap-type: none;
     }
   }
 

@@ -1,0 +1,431 @@
+{%- doc -%}
+  Renders a tabbed product-information panel: a "Doctor Approved" quote,
+  a brand-vs-competitors comparison table, an ingredients table and an FAQ
+  accordion, switchable via tabs — replicating a PDP doctor-endorsement
+  tabs widget.
+
+  Product information block: add it inside the product details column,
+  alongside blocks like description or accordions. Add one of each tab
+  type as a child block (Doctor quote, Comparison table, Ingredients, FAQ);
+  the comparison/ingredients/FAQ tabs each accept their own repeatable
+  rows/items as further nested blocks, so merchants can add, remove or
+  reorder everything freely.
+
+  Tab switching reuses the theme's `on:click` / `Component` declarative
+  event-binding convention (same pattern as `product-features-tabs.js`);
+  the FAQ accordion reuses the theme's native `accordion-custom` component.
+  Only a small tab-switcher script is added by this block - no other new
+  JavaScript.
+
+  Every text, image, color, size, spacing and radius value is configurable
+  through this block and its child block schemas.
+{%- enddoc -%}
+
+<script
+  src="{{ 'product-info-tabs.js' | asset_url }}"
+  type="module"
+></script>
+
+{% liquid
+  assign block_settings = block.settings
+%}
+
+<product-info-tabs-component
+  class="product-info-tabs spacing-style"
+  style="
+    {%- render 'spacing-style', settings: block_settings -%}
+    --pit-tab-bg: {{ block_settings.tab_background_color }};
+    --pit-tab-text: {{ block_settings.tab_text_color }};
+    --pit-tab-gradient-start: {{ block_settings.tab_active_gradient_start }};
+    --pit-tab-gradient-end: {{ block_settings.tab_active_gradient_end }};
+    --pit-tab-font-mobile: {{ block_settings.tab_font_size_mobile }}px;
+    --pit-tab-font-desktop: {{ block_settings.tab_font_size_desktop }}px;
+    --pit-border-color: {{ block_settings.border_color }};
+    --pit-border-width: {{ block_settings.border_width }}px;
+    --pit-radius: {{ block_settings.corner_radius }}px;
+    --pit-panel-bg: {{ block_settings.panel_background_color }};
+    --pit-panel-padding: {{ block_settings.panel_padding }}px;
+    --pit-panel-gap: {{ block_settings.panel_gap }}px;
+    --pit-text-color: {{ block_settings.text_color }};
+    --pit-muted-text: {{ block_settings.muted_text_color }};
+    --pit-card-bg: {{ block_settings.card_background_color }};
+    --pit-highlight-bg: {{ block_settings.highlight_background_color }};
+    --pit-divider-color: {{ block_settings.divider_color }};
+    --pit-positive: {{ block_settings.positive_color }};
+    --pit-negative: {{ block_settings.negative_color }};
+    --pit-brand-col-width-mobile: {{ block_settings.brand_column_width_mobile }}px;
+    --pit-brand-col-width-desktop: {{ block_settings.brand_column_width_desktop }}px;
+  "
+  data-testid="product-info-tabs"
+  {{ block.shopify_attributes }}
+>
+  {% content_for 'blocks' %}
+</product-info-tabs-component>
+
+{% stylesheet %}
+  .product-info-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: var(--pit-border-width, 1px) solid var(--pit-border-color, #ddaf3a);
+    border-radius: var(--pit-radius, 12px);
+    overflow: hidden;
+  }
+
+  /* Each tab block renders a button + panel pair; promoting the wrapper to
+     `display: contents` lets flex `order` regroup every button into one row
+     and the active panel below it, regardless of how the blocks interleave. */
+  .product-info-tabs__tab-group {
+    display: contents;
+  }
+
+  .product-info-tabs__tab {
+    order: 1;
+    flex: 1 1 0%;
+    min-width: 0;
+    padding: 10px 6px;
+    background: var(--pit-tab-bg, #f7f7f7);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body--family, inherit);
+    font-size: var(--pit-tab-font-mobile, 12px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--pit-tab-text, #1a1a1a);
+    text-align: center;
+    transition: background 0.2s ease;
+  }
+
+  .product-info-tabs__tab.is-active {
+    border-radius: calc(var(--pit-radius, 12px) - 1px) calc(var(--pit-radius, 12px) - 1px) 0 0;
+    background: linear-gradient(to left, var(--pit-tab-gradient-start, #ddaf3a), var(--pit-tab-gradient-end, #f5e35e));
+    font-weight: 700;
+  }
+
+  .product-info-tabs__panel {
+    order: 2;
+    flex: 1 0 100%;
+    display: none;
+    flex-direction: column;
+    gap: var(--pit-panel-gap, 12px);
+    width: 100%;
+    background-color: var(--pit-panel-bg, #fcfaf5);
+    border-top: 1px solid var(--pit-divider-color, #e9eaeb);
+    padding: var(--pit-panel-padding, 16px);
+  }
+
+  .product-info-tabs__panel.is-active {
+    display: flex;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .product-info-tabs__tab {
+      transition: none;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-info-tabs__tab {
+      padding: 10px 8px;
+      font-size: var(--pit-tab-font-desktop, 14px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product info tabs",
+  "tag": null,
+  "blocks": [
+    {
+      "type": "_product-info-tab-quote"
+    },
+    {
+      "type": "_product-info-tab-comparison"
+    },
+    {
+      "type": "_product-info-tab-ingredients"
+    },
+    {
+      "type": "_product-info-tab-faq"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Tab background",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_start",
+      "label": "Active tab gradient (start)",
+      "default": "#ddaf3a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_gradient_end",
+      "label": "Active tab gradient (end)",
+      "default": "#f5e35e"
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_mobile",
+      "label": "Tab label size (mobile)",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size_desktop",
+      "label": "Tab label size (desktop)",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Container"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#ddaf3a"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "t:settings.thickness",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "panel_background_color",
+      "label": "Panel background",
+      "default": "#fcfaf5"
+    },
+    {
+      "type": "range",
+      "id": "panel_padding",
+      "label": "Panel padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "panel_gap",
+      "label": "Space between elements inside a panel",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "t:content.colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "muted_text_color",
+      "label": "Muted text color",
+      "alpha": true,
+      "default": "#1a1a1ac2"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Row/card background",
+      "info": "Used by FAQ items, comparison rows and ingredient rows.",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background_color",
+      "label": "Highlight background",
+      "info": "Used by the checkmark cell and the ingredients header.",
+      "default": "#eeeeee"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#d1d1d1"
+    },
+    {
+      "type": "color",
+      "id": "positive_color",
+      "label": "Checkmark color",
+      "default": "#4fa250"
+    },
+    {
+      "type": "color",
+      "id": "negative_color",
+      "label": "Cross color",
+      "default": "#e34e36"
+    },
+    {
+      "type": "header",
+      "content": "Comparison table"
+    },
+    {
+      "type": "range",
+      "id": "brand_column_width_mobile",
+      "label": "Brand/competitor column width (mobile)",
+      "min": 30,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "brand_column_width_desktop",
+      "label": "Brand/competitor column width (desktop)",
+      "min": 40,
+      "max": 240,
+      "step": 2,
+      "unit": "px",
+      "default": 156
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product info tabs",
+      "category": "t:categories.product",
+      "blocks": {
+        "tab_quote": {
+          "type": "_product-info-tab-quote",
+          "settings": {
+            "default_open": true
+          }
+        },
+        "tab_comparison": {
+          "type": "_product-info-tab-comparison",
+          "blocks": {
+            "row_1": {
+              "type": "_product-info-comparison-row"
+            },
+            "row_2": {
+              "type": "_product-info-comparison-row"
+            }
+          },
+          "block_order": ["row_1", "row_2"]
+        },
+        "tab_ingredients": {
+          "type": "_product-info-tab-ingredients",
+          "blocks": {
+            "row_1": {
+              "type": "_product-info-ingredient-row"
+            },
+            "row_2": {
+              "type": "_product-info-ingredient-row"
+            },
+            "row_3": {
+              "type": "_product-info-ingredient-row"
+            }
+          },
+          "block_order": ["row_1", "row_2", "row_3"]
+        },
+        "tab_faq": {
+          "type": "_product-info-tab-faq",
+          "blocks": {
+            "item_1": {
+              "type": "_product-info-faq-item"
+            },
+            "item_2": {
+              "type": "_product-info-faq-item"
+            }
+          },
+          "block_order": ["item_1", "item_2"]
+        }
+      },
+      "block_order": ["tab_quote", "tab_comparison", "tab_ingredients", "tab_faq"]
+    }
+  ]
+}
+{% endschema %}

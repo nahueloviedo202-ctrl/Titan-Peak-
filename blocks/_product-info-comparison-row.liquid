@@ -1,0 +1,140 @@
+{%- doc -%}
+  Renders one feature row of the product info tabs comparison table: a
+  feature name/description plus a check or cross for this brand and for
+  competitors.
+
+  Meant to be used exclusively as a child block of `_product-info-tab-comparison`.
+{%- enddoc -%}
+
+{%- liquid
+  assign row_settings = block.settings
+-%}
+
+<div
+  class="product-info-tabs__comparison-row"
+  {{ block.shopify_attributes }}
+>
+  <div class="product-info-tabs__comparison-col product-info-tabs__comparison-col--feature">
+    <p class="product-info-tabs__comparison-feature-name">{{ row_settings.feature_name }}</p>
+    {%- if row_settings.feature_sub != blank -%}
+      <p class="product-info-tabs__comparison-feature-sub">{{ row_settings.feature_sub }}</p>
+    {%- endif -%}
+  </div>
+
+  <div
+    class="product-info-tabs__comparison-col product-info-tabs__comparison-col--brand {% if row_settings.brand_has_feature %}product-info-tabs__comparison-col--check{% else %}product-info-tabs__comparison-col--cross{% endif %}"
+  >
+    {%- if row_settings.brand_has_feature -%}
+      {% render 'product-info-tabs-check-icon' %}
+    {%- else -%}
+      {% render 'product-info-tabs-cross-icon' %}
+    {%- endif -%}
+  </div>
+
+  <div
+    class="product-info-tabs__comparison-col product-info-tabs__comparison-col--others {% if row_settings.others_has_feature %}product-info-tabs__comparison-col--check{% else %}product-info-tabs__comparison-col--cross{% endif %}"
+  >
+    {%- if row_settings.others_has_feature -%}
+      {% render 'product-info-tabs-check-icon' %}
+    {%- else -%}
+      {% render 'product-info-tabs-cross-icon' %}
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__comparison-row {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--pit-card-bg, #ffffff);
+    border-top: 1px solid var(--pit-divider-color, #d1d1d1);
+  }
+
+  .product-info-tabs__comparison-row:last-child {
+    border-radius: 0 0 var(--pit-radius, 12px) var(--pit-radius, 12px);
+  }
+
+  .product-info-tabs__comparison-row .product-info-tabs__comparison-col--feature {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .product-info-tabs__comparison-col--check {
+    background-color: var(--pit-highlight-bg, #eeeeee);
+  }
+
+  .product-info-tabs__comparison-col--cross {
+    background-color: var(--pit-card-bg, #ffffff);
+  }
+
+  .product-info-tabs__comparison-col--check svg,
+  .product-info-tabs__comparison-col--cross svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .product-info-tabs__comparison-feature-name {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__comparison-feature-sub {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-muted-text, #1a1a1ac2);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-info-tabs__comparison-feature-name,
+    .product-info-tabs__comparison-feature-sub {
+      font-size: 14px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Comparison row",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "feature_name",
+      "label": "Feature",
+      "default": "Feature name"
+    },
+    {
+      "type": "text",
+      "id": "feature_sub",
+      "label": "Description",
+      "default": "Short supporting detail"
+    },
+    {
+      "type": "checkbox",
+      "id": "brand_has_feature",
+      "label": "Your brand has this",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "others_has_feature",
+      "label": "Competitors have this",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison row"
+    }
+  ]
+}
+{% endschema %}

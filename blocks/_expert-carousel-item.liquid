@@ -1,0 +1,287 @@
+
+
+{%- doc -%}
+  Renders a single expert testimonial for the "Expert carousel" section: a
+  circular photo and a quote with author name/role. Only one item is visible
+  at a time (the rest carry the native `hidden` attribute), advanced via the
+  section's prev/next buttons.
+
+  The item's own direct children (photo, quote) are laid out with
+  `display: contents` so they can latch onto the parent
+  `expert-carousel__wrapper` CSS grid areas ("media" / "content") on desktop,
+  without needing two separate block-rendering passes.
+
+  Colors, sizes and spacing are controlled by the parent section via CSS
+  custom properties; this block only carries per-expert content.
+
+  Meant to be used exclusively as a child block of `sections/expert-carousel.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+  assign is_first = false
+  if section.blocks.first.id == block.id
+    assign is_first = true
+  endif
+-%}
+
+<div
+  class="expert-carousel-item"
+  ref="items[]"
+  {% unless is_first %}
+    hidden
+  {% endunless %}
+  {{ block.shopify_attributes }}
+>
+  <div class="expert-carousel-item__media">
+    {%- if item_settings.image -%}
+      {{
+        item_settings.image
+        | image_url: width: 420
+        | image_tag:
+          widths: '210, 315, 420',
+          sizes: '210px',
+          alt: item_settings.image_alt | default: item_settings.image.alt | default: item_settings.name,
+          class: 'expert-carousel-item__image',
+          loading: 'lazy'
+      }}
+    {%- else -%}
+      <div class="expert-carousel-item__placeholder">
+        {{ 'person' | placeholder_svg_tag: 'expert-carousel-item__placeholder-image' }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="expert-carousel-item__content">
+    {%- if item_settings.name != blank or item_settings.role != blank -%}
+      <div class="expert-carousel-item__author">
+        {%- if item_settings.name != blank -%}
+          <span class="expert-carousel-item__name">{{ item_settings.name }}</span>
+        {%- endif -%}
+        {%- if item_settings.role != blank -%}
+          <span class="expert-carousel-item__role">{{ item_settings.role }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if item_settings.quote != blank -%}
+      <div class="expert-carousel-item__quote-body">
+        <span
+          class="expert-carousel-item__quote-mark"
+          aria-hidden="true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+          >
+            <path
+              d="M15.2165 0L11.134 30H0L7.17526 0H15.2165ZM30 0L25.9175 30H14.7835L21.9588 0H30Z"
+              fill="url(#expert-carousel-quote-{{ block.id }})"
+            />
+            <defs>
+              <linearGradient
+                id="expert-carousel-quote-{{ block.id }}"
+                x1="3.43373"
+                y1="8.1"
+                x2="20.0127"
+                y2="10.7103"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="{{ item_settings.quote_mark_gradient_start }}" />
+                <stop
+                  offset="1"
+                  stop-color="{{ item_settings.quote_mark_gradient_end }}"
+                />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <p class="expert-carousel-item__quote-text">{{ item_settings.quote }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .expert-carousel-item:not([hidden]) {
+    display: contents;
+  }
+
+  .expert-carousel-item__media {
+    flex-shrink: 0;
+  }
+
+  .expert-carousel-item__placeholder,
+  .expert-carousel-item__image {
+    width: var(--ec-avatar-size-mobile, 210px);
+    height: var(--ec-avatar-size-mobile, 210px);
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .expert-carousel-item__placeholder {
+    background-color: rgb(var(--color-foreground-rgb, 26 26 26) / 0.06);
+  }
+
+  .expert-carousel-item__placeholder-image {
+    width: 40%;
+    height: 40%;
+    margin: 30% auto;
+  }
+
+  .expert-carousel-item__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ec-content-gap, 20px);
+  }
+
+  .expert-carousel-item__author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .expert-carousel-item__name {
+    display: block;
+    color: var(--ec-name-color, #1a1a1a);
+    font-size: var(--ec-name-size, 20px);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .expert-carousel-item__role {
+    display: block;
+    color: var(--ec-role-color, #1a1a1a);
+    font-size: var(--ec-role-size, 16px);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .expert-carousel-item__quote-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .expert-carousel-item__quote-mark {
+    display: block;
+    flex-shrink: 0;
+    width: var(--ec-quote-mark-size, 30px);
+    line-height: 0;
+  }
+
+  .expert-carousel-item__quote-mark svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .expert-carousel-item__quote-text {
+    color: var(--ec-quote-color, #1a1a1a);
+    font-size: var(--ec-quote-size-mobile, 16px);
+    font-weight: 400;
+    line-height: 1.25;
+    flex: 1 0 0;
+    min-width: 0;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    .expert-carousel-item__media {
+      grid-area: media;
+    }
+
+    .expert-carousel-item__content {
+      grid-area: content;
+      align-self: center;
+      width: auto;
+    }
+
+    .expert-carousel-item__placeholder,
+    .expert-carousel-item__image {
+      width: var(--ec-avatar-size-desktop, 210px);
+      height: var(--ec-avatar-size-desktop, 210px);
+    }
+
+    .expert-carousel-item__author {
+      text-align: left;
+    }
+
+    .expert-carousel-item__quote-text {
+      font-size: var(--ec-quote-size-desktop, 18px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Expert",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "Dr. Jane Doe"
+    },
+    {
+      "type": "text",
+      "id": "role",
+      "label": "Role",
+      "default": "Medical Doctor"
+    },
+    {
+      "type": "header",
+      "content": "Quote"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "t:settings.text",
+      "default": "\"Add this expert's quote here.\""
+    },
+    {
+      "type": "color",
+      "id": "quote_mark_gradient_start",
+      "label": "Quote mark gradient start",
+      "default": "#C3941B"
+    },
+    {
+      "type": "color",
+      "id": "quote_mark_gradient_end",
+      "label": "Quote mark gradient end",
+      "default": "#FFED68"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Expert"
+    }
+  ]
+}
+{% endschema %}

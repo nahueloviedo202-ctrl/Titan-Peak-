@@ -1,0 +1,156 @@
+{%- doc -%}
+  Renders the "Doctor quote" tab of the product info tabs block: a quote
+  with the endorsing doctor's (or expert's) photo, name and specialty.
+
+  Meant to be used exclusively as a child block of `blocks/product-info-tabs.liquid`.
+{%- enddoc -%}
+
+{%- liquid
+  assign tab_settings = block.settings
+  assign panel_id = 'PIT-Panel-' | append: block.id
+-%}
+
+<div class="product-info-tabs__tab-group">
+  <button
+    type="button"
+    class="product-info-tabs__tab{% if tab_settings.default_open %} is-active{% endif %}"
+    role="tab"
+    aria-selected="{{ tab_settings.default_open }}"
+    aria-controls="{{ panel_id }}"
+    on:click="/activateTab/{{ panel_id }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- tab_settings.tab_label -}}
+  </button>
+
+  <div
+    class="product-info-tabs__panel{% if tab_settings.default_open %} is-active{% endif %}"
+    id="{{ panel_id }}"
+    role="tabpanel"
+  >
+    {%- if tab_settings.quote != blank -%}
+      <p class="product-info-tabs__quote">{{ tab_settings.quote }}</p>
+    {%- endif -%}
+
+    <div class="product-info-tabs__author">
+      {%- if tab_settings.avatar != blank -%}
+        {{
+          tab_settings.avatar
+          | image_url: width: 112
+          | image_tag:
+            widths: '56, 84, 112',
+            alt: tab_settings.author_name,
+            loading: 'lazy',
+            class: 'product-info-tabs__avatar'
+        }}
+      {%- endif -%}
+      <div class="product-info-tabs__author-info">
+        {%- if tab_settings.author_name != blank -%}
+          <p class="product-info-tabs__author-name">{{ tab_settings.author_name }}</p>
+        {%- endif -%}
+        {%- if tab_settings.author_specialty != blank -%}
+          <p class="product-info-tabs__author-specialty">{{ tab_settings.author_specialty }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__quote {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .product-info-tabs__avatar {
+    display: block;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .product-info-tabs__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .product-info-tabs__author-name {
+    margin: 0;
+    font-family: var(--font-heading--family, inherit);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__author-specialty {
+    margin: 0;
+    font-family: var(--font-body--family, inherit);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-muted-text, #1a1a1ac2);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Tab: Doctor quote",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_label",
+      "label": "Tab label",
+      "default": "Doctor Approved"
+    },
+    {
+      "type": "checkbox",
+      "id": "default_open",
+      "label": "Show this tab by default",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "\"Add a doctor or expert quote about your product here.\""
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar",
+      "label": "Photo"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Name",
+      "default": "Dr. Jane Smith, M.D."
+    },
+    {
+      "type": "text",
+      "id": "author_specialty",
+      "label": "Specialty / credentials",
+      "default": "Board-Certified Physician"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab: Doctor quote"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,129 @@
+{%- doc -%}
+  Renders one collapsible question/answer row for the product info tabs FAQ
+  tab, reusing the theme's native `accordion-custom` component for the
+  animated expand/collapse — no extra JavaScript required.
+
+  Meant to be used exclusively as a child block of `_product-info-tab-faq`.
+{%- enddoc -%}
+
+{%- liquid
+  assign item_settings = block.settings
+-%}
+
+{% capture accordion_children %}
+  <details class="product-info-tabs__faq-details">
+    <summary class="product-info-tabs__faq-question">
+      <span>{{ item_settings.question }}</span>
+      <svg
+        class="product-info-tabs__faq-chevron"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M7.29414 10.709C7.68477 11.0996 8.31914 11.0996 8.70977 10.709L14.7098 4.70896C15.1004 4.31834 15.1004 3.68396 14.7098 3.29333C14.3191 2.90271 13.6848 2.90271 13.2941 3.29333L8.00039 8.58709L2.70664 3.29646C2.31602 2.90583 1.68164 2.90583 1.29102 3.29646C0.900391 3.68708 0.900391 4.32146 1.29102 4.71208L7.29102 10.7121L7.29414 10.709Z"
+          fill="currentColor"
+        />
+      </svg>
+    </summary>
+    <div class="details-content">
+      <div class="product-info-tabs__faq-answer rte">{{ item_settings.answer }}</div>
+    </div>
+  </details>
+{% endcapture %}
+
+<div
+  class="product-info-tabs__faq-item"
+  {{ block.shopify_attributes }}
+>
+  {% render 'accordion-custom-component', children: accordion_children %}
+</div>
+
+{% stylesheet %}
+  .product-info-tabs__faq-item {
+    background-color: var(--pit-card-bg, #ffffff);
+    border-radius: var(--pit-radius, 12px);
+    overflow: hidden;
+  }
+
+  .product-info-tabs__faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 16px;
+    font-family: var(--font-heading--family, inherit);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--pit-text-color, #1a1a1a);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .product-info-tabs__faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .product-info-tabs__faq-chevron {
+    flex-shrink: 0;
+    color: var(--pit-text-color, #1a1a1a);
+    transition: transform 0.2s ease;
+  }
+
+  .product-info-tabs__faq-details[open] .product-info-tabs__faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .product-info-tabs__faq-answer {
+    padding: 0 16px 16px;
+    font-family: var(--font-body--family, inherit);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--pit-text-color, #1a1a1a);
+  }
+
+  .product-info-tabs__faq-answer :is(p, ul, ol) {
+    margin: 0 0 14px;
+  }
+
+  .product-info-tabs__faq-answer :is(p, ul, ol):last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .product-info-tabs__faq-chevron {
+      transition: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ item",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question",
+      "default": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "answer",
+      "label": "Answer",
+      "default": "<p>Add the answer to this question.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ item"
+    }
+  ]
+}
+{% endschema %}

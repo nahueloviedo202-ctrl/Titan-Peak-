@@ -1,0 +1,350 @@
+
+
+{%- doc -%}
+  Renders a "money-back guarantee" banner: a square badge image next to a
+  bold title and a short description, inside a rounded cream card.
+
+  Product information block: add it inside the product details column,
+  alongside blocks like buy buttons, stock/delivery or the accordion group.
+
+  Every text, image, color, size, spacing and radius value is configurable
+  through the block schema.
+{%- enddoc -%}
+
+{% liquid
+  assign block_settings = block.settings
+%}
+
+{% capture style %}
+  {%- render 'spacing-style', settings: block_settings -%}
+  --pgb-bg: {{ block_settings.background_color }};
+  --pgb-radius: {{ block_settings.radius }}px;
+  --pgb-gap-desktop: {{ block_settings.gap_desktop }}px;
+  --pgb-gap-mobile: {{ block_settings.gap_mobile }}px;
+  --pgb-padding-block: {{ block_settings.padding_block }}px;
+  --pgb-padding-inline: {{ block_settings.padding_inline }}px;
+  --pgb-badge-size-desktop: {{ block_settings.badge_size_desktop }}px;
+  --pgb-badge-size-mobile: {{ block_settings.badge_size_mobile }}px;
+  --pgb-title-color: {{ block_settings.title_color }};
+  --pgb-title-size-desktop: {{ block_settings.title_size_desktop }}px;
+  --pgb-title-size-mobile: {{ block_settings.title_size_mobile }}px;
+  --pgb-description-color: {{ block_settings.description_color }};
+  --pgb-description-size: {{ block_settings.description_size }}px;
+{% endcapture %}
+
+<div
+  class="product-guarantee-banner spacing-style"
+  style="{{ style }}"
+  data-testid="product-guarantee-banner"
+  {{ block.shopify_attributes }}
+>
+  {%- if block_settings.badge != blank -%}
+    {{
+      block_settings.badge
+      | image_url: width: 200
+      | image_tag:
+        width: block_settings.badge_size_desktop,
+        height: block_settings.badge_size_desktop,
+        loading: 'lazy',
+        alt: block_settings.badge_alt,
+        class: 'product-guarantee-banner__badge'
+    }}
+  {%- else -%}
+    {{ 'product-1' | placeholder_svg_tag: 'product-guarantee-banner__badge product-guarantee-banner__badge--placeholder' }}
+  {%- endif -%}
+
+  {%- if block_settings.title != blank or block_settings.description != blank -%}
+    <div class="product-guarantee-banner__content">
+      {%- if block_settings.title != blank -%}
+        <p class="product-guarantee-banner__title">{{ block_settings.title }}</p>
+      {%- endif -%}
+      {%- if block_settings.description != blank -%}
+        <p class="product-guarantee-banner__description">{{ block_settings.description }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .product-guarantee-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--pgb-gap-desktop, 16px);
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--pgb-bg, #fdf8ec);
+    border-radius: var(--pgb-radius, 12px);
+    padding: var(--pgb-padding-block, 12px) var(--pgb-padding-inline, 14px);
+  }
+
+  .product-guarantee-banner__badge {
+    flex-shrink: 0;
+    width: var(--pgb-badge-size-desktop, 68px);
+    height: var(--pgb-badge-size-desktop, 68px);
+    display: block;
+    object-fit: contain;
+  }
+
+  .product-guarantee-banner__badge--placeholder {
+    background-color: rgb(var(--color-foreground-rgb) / 0.05);
+    border-radius: 50%;
+    padding: 20%;
+  }
+
+  .product-guarantee-banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .product-guarantee-banner__title {
+    margin: 0;
+    color: var(--pgb-title-color, #1a1a1a);
+    font-size: var(--pgb-title-size-desktop, 14px);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .product-guarantee-banner__description {
+    margin: 0;
+    color: var(--pgb-description-color, #1a1a1a);
+    font-size: var(--pgb-description-size, 12px);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .product-guarantee-banner {
+      gap: var(--pgb-gap-mobile, 12px);
+    }
+
+    .product-guarantee-banner__badge {
+      width: var(--pgb-badge-size-mobile, 48px);
+      height: var(--pgb-badge-size-mobile, 48px);
+    }
+
+    .product-guarantee-banner__title {
+      font-size: var(--pgb-title-size-mobile, 12px);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Guarantee banner (badge)",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge",
+      "label": "Badge image"
+    },
+    {
+      "type": "text",
+      "id": "badge_alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_desktop",
+      "label": "Badge size (desktop)",
+      "min": 32,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "badge_size_mobile",
+      "label": "Badge size (mobile)",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "t:content.heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.heading",
+      "default": "Make Her Legs Shake Or Your Money Back"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title size (desktop)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "t:settings.text",
+      "default": "Try it for 60 days. If you're not fully satisfied, get a full refund. That's how confident we are."
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "t:settings.text_color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "t:settings.size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "default": "#fdf8ec"
+    },
+    {
+      "type": "range",
+      "id": "radius",
+      "label": "t:settings.corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Gap between badge and text (desktop)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Gap between badge and text (mobile)",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_block",
+      "label": "Card padding top/bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_inline",
+      "label": "Card padding left/right",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee banner (badge)",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

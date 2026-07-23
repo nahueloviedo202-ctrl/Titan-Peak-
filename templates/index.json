@@ -510,33 +510,32 @@
         },
         "customer_reviews_tab_89zqP6": {
           "type": "_customer-reviews-tab",
-          "disabled": true,
           "settings": {
-            "tab_label": "Organic Beetroot Gummies"
+            "tab_label": "GUMMIES POTENCIADOR DE TESTOSTERONA"
           },
           "blocks": {
             "customer_review_card_9xLhXQ": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Morgan S.",
+                "customer_name": "Marcos S.",
                 "rating": 5,
-                "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Heart & circulation",
-                "review_text": "<p>I started these to support my cardio health and within a few weeks my resting heart rate dropped and my runs felt easier - like my blood was flowing more freely. The natural nitrates in beetroot genuinely work, and the gummy format makes it effortless to stay consistent. Much better than choking down beet juice every morning.</p>"
+                "show_verified_badge": false,
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "CORAZÓN Y CIRCULACIÓN",
+                "review_text": "<p>\"Empecé a tomarlo para cuidar mi salud cardiovascular y en unas semanas mi frecuencia cardíaca en reposo bajó y salir a correr se sintió más fácil. Se nota que el Shilajit y los minerales realmente funcionan, y el formato en gominola hace que sea fácil mantener la constancia.\"<br/></p>"
               },
               "blocks": {
                 "customer_review_tag_AKcxAC": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Cardiovascular Support"
+                    "text": "Apoyo Cardiovascular"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_CRkJLq": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Better Blood Flow"
+                    "text": "Mejor Circulación"
                   },
                   "blocks": {}
                 }
@@ -549,32 +548,32 @@
             "customer_review_card_YKMGqB": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Riley P.",
+                "customer_name": "Raúl P.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Pre-workout natural",
-                "review_text": "<p>These have replaced my pre-workout. The natural nitric oxide boost gives me a great pump at the gym without any artificial stimulants or that awful tingly feeling. My endurance during HIIT sessions has improved a lot, and I feel less wiped out afterward. Love that they're organic - clean ingredients, clean results.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "ENERGÍA PRE-ENTRENO NATURAL",
+                "review_text": "<p>\"Esto reemplazó mi pre-entreno de toda la vida. El impulso natural de óxido nítrico me da un empuje real en el gimnasio sin estimulantes artificiales ni esa sensación de hormigueo incómoda. Mi resistencia en los entrenamientos de alta intensidad mejoró un montón y ya no termino agotado.\"</p>"
               },
               "blocks": {
                 "customer_review_tag_iG3eqj": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Nitric Oxide"
+                    "text": "Óxido Nítrico"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_UhdpyJ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Endurance"
+                    "text": "Resistencia"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_jmCeXj": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Organic"
+                    "text": "Orgánico"
                   },
                   "blocks": {}
                 }
@@ -588,25 +587,25 @@
             "customer_review_card_PRHH4b": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Sam W.",
+                "customer_name": "Samuel V.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Daily energy",
-                "review_text": "<p>I was skeptical about beet gummies doing much, but a month in and I'm a convert. My energy is more consistent throughout the day - not a burst and crash, just a steady, natural lift. My blood pressure readings have also improved, which my doctor noticed at my last check-up. A simple, clean supplement that genuinely delivers.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "ENERGÍA DIARIA",
+                "review_text": "<p>\"Era escéptico, pero al mes ya soy un convencido. Mi energía es mucho más constante durante el día — no un pico y luego un bajón, sino una subida natural y estable. Un suplemento simple y limpio que realmente cumple.\"</p>"
               },
               "blocks": {
                 "customer_review_tag_e3qKTR": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Stable Energy"
+                    "text": "Energía Estable"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_KQUAzT": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Blood Pressure Support"
+                    "text": "Fórmula Limpia"
                   },
                   "blocks": {}
                 }
@@ -619,25 +618,25 @@
             "customer_review_card_LMcE6W": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Drew N.",
+                "customer_name": "Andrés N.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Recovery support",
-                "review_text": "<p>Post-workout soreness used to linger for days. Since adding the Beetroot Gummies to my routine, muscle recovery is noticeably quicker and my legs feel fresher going into back-to-back training sessions. The antioxidant content must be doing its job. Taste is genuinely good too - not earthy at all, which was my biggest worry.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "APOYO A LA RECUPERACIÓN",
+                "review_text": "<p>\"Antes las agujetas me duraban días. Desde que lo sumé a mi rutina, mi recuperación muscular es notablemente más rápida y llego con las piernas más frescas a los entrenamientos seguidos. El sabor también es genuinamente bueno, que era mi mayor duda.\"</p>"
               },
               "blocks": {
                 "customer_review_tag_btcRUt": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Muscle Recovery"
+                    "text": "Recuperación Muscular"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_rKkGCg": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Antioxidants"
+                    "text": "Buen Sabor"
                   },
                   "blocks": {}
                 }

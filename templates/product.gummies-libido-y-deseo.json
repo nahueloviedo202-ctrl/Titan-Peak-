@@ -976,7 +976,7 @@
           "settings": {
             "image": "shopify://shop_images/icon-logo-shark-tank.png",
             "alt": "",
-            "width_mobile": 70,
+            "width_mobile": 40,
             "width_desktop": 70
           },
           "blocks": {}
@@ -986,7 +986,7 @@
           "settings": {
             "image": "shopify://shop_images/icon-logo-gq.webp",
             "alt": "",
-            "width_mobile": 70,
+            "width_mobile": 50,
             "width_desktop": 70
           },
           "blocks": {}

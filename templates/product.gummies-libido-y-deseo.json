@@ -1159,8 +1159,8 @@
             "name": "Dr. Marcos Jiménez",
             "role": "Médico de Medicina Deportiva y Rendimiento Masculino",
             "quote": "Lo que valoro de la fórmula de estas gomitas es la atención que prestan a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente infrautilizados en las conversaciones sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
-            "quote_mark_gradient_start": "#C3941B",
-            "quote_mark_gradient_end": "#FFED68"
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
           },
           "blocks": {}
         },
@@ -1172,8 +1172,8 @@
             "name": "Dr. Alejandro Ferrer",
             "role": "Médico Certificado en Medicina Preventiva",
             "quote": "La mayoría de los problemas de erección en los hombres se deben a tres factores que fallan simultáneamente: flujo sanguíneo débil, bajo deseo sexual y escasa producción de óxido nítrico. La maca restaura el deseo sexual, devolviéndole el anhelo. El azafrán dilata los vasos sanguíneos, permitiendo que llegue más sangre al tejido eréctil. Y el shilajit aporta a las células los minerales necesarios para mantener un flujo sanguíneo fuerte a largo plazo. Al combinar estos tres factores, los hombres no solo logran una erección más firme, sino que sus parejas notan la diferencia físicamente y alcanzan un nivel de rendimiento sexual que no habían experimentado en años.",
-            "quote_mark_gradient_start": "#C3941B",
-            "quote_mark_gradient_end": "#FFED68"
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
           },
           "blocks": {}
         },
@@ -1185,8 +1185,8 @@
             "name": "Dr. Javier Moreno",
             "role": "Médico de Familia",
             "quote": "Desde el punto de vista hormonal, la relación entre el cortisol, la testosterona y el estrés diario está bien documentada. Lo que me resulta convincente es que se utilizan Ashwagandha KSM-66®, uno de los pocos adaptógenos con respaldo clínico genuino para la reducción del cortisol, para apoyar los niveles naturales de testosterona del cuerpo. Al combinar esto con el perfil rico en minerales del Shilajit, se aborda la base hormonal que la mayoría de los hombres nunca consideran importante.",
-            "quote_mark_gradient_start": "#C3941B",
-            "quote_mark_gradient_end": "#FFED68"
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
           },
           "blocks": {}
         }
@@ -1567,7 +1567,7 @@
         "testimonial_carousel_card_nyFDzR": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/persona-clean_403f6d1b-ae97-4fa4-9193-7e5a38744b17.webp",
+            "image": "shopify://shop_images/Gemini_Generated_Image_ekkx01ekkx01ekkx-clean.webp",
             "reviewer_name": "Gabi P.",
             "star_count": 5,
             "show_verified": true,

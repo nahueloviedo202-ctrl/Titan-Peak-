@@ -1056,8 +1056,24 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "full_width_image_kzLaHc": {
+        }
+      },
+      "block_order": [
+        "full_width_image_iNQQVE"
+      ],
+      "name": "Full width images",
+      "settings": {
+        "section_width": "full-width",
+        "gap": 0,
+        "background_color": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "full_width_images_R4NHzi": {
+      "type": "full-width-images",
+      "blocks": {
+        "full_width_image_wTgzRp": {
           "type": "full-width-image",
           "settings": {
             "image": "shopify://shop_images/imagen2-clean.webp",
@@ -1075,8 +1091,7 @@
         }
       },
       "block_order": [
-        "full_width_image_iNQQVE",
-        "full_width_image_kzLaHc"
+        "full_width_image_wTgzRp"
       ],
       "name": "Full width images",
       "settings": {
@@ -1629,6 +1644,7 @@
     "product_recommendations_qggXJq",
     "results_timeline_EH8jc9",
     "full_width_images_j6d9b3",
+    "full_width_images_R4NHzi",
     "image_checklist_DaCEnz",
     "ingredients_carousel_34qKD4",
     "testimonial_carousel_FNeL7L",

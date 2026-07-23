@@ -650,8 +650,8 @@
                 "negative_color": "#e34e36",
                 "brand_column_width_mobile": 58,
                 "brand_column_width_desktop": 156,
-                "padding-block-start": 12,
-                "padding-block-end": 12,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },

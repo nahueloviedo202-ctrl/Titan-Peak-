@@ -1296,7 +1296,7 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e3.webp",
-            "reviewer_name": "Andy G.",
+            "reviewer_name": "Alejandro G.",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
@@ -1326,7 +1326,7 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/persona-clean_403f6d1b-ae97-4fa4-9193-7e5a38744b17.webp",
-            "reviewer_name": "Brian P.",
+            "reviewer_name": "Gabi P.",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
@@ -1449,8 +1449,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuántas gominolas debo tomar al día?",
-            "answer": "<p>Recomendamos tomar una gominola al día. Cada gominola contiene una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, la resistencia y el rendimiento.<br/>Como la fórmula está altamente concentrada, con una sola gominola es suficiente para apoyar tu rendimiento, energía y vitalidad diarios.</p>",
+            "question": "¿Cuándo notaré la diferencia?",
+            "answer": "<p>La mayoría de los hombres experimentan un aumento de energía y motivación durante la primera semana, y los beneficios más notables en el rendimiento se hacen evidentes entre la segunda y la cuarta semana, a medida que los ingredientes alcanzan su máxima absorción. La constancia es fundamental: tomar una gomita al día es lo que permite obtener los resultados que reportan nuestros clientes.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1458,8 +1458,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Me producirán nerviosismo o bajones de energía?",
-            "answer": "<p>No. Performance Gummies son completamente libres de estimulantes.<br/>En lugar de depender de la cafeína o estimulantes artificiales, la fórmula apoya la producción natural de energía, el equilibrio hormonal y una circulación saludable. Esto te permite disfrutar de una energía estable, mejor resistencia y mayor rendimiento, sin nerviosismo ni bajones.</p>",
+            "question": "¿Qué diferencia hay con los otros productos??",
+            "answer": "<p>La mayoría de los productos del mercado infra-dosifican el ingrediente clave y ocultan el resto tras una «mezcla patentada». Nuestra fórmula es totalmente transparente y se basa en una potente dosis de 2000 mg de shilajit, junto con dosis clínicamente ajustadas de ginseng panax, L-arginina y maca negra: la combinación que realmente impulsa el flujo sanguíneo, el deseo y la resistencia, y no solo una etiqueta que aparenta serlo.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1467,8 +1467,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuál es el mejor momento para tomar mi gominola?",
-            "answer": "<p>Puedes tomar tu gominola en cualquier momento del día, aunque la mayoría de los hombres prefieren tomarla por la mañana o a primera hora de la tarde para apoyar la energía, la resistencia y la confianza durante todo el día.<br/>Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, el uso diario constante ayuda a conseguir resultados más sólidos a largo plazo.</p>",
+            "question": "¿Mi pareja podrá notarlo?",
+            "answer": "<p>En nuestra encuesta a clientes, el 93 % afirmó que su pareja notó la diferencia sin que se lo dijeran. No solo estás comprando cómo te sientes tú, sino también lo que ellos experimentan.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1476,8 +1476,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué tan rápido sentiré los efectos?",
-            "answer": "<p>Algunos hombres notan más energía, confianza y resistencia en los primeros días.<br/>Sin embargo, como la fórmula funciona apoyando el equilibrio hormonal, el flujo sanguíneo y la producción de óxido nítrico, los mejores resultados suelen aparecer entre las 4 y 8 semanas de uso diario constante.<br/>Con el uso regular, muchos usuarios reportan más deseo, mejor rendimiento y mayor resistencia con el tiempo.</p>",
+            "question": "¿Necesito receta? ¿Es como la pastillita azul?",
+            "answer": "<p>Sin receta, sin farmacia, sin visitas incómodas al médico. Estas gominolas trabajan con los sistemas propios de tu cuerpo — apoyando el óxido nítrico, la circulación y el deseo natural — en lugar de forzar una reacción química a corto plazo. Es un apoyo diario, no una pastilla de emergencia.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1485,8 +1485,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gominolas son de alta calidad?",
-            "answer": "<p>Nuestras Performance Gummies se producen en instalaciones certificadas GMP y son testeadas por terceros para garantizar pureza y seguridad.<br/>Usamos ingredientes cuidadosamente seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su larga trayectoria apoyando la vitalidad masculina, el deseo, la circulación y el rendimiento.<br/>El resultado es una fórmula limpia y potente, diseñada específicamente para hombres que buscan un apoyo real en su rendimiento.</p>",
+            "question": "¿Tiene efectos secundarios?",
+            "answer": "<p>La fórmula está hecha con ingredientes de origen vegetal, sin estimulantes — así que no hay nerviosismo ni bajones. La mayoría de los hombres la toman a diario sin ningún problema, pero como con cualquier suplemento, consulta con tu médico si tomas medicación o tienes alguna condición de salud.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1494,8 +1494,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomar Performance Gummies con otros suplementos?",
-            "answer": "<p>Sí. Performance Gummies generalmente se pueden tomar junto a la mayoría de los suplementos diarios.<br/>Como la fórmula se centra en apoyar el equilibrio de la testosterona, el flujo sanguíneo y la energía natural, muchos hombres la combinan con multivitamínicos, suplementos de proteína u otros productos de bienestar como parte de su rutina diaria.<br/>Si estás tomando medicación con receta o tienes alguna condición médica, te recomendamos consultar primero con tu médico.</p>",
+            "question": "¿Qué pasa si no me funciona?",
+            "answer": "<p>Entonces no pagas. Cada pedido está respaldado por nuestra garantía de devolución de dinero — pruébalo, dale una oportunidad real, y si no notas la diferencia, te devolvemos tu dinero. El único riesgo real es quedarte donde estás.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1503,8 +1503,18 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro para uso a largo plazo?",
-            "answer": "<p>Sí. Performance Gummies está formulado con ingredientes de origen natural, tradicionalmente usados para apoyar la vitalidad masculina y el equilibrio hormonal.<br/>A diferencia de los productos basados en estimulantes, la fórmula funciona apoyando la regulación hormonal natural del cuerpo, la circulación y los sistemas de energía, lo que la hace apta para un uso diario constante como parte de una rutina a largo plazo.</p>",
+            "question": "¿Cuántas tomo, y cuándo?",
+            "answer": "<p>Solo una gominola al día. Muchos hombres la toman por la mañana para que esté haciendo efecto por la tarde, pero cualquier horario constante funciona — la clave es no saltarse días.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_BEY66R": {
+          "type": "_faq-item",
+          "name": "FAQ item",
+          "settings": {
+            "question": "¿Cuánto tiempo tengo que tomarlo?",
+            "answer": "<p>Cuanto más tiempo mantengas la constancia, más se profundizan los beneficios. La mayoría de los hombres la incorporan a su rutina diaria igual que un café por la mañana — porque los resultados se acumulan, y dejarlo significa perder el terreno ganado.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1517,7 +1527,8 @@
         "faq_item_n8ttME",
         "faq_item_6BLpLJ",
         "faq_item_Acpckj",
-        "faq_item_rqGgB3"
+        "faq_item_rqGgB3",
+        "faq_item_BEY66R"
       ],
       "name": "FAQ accordion",
       "settings": {

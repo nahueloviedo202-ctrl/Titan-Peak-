@@ -1148,6 +1148,93 @@
         "padding-block-end": 0
       }
     },
+    "expert_carousel_dgHRJn": {
+      "type": "expert-carousel",
+      "blocks": {
+        "expert_carousel_item_4KmWnx": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_2_2026_02_09_53_PM.webp",
+            "image_alt": "",
+            "name": "Dr. Marcos Jiménez",
+            "role": "Médico de Medicina Deportiva y Rendimiento Masculino",
+            "quote": "Lo que valoro de la fórmula de estas gomitas es la atención que prestan a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente infrautilizados en las conversaciones sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
+            "quote_mark_gradient_start": "#C3941B",
+            "quote_mark_gradient_end": "#FFED68"
+          },
+          "blocks": {}
+        },
+        "expert_carousel_item_GDf9bN": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/reviewr_image_beef.png_2.webp",
+            "image_alt": "",
+            "name": "Dr. Alejandro Ferrer",
+            "role": "Médico Certificado en Medicina Preventiva",
+            "quote": "La mayoría de los problemas de erección en los hombres se deben a tres factores que fallan simultáneamente: flujo sanguíneo débil, bajo deseo sexual y escasa producción de óxido nítrico. La maca restaura el deseo sexual, devolviéndole el anhelo. El azafrán dilata los vasos sanguíneos, permitiendo que llegue más sangre al tejido eréctil. Y el shilajit aporta a las células los minerales necesarios para mantener un flujo sanguíneo fuerte a largo plazo. Al combinar estos tres factores, los hombres no solo logran una erección más firme, sino que sus parejas notan la diferencia físicamente y alcanzan un nivel de rendimiento sexual que no habían experimentado en años.",
+            "quote_mark_gradient_start": "#C3941B",
+            "quote_mark_gradient_end": "#FFED68"
+          },
+          "blocks": {}
+        },
+        "expert_carousel_item_iYYPtw": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/reviewr_image_beef.png_1.webp",
+            "image_alt": "",
+            "name": "Dr. Javier Moreno",
+            "role": "Médico de Familia",
+            "quote": "Desde el punto de vista hormonal, la relación entre el cortisol, la testosterona y el estrés diario está bien documentada. Lo que me resulta convincente es que se utilizan Ashwagandha KSM-66®, uno de los pocos adaptógenos con respaldo clínico genuino para la reducción del cortisol, para apoyar los niveles naturales de testosterona del cuerpo. Al combinar esto con el perfil rico en minerales del Shilajit, se aborda la base hormonal que la mayoría de los hombres nunca consideran importante.",
+            "quote_mark_gradient_start": "#C3941B",
+            "quote_mark_gradient_end": "#FFED68"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "expert_carousel_item_4KmWnx",
+        "expert_carousel_item_GDf9bN",
+        "expert_carousel_item_iYYPtw"
+      ],
+      "name": "Expert carousel",
+      "settings": {
+        "heading": "Recommended by Men's Health Specialists",
+        "heading_color": "#1a1a1a",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 32,
+        "heading_gap_mobile": 24,
+        "heading_gap_desktop": 40,
+        "wrapper_max_width": 880,
+        "wrapper_gap_mobile": 24,
+        "wrapper_column_gap_desktop": 60,
+        "wrapper_row_gap_desktop": 32,
+        "avatar_size_mobile": 210,
+        "avatar_size_desktop": 210,
+        "content_gap": 20,
+        "name_color": "#1a1a1a",
+        "name_size": 20,
+        "role_color": "#1a1a1a",
+        "role_size": 16,
+        "quote_color": "#1a1a1a",
+        "quote_size_mobile": 16,
+        "quote_size_desktop": 18,
+        "quote_mark_size": 30,
+        "show_nav": true,
+        "nav_icon_color": "#1a1a1a",
+        "nav_prev_background": "#fcfaf5",
+        "nav_next_background": "#fcfaf5",
+        "nav_button_size": 40,
+        "nav_gap": 36,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "container_max_width": 1440,
+        "container_padding_mobile": 16,
+        "container_padding_desktop": 120,
+        "background_color": "#fcfaf5",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
     "full_width_images_R4NHzi": {
       "type": "full-width-images",
       "blocks": {
@@ -1723,6 +1810,7 @@
     "carousel_brands_QTAkGf",
     "results_timeline_EH8jc9",
     "full_width_images_j6d9b3",
+    "expert_carousel_dgHRJn",
     "full_width_images_R4NHzi",
     "image_checklist_DaCEnz",
     "ingredients_carousel_34qKD4",

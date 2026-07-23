@@ -1369,6 +1369,14 @@
     "products_carousel_7VJyYx": {
       "type": "products-carousel",
       "blocks": {
+        "product_carousel_card_miJYRi": {
+          "type": "_product-carousel-card",
+          "name": "Product",
+          "settings": {
+            "product": "titan-peak-gummies-de-rendimiento-soporte-6-en-1-para-hombres-copia"
+          },
+          "blocks": {}
+        },
         "product_carousel_card_38wMi6": {
           "type": "_product-carousel-card",
           "settings": {
@@ -1386,6 +1394,7 @@
         }
       },
       "block_order": [
+        "product_carousel_card_miJYRi",
         "product_carousel_card_38wMi6",
         "product_carousel_card_cCLn6Y"
       ],

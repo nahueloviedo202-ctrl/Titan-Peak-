@@ -523,6 +523,34 @@
               },
               "block_order": []
             },
+            "product_guarantee_banner_6TMbki": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
+              "settings": {
+                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "Haz que sus piernas tiemblen o te devolvemos el dinero.",
+                "title_color": "#1a1a1a",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "Pruébalo durante 60 días. Si no quedas completamente satisfecho, te devolvemos el importe íntegro. Así de seguros estamos.",
+                "description_color": "#1a1a1a",
+                "description_size": 12,
+                "background_color": "#fdf8ec",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "product_perks_AtCRD4": {
               "type": "product-perks",
               "name": "Product perks",
@@ -724,6 +752,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "product_guarantee_banner_6TMbki",
             "product_perks_AtCRD4",
             "guarantee_banner_mN6rWP",
             "product_stock_delivery_aBe8eb",

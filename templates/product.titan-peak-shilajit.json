@@ -2066,7 +2066,7 @@
         "answer_size_mobile": 14,
         "answer_size_desktop": 17,
         "answer_line_height": 1.4,
-        "background_color": "#141720",
+        "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 40,
         "padding-block-end": 40
       }

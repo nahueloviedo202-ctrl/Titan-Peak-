@@ -463,7 +463,7 @@
                 "product_perk_item_xGcHyk": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Devolución en 30 días"
+                    "text": "Devolución en 60 días"
                   },
                   "blocks": {}
                 },
@@ -516,6 +516,34 @@
               },
               "blocks": {}
             },
+            "product_guarantee_banner_wH9pBT": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
+              "settings": {
+                "badge": "shopify://shop_images/octagon-alert.svg",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "CUIDADO CON LAS RÉPLICAS BARATAS",
+                "title_color": "{{ settings.color_palette.background }}",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "Solo nuestra marca garantiza la alta calidad del producto utilizado por miles de personas para la vitalidad masculina.",
+                "description_color": "{{ settings.color_palette.background }}",
+                "description_size": 12,
+                "background_color": "#C41731",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "t:names.product_description",
@@ -555,6 +583,7 @@
             "buy_buttons_eYQEYi",
             "product_perks_AtCRD4",
             "product_guarantee_banner_gMhF43",
+            "product_guarantee_banner_wH9pBT",
             "text_aEtTtq"
           ]
         }

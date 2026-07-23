@@ -1979,8 +1979,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Me producirán nerviosismo o bajones de energía?",
-            "answer": "<p>No. Performance Gummies son completamente libres de estimulantes.<br/>En lugar de depender de la cafeína o estimulantes artificiales, la fórmula apoya la producción natural de energía, el equilibrio hormonal y una circulación saludable. Esto te permite disfrutar de una energía estable, mejor resistencia y mayor rendimiento, sin nerviosismo ni bajones.</p>",
+            "question": "¿Cómo se compara TITAN PEAK con esas pastillas azules?",
+            "answer": "<p>A diferencia de las pastillas sintéticas que pueden causar taquicardia, dolores de cabeza y efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para potenciar de forma natural el óxido nítrico y el flujo sanguíneo, sin el \"bajón\" sintético ni riesgos para la salud.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1988,8 +1988,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuál es el mejor momento para tomar mi gominola?",
-            "answer": "<p>Puedes tomar tu gominola en cualquier momento del día, aunque la mayoría de los hombres prefieren tomarla por la mañana o a primera hora de la tarde para apoyar la energía, la resistencia y la confianza durante todo el día.<br/>Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, el uso diario constante ayuda a conseguir resultados más sólidos a largo plazo.</p>",
+            "question": "¿Es seguro TITAN PEAK?",
+            "answer": "<p>Sí. Está fabricado en una instalación certificada cGMP y registrada en la FDA, usando ingredientes non-GMO y testeado por laboratorios externos para pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1997,8 +1997,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué tan rápido sentiré los efectos?",
-            "answer": "<p>Algunos hombres notan más energía, confianza y resistencia en los primeros días.<br/>Sin embargo, como la fórmula funciona apoyando el equilibrio hormonal, el flujo sanguíneo y la producción de óxido nítrico, los mejores resultados suelen aparecer entre las 4 y 8 semanas de uso diario constante.<br/>Con el uso regular, muchos usuarios reportan más deseo, mejor rendimiento y mayor resistencia con el tiempo.</p>",
+            "question": "¿Es realmente diferente al shilajit que se vende en Amazon?",
+            "answer": "<p>Sí. La mayoría del shilajit que se vende en Amazon es un polvo barato y de baja calidad, importado por un par de euros la unidad. El nuestro se cosecha en los picos del Himalaya a 5.180 metros, se seca naturalmente al sol durante 60 días, y está verificado por dibenzo-α-pironas, el marcador estándar de oro que los productos falsificados no pueden replicar. Desafiamos a cualquier marca de Amazon a mostrar ese análisis... no podrán.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2015,8 +2015,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomar Performance Gummies con otros suplementos?",
-            "answer": "<p>Sí. Performance Gummies generalmente se pueden tomar junto a la mayoría de los suplementos diarios.<br/>Como la fórmula se centra en apoyar el equilibrio de la testosterona, el flujo sanguíneo y la energía natural, muchos hombres la combinan con multivitamínicos, suplementos de proteína u otros productos de bienestar como parte de su rutina diaria.<br/>Si estás tomando medicación con receta o tienes alguna condición médica, te recomendamos consultar primero con tu médico.</p>",
+            "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
+            "answer": "<p>Sí, nuestras gominolas se pueden tomar junto a la mayoría de los suplementos comunes. Están formuladas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Sin embargo, si tienes condiciones de salud preexistentes, especialmente relacionadas con el corazón, es mejor consultar con tu médico antes de combinarlas con otros productos.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2024,8 +2024,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro para uso a largo plazo?",
-            "answer": "<p>Sí. Performance Gummies está formulado con ingredientes de origen natural, tradicionalmente usados para apoyar la vitalidad masculina y el equilibrio hormonal.<br/>A diferencia de los productos basados en estimulantes, la fórmula funciona apoyando la regulación hormonal natural del cuerpo, la circulación y los sistemas de energía, lo que la hace apta para un uso diario constante como parte de una rutina a largo plazo.</p>",
+            "question": "¿Por qué en gominola en vez de resina o polvo?",
+            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor muy amargo y metálico que la mayoría encuentra insoportable. Nuestra fórmula mejorada en gominola aporta la dosis clínica exacta de más de 84 minerales, en un formato rico y cómodo que hace que tu ritual diario de rendimiento sea fácil y agradable.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2043,7 +2043,7 @@
       "name": "FAQ accordion",
       "settings": {
         "heading": "PREGUNTAS FRECUENTES",
-        "heading_color": "#212529",
+        "heading_color": "{{ settings.color_palette.background }}",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,
         "container_max_width": 900,
@@ -2052,7 +2052,7 @@
         "header_gap_desktop": 40,
         "list_gap_mobile": 12,
         "list_gap_desktop": 16,
-        "card_background_color": "#f9f7f5",
+        "card_background_color": "{{ settings.color_palette.background }}",
         "card_radius": 12,
         "trigger_padding_mobile": 16,
         "trigger_padding_desktop": 24,
@@ -2066,7 +2066,7 @@
         "answer_size_mobile": 14,
         "answer_size_desktop": 17,
         "answer_line_height": 1.4,
-        "background_color": "#ffffff",
+        "background_color": "#141720",
         "padding-block-start": 40,
         "padding-block-end": 40
       }

@@ -461,6 +461,32 @@
               },
               "blocks": {}
             },
+            "product_stock_delivery_aBe8eb": {
+              "type": "product-stock-delivery",
+              "name": "Product stock & delivery",
+              "settings": {
+                "show_stock": true,
+                "inventory_threshold": 10,
+                "show_inventory_quantity": false,
+                "pulse_animation": true,
+                "in_stock_color": "",
+                "low_stock_color": "",
+                "out_of_stock_color": "",
+                "show_delivery": true,
+                "delivery_icon_size": 24,
+                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "alignment": "center",
+                "gap": 20,
+                "font_size_desktop": 14,
+                "font_size_mobile": 11,
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
@@ -599,32 +625,6 @@
               },
               "blocks": {}
             },
-            "product_stock_delivery_aBe8eb": {
-              "type": "product-stock-delivery",
-              "name": "Product stock & delivery",
-              "settings": {
-                "show_stock": true,
-                "inventory_threshold": 10,
-                "show_inventory_quantity": false,
-                "pulse_animation": true,
-                "in_stock_color": "",
-                "low_stock_color": "",
-                "out_of_stock_color": "",
-                "show_delivery": true,
-                "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
-                "alignment": "center",
-                "gap": 20,
-                "font_size_desktop": 14,
-                "font_size_mobile": 11,
-                "text_color": "",
-                "padding-block-start": 4,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "accordion_group_nHpwkV": {
               "type": "accordion-group",
               "name": "Accordion group",
@@ -723,10 +723,10 @@
             "image_popup_fwdVY7",
             "divider_VJhene",
             "variant_picker_R3rGDr",
+            "product_stock_delivery_aBe8eb",
             "buy_buttons_eYQEYi",
             "product_perks_AtCRD4",
             "guarantee_banner_mN6rWP",
-            "product_stock_delivery_aBe8eb",
             "accordion_group_nHpwkV",
             "text_aEtTtq"
           ]

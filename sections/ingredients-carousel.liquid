@@ -265,6 +265,7 @@
     flex: 0 0
       calc((100% - (var(--icc-gap, 16px) * (var(--icc-columns, 4) - 1))) / var(--icc-columns, 4));
     min-width: 0;
+    scroll-snap-align: start;
     padding-top: calc(var(--icc-image-height, 152px) - var(--icc-image-overlap, 56px));
   }
 
@@ -476,6 +477,14 @@
 
     .ingredients-carousel__track {
       padding-inline: var(--icc-mobile-edge-padding, 16px);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .ingredients-carousel__track::-webkit-scrollbar {
+      display: none;
     }
 
     .ingredients-carousel__card {

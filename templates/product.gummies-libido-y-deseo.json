@@ -958,6 +958,84 @@
         "padding-block-end": 48
       }
     },
+    "carousel_brands_QTAkGf": {
+      "type": "carousel-brands",
+      "blocks": {
+        "carousel_brands_logo_Rbbyfc": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-buzz-feed.webp",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_QaiF7h": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-shark-tank.png",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 70
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_t4fHnG": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-gq.webp",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 70
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_JNrx9t": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-forbes.png",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_dBeHrW": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-mens-health.avif",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "carousel_brands_logo_Rbbyfc",
+        "carousel_brands_logo_QaiF7h",
+        "carousel_brands_logo_t4fHnG",
+        "carousel_brands_logo_JNrx9t",
+        "carousel_brands_logo_dBeHrW"
+      ],
+      "name": "Carousel brands",
+      "settings": {
+        "heading": "Visto en:",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 16,
+        "heading_size_desktop": 20,
+        "heading_gap": 20,
+        "gap_mobile": 50,
+        "gap_desktop": 100,
+        "movement_direction": "normal",
+        "enable_animation": true,
+        "speed_factor": 30,
+        "background_color": "#141414",
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      }
+    },
     "results_timeline_EH8jc9": {
       "type": "results-timeline",
       "blocks": {
@@ -1642,6 +1720,7 @@
   "order": [
     "main",
     "product_recommendations_qggXJq",
+    "carousel_brands_QTAkGf",
     "results_timeline_EH8jc9",
     "full_width_images_j6d9b3",
     "full_width_images_R4NHzi",

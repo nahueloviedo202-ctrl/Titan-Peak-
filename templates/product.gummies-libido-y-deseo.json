@@ -671,7 +671,7 @@
                 "product_info_tab_faq_TMAQz9": {
                   "type": "_product-info-tab-faq",
                   "settings": {
-                    "tab_label": "FAQ's",
+                    "tab_label": "Preguntas frecuentes",
                     "default_open": false
                   },
                   "blocks": {
@@ -1158,7 +1158,7 @@
             "image_alt": "",
             "name": "Dr. Marcos Jiménez",
             "role": "Médico de Medicina Deportiva y Rendimiento Masculino",
-            "quote": "Lo que valoro de la fórmula de estas gomitas es la atención que prestan a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente infrautilizados en las conversaciones sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
+            "quote": "Lo que valoro de la fórmula de estas gominolas es la atención que prestan a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente infrautilizados en las conversaciones sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
             "quote_mark_gradient_start": "#c3941b",
             "quote_mark_gradient_end": "#ffed68"
           },

@@ -231,7 +231,7 @@
                       "type": "_icon-benefits-item",
                       "settings": {
                         "title": "Incansable",
-                        "description": "<p>Ella terminara primero. Tú sigue adelante.</p>",
+                        "description": "<p>Ella terminara primero. Tú sigues adelante.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/icon-she-finishes-first.png",
                         "icon_size": 40
@@ -679,7 +679,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Cómo tomo las TITAN PEAK Shilajit Gold?",
-                        "answer": "<p>Toma 2 gomitas al día, preferiblemente con una comida. La constancia es clave: el uso diario ayuda a tu cuerpo a aprovechar al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
+                        "answer": "<p>Toma 2 gominolas al día, preferiblemente con una comida. La constancia es clave: el uso diario ayuda a tu cuerpo a aprovechar al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
                       },
                       "blocks": {}
                     },

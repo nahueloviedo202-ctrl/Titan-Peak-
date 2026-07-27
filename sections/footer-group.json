@@ -335,7 +335,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Rastrea tu Pedido",
-                    "link": "",
+                    "link": "https://titan-peak.com/apps/track123",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,

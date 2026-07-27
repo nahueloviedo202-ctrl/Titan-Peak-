@@ -1555,7 +1555,7 @@
         "testimonial_carousel_card_awgqff": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/persona3-clean.webp",
+            "image": "shopify://shop_images/jorge-clean.webp",
             "reviewer_name": "Jorge T.",
             "star_count": 5,
             "show_verified": true,

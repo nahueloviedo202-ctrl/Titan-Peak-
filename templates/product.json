@@ -1307,17 +1307,17 @@
     "testimonial_carousel_FNeL7L": {
       "type": "testimonial-carousel",
       "blocks": {
-        "testimonial_carousel_card_37jQRF": {
+        "testimonial_carousel_card_8PX6WW": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/persona2-clean.webp",
-            "reviewer_name": "Andy G.",
+            "image": "shopify://shop_images/arreglado9-clean.webp",
+            "reviewer_name": "Pedro",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
             "show_tag": true,
-            "tag_text": "Una solución increíble",
-            "quote": "<p>Soy entrenador personal y recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, deseo — mis clientes dicen que sienten que su testosterona volvió.</p>",
+            "tag_text": "Lo mejor",
+            "quote": "<p>Llevo unas 10 semanas tomándolas y honestamente siento que volví a ser yo mismo: la energía, el deseo, la motivación para entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1352,17 +1352,17 @@
           },
           "blocks": {}
         },
-        "testimonial_carousel_card_8PX6WW": {
+        "testimonial_carousel_card_37jQRF": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/arreglado9-clean.webp",
-            "reviewer_name": "Pedro",
+            "image": "shopify://shop_images/persona2-clean.webp",
+            "reviewer_name": "Andy G.",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
             "show_tag": true,
-            "tag_text": "Lo mejor",
-            "quote": "<p>Llevo unas 10 semanas tomándolas y honestamente siento que volví a ser yo mismo: la energía, el deseo, la motivación para entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
+            "tag_text": "Una solución increíble",
+            "quote": "<p>Soy entrenador personal y recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, deseo — mis clientes dicen que sienten que su testosterona volvió.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1400,10 +1400,10 @@
         }
       },
       "block_order": [
-        "testimonial_carousel_card_37jQRF",
+        "testimonial_carousel_card_8PX6WW",
         "testimonial_carousel_card_awgqff",
         "testimonial_carousel_card_nyFDzR",
-        "testimonial_carousel_card_8PX6WW"
+        "testimonial_carousel_card_37jQRF"
       ],
       "name": "Testimonial carousel",
       "settings": {

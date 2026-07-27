@@ -79,7 +79,17 @@
       ></span>
       <span role="status">
         {%- if show_quantity -%}
-          {{ 'content.inventory_low_stock_show_count' | t: count: inventory_quantity }}
+          {%- if block_settings.low_stock_text != blank -%}
+            {{- block_settings.low_stock_text | replace: '[count]', inventory_quantity -}}
+          {%- else -%}
+            {{ 'content.inventory_low_stock_show_count' | t: count: inventory_quantity }}
+          {%- endif -%}
+        {%- elsif stock_status == 'in_stock' and block_settings.in_stock_text != blank -%}
+          {{- block_settings.in_stock_text -}}
+        {%- elsif stock_status == 'low' and block_settings.low_stock_text != blank -%}
+          {{- block_settings.low_stock_text -}}
+        {%- elsif stock_status == 'out_of_stock' and block_settings.out_of_stock_text != blank -%}
+          {{- block_settings.out_of_stock_text -}}
         {%- else -%}
           {{- stock_translation_key | t -}}
         {%- endif -%}
@@ -271,6 +281,30 @@
       "id": "out_of_stock_color",
       "label": "Out of stock color",
       "placeholder": "t:settings.default",
+      "visible_if": "{{ block.settings.show_stock }}"
+    },
+    {
+      "type": "text",
+      "id": "in_stock_text",
+      "label": "In stock text",
+      "placeholder": "In stock",
+      "info": "Leave empty to use the default translated text.",
+      "visible_if": "{{ block.settings.show_stock }}"
+    },
+    {
+      "type": "text",
+      "id": "low_stock_text",
+      "label": "Low stock text",
+      "placeholder": "Low stock",
+      "info": "Leave empty to use the default translated text. Use [count] to show the remaining quantity when \"Show inventory quantity\" is on.",
+      "visible_if": "{{ block.settings.show_stock }}"
+    },
+    {
+      "type": "text",
+      "id": "out_of_stock_text",
+      "label": "Out of stock text",
+      "placeholder": "Out of stock",
+      "info": "Leave empty to use the default translated text.",
       "visible_if": "{{ block.settings.show_stock }}"
     },
     {

@@ -534,7 +534,7 @@
                   "settings": {
                     "style_class": "button",
                     "custom_button_background": "{{ settings.color_palette.foreground }}",
-                    "custom_button_text": "#FFED68",
+                    "custom_button_text": "#ffed68",
                     "custom_button_border": "{{ settings.color_palette.foreground }}"
                   },
                   "blocks": {}
@@ -924,7 +924,7 @@
           "settings": {
             "period": "<p>MES 3+</p>",
             "subtitle": "Rendimiento Máximo y Vitalidad",
-            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Vos lo notás. Todos lo notan.</li></ul>",
+            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Tú lo notás. Todos lo notan.</li></ul>",
             "icon": "heart_pulse"
           },
           "blocks": {}
@@ -1347,7 +1347,7 @@
             "verified_text": "Verificado",
             "show_tag": true,
             "tag_text": "Potente",
-            "quote": "<p>¿Quién iba a decir que una gominola podía hacer tanto? Me siento más despierto, mi energía está por las nubes y en general me siento mejor. Se ha vuelto esencial en mi día a día. Enganchado.</p>",
+            "quote": "<p>¿Quién iba a decir que dos gominola podía hacer tanto? Me siento más despierto, mi energía está por las nubes y en general me siento mejor. Se ha vuelto esencial en mi día a día. Enganchado.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1465,7 +1465,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Cuántas gominolas debo tomar al día?",
-            "answer": "<p>Recomendamos tomar una gominola al día. Cada gominola contiene una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, la resistencia y el rendimiento.<br/>Como la fórmula está altamente concentrada, con una sola gominola es suficiente para apoyar tu rendimiento, energía y vitalidad diarios.</p>",
+            "answer": "<p>Recomendamos tomar dos gominolas al día. Cada gominola contiene una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, la resistencia y el rendimiento.<br/>Como la fórmula está altamente concentrada, con dos gominolas es suficiente para apoyar tu rendimiento, energía y vitalidad diarios.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1483,7 +1483,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Cuál es el mejor momento para tomar mi gominola?",
-            "answer": "<p>Puedes tomar tu gominola en cualquier momento del día, aunque la mayoría de los hombres prefieren tomarla por la mañana o a primera hora de la tarde para apoyar la energía, la resistencia y la confianza durante todo el día.<br/>Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, el uso diario constante ayuda a conseguir resultados más sólidos a largo plazo.</p>",
+            "answer": "<p>Puedes tomar tus gominolas en cualquier momento del día, aunque la mayoría de los hombres prefieren tomarla por la mañana o a primera hora de la tarde para apoyar la energía, la resistencia y la confianza durante todo el día.<br/>Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, el uso diario constante ayuda a conseguir resultados más sólidos a largo plazo.</p>",
             "open_by_default": false
           },
           "blocks": {}

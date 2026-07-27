@@ -216,8 +216,8 @@
           "type": "_hero-cta-button",
           "settings": {
             "label": "MÁS VENDIDOS",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
+            "link": "shopify://collections/los-mas-vendidos",
+            "open_in_new_tab": true,
             "show_icon": true,
             "gradient_start": "#e7b944",
             "gradient_end": "#ffed68",

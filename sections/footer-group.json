@@ -93,45 +93,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "email_signup_FcQc8B": {
-              "type": "email-signup",
-              "name": "t:names.email_signup",
-              "settings": {
-                "width": "custom",
-                "custom_width": 50,
-                "heading": "",
-                "heading_text_color": "",
-                "heading_preset": "h3",
-                "border_style": "all",
-                "input_style": "custom",
-                "border_width": 1,
-                "border_radius": 100,
-                "input_background_color": "",
-                "input_text_color": "",
-                "input_border_color": "",
-                "input_type_preset": "paragraph",
-                "style_class": "button-custom",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.foreground }}",
-                "link_text_color": "",
-                "display_type": "arrow",
-                "label": "Sign up",
-                "integrated_button": false,
-                "button_type_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "icon_EzBcmn",
-            "text_drzxHK",
-            "email_signup_FcQc8B"
+            "text_drzxHK"
           ]
         },
         "group_H6VpwJ": {
@@ -365,18 +331,6 @@
                   },
                   "blocks": {}
                 },
-                "link_3": {
-                  "type": "footer-link",
-                  "settings": {
-                    "label": "Opciones de Pago",
-                    "link": "",
-                    "open_new_tab": false,
-                    "text_color": "",
-                    "font_size": 14,
-                    "font_weight": ""
-                  },
-                  "blocks": {}
-                },
                 "footer_link_aPxCig": {
                   "type": "footer-link",
                   "settings": {
@@ -393,7 +347,6 @@
               "block_order": [
                 "link_1",
                 "link_2",
-                "link_3",
                 "footer_link_aPxCig"
               ]
             }
@@ -479,6 +432,7 @@
               "blocks": {
                 "footer_link_VWddgL": {
                   "type": "footer-link",
+                  "disabled": true,
                   "settings": {
                     "label": "Mail",
                     "link": "",

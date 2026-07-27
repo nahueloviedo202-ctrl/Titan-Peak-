@@ -176,7 +176,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Términos y Condiciones",
-                    "link": "",
+                    "link": "shopify://policies/terms-of-service",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,
@@ -188,7 +188,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Política de Reembolso",
-                    "link": "",
+                    "link": "shopify://policies/refund-policy",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,
@@ -200,7 +200,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Política de Privacidad",
-                    "link": "",
+                    "link": "shopify://policies/privacy-policy",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,
@@ -212,7 +212,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Política de Envíos",
-                    "link": "",
+                    "link": "shopify://policies/shipping-policy",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,

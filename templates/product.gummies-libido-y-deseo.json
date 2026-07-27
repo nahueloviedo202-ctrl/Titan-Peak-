@@ -1746,7 +1746,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Cuántas tomo, y cuándo?",
-            "answer": "<p>Solo una gominola al día. Muchos hombres la toman por la mañana para que esté haciendo efecto por la tarde, pero cualquier horario constante funciona — la clave es no saltarse días.</p>",
+            "answer": "<p>Solo dos gominolas al día. Muchos hombres la toman por la mañana para que esté haciendo efecto por la tarde, pero cualquier horario constante funciona — la clave es no saltarse días.</p>",
             "open_by_default": false
           },
           "blocks": {}

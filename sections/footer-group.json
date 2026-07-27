@@ -311,7 +311,7 @@
                   "type": "footer-link",
                   "settings": {
                     "label": "Sobre Nosotros",
-                    "link": "shopify://pages/about-us",
+                    "link": "shopify://pages/sobre-nosotros",
                     "open_new_tab": false,
                     "text_color": "",
                     "font_size": 14,

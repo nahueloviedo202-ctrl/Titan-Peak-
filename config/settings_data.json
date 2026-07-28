@@ -114,6 +114,11 @@
         "type": "shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
         "disabled": false,
         "settings": {}
+      },
+      "14952540001915115444": {
+        "type": "shopify://apps/upcart-cart-drawer/blocks/app-embed/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_palette": {

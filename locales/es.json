@@ -357,5 +357,20 @@
       "success_moderated": "Comentario publicado y a la espera de moderación",
       "success": "Comentario publicado"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "pay_now_button_label": "Continuar Pedido"
+      },
+      "shipping": {
+        "duties_and_taxes_options": {
+          "ddp_title": "Continuar Pedido"
+        }
+      },
+      "order_payment_collection": {
+        "pay_now": "Continuar Pedido"
+      }
+    }
   }
 }

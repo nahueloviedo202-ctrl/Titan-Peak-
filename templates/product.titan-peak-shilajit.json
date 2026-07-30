@@ -208,8 +208,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "60 gominolas por envase",
-                        "description": "<p>Suministro para 2 meses completos, para mantener tu rutina sin interrupciones.</p>",
+                        "title": "60 gomitas por envase",
+                        "description": "<p>Te alcanza para 2 meses completos, para que no interrumpas tu rutina.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -219,8 +219,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Erecciones más firmes y duraderas, con flujo sanguíneo máximo",
-                        "description": "<p>Un extra de circulación y rendimiento para sentirte al 100% en todo momento.</p>",
+                        "title": "Erecciones más firmes y duraderas, con flujo sanguíneo al máximo",
+                        "description": "<p>Un extra de circulación y rendimiento para que te sientas al cien en todo momento.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -230,8 +230,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Aumento de testosterona, libido y masculinidad.",
-                        "description": "<p>Recuperá tu fuerza, tu deseo y tu confianza de forma natural.</p>",
+                        "title": "Sube tu testosterona, tus ganas y tu hombría.",
+                        "description": "<p>Recupera tu fuerza, tu deseo y tu confianza de forma natural.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -242,7 +242,7 @@
                       "type": "_icon-benefits-item",
                       "settings": {
                         "title": "Mayor confianza",
-                        "description": "<p>Menor cortisol, mayor confianza, control total</p>",
+                        "description": "<p>Menos cortisol, más confianza, control total.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -499,7 +499,7 @@
                 "badge_alt": "",
                 "badge_size_desktop": 68,
                 "badge_size_mobile": 48,
-                "title": "Así de seguros estamos de tus resultados. Pero si no quedas encantado, devuélvelo y te reembolsaremos tu compra.",
+                "title": "Así de seguros andamos de tus resultados. Pero si no quedas encantado, nos lo regresas y te devolvemos tu dinero.",
                 "title_color": "#1a1a1a",
                 "title_size_desktop": 14,
                 "title_size_mobile": 12,
@@ -552,7 +552,7 @@
               "name": "Testimonial card",
               "settings": {
                 "avatar_image": "shopify://shop_images/Screenshot_2025-12-06_at_10.31.33_PM.webp",
-                "quote": "<p>Empecé a tomar TITAN PEAK Shilajit principalmente por la energía, pero en un par de semanas noté mucho más que eso. Mi resistencia mejoró, dejé de tener bajones a media tarde, y hasta mi ánimo se sintió más estable. Lo que más me sorprendió fue lo mucho más definido que me veía — menos hinchazón, la cara más marcada, y recuperé la confianza. Este es el primer suplemento que realmente sentí que hacía algo.</p>",
+                "quote": "<p>Empecé a tomar TITAN PEAK Shilajit sobre todo por la energía, pero en un par de semanas noté bastante más que eso. Mi aguante mejoró, dejé de andar con el bajón de la tarde, y hasta mi ánimo se sintió más parejo. Lo que más me sorprendió fue lo mucho más marcado que me veía: menos hinchado, la cara más definida, y recuperé la confianza. Este es el primer suplemento que de verdad sentí que hacía algo.</p>",
                 "reviewer_name": "Daniel J. 52 Años",
                 "reviewer_title": "",
                 "show_verified_badge": true,
@@ -850,7 +850,7 @@
         "heading_accent_color": "#c9a84c",
         "heading_size_mobile": 30,
         "heading_size_desktop": 42,
-        "subheading": "<p>Mira las increíbles transformaciones y resultados de nuestras gominolas.</p>",
+        "subheading": "<p>Mira las transformaciones y resultados increíbles que dan nuestras gomitas.</p>",
         "subheading_color": "#666666",
         "subheading_size": 18,
         "header_gap_mobile": 20,
@@ -919,8 +919,8 @@
           "settings": {
             "icon": "fire",
             "badge": "Día 7",
-            "title": "Ignición",
-            "description": "<p>✓ El Shilajit empieza a restaurar los minerales agotados<br/>✓ El cortisol empieza a equilibrarse → menos hinchazón y retención<br/>✓ Menos fatiga, más impulso durante el día</p>"
+            "title": "Encendido",
+            "description": "<p>✔ El Shilajit empieza a reponer los minerales que traías agotados<br/>✔ El cortisol empieza a nivelarse → menos hinchazón y retención<br/>✔ Menos cansancio, más ganas de moverte en el día</p>"
           },
           "blocks": {}
         },
@@ -930,7 +930,7 @@
             "icon": "lightning_bolt",
             "badge": "Día 21",
             "title": "Chispa",
-            "description": "<p>✓ El ácido fúlvico apoya la absorción de nutrientes y la energía celular<br/>✓ El apoyo a la testosterona empieza a notarse → más deseo y confianza<br/>✓ Notas mejor circulación y rendimiento<br/>✓ El cuerpo empieza a verse más firme — menos volumen en vientre y pecho</p>"
+            "description": "<p>✔ El ácido fúlvico ayuda a absorber mejor los nutrientes y a subir la energía celular<br/>✔ El apoyo a la testosterona ya se empieza a notar → más ganas y más confianza<br/>✔ Notas mejor circulación y rendimiento<br/>✔ El cuerpo se empieza a ver más firme, menos volumen en panza y pecho</p>"
           },
           "blocks": {}
         },
@@ -940,7 +940,7 @@
             "icon": "plane",
             "badge": "Semana 8",
             "title": "DESPEGUE",
-            "description": "<p>✓ Testosterona, energía y rendimiento se sienten elevados de forma constante<br/>✓ Mejor circulación y resistencia física<br/>✓ Aspecto más definido, mejor recuperación y energía todo el día</p>"
+            "description": "<p>✔ Testosterona, energía y rendimiento andan arriba de forma constante<br/>✔ Mejor circulación y aguante físico<br/>✔ Te ves más marcado, te recuperas mejor y traes energía todo el día</p>"
           },
           "blocks": {}
         },
@@ -1018,7 +1018,7 @@
         "testimonial_peek_card_fEVKKU": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Esto arregló lo que creía que era solo envejecer.\"</strong></p><p>\"Pensaba que sentirme cansado todo el tiempo era normal. Después de unas semanas volvió la energía, mejoraron mis entrenamientos y volví a sentirme yo mismo.\"<br/></p>",
+            "quote": "<p><strong>\"Esto arregló lo que yo creía que era pura vejez.\"</strong></p><p>\"Pensaba que andar cansado todo el tiempo era lo normal. Después de unas semanas me regresó la energía, mejoré en mis entrenos y volví a sentirme yo mismo.\"<br/></p>",
             "star_count": 5,
             "reviewer_name": "Omar H. 49 Años",
             "show_verified": true,
@@ -1029,7 +1029,7 @@
         "testimonial_peek_card_YDkHEr": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Mi chica no para de preguntar qué cambió.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya está todo dicho.\"</p>",
+            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
             "star_count": 5,
             "reviewer_name": "Bruno C 37 años",
             "show_verified": true,
@@ -1040,7 +1040,7 @@
         "testimonial_peek_card_jTWxeG": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"Sinceramente no esperaba mucho, pero la mejora en circulación es real. Estoy más despierto, con más energía, y la diferencia se nota — mejor rendimiento, más resistencia y bastante más confianza.\"</p>",
+            "quote": "<p><strong>\"La neta no esperaba mucho, pero la mejora en circulación es real.\"</strong></p><p>\"Ando más despierto, con más energía, y se nota la diferencia: mejor rendimiento, más aguante y bastante más confianza.\"<br/><br/></p>",
             "star_count": 5,
             "reviewer_name": "Marcos M. 52 años",
             "show_verified": true,
@@ -1051,9 +1051,9 @@
         "testimonial_peek_card_hBtJPV": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p>\"En 10 días mi energía ya era notablemente más alta. Sin bajones a media tarde, y me siento mucho más motivado en general. Hasta mis entrenamientos se sienten más fuertes. Esto funciona de verdad.\"</p>",
+            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Jaime T. 42 años",
+            "reviewer_name": "Beto T. 42 años",
             "show_verified": true,
             "verified_text": "Comprador Verificado"
           },
@@ -1062,7 +1062,7 @@
         "testimonial_peek_card_FWMByT": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Rostro más definido, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que mi cara se veía menos hinchada y más marcada. Solo eso ya me subió la confianza una barbaridad.\"</p>",
+            "quote": "<p><strong>\"Rostro más marcado, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que traía la cara menos hinchada y más definida. Nomás con eso ya se me subió la confianza una barbaridad.\"</p>",
             "star_count": 5,
             "reviewer_name": "Kevin R. 54 años",
             "show_verified": true,
@@ -1073,7 +1073,7 @@
         "testimonial_peek_card_mf6N8b": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome por las tardes. Con esto recuperé las ganas de hacer cosas después del trabajo, no solo tirarme en el sofá.\"</p>",
+            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome las tardes. Con esto recuperé las ganas de hacer algo después del jale, no solo tirarme en el sillón.\"</p>",
             "star_count": 5,
             "reviewer_name": "Rubén A. 45 años",
             "show_verified": true,
@@ -1084,7 +1084,7 @@
         "testimonial_peek_card_fMeJwF": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba más. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
+            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
             "star_count": 5,
             "reviewer_name": "Iván G. 44 años",
             "show_verified": true,
@@ -1104,13 +1104,13 @@
       ],
       "name": "Testimonial peek carousel",
       "settings": {
-        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40<strong> REALMENTE NOTAN</strong></p>",
+        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 34,
         "heading_size_desktop": 42,
-        "subheading": "Confiado por hombres que buscaban una solución real, no otra decepción",
+        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
         "subheading_color": "#ffffff",
         "subheading_size": 14,
         "header_gap": 20,

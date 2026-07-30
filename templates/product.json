@@ -66,7 +66,7 @@
               "type": "testimonial-card",
               "name": "Testimonial card",
               "settings": {
-                "avatar_image": "shopify://shop_images/reviewr_image_beef_png_1c15e2e2-3afc-444d-9dce-6d3e0578e2d5.png",
+                "avatar_image": "shopify://shop_images/doctormexicanop.webp",
                 "quote": "<p>Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.</p>",
                 "reviewer_name": "Dr. Roberto Guzmán, M.D.",
                 "reviewer_title": "Médico certificado, especialista en salud masculina",
@@ -1313,7 +1313,7 @@
         "testimonial_carousel_card_8PX6WW": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/arreglado9-clean.webp",
+            "image": "shopify://shop_images/personamexicana2-clean.webp",
             "reviewer_name": "Pedro",
             "star_count": 5,
             "show_verified": true,
@@ -1358,7 +1358,7 @@
         "testimonial_carousel_card_37jQRF": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/pelon-clean.webp",
+            "image": "shopify://shop_images/personamexicana-clean.webp",
             "reviewer_name": "Andrés G.",
             "star_count": 5,
             "show_verified": true,

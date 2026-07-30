@@ -208,8 +208,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Más fuerte",
-                        "description": "<p>Sentirá tus erecciones más duras y completas</p>",
+                        "title": "Mayor firmeza",
+                        "description": "<p>Notarás erecciones más firmes y duraderas.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/icon-harder-fuller-erections-she-feels.png",
                         "icon_size": 40
@@ -219,8 +219,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "De vuelta al ruedo",
-                        "description": "<p>Un deseo sexual insaciable que no cesa.</p>",
+                        "title": "Recupera el ánimo",
+                        "description": "<p>Un deseo sexual constante que no decae.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/icon-day-30-she-notices.avif",
                         "icon_size": 40
@@ -230,8 +230,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Incansable",
-                        "description": "<p>Ella terminara primero. Tú sigues adelante.</p>",
+                        "title": "Resistencia superior",
+                        "description": "<p>Ella llegará al clímax primero. Tú continúas sin detenerte.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/icon-she-finishes-first.png",
                         "icon_size": 40
@@ -242,7 +242,7 @@
                       "type": "_icon-benefits-item",
                       "settings": {
                         "title": "Absorción rápida",
-                        "description": "<p>Se disuelve debajo de la lengua y entra en el torrente sanguíneo en minutos, en lugar de permanecer en el estómago durante horas.</p>",
+                        "description": "<p>Se disuelve bajo la lengua e ingresa al torrente sanguíneo en minutos, en lugar de permanecer horas en el estómago.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Frame_174.png",
                         "icon_size": 40
@@ -498,7 +498,7 @@
                 "badge_alt": "",
                 "badge_size_desktop": 68,
                 "badge_size_mobile": 48,
-                "title": "Haz que sus piernas tiemblen o te devolvemos el dinero.",
+                "title": "Haz que le tiemblen las piernas o te devolvemos tu dinero.",
                 "title_color": "#1a1a1a",
                 "title_size_desktop": 14,
                 "title_size_mobile": 12,
@@ -556,7 +556,7 @@
                     "default_open": true,
                     "quote": "\"La mayoría de los hombres no tienen problemas en la cama, sino problemas de circulación sanguínea. Esta fórmula combate ambos, utilizando L-arginina para estimular la producción de óxido nítrico y azafrán para potenciar la excitación, mejorando el rendimiento sexual de forma natural y sin los efectos secundarios del Viagra.\"",
                     "avatar": "shopify://shop_images/reviewr_image_beef_png_26cc6583-7863-4d49-84f7-34233b5a9dbc.png",
-                    "author_name": "Dr. Marcos Torres, M.D.",
+                    "author_name": "Dr. Alejandro Ramírez, M.D.",
                     "author_specialty": "Médico certificado y especialista en salud masculina."
                   },
                   "blocks": {}
@@ -583,7 +583,7 @@
                     "product_info_comparison_row_fpYbhz": {
                       "type": "_product-info-comparison-row",
                       "settings": {
-                        "feature_name": "Te pone cachondo sin receta",
+                        "feature_name": "Te trae bien prendido, sin necesidad de receta.",
                         "feature_sub": "Ingredientes naturales, nada de pastillas sospechosas",
                         "brand_has_feature": true,
                         "others_has_feature": false
@@ -682,7 +682,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Cómo tomo las TITAN PEAK Shilajit Gold?",
-                        "answer": "<p>Toma 2 gominolas al día, preferiblemente con una comida. La constancia es clave: el uso diario ayuda a tu cuerpo a aprovechar al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
+                        "answer": "<p>Toma 2 gomitas al día, de preferencia acompañadas de alimento. La constancia es clave: el uso diario ayuda a que tu cuerpo aproveche al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
                       },
                       "blocks": {}
                     },
@@ -690,7 +690,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Qué pasa si no me funciona?",
-                        "answer": "<p>Tu compra está respaldada por nuestra garantía de devolución de dinero de 60 días. Te recomendamos usar TITAN PEAK de forma constante durante al menos 90 a 120 días para experimentar todos los beneficios de la fórmula.<br/><br/>Si no estás completamente satisfecho, simplemente contacta con nuestro equipo de soporte y lo solucionaremos.</p>"
+                        "answer": "<p>Tu compra está respaldada por nuestra garantía de devolución de dinero a 60 días. Te recomendamos usar TITAN PEAK de forma constante durante al menos 90 a 120 días para experimentar todos los beneficios de la fórmula.<br/><br/>Si no quedas completamente satisfecho, simplemente ponte en contacto con nuestro equipo de soporte y lo resolveremos.</p>"
                       },
                       "blocks": {}
                     },
@@ -698,7 +698,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Cuándo veré resultados?",
-                        "answer": "<p>Los resultados varían de persona a persona. Algunos clientes reportan mejoras en su energía, concentración y vitalidad general durante las primeras semanas de uso constante.<br/><br/>Para obtener resultados óptimos, recomendamos tomar TITAN PEAK diariamente durante al menos 8 a 12 semanas.</p>"
+                        "answer": "<p>Los resultados varían de persona a persona. Algunos clientes reportan mejoras en su energía, concentración y vitalidad general desde las primeras semanas de uso constante.<br/><br/>Para obtener resultados óptimos, te recomendamos tomar TITAN PEAK diariamente durante al menos 8 a 12 semanas.</p>"
                       },
                       "blocks": {}
                     },
@@ -706,15 +706,15 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Qué tan rápido es el envío?",
-                        "answer": "<p>Los pedidos se procesan rápidamente y se envían directamente desde nuestro centro logístico. La mayoría de los pedidos se envían en un plazo de 24 horas hábiles y se proporciona información de seguimiento en cuanto se realiza el envío.<br/><br/>Los plazos de entrega pueden variar según su ubicación.</p>"
+                        "answer": "<p>Los pedidos se procesan de inmediato y se envían directamente desde nuestro centro logístico. La mayoría se despacha en un plazo de 24 horas hábiles, y recibirás la guía de rastreo en cuanto se realice el envío.<br/><br/>Los tiempos de entrega pueden variar según tu ubicación.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_wHTXPq": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿TITAN PEAK está testeado por terceros?",
-                        "answer": "<p>Sí. Cada lote se fabrica en una instalación que cumple con las Buenas Prácticas de Fabricación (BPF) y se somete a pruebas de calidad, pureza y seguridad realizadas por terceros. Creemos que usted debe saber exactamente qué consume.</p>"
+                        "question": "¿TITAN PEAK está probado por terceros?",
+                        "answer": "<p>Sí. Cada lote se fabrica en una planta que cumple con las Buenas Prácticas de Fabricación (BPF) y se somete a pruebas de calidad, pureza y seguridad realizadas por laboratorios independientes. Creemos que tienes derecho a saber exactamente qué estás consumiendo.</p>"
                       },
                       "blocks": {}
                     },
@@ -722,7 +722,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Para quién es TITAN PEAK?",
-                        "answer": "<p>TITAN PEAK está diseñado para hombres que desean potenciar su energía, concentración, vitalidad, confianza y rendimiento general. Ya sea que compagines el trabajo, el ejercicio, la vida familiar o las tres cosas, TITAN PEAK está formulado para ayudarte a rendir al máximo cada día.</p>"
+                        "answer": "<p>TITAN PEAK está diseñado para hombres que buscan potenciar su energía, concentración, confianza y rendimiento en general. Ya sea que estés metido de lleno en el trabajo, el ejercicio, la vida familiar o las tres cosas, TITAN PEAK está formulado para ayudarte a dar el máximo cada día.</p>"
                       },
                       "blocks": {}
                     },
@@ -730,7 +730,7 @@
                       "type": "_product-info-faq-item",
                       "settings": {
                         "question": "¿Es perjudicial tomarlo junto a medicación?",
-                        "answer": "<p>No. Normalmente se puede tomar con la mayoría de los medicamentos recetados.</p>"
+                        "answer": "<p>No. Por lo general se puede tomar junto con la mayoría de los medicamentos recetados.</p>"
                       },
                       "blocks": {}
                     }

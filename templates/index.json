@@ -376,7 +376,7 @@
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "ENERGÍA TODO EL DÍA",
-                "review_text": "<p>He probado todos los suplementos de energía habidos y por haber, y nada me funcionó — hasta esto. Para la tercera semana ya me despertaba con ganas, sin bajón por la tarde, sin nerviosismo. La combinación de Ashwagandha y Shilajit hace su trabajo en silencio. Mis entrenamientos se sienten más fuertes y mi concentración en el trabajo es notablemente más aguda. Dos gominola al día es todo lo que hace falta.</p>"
+                "review_text": "<p>Ya le había entrado a todos los suplementos de energía que existen, y nada me funcionó, hasta esto. Para la tercera semana ya me despertaba con ganas, sin el bajón de la tarde, sin nerviosismo. La combinación de Ashwagandha y Shilajit hace su trabajo sin hacer ruido. Mis entrenos se sienten más fuertes y en el trabajo me concentro muchísimo mejor. Con dos gomitas al día es más que suficiente.</p>"
               },
               "blocks": {
                 "customer_review_tag_7eEqcT": {
@@ -402,12 +402,12 @@
             "customer_review_card_XikKRR": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Alex R.",
+                "customer_name": "Alejandro D.",
                 "rating": 5,
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "POTENCIADOR DE RESISTENCIA",
-                "review_text": "<p>Mi resistencia en los entrenamientos ha mejorado de verdad desde que empecé con esto. Estoy superando marcas personales que creía imposibles, y la recuperación también es más rápida. Al no llevar estimulantes, puedo tomarlo a cualquier hora — sin taquicardia, sin problemas de sueño. Solo un apoyo constante y fiable al rendimiento que se acumula con el tiempo.</p>"
+                "review_text": "<p>Mi aguante en los entrenos mejoró de verdad desde que empecé con esto. Ya estoy rompiendo marcas personales que creía imposibles, y también me recupero más rápido. Como no lleva estimulantes, lo puedo tomar a cualquier hora, sin taquicardia ni problemas para dormir. Nomás un apoyo constante y confiable que se va acumulando con el tiempo.</p>"
               },
               "blocks": {
                 "customer_review_tag_qJEbfY": {
@@ -433,12 +433,12 @@
             "customer_review_card_N378KN": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Fernando K.",
+                "customer_name": "Fernando R.",
                 "rating": 5,
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "BIENESTAR COMPLETO",
-                "review_text": "<p>Los compré principalmente por el apoyo contra el estrés — la Ashwagandha fue lo que más me llamó la atención — y superaron mis expectativas en todos los sentidos. Mi piel se ve más clara, duermo más profundo y mi energía durante el día está mucho más equilibrada. Las gominolas también saben genial, así que la verdad me acuerdo de tomarlas.</p>"
+                "review_text": "<p>Las compré sobre todo por el apoyo contra el estrés — la Ashwagandha fue lo que más me llamó la atención — y superaron mis expectativas por todos lados. Traigo la piel más clara, duermo más profundo y mi energía durante el día está mucho más pareja. Las gomitas también saben muy bien, así que ni se me olvida tomarlas.</p>"
               },
               "blocks": {
                 "customer_review_tag_Wz9zUQ": {
@@ -477,7 +477,7 @@
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "DESEO Y VITALIDAD",
-                "review_text": "<p>Llevo unos dos meses y la diferencia se nota. Más deseo, mejor circulación y una sensación general de vitalidad que llevaba tiempo sin sentir. Valoro que los ingredientes estén claramente listados y estudiados clínicamente, no una mezcla misteriosa registrada. La combinación de L-Arginina y Maca realmente cumple.</p>"
+                "review_text": "<p>Llevo como dos meses y la diferencia se nota. Más ganas, mejor circulación y una sensación de vitalidad que ya tenía tiempo sin sentir. Se me hace válido que los ingredientes estén bien listados y estudiados clínicamente, y no sea una mezcla misteriosa nomás registrada. La combinación de L-Arginina y Maca sí cumple.</p>"
               },
               "blocks": {
                 "customer_review_tag_FTgGwy": {
@@ -522,7 +522,7 @@
                 "show_verified_badge": false,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "CORAZÓN Y CIRCULACIÓN",
-                "review_text": "<p>\"Empecé a tomarlo para cuidar mi salud cardiovascular y en unas semanas mi frecuencia cardíaca en reposo bajó y salir a correr se sintió más fácil. Se nota que el Shilajit y los minerales realmente funcionan, y el formato en gominola hace que sea fácil mantener la constancia.\"<br/></p>"
+                "review_text": "<p>Empecé a tomarlo para cuidar mi salud cardiovascular y en unas semanas mi frecuencia cardíaca en reposo bajó, y salir a correr se sintió más fácil. Se nota que el Shilajit y los minerales sí funcionan, y el formato en gomita ayuda a que sea fácil no dejarlo.</p>"
               },
               "blocks": {
                 "customer_review_tag_AKcxAC": {
@@ -553,7 +553,7 @@
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "ENERGÍA PRE-ENTRENO NATURAL",
-                "review_text": "<p>\"Esto reemplazó mi pre-entreno de toda la vida. El impulso natural de óxido nítrico me da un empuje real en el gimnasio sin estimulantes artificiales ni esa sensación de hormigueo incómoda. Mi resistencia en los entrenamientos de alta intensidad mejoró un montón y ya no termino agotado.\"</p>"
+                "review_text": "<p>Esto reemplazó mi pre-entreno de toda la vida. El impulso natural de óxido nítrico me da un empujón real en el gym, sin estimulantes artificiales ni esa sensación de hormigueo tan incómoda. Mi aguante en los entrenos de alta intensidad mejoró un montón y ya no termino tronado.</p>"
               },
               "blocks": {
                 "customer_review_tag_iG3eqj": {
@@ -592,7 +592,7 @@
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "ENERGÍA DIARIA",
-                "review_text": "<p>\"Era escéptico, pero al mes ya soy un convencido. Mi energía es mucho más constante durante el día — no un pico y luego un bajón, sino una subida natural y estable. Un suplemento simple y limpio que realmente cumple.\"</p>"
+                "review_text": "<p>Era bien escéptico, pero al mes ya me convenció. Mi energía es mucho más pareja durante el día, no es un pico y luego el bajón, sino una subida natural y estable. Un suplemento simple y limpio que de verdad cumple.</p>"
               },
               "blocks": {
                 "customer_review_tag_e3qKTR": {
@@ -623,7 +623,7 @@
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente Verificado",
                 "label_text": "APOYO A LA RECUPERACIÓN",
-                "review_text": "<p>\"Antes las agujetas me duraban días. Desde que lo sumé a mi rutina, mi recuperación muscular es notablemente más rápida y llego con las piernas más frescas a los entrenamientos seguidos. El sabor también es genuinamente bueno, que era mi mayor duda.\"</p>"
+                "review_text": "<p>Antes las agujetas me duraban hasta tres días, bien de necio. Desde que lo metí a mi rutina, me recupero muchísimo más rápido y llego con las piernas frescas a los entrenos, aunque sean seguidos. El sabor también está bueno de verdad, que era lo que más me traía dudando.</p>"
               },
               "blocks": {
                 "customer_review_tag_btcRUt": {
@@ -1086,7 +1086,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Apoyo diario multi-beneficio",
-                "text": "<p>Una gominola potencia la energía, el foco y la circulación en una dosis diaria cómoda.</p>",
+                "text": "<p>Una gomita le sube la energía, el enfoque y la circulación, en una sola dosis diaria bien práctica.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1096,7 +1096,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84.avif",
                 "title": "6 ingredientes estudiados clínicamente",
-                "text": "<p>Shilajit, Ashwagandha y Maca potencian la energía y la circulación para tu vitalidad diaria.</p>",
+                "text": "<p>Shilajit, Ashwagandha y Maca le suben la energía y mejoran la circulación para tu vitalidad de todos los días.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1106,7 +1106,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Fórmula libre de estimulantes",
-                "text": "<p>Sin cafeína ni estimulantes artificiales; promueve la energía natural y el equilibrio hormonal sin nerviosismo.</p>",
+                "text": "<p>Sin cafeína ni estimulantes artificiales; promueve la energía natural y el equilibrio hormonal sin dejarte nervioso.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1116,7 +1116,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_2.avif",
                 "title": "Testeado por terceros",
-                "text": "<p>Fabricado en instalaciones certificadas GMP, garantizando pureza, potencia y seguridad en las que puedes confiar.</p>",
+                "text": "<p>Se fabrica en plantas certificadas GMP, garantizando pureza, potencia y seguridad en las que sí puedes confiar.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1144,7 +1144,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_173.png",
                 "title": "Fórmula limpia y natural",
-                "text": "<p>Ingredientes de origen vegetal, sin rellenos ni aditivos innecesarios.</p>",
+                "text": "<p>Ingredientes de origen vegetal, sin rellenos ni cosas de más que no necesitas.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1154,7 +1154,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84.avif",
                 "title": "Nutrición diaria rica en antioxidantes",
-                "text": "<p>Contiene antioxidantes que apoyan la salud general y reducen el estrés oxidativo.</p>",
+                "text": "<p>Trae antioxidantes que apoyan tu salud en general y bajan el estrés oxidativo.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1164,7 +1164,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_174.png",
                 "title": "Apoyo natural al óxido nítrico",
-                "text": "<p>El Shilajit favorece la circulación y el flujo sanguíneo de forma natural.</p>",
+                "text": "<p>El Shilajit ayuda a la circulación y al flujo sanguíneo de forma natural.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1174,7 +1174,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Resistencia en el entrenamiento",
-                "text": "<p>Una mejor oxigenación potencia el rendimiento y la recuperación de forma natural.</p>",
+                "text": "<p>Una mejor oxigenación le sube el rendimiento y la recuperación de forma natural.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1451,8 +1451,8 @@
         "faq_item_jKtgWk": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Vuestros productos están testados y son seguros?",
-            "answer": "<p>Cada producto de <strong>TITAN PEAK</strong> está formulado con ingredientes estudiados clínicamente en dosis respaldadas por la investigación. Puedes confiar en que lo que pone en la etiqueta es lo que hay en la gominola.</p>",
+            "question": "¿Sus productos están probados y son seguros?",
+            "answer": "<p>Cada producto de TITAN PEAK está hecho con ingredientes estudiados clínicamente, en dosis respaldadas por la investigación. Puedes confiar en que lo que dice la etiqueta es justo lo que trae la gomita.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1461,7 +1461,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Cuánto tarda el envío?",
-            "answer": "<p>Los pedidos se procesan en 1-2 días laborables y suelen llegar en 3-5 días laborables mediante envío estándar. Hay opciones de envío exprés disponibles al finalizar la compra. Los pedidos internacionales suelen llegar en 7-14 días laborables. Recibirás un enlace de seguimiento en cuanto tu pedido sea enviado.</p>",
+            "answer": "<p>Los pedidos en México se procesan en 1-2 días hábiles y por lo general llegan en 3-5 días hábiles con el envío estándar. Hay opciones de envío exprés al finalizar tu compra. Los pedidos internacionales suelen llegar en 7-14 días hábiles. Te va a llegar un enlace de rastreo en cuanto tu pedido salga.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1470,7 +1470,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Cuál es la política de devoluciones y reembolsos?",
-            "answer": "<p>Respaldamos cada producto con una garantía de satisfacción de 30 días. Si por cualquier motivo no estás contento, contáctanos dentro de los 30 días posteriores a la entrega y lo solucionaremos.</p>",
+            "answer": "<p>Respaldamos cada producto con una garantía de satisfacción de 30 días. Si por algún motivo no quedas contento, contáctanos dentro de los 30 días después de que te llegó tu pedido, y lo resolvemos.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1478,8 +1478,8 @@
         "faq_item_ckRXza": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Hacéis envíos internacionales?",
-            "answer": "<p>Sí, enviamos a la mayoría de los países del mundo. Los costes de envío internacional y los tiempos estimados de entrega se calculan al finalizar la compra. Ten en cuenta que pueden aplicarse aranceles de importación o tasas aduaneras según tu país, que son responsabilidad del comprador.</p>",
+            "question": "¿Hacen envíos internacionales?",
+            "answer": "<p>Sí, enviamos a la mayoría de los países del mundo. Los costos de envío internacional y los tiempos estimados de entrega se calculan al finalizar tu compra. Ten en cuenta que pueden aplicar aranceles de importación o impuestos aduanales según tu país, y esos corren por cuenta del comprador.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1488,7 +1488,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Tienes más preguntas?",
-            "answer": "<p>Estamos aquí para ayudarte. Nuestro equipo responde a cada mensaje, normalmente en pocas horas. Contáctanos en soporte@titanpeak.com.</p>",
+            "answer": "<p>Estamos para ayudarte. Nuestro equipo responde cada mensaje, normalmente en pocas horas. Contáctanos en soporte@titanpeak.com.</p>",
             "open_by_default": false
           },
           "blocks": {}

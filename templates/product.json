@@ -67,8 +67,8 @@
               "name": "Testimonial card",
               "settings": {
                 "avatar_image": "shopify://shop_images/reviewr_image_beef_png_1c15e2e2-3afc-444d-9dce-6d3e0578e2d5.png",
-                "quote": "<p>Para hombres que buscan potenciar su energía y deseo, recomiendo un enfoque natural. Esta combinación de Shilajit puro y hierbas adaptógenas ayuda de forma segura a mejorar la resistencia y el bienestar para un rendimiento óptimo.</p>",
-                "reviewer_name": "Dr. Marcos Torres, M.D. ",
+                "quote": "<p>Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.</p>",
+                "reviewer_name": "Dr. Roberto Guzmán, M.D.",
                 "reviewer_title": "Médico certificado, especialista en salud masculina",
                 "show_verified_badge": true,
                 "verified_badge_text": "Cliente verificado",
@@ -131,7 +131,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "heart_pulse",
-                    "text": "Apoya la vitalidad y el bienestar"
+                    "text": "Le echa ganas a tu vitalidad y bienestar"
                   },
                   "blocks": {}
                 },
@@ -139,7 +139,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "lightning",
-                    "text": "Promueve una energía estable"
+                    "text": "Te da una energía pareja, sin bajones"
                   },
                   "blocks": {}
                 },
@@ -147,7 +147,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "focus",
-                    "text": "Favorece el foco y la recuperación"
+                    "text": "Te ayuda a concentrarte y a recuperarte mejor"
                   },
                   "blocks": {}
                 },
@@ -155,7 +155,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "star",
-                    "text": "Aumenta la confianza"
+                    "text": "Te sube la confianza"
                   },
                   "blocks": {}
                 }
@@ -318,8 +318,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Energía y Vitalidad Diaria",
-                        "description": "<p>Enciende tu energía y resistencia física con 2000mg de Shilajit puro.</p>",
+                        "title": "Energía y Vitalidad al Cien",
+                        "description": "<p>Prende tu energía y tu aguante físico con 2000mg de Shilajit puro.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto.svg",
                         "icon_size": 40
@@ -330,7 +330,7 @@
                       "type": "_icon-benefits-item",
                       "settings": {
                         "title": "Ingredientes Herbales para el Bienestar Masculino",
-                        "description": "<p>Botánicos potentes como Ashwagandha y Maca apoyan activamente la fuerza masculina.</p>",
+                        "description": "<p>Botánicos con toda la fuerza, como Ashwagandha y Maca, que le entran de lleno a tu hombría.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto2.svg",
                         "icon_size": 40
@@ -340,8 +340,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mezcla Natural de Foco y Resistencia",
-                        "description": "<p>Adaptógenos que manejan el estrés diario mientras mejoran la claridad mental y el ánimo.</p>",
+                        "title": "Combo Natural de Concentración y Aguante",
+                        "description": "<p>Adaptógenos que te bajan el estrés del día mientras te aclaran la mente y te suben el ánimo.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
                         "icon_size": 40
@@ -352,7 +352,7 @@
                       "type": "_icon-benefits-item",
                       "settings": {
                         "title": "Fórmula Limpia, Testeada Clínicamente",
-                        "description": "<p>Origen vegetal y testeado por laboratorios externos para garantizar seguridad, pureza y confianza.</p>",
+                        "description": "<p>De origen vegetal y probada por laboratorios externos, para que confíes en lo que te estás metiendo.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4.svg",
                         "icon_size": 40
@@ -661,7 +661,7 @@
                   "type": "_accordion-item",
                   "settings": {
                     "title": "Detalles del producto",
-                    "content": "<p><strong>TITANPEAK</strong> Gominolas De Rendimiento son una solución pura, testeada en laboratorio y natural para que los hombres mantengan un rendimiento físico óptimo, claridad mental, vitalidad y resistencia.</p>",
+                    "content": "<p>TITAN PEAK Gomitas de Rendimiento son una solución pura, probada en laboratorio y 100% natural para que los hombres mantengan un rendimiento físico de primera, mente clara, vitalidad y aguante.</p>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -679,7 +679,7 @@
                   "type": "_accordion-item",
                   "settings": {
                     "title": "Envíos y Devoluciones",
-                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de España. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p></p><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 30 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
+                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de México. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p></p><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 30 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -907,7 +907,7 @@
           "settings": {
             "period": "<p>SEMANA 1</p>",
             "subtitle": "Reinicio de Estrés y Energía",
-            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Mejora el sueño, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés se vuelve más manejable</li><li>Primeros signos de energía y foco recuperados</li></ul>",
+            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Duermes mejor, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés ya no te pega tan duro</li><li>Primeras señas de energía y foco de vuelta</li></ul>",
             "icon": "lightning"
           },
           "blocks": {}
@@ -917,7 +917,7 @@
           "settings": {
             "period": "<p>MES 1</p>",
             "subtitle": "Hormonas y Rendimiento en Recuperación",
-            "bullets": "<ul><li>El apoyo a la testosterona empieza a notarse</li><li>El deseo vuelve a aparecer de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día a día</li><li>La confianza y las ganas vuelven de forma natural</li></ul>",
+            "bullets": "<ul><li>El apoyo a la testosterona ya se empieza a notar</li><li>Las ganas regresan de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día con día</li><li>La confianza y el gusto por andar prendido vuelven solitos</li></ul>",
             "icon": "star"
           },
           "blocks": {}
@@ -927,7 +927,7 @@
           "settings": {
             "period": "<p>MES 3+</p>",
             "subtitle": "Rendimiento Máximo y Vitalidad",
-            "bullets": "<ul><li>Los 6 ingredientes trabajando en plena sinergia</li><li>Equilibrio hormonal restaurado y sostenido</li><li>Energía, resistencia y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Tú lo notás. Todos lo notan.</li></ul>",
+            "bullets": "<ul><li>Los 6 ingredientes en plena sinergia</li><li>Equilibrio hormonal restaurado y que se sostiene</li><li>Energía, aguante y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Tú lo sientes. Todos se dan cuenta.</li></ul>",
             "icon": "heart_pulse"
           },
           "blocks": {}
@@ -1051,7 +1051,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Sientes menos ganas y deseo que antes — y ya lleva más tiempo del que te gustaría admitir.</p>",
+            "description": "<p>Ya sientes menos ganas y deseo que antes, y ya lleva más tiempo del que te gustaría admitir.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1062,7 +1062,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu energía se desploma durante el día y te despiertas ya cansado.</p>",
+            "description": "<p>Tu energía se te va en picada durante el día y te levantas ya cansado.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1073,7 +1073,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu rendimiento es inconsistente y nunca sabes qué esperar de ti mismo.</p>",
+            "description": "<p>Tu rendimiento es una montaña rusa y nunca sabes qué esperar de ti mismo.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1084,7 +1084,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>El estrés y el bajón de ánimo están matando en silencio tu confianza y motivación.</p>",
+            "description": "<p>El estrés y el bajón de ánimo te están matando en friega la confianza y las ganas.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1095,7 +1095,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Has probado pastillas u otros suplementos y no han funcionado, o han dejado de hacerlo.</p>",
+            "description": "<p>Ya probaste pastillas u otros suplementos y no te funcionaron, o dejaron de hacerlo.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1106,7 +1106,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Quieres atacar la causa real — no solo tapar el síntoma por una noche.</p>",
+            "description": "<p>Quieres atacarle a la causa real, no nomás tapar el bache por una noche.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1320,7 +1320,7 @@
             "verified_text": "Verificado",
             "show_tag": true,
             "tag_text": "Lo mejor",
-            "quote": "<p>Llevo unas 10 semanas tomándolas y honestamente siento que volví a ser yo mismo: la energía, el deseo, la motivación para entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
+            "quote": "<p>Llevo unas 10 semanas tomándolas y de verdad siento que volví a ser yo: la energía, las ganas, las ganas de entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1335,7 +1335,7 @@
             "verified_text": "Verificado",
             "show_tag": true,
             "tag_text": "Es esencial para mí",
-            "quote": "<p>Es todo lo que necesito. Apoya mi energía y mi concentración. Perfecto antes de trabajar a fondo o entrenar. Se lo recomiendo a todo el mundo.</p>",
+            "quote": "<p>Es todo lo que necesito. Me sube la energía y la concentración. Perfecto antes de darle duro al trabajo o al entreno. Se lo recomiendo a todo mundo</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1344,13 +1344,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/pareja-clean.webp",
-            "reviewer_name": "Brian P.",
+            "reviewer_name": "Bernardo P.",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
             "show_tag": true,
             "tag_text": "Potente",
-            "quote": "<p>¿Quién iba a decir que dos gominola podía hacer tanto? Me siento más despierto, mi energía está por las nubes y en general me siento mejor. Se ha vuelto esencial en mi día a día. Enganchado.</p>",
+            "quote": "<p>¿Quién iba a decir que dos gomitas podían hacer tanto? Ando más despierto, mi energía anda por las nubes y en general me siento mejor. Ya se me volvió esencial en el día a día. Bien enganchado.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1359,13 +1359,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/pelon-clean.webp",
-            "reviewer_name": "Andy G.",
+            "reviewer_name": "Andrés G.",
             "star_count": 5,
             "show_verified": true,
             "verified_text": "Verificado",
             "show_tag": true,
             "tag_text": "Una solución increíble",
-            "quote": "<p>Soy entrenador personal y recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, deseo — mis clientes dicen que sienten que su testosterona volvió.</p>",
+            "quote": "<p>Soy entrenador personal y le recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, ganas — mis clientes dicen que sienten que su testosterona regresó.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1467,8 +1467,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuántas gominolas debo tomar al día?",
-            "answer": "<p>Recomendamos tomar dos gominolas al día. Cada gominola contiene una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, la resistencia y el rendimiento.<br/>Como la fórmula está altamente concentrada, con dos gominolas es suficiente para apoyar tu rendimiento, energía y vitalidad diarios.</p>",
+            "question": "¿Cuántas gomitas debo tomar al día?",
+            "answer": "<p>Recomendamos tomar dos gomitas al día. Cada gomita trae una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, el aguante y el rendimiento. Como la fórmula está bien concentrada, con dos gomitas te alcanza de sobra para apoyar tu rendimiento, energía y vitalidad de todos los días.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1476,8 +1476,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Me producirán nerviosismo o bajones de energía?",
-            "answer": "<p>No. Performance Gummies son completamente libres de estimulantes.<br/>En lugar de depender de la cafeína o estimulantes artificiales, la fórmula apoya la producción natural de energía, el equilibrio hormonal y una circulación saludable. Esto te permite disfrutar de una energía estable, mejor resistencia y mayor rendimiento, sin nerviosismo ni bajones.</p>",
+            "question": "¿Me van a dar nervios o bajones de energía?",
+            "answer": "<p>No. Performance Gummies están libres de estimulantes por completo. En lugar de andar dependiendo de cafeína o estimulantes artificiales, la fórmula apoya la producción natural de energía, el equilibrio hormonal y una circulación saludable. Así disfrutas de una energía pareja, mejor aguante y más rendimiento, sin nerviosismo ni bajones.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1485,8 +1485,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuál es el mejor momento para tomar mi gominola?",
-            "answer": "<p>Puedes tomar tus gominolas en cualquier momento del día, aunque la mayoría de los hombres prefieren tomarla por la mañana o a primera hora de la tarde para apoyar la energía, la resistencia y la confianza durante todo el día.<br/>Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, el uso diario constante ayuda a conseguir resultados más sólidos a largo plazo.</p>",
+            "question": "¿Cuál es el mejor momento para tomar mi gomita?",
+            "answer": "<p>Puedes tomar tu gomita a la hora del día que quieras, aunque la mayoría de los hombres la prefiere por la mañana o a primera hora de la tarde, para traer la energía, el aguante y la confianza al cien todo el día. Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, tomarla a diario y sin fallar es lo que da resultados más sólidos a la larga.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1494,8 +1494,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué tan rápido sentiré los efectos?",
-            "answer": "<p>Algunos hombres notan más energía, confianza y resistencia en los primeros días.<br/>Sin embargo, como la fórmula funciona apoyando el equilibrio hormonal, el flujo sanguíneo y la producción de óxido nítrico, los mejores resultados suelen aparecer entre las 4 y 8 semanas de uso diario constante.<br/>Con el uso regular, muchos usuarios reportan más deseo, mejor rendimiento y mayor resistencia con el tiempo.</p>",
+            "question": "¿Qué tan rápido voy a sentir los efectos?",
+            "answer": "<p>Algunos hombres notan más energía, confianza y aguante desde los primeros días. Pero como la fórmula trabaja apoyando el equilibrio hormonal, el flujo sanguíneo y la producción de óxido nítrico, los mejores resultados suelen llegar entre las 4 y 8 semanas de uso diario sin fallar. Con el uso constante, muchos reportan más ganas, mejor rendimiento y más aguante con el paso del tiempo.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1503,8 +1503,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gominolas son de alta calidad?",
-            "answer": "<p>Nuestras Performance Gummies se producen en instalaciones certificadas GMP y son testeadas por terceros para garantizar pureza y seguridad.<br/>Usamos ingredientes cuidadosamente seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su larga trayectoria apoyando la vitalidad masculina, el deseo, la circulación y el rendimiento.<br/>El resultado es una fórmula limpia y potente, diseñada específicamente para hombres que buscan un apoyo real en su rendimiento.</p>",
+            "question": "¿Cómo sé que estas gomitas son de calidad?",
+            "answer": "<p>Nuestras Performance Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1512,8 +1512,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomar Gummies De Rendimiento con otros suplementos?",
-            "answer": "<p>Sí. Gummies De Rendimiento generalmente se pueden tomar junto a la mayoría de los suplementos diarios.<br/>Como la fórmula se centra en apoyar el equilibrio de la testosterona, el flujo sanguíneo y la energía natural, muchos hombres la combinan con multivitamínicos, suplementos de proteína u otros productos de bienestar como parte de su rutina diaria.<br/>Si estás tomando medicación con receta o tienes alguna condición médica, te recomendamos consultar primero con tu médico.</p>",
+            "question": "¿Puedo tomar las Gommies de Rendimiento junto con otros suplementos?",
+            "answer": "<p>Sí. Las Gummies de Rendimiento por lo general se pueden tomar junto con la mayoría de los suplementos que ya tomas a diario. Como la fórmula se enfoca en apoyar el equilibrio de la testosterona, el flujo sanguíneo y la energía natural, muchos hombres la combinan con multivitamínicos, proteína u otros productos de bienestar dentro de su rutina diaria. Si andas tomando algún medicamento con receta o tienes alguna condición médica, mejor consúltalo primero con tu médico.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1521,8 +1521,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro para uso a largo plazo?",
-            "answer": "<p>Sí. Gominolas De Rendimiento está formulado con ingredientes de origen natural, tradicionalmente usados para apoyar la vitalidad masculina y el equilibrio hormonal.<br/>A diferencia de los productos basados en estimulantes, la fórmula funciona apoyando la regulación hormonal natural del cuerpo, la circulación y los sistemas de energía, lo que la hace apta para un uso diario constante como parte de una rutina a largo plazo.</p>",
+            "question": "¿Es seguro usarlo a largo plazo?",
+            "answer": "<p>Sí. Las Gomitas de Rendimiento están hechas con ingredientes de origen natural, usados desde hace mucho para apoyar la vitalidad masculina y el equilibrio hormonal. A diferencia de los productos a base de estimulantes, esta fórmula trabaja apoyando la regulación hormonal natural del cuerpo, la circulación y los sistemas de energía, lo que la hace apta para usarse a diario sin problema, como parte de tu rutina de largo plazo.</p>",
             "open_by_default": false
           },
           "blocks": {}

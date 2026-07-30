@@ -1,0 +1,1823 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "disclosures_g9mWze": {
+          "type": "disclosures",
+          "name": "t:names.disclosures",
+          "settings": {
+            "heading": "Disclosures",
+            "heading_preset": "h5",
+            "open_by_default": false,
+            "icon": "caret",
+            "disclosure_heading_preset": "h6",
+            "text_color": "",
+            "dividers": true,
+            "divider_color": "{{ settings.color_palette.color2 }}",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "aspect_ratio": "1",
+            "media_radius": 0,
+            "media_background_color": "#fcfaf5",
+            "extend_media": false,
+            "hide_variants": true,
+            "video_loop": false,
+            "show_thumbnails": true,
+            "thumbnail_size": 110,
+            "thumbnail_gap": 10,
+            "thumbnail_radius": 10,
+            "active_thumbnail_color": "#a45b2c",
+            "thumbnail_inactive_opacity": 50,
+            "show_nav_arrows": true,
+            "nav_button_size": 44,
+            "nav_button_background": "#ffffffe6",
+            "nav_icon_color": "#1a1a1a",
+            "enable_swipe": true,
+            "loop_navigation": false,
+            "transition_speed": 250,
+            "margin_bottom": 16,
+            "blocks_gap": 16,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 16,
+            "sticky_details_desktop": false,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "rating_badge_jfcHVn": {
+              "type": "rating-badge",
+              "name": "Rating badge",
+              "settings": {
+                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "icon_count": 5,
+                "icon_color": "#ff4c01",
+                "icon_size": 18,
+                "icon_size_mobile": 18,
+                "icon_gap": 2,
+                "content_gap": 8,
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_icgrde": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "2rem",
+                    "font_size_mobile": "1.5rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "balance",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "icon_benefits_L9Gjr3": {
+                  "type": "icon-benefits",
+                  "name": "Icon benefits",
+                  "settings": {
+                    "columns": "1",
+                    "items_gap": 16,
+                    "icon_gap": 11,
+                    "title_size": 16,
+                    "title_weight": "700",
+                    "description_size": 16,
+                    "title_color": "",
+                    "description_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "icon_benefits_item_jCh4aT": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Más fuerte",
+                        "description": "<p>Sentirá tus erecciones más duras y completas</p>",
+                        "icon": "lightning_bolt",
+                        "image_upload": "shopify://shop_images/icon-harder-fuller-erections-she-feels.png",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_bDBy68": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "De vuelta al ruedo",
+                        "description": "<p>Un deseo sexual insaciable que no cesa.</p>",
+                        "icon": "leaf",
+                        "image_upload": "shopify://shop_images/icon-day-30-she-notices.avif",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_KVrADW": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Incansable",
+                        "description": "<p>Ella terminara primero. Tú sigues adelante.</p>",
+                        "icon": "fire",
+                        "image_upload": "shopify://shop_images/icon-she-finishes-first.png",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_4ja3AY": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Absorción rápida",
+                        "description": "<p>Se disuelve debajo de la lengua y entra en el torrente sanguíneo en minutos, en lugar de permanecer en el estómago durante horas.</p>",
+                        "icon": "check_box",
+                        "image_upload": "shopify://shop_images/Frame_174.png",
+                        "icon_size": 40
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icon_benefits_item_jCh4aT",
+                    "icon_benefits_item_bDBy68",
+                    "icon_benefits_item_KVrADW",
+                    "icon_benefits_item_4ja3AY"
+                  ]
+                },
+                "price_tVjtKg": {
+                  "type": "price",
+                  "disabled": true,
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "collection_sale_price_color": "",
+                    "collection_regular_price_color": "",
+                    "padding-block-start": 4,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG",
+                "icon_benefits_L9Gjr3",
+                "price_tVjtKg"
+              ]
+            },
+            "image_popup_fwdVY7": {
+              "type": "image-popup",
+              "name": "Image popup",
+              "settings": {
+                "trigger_text": "Información Suplementaria",
+                "trigger_font_size": 20,
+                "trigger_font_weight": "700",
+                "trigger_underline": true,
+                "trigger_color": "",
+                "image": "shopify://shop_images/suplementos-clean.webp",
+                "image_fit": "contain",
+                "image_radius": 8,
+                "text": "",
+                "modal_width": 500,
+                "modal_radius": 12,
+                "modal_content_padding": 20,
+                "overlay_color": "",
+                "close_button_size": 40,
+                "close_button_background": "",
+                "close_button_icon_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_VJhene": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_stock_delivery_aBe8eb": {
+              "type": "product-stock-delivery",
+              "name": "Product stock & delivery",
+              "settings": {
+                "show_stock": true,
+                "inventory_threshold": 10,
+                "show_inventory_quantity": false,
+                "pulse_animation": true,
+                "in_stock_color": "",
+                "low_stock_color": "",
+                "out_of_stock_color": "",
+                "in_stock_text": "Stock disponible",
+                "low_stock_text": "",
+                "out_of_stock_text": "",
+                "show_delivery": true,
+                "delivery_icon_size": 24,
+                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "alignment": "center",
+                "gap": 20,
+                "font_size_desktop": 14,
+                "font_size_mobile": 11,
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "product_perks_AtCRD4": {
+              "type": "product-perks",
+              "name": "Product perks",
+              "settings": {
+                "mobile_layout": "grid",
+                "desktop_alignment": "space-between",
+                "gap": 8,
+                "icon_size": 16,
+                "icon_gradient_start": "#e7b944",
+                "icon_gradient_end": "#ffed68",
+                "icon_center_color": "#1a1a1a",
+                "text_color": "#1a1a1a",
+                "text_size": 12,
+                "text_weight": "500",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_perk_item_xGcHyk": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Devolución en 30 días"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_MmL3Hr": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Envío rápido"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_JL9G9Y": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Cancela cuando quieras"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_perk_item_xGcHyk",
+                "product_perk_item_MmL3Hr",
+                "product_perk_item_JL9G9Y"
+              ]
+            },
+            "product_guarantee_banner_6TMbki": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
+              "settings": {
+                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "Haz que sus piernas tiemblen o te devolvemos el dinero.",
+                "title_color": "#1a1a1a",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "Pruébalo durante 60 días. Si no quedas completamente satisfecho, te devolvemos el importe íntegro. Así de seguros estamos.",
+                "description_color": "#1a1a1a",
+                "description_size": 12,
+                "background_color": "#fdf8ec",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_info_tabs_JFY4WC": {
+              "type": "product-info-tabs",
+              "name": "Product info tabs",
+              "settings": {
+                "tab_background_color": "#f7f7f7",
+                "tab_text_color": "#1a1a1a",
+                "tab_active_gradient_start": "#ddaf3a",
+                "tab_active_gradient_end": "#f5e35e",
+                "tab_font_size_mobile": 12,
+                "tab_font_size_desktop": 14,
+                "border_color": "#ddaf3a",
+                "border_width": 1,
+                "corner_radius": 12,
+                "panel_background_color": "#fcfaf5",
+                "panel_padding": 16,
+                "panel_gap": 12,
+                "text_color": "#1a1a1a",
+                "muted_text_color": "#1a1a1ac2",
+                "card_background_color": "#ffffff",
+                "highlight_background_color": "#eeeeee",
+                "divider_color": "#d1d1d1",
+                "positive_color": "#4fa250",
+                "negative_color": "#e34e36",
+                "brand_column_width_mobile": 58,
+                "brand_column_width_desktop": 156,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_info_tab_quote_fE4JwN": {
+                  "type": "_product-info-tab-quote",
+                  "settings": {
+                    "tab_label": "Aprobado por médicos",
+                    "default_open": true,
+                    "quote": "\"La mayoría de los hombres no tienen problemas en la cama, sino problemas de circulación sanguínea. Esta fórmula combate ambos, utilizando L-arginina para estimular la producción de óxido nítrico y azafrán para potenciar la excitación, mejorando el rendimiento sexual de forma natural y sin los efectos secundarios del Viagra.\"",
+                    "avatar": "shopify://shop_images/reviewr_image_beef_png_26cc6583-7863-4d49-84f7-34233b5a9dbc.png",
+                    "author_name": "Dr. Marcos Torres, M.D.",
+                    "author_specialty": "Médico certificado y especialista en salud masculina."
+                  },
+                  "blocks": {}
+                },
+                "product_info_tab_comparison_JMAPXW": {
+                  "type": "_product-info-tab-comparison",
+                  "settings": {
+                    "tab_label": "Tabla comparativa",
+                    "default_open": false,
+                    "brand_name": "TITAN PEAK",
+                    "others_label": "Otros"
+                  },
+                  "blocks": {
+                    "product_info_comparison_row_wwRKHf": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Funciona todos los días, no solo en una cita romántica.",
+                        "feature_sub": "Erección matutina, todo el día",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_fpYbhz": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Te pone cachondo sin receta",
+                        "feature_sub": "Ingredientes naturales, nada de pastillas sospechosas",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_zq4xNk": {
+                      "type": "_product-info-comparison-row",
+                      "name": "Comparison row",
+                      "settings": {
+                        "feature_name": "Sabe realmente bien.",
+                        "feature_sub": "Fácil de disfrutar cada día",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_comparison_row_wwRKHf",
+                    "product_info_comparison_row_fpYbhz",
+                    "product_info_comparison_row_zq4xNk"
+                  ]
+                },
+                "product_info_tab_ingredients_YHQ9f3": {
+                  "type": "_product-info-tab-ingredients",
+                  "settings": {
+                    "tab_label": "Ingredientes",
+                    "default_open": false,
+                    "name_column_label": "Nombre",
+                    "mg_column_label": "MG"
+                  },
+                  "blocks": {
+                    "product_info_ingredient_row_ibygji": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Maca Root Extract (10:1)",
+                        "ingredient_sub": "La razón por la que se rinde en la cama",
+                        "ingredient_mg": "500mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_EKRFfd": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Extracto de Raíz de Ashwagandha",
+                        "ingredient_sub": "Bloquea el cortisol. Desbloquea tu energía.",
+                        "ingredient_mg": "450mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_XDBWpC": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Panax Ginseng",
+                        "ingredient_sub": "Mejora la producción de LH, el flujo sanguíneo y tiene propiedades antiinflamatorias.",
+                        "ingredient_mg": "200mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_h9fEBU": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Azafrán",
+                        "ingredient_sub": "El azafrán inhibe la PDE5, aumenta el NO → erecciones más fuertes",
+                        "ingredient_mg": "30mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_KhzMMi": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "L-Arginine",
+                        "ingredient_sub": "La razón de tú mayor erección",
+                        "ingredient_mg": "60mg"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_ingredient_row_ibygji",
+                    "product_info_ingredient_row_EKRFfd",
+                    "product_info_ingredient_row_XDBWpC",
+                    "product_info_ingredient_row_h9fEBU",
+                    "product_info_ingredient_row_KhzMMi"
+                  ]
+                },
+                "product_info_tab_faq_TMAQz9": {
+                  "type": "_product-info-tab-faq",
+                  "settings": {
+                    "tab_label": "Preguntas frecuentes",
+                    "default_open": false
+                  },
+                  "blocks": {
+                    "product_info_faq_item_VHbUr7": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cómo tomo las TITAN PEAK Shilajit Gold?",
+                        "answer": "<p>Toma 2 gominolas al día, preferiblemente con una comida. La constancia es clave: el uso diario ayuda a tu cuerpo a aprovechar al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_hdxi7P": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Qué pasa si no me funciona?",
+                        "answer": "<p>Tu compra está respaldada por nuestra garantía de devolución de dinero de 60 días. Te recomendamos usar TITAN PEAK de forma constante durante al menos 90 a 120 días para experimentar todos los beneficios de la fórmula.<br/><br/>Si no estás completamente satisfecho, simplemente contacta con nuestro equipo de soporte y lo solucionaremos.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_tFqbAp": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cuándo veré resultados?",
+                        "answer": "<p>Los resultados varían de persona a persona. Algunos clientes reportan mejoras en su energía, concentración y vitalidad general durante las primeras semanas de uso constante.<br/><br/>Para obtener resultados óptimos, recomendamos tomar TITAN PEAK diariamente durante al menos 8 a 12 semanas.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_hWMxkd": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Qué tan rápido es el envío?",
+                        "answer": "<p>Los pedidos se procesan rápidamente y se envían directamente desde nuestro centro logístico. La mayoría de los pedidos se envían en un plazo de 24 horas hábiles y se proporciona información de seguimiento en cuanto se realiza el envío.<br/><br/>Los plazos de entrega pueden variar según su ubicación.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_wHTXPq": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿TITAN PEAK está testeado por terceros?",
+                        "answer": "<p>Sí. Cada lote se fabrica en una instalación que cumple con las Buenas Prácticas de Fabricación (BPF) y se somete a pruebas de calidad, pureza y seguridad realizadas por terceros. Creemos que usted debe saber exactamente qué consume.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_JpDpAC": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Para quién es TITAN PEAK?",
+                        "answer": "<p>TITAN PEAK está diseñado para hombres que desean potenciar su energía, concentración, vitalidad, confianza y rendimiento general. Ya sea que compagines el trabajo, el ejercicio, la vida familiar o las tres cosas, TITAN PEAK está formulado para ayudarte a rendir al máximo cada día.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_wfgfPq": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Es perjudicial tomarlo junto a medicación?",
+                        "answer": "<p>No. Normalmente se puede tomar con la mayoría de los medicamentos recetados.</p>"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_faq_item_VHbUr7",
+                    "product_info_faq_item_hdxi7P",
+                    "product_info_faq_item_tFqbAp",
+                    "product_info_faq_item_hWMxkd",
+                    "product_info_faq_item_wHTXPq",
+                    "product_info_faq_item_JpDpAC",
+                    "product_info_faq_item_wfgfPq"
+                  ]
+                }
+              },
+              "block_order": [
+                "product_info_tab_quote_fE4JwN",
+                "product_info_tab_comparison_JMAPXW",
+                "product_info_tab_ingredients_YHQ9f3",
+                "product_info_tab_faq_TMAQz9"
+              ]
+            },
+            "text_aEtTtq": {
+              "type": "text",
+              "name": "t:names.product_description",
+              "disabled": true,
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "rating_badge_jfcHVn",
+            "group_icgrde",
+            "image_popup_fwdVY7",
+            "divider_VJhene",
+            "variant_picker_R3rGDr",
+            "product_stock_delivery_aBe8eb",
+            "buy_buttons_eYQEYi",
+            "product_perks_AtCRD4",
+            "product_guarantee_banner_6TMbki",
+            "product_info_tabs_JFY4WC",
+            "text_aEtTtq"
+          ]
+        }
+      },
+      "block_order": [
+        "disclosures_g9mWze"
+      ],
+      "settings": {
+        "custom_id": "product-information",
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": false,
+        "gap": 24,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 64,
+        "padding-block-start-mobile": 0,
+        "padding-block-end": 64,
+        "padding-block-end-mobile": 0
+      }
+    },
+    "product_recommendations_qggXJq": {
+      "type": "product-recommendations",
+      "blocks": {
+        "text_cbcgyb": {
+          "type": "text",
+          "name": "t:names.header",
+          "settings": {
+            "text": "<h3>You may also like </h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_DNizbJ": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_M7MJkb": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_gLWgA6": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "collection_sale_price_color": "",
+                "collection_regular_price_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_DNizbJ",
+            "product_title_M7MJkb",
+            "price_gLWgA6"
+          ]
+        }
+      },
+      "block_order": [
+        "text_cbcgyb"
+      ],
+      "disabled": true,
+      "name": "t:names.product_recommendations",
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 12,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "carousel_brands_QTAkGf": {
+      "type": "carousel-brands",
+      "blocks": {
+        "carousel_brands_logo_Rbbyfc": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-buzz-feed.webp",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_QaiF7h": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-shark-tank.png",
+            "alt": "",
+            "width_mobile": 40,
+            "width_desktop": 70
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_t4fHnG": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-gq.webp",
+            "alt": "",
+            "width_mobile": 50,
+            "width_desktop": 70
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_JNrx9t": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-forbes.png",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        },
+        "carousel_brands_logo_dBeHrW": {
+          "type": "_carousel-brands-logo",
+          "settings": {
+            "image": "shopify://shop_images/icon-logo-mens-health.avif",
+            "alt": "",
+            "width_mobile": 70,
+            "width_desktop": 110
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "carousel_brands_logo_Rbbyfc",
+        "carousel_brands_logo_QaiF7h",
+        "carousel_brands_logo_t4fHnG",
+        "carousel_brands_logo_JNrx9t",
+        "carousel_brands_logo_dBeHrW"
+      ],
+      "name": "Carousel brands",
+      "settings": {
+        "heading": "Visto en:",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 16,
+        "heading_size_desktop": 20,
+        "heading_gap": 20,
+        "gap_mobile": 50,
+        "gap_desktop": 100,
+        "movement_direction": "normal",
+        "enable_animation": true,
+        "speed_factor": 30,
+        "background_color": "#141414",
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      }
+    },
+    "results_timeline_EH8jc9": {
+      "type": "results-timeline",
+      "blocks": {
+        "results_timeline_item_Bkbqxg": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>SEMANA 1</p>",
+            "subtitle": "Encendido",
+            "bullets": "<ul><li>Las erecciones matutinas reaparecen de repente</li><li>Te sientes más lleno con solo estar en la ducha</li><li>El deseo de tocarla comienza a resurgir</li><li>La energía es diferente, te despiertas antes de que suene la alarma</li></ul>",
+            "icon": "lightning"
+          },
+          "blocks": {}
+        },
+        "results_timeline_item_nE8Vez": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>MES 1</p>",
+            "subtitle": "Ella lo nota",
+            "bullets": "<ul><li>Te sentira más duro que en años</li><li>Dice \"algo es diferente\" sin que le digas nada</li><li>Duras lo suficiente como para que ella termine primero</li><li>Pasan de tener sexo una vez por semana a que te busque todas las noches</li></ul>",
+            "icon": "star",
+            "custom_icon": "shopify://shop_images/icon-day-30-she-notices.avif"
+          },
+          "blocks": {}
+        },
+        "results_timeline_item_eXFLhN": {
+          "type": "_results-timeline-item",
+          "settings": {
+            "period": "<p>MES 3+</p>",
+            "subtitle": "Su nueva adicción",
+            "bullets": "<ul><li>Dura como una roca, todo el tiempo</li><li>Ella tomara la iniciativa antes que tú</li><li>Varias rondas y es ella la que se rinde</li><li>Se lo cuenta a sus amigas. Te enteras después. No te importa.</li></ul>",
+            "icon": "heart_pulse",
+            "custom_icon": "shopify://shop_images/icon-she-finishes-first.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "results_timeline_item_Bkbqxg",
+        "results_timeline_item_nE8Vez",
+        "results_timeline_item_eXFLhN"
+      ],
+      "name": "Results timeline",
+      "settings": {
+        "heading": "QUÉ ESPERAR: EJEMPLO DE LÍNEA DE RESULTADOS",
+        "section_width": "full-width",
+        "container_max_width": 1440,
+        "container_padding_desktop": 120,
+        "items_gap_desktop": 32,
+        "items_gap_mobile": 16,
+        "content_gap": 20,
+        "item_gap": 10,
+        "item_header_gap": 10,
+        "show_separator": true,
+        "separator_thickness": 1,
+        "separator_dot_size": 8,
+        "icon_size_mobile": 46,
+        "icon_size_desktop": 56,
+        "icon_gradient_start": "#e7b944",
+        "icon_gradient_end": "#ffed68",
+        "icon_color": "#1a1a1a",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 32,
+        "heading_gap_mobile": 24,
+        "heading_gap_desktop": 40,
+        "period_size_mobile": 16,
+        "period_size_desktop": 18,
+        "subtitle_size": 18,
+        "bullets_size_mobile": 14,
+        "bullets_size_desktop": 16,
+        "bullets_gap_mobile": 4,
+        "bullets_gap_desktop": 8,
+        "background_color": "#fcfaf5",
+        "heading_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "accent_color": "#e9be47",
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
+    },
+    "full_width_images_j6d9b3": {
+      "type": "full-width-images",
+      "blocks": {
+        "full_width_image_iNQQVE": {
+          "type": "full-width-image",
+          "name": "Full width image",
+          "settings": {
+            "image": "shopify://shop_images/imagen1-clean.webp",
+            "mobile_image": "shopify://shop_images/imagen1mobile-clean.webp",
+            "alt": "",
+            "link": "",
+            "open_in_new_tab": false,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "full_width_image_iNQQVE"
+      ],
+      "name": "Full width images",
+      "settings": {
+        "section_width": "full-width",
+        "gap": 0,
+        "background_color": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "expert_carousel_dgHRJn": {
+      "type": "expert-carousel",
+      "blocks": {
+        "expert_carousel_item_4KmWnx": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_kdjwovkdjwovkdjw.webp",
+            "image_alt": "",
+            "name": "Dr. Marcos Jiménez",
+            "role": "Médico de Medicina Deportiva y Rendimiento Masculino",
+            "quote": "Lo que valoro de la fórmula de estas gominolas es la atención que prestan a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente infrautilizados en las conversaciones sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
+          },
+          "blocks": {}
+        },
+        "expert_carousel_item_GDf9bN": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/reviewr_image_beef.png_2.webp",
+            "image_alt": "",
+            "name": "Dr. Alejandro Ferrer",
+            "role": "Médico Certificado en Medicina Preventiva",
+            "quote": "La mayoría de los problemas de erección en los hombres se deben a tres factores que fallan simultáneamente: flujo sanguíneo débil, bajo deseo sexual y escasa producción de óxido nítrico. La maca restaura el deseo sexual, devolviéndole el anhelo. El azafrán dilata los vasos sanguíneos, permitiendo que llegue más sangre al tejido eréctil. Y el shilajit aporta a las células los minerales necesarios para mantener un flujo sanguíneo fuerte a largo plazo. Al combinar estos tres factores, los hombres no solo logran una erección más firme, sino que sus parejas notan la diferencia físicamente y alcanzan un nivel de rendimiento sexual que no habían experimentado en años.",
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
+          },
+          "blocks": {}
+        },
+        "expert_carousel_item_iYYPtw": {
+          "type": "_expert-carousel-item",
+          "settings": {
+            "image": "shopify://shop_images/reviewr_image_beef.png_1.webp",
+            "image_alt": "",
+            "name": "Dr. Javier Moreno",
+            "role": "Médico de Familia",
+            "quote": "Desde el punto de vista hormonal, la relación entre el cortisol, la testosterona y el estrés diario está bien documentada. Lo que me resulta convincente es que se utilizan Ashwagandha KSM-66®, uno de los pocos adaptógenos con respaldo clínico genuino para la reducción del cortisol, para apoyar los niveles naturales de testosterona del cuerpo. Al combinar esto con el perfil rico en minerales del Shilajit, se aborda la base hormonal que la mayoría de los hombres nunca consideran importante.",
+            "quote_mark_gradient_start": "#c3941b",
+            "quote_mark_gradient_end": "#ffed68"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "expert_carousel_item_4KmWnx",
+        "expert_carousel_item_GDf9bN",
+        "expert_carousel_item_iYYPtw"
+      ],
+      "name": "Expert carousel",
+      "settings": {
+        "heading": "Recomendado por Especialistas en Salud Masculina",
+        "heading_color": "#1a1a1a",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 32,
+        "heading_gap_mobile": 24,
+        "heading_gap_desktop": 40,
+        "wrapper_max_width": 880,
+        "wrapper_gap_mobile": 24,
+        "wrapper_column_gap_desktop": 60,
+        "wrapper_row_gap_desktop": 32,
+        "avatar_size_mobile": 210,
+        "avatar_size_desktop": 210,
+        "content_gap": 20,
+        "name_color": "#1a1a1a",
+        "name_size": 20,
+        "role_color": "#1a1a1a",
+        "role_size": 16,
+        "quote_color": "#1a1a1a",
+        "quote_size_mobile": 16,
+        "quote_size_desktop": 18,
+        "quote_mark_size": 30,
+        "show_nav": true,
+        "nav_icon_color": "#1a1a1a",
+        "nav_prev_background": "#fcfaf5",
+        "nav_next_background": "#fcfaf5",
+        "nav_button_size": 40,
+        "nav_gap": 36,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "container_max_width": 1440,
+        "container_padding_mobile": 16,
+        "container_padding_desktop": 120,
+        "background_color": "#fcfaf5",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "full_width_images_R4NHzi": {
+      "type": "full-width-images",
+      "blocks": {
+        "full_width_image_wTgzRp": {
+          "type": "full-width-image",
+          "settings": {
+            "image": "shopify://shop_images/imagen2-clean.webp",
+            "mobile_image": "shopify://shop_images/mobile-clean_4bb17131-3bf2-4a67-9bd8-99e27095a220.webp",
+            "alt": "",
+            "link": "",
+            "open_in_new_tab": false,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "full_width_image_wTgzRp"
+      ],
+      "name": "Full width images",
+      "settings": {
+        "section_width": "full-width",
+        "gap": 0,
+        "background_color": "",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "image_checklist_DaCEnz": {
+      "type": "image-checklist",
+      "blocks": {
+        "checklist_item_X9NDNN": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Tus erecciones ya no son tan firmes ni tan grandes como antes.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_CazK7z": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Has perdido el deseo sexual.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_ijxPPj": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Pierdes la erección durante el sexo o no puedes mantenerla.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_TqN9XN": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Has notado que tu pene es más pequeño que cuando tenías veinte años.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_wmRNbi": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Has probado otras soluciones y no te han funcionado, te han causado efectos secundarios o te han generado dependencia.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        },
+        "checklist_item_qeVUmV": {
+          "type": "_checklist-item",
+          "settings": {
+            "icon_type": "icon",
+            "title": "",
+            "description": "<p>Deseas recuperar la circulación sanguínea de forma natural para que tu cuerpo funcione por sí solo sin necesidad de tomar pastillas.</p>",
+            "description_font_size": 16,
+            "vertical_alignment": "center"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "checklist_item_X9NDNN",
+        "checklist_item_CazK7z",
+        "checklist_item_ijxPPj",
+        "checklist_item_TqN9XN",
+        "checklist_item_wmRNbi",
+        "checklist_item_qeVUmV"
+      ],
+      "name": "Image checklist",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_d6ksz6d6ksz6d6ks_1.webp",
+        "image_alt": "",
+        "image_link": "",
+        "image_radius": 10,
+        "kicker": "<p>TITAN PEAK ES PARA TI SI...</p>",
+        "description": "",
+        "content_width": "page-width",
+        "image_position": "right",
+        "image_position_mobile": "bottom",
+        "column_gap_mobile": 24,
+        "column_gap_desktop": 40,
+        "item_gap_mobile": 16,
+        "item_gap_desktop": 24,
+        "badge_size": 32,
+        "badge_gradient_start": "#e7b944",
+        "badge_gradient_end": "#ffed68",
+        "badge_ring_color": "#1a1a1a",
+        "text_color": "#1a1a1a",
+        "background_color": "#fcfaf5",
+        "padding_block_start_mobile": 32,
+        "padding_block_end_mobile": 32,
+        "padding_block_start_desktop": 56,
+        "padding_block_end_desktop": 56
+      }
+    },
+    "ingredients_carousel_34qKD4": {
+      "type": "ingredients-carousel",
+      "blocks": {
+        "ingredients_carousel_card_TwBaUN": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1.webp",
+            "title": "Ashwagandha",
+            "description": "Ayuda a reducir el cortisol, potencia la testosterona libre y mejora la resistencia al estrés.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_4KNepA": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1.webp",
+            "title": "Shilajit",
+            "description": "Apoya el aumento de la testosterona total y libre, potenciando la energía celular (ATP).",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_tnJT7m": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/ginsjen_9c376acb-359a-4149-a743-00cc79cce187.webp",
+            "title": "Panax Ginseng",
+            "description": "Ayuda a la producción de LH, mejora el flujo sanguíneo y tiene efecto antiinflamatorio.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_7ATCqF": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/saffron.webp",
+            "title": "Azafrán",
+            "description": "Favorece la producción de óxido nítrico, mejorando la circulación.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_T8MPrN": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_7954ca93-780a-4ac0-aa31-a7f690a2b3a6.webp",
+            "title": "Maca Negra",
+            "description": "Potencia el deseo a través de vías naturales del sistema nervioso central, sin intervenir en las hormonas.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredients_carousel_card_QCeHeC": {
+          "type": "_ingredients-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1_9fc9d08a-a7bf-48af-a123-29d191717d0b.webp",
+            "title": "L-Arginina",
+            "description": "Se convierte en óxido nítrico, favoreciendo la vasodilatación y el flujo sanguíneo hacia zonas íntimas.",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "static-badges": {
+          "type": "_ingredients-carousel-badges",
+          "name": "Badges",
+          "static": true,
+          "settings": {
+            "gap": 16
+          },
+          "blocks": {
+            "ingredients_carousel_badge_BmhHnC": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "icon_color": "#1a1a1a",
+                "text": "Testeado por Laboratorios Externos",
+                "text_color": "#1a1a1a"
+              },
+              "blocks": {}
+            },
+            "ingredients_carousel_badge_TXWQqY": {
+              "type": "_ingredients-carousel-badge",
+              "settings": {
+                "icon": "seal_check",
+                "icon_color": "#1a1a1a",
+                "text": "Solución Pura y Natural",
+                "text_color": "#1a1a1a"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "ingredients_carousel_badge_BmhHnC",
+            "ingredients_carousel_badge_TXWQqY"
+          ]
+        }
+      },
+      "block_order": [
+        "ingredients_carousel_card_TwBaUN",
+        "ingredients_carousel_card_4KNepA",
+        "ingredients_carousel_card_tnJT7m",
+        "ingredients_carousel_card_7ATCqF",
+        "ingredients_carousel_card_T8MPrN",
+        "ingredients_carousel_card_QCeHeC"
+      ],
+      "name": "Ingredients carousel",
+      "settings": {
+        "heading_accent": "INGREDIENTES PODEROSOS",
+        "heading": "PARA UN RENDIMIENTO MÁXIMO",
+        "subheading": "",
+        "heading_size": 32,
+        "heading_weight": "800",
+        "accent_color": "#a45b2c",
+        "heading_color": "#1a1a1a",
+        "subheading_size": 18,
+        "subheading_color": "#1a1a1a",
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 80,
+        "items_gap": 24,
+        "content_gap": 40,
+        "content_gap_mobile": 24,
+        "mobile_edge_padding": 16,
+        "container_max_width": 1440,
+        "container_padding": 74,
+        "container_padding_tablet": 40,
+        "card_background_color": "#fcfaf5",
+        "card_radius": 12,
+        "card_padding": 16,
+        "title_color": "#1a1a1a",
+        "title_size": 18,
+        "description_color": "#1a1a1a",
+        "description_size": 16,
+        "image_height": 152,
+        "image_overlap": 56,
+        "image_height_mobile": 120,
+        "image_overlap_mobile": 48,
+        "show_arrows": true,
+        "arrow_color": "#1a1a1a",
+        "arrow_size": 32,
+        "arrow_gap": 24,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "transition_speed": 400,
+        "button_label": "COMPRAR AHORA",
+        "button_link": "#product-information",
+        "button_open_new_tab": false,
+        "button_text_color": "#1a1a1a",
+        "button_gradient_start": "#e7b944",
+        "button_gradient_end": "#ffed68",
+        "button_radius": 12,
+        "button_height": 60,
+        "button_font_size": 18,
+        "background_color": "#ffffff",
+        "padding-block-start": 12,
+        "padding-block-end": 12
+      }
+    },
+    "testimonial_carousel_FNeL7L": {
+      "type": "testimonial-carousel",
+      "blocks": {
+        "testimonial_carousel_card_37jQRF": {
+          "type": "_testimonial-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e3.webp",
+            "reviewer_name": "Alejandro G.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verificado",
+            "show_tag": true,
+            "tag_text": "Más placer",
+            "quote": "<p>\"No voy a mentir, esto fue diferente. Mi novia nunca había podido terminar con la penetración en cuatro años juntos. En la tercera semana con estas gominolas, lo logró. Dos veces. Estaba temblando y no pudo hablar durante unos cinco minutos después. Me miró como si fuera un hombre completamente diferente. Pedí tres bolsas más antes de que se despertara a la mañana siguiente.\"</p>",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "testimonial_carousel_card_awgqff": {
+          "type": "_testimonial-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/jorge-clean.webp",
+            "reviewer_name": "Jorge T.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verificado",
+            "show_tag": true,
+            "tag_text": "No puede quitarme las manos de encima",
+            "quote": "<p>Tengo 46 años y mi esposa prácticamente había dejado de tomar la iniciativa. Hacíamos casi lo mismo, quizás una vez al mes, e incluso eso era incómodo. Empecé a comer las gominolas para mejorar el rendimiento sexual hace unas 6 semanas y todo cambió. Tengo erecciones más firmes que nunca desde los 30, duro mucho más y ahora es ella quien me lleva a la cama. El sábado pasado me despertó a las 6 de la mañana. Para tener sexo. Esta mujer solía fingir dolores de cabeza. Ahora pone la alarma.</p>",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "testimonial_carousel_card_nyFDzR": {
+          "type": "_testimonial-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_ekkx01ekkx01ekkx-clean.webp",
+            "reviewer_name": "Gabi P.",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verificado",
+            "show_tag": true,
+            "tag_text": "Dijo que es el mejor sexo en 11 años",
+            "quote": "<p>\"Llevamos 11 años juntos y la semana pasada me dijo que ahora el sexo es mejor que cuando empezamos a salir. Estoy \"más grande\" que en años porque ahora sí que hay flujo sanguíneo. La otra noche me agarró, se detuvo y me preguntó: '¿Qué te ha pasado?'. Yo solo sonreí. Una gominola al día. Eso es todo lo que he cambiado.\"</p>",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "testimonial_carousel_card_8PX6WW": {
+          "type": "_testimonial-carousel-card",
+          "settings": {
+            "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e4.webp",
+            "reviewer_name": "Pedro",
+            "star_count": 5,
+            "show_verified": true,
+            "verified_text": "Verificado",
+            "show_tag": true,
+            "tag_text": "La erección matutina ha vuelto, y también mi tamaño",
+            "quote": "<p>No me había despertado con una erección tan fuerte en más de un año. El día 9 con las gominolas de TITAN PEAK me desperté con una erección firme y me quedé mirando al techo porque había olvidado lo que se sentía. Para la cuarta semana noté que estaba visiblemente más grande, no era crecimiento nuevo, sino que finalmente se estaba llenando por completo porque la sangre estaba llegando. Mi esposa lo notó antes de que le dijera nada. Sus palabras exactas fueron: 'Algo es muy diferente ahí abajo'.</p>",
+            "background_color": ""
+          },
+          "blocks": {}
+        },
+        "static-rating": {
+          "type": "rating-badge",
+          "name": "Rating badge",
+          "static": true,
+          "settings": {
+            "text": "<p>Valorado <strong>4.5/5 </strong>por <strong>Miles de Clientes</strong></p>",
+            "icon_count": 5,
+            "icon_color": "#ff4c01",
+            "icon_size": 18,
+            "icon_size_mobile": 18,
+            "icon_gap": 5,
+            "content_gap": 10,
+            "width": "100%",
+            "max_width": "none",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#444444",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "testimonial_carousel_card_37jQRF",
+        "testimonial_carousel_card_awgqff",
+        "testimonial_carousel_card_nyFDzR",
+        "testimonial_carousel_card_8PX6WW"
+      ],
+      "name": "Testimonial carousel",
+      "settings": {
+        "heading": "<p>Descubre cómo más de 110.000 hombres mayores de 30 años consiguen erecciones más firmes, duran más y la satisfacen cada noche<br/></p>",
+        "heading_color": "#1a1a1a",
+        "heading_accent_color": "#a45b2c",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 40,
+        "container_max_width": 1200,
+        "container_padding": 16,
+        "header_gap_mobile": 24,
+        "header_gap_desktop": 40,
+        "desktop_columns": 4,
+        "tablet_columns": 2,
+        "mobile_slide_width": 85,
+        "items_gap_desktop": 24,
+        "items_gap_mobile": 16,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_icon_color": "#1a1a1a",
+        "arrow_prev_background": "#ffffff",
+        "arrow_next_gradient_start": "#ffed68",
+        "arrow_next_gradient_end": "#e4b948",
+        "arrow_size": 40,
+        "arrow_gap": 20,
+        "image_aspect_ratio": "square",
+        "card_background_color": "{{ settings.color_palette.color2 }}",
+        "card_radius": 16,
+        "card_padding": 16,
+        "card_content_gap": 10,
+        "card_shadow_color": "#000000",
+        "card_shadow_opacity": 0,
+        "card_shadow_blur": 28,
+        "card_shadow_y": 12,
+        "name_color": "#1a1a1a",
+        "name_font_size": 15,
+        "verified_text_color": "#28a745",
+        "verified_icon_color": "#1a8400",
+        "verified_font_size": 12,
+        "star_color": "#ff6b00",
+        "star_size": 18,
+        "star_gap": 2,
+        "tag_background_color": "#473c1f",
+        "tag_text_color": "#ffffff",
+        "tag_font_size": 14,
+        "tag_radius": 8,
+        "quote_color": "#1a1a1a",
+        "quote_font_size": 14,
+        "background_color": "#ffffff",
+        "padding-block-start": 56,
+        "padding-block-end": 24
+      }
+    },
+    "faq_accordion_nVx7Xp": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_qFttK7": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cuándo notaré la diferencia?",
+            "answer": "<p>La mayoría de los hombres experimentan un aumento de energía y motivación durante la primera semana, y los beneficios más notables en el rendimiento se hacen evidentes entre la segunda y la cuarta semana, a medida que los ingredientes alcanzan su máxima absorción. La constancia es fundamental: tomar una gominola al día es lo que permite obtener los resultados que reportan nuestros clientes.</p>",
+            "open_by_default": true
+          },
+          "blocks": {}
+        },
+        "faq_item_d4FBQP": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Qué diferencia hay con los otros productos?",
+            "answer": "<p>La mayoría de los productos del mercado infra-dosifican el ingrediente clave y ocultan el resto tras una «mezcla patentada». Nuestra fórmula es totalmente transparente y se basa en una potente dosis de 2000 mg de shilajit, junto con dosis clínicamente ajustadas de ginseng panax, L-arginina y maca negra: la combinación que realmente impulsa el flujo sanguíneo, el deseo y la resistencia, y no solo una etiqueta que aparenta serlo.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_xUedVm": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Mi pareja podrá notarlo?",
+            "answer": "<p>En nuestra encuesta a clientes, el 93 % afirmó que su pareja notó la diferencia sin que se lo dijeran. No solo estás comprando cómo te sientes tú, sino también lo que ellos experimentan.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_n8ttME": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Necesito receta? ¿Es como la pastillita azul?",
+            "answer": "<p>Sin receta, sin farmacia, sin visitas incómodas al médico. Estas gominolas trabajan con los sistemas propios de tu cuerpo — apoyando el óxido nítrico, la circulación y el deseo natural — en lugar de forzar una reacción química a corto plazo. Es un apoyo diario, no una pastilla de emergencia.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_6BLpLJ": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Tiene efectos secundarios?",
+            "answer": "<p>La fórmula está hecha con ingredientes de origen vegetal, sin estimulantes — así que no hay nerviosismo ni bajones. La mayoría de los hombres la toman a diario sin ningún problema, pero como con cualquier suplemento, consulta con tu médico si tomas medicación o tienes alguna condición de salud.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_Acpckj": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Qué pasa si no me funciona?",
+            "answer": "<p>Entonces no pagas. Cada pedido está respaldado por nuestra garantía de devolución de dinero — pruébalo, dale una oportunidad real, y si no notas la diferencia, te devolvemos tu dinero. El único riesgo real es quedarte donde estás.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_rqGgB3": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cuántas tomo, y cuándo?",
+            "answer": "<p>Solo dos gominolas al día. Muchos hombres la toman por la mañana para que esté haciendo efecto por la tarde, pero cualquier horario constante funciona — la clave es no saltarse días.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_BEY66R": {
+          "type": "_faq-item",
+          "name": "FAQ item",
+          "settings": {
+            "question": "¿Cuánto tiempo tengo que tomarlo?",
+            "answer": "<p>Cuanto más tiempo mantengas la constancia, más se profundizan los beneficios. La mayoría de los hombres la incorporan a su rutina diaria igual que un café por la mañana — porque los resultados se acumulan, y dejarlo significa perder el terreno ganado.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "faq_item_qFttK7",
+        "faq_item_d4FBQP",
+        "faq_item_xUedVm",
+        "faq_item_n8ttME",
+        "faq_item_6BLpLJ",
+        "faq_item_Acpckj",
+        "faq_item_rqGgB3",
+        "faq_item_BEY66R"
+      ],
+      "name": "FAQ accordion",
+      "settings": {
+        "heading": "PREGUNTAS FRECUENTES",
+        "heading_color": "#212529",
+        "heading_size_mobile": 32,
+        "heading_size_desktop": 40,
+        "container_max_width": 900,
+        "container_padding": 16,
+        "header_gap_mobile": 24,
+        "header_gap_desktop": 40,
+        "list_gap_mobile": 12,
+        "list_gap_desktop": 16,
+        "card_background_color": "#f9f7f5",
+        "card_radius": 12,
+        "trigger_padding_mobile": 16,
+        "trigger_padding_desktop": 24,
+        "question_color": "#1a1a1a",
+        "question_size_mobile": 17,
+        "question_size_desktop": 18,
+        "question_weight": "500",
+        "icon_color": "#000000",
+        "icon_size": 16,
+        "answer_color": "#1a1a1a",
+        "answer_size_mobile": 14,
+        "answer_size_desktop": 17,
+        "answer_line_height": 1.4,
+        "background_color": "#ffffff",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_recommendations_qggXJq",
+    "carousel_brands_QTAkGf",
+    "results_timeline_EH8jc9",
+    "full_width_images_j6d9b3",
+    "expert_carousel_dgHRJn",
+    "full_width_images_R4NHzi",
+    "image_checklist_DaCEnz",
+    "ingredients_carousel_34qKD4",
+    "testimonial_carousel_FNeL7L",
+    "faq_accordion_nVx7Xp"
+  ]
+}

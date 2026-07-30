@@ -480,7 +480,7 @@
                 "product_perk_item_JL9G9Y": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Cancela cuando quieras"
+                    "text": "Cancela cuando tú quieras"
                   },
                   "blocks": {}
                 }
@@ -1163,7 +1163,7 @@
         "image_text_paragraph_A8DRRB": {
           "type": "_image-text-paragraph",
           "settings": {
-            "text": "<p><strong>A medida que los hombres envejecen, los minerales esenciales se agotan por el estrés, el mal sueño y las toxinas modernas</strong></p><p>Estos minerales son fundamentales para la producción de energía, el equilibrio hormonal y la circulación.<br/><br/>Cuando tu cuerpo se queda sin ellos, todo se ralentiza — desde tu resistencia y recuperación hasta tu concentración y rendimiento.</p>",
+            "text": "<p><strong>Conforme los hombres se hacen grandes, los minerales esenciales se les agotan por el estrés, el mal dormir y las toxinas de hoy en día.</strong></p><p>Estos minerales son la base para la producción de energía, el equilibrio hormonal y la circulación.</p><p>Cuando a tu cuerpo se le acaban, todo se pone lento: desde tu aguante y tu recuperación hasta tu concentración y tu rendimiento.</p>",
             "text_color": "#ffffff",
             "font_size_mobile": 1,
             "font_size_desktop": 1.2,
@@ -1294,7 +1294,7 @@
             "icon": "stopwatch",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_5.svg",
             "title": "Energía",
-            "description": "<p>Apoya una energía sostenida durante el día, resistencia y rendimiento físico.</p>"
+            "description": "<p>Ayuda a sostener la energía durante el día, el aguante y el rendimiento físico.</p>"
           },
           "blocks": {}
         },
@@ -1304,7 +1304,7 @@
             "icon": "lock",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_6.svg",
             "title": "Concentración",
-            "description": "<p>Ayuda a mejorar la claridad mental, el impulso y la agudeza.</p>"
+            "description": "<p>Te ayuda a tener la mente más clara, más impulso y más agudeza.</p>"
           },
           "blocks": {}
         },
@@ -1314,7 +1314,7 @@
             "icon": "recycle",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_7.svg",
             "title": "Recuperación",
-            "description": "<p>Apoya una recuperación más rápida, resistencia y capacidad de aguante.</p>"
+            "description": "<p>Ayuda a que te recuperes más rápido, con más aguante y capacidad de resistencia.</p>"
           },
           "blocks": {}
         },
@@ -1324,7 +1324,7 @@
             "icon": "check_box",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_8.svg",
             "title": "Vitalidad",
-            "description": "<p>Promueve el apoyo a la testosterona, la fuerza y el rendimiento masculino.</p>"
+            "description": "<p>Le echa la mano a tu testosterona, tu fuerza y tu rendimiento como hombre.</p>"
           },
           "blocks": {}
         }
@@ -1343,7 +1343,7 @@
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 42,
-        "subheading": "Tu energía, tu deseo y tu rendimiento no solo se desvanecen — declinan a medida que tu cuerpo pierde minerales esenciales.",
+        "subheading": "Tu energía, tus ganas y tu rendimiento no nomás se van desvaneciendo, van bajando a medida que tu cuerpo se queda sin minerales esenciales.",
         "subheading_color": "#d1d1d1",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 16,
@@ -1391,8 +1391,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
             "image_alt": "",
-            "title": "ENERGÍA Y RESISTENCIA",
-            "description": "<p>Apoya una energía estable, resistencia y rendimiento durante todo el día.</p>"
+            "title": "ENERGÍA Y AGUANTE",
+            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
           },
           "blocks": {}
         },
@@ -1402,7 +1402,7 @@
             "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
             "image_alt": "",
             "title": "CORTISOL Y ESTRÉS",
-            "description": "<p>Menos hinchazón, menos fatiga, mejor recuperación.</p>"
+            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
           },
           "blocks": {}
         },
@@ -1412,7 +1412,7 @@
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
             "image_alt": "",
             "title": "TESTOSTERONA Y DESEO",
-            "description": "<p>Ayuda a mantener niveles saludables de testosterona y vitalidad masculina.</p>"
+            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
           },
           "blocks": {}
         },
@@ -1422,7 +1422,7 @@
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
             "image_alt": "",
             "title": "CIRCULACIÓN Y RENDIMIENTO",
-            "description": "<p>Apoya el flujo sanguíneo, la resistencia y el rendimiento físico general.</p>"
+            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
           },
           "blocks": {}
         }
@@ -1441,7 +1441,7 @@
         "heading_size_desktop": 52,
         "heading_accent_gradient_start": "#b8b8b8",
         "heading_accent_gradient_end": "#ffffff",
-        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento a medida que envejeces.</p>",
+        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
         "subtitle_color": "#ffffff",
         "subtitle_size_mobile": 16,
         "subtitle_size_desktop": 18,
@@ -1487,7 +1487,7 @@
         "image_text_accordion_paragraph_gYmm3Y": {
           "type": "_image-text-accordion-paragraph",
           "settings": {
-            "text": "<p>La mayoría de los suplementos se esconden detrás de etiquetas vagas. TITAN PEAK Shilajit está testado de forma independiente y es totalmente transparente — para que sepas exactamente qué estás poniendo en tu cuerpo.</p>",
+            "text": "<p>La mayoría de los suplementos se esconden detrás de etiquetas vagas. TITAN PEAK Shilajit está probado de forma independiente y es totalmente transparente, para que sepas exactamente qué te estás metiendo al cuerpo.</p>",
             "text_color": "#e8d5a3",
             "font_size_mobile": 0.8,
             "font_size_desktop": 0.9,
@@ -1499,8 +1499,8 @@
         "image_text_accordion_item_6nKKR3": {
           "type": "_image-text-accordion-item",
           "settings": {
-            "question": "Testado por Laboratorios Externos para Pureza y Seguridad",
-            "answer": "<p>Cada lote es analizado por laboratorios independientes en busca de metales pesados, contaminantes y autenticidad.</p>",
+            "question": "Probado por Laboratorios Externos para Pureza y Seguridad",
+            "answer": "<p>Cada lote se analiza en laboratorios independientes para descartar metales pesados, contaminantes, y confirmar que es cien por ciento auténtico.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1509,7 +1509,7 @@
           "type": "_image-text-accordion-item",
           "settings": {
             "question": "82.8% de Ácido Fúlvico de Potencia Verificada",
-            "answer": "<p>Una de las concentraciones de ácido fúlvico más altas del mercado — el indicador clave de un Shilajit del Himalaya real y potente.</p>",
+            "answer": "<p>Una de las concentraciones de ácido fúlvico más altas que hay en el mercado: el indicador clave de que estás ante un Shilajit del Himalaya auténtico y de verdad potente.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1518,7 +1518,7 @@
           "type": "_image-text-accordion-item",
           "settings": {
             "question": "Transparencia Total — Informes de Laboratorio Disponibles",
-            "answer": "<p>Mostramos con orgullo nuestros resultados de análisis online, para que nunca tengas que adivinar sobre la calidad o la potencia.</p>",
+            "answer": "<p>Con orgullo mostramos nuestros resultados de laboratorio en línea, para que nunca te quede la duda sobre la calidad o la potencia.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1622,7 +1622,7 @@
             "value": "94%",
             "percentage": 90,
             "title": "",
-            "description": "<p>reportó una energía diaria más estable durante el primer mes.</p>",
+            "description": "<p>reportó una energía diaria más pareja durante el primer mes.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1646,7 +1646,7 @@
             "value": "96%",
             "percentage": 90,
             "title": "",
-            "description": "<p>experimentó mayor claridad mental y concentración.</p>",
+            "description": "<p>notó mayor claridad mental y concentración.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1679,7 +1679,7 @@
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
-        "subheading": "Mejoras autoreportadas por hombres que hicieron de TITAN PEAK parte de su rutina diaria.",
+        "subheading": "Mejoras reportadas por los mismos hombres que hicieron de TITAN PEAK parte de su rutina diaria.",
         "subheading_color": "#ffffff",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 14,
@@ -1734,7 +1734,7 @@
           "settings": {
             "image": "shopify://shop_images/6cwoZI9fOflTkAYN.webp",
             "title": "SHILAJIT (Alto en Ácido Fúlvico)",
-            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y potencia la energía, la resistencia y la circulación.</p>",
+            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y le da fuerza a la energía, el aguante y la circulación.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1745,7 +1745,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.14.13_AM.webp",
             "title": "KSM-66 ASHWAGANDHA",
-            "description": "<p>Control del cortisol + apoyo a la testosterona. Reduce las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
+            "description": "<p>Controla el cortisol y apoya la testosterona. Baja las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1756,7 +1756,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.13.33_AM.webp",
             "title": "RAÍZ DE MACA",
-            "description": "<p>Potenciador natural del deseo y la resistencia. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
+            "description": "<p>Potenciador natural del deseo y el aguante. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1778,7 +1778,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.28_AM.webp",
             "title": "BLACK MUSLI",
-            "description": "<p>Powerful vitality enhancer. Traditionally used to support sexual health, stamina, and overall male performance while promoting strength and recovery.</p>",
+            "description": "<p>Potenciador poderoso de la vitalidad. Se usa desde hace generaciones para apoyar la salud sexual, el aguante y el rendimiento masculino en general, mientras impulsa la fuerza y la recuperación.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1789,7 +1789,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.53_AM.webp",
             "title": "GOKSHURA",
-            "description": "<p>Apoyo al rendimiento y la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y potencia la resistencia y el rendimiento físico.</p>",
+            "description": "<p>Apoyo al rendimiento y a la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y le mete fuerza al aguante y al rendimiento.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1800,7 +1800,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.49_AM.webp",
             "title": "KAUNCH (MUCUNA PRURIENS)",
-            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, la libido y el impulso mental.</p>",
+            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, las ganas y el impulso mental.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1811,7 +1811,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.09_AM.webp",
             "title": "JENGIBRE",
-            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y reduce la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
+            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y baja la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1822,7 +1822,7 @@
           "settings": {
             "image": "shopify://shop_images/C5POF3zft9M7_Apq.avif",
             "title": "SEMILLA DE FENOGRECO",
-            "description": "<p>Potenciador natural de testosterona. Rico en compuestos que apoyan niveles saludables de testosterona, fuerza y resistencia física.</p>",
+            "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia tú mismo, o te regresamos tu dinero sin hacerte ni una pregunta.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1843,8 +1843,8 @@
       "name": "Ingredient steps",
       "settings": {
         "heading_line_1": "INGREDIENTES QUE",
-        "heading_highlight": "CUMPLEN",
-        "subheading": "<p>Apoyo diario para tu energía, testosterona y rendimiento a nivel celular.</p>",
+        "heading_highlight": "SI CUMPLEN",
+        "subheading": "<p>Apoyo diario para tu energía, tu testosterona y tu rendimiento a nivel celular.</p>",
         "heading_size_desktop": 52,
         "heading_size_mobile": 36,
         "heading_color": "#ffffff",
@@ -1971,8 +1971,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuánto tardaré en notar la diferencia?",
-            "answer": "<p>La mayoría de los hombres nota un aumento de energía y una mejor circulación en los primeros 7-14 días. Para obtener resultados máximos y un apoyo completo a la próstata, recomendamos un uso diario constante durante 90 días, para que los minerales saturen por completo tu organismo.</p>",
+            "question": "¿Cuánto voy a tardar en notar la diferencia?",
+            "answer": "<p>La mayoría de los hombres nota más energía y mejor circulación en los primeros 7 a 14 días. Para resultados al máximo y un apoyo completo a la próstata, te recomendamos usarlo a diario sin fallar durante 90 días, para que los minerales le lleguen bien a fondo a tu organismo.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1980,8 +1980,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo se compara TITAN PEAK con esas pastillas azules?",
-            "answer": "<p>A diferencia de las pastillas sintéticas que pueden causar taquicardia, dolores de cabeza y efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para potenciar de forma natural el óxido nítrico y el flujo sanguíneo, sin el \"bajón\" sintético ni riesgos para la salud.</p>",
+            "question": "¿Cómo se compara TITAN PEAK con esas pastillitas azules?",
+            "answer": "<p>A diferencia de las pastillas sintéticas, que te pueden dar taquicardia, dolor de cabeza y otros efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para subir de forma natural el óxido nítrico y el flujo sanguíneo, sin el bajón sintético ni riesgos para tu salud.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1990,7 +1990,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Es seguro TITAN PEAK?",
-            "answer": "<p>Sí. Está fabricado en una instalación certificada cGMP y registrada en la FDA, usando ingredientes non-GMO y testeado por laboratorios externos para pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
+            "answer": "<p>Sí. Se fabrica en una planta certificada cGMP y registrada ante la FDA, con ingredientes non-GMO y probados en laboratorios externos para garantizar pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1998,8 +1998,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es realmente diferente al shilajit que se vende en Amazon?",
-            "answer": "<p>Sí. La mayoría del shilajit que se vende en Amazon es un polvo barato y de baja calidad, importado por un par de euros la unidad. El nuestro se cosecha en los picos del Himalaya a 5.180 metros, se seca naturalmente al sol durante 60 días, y está verificado por dibenzo-α-pironas, el marcador estándar de oro que los productos falsificados no pueden replicar. Desafiamos a cualquier marca de Amazon a mostrar ese análisis... no podrán.</p>",
+            "question": "¿De verdad es diferente al shilajit que venden en Amazon?",
+            "answer": "<p>Sí. La mayoría del shilajit que venden en Amazon es un polvo barato y de baja calidad, importado por unos cuantos pesos la unidad. El nuestro se cosecha en los picos del Himalaya a 5,180 metros, se seca al sol de forma natural durante 60 días, y está verificado por dibenzo-α-pironas, el marcador que de verdad manda y que los productos pirata no pueden replicar. Retamos a cualquier marca de Amazon a que muestre ese análisis... no van a poder.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2007,8 +2007,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gominolas son de alta calidad?",
-            "answer": "<p>Nuestras Shilajit Gummies se producen en instalaciones certificadas GMP y son testeadas por terceros para garantizar pureza y seguridad.<br/>Usamos ingredientes cuidadosamente seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su larga trayectoria apoyando la vitalidad masculina, el deseo, la circulación y el rendimiento.<br/>El resultado es una fórmula limpia y potente, diseñada específicamente para hombres que buscan un apoyo real en su rendimiento.</p>",
+            "question": "¿Cómo sé que estas gomitas son de calidad?",
+            "answer": "<p>Nuestras Shilajit Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2017,7 +2017,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
-            "answer": "<p>Sí, nuestras gominolas se pueden tomar junto a la mayoría de los suplementos comunes. Están formuladas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Sin embargo, si tienes condiciones de salud preexistentes, especialmente relacionadas con el corazón, es mejor consultar con tu médico antes de combinarlas con otros productos.</p>",
+            "answer": "<p>Sí, nuestras gomitas se pueden tomar junto con la mayoría de los suplementos comunes. Están hechas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Ahora, si tienes alguna condición de salud de antes, sobre todo relacionada con el corazón, mejor consúltalo con tu médico antes de combinarlas con otros productos.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2025,8 +2025,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Por qué en gominola en vez de resina o polvo?",
-            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor muy amargo y metálico que la mayoría encuentra insoportable. Nuestra fórmula mejorada en gominola aporta la dosis clínica exacta de más de 84 minerales, en un formato rico y cómodo que hace que tu ritual diario de rendimiento sea fácil y agradable.</p>",
+            "question": "¿Por qué en gomita y no en resina o polvo?",
+            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor bien amargo y metálico que a la mayoría se le hace insoportable. Nuestra fórmula mejorada en gomita trae la dosis clínica exacta de más de 84 minerales, en un formato rico y práctico que hace de tu ritual diario de rendimiento algo fácil y hasta agradable.</p>",
             "open_by_default": false
           },
           "blocks": {}

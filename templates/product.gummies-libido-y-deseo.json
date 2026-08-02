@@ -1602,7 +1602,7 @@
           "name": "Rating badge",
           "static": true,
           "settings": {
-            "text": "<p>Valorado <strong>4.5/5 </strong>por <strong>Miles de Clientes</strong></p>",
+            "text": "<p><strong>4.85/5</strong> basado en mas de 1.345 reseñas</p>",
             "icon_count": 5,
             "icon_color": "#ff4c01",
             "icon_size": 18,

@@ -108,10 +108,10 @@
                 "product_info_tab_comparison_7di4eF": {
                   "type": "_product-info-tab-comparison",
                   "settings": {
-                    "tab_label": "Comparison Table",
+                    "tab_label": "Tabla Comparativa",
                     "default_open": false,
-                    "brand_name": "Your Brand",
-                    "others_label": "Others"
+                    "brand_name": "TITAN PEAK",
+                    "others_label": "Otros"
                   },
                   "blocks": {
                     "product_info_comparison_row_rXRGpP": {
@@ -187,7 +187,7 @@
                 "product_info_tab_ingredients_YEF3Pk": {
                   "type": "_product-info-tab-ingredients",
                   "settings": {
-                    "tab_label": "Ingredients",
+                    "tab_label": "Ingredientes",
                     "default_open": false,
                     "name_column_label": "Name",
                     "mg_column_label": "MG"
@@ -196,27 +196,63 @@
                     "product_info_ingredient_row_7KGC7K": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "Ingredient name",
-                        "ingredient_sub": "Short supporting detail",
-                        "ingredient_mg": "500mg"
+                        "ingredient_name": "Shilajit Puro",
+                        "ingredient_sub": "Repone minerales y sube la energía celular",
+                        "ingredient_mg": "9000mg"
                       },
                       "blocks": {}
                     },
                     "product_info_ingredient_row_BE8h7M": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "Ingredient name",
-                        "ingredient_sub": "Short supporting detail",
-                        "ingredient_mg": "500mg"
+                        "ingredient_name": "Cúrcuma",
+                        "ingredient_sub": "Antiinflamatorio natural",
+                        "ingredient_mg": "2000mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_Fg9gNT": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Aceite de Comino Negro",
+                        "ingredient_sub": "Apoyo antioxidante y antiinflamatorio",
+                        "ingredient_mg": "4000mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_jb34fV": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Ashwagandha",
+                        "ingredient_sub": "Ayuda a nivelar el cortisol y reducir el estrés",
+                        "ingredient_mg": "2000mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_iqqQjW": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Panax Ginseng",
+                        "ingredient_sub": "Apoya circulación y rendimiento",
+                        "ingredient_mg": "1500mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_NwYmHR": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Rhodiola Rosea",
+                        "ingredient_sub": "Mejora el aguante físico y mental",
+                        "ingredient_mg": "1000mg"
                       },
                       "blocks": {}
                     },
                     "product_info_ingredient_row_y6Krkt": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "Ingredient name",
-                        "ingredient_sub": "Short supporting detail",
-                        "ingredient_mg": "500mg"
+                        "ingredient_name": "Musgo Marino (Sea Moss)",
+                        "ingredient_sub": "Aporta minerales y vitaminas extra",
+                        "ingredient_mg": "7000mg"
                       },
                       "blocks": {}
                     }
@@ -224,6 +260,10 @@
                   "block_order": [
                     "product_info_ingredient_row_7KGC7K",
                     "product_info_ingredient_row_BE8h7M",
+                    "product_info_ingredient_row_Fg9gNT",
+                    "product_info_ingredient_row_jb34fV",
+                    "product_info_ingredient_row_iqqQjW",
+                    "product_info_ingredient_row_NwYmHR",
                     "product_info_ingredient_row_y6Krkt"
                   ]
                 },

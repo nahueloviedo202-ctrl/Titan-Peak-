@@ -788,6 +788,151 @@
         "padding-block-end": 48
       }
     },
+    "testimonial_peek_carousel_x93CVU": {
+      "type": "testimonial-peek-carousel",
+      "blocks": {
+        "testimonial_peek_card_fEVKKU": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Esto arregló lo que yo creía que era pura vejez.\"</strong></p><p>\"Pensaba que andar cansado todo el tiempo era lo normal. Después de unas semanas me regresó la energía, mejoré en mis entrenos y volví a sentirme yo mismo.\"<br/></p>",
+            "star_count": 5,
+            "reviewer_name": "Omar H. 49 Años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_YDkHEr": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Bruno C 37 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_jTWxeG": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"La neta no esperaba mucho, pero la mejora en circulación es real.\"</strong></p><p>\"Ando más despierto, con más energía, y se nota la diferencia: mejor rendimiento, más aguante y bastante más confianza.\"<br/><br/></p>",
+            "star_count": 5,
+            "reviewer_name": "Marcos M. 52 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_hBtJPV": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Beto T. 42 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_FWMByT": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Rostro más marcado, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que traía la cara menos hinchada y más definida. Nomás con eso ya se me subió la confianza una barbaridad.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Kevin R. 54 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_mf6N8b": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome las tardes. Con esto recuperé las ganas de hacer algo después del jale, no solo tirarme en el sillón.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Rubén A. 45 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_fMeJwF": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Iván G. 44 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "testimonial_peek_card_fEVKKU",
+        "testimonial_peek_card_YDkHEr",
+        "testimonial_peek_card_jTWxeG",
+        "testimonial_peek_card_hBtJPV",
+        "testimonial_peek_card_FWMByT",
+        "testimonial_peek_card_mf6N8b",
+        "testimonial_peek_card_fMeJwF"
+      ],
+      "name": "Testimonial peek carousel",
+      "settings": {
+        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
+        "heading_color": "{{ settings.color_palette.background }}",
+        "heading_accent_dark": "#A99985",
+        "heading_accent_light": "#DED1C2",
+        "heading_size_mobile": 34,
+        "heading_size_desktop": 42,
+        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
+        "subheading_color": "{{ settings.color_palette.background }}",
+        "subheading_size": 14,
+        "header_gap": 20,
+        "header_bottom_gap_mobile": 30,
+        "header_bottom_gap_desktop": 40,
+        "container_max_width": 1600,
+        "container_padding": 20,
+        "container_padding_mobile": 15,
+        "card_width_desktop": 300,
+        "card_width_mobile": 85,
+        "items_gap": 20,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_background_color": "#A99985",
+        "arrow_border_color": "#A99985",
+        "arrow_border_width": 1,
+        "arrow_icon_color": "#ffffff",
+        "arrow_size": 40,
+        "arrow_radius": 25,
+        "arrow_gap": 12,
+        "card_background_color": "#DAD2BC",
+        "card_border_color": "#DAD2BC",
+        "card_border_width": 1,
+        "card_radius": 6,
+        "card_padding": 24,
+        "card_content_gap": 8,
+        "card_min_height": 200,
+        "star_color": "#ffc347",
+        "star_size": 20,
+        "star_gap": 0,
+        "quote_color": "#000000",
+        "quote_font_size": 14,
+        "avatar_size": 40,
+        "avatar_background_color": "#0c0c0d",
+        "avatar_text_color": "{{ settings.color_palette.background }}",
+        "name_color": "#000000",
+        "name_font_size": 14,
+        "verified_color": "#c9a84c",
+        "verified_check_color": "#ffffff",
+        "verified_font_size": 12,
+        "background_color": "#252323",
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
     "roadmap_QB8dKq": {
       "type": "roadmap",
       "blocks": {
@@ -1263,151 +1408,6 @@
         "padding-block-end": 40
       }
     },
-    "testimonial_peek_carousel_x93CVU": {
-      "type": "testimonial-peek-carousel",
-      "blocks": {
-        "testimonial_peek_card_fEVKKU": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"Esto arregló lo que yo creía que era pura vejez.\"</strong></p><p>\"Pensaba que andar cansado todo el tiempo era lo normal. Después de unas semanas me regresó la energía, mejoré en mis entrenos y volví a sentirme yo mismo.\"<br/></p>",
-            "star_count": 5,
-            "reviewer_name": "Omar H. 49 Años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_YDkHEr": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
-            "star_count": 5,
-            "reviewer_name": "Bruno C 37 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_jTWxeG": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"La neta no esperaba mucho, pero la mejora en circulación es real.\"</strong></p><p>\"Ando más despierto, con más energía, y se nota la diferencia: mejor rendimiento, más aguante y bastante más confianza.\"<br/><br/></p>",
-            "star_count": 5,
-            "reviewer_name": "Marcos M. 52 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_hBtJPV": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
-            "star_count": 5,
-            "reviewer_name": "Beto T. 42 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_FWMByT": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"Rostro más marcado, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que traía la cara menos hinchada y más definida. Nomás con eso ya se me subió la confianza una barbaridad.\"</p>",
-            "star_count": 5,
-            "reviewer_name": "Kevin R. 54 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_mf6N8b": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome las tardes. Con esto recuperé las ganas de hacer algo después del jale, no solo tirarme en el sillón.\"</p>",
-            "star_count": 5,
-            "reviewer_name": "Rubén A. 45 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        },
-        "testimonial_peek_card_fMeJwF": {
-          "type": "_testimonial-peek-card",
-          "settings": {
-            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
-            "star_count": 5,
-            "reviewer_name": "Iván G. 44 años",
-            "show_verified": true,
-            "verified_text": "Comprador Verificado"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "testimonial_peek_card_fEVKKU",
-        "testimonial_peek_card_YDkHEr",
-        "testimonial_peek_card_jTWxeG",
-        "testimonial_peek_card_hBtJPV",
-        "testimonial_peek_card_FWMByT",
-        "testimonial_peek_card_mf6N8b",
-        "testimonial_peek_card_fMeJwF"
-      ],
-      "name": "Testimonial peek carousel",
-      "settings": {
-        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
-        "heading_color": "{{ settings.color_palette.background }}",
-        "heading_accent_dark": "#A99985",
-        "heading_accent_light": "#DED1C2",
-        "heading_size_mobile": 34,
-        "heading_size_desktop": 42,
-        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
-        "subheading_color": "{{ settings.color_palette.background }}",
-        "subheading_size": 14,
-        "header_gap": 20,
-        "header_bottom_gap_mobile": 30,
-        "header_bottom_gap_desktop": 40,
-        "container_max_width": 1600,
-        "container_padding": 20,
-        "container_padding_mobile": 15,
-        "card_width_desktop": 300,
-        "card_width_mobile": 85,
-        "items_gap": 20,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "show_arrows": true,
-        "arrow_background_color": "#A99985",
-        "arrow_border_color": "#A99985",
-        "arrow_border_width": 1,
-        "arrow_icon_color": "#ffffff",
-        "arrow_size": 40,
-        "arrow_radius": 25,
-        "arrow_gap": 12,
-        "card_background_color": "#DAD2BC",
-        "card_border_color": "#DAD2BC",
-        "card_border_width": 1,
-        "card_radius": 6,
-        "card_padding": 24,
-        "card_content_gap": 8,
-        "card_min_height": 200,
-        "star_color": "#ffc347",
-        "star_size": 20,
-        "star_gap": 0,
-        "quote_color": "#000000",
-        "quote_font_size": 14,
-        "avatar_size": 40,
-        "avatar_background_color": "#0c0c0d",
-        "avatar_text_color": "{{ settings.color_palette.background }}",
-        "name_color": "#000000",
-        "name_font_size": 14,
-        "verified_color": "#c9a84c",
-        "verified_check_color": "#ffffff",
-        "verified_font_size": 12,
-        "background_color": "#252323",
-        "padding-block-start": 60,
-        "padding-block-end": 40
-      }
-    },
     "faq_accordion_nVx7Xp": {
       "type": "faq-accordion",
       "blocks": {
@@ -1519,11 +1519,11 @@
   "order": [
     "main",
     "product_recommendations_qggXJq",
-    "roadmap_QB8dKq",
-    "cards_grid_g9pUdw",
-    "image_checklist_GjbqGM",
-    "ingredient_steps_tXfBEq",
     "testimonial_peek_carousel_x93CVU",
+    "roadmap_QB8dKq",
+    "image_checklist_GjbqGM",
+    "cards_grid_g9pUdw",
+    "ingredient_steps_tXfBEq",
     "faq_accordion_nVx7Xp"
   ]
 }

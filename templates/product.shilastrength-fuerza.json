@@ -1225,7 +1225,7 @@
         "step_title_color": "{{ settings.color_palette.foreground }}",
         "step_description_size_desktop": 12,
         "step_description_size_mobile": 10,
-        "step_description_color": "{{ settings.color_palette.foreground }}",
+        "step_description_color": "#F5F1ED",
         "columns_desktop": 4,
         "items_gap": 5,
         "mobile_slide_padding": 8,

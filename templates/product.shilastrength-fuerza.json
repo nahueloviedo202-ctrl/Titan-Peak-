@@ -117,8 +117,8 @@
                     "product_info_comparison_row_rXRGpP": {
                       "type": "_product-info-comparison-row",
                       "settings": {
-                        "feature_name": "Feature name",
-                        "feature_sub": "Short supporting detail",
+                        "feature_name": "Concentración 9000mg",
+                        "feature_sub": "Dosis real y potente por porción",
                         "brand_has_feature": true,
                         "others_has_feature": false
                       },
@@ -127,8 +127,48 @@
                     "product_info_comparison_row_kCAhz7": {
                       "type": "_product-info-comparison-row",
                       "settings": {
-                        "feature_name": "Feature name",
-                        "feature_sub": "Short supporting detail",
+                        "feature_name": "Shilajit purificado",
+                        "feature_sub": "Sin metales pesados ni impurezas",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_WB9jJE": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Fórmula completa",
+                        "feature_sub": "Con Ashwagandha, Rhodiola y Ginseng",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_gGtC6P": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Alta biodisponibilidad",
+                        "feature_sub": "Ácido fúlvico para mejor absorción",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_erQCWy": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Probado en laboratorio independiente",
+                        "feature_sub": "Pureza y potencia verificadas",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_4mKpLq": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Sin rellenos ni aditivos",
+                        "feature_sub": "Ingredientes 100% activos",
                         "brand_has_feature": true,
                         "others_has_feature": false
                       },
@@ -137,7 +177,11 @@
                   },
                   "block_order": [
                     "product_info_comparison_row_rXRGpP",
-                    "product_info_comparison_row_kCAhz7"
+                    "product_info_comparison_row_kCAhz7",
+                    "product_info_comparison_row_WB9jJE",
+                    "product_info_comparison_row_gGtC6P",
+                    "product_info_comparison_row_erQCWy",
+                    "product_info_comparison_row_4mKpLq"
                   ]
                 },
                 "product_info_tab_ingredients_YEF3Pk": {

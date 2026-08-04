@@ -270,29 +270,65 @@
                 "product_info_tab_faq_7bjjRy": {
                   "type": "_product-info-tab-faq",
                   "settings": {
-                    "tab_label": "FAQ's",
+                    "tab_label": "Preguntas Frecuentes",
                     "default_open": false
                   },
                   "blocks": {
                     "product_info_faq_item_LHtX8a": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "Question",
-                        "answer": "<p>Add the answer to this question.</p>"
+                        "question": "¿Qué es el Shilajit?",
+                        "answer": "<p>Es una resina mineral que se forma naturalmente en las montañas del Himalaya durante siglos. Es rica en ácido fúlvico y más de 80 minerales, y se usa desde hace generaciones para subir energía, fuerza y rendimiento.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_nAJt98": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cuánto tiempo tarda en hacer efecto?",
+                        "answer": "<p>La mayoría empieza a notar cambios en energía y menos cansancio desde la primera semana. Los resultados más notorios en fuerza, rendimiento y composición corporal se ven entre las 4 y 8 semanas de uso constante.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_iixHW9": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Cómo se toma?",
+                        "answer": "<p>1-2 cápsulas al día, de preferencia con alimento y un vaso de agua. No exceder la dosis recomendada.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_xXDGQc": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿Es apto para veganos/vegetarianos?",
+                        "answer": "<p>Sí, la fórmula es 100% de origen vegetal y mineral, sin ingredientes de origen animal. (Verifica esto contra tu etiqueta real antes de publicarlo — solo confírmalo si es cierto para tu producto.)</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_RaVwrJ": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "¿De dónde viene el Shilajit que usan?",
+                        "answer": "<p>Se purifica para eliminar metales pesados e impurezas, dejando solo el mineral activo.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_4xHPhB": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "Question",
-                        "answer": "<p>Add the answer to this question.</p>"
+                        "question": "¿Puedo tomarlo si hago ejercicio/gym?",
+                        "answer": "<p>Sí, es compatible con tu rutina de entrenamiento y muchos lo usan justo para apoyar recuperación y rendimiento físico.</p>"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
                     "product_info_faq_item_LHtX8a",
+                    "product_info_faq_item_nAJt98",
+                    "product_info_faq_item_iixHW9",
+                    "product_info_faq_item_xXDGQc",
+                    "product_info_faq_item_RaVwrJ",
                     "product_info_faq_item_4xHPhB"
                   ]
                 }

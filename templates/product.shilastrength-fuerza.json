@@ -62,287 +62,41 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_info_tabs_Y3Lxmj": {
-              "type": "product-info-tabs",
-              "name": "Product info tabs",
+            "testimonial_card_YP9xiU": {
+              "type": "testimonial-card",
+              "name": "Testimonial card",
               "settings": {
-                "tab_background_color": "#F5F1ED",
-                "tab_text_color": "{{ settings.color_palette.foreground }}",
-                "tab_active_gradient_start": "#DAD2BC",
-                "tab_active_gradient_end": "#F5F1ED",
-                "tab_font_size_mobile": 12,
-                "tab_font_size_desktop": 14,
-                "border_color": "{{ settings.color_palette.background }}",
-                "border_width": 0,
+                "avatar_image": "shopify://shop_images/Gemini_Generated_Image_rfee5prfee5prfee.webp",
+                "quote": "<p>Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.</p>",
+                "reviewer_name": "Héctor Fernández",
+                "reviewer_title": "Médico certificado, especialista en salud masculina",
+                "show_verified_badge": true,
+                "verified_badge_text": "Cliente verificado",
+                "verified_text_color": "#76af6d",
+                "verified_icon_color": "#1a8400",
+                "verified_font_size": 11,
+                "width": "100%",
+                "stack_on_mobile": true,
+                "avatar_size": 100,
+                "avatar_size_mobile": 80,
+                "gap": 16,
+                "background_color": "#fcfaf5",
                 "corner_radius": 12,
-                "panel_background_color": "#DAD2BC",
-                "panel_padding": 16,
-                "panel_gap": 12,
+                "card_padding": 16,
                 "text_color": "#1a1a1a",
-                "muted_text_color": "#1a1a1ac2",
-                "card_background_color": "#ffffff",
-                "highlight_background_color": "#eeeeee",
-                "divider_color": "#d1d1d1",
-                "positive_color": "#4fa250",
-                "negative_color": "#e34e36",
-                "brand_column_width_mobile": 58,
-                "brand_column_width_desktop": 156,
-                "padding-block-start": 12,
-                "padding-block-end": 12,
+                "quote_font_size": 14,
+                "name_font_size": 15,
+                "credentials_font_size": 12,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-                "product_info_tab_quote_NTrgDE": {
-                  "type": "_product-info-tab-quote",
-                  "settings": {
-                    "tab_label": "Aprobado Por Médicos",
-                    "default_open": true,
-                    "quote": "Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.",
-                    "avatar": "shopify://shop_images/Gemini_Generated_Image_rfee5prfee5prfee.webp",
-                    "author_name": "Dr. Héctor Fernández",
-                    "author_specialty": "Médico certificado"
-                  },
-                  "blocks": {}
-                },
-                "product_info_tab_comparison_7di4eF": {
-                  "type": "_product-info-tab-comparison",
-                  "settings": {
-                    "tab_label": "Tabla Comparativa",
-                    "default_open": false,
-                    "brand_name": "TITAN PEAK",
-                    "others_label": "Otros"
-                  },
-                  "blocks": {
-                    "product_info_comparison_row_rXRGpP": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Concentración 9000mg",
-                        "feature_sub": "Dosis real y potente por porción",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_comparison_row_kCAhz7": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Shilajit purificado",
-                        "feature_sub": "Sin metales pesados ni impurezas",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_comparison_row_WB9jJE": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Fórmula completa",
-                        "feature_sub": "Con Ashwagandha, Rhodiola y Ginseng",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_comparison_row_gGtC6P": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Alta biodisponibilidad",
-                        "feature_sub": "Ácido fúlvico para mejor absorción",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_comparison_row_erQCWy": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Probado en laboratorio independiente",
-                        "feature_sub": "Pureza y potencia verificadas",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_comparison_row_4mKpLq": {
-                      "type": "_product-info-comparison-row",
-                      "settings": {
-                        "feature_name": "Sin rellenos ni aditivos",
-                        "feature_sub": "Ingredientes 100% activos",
-                        "brand_has_feature": true,
-                        "others_has_feature": false
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "product_info_comparison_row_rXRGpP",
-                    "product_info_comparison_row_kCAhz7",
-                    "product_info_comparison_row_WB9jJE",
-                    "product_info_comparison_row_gGtC6P",
-                    "product_info_comparison_row_erQCWy",
-                    "product_info_comparison_row_4mKpLq"
-                  ]
-                },
-                "product_info_tab_ingredients_YEF3Pk": {
-                  "type": "_product-info-tab-ingredients",
-                  "settings": {
-                    "tab_label": "Ingredientes",
-                    "default_open": false,
-                    "name_column_label": "TITAN PEAK",
-                    "mg_column_label": "MG"
-                  },
-                  "blocks": {
-                    "product_info_ingredient_row_7KGC7K": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Shilajit Puro",
-                        "ingredient_sub": "Repone minerales y sube la energía celular",
-                        "ingredient_mg": "9000mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_BE8h7M": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Cúrcuma",
-                        "ingredient_sub": "Antiinflamatorio natural",
-                        "ingredient_mg": "2000mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_Fg9gNT": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Aceite de Comino Negro",
-                        "ingredient_sub": "Apoyo antioxidante y antiinflamatorio",
-                        "ingredient_mg": "4000mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_jb34fV": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Ashwagandha",
-                        "ingredient_sub": "Ayuda a nivelar el cortisol y reducir el estrés",
-                        "ingredient_mg": "2000mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_iqqQjW": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Panax Ginseng",
-                        "ingredient_sub": "Apoya circulación y rendimiento",
-                        "ingredient_mg": "1500mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_NwYmHR": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Rhodiola Rosea",
-                        "ingredient_sub": "Mejora el aguante físico y mental",
-                        "ingredient_mg": "1000mg"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_ingredient_row_y6Krkt": {
-                      "type": "_product-info-ingredient-row",
-                      "settings": {
-                        "ingredient_name": "Musgo Marino (Sea Moss)",
-                        "ingredient_sub": "Aporta minerales y vitaminas extra",
-                        "ingredient_mg": "7000mg"
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "product_info_ingredient_row_7KGC7K",
-                    "product_info_ingredient_row_BE8h7M",
-                    "product_info_ingredient_row_Fg9gNT",
-                    "product_info_ingredient_row_jb34fV",
-                    "product_info_ingredient_row_iqqQjW",
-                    "product_info_ingredient_row_NwYmHR",
-                    "product_info_ingredient_row_y6Krkt"
-                  ]
-                },
-                "product_info_tab_faq_7bjjRy": {
-                  "type": "_product-info-tab-faq",
-                  "settings": {
-                    "tab_label": "Preguntas Frecuentes",
-                    "default_open": false
-                  },
-                  "blocks": {
-                    "product_info_faq_item_LHtX8a": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿Qué es el Shilajit?",
-                        "answer": "<p>Es una resina mineral que se forma naturalmente en las montañas del Himalaya durante siglos. Es rica en ácido fúlvico y más de 80 minerales, y se usa desde hace generaciones para subir energía, fuerza y rendimiento.</p>"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_faq_item_nAJt98": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿Cuánto tiempo tarda en hacer efecto?",
-                        "answer": "<p>La mayoría empieza a notar cambios en energía y menos cansancio desde la primera semana. Los resultados más notorios en fuerza, rendimiento y composición corporal se ven entre las 4 y 8 semanas de uso constante.</p>"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_faq_item_iixHW9": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿Cómo se toma?",
-                        "answer": "<p>1-2 cápsulas al día, de preferencia con alimento y un vaso de agua. No exceder la dosis recomendada.</p>"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_faq_item_xXDGQc": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿Es apto para veganos/vegetarianos?",
-                        "answer": "<p>Sí, la fórmula es 100% de origen vegetal y mineral, sin ingredientes de origen animal. (Verifica esto contra tu etiqueta real antes de publicarlo — solo confírmalo si es cierto para tu producto.)</p>"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_faq_item_RaVwrJ": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿De dónde viene el Shilajit que usan?",
-                        "answer": "<p>Se purifica para eliminar metales pesados e impurezas, dejando solo el mineral activo.</p>"
-                      },
-                      "blocks": {}
-                    },
-                    "product_info_faq_item_4xHPhB": {
-                      "type": "_product-info-faq-item",
-                      "settings": {
-                        "question": "¿Puedo tomarlo si hago ejercicio/gym?",
-                        "answer": "<p>Sí, es compatible con tu rutina de entrenamiento y muchos lo usan justo para apoyar recuperación y rendimiento físico.</p>"
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "product_info_faq_item_LHtX8a",
-                    "product_info_faq_item_nAJt98",
-                    "product_info_faq_item_iixHW9",
-                    "product_info_faq_item_xXDGQc",
-                    "product_info_faq_item_RaVwrJ",
-                    "product_info_faq_item_4xHPhB"
-                  ]
-                }
-              },
-              "block_order": [
-                "product_info_tab_quote_NTrgDE",
-                "product_info_tab_comparison_7di4eF",
-                "product_info_tab_ingredients_YEF3Pk",
-                "product_info_tab_faq_7bjjRy"
-              ]
+              "blocks": {}
             }
           },
           "block_order": [
-            "product_info_tabs_Y3Lxmj"
+            "testimonial_card_YP9xiU"
           ]
         },
         "product-details": {
@@ -773,62 +527,6 @@
                 "product_perk_item_JL9G9Y"
               ]
             },
-            "product_guarantee_banner_gMhF43": {
-              "type": "product-guarantee-banner",
-              "name": "Guarantee banner (badge)",
-              "settings": {
-                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
-                "badge_alt": "",
-                "badge_size_desktop": 68,
-                "badge_size_mobile": 48,
-                "title": "Así de seguros andamos de tus resultados. Pero si no quedas encantado, nos lo regresas y te devolvemos tu dinero.",
-                "title_color": "#1a1a1a",
-                "title_size_desktop": 14,
-                "title_size_mobile": 12,
-                "description": "",
-                "description_color": "#1a1a1a",
-                "description_size": 12,
-                "background_color": "#fdf8ec",
-                "radius": 12,
-                "gap_desktop": 16,
-                "gap_mobile": 12,
-                "padding_block": 12,
-                "padding_inline": 14,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_guarantee_banner_wH9pBT": {
-              "type": "product-guarantee-banner",
-              "name": "Guarantee banner (badge)",
-              "settings": {
-                "badge": "shopify://shop_images/Nuevo_documento_de_texto_5_1e330ac9-08ae-4659-b5b5-647522f63170.svg",
-                "badge_alt": "",
-                "badge_size_desktop": 68,
-                "badge_size_mobile": 48,
-                "title": "CUIDADO CON LAS RÉPLICAS BARATAS",
-                "title_color": "{{ settings.color_palette.background }}",
-                "title_size_desktop": 14,
-                "title_size_mobile": 12,
-                "description": "Solo nuestra marca garantiza la alta calidad del producto utilizado por miles de personas para la vitalidad masculina.",
-                "description_color": "{{ settings.color_palette.background }}",
-                "description_size": 12,
-                "background_color": "#c41731",
-                "radius": 12,
-                "gap_desktop": 16,
-                "gap_mobile": 12,
-                "padding_block": 12,
-                "padding_inline": 14,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_aEtTtq": {
               "type": "text",
               "name": "t:names.product_description",
@@ -856,6 +554,97 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "guarantee_banner_hhMcdB": {
+              "type": "guarantee-banner",
+              "name": "Guarantee banner",
+              "settings": {
+                "icon": "shopify://shop_images/Capa_1.webp",
+                "icon_alt": "Guarantee",
+                "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
+                "background_color": "#FCFAF5",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block_desktop": 12,
+                "padding_inline_desktop": 14,
+                "padding_block_mobile": 10,
+                "padding_inline_mobile": 12,
+                "icon_size_desktop": 56,
+                "icon_size_mobile": 46,
+                "text_size_desktop": 13,
+                "text_size_mobile": 12,
+                "text_weight": "500",
+                "text_color": "#1a1a1a",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "accordion_group_6VBE6R": {
+              "type": "accordion-group",
+              "name": "Accordion group",
+              "settings": {
+                "item_gap": 24,
+                "card_background_color": "#fcfaf5",
+                "card_radius": 12,
+                "trigger_padding_block": 20,
+                "trigger_padding_inline": 24,
+                "trigger_gap": 20,
+                "trigger_hover_color": "#00000008",
+                "focus_color": "#a45b2c",
+                "icon_style": "chevron",
+                "icon_size": 24,
+                "icon_color": "#212529",
+                "title_size": 16,
+                "title_weight": "500",
+                "title_color": "#1a1a1a",
+                "content_padding": 20,
+                "content_size": 15,
+                "content_line_height": 1.6,
+                "content_color": "#212529",
+                "transition_speed": 250,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_item_cMT4CH": {
+                  "type": "_accordion-item",
+                  "settings": {
+                    "title": "Detalles del producto",
+                    "content": "<p>TITAN PEAK ShilaStrength es una solución pura, probada en laboratorio y 100% natural para que los hombres mantengan un rendimiento físico de primera, mente clara, vitalidad y aguante.</p>",
+                    "open_by_default": false
+                  },
+                  "blocks": {}
+                },
+                "accordion_item_yWJAnr": {
+                  "type": "_accordion-item",
+                  "settings": {
+                    "title": "Ingredientes",
+                    "content": "<ul><li><strong>Shilajit puro</strong> (9000mg) aporta ácido fúlvico y más de 80 minerales, apoyando la producción natural de testosterona y la energía celular.</li><li><strong>Ortiga Mayor</strong> ayuda a mantener niveles saludables de testosterona libre, apoyando el equilibrio hormonal.</li><li><strong>Panax Ginseng</strong> y Ginkgo Biloba favorecen la circulación y el flujo sanguíneo, potenciando el rendimiento físico.</li><li><strong>Ashwagandha</strong> ayuda a reducir los niveles de cortisol, favoreciendo la calma, el enfoque y mejor descanso.</li><li><strong>Rhodiola Rosea</strong> reduce la fatiga física y mental, mejorando el aguante ante el estrés.</li><li><strong>Hongo Cordyceps</strong> apoya la producción de energía celular (ATP), favoreciendo resistencia y recuperación.</li><li><strong>Cúrcuma</strong> actúa como antiinflamatorio natural, apoyando la recuperación muscular.</li></ul>",
+                    "open_by_default": false
+                  },
+                  "blocks": {}
+                },
+                "accordion_item_BKxH6f": {
+                  "type": "_accordion-item",
+                  "settings": {
+                    "title": "Shipping & Returns",
+                    "content": "<p>• <strong>Free Shipping:</strong> We offer free standard shipping on all orders.<br>• <strong>Delivery Area:</strong> We currently ship within the United States. Orders typically arrive within <strong>5 days</strong> after processing, depending on the destination.<br><br>We accept returns under the following conditions:<br>• <strong>Return Window:</strong> Items must be returned within 14 days of delivery.<br>• <strong>Item Condition:</strong> Items must be unused, unopened, and in their original packaging.<br>• <strong>Proof of Purchase:</strong> A receipt or order number is required for all returns.</p>",
+                    "open_by_default": false
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "accordion_item_cMT4CH",
+                "accordion_item_yWJAnr",
+                "accordion_item_BKxH6f"
+              ]
             }
           },
           "block_order": [
@@ -867,9 +656,9 @@
             "product_stock_delivery_aBe8eb",
             "buy_buttons_eYQEYi",
             "product_perks_AtCRD4",
-            "product_guarantee_banner_gMhF43",
-            "product_guarantee_banner_wH9pBT",
-            "text_aEtTtq"
+            "text_aEtTtq",
+            "guarantee_banner_hhMcdB",
+            "accordion_group_6VBE6R"
           ]
         }
       },

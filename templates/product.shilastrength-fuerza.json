@@ -979,7 +979,7 @@
         "card_content_padding_tablet": 20,
         "card_content_padding_desktop": 25,
         "container_max_width": 1200,
-        "background_color": "{{ settings.color_palette.background }}",
+        "background_color": "#FCFAF5",
         "corner_radius": 0,
         "padding_top": 40,
         "padding_right": 20,

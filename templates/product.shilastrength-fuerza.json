@@ -1,0 +1,2091 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "disclosures_g9mWze": {
+          "type": "disclosures",
+          "name": "t:names.disclosures",
+          "settings": {
+            "heading": "Disclosures",
+            "heading_preset": "h5",
+            "open_by_default": false,
+            "icon": "caret",
+            "disclosure_heading_preset": "h6",
+            "text_color": "",
+            "dividers": true,
+            "divider_color": "{{ settings.color_palette.color2 }}",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "aspect_ratio": "1",
+            "media_radius": 0,
+            "media_background_color": "#fcfaf5",
+            "extend_media": false,
+            "hide_variants": true,
+            "video_loop": false,
+            "show_thumbnails": true,
+            "thumbnail_size": 110,
+            "thumbnail_gap": 10,
+            "thumbnail_radius": 10,
+            "active_thumbnail_color": "#c9a84c",
+            "thumbnail_inactive_opacity": 50,
+            "show_nav_arrows": true,
+            "nav_button_size": 44,
+            "nav_button_background": "#ffffffe6",
+            "nav_icon_color": "#1a1a1a",
+            "enable_swipe": true,
+            "loop_navigation": false,
+            "transition_speed": 250,
+            "margin_bottom": 16,
+            "blocks_gap": 16,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 16,
+            "sticky_details_desktop": false,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "rating_badge_jfcHVn": {
+              "type": "rating-badge",
+              "name": "Rating badge",
+              "settings": {
+                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "icon_count": 5,
+                "icon_color": "#ff4c01",
+                "icon_size": 18,
+                "icon_size_mobile": 18,
+                "icon_gap": 2,
+                "content_gap": 8,
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_icgrde": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "2rem",
+                    "font_size_mobile": "1.5rem",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "balance",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "icon_benefits_L9Gjr3": {
+                  "type": "icon-benefits",
+                  "name": "Icon benefits",
+                  "settings": {
+                    "columns": "1",
+                    "items_gap": 16,
+                    "icon_gap": 11,
+                    "title_size": 16,
+                    "title_weight": "700",
+                    "description_size": 16,
+                    "title_color": "",
+                    "description_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "icon_benefits_item_jCh4aT": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "60 gomitas por envase",
+                        "description": "<p>Te alcanza para 2 meses completos, para que no interrumpas tu rutina.</p>",
+                        "icon": "lightning_bolt",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_bDBy68": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Erecciones más firmes y duraderas, con flujo sanguíneo al máximo",
+                        "description": "<p>Un extra de circulación y rendimiento para que te sientas al cien en todo momento.</p>",
+                        "icon": "leaf",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_KVrADW": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Sube tu testosterona, tus ganas y tu hombría.",
+                        "description": "<p>Recupera tu fuerza, tu deseo y tu confianza de forma natural.</p>",
+                        "icon": "fire",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
+                      },
+                      "blocks": {}
+                    },
+                    "icon_benefits_item_4ja3AY": {
+                      "type": "_icon-benefits-item",
+                      "settings": {
+                        "title": "Mayor confianza",
+                        "description": "<p>Menos cortisol, más confianza, control total.</p>",
+                        "icon": "check_box",
+                        "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
+                        "icon_size": 30
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "icon_benefits_item_jCh4aT",
+                    "icon_benefits_item_bDBy68",
+                    "icon_benefits_item_KVrADW",
+                    "icon_benefits_item_4ja3AY"
+                  ]
+                },
+                "price_tVjtKg": {
+                  "type": "price",
+                  "disabled": true,
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "collection_sale_price_color": "",
+                    "collection_regular_price_color": "",
+                    "padding-block-start": 4,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG",
+                "icon_benefits_L9Gjr3",
+                "price_tVjtKg"
+              ]
+            },
+            "image_popup_fwdVY7": {
+              "type": "image-popup",
+              "name": "Image popup",
+              "disabled": true,
+              "settings": {
+                "trigger_text": "Información Suplementaria",
+                "trigger_font_size": 20,
+                "trigger_font_weight": "700",
+                "trigger_underline": true,
+                "trigger_color": "",
+                "image": "shopify://shop_images/Gemini_Generated_Image_ovt39iovt39iovt3-clean.webp",
+                "image_fit": "contain",
+                "image_radius": 8,
+                "text": "",
+                "modal_width": 500,
+                "modal_radius": 12,
+                "modal_content_padding": 20,
+                "overlay_color": "",
+                "close_button_size": 40,
+                "close_button_background": "",
+                "close_button_icon_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "divider_VJhene": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_stock_delivery_aBe8eb": {
+              "type": "product-stock-delivery",
+              "name": "Product stock & delivery",
+              "settings": {
+                "show_stock": true,
+                "inventory_threshold": 10,
+                "show_inventory_quantity": false,
+                "pulse_animation": true,
+                "in_stock_color": "",
+                "low_stock_color": "",
+                "out_of_stock_color": "",
+                "in_stock_text": "Stock disponible",
+                "low_stock_text": "",
+                "out_of_stock_text": "",
+                "show_delivery": true,
+                "delivery_icon_size": 24,
+                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "alignment": "center",
+                "gap": 20,
+                "font_size_desktop": 14,
+                "font_size_mobile": 11,
+                "text_color": "",
+                "padding-block-start": 4,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "product_perks_AtCRD4": {
+              "type": "product-perks",
+              "name": "Product perks",
+              "settings": {
+                "mobile_layout": "grid",
+                "desktop_alignment": "space-between",
+                "gap": 8,
+                "icon_size": 16,
+                "icon_gradient_start": "#e7b944",
+                "icon_gradient_end": "#ffed68",
+                "icon_center_color": "#1a1a1a",
+                "text_color": "#1a1a1a",
+                "text_size": 12,
+                "text_weight": "500",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_perk_item_xGcHyk": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Devolución en 60 días"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_MmL3Hr": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Envío rápido"
+                  },
+                  "blocks": {}
+                },
+                "product_perk_item_JL9G9Y": {
+                  "type": "_product-perk-item",
+                  "settings": {
+                    "text": "Cancela cuando tú quieras"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_perk_item_xGcHyk",
+                "product_perk_item_MmL3Hr",
+                "product_perk_item_JL9G9Y"
+              ]
+            },
+            "product_guarantee_banner_gMhF43": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
+              "settings": {
+                "badge": "shopify://shop_images/754258bf56e05c11cd08917b7745e1c5d4fe6dab.webp",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "Así de seguros andamos de tus resultados. Pero si no quedas encantado, nos lo regresas y te devolvemos tu dinero.",
+                "title_color": "#1a1a1a",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "",
+                "description_color": "#1a1a1a",
+                "description_size": 12,
+                "background_color": "#fdf8ec",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_guarantee_banner_wH9pBT": {
+              "type": "product-guarantee-banner",
+              "name": "Guarantee banner (badge)",
+              "settings": {
+                "badge": "shopify://shop_images/Nuevo_documento_de_texto_5_1e330ac9-08ae-4659-b5b5-647522f63170.svg",
+                "badge_alt": "",
+                "badge_size_desktop": 68,
+                "badge_size_mobile": 48,
+                "title": "CUIDADO CON LAS RÉPLICAS BARATAS",
+                "title_color": "{{ settings.color_palette.background }}",
+                "title_size_desktop": 14,
+                "title_size_mobile": 12,
+                "description": "Solo nuestra marca garantiza la alta calidad del producto utilizado por miles de personas para la vitalidad masculina.",
+                "description_color": "{{ settings.color_palette.background }}",
+                "description_size": 12,
+                "background_color": "#c41731",
+                "radius": 12,
+                "gap_desktop": 16,
+                "gap_mobile": 12,
+                "padding_block": 12,
+                "padding_inline": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "testimonial_card_NmKLDf": {
+              "type": "testimonial-card",
+              "name": "Testimonial card",
+              "settings": {
+                "avatar_image": "shopify://shop_images/personamexicana-clean_343daa89-82a6-44e7-a153-32d8add33526.webp",
+                "quote": "<p>Empecé a tomar TITAN PEAK Shilajit sobre todo por la energía, pero en un par de semanas noté bastante más que eso. Mi aguante mejoró, dejé de andar con el bajón de la tarde, y hasta mi ánimo se sintió más parejo. Lo que más me sorprendió fue lo mucho más marcado que me veía: menos hinchado, la cara más definida, y recuperé la confianza. Este es el primer suplemento que de verdad sentí que hacía algo.</p>",
+                "reviewer_name": "Daniel J. 52 Años",
+                "reviewer_title": "",
+                "show_verified_badge": true,
+                "verified_badge_text": "",
+                "verified_text_color": "#76af6d",
+                "verified_icon_color": "#1a8400",
+                "verified_font_size": 11,
+                "width": "100%",
+                "stack_on_mobile": true,
+                "avatar_size": 100,
+                "avatar_size_mobile": 80,
+                "gap": 16,
+                "background_color": "#fcfaf5",
+                "corner_radius": 12,
+                "card_padding": 16,
+                "text_color": "#1a1a1a",
+                "quote_font_size": 14,
+                "name_font_size": 15,
+                "credentials_font_size": 12,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_aEtTtq": {
+              "type": "text",
+              "name": "t:names.product_description",
+              "disabled": true,
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "font_size_mobile": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "rating_badge_jfcHVn",
+            "group_icgrde",
+            "image_popup_fwdVY7",
+            "divider_VJhene",
+            "variant_picker_R3rGDr",
+            "product_stock_delivery_aBe8eb",
+            "buy_buttons_eYQEYi",
+            "product_perks_AtCRD4",
+            "product_guarantee_banner_gMhF43",
+            "product_guarantee_banner_wH9pBT",
+            "testimonial_card_NmKLDf",
+            "text_aEtTtq"
+          ]
+        }
+      },
+      "block_order": [
+        "disclosures_g9mWze"
+      ],
+      "settings": {
+        "custom_id": "product-information",
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": true,
+        "limit_details_width": false,
+        "gap": 24,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 64,
+        "padding-block-start-mobile": 0,
+        "padding-block-end": 64,
+        "padding-block-end-mobile": 0
+      }
+    },
+    "product_recommendations_qggXJq": {
+      "type": "product-recommendations",
+      "blocks": {
+        "text_cbcgyb": {
+          "type": "text",
+          "name": "t:names.header",
+          "settings": {
+            "text": "<h3>You may also like </h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_DNizbJ": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_M7MJkb": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_gLWgA6": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "collection_sale_price_color": "",
+                "collection_regular_price_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_DNizbJ",
+            "product_title_M7MJkb",
+            "price_gLWgA6"
+          ]
+        }
+      },
+      "block_order": [
+        "text_cbcgyb"
+      ],
+      "disabled": true,
+      "name": "t:names.product_recommendations",
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 12,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "before_after_slider_iCKGyt": {
+      "type": "before-after-slider",
+      "blocks": {
+        "before_after_slide_WxBRmW": {
+          "type": "_before-after-slide",
+          "name": "Before/after slide",
+          "settings": {
+            "category": "All",
+            "before_image": "shopify://shop_images/persona.webp",
+            "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona2.webp",
+            "after_label": "Después de 3 meses"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_BGDt7q": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Body composition",
+            "before_image": "shopify://shop_images/persona3antes.webp",
+            "before_label": "Antes",
+            "after_image": "shopify://shop_images/Gemini_Generated_Image_2hghy52hghy52hgh-clean.webp",
+            "after_label": "Después de 4 semanas"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_tx8fma": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Energy levels",
+            "before_image": "shopify://shop_images/persona4antes.webp",
+            "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona4despues.webp",
+            "after_label": "Después de 6 semanas"
+          },
+          "blocks": {}
+        },
+        "before_after_slide_A3PpB9": {
+          "type": "_before-after-slide",
+          "settings": {
+            "category": "Body composition",
+            "before_image": "shopify://shop_images/persona5antes.webp",
+            "before_label": "Antes",
+            "after_image": "shopify://shop_images/persona5despues.webp",
+            "after_label": "Después de 8 semanas"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "before_after_slide_WxBRmW",
+        "before_after_slide_BGDt7q",
+        "before_after_slide_tx8fma",
+        "before_after_slide_A3PpB9"
+      ],
+      "name": "Before/after slider",
+      "settings": {
+        "heading": "<p>MI TESTOSTERONA SE TRIPLICÓ <strong>Y MI MUJER LO NOTÓ ENSEGUIDA</strong></p>",
+        "heading_color": "{{ settings.color_palette.background }}",
+        "heading_accent_color": "#c9a84c",
+        "heading_size_mobile": 30,
+        "heading_size_desktop": 42,
+        "subheading": "<p>Mira las transformaciones y resultados increíbles que dan nuestras gomitas.</p>",
+        "subheading_color": "#666666",
+        "subheading_size": 18,
+        "header_gap_mobile": 20,
+        "header_gap_desktop": 30,
+        "show_filters": true,
+        "all_filter_label": "All",
+        "filter_group_label": "Filter results by category",
+        "filter_bg_color": "{{ settings.color_palette.background }}",
+        "filter_text_color": "#333333",
+        "filter_border_color": "#e0e0e0",
+        "filter_active_bg_color": "{{ settings.color_palette.background }}",
+        "filter_active_text_color": "#ffffff",
+        "filter_active_border_color": "{{ settings.color_palette.background }}",
+        "filter_radius": 8,
+        "desktop_columns": 3,
+        "tablet_columns": 2,
+        "mobile_slide_width": 100,
+        "items_gap_desktop": 24,
+        "items_gap_mobile": 16,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_bg_color": "#ffffff",
+        "arrow_icon_color": "#000000",
+        "arrow_border_color": "#e0e0e0",
+        "arrow_hover_bg_color": "#eaeaea",
+        "arrow_hover_icon_color": "#000000",
+        "arrow_hover_border_color": "#cccccc",
+        "arrow_size": 40,
+        "arrow_border_width": 1,
+        "arrow_radius": 50,
+        "arrow_gap": 20,
+        "show_pagination": false,
+        "pagination_label": "Slide navigation",
+        "dot_color": "#cccccc",
+        "dot_active_color": "#121212",
+        "dot_size": 8,
+        "dot_gap": 8,
+        "image_ratio": "square",
+        "images_gap": 4,
+        "image_radius": 6,
+        "image_border_width": 0,
+        "image_border_color": "#e0e0e0",
+        "before_label_bg_color": "#e8e8e8",
+        "before_label_text_color": "#000000",
+        "after_label_bg_color": "#c9a84c",
+        "after_label_text_color": "#ffffff",
+        "label_radius": 6,
+        "label_font_size": 13,
+        "card_background_color": "",
+        "card_radius": 6,
+        "card_padding": 8,
+        "container_max_width": 1400,
+        "background_color": "#13141d",
+        "padding-block-start": 60,
+        "padding-block-end": 40,
+        "padding-inline-start": 40,
+        "padding-inline-end": 40
+      }
+    },
+    "roadmap_QB8dKq": {
+      "type": "roadmap",
+      "blocks": {
+        "roadmap_step_FGXRgP": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "fire",
+            "badge": "Día 7",
+            "title": "Encendido",
+            "description": "<p>✔ El Shilajit empieza a reponer los minerales que traías agotados<br/>✔ El cortisol empieza a nivelarse → menos hinchazón y retención<br/>✔ Menos cansancio, más ganas de moverte en el día</p>"
+          },
+          "blocks": {}
+        },
+        "roadmap_step_6bmYCK": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "lightning_bolt",
+            "badge": "Día 21",
+            "title": "Chispa",
+            "description": "<p>✔ El ácido fúlvico ayuda a absorber mejor los nutrientes y a subir la energía celular<br/>✔ El apoyo a la testosterona ya se empieza a notar → más ganas y más confianza<br/>✔ Notas mejor circulación y rendimiento<br/>✔ El cuerpo se empieza a ver más firme, menos volumen en panza y pecho</p>"
+          },
+          "blocks": {}
+        },
+        "roadmap_step_MtraAg": {
+          "type": "_roadmap-step",
+          "settings": {
+            "icon": "plane",
+            "badge": "Semana 8",
+            "title": "DESPEGUE",
+            "description": "<p>✔ Testosterona, energía y rendimiento andan arriba de forma constante<br/>✔ Mejor circulación y aguante físico<br/>✔ Te ves más marcado, te recuperas mejor y traes energía todo el día</p>"
+          },
+          "blocks": {}
+        },
+        "static-roadmap-button": {
+          "type": "button",
+          "static": true,
+          "settings": {
+            "label": "Shop now",
+            "link": "",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "roadmap_step_FGXRgP",
+        "roadmap_step_6bmYCK",
+        "roadmap_step_MtraAg"
+      ],
+      "name": "Roadmap",
+      "settings": {
+        "heading": "<p>QUÉ ESPERAR EN <strong>MENOS DE 8 SEMANAS</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_size": 42,
+        "accent_gradient_start": "#b8b8b8",
+        "accent_gradient_end": "#a3a3a3",
+        "subheading": "",
+        "subheading_color": "#ffffff",
+        "subheading_size": 14,
+        "header_gap": 40,
+        "image_position": "right",
+        "image_radius": 10,
+        "image_gap": 60,
+        "enable_scroll_animation": true,
+        "line_color": "#c9a84c",
+        "fill_color": "#f0d78c",
+        "line_width": 2,
+        "item_indent": 50,
+        "item_gap_desktop": 35,
+        "item_gap_mobile": 15,
+        "circle_bg_color": "#c9a84c",
+        "circle_size": 30,
+        "circle_icon_color": "#ffffff",
+        "badge_bg_color": "#c9a84c",
+        "badge_text_color": "#ffffff",
+        "badge_radius": 50,
+        "badge_size": 13,
+        "title_color": "#ffffff",
+        "title_size": 23,
+        "description_color": "#ffffff",
+        "description_size": 14,
+        "bullet_color": "#c9a84c",
+        "show_button": false,
+        "container_max_width": 1400,
+        "container_padding": 80,
+        "background_color": "",
+        "background_gradient_start": "#1c3353",
+        "background_gradient_end": "#141720",
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
+    "testimonial_peek_carousel_x93CVU": {
+      "type": "testimonial-peek-carousel",
+      "blocks": {
+        "testimonial_peek_card_fEVKKU": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Esto arregló lo que yo creía que era pura vejez.\"</strong></p><p>\"Pensaba que andar cansado todo el tiempo era lo normal. Después de unas semanas me regresó la energía, mejoré en mis entrenos y volví a sentirme yo mismo.\"<br/></p>",
+            "star_count": 5,
+            "reviewer_name": "Omar H. 49 Años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_YDkHEr": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Bruno C 37 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_jTWxeG": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"La neta no esperaba mucho, pero la mejora en circulación es real.\"</strong></p><p>\"Ando más despierto, con más energía, y se nota la diferencia: mejor rendimiento, más aguante y bastante más confianza.\"<br/><br/></p>",
+            "star_count": 5,
+            "reviewer_name": "Marcos M. 52 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_hBtJPV": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Beto T. 42 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_FWMByT": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Rostro más marcado, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que traía la cara menos hinchada y más definida. Nomás con eso ya se me subió la confianza una barbaridad.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Kevin R. 54 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_mf6N8b": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome las tardes. Con esto recuperé las ganas de hacer algo después del jale, no solo tirarme en el sillón.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Rubén A. 45 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        },
+        "testimonial_peek_card_fMeJwF": {
+          "type": "_testimonial-peek-card",
+          "settings": {
+            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
+            "star_count": 5,
+            "reviewer_name": "Iván G. 44 años",
+            "show_verified": true,
+            "verified_text": "Comprador Verificado"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "testimonial_peek_card_fEVKKU",
+        "testimonial_peek_card_YDkHEr",
+        "testimonial_peek_card_jTWxeG",
+        "testimonial_peek_card_hBtJPV",
+        "testimonial_peek_card_FWMByT",
+        "testimonial_peek_card_mf6N8b",
+        "testimonial_peek_card_fMeJwF"
+      ],
+      "name": "Testimonial peek carousel",
+      "settings": {
+        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 34,
+        "heading_size_desktop": 42,
+        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
+        "subheading_color": "#ffffff",
+        "subheading_size": 14,
+        "header_gap": 20,
+        "header_bottom_gap_mobile": 30,
+        "header_bottom_gap_desktop": 40,
+        "container_max_width": 1600,
+        "container_padding": 20,
+        "container_padding_mobile": 15,
+        "card_width_desktop": 300,
+        "card_width_mobile": 85,
+        "items_gap": 20,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "arrow_background_color": "#0f203e",
+        "arrow_border_color": "#c9a84c",
+        "arrow_border_width": 1,
+        "arrow_icon_color": "#ffffff",
+        "arrow_size": 40,
+        "arrow_radius": 25,
+        "arrow_gap": 12,
+        "card_background_color": "#0f203e",
+        "card_border_color": "#e8d5a3",
+        "card_border_width": 1,
+        "card_radius": 6,
+        "card_padding": 24,
+        "card_content_gap": 8,
+        "card_min_height": 200,
+        "star_color": "#ffc347",
+        "star_size": 20,
+        "star_gap": 0,
+        "quote_color": "#ffffff",
+        "quote_font_size": 14,
+        "avatar_size": 40,
+        "avatar_background_color": "#0c0c0d",
+        "avatar_text_color": "#c9a84c",
+        "name_color": "#ffffff",
+        "name_font_size": 14,
+        "verified_color": "#c9a84c",
+        "verified_check_color": "#ffffff",
+        "verified_font_size": 12,
+        "background_color": "#141720",
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
+    "image_with_text_x998Hz": {
+      "type": "image-with-text",
+      "blocks": {
+        "image_text_paragraph_A8DRRB": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p><strong>Conforme los hombres se hacen grandes, los minerales esenciales se les agotan por el estrés, el mal dormir y las toxinas de hoy en día.</strong></p><p>Estos minerales son la base para la producción de energía, el equilibrio hormonal y la circulación.</p><p>Cuando a tu cuerpo se le acaban, todo se pone lento: desde tu aguante y tu recuperación hasta tu concentración y tu rendimiento.</p>",
+            "text_color": "#ffffff",
+            "font_size_mobile": 1,
+            "font_size_desktop": 1.2,
+            "margin_top": 0,
+            "margin_bottom": 12
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_HDVqdr": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Poca Energía y Fatiga",
+            "icon_style": "cross",
+            "icon_color": "#ba3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_KLWmbJ": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Menos Concentración y Claridad Mental",
+            "icon_style": "cross",
+            "icon_color": "#ba3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_3HTTYM": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Recuperación y Resistencia Más Lentas",
+            "icon_style": "cross",
+            "icon_color": "#ba3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_list_item_79T9Ab": {
+          "type": "_image-text-list-item",
+          "settings": {
+            "label": "Peor Circulación y Rendimiento",
+            "icon_style": "cross",
+            "icon_color": "#ba3030",
+            "background_color": "#c54e4e33",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "border_width": 1,
+            "border_radius": 6,
+            "padding_block": 11,
+            "padding_inline": 10
+          },
+          "blocks": {}
+        },
+        "image_text_paragraph_RBM7ie": {
+          "type": "_image-text-paragraph",
+          "settings": {
+            "text": "<p>Los resultados varían. Los beneficios del producto se basan en investigación sobre los ingredientes y experiencias reportadas por consumidores.</p>",
+            "text_color": "#ffffff",
+            "font_size_mobile": 0.8,
+            "font_size_desktop": 0.9,
+            "margin_top": 12,
+            "margin_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_text_paragraph_A8DRRB",
+        "image_text_list_item_HDVqdr",
+        "image_text_list_item_KLWmbJ",
+        "image_text_list_item_3HTTYM",
+        "image_text_list_item_79T9Ab",
+        "image_text_paragraph_RBM7ie"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_vl9j4gvl9j4gvl9j-clean_1.webp",
+        "image_alt": "",
+        "image_link": "",
+        "image_max_width": 800,
+        "image_radius": 8,
+        "image_position": "left",
+        "text_alignment": "center",
+        "column_gap_mobile": 30,
+        "column_gap_desktop": 40,
+        "list_columns": "2",
+        "list_gap": 8,
+        "list_font_size_mobile": 0.9,
+        "list_font_size_desktop": 1,
+        "container_max_width": 1200,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 80,
+        "background_gradient_start": "#141720",
+        "background_gradient_end": "#172437",
+        "background_gradient_angle": 180,
+        "corner_radius": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "benefits_grid_fzhgP8": {
+      "type": "benefits-grid",
+      "blocks": {
+        "benefit_item_ztFTYB": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "stopwatch",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_5.svg",
+            "title": "Energía",
+            "description": "<p>Ayuda a sostener la energía durante el día, el aguante y el rendimiento físico.</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_kMpVTt": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "lock",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_6.svg",
+            "title": "Concentración",
+            "description": "<p>Te ayuda a tener la mente más clara, más impulso y más agudeza.</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_C7b7ni": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "recycle",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_7.svg",
+            "title": "Recuperación",
+            "description": "<p>Ayuda a que te recuperes más rápido, con más aguante y capacidad de resistencia.</p>"
+          },
+          "blocks": {}
+        },
+        "benefit_item_atiEbM": {
+          "type": "_benefit-item",
+          "settings": {
+            "icon": "check_box",
+            "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_8.svg",
+            "title": "Vitalidad",
+            "description": "<p>Le echa la mano a tu testosterona, tu fuerza y tu rendimiento como hombre.</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "benefit_item_ztFTYB",
+        "benefit_item_kMpVTt",
+        "benefit_item_C7b7ni",
+        "benefit_item_atiEbM"
+      ],
+      "name": "Benefits grid",
+      "settings": {
+        "heading": "<p>LO QUE TU CUERPO ESTÁ<strong> PERDIENDO</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 42,
+        "subheading": "Tu energía, tus ganas y tu rendimiento no nomás se van desvaneciendo, van bajando a medida que tu cuerpo se queda sin minerales esenciales.",
+        "subheading_color": "#d1d1d1",
+        "subheading_size_mobile": 14,
+        "subheading_size_desktop": 16,
+        "header_gap_mobile": 0,
+        "header_gap_desktop": 0,
+        "image": "shopify://shop_images/porductfix9-clean.webp",
+        "desktop_image_position": "right",
+        "mobile_image_position": "after_header",
+        "image_radius": 15,
+        "container_max_width": 1200,
+        "container_padding": 20,
+        "content_gap_mobile": 30,
+        "content_gap_desktop": 40,
+        "columns_mobile": "2",
+        "columns_desktop": 2,
+        "items_gap": 20,
+        "icon_background_start": "#c9a84c",
+        "icon_background_end": "#e8d5a3",
+        "icon_border_color": "#c9a84c",
+        "icon_border_width": 1,
+        "icon_radius": 22,
+        "icon_color": "#ffffff",
+        "icon_size_mobile": 60,
+        "icon_size_desktop": 80,
+        "icon_inner_size_mobile": 30,
+        "icon_inner_size_desktop": 32,
+        "icon_gap": 20,
+        "title_color": "#ffffff",
+        "title_size_mobile": 18,
+        "title_size_desktop": 20,
+        "description_color": "#bababa",
+        "description_size_mobile": 12,
+        "description_size_desktop": 15,
+        "background_color_start": "#1c3353",
+        "background_color_end": "#131820",
+        "padding-block-start": 40,
+        "padding-block-end": 60
+      }
+    },
+    "cards_grid_g9pUdw": {
+      "type": "cards-grid",
+      "blocks": {
+        "cards_grid_item_WBBMiB": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
+            "image_alt": "",
+            "title": "ENERGÍA Y AGUANTE",
+            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_AG6dAF": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
+            "image_alt": "",
+            "title": "CORTISOL Y ESTRÉS",
+            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_TYttpE": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
+            "image_alt": "",
+            "title": "TESTOSTERONA Y DESEO",
+            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_NHTjXq": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
+            "image_alt": "",
+            "title": "CIRCULACIÓN Y RENDIMIENTO",
+            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "cards_grid_item_WBBMiB",
+        "cards_grid_item_AG6dAF",
+        "cards_grid_item_TYttpE",
+        "cards_grid_item_NHTjXq"
+      ],
+      "name": "Cards grid",
+      "settings": {
+        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 52,
+        "heading_accent_gradient_start": "#b8b8b8",
+        "heading_accent_gradient_end": "#ffffff",
+        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
+        "subtitle_color": "#ffffff",
+        "subtitle_size_mobile": 16,
+        "subtitle_size_desktop": 18,
+        "header_gap_mobile": 40,
+        "header_gap_desktop": 60,
+        "card_image_position": "left",
+        "columns_mobile": 1,
+        "columns_tablet": 4,
+        "columns_desktop": 2,
+        "grid_gap_mobile": 15,
+        "grid_gap_tablet": 18,
+        "grid_gap_desktop": 25,
+        "card_background_color": "#e8d5a3",
+        "card_border_color": "#c9a84c",
+        "card_border_width": 1,
+        "card_border_radius": 12,
+        "card_image_size_mobile": 100,
+        "card_image_size_tablet": 150,
+        "card_image_size_desktop": 152,
+        "card_image_radius": 8,
+        "card_image_inset": 10,
+        "card_title_color": "#0e101a",
+        "card_title_size_mobile": 14,
+        "card_title_size_desktop": 22,
+        "card_description_color": "#0e101a",
+        "card_description_size_mobile": 12,
+        "card_description_size_desktop": 14,
+        "card_content_padding_mobile": 15,
+        "card_content_padding_tablet": 20,
+        "card_content_padding_desktop": 25,
+        "container_max_width": 1200,
+        "background_color": "#1c3353",
+        "corner_radius": 0,
+        "padding_top": 40,
+        "padding_right": 20,
+        "padding_bottom": 60,
+        "padding_left": 20
+      }
+    },
+    "image_with_text_accordion_UUVGUG": {
+      "type": "image-with-text-accordion",
+      "blocks": {
+        "image_text_accordion_paragraph_gYmm3Y": {
+          "type": "_image-text-accordion-paragraph",
+          "settings": {
+            "text": "<p>La mayoría de los suplementos se esconden detrás de etiquetas vagas. TITAN PEAK Shilajit está probado de forma independiente y es totalmente transparente, para que sepas exactamente qué te estás metiendo al cuerpo.</p>",
+            "text_color": "#e8d5a3",
+            "font_size_mobile": 0.8,
+            "font_size_desktop": 0.9,
+            "margin_top": 10,
+            "margin_bottom": 10
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_6nKKR3": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Probado por Laboratorios Externos para Pureza y Seguridad",
+            "answer": "<p>Cada lote se analiza en laboratorios independientes para descartar metales pesados, contaminantes, y confirmar que es cien por ciento auténtico.</p>",
+            "open_by_default": true
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_Nik8ej": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "82.8% de Ácido Fúlvico de Potencia Verificada",
+            "answer": "<p>Una de las concentraciones de ácido fúlvico más altas que hay en el mercado: el indicador clave de que estás ante un Shilajit del Himalaya auténtico y de verdad potente.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_item_4AtheR": {
+          "type": "_image-text-accordion-item",
+          "settings": {
+            "question": "Transparencia Total — Informes de Laboratorio Disponibles",
+            "answer": "<p>Con orgullo mostramos nuestros resultados de laboratorio en línea, para que nunca te quede la duda sobre la calidad o la potencia.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "divider_ENnn3p": {
+          "type": "_divider",
+          "settings": {
+            "thickness": 2,
+            "corner_radius": "square",
+            "divider_color": "#000000",
+            "width_percent": 50,
+            "padding-block-start": 20,
+            "padding-block-end": 20
+          },
+          "blocks": {}
+        },
+        "image_text_accordion_button_JhX6Yi": {
+          "type": "_image-text-accordion-button",
+          "settings": {
+            "label": "COMPRAR AHORA",
+            "link": "#product-information",
+            "open_in_new_tab": false,
+            "full_width": true,
+            "background_color": "#c9a84c",
+            "text_color": "#ffffff",
+            "corner_radius": 5,
+            "font_size_mobile": 16,
+            "font_size_desktop": 16,
+            "padding_block": 12,
+            "padding_inline": 24,
+            "margin_top": 0,
+            "margin_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "image_text_accordion_paragraph_gYmm3Y",
+        "image_text_accordion_item_6nKKR3",
+        "image_text_accordion_item_Nik8ej",
+        "image_text_accordion_item_4AtheR",
+        "divider_ENnn3p",
+        "image_text_accordion_button_JhX6Yi"
+      ],
+      "name": "Image with accordion",
+      "settings": {
+        "image": "shopify://shop_images/suplemento-clean.webp",
+        "image_alt": "",
+        "image_link": "",
+        "image_max_width": 800,
+        "image_radius": 8,
+        "image_position": "left",
+        "text_alignment": "center",
+        "heading_above_image_mobile": true,
+        "column_gap_mobile": 16,
+        "column_gap_desktop": 40,
+        "heading": "PUREZA VERIFICADA-",
+        "heading_accent": "POTENCIA COMPROBADA",
+        "heading_color": "#ffffff",
+        "heading_accent_color": "#e8d5a3",
+        "heading_size_mobile": 24,
+        "heading_size_desktop": 38,
+        "heading_margin_bottom": 25,
+        "accordion_single_open": true,
+        "accordion_header_bg": "#000000",
+        "accordion_header_text_color": "#e8d5a3",
+        "accordion_content_bg": "#e8d5a3",
+        "accordion_content_text_color": "#ffffff",
+        "accordion_border_color": "#c9a84c",
+        "accordion_border_width": 1,
+        "accordion_radius": 8,
+        "accordion_item_spacing": 8,
+        "accordion_header_font_size_mobile": 16,
+        "accordion_header_font_size_desktop": 18,
+        "accordion_content_font_size_mobile": 14,
+        "accordion_content_font_size_desktop": 16,
+        "accordion_header_padding_mobile": 16,
+        "accordion_header_padding_desktop": 20,
+        "accordion_content_padding_mobile": 16,
+        "accordion_content_padding_desktop": 20,
+        "accordion_toggle_size_mobile": 20,
+        "accordion_toggle_size_desktop": 24,
+        "container_max_width": 1200,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 20,
+        "background_color": "#1c3353",
+        "corner_radius": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "statistics_grid_nd3JDq": {
+      "type": "statistics-grid",
+      "blocks": {
+        "statistics_grid_item_tdEwTq": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "94%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>reportó una energía diaria más pareja durante el primer mes.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_qm6pK3": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "91%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>sintió una mejora en su ánimo y equilibrio emocional general.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_PFCirN": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "96%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>notó mayor claridad mental y concentración.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        },
+        "statistics_grid_item_AzEgA7": {
+          "type": "_statistics-grid-item",
+          "settings": {
+            "display_style": "number",
+            "value": "90%",
+            "percentage": 90,
+            "title": "",
+            "description": "<p>reportó mejor circulación y vitalidad sexual.</p>",
+            "show_card_background": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "statistics_grid_item_tdEwTq",
+        "statistics_grid_item_qm6pK3",
+        "statistics_grid_item_PFCirN",
+        "statistics_grid_item_AzEgA7"
+      ],
+      "name": "Statistics grid",
+      "settings": {
+        "heading": "LA PRUEBA ESTÁ",
+        "heading_accent": "EN LOS NÚMEROS",
+        "heading_color": "#ffffff",
+        "heading_accent_dark": "#a3a3a3",
+        "heading_accent_light": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 52,
+        "subheading": "Mejoras reportadas por los mismos hombres que hicieron de TITAN PEAK parte de su rutina diaria.",
+        "subheading_color": "#ffffff",
+        "subheading_size_mobile": 14,
+        "subheading_size_desktop": 14,
+        "header_gap": 40,
+        "columns_mobile": "2",
+        "columns_tablet": 2,
+        "columns_desktop": 4,
+        "items_gap_mobile": 8,
+        "items_gap_tablet": 20,
+        "items_gap_desktop": 20,
+        "grid_max_width_mobile": 500,
+        "grid_max_width_tablet": 600,
+        "card_background_color": "#ffffff",
+        "card_radius": 10,
+        "card_shadow": true,
+        "card_padding_mobile": 14,
+        "card_padding_desktop": 18,
+        "card_min_height_mobile": 140,
+        "card_min_height_desktop": 180,
+        "value_color": "#e8d5a3",
+        "value_size_mobile": 54,
+        "value_size_desktop": 82,
+        "circle_track_color": "#ffffff26",
+        "circle_progress_color": "#e8d5a3",
+        "circle_stroke_width": 8,
+        "circle_size_mobile": 90,
+        "circle_size_desktop": 120,
+        "circle_value_size_mobile": 18,
+        "circle_value_size_desktop": 30,
+        "title_color": "#ffffff",
+        "title_size_mobile": 15,
+        "title_size_desktop": 18,
+        "description_color": "#ffffff",
+        "description_size_mobile": 12,
+        "description_size_desktop": 14,
+        "container_max_width": 1200,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 40,
+        "background_color_start": "#1c3353",
+        "background_color_end": "#141720",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "ingredient_steps_tXfBEq": {
+      "type": "ingredient-steps",
+      "blocks": {
+        "ingredient_step_card_LFeWWR": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/6cwoZI9fOflTkAYN.webp",
+            "title": "SHILAJIT (Alto en Ácido Fúlvico)",
+            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y le da fuerza a la energía, el aguante y la circulación.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_FHDaF3": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.14.13_AM.webp",
+            "title": "KSM-66 ASHWAGANDHA",
+            "description": "<p>Controla el cortisol y apoya la testosterona. Baja las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_EKMd7h": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.13.33_AM.webp",
+            "title": "RAÍZ DE MACA",
+            "description": "<p>Potenciador natural del deseo y el aguante. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_EdBxP3": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.06_AM.webp",
+            "title": "TONGKAT ALI",
+            "description": "<p>Amplificador de testosterona y fuerza. Estudiado clínicamente para apoyar los niveles de testosterona libre, mejorar la fuerza muscular y potenciar la vitalidad y el rendimiento masculino.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_xUhKzp": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.28_AM.webp",
+            "title": "BLACK MUSLI",
+            "description": "<p>Potenciador poderoso de la vitalidad. Se usa desde hace generaciones para apoyar la salud sexual, el aguante y el rendimiento masculino en general, mientras impulsa la fuerza y la recuperación.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_pq7QLD": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.53_AM.webp",
+            "title": "GOKSHURA",
+            "description": "<p>Apoyo al rendimiento y a la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y le mete fuerza al aguante y al rendimiento.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_w6X9tH": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.49_AM.webp",
+            "title": "KAUNCH (MUCUNA PRURIENS)",
+            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, las ganas y el impulso mental.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_UAKGgp": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.09_AM.webp",
+            "title": "JENGIBRE",
+            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y baja la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        },
+        "ingredient_step_card_a7iYXY": {
+          "type": "_ingredient-step-card",
+          "settings": {
+            "image": "shopify://shop_images/C5POF3zft9M7_Apq.avif",
+            "title": "SEMILLA DE FENOGRECO",
+            "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia tú mismo, o te regresamos tu dinero sin hacerte ni una pregunta.</p>",
+            "image_background_color": "",
+            "content_background_color": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ingredient_step_card_LFeWWR",
+        "ingredient_step_card_FHDaF3",
+        "ingredient_step_card_EKMd7h",
+        "ingredient_step_card_EdBxP3",
+        "ingredient_step_card_xUhKzp",
+        "ingredient_step_card_pq7QLD",
+        "ingredient_step_card_w6X9tH",
+        "ingredient_step_card_UAKGgp",
+        "ingredient_step_card_a7iYXY"
+      ],
+      "name": "Ingredient steps",
+      "settings": {
+        "heading_line_1": "INGREDIENTES QUE",
+        "heading_highlight": "SI CUMPLEN",
+        "subheading": "<p>Apoyo diario para tu energía, tu testosterona y tu rendimiento a nivel celular.</p>",
+        "heading_size_desktop": 52,
+        "heading_size_mobile": 36,
+        "heading_color": "#ffffff",
+        "highlight_color_start": "#b8b8b8",
+        "highlight_color_mid": "#ffffff",
+        "highlight_color_end": "#b8b8b8",
+        "subheading_size_desktop": 18,
+        "subheading_size_mobile": 14,
+        "subheading_color": "#ffffff",
+        "step_title_size_desktop": 18,
+        "step_title_size_mobile": 16,
+        "step_title_color": "#ffffff",
+        "step_description_size_desktop": 12,
+        "step_description_size_mobile": 10,
+        "step_description_color": "#ffffff",
+        "columns_desktop": 4,
+        "items_gap": 5,
+        "mobile_slide_padding": 8,
+        "mobile_layout": "horizontal",
+        "transition_speed": 300,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_arrows": true,
+        "nav_button_size": 40,
+        "nav_button_bg_color": "#0e203e",
+        "nav_button_border_color": "#0954bc",
+        "nav_button_icon_color": "#ffffff",
+        "show_numbers": false,
+        "number_circle_size": 40,
+        "number_size_desktop": 20,
+        "number_size_mobile": 24,
+        "number_bg_color": "#ffffff",
+        "number_border_color": "#000000",
+        "number_text_color": "#000000",
+        "card_border_radius": 6,
+        "card_border_width": 1,
+        "card_border_color": "#404040",
+        "image_aspect_ratio": "4 / 3",
+        "image_fit": "cover",
+        "default_image_background_color": "#0e203e",
+        "default_content_background_color": "#0e203e",
+        "content_padding_vertical": 16,
+        "content_padding_horizontal": 12,
+        "container_max_width": 1200,
+        "container_padding": 20,
+        "container_padding_mobile": 16,
+        "background_gradient_top": "#1c3353",
+        "background_gradient_bottom": "#141720",
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
+    "satisfaction_guarantee_dVqwga": {
+      "type": "satisfaction-guarantee",
+      "blocks": {
+        "photos": {
+          "type": "_satisfaction-guarantee-photos",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        },
+        "benefits": {
+          "type": "_satisfaction-guarantee-benefits",
+          "static": true,
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "name": "Satisfaction guarantee",
+      "settings": {
+        "icon_color": "#ffffff",
+        "icon_size_mobile": 60,
+        "icon_size_desktop": 80,
+        "icon_margin_bottom": 10,
+        "heading": "PRUEBA TITAN PEAK 100% SIN RIESGO DURANTE 30 DÍAS",
+        "heading_color": "#ffffff",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 44,
+        "heading_line_height": 1,
+        "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia por ti mismo, o te devolvemos tu dinero sin hacer preguntas.</p>",
+        "description_color": "#ffffff",
+        "description_size_mobile": 14,
+        "description_size_desktop": 14,
+        "description_line_height": 1.5,
+        "button_label": "PRUÉBALO SIN RIESGO",
+        "button_link": "#product-information",
+        "button_open_in_new_tab": false,
+        "button_gradient_start": "#e9e9e9",
+        "button_gradient_end": "#e8d5a3",
+        "button_hover_gradient_start": "#d0d0d0",
+        "button_hover_gradient_end": "#dec27a",
+        "button_text_color": "#ffffff",
+        "button_radius": 8,
+        "button_font_size": 14,
+        "button_padding_block": 12,
+        "button_padding_inline": 20,
+        "benefits_layout": "row",
+        "benefit_text_color": "#ffffff",
+        "benefit_checkmark_color": "#ef4a65",
+        "benefit_icon_size": 16,
+        "benefit_size_mobile": 14,
+        "benefit_size_desktop": 14,
+        "benefit_gap": 16,
+        "photo_size_mobile": 100,
+        "photo_size_desktop": 180,
+        "photo_gap": 8,
+        "photo_margin_bottom": -10,
+        "container_max_width": 1200,
+        "content_max_width": 450,
+        "container_padding_mobile": 20,
+        "container_padding_desktop": 20,
+        "background_color_start": "#141720",
+        "background_color_end": "#1c3353",
+        "background_angle": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 50
+      }
+    },
+    "faq_accordion_nVx7Xp": {
+      "type": "faq-accordion",
+      "blocks": {
+        "faq_item_qFttK7": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cuánto voy a tardar en notar la diferencia?",
+            "answer": "<p>La mayoría de los hombres nota más energía y mejor circulación en los primeros 7 a 14 días. Para resultados al máximo y un apoyo completo a la próstata, te recomendamos usarlo a diario sin fallar durante 90 días, para que los minerales le lleguen bien a fondo a tu organismo.</p>",
+            "open_by_default": true
+          },
+          "blocks": {}
+        },
+        "faq_item_d4FBQP": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cómo se compara TITAN PEAK con esas pastillitas azules?",
+            "answer": "<p>A diferencia de las pastillas sintéticas, que te pueden dar taquicardia, dolor de cabeza y otros efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para subir de forma natural el óxido nítrico y el flujo sanguíneo, sin el bajón sintético ni riesgos para tu salud.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_xUedVm": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Es seguro TITAN PEAK?",
+            "answer": "<p>Sí. Se fabrica en una planta certificada cGMP y registrada ante la FDA, con ingredientes non-GMO y probados en laboratorios externos para garantizar pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_n8ttME": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿De verdad es diferente al shilajit que venden en Amazon?",
+            "answer": "<p>Sí. La mayoría del shilajit que venden en Amazon es un polvo barato y de baja calidad, importado por unos cuantos pesos la unidad. El nuestro se cosecha en los picos del Himalaya a 5,180 metros, se seca al sol de forma natural durante 60 días, y está verificado por dibenzo-α-pironas, el marcador que de verdad manda y que los productos pirata no pueden replicar. Retamos a cualquier marca de Amazon a que muestre ese análisis... no van a poder.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_6BLpLJ": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Cómo sé que estas gomitas son de calidad?",
+            "answer": "<p>Nuestras Shilajit Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_Acpckj": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
+            "answer": "<p>Sí, nuestras gomitas se pueden tomar junto con la mayoría de los suplementos comunes. Están hechas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Ahora, si tienes alguna condición de salud de antes, sobre todo relacionada con el corazón, mejor consúltalo con tu médico antes de combinarlas con otros productos.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        },
+        "faq_item_rqGgB3": {
+          "type": "_faq-item",
+          "settings": {
+            "question": "¿Por qué en gomita y no en resina o polvo?",
+            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor bien amargo y metálico que a la mayoría se le hace insoportable. Nuestra fórmula mejorada en gomita trae la dosis clínica exacta de más de 84 minerales, en un formato rico y práctico que hace de tu ritual diario de rendimiento algo fácil y hasta agradable.</p>",
+            "open_by_default": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "faq_item_qFttK7",
+        "faq_item_d4FBQP",
+        "faq_item_xUedVm",
+        "faq_item_n8ttME",
+        "faq_item_6BLpLJ",
+        "faq_item_Acpckj",
+        "faq_item_rqGgB3"
+      ],
+      "name": "FAQ accordion",
+      "settings": {
+        "heading": "PREGUNTAS FRECUENTES",
+        "heading_color": "#141720",
+        "heading_size_mobile": 32,
+        "heading_size_desktop": 40,
+        "container_max_width": 900,
+        "container_padding": 16,
+        "header_gap_mobile": 24,
+        "header_gap_desktop": 40,
+        "list_gap_mobile": 12,
+        "list_gap_desktop": 16,
+        "card_background_color": "#141720",
+        "card_radius": 12,
+        "trigger_padding_mobile": 16,
+        "trigger_padding_desktop": 24,
+        "question_color": "{{ settings.color_palette.background }}",
+        "question_size_mobile": 17,
+        "question_size_desktop": 18,
+        "question_weight": "500",
+        "icon_color": "{{ settings.color_palette.background }}",
+        "icon_size": 16,
+        "answer_color": "{{ settings.color_palette.background }}",
+        "answer_size_mobile": 14,
+        "answer_size_desktop": 17,
+        "answer_line_height": 1.4,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_recommendations_qggXJq",
+    "before_after_slider_iCKGyt",
+    "roadmap_QB8dKq",
+    "testimonial_peek_carousel_x93CVU",
+    "image_with_text_x998Hz",
+    "benefits_grid_fzhgP8",
+    "cards_grid_g9pUdw",
+    "image_with_text_accordion_UUVGUG",
+    "statistics_grid_nd3JDq",
+    "ingredient_steps_tXfBEq",
+    "satisfaction_guarantee_dVqwga",
+    "faq_accordion_nVx7Xp"
+  ]
+}

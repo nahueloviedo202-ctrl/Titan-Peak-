@@ -61,7 +61,168 @@
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "product_info_tabs_Y3Lxmj": {
+              "type": "product-info-tabs",
+              "name": "Product info tabs",
+              "settings": {
+                "tab_background_color": "#f7f7f7",
+                "tab_text_color": "#1a1a1a",
+                "tab_active_gradient_start": "#ddaf3a",
+                "tab_active_gradient_end": "#f5e35e",
+                "tab_font_size_mobile": 12,
+                "tab_font_size_desktop": 14,
+                "border_color": "#ddaf3a",
+                "border_width": 1,
+                "corner_radius": 12,
+                "panel_background_color": "#fcfaf5",
+                "panel_padding": 16,
+                "panel_gap": 12,
+                "text_color": "#1a1a1a",
+                "muted_text_color": "#1a1a1ac2",
+                "card_background_color": "#ffffff",
+                "highlight_background_color": "#eeeeee",
+                "divider_color": "#d1d1d1",
+                "positive_color": "#4fa250",
+                "negative_color": "#e34e36",
+                "brand_column_width_mobile": 58,
+                "brand_column_width_desktop": 156,
+                "padding-block-start": 12,
+                "padding-block-end": 12,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "product_info_tab_quote_NTrgDE": {
+                  "type": "_product-info-tab-quote",
+                  "settings": {
+                    "tab_label": "Doctor Approved",
+                    "default_open": true,
+                    "quote": "\"Add a doctor or expert quote about your product here.\"",
+                    "author_name": "Dr. Jane Smith, M.D.",
+                    "author_specialty": "Board-Certified Physician"
+                  },
+                  "blocks": {}
+                },
+                "product_info_tab_comparison_7di4eF": {
+                  "type": "_product-info-tab-comparison",
+                  "settings": {
+                    "tab_label": "Comparison Table",
+                    "default_open": false,
+                    "brand_name": "Your Brand",
+                    "others_label": "Others"
+                  },
+                  "blocks": {
+                    "product_info_comparison_row_rXRGpP": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Feature name",
+                        "feature_sub": "Short supporting detail",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_comparison_row_kCAhz7": {
+                      "type": "_product-info-comparison-row",
+                      "settings": {
+                        "feature_name": "Feature name",
+                        "feature_sub": "Short supporting detail",
+                        "brand_has_feature": true,
+                        "others_has_feature": false
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_comparison_row_rXRGpP",
+                    "product_info_comparison_row_kCAhz7"
+                  ]
+                },
+                "product_info_tab_ingredients_YEF3Pk": {
+                  "type": "_product-info-tab-ingredients",
+                  "settings": {
+                    "tab_label": "Ingredients",
+                    "default_open": false,
+                    "name_column_label": "Name",
+                    "mg_column_label": "MG"
+                  },
+                  "blocks": {
+                    "product_info_ingredient_row_7KGC7K": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Ingredient name",
+                        "ingredient_sub": "Short supporting detail",
+                        "ingredient_mg": "500mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_BE8h7M": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Ingredient name",
+                        "ingredient_sub": "Short supporting detail",
+                        "ingredient_mg": "500mg"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_ingredient_row_y6Krkt": {
+                      "type": "_product-info-ingredient-row",
+                      "settings": {
+                        "ingredient_name": "Ingredient name",
+                        "ingredient_sub": "Short supporting detail",
+                        "ingredient_mg": "500mg"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_ingredient_row_7KGC7K",
+                    "product_info_ingredient_row_BE8h7M",
+                    "product_info_ingredient_row_y6Krkt"
+                  ]
+                },
+                "product_info_tab_faq_7bjjRy": {
+                  "type": "_product-info-tab-faq",
+                  "settings": {
+                    "tab_label": "FAQ's",
+                    "default_open": false
+                  },
+                  "blocks": {
+                    "product_info_faq_item_LHtX8a": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "Question",
+                        "answer": "<p>Add the answer to this question.</p>"
+                      },
+                      "blocks": {}
+                    },
+                    "product_info_faq_item_4xHPhB": {
+                      "type": "_product-info-faq-item",
+                      "settings": {
+                        "question": "Question",
+                        "answer": "<p>Add the answer to this question.</p>"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_info_faq_item_LHtX8a",
+                    "product_info_faq_item_4xHPhB"
+                  ]
+                }
+              },
+              "block_order": [
+                "product_info_tab_quote_NTrgDE",
+                "product_info_tab_comparison_7di4eF",
+                "product_info_tab_ingredients_YEF3Pk",
+                "product_info_tab_faq_7bjjRy"
+              ]
+            }
+          },
+          "block_order": [
+            "product_info_tabs_Y3Lxmj"
+          ]
         },
         "product-details": {
           "type": "_product-details",
@@ -639,7 +800,7 @@
         "padding-block-start": 64,
         "padding-block-start-mobile": 0,
         "padding-block-end": 64,
-        "padding-block-end-mobile": 0
+        "padding-block-end-mobile": 40
       }
     },
     "product_recommendations_qggXJq": {
@@ -1034,104 +1195,6 @@
         "padding-block-end": 40
       }
     },
-    "cards_grid_g9pUdw": {
-      "type": "cards-grid",
-      "blocks": {
-        "cards_grid_item_WBBMiB": {
-          "type": "_cards-grid-item",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
-            "image_alt": "",
-            "title": "ENERGÍA Y AGUANTE",
-            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
-          },
-          "blocks": {}
-        },
-        "cards_grid_item_AG6dAF": {
-          "type": "_cards-grid-item",
-          "settings": {
-            "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
-            "image_alt": "",
-            "title": "CORTISOL Y ESTRÉS",
-            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
-          },
-          "blocks": {}
-        },
-        "cards_grid_item_TYttpE": {
-          "type": "_cards-grid-item",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
-            "image_alt": "",
-            "title": "TESTOSTERONA Y DESEO",
-            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
-          },
-          "blocks": {}
-        },
-        "cards_grid_item_NHTjXq": {
-          "type": "_cards-grid-item",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
-            "image_alt": "",
-            "title": "CIRCULACIÓN Y RENDIMIENTO",
-            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "cards_grid_item_WBBMiB",
-        "cards_grid_item_AG6dAF",
-        "cards_grid_item_TYttpE",
-        "cards_grid_item_NHTjXq"
-      ],
-      "name": "Cards grid",
-      "settings": {
-        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
-        "heading_color": "{{ settings.color_palette.background }}",
-        "heading_size_mobile": 36,
-        "heading_size_desktop": 52,
-        "heading_accent_gradient_start": "#A99985",
-        "heading_accent_gradient_end": "#DED1C2",
-        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
-        "subtitle_color": "{{ settings.color_palette.background }}",
-        "subtitle_size_mobile": 16,
-        "subtitle_size_desktop": 18,
-        "header_gap_mobile": 40,
-        "header_gap_desktop": 60,
-        "card_image_position": "left",
-        "columns_mobile": 1,
-        "columns_tablet": 4,
-        "columns_desktop": 2,
-        "grid_gap_mobile": 15,
-        "grid_gap_tablet": 18,
-        "grid_gap_desktop": 25,
-        "card_background_color": "#DAD2BC",
-        "card_border_color": "#252323",
-        "card_border_width": 1,
-        "card_border_radius": 12,
-        "card_image_size_mobile": 100,
-        "card_image_size_tablet": 150,
-        "card_image_size_desktop": 152,
-        "card_image_radius": 8,
-        "card_image_inset": 10,
-        "card_title_color": "{{ settings.color_palette.foreground }}",
-        "card_title_size_mobile": 14,
-        "card_title_size_desktop": 22,
-        "card_description_color": "{{ settings.color_palette.foreground }}",
-        "card_description_size_mobile": 12,
-        "card_description_size_desktop": 14,
-        "card_content_padding_mobile": 15,
-        "card_content_padding_tablet": 20,
-        "card_content_padding_desktop": 25,
-        "container_max_width": 1200,
-        "background_color": "#252323",
-        "corner_radius": 0,
-        "padding_top": 40,
-        "padding_right": 20,
-        "padding_bottom": 60,
-        "padding_left": 20
-      }
-    },
     "image_checklist_GjbqGM": {
       "type": "image-checklist",
       "blocks": {
@@ -1235,6 +1298,104 @@
         "padding_block_end_mobile": 32,
         "padding_block_start_desktop": 56,
         "padding_block_end_desktop": 56
+      }
+    },
+    "cards_grid_g9pUdw": {
+      "type": "cards-grid",
+      "blocks": {
+        "cards_grid_item_WBBMiB": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
+            "image_alt": "",
+            "title": "ENERGÍA Y AGUANTE",
+            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_AG6dAF": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
+            "image_alt": "",
+            "title": "CORTISOL Y ESTRÉS",
+            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_TYttpE": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
+            "image_alt": "",
+            "title": "TESTOSTERONA Y DESEO",
+            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
+          },
+          "blocks": {}
+        },
+        "cards_grid_item_NHTjXq": {
+          "type": "_cards-grid-item",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
+            "image_alt": "",
+            "title": "CIRCULACIÓN Y RENDIMIENTO",
+            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "cards_grid_item_WBBMiB",
+        "cards_grid_item_AG6dAF",
+        "cards_grid_item_TYttpE",
+        "cards_grid_item_NHTjXq"
+      ],
+      "name": "Cards grid",
+      "settings": {
+        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
+        "heading_color": "{{ settings.color_palette.background }}",
+        "heading_size_mobile": 36,
+        "heading_size_desktop": 52,
+        "heading_accent_gradient_start": "#A99985",
+        "heading_accent_gradient_end": "#DED1C2",
+        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
+        "subtitle_color": "{{ settings.color_palette.background }}",
+        "subtitle_size_mobile": 16,
+        "subtitle_size_desktop": 18,
+        "header_gap_mobile": 40,
+        "header_gap_desktop": 60,
+        "card_image_position": "left",
+        "columns_mobile": 1,
+        "columns_tablet": 4,
+        "columns_desktop": 2,
+        "grid_gap_mobile": 15,
+        "grid_gap_tablet": 18,
+        "grid_gap_desktop": 25,
+        "card_background_color": "#DAD2BC",
+        "card_border_color": "#252323",
+        "card_border_width": 1,
+        "card_border_radius": 12,
+        "card_image_size_mobile": 100,
+        "card_image_size_tablet": 150,
+        "card_image_size_desktop": 152,
+        "card_image_radius": 8,
+        "card_image_inset": 10,
+        "card_title_color": "{{ settings.color_palette.foreground }}",
+        "card_title_size_mobile": 14,
+        "card_title_size_desktop": 22,
+        "card_description_color": "{{ settings.color_palette.foreground }}",
+        "card_description_size_mobile": 12,
+        "card_description_size_desktop": 14,
+        "card_content_padding_mobile": 15,
+        "card_content_padding_tablet": 20,
+        "card_content_padding_desktop": 25,
+        "container_max_width": 1200,
+        "background_color": "#252323",
+        "corner_radius": 0,
+        "padding_top": 40,
+        "padding_right": 20,
+        "padding_bottom": 60,
+        "padding_left": 20
       }
     },
     "ingredient_steps_tXfBEq": {

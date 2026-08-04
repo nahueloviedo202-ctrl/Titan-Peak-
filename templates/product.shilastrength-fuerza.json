@@ -960,7 +960,7 @@
         "grid_gap_mobile": 15,
         "grid_gap_tablet": 18,
         "grid_gap_desktop": 25,
-        "card_background_color": "#A99985",
+        "card_background_color": "#DAD2BC",
         "card_border_color": "#252323",
         "card_border_width": 1,
         "card_border_radius": 12,

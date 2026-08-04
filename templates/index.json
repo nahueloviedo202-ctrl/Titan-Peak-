@@ -1172,19 +1172,19 @@
         },
         "product_features_tab_R37Gmd": {
           "type": "_product-features-tab",
-          "disabled": true,
           "settings": {
-            "tab_label": "Pumpkin Seed Oil Softgels",
+            "tab_label": "SHILAJIT PURO DE MÁXIMA POTENCIA",
+            "image": "shopify://shop_images/Gemini_Generated_Image_dqcjijdqcjijdqcj-clean.webp",
             "image_alt": "",
-            "cta_text": "Shop now",
-            "cta_url": ""
+            "cta_text": "COMPRAR AHORA",
+            "cta_url": "shopify://products/titanpeak-shilastrength-9000mg-shilajit-puro-de-maxima-potencia"
           },
           "blocks": {
             "product_features_item_LtEwpF": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Essential fatty acids & phytosterols",
-                "text": "<p>Cold-pressed pumpkin seed oil supports skin, hair, nails, and urinary tract health.</p>",
+                "title": "Fórmula 8 en 1 de alta potencia",
+                "text": "<p>Shilajit, Ashwagandha, Rhodiola, Ginseng y más, trabajando en conjunto para tu rendimiento diario.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1192,8 +1192,8 @@
             "product_features_item_hVgByi": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Hair, skin & nail support",
-                "text": "<p>Pumpkin seed oil nourishes for stronger nails, shinier hair, and even skin tone.</p>",
+                "title": "100% natural, cero estimulantes",
+                "text": "<p>Sin cafeína ni químicos artificiales — tu cuerpo sube su energía de forma natural, sin nervios ni bajones.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1201,8 +1201,8 @@
             "product_features_item_U4EPzc": {
               "type": "_product-features-item",
               "settings": {
-                "title": "Urinary comfort & bladder health",
-                "text": "<p>Phytosterols in pumpkin seed oil support urinary tract comfort & bladder function.</p>",
+                "title": "Resultados que se sienten desde temprano",
+                "text": "<p>Más energía, mejor enfoque y mejor circulación, todo en una sola cápsula al día.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1210,8 +1210,8 @@
             "product_features_item_wkgqMt": {
               "type": "_product-features-item",
               "settings": {
-                "title": "No taste, no fillers",
-                "text": "<p>Pure cold-pressed oil in softgels, with no aftertaste or additives.</p>",
+                "title": "Calidad verificada de principio a fin",
+                "text": "<p>Fabricado en EE.UU. bajo normas GMP, con pureza y potencia comprobadas por laboratorios independientes.</p>",
                 "column": "right"
               },
               "blocks": {}

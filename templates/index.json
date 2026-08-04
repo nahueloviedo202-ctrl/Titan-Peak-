@@ -1368,6 +1368,14 @@
     "products_carousel_7VJyYx": {
       "type": "products-carousel",
       "blocks": {
+        "product_carousel_card_NGhAWX": {
+          "type": "_product-carousel-card",
+          "name": "Product",
+          "settings": {
+            "product": "titanpeak-shilastrength-9000mg-shilajit-puro-de-maxima-potencia"
+          },
+          "blocks": {}
+        },
         "product_carousel_card_38wMi6": {
           "type": "_product-carousel-card",
           "settings": {
@@ -1385,6 +1393,7 @@
         }
       },
       "block_order": [
+        "product_carousel_card_NGhAWX",
         "product_carousel_card_38wMi6",
         "product_carousel_card_cCLn6Y"
       ],

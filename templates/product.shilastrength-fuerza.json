@@ -1247,7 +1247,7 @@
         "number_text_color": "#000000",
         "card_border_radius": 6,
         "card_border_width": 1,
-        "card_border_color": "#A99985",
+        "card_border_color": "#252323",
         "image_aspect_ratio": "4 / 3",
         "image_fit": "cover",
         "default_image_background_color": "#A99985",

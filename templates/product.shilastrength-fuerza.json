@@ -1458,20 +1458,11 @@
           },
           "blocks": {}
         },
-        "faq_item_d4FBQP": {
-          "type": "_faq-item",
-          "settings": {
-            "question": "¿Cómo se compara TITAN PEAK con esas pastillitas azules?",
-            "answer": "<p>A diferencia de las pastillas sintéticas, que te pueden dar taquicardia, dolor de cabeza y otros efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para subir de forma natural el óxido nítrico y el flujo sanguíneo, sin el bajón sintético ni riesgos para tu salud.</p>",
-            "open_by_default": false
-          },
-          "blocks": {}
-        },
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
             "question": "¿Es seguro TITAN PEAK?",
-            "answer": "<p>Sí. Se fabrica en una planta certificada cGMP y registrada ante la FDA, con ingredientes non-GMO y probados en laboratorios externos para garantizar pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
+            "answer": "<p>Está hecho con ingredientes 100% naturales, fabricado en EE.UU. bajo estándares de calidad (GMP). Como con cualquier suplemento, si tomas medicamento controlado, tienes alguna condición médica o estás bajo tratamiento hormonal, consulta a tu doctor antes de usarlo.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1480,7 +1471,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿De verdad es diferente al shilajit que venden en Amazon?",
-            "answer": "<p>Sí. La mayoría del shilajit que venden en Amazon es un polvo barato y de baja calidad, importado por unos cuantos pesos la unidad. El nuestro se cosecha en los picos del Himalaya a 5,180 metros, se seca al sol de forma natural durante 60 días, y está verificado por dibenzo-α-pironas, el marcador que de verdad manda y que los productos pirata no pueden replicar. Retamos a cualquier marca de Amazon a que muestre ese análisis... no van a poder.</p>",
+            "answer": "<p>Sí. La mayoría de los shilajit sueltos en Amazon son solo resina o polvo, sin dosis estandarizada y con pureza variable. TITANPEAK combina Shilajit purificado de 9000mg con 7 ingredientes más (Ashwagandha, Rhodiola, Ginseng, Ortiga Mayor, Cordyceps, Ginkgo y Cúrcuma) en una dosis exacta por cápsula, no una resina cruda de calidad incierta.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1488,8 +1479,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gomitas son de calidad?",
-            "answer": "<p>Nuestras Shilajit Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
+            "question": "¿Cómo sé que estas cápsulas son de calidad?",
+            "answer": "<p>Se fabrican en EE.UU. bajo normas de calidad estrictas, con ingredientes purificados y dosis controlada en cada cápsula, a diferencia de la resina suelta donde nunca sabes bien qué tanto estás tomando.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1498,7 +1489,7 @@
           "type": "_faq-item",
           "settings": {
             "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
-            "answer": "<p>Sí, nuestras gomitas se pueden tomar junto con la mayoría de los suplementos comunes. Están hechas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Ahora, si tienes alguna condición de salud de antes, sobre todo relacionada con el corazón, mejor consúltalo con tu médico antes de combinarlas con otros productos.</p>",
+            "answer": "<p>Con la mayoría de los suplementos no hay problema. Si tomas medicamento recetado, especialmente para presión arterial, hormonas o anticoagulantes, consulta a tu doctor antes de combinarlo para estar seguro.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1506,8 +1497,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Por qué en gomita y no en resina o polvo?",
-            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor bien amargo y metálico que a la mayoría se le hace insoportable. Nuestra fórmula mejorada en gomita trae la dosis clínica exacta de más de 84 minerales, en un formato rico y práctico que hace de tu ritual diario de rendimiento algo fácil y hasta agradable.</p>",
+            "question": "¿Por qué en cápsula y no en resina o polvo?",
+            "answer": "<p>Porque la cápsula te da una dosis exacta cada vez, sin el sabor fuerte ni el desorden de andar midiendo resina. Mismo Shilajit puro, pero más práctico y preciso.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1515,7 +1506,6 @@
       },
       "block_order": [
         "faq_item_qFttK7",
-        "faq_item_d4FBQP",
         "faq_item_xUedVm",
         "faq_item_n8ttME",
         "faq_item_6BLpLJ",

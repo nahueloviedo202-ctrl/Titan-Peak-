@@ -1183,6 +1183,7 @@
             "product_features_item_LtEwpF": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84.avif",
                 "title": "Fórmula 8 en 1 de alta potencia",
                 "text": "<p>Shilajit, Ashwagandha, Rhodiola, Ginseng y más, trabajando en conjunto para tu rendimiento diario.</p>",
                 "column": "left"
@@ -1192,6 +1193,7 @@
             "product_features_item_hVgByi": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
                 "title": "100% natural, cero estimulantes",
                 "text": "<p>Sin cafeína ni químicos artificiales — tu cuerpo sube su energía de forma natural, sin nervios ni bajones.</p>",
                 "column": "left"
@@ -1201,6 +1203,7 @@
             "product_features_item_U4EPzc": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_84_1.avif",
                 "title": "Resultados que se sienten desde temprano",
                 "text": "<p>Más energía, mejor enfoque y mejor circulación, todo en una sola cápsula al día.</p>",
                 "column": "right"
@@ -1210,6 +1213,7 @@
             "product_features_item_wkgqMt": {
               "type": "_product-features-item",
               "settings": {
+                "icon": "shopify://shop_images/Frame_173.png",
                 "title": "Calidad verificada de principio a fin",
                 "text": "<p>Fabricado en EE.UU. bajo normas GMP, con pureza y potencia comprobadas por laboratorios independientes.</p>",
                 "column": "right"

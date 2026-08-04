@@ -656,72 +656,63 @@
         },
         "customer_reviews_tab_Hy8DKe": {
           "type": "_customer-reviews-tab",
-          "disabled": true,
           "settings": {
-            "tab_label": "Pumpkin Seed Oil Softgels"
+            "tab_label": "SHILAJIT PURO DE MÁXIMA POTENCIA"
           },
           "blocks": {
             "customer_review_card_XYLyyV": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Parker A.",
+                "customer_name": "Daniel R.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Hair & skin glow",
-                "review_text": "<p>Three months in and my hair has never looked better - thicker, shinier, and much less breakage. My skin tone has also evened out significantly. I was already taking a fish oil capsule daily and swapped it out for these; the essential fatty acid profile is excellent and the softgels are easy to swallow with no fishy aftertaste.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "ENERGÍA TODO EL DÍA",
+                "review_text": "<p>Ya le había entrado a todo lo que existe para el cansancio y nada me funcionó, hasta esto. Para la tercera semana ya me despertaba con ganas, sin el bajón de la tarde. La combinación de Ashwagandha y Shilajit hace su trabajo sin hacer ruido. Con dos cápsulas al día es más que suficiente.</p>"
               },
               "blocks": {
                 "customer_review_tag_aLqrYi": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Hair Health"
+                    "text": "Energía Sostenida"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_cbTKMe": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Skin Quality"
-                  },
-                  "blocks": {}
-                },
-                "customer_review_tag_pj7ydw": {
-                  "type": "_customer-review-tag",
-                  "settings": {
-                    "text": "Essential Fatty Acids"
+                    "text": "Menos Estrés"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
                 "customer_review_tag_aLqrYi",
-                "customer_review_tag_cbTKMe",
-                "customer_review_tag_pj7ydw"
+                "customer_review_tag_cbTKMe"
               ]
             },
             "customer_review_card_tY6THF": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Finley B.",
+                "customer_name": "Emilio T.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Bladder & urinary support",
-                "review_text": "<p>I started these on my naturopath's suggestion for bladder health and the results have been quietly impressive. Fewer urgent trips, much better overnight comfort. The phytosterols in pumpkin seed oil are well-studied for urinary tract support and this formula clearly uses a quality source. Noticeable improvement within six weeks.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "MÁS AGUANTE EN EL GYM",
+                "review_text": "<p>Mi resistencia en los entrenos mejoró de verdad desde que empecé con esto. Ya estoy superando marcas que creía imposibles, y también me recupero más rápido. Como no lleva estimulantes, lo puedo tomar a cualquier hora sin problemas para dormir. El Cordyceps y la Rhodiola se sienten de verdad.</p>"
               },
               "blocks": {
                 "customer_review_tag_jVKW7j": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Urinary Comfort"
+                    "text": "Rendimiento Físico"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_HHtzAK": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Phytosterols"
+                    "text": "Recuperación Más Rápida"
                   },
                   "blocks": {}
                 }
@@ -734,25 +725,25 @@
             "customer_review_card_eaWeTX": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Quinn V.",
+                "customer_name": "Raúl G.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Immune & gut health",
-                "review_text": "<p>These softgels fit seamlessly into my supplement stack. I take them with breakfast and they've contributed noticeably to better digestion and stronger immunity - I haven't had a cold since starting. Clean, cold-pressed oil, no fillers, and the capsules are consistent quality. A genuinely underrated daily supplement.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "BIENESTAR COMPLETO",
+                "review_text": "<p>Las compré sobre todo por el apoyo contra el estrés y superaron mis expectativas por todos lados. Duermo más profundo, mi mente está más clara y mi energía durante el día es mucho más pareja. El Ginkgo y el Ginseng se notan en la circulación. Las cápsulas ni se me olvida tomarlas.</p>"
               },
               "blocks": {
                 "customer_review_tag_TpPYgV": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Immune Support"
+                    "text": "Alivio del Estrés"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_ChdjN9": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Digestive Health"
+                    "text": "Mejor Enfoque"
                   },
                   "blocks": {}
                 }
@@ -765,40 +756,32 @@
             "customer_review_card_zfP4wn": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Emery C.",
+                "customer_name": "Tomás V.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Verified Customer",
-                "label_text": "Nails & joints",
-                "review_text": "<p>My nails used to peel and break constantly. Within two months of taking the pumpkin seed oil softgels they've become noticeably stronger and grow faster. As a bonus, my knees feel less stiff after long runs - the anti-inflammatory properties of the fatty acids must be contributing. Simple, effective, no fuss.</p>"
+                "verified_badge_text": "Cliente Verificado",
+                "label_text": "DESEO Y VITALIDAD",
+                "review_text": "<p>Llevo como dos meses y la diferencia se nota. Más ganas, mejor circulación y una sensación de vitalidad que ya tenía tiempo sin sentir. Se me hace válido que los ingredientes estén bien listados y sean de verdad: el Shilajit puro junto a la Ortiga Mayor sí cumple.</p>"
               },
               "blocks": {
                 "customer_review_tag_3C7YR8": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Stronger Nails"
+                    "text": "Más Deseo"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_qKdHp4": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Joint Comfort"
-                  },
-                  "blocks": {}
-                },
-                "customer_review_tag_wtpM8G": {
-                  "type": "_customer-review-tag",
-                  "settings": {
-                    "text": "Anti-Inflammatory"
+                    "text": "Mejor Circulación"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
                 "customer_review_tag_3C7YR8",
-                "customer_review_tag_qKdHp4",
-                "customer_review_tag_wtpM8G"
+                "customer_review_tag_qKdHp4"
               ]
             }
           },

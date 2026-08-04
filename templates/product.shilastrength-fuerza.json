@@ -633,8 +633,8 @@
                 "accordion_item_BKxH6f": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Shipping & Returns",
-                    "content": "<p>• <strong>Free Shipping:</strong> We offer free standard shipping on all orders.<br>• <strong>Delivery Area:</strong> We currently ship within the United States. Orders typically arrive within <strong>5 days</strong> after processing, depending on the destination.<br><br>We accept returns under the following conditions:<br>• <strong>Return Window:</strong> Items must be returned within 14 days of delivery.<br>• <strong>Item Condition:</strong> Items must be unused, unopened, and in their original packaging.<br>• <strong>Proof of Purchase:</strong> A receipt or order number is required for all returns.</p>",
+                    "title": "Envíos y Devoluciones",
+                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de México. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 30 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
                     "open_by_default": false
                   },
                   "blocks": {}

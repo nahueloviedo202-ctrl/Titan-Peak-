@@ -1056,10 +1056,10 @@
         "product_features_tab_XKhHAF": {
           "type": "_product-features-tab",
           "settings": {
-            "tab_label": "Gummies de rendimiento",
+            "tab_label": "Leistungs-Gummies",
             "image": "shopify://shop_images/arreglado1-clean.webp",
             "image_alt": "",
-            "cta_text": "Comprar ahora",
+            "cta_text": "JETZT KAUFEN",
             "cta_url": "shopify://products/titan-peak-performance-gummies-soporte-6-en-1-para-hombres"
           },
           "blocks": {
@@ -1068,8 +1068,8 @@
               "name": "Feature",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
-                "title": "Apoyo diario multi-beneficio",
-                "text": "<p>Una gomita le sube la energía, el enfoque y la circulación, en una sola dosis diaria bien práctica.</p>",
+                "title": "Tägliche Multi-Nutzen-Unterstützung",
+                "text": "<p>Eine Gummy steigert Energie, Fokus und Durchblutung – in einer einzigen, praktischen Tagesdosis.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1078,8 +1078,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84.avif",
-                "title": "6 ingredientes estudiados clínicamente",
-                "text": "<p>Shilajit, Ashwagandha y Maca le suben la energía y mejoran la circulación para tu vitalidad de todos los días.</p>",
+                "title": "6 klinisch untersuchte Inhaltsstoffe",
+                "text": "<p>Shilajit, Ashwagandha und Maca steigern die Energie und verbessern die Durchblutung für deine tägliche Vitalität.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1088,8 +1088,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
-                "title": "Fórmula libre de estimulantes",
-                "text": "<p>Sin cafeína ni estimulantes artificiales; promueve la energía natural y el equilibrio hormonal sin dejarte nervioso.</p>",
+                "title": "Stimulanzienfreie Formel",
+                "text": "<p>Ohne Koffein und künstliche Stimulanzien; fördert natürliche Energie und das hormonelle Gleichgewicht, ohne dich nervös zu machen.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1098,8 +1098,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_2.avif",
-                "title": "Testeado por terceros",
-                "text": "<p>Se fabrica en plantas certificadas GMP, garantizando pureza, potencia y seguridad en las que sí puedes confiar.</p>",
+                "title": "Von Dritten getestet",
+                "text": "<p>Hergestellt in GMP-zertifizierten Anlagen, was Reinheit, Wirksamkeit und Sicherheit garantiert, auf die du dich wirklich verlassen kannst.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1118,7 +1118,7 @@
             "tab_label": "PURE SHILAJIT GUMMIES",
             "image": "shopify://shop_images/productfix-clean.webp",
             "image_alt": "",
-            "cta_text": "Comprar ahora",
+            "cta_text": "JETZT KAUFEN",
             "cta_url": "shopify://products/titan-peak-shilajit®-potenciador-de-testosterona-10-en-1-definitivo"
           },
           "blocks": {
@@ -1126,8 +1126,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_173.png",
-                "title": "Fórmula limpia y natural",
-                "text": "<p>Ingredientes de origen vegetal, sin rellenos ni cosas de más que no necesitas.</p>",
+                "title": "Saubere, natürliche Formel",
+                "text": "<p>Pflanzliche Inhaltsstoffe, ohne Füllstoffe oder unnötige Zusätze, die du nicht brauchst.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1136,8 +1136,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84.avif",
-                "title": "Nutrición diaria rica en antioxidantes",
-                "text": "<p>Trae antioxidantes que apoyan tu salud en general y bajan el estrés oxidativo.</p>",
+                "title": "Antioxidantienreiche tägliche Nährstoffversorgung",
+                "text": "<p>Enthält Antioxidantien, die deine allgemeine Gesundheit unterstützen und oxidativen Stress reduzieren.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1146,8 +1146,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_174.png",
-                "title": "Apoyo natural al óxido nítrico",
-                "text": "<p>El Shilajit ayuda a la circulación y al flujo sanguíneo de forma natural.</p>",
+                "title": "Natürliche Unterstützung des Stickstoffmonoxidspiegels",
+                "text": "<p>Shilajit unterstützt auf natürliche Weise die Durchblutung und den Blutfluss.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1156,8 +1156,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
-                "title": "Resistencia en el entrenamiento",
-                "text": "<p>Una mejor oxigenación le sube el rendimiento y la recuperación de forma natural.</p>",
+                "title": "Ausdauer beim Training",
+                "text": "<p>Eine bessere Sauerstoffversorgung steigert auf natürliche Weise die Leistung und die Erholung.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1173,10 +1173,10 @@
         "product_features_tab_R37Gmd": {
           "type": "_product-features-tab",
           "settings": {
-            "tab_label": "SHILAJIT PURO DE MÁXIMA POTENCIA",
+            "tab_label": "REINES SHILAJIT MIT HÖCHSTER POTENZ",
             "image": "shopify://shop_images/Gemini_Generated_Image_dqcjijdqcjijdqcj-clean.webp",
             "image_alt": "",
-            "cta_text": "COMPRAR AHORA",
+            "cta_text": "JETZT KAUFEN",
             "cta_url": "shopify://products/titanpeak-shilastrength-9000mg-shilajit-puro-de-maxima-potencia"
           },
           "blocks": {
@@ -1184,8 +1184,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84.avif",
-                "title": "Fórmula 8 en 1 de alta potencia",
-                "text": "<p>Shilajit, Ashwagandha, Rhodiola, Ginseng y más, trabajando en conjunto para tu rendimiento diario.</p>",
+                "title": "Hochpotente 8-in-1-Formel",
+                "text": "<p>Shilajit, Ashwagandha, Rhodiola, Ginseng und mehr, die gemeinsam für deine tägliche Leistung wirken.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1194,8 +1194,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
-                "title": "100% natural, cero estimulantes",
-                "text": "<p>Sin cafeína ni químicos artificiales — tu cuerpo sube su energía de forma natural, sin nervios ni bajones.</p>",
+                "title": "100 % natürlich, null Stimulanzien",
+                "text": "<p>Ohne Koffein und künstliche Chemikalien — dein Körper steigert seine Energie ganz natürlich, ohne Nervosität und ohne Abstürze.</p>",
                 "column": "left"
               },
               "blocks": {}
@@ -1204,8 +1204,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_84_1.avif",
-                "title": "Resultados que se sienten desde temprano",
-                "text": "<p>Más energía, mejor enfoque y mejor circulación, todo en una sola cápsula al día.</p>",
+                "title": "Ergebnisse, die du von Anfang an spürst",
+                "text": "<p>Mehr Energie, besserer Fokus und bessere Durchblutung — alles in einer einzigen Kapsel am Tag.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1214,8 +1214,8 @@
               "type": "_product-features-item",
               "settings": {
                 "icon": "shopify://shop_images/Frame_173.png",
-                "title": "Calidad verificada de principio a fin",
-                "text": "<p>Fabricado en EE.UU. bajo normas GMP, con pureza y potencia comprobadas por laboratorios independientes.</p>",
+                "title": "Geprüfte Qualität von Anfang bis Ende",
+                "text": "<p>Hergestellt in den USA nach GMP-Standards, mit von unabhängigen Laboren geprüfter Reinheit und Wirksamkeit.</p>",
                 "column": "right"
               },
               "blocks": {}
@@ -1291,8 +1291,8 @@
       ],
       "name": "Product features tabs",
       "settings": {
-        "eyebrow": "NUTRICIÓN DIARIA DE LA NATURALEZA",
-        "heading": "APOYO INTEGRAL PARA TODO TU CUERPO CON CUATRO FÓRMULAS PODEROSAS",
+        "eyebrow": "TÄGLICHE ERNÄHRUNG AUS DER NATUR",
+        "heading": "GANZHEITLICHE UNTERSTÜTZUNG FÜR DEINEN GANZEN KÖRPER MIT VIER KRAFTVOLLEN FORMELN",
         "container_max_width": 1440,
         "container_padding": 32,
         "container_padding_mobile": 16,
@@ -1386,7 +1386,7 @@
       ],
       "name": "Products carousel",
       "settings": {
-        "heading": "LOS MÁS VENDIDOS",
+        "heading": "DIE BESTSELLER",
         "heading_color": "#1a1a1a",
         "heading_size": 32,
         "desktop_columns": 4,
@@ -1422,12 +1422,12 @@
         "price_color": "#1a1a1a",
         "price_size": 16,
         "show_discount_badge": true,
-        "discount_label": "AHORRA",
+        "discount_label": "SPAREN",
         "badge_background_color": "#1a1a1a",
         "badge_text_color": "#ffffff",
         "badge_size": 12,
         "badge_radius": 20,
-        "button_label": "VER PRODUCTO",
+        "button_label": "PRODUKT ANSEHEN",
         "button_open_new_tab": false,
         "button_text_color": "#1a1a1a",
         "button_gradient_start": "#e7b944",
@@ -1447,8 +1447,8 @@
         "faq_item_jKtgWk": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Sus productos están probados y son seguros?",
-            "answer": "<p>Cada producto de TITAN PEAK está hecho con ingredientes estudiados clínicamente, en dosis respaldadas por la investigación. Puedes confiar en que lo que dice la etiqueta es justo lo que trae la gomita.</p>",
+            "question": "Sind die Produkte von TITAN PEAK getestet und sicher?",
+            "answer": "<p>Jedes TITAN PEAK Produkt wird mit klinisch untersuchten Inhaltsstoffen hergestellt, in Dosierungen, die durch Forschung belegt sind. Du kannst dich darauf verlassen, dass genau das in der Gummy steckt, was auf dem Etikett angegeben ist.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1456,8 +1456,8 @@
         "faq_item_xe3a9a": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuánto tarda el envío?",
-            "answer": "<p>Los pedidos en México se procesan en 1-2 días hábiles y por lo general llegan en 3-5 días hábiles con el envío estándar. Hay opciones de envío exprés al finalizar tu compra. Los pedidos internacionales suelen llegar en 7-14 días hábiles. Te va a llegar un enlace de rastreo en cuanto tu pedido salga.</p>",
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Bestellungen innerhalb Deutschlands werden innerhalb von 1-2 Werktagen bearbeitet und kommen mit dem Standardversand in der Regel in 3-5 Werktagen an. Beim Checkout stehen Express-Versandoptionen zur Verfügung. Internationale Bestellungen kommen normalerweise innerhalb von 7-14 Werktagen an. Sobald deine Bestellung versendet wurde, erhältst du einen Tracking-Link.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1465,8 +1465,8 @@
         "faq_item_KFHWWd": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuál es la política de devoluciones y reembolsos?",
-            "answer": "<p>Respaldamos cada producto con una garantía de satisfacción de 30 días. Si por algún motivo no quedas contento, contáctanos dentro de los 30 días después de que te llegó tu pedido, y lo resolvemos.</p>",
+            "question": "Wie funktionieren Rückgabe und Rückerstattung?",
+            "answer": "<p>Wir stehen hinter jedem Produkt mit einer 30-Tage-Zufriedenheitsgarantie. Solltest du aus irgendeinem Grund nicht zufrieden sein, kontaktiere uns innerhalb von 30 Tagen nach Erhalt deiner Bestellung, und wir finden eine Lösung.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1474,8 +1474,8 @@
         "faq_item_ckRXza": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Hacen envíos internacionales?",
-            "answer": "<p>Sí, enviamos a la mayoría de los países del mundo. Los costos de envío internacional y los tiempos estimados de entrega se calculan al finalizar tu compra. Ten en cuenta que pueden aplicar aranceles de importación o impuestos aduanales según tu país, y esos corren por cuenta del comprador.</p>",
+            "question": "Versendet ihr international?",
+            "answer": "<p>Ja, wir versenden in die meisten Länder der Welt. Die internationalen Versandkosten und die geschätzte Lieferzeit werden beim Checkout berechnet. Bitte beachte, dass je nach Land Einfuhrzölle oder Steuern anfallen können, die vom Käufer zu tragen sind.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1483,8 +1483,8 @@
         "faq_item_p9nNdE": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Tienes más preguntas?",
-            "answer": "<p>Estamos para ayudarte. Nuestro equipo responde cada mensaje, normalmente en pocas horas. Contáctanos en soporte@titanpeak.com.</p>",
+            "question": "Hast du weitere Fragen?",
+            "answer": "<p>Wir sind für dich da. Unser Team beantwortet jede Nachricht, in der Regel innerhalb weniger Stunden. Kontaktiere uns unter soporte@titanpeak.com.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1499,7 +1499,7 @@
       ],
       "name": "FAQ accordion",
       "settings": {
-        "heading": "PREGUNTAS FRECUENTES",
+        "heading": "HÄUFIG GESTELLTE FRAGEN",
         "heading_color": "#212529",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,

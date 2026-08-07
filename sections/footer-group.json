@@ -71,7 +71,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>En TITAN PEAK, la calidad y la confiabilidad son nuestras prioridades. Nuestros productos están cuidadosamente probados y vienen directo de la fuente natural, para que puedas confiar en los mejores resultados.</p>",
+                "text": "<p>Bei TITAN PEAK stehen Qualität und Zuverlässigkeit an erster Stelle. Unsere Produkte werden sorgfältig geprüft und kommen direkt aus der natürlichen Quelle, damit du dich auf die besten Ergebnisse verlassen kannst.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -142,7 +142,7 @@
             "text_LWt8Pz": {
               "type": "text",
               "settings": {
-                "text": "<p>Nuestra Política</p>",
+                "text": "<p>Unsere Richtlinie</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -175,7 +175,7 @@
                 "footer_link_kiHDWF": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Términos y Condiciones",
+                    "label": "Allgemeine Geschäftsbedingungen",
                     "link": "shopify://policies/terms-of-service",
                     "open_new_tab": false,
                     "text_color": "",
@@ -187,7 +187,7 @@
                 "footer_link_BzTPHe": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Política de Reembolso",
+                    "label": "Rückerstattungsrichtlinie",
                     "link": "shopify://policies/refund-policy",
                     "open_new_tab": false,
                     "text_color": "",
@@ -199,7 +199,7 @@
                 "footer_link_WW8cgN": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Política de Privacidad",
+                    "label": "Datenschutzrichtlinie",
                     "link": "shopify://policies/privacy-policy",
                     "open_new_tab": false,
                     "text_color": "",
@@ -211,7 +211,7 @@
                 "footer_link_cGEhLM": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Política de Envíos",
+                    "label": "Versandrichtlinie",
                     "link": "shopify://policies/shipping-policy",
                     "open_new_tab": false,
                     "text_color": "",
@@ -278,7 +278,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Enlaces Útiles</p>",
+                "text": "<p>Nützliche Link</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -310,7 +310,7 @@
                 "link_1": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Sobre Nosotros",
+                    "label": "Über uns",
                     "link": "shopify://pages/sobre-nosotros",
                     "open_new_tab": false,
                     "text_color": "",
@@ -322,7 +322,7 @@
                 "link_2": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Contacto",
+                    "label": "Kontakt",
                     "link": "shopify://pages/contact-us",
                     "open_new_tab": false,
                     "text_color": "",
@@ -334,7 +334,7 @@
                 "footer_link_aPxCig": {
                   "type": "footer-link",
                   "settings": {
-                    "label": "Rastrea tu Pedido",
+                    "label": "Bestellung verfolgen",
                     "link": "https://titan-peak.com/apps/track123",
                     "open_new_tab": false,
                     "text_color": "",
@@ -400,7 +400,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Contacto</p>",
+                "text": "<p>Kontakt</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -427,7 +427,7 @@
               "type": "footer-menu",
               "name": "Footer menu",
               "settings": {
-                "heading": "Contáctanos por correo: titanpeaksupport@gmail.com"
+                "heading": "Kontaktiere uns per E-Mail: titanpeaksupport@gmail.com"
               },
               "blocks": {
                 "footer_link_VWddgL": {

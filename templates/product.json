@@ -66,7 +66,7 @@
               "type": "testimonial-card",
               "name": "Testimonial card",
               "settings": {
-                "avatar_image": "shopify://shop_images/doctormexicanop.webp",
+                "avatar_image": "shopify://shop_images/aleman.webp",
                 "quote": "<p>Für Männer, die ihre Energie und ihren Antrieb zurückgewinnen möchten, empfehle ich den natürlichen Weg. Diese Kombination aus reinem Shilajit und adaptogenen Kräutern hilft auf sichere Weise dabei, die Ausdauer und das Wohlbefinden zu verbessern, um die volle Leistungsfähigkeit zu erreichen.</p>",
                 "reviewer_name": "Dr. Lukas M.",
                 "reviewer_title": "Approbierter Arzt, Spezialist für Männergesundheit",
@@ -204,7 +204,7 @@
               "type": "rating-badge",
               "name": "Rating badge",
               "settings": {
-                "text": "<p>Bewertet mit 4,5/5 von Tausenden Kunden</p>",
+                "text": "<p>Bewertet mit <strong>4,5/5</strong> von <strong>Tausenden Kunden</strong></p>",
                 "icon_count": 5,
                 "icon_color": "#ff4c01",
                 "icon_size": 18,
@@ -905,9 +905,9 @@
         "results_timeline_item_Bkbqxg": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>SEMANA 1</p>",
-            "subtitle": "Reinicio de Estrés y Energía",
-            "bullets": "<ul><li>El cortisol empieza a bajar, se despeja la niebla mental</li><li>Duermes mejor, las mañanas se sienten distintas</li><li>El ánimo se estabiliza, el estrés ya no te pega tan duro</li><li>Primeras señas de energía y foco de vuelta</li></ul>",
+            "period": "<p>WOCHE 1</p>",
+            "subtitle": "Neustart für Stress und Energie",
+            "bullets": "<ul><li>Der Cortisolspiegel beginnt zu sinken, der mentale Nebel lichtet sich</li><li>Du schläfst besser, die Morgen fühlen sich anders an</li><li>Deine Stimmung stabilisiert sich, Stress trifft dich nicht mehr so hart</li><li>Erste Anzeichen von zurückkehrender Energie und Fokus</li></ul>",
             "icon": "lightning"
           },
           "blocks": {}
@@ -915,9 +915,9 @@
         "results_timeline_item_nE8Vez": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>MES 1</p>",
-            "subtitle": "Hormonas y Rendimiento en Recuperación",
-            "bullets": "<ul><li>El apoyo a la testosterona ya se empieza a notar</li><li>Las ganas regresan de forma constante</li><li>El flujo sanguíneo y la circulación mejoran día con día</li><li>La confianza y el gusto por andar prendido vuelven solitos</li></ul>",
+            "period": "<p>MONAT 1</p>",
+            "subtitle": "Hormone und Leistungserholung",
+            "bullets": "<ul><li>Die Unterstützung des Testosteronspiegels macht sich langsam bemerkbar</li><li>Das Verlangen kehrt beständig zurück</li><li>Blutfluss und Durchblutung verbessern sich Tag für Tag</li><li>Selbstvertrauen und sexuelles Verlangen kehren ganz von allein zurück</li></ul>",
             "icon": "star"
           },
           "blocks": {}
@@ -925,9 +925,9 @@
         "results_timeline_item_eXFLhN": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>MES 3+</p>",
-            "subtitle": "Rendimiento Máximo y Vitalidad",
-            "bullets": "<ul><li>Los 6 ingredientes en plena sinergia</li><li>Equilibrio hormonal restaurado y que se sostiene</li><li>Energía, aguante y rendimiento como tu nueva normalidad</li><li>Tu pareja lo nota. Tú lo sientes. Todos se dan cuenta.</li></ul>",
+            "period": "<p>MONAT 3+</p>",
+            "subtitle": "Höchstleistung und Vitalität",
+            "bullets": "<ul><li>Alle 6 Inhaltsstoffe in voller Synergie</li><li>Wiederhergestelltes und stabiles hormonelles Gleichgewicht</li><li>Energie, Ausdauer und Leistung als deine neue Normalität</li><li>Deine Partnerin merkt es. Du spürst es. Alle bemerken es.</li></ul>",
             "icon": "heart_pulse"
           },
           "blocks": {}
@@ -940,7 +940,7 @@
       ],
       "name": "Results timeline",
       "settings": {
-        "heading": "QUÉ ESPERAR: EJEMPLO DE LÍNEA DE RESULTADOS",
+        "heading": "WAS DICH ERWARTET: BEISPIEL-ERGEBNISVERLAUF",
         "section_width": "full-width",
         "container_max_width": 1440,
         "container_padding_desktop": 120,
@@ -1051,7 +1051,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Ya sientes menos ganas y deseo que antes, y ya lleva más tiempo del que te gustaría admitir.</p>",
+            "description": "<p>Du merkst schon seit längerem weniger Lust und Verlangen als früher – länger, als du zugeben möchtest.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1062,7 +1062,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu energía se te va en picada durante el día y te levantas ya cansado.</p>",
+            "description": "<p>Deine Energie stürzt im Laufe des Tages ab, und du wachst schon müde auf.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1073,7 +1073,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu rendimiento es una montaña rusa y nunca sabes qué esperar de ti mismo.</p>",
+            "description": "<p>Deine Leistung ist eine Achterbahnfahrt, und du weißt nie, was du von dir selbst erwarten kannst.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1084,7 +1084,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>El estrés y el bajón de ánimo te están matando en friega la confianza y las ganas.</p>",
+            "description": "<p>Stress und Stimmungstiefs zehren schnell an deinem Selbstvertrauen und deiner Lust.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1095,7 +1095,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Ya probaste pastillas u otros suplementos y no te funcionaron, o dejaron de hacerlo.</p>",
+            "description": "<p>Du hast schon Pillen oder andere Supplements ausprobiert, aber sie haben nicht gewirkt oder irgendwann aufgehört zu wirken.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1106,7 +1106,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Quieres atacarle a la causa real, no nomás tapar el bache por una noche.</p>",
+            "description": "<p>Du willst die eigentliche Ursache angehen, nicht nur für eine Nacht ein Pflaster draufkleben.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1127,7 +1127,7 @@
         "image_alt": "",
         "image_link": "",
         "image_radius": 10,
-        "kicker": "<p>TITAN PEAK ES PARA TI SI...</p>",
+        "kicker": "<p>TITAN PEAK IST GENAU RICHTIG FÜR DICH, WENN...</p>",
         "description": "",
         "content_width": "page-width",
         "image_position": "right",
@@ -1156,7 +1156,7 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1.webp",
             "title": "Ashwagandha",
-            "description": "Ayuda a reducir el cortisol, potencia la testosterona libre y mejora la resistencia al estrés.",
+            "description": "Hilft, den Cortisolspiegel zu senken, steigert das freie Testosteron und verbessert die Stressresistenz.",
             "background_color": ""
           },
           "blocks": {}
@@ -1166,7 +1166,7 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1.webp",
             "title": "Shilajit",
-            "description": "Apoya el aumento de la testosterona total y libre, potenciando la energía celular (ATP).",
+            "description": "Unterstützt den Anstieg von Gesamt- und freiem Testosteron und fördert die zelluläre Energie (ATP).",
             "background_color": ""
           },
           "blocks": {}
@@ -1176,7 +1176,7 @@
           "settings": {
             "image": "shopify://shop_images/ginsjen_9c376acb-359a-4149-a743-00cc79cce187.webp",
             "title": "Panax Ginseng",
-            "description": "Ayuda a la producción de LH, mejora el flujo sanguíneo y tiene efecto antiinflamatorio.",
+            "description": "Unterstützt die LH-Produktion, verbessert die Durchblutung und wirkt entzündungshemmend.",
             "background_color": ""
           },
           "blocks": {}
@@ -1185,8 +1185,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/saffron.webp",
-            "title": "Azafrán",
-            "description": "Favorece la producción de óxido nítrico, mejorando la circulación.",
+            "title": "Safran",
+            "description": "Fördert die Produktion von Stickstoffmonoxid und verbessert die Durchblutung.",
             "background_color": ""
           },
           "blocks": {}
@@ -1195,8 +1195,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_7954ca93-780a-4ac0-aa31-a7f690a2b3a6.webp",
-            "title": "Maca Negra",
-            "description": "Potencia el deseo a través de vías naturales del sistema nervioso central, sin intervenir en las hormonas.",
+            "title": "Schwarze Maca",
+            "description": "Steigert das Verlangen über natürliche Wege des zentralen Nervensystems, ohne in den Hormonhaushalt einzugreifen.",
             "background_color": ""
           },
           "blocks": {}
@@ -1205,8 +1205,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1_9fc9d08a-a7bf-48af-a123-29d191717d0b.webp",
-            "title": "L-Arginina",
-            "description": "Se convierte en óxido nítrico, favoreciendo la vasodilatación y el flujo sanguíneo hacia zonas íntimas.",
+            "title": "L-Arginin",
+            "description": "Wird in Stickstoffmonoxid umgewandelt und fördert die Gefäßerweiterung sowie die Durchblutung intimer Bereiche.",
             "background_color": ""
           },
           "blocks": {}
@@ -1224,7 +1224,7 @@
               "settings": {
                 "icon": "seal_check",
                 "icon_color": "#1a1a1a",
-                "text": "Testeado por Laboratorios Externos",
+                "text": "Von externen Laboren getestet",
                 "text_color": "#1a1a1a"
               },
               "blocks": {}
@@ -1234,7 +1234,7 @@
               "settings": {
                 "icon": "seal_check",
                 "icon_color": "#1a1a1a",
-                "text": "Solución Pura y Natural",
+                "text": "Reine und natürliche Lösung",
                 "text_color": "#1a1a1a"
               },
               "blocks": {}
@@ -1256,8 +1256,8 @@
       ],
       "name": "Ingredients carousel",
       "settings": {
-        "heading_accent": "INGREDIENTES PODEROSOS",
-        "heading": "PARA UN RENDIMIENTO MÁXIMO",
+        "heading_accent": "KRAFTVOLLE INHALTSSTOFFE",
+        "heading": "FÜR HÖCHSTLEISTUNG",
         "subheading": "",
         "heading_size": 32,
         "heading_weight": "800",
@@ -1293,7 +1293,7 @@
         "autoplay": false,
         "autoplay_speed": 5,
         "transition_speed": 400,
-        "button_label": "COMPRAR AHORA",
+        "button_label": "JETZT KAUFEN",
         "button_link": "#product-information",
         "button_open_new_tab": false,
         "button_text_color": "#1a1a1a",
@@ -1314,13 +1314,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/personamexicana2-clean.webp",
-            "reviewer_name": "Pedro",
+            "reviewer_name": "Thomas",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Lo mejor",
-            "quote": "<p>Llevo unas 10 semanas tomándolas y de verdad siento que volví a ser yo: la energía, las ganas, las ganas de entrenar. Es como si mi testosterona hubiera despertado de nuevo.</p>",
+            "tag_text": "Das Beste",
+            "quote": "<p>Ich nehme sie jetzt seit etwa 10 Wochen, und ich habe wirklich das Gefühl, wieder ich selbst zu sein: die Energie, die Lust, die Lust aufs Training. Es ist, als wäre mein Testosteron wieder aufgewacht.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1329,13 +1329,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/jorge-clean.webp",
-            "reviewer_name": "Jorge T.",
+            "reviewer_name": "Michael H.",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Es esencial para mí",
-            "quote": "<p>Es todo lo que necesito. Me sube la energía y la concentración. Perfecto antes de darle duro al trabajo o al entreno. Se lo recomiendo a todo mundo</p>",
+            "tag_text": "Es ist für mich unverzichtbar",
+            "quote": "<p>Es ist alles, was ich brauche. Es steigert meine Energie und Konzentration. Perfekt, bevor ich bei der Arbeit oder beim Training richtig Gas gebe. Ich empfehle es jedem.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1344,13 +1344,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/pareja-clean.webp",
-            "reviewer_name": "Bernardo P.",
+            "reviewer_name": "Sebastian L.",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Potente",
-            "quote": "<p>¿Quién iba a decir que dos gomitas podían hacer tanto? Ando más despierto, mi energía anda por las nubes y en general me siento mejor. Ya se me volvió esencial en el día a día. Bien enganchado.</p>",
+            "tag_text": "Stark",
+            "quote": "<p>Wer hätte gedacht, dass zwei Gummies so viel bewirken können? Ich bin wacher, meine Energie geht durch die Decke, und generell fühle ich mich besser. Es ist mittlerweile fester Bestandteil meines Alltags geworden. Ich bin total dabei.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1359,13 +1359,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/personamexicana-clean.webp",
-            "reviewer_name": "Andrés G.",
+            "reviewer_name": "Jan T.",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Una solución increíble",
-            "quote": "<p>Soy entrenador personal y le recomiendo Titan Peak a todos mis clientes. Energía, ganancia muscular, ganas — mis clientes dicen que sienten que su testosterona regresó.</p>",
+            "tag_text": "Eine unglaubliche Lösung",
+            "quote": "<p>Ich bin Personal Trainer und empfehle Titan Peak all meinen Klienten. Energie, Muskelaufbau, Lust — meine Klienten sagen, sie fühlen sich, als wäre ihr Testosteron zurückgekehrt.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1375,7 +1375,7 @@
           "name": "Rating badge",
           "static": true,
           "settings": {
-            "text": "<p>Valorado <strong>4.5/5 </strong>por <strong>Miles de Clientes</strong></p>",
+            "text": "<p>Bewertet mit <strong>4,5/5</strong> von <strong>Tausenden Kunden</strong></p>",
             "icon_count": 5,
             "icon_color": "#ff4c01",
             "icon_size": 18,
@@ -1410,7 +1410,7 @@
       ],
       "name": "Testimonial carousel",
       "settings": {
-        "heading": "<p>TANTOS HOMBRES ESTÁN RECUPERANDO SU VIDA CON SHILAJIT GOLD DE TITAN PEAK</p>",
+        "heading": "<p>SO VIELE MÄNNER GEWINNEN IHR LEBEN MIT TITAN PEAK SHILAJIT GOLD ZURÜCK</p>",
         "heading_color": "#1a1a1a",
         "heading_accent_color": "#a45b2c",
         "heading_size_mobile": 24,
@@ -1467,8 +1467,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuántas gomitas debo tomar al día?",
-            "answer": "<p>Recomendamos tomar dos gomitas al día. Cada gomita trae una potente mezcla de rendimiento con ingredientes como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, diseñada para apoyar los niveles de testosterona, el flujo sanguíneo, el aguante y el rendimiento. Como la fórmula está bien concentrada, con dos gomitas te alcanza de sobra para apoyar tu rendimiento, energía y vitalidad de todos los días.</p>",
+            "question": "Wie viele Gummies sollte ich täglich einnehmen?",
+            "answer": "<p>Wir empfehlen, täglich zwei Gummies einzunehmen. Jede Gummy enthält eine starke Leistungsmischung aus Inhaltsstoffen wie Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginin und Safran, die entwickelt wurde, um den Testosteronspiegel, die Durchblutung, die Ausdauer und die Leistung zu unterstützen. Da die Formel stark konzentriert ist, reichen zwei Gummies mehr als aus, um deine tägliche Leistung, Energie und Vitalität zu unterstützen.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1476,8 +1476,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Me van a dar nervios o bajones de energía?",
-            "answer": "<p>No. Performance Gummies están libres de estimulantes por completo. En lugar de andar dependiendo de cafeína o estimulantes artificiales, la fórmula apoya la producción natural de energía, el equilibrio hormonal y una circulación saludable. Así disfrutas de una energía pareja, mejor aguante y más rendimiento, sin nerviosismo ni bajones.</p>",
+            "question": "Bekomme ich davon Nervosität oder Energieeinbrüche?",
+            "answer": "<p>Nein. Leistungs-Gummies sind vollständig frei von Stimulanzien. Anstatt von Koffein oder künstlichen Stimulanzien abhängig zu sein, unterstützt die Formel die natürliche Energieproduktion, das hormonelle Gleichgewicht und eine gesunde Durchblutung. So genießt du eine gleichmäßige Energie, bessere Ausdauer und mehr Leistung, ohne Nervosität und ohne Einbrüche.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1485,8 +1485,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuál es el mejor momento para tomar mi gomita?",
-            "answer": "<p>Puedes tomar tu gomita a la hora del día que quieras, aunque la mayoría de los hombres la prefiere por la mañana o a primera hora de la tarde, para traer la energía, el aguante y la confianza al cien todo el día. Como los ingredientes apoyan el equilibrio de la testosterona, la producción de óxido nítrico y la circulación, tomarla a diario y sin fallar es lo que da resultados más sólidos a la larga.</p>",
+            "question": "Wann ist der beste Zeitpunkt, um meine Gummy einzunehmen?",
+            "answer": "<p>Du kannst deine Gummy zu jeder Tageszeit einnehmen, auch wenn die meisten Männer sie morgens oder am frühen Nachmittag bevorzugen, um Energie, Ausdauer und Selbstvertrauen den ganzen Tag über auf 100 % zu halten. Da die Inhaltsstoffe das Testosteron-Gleichgewicht, die Produktion von Stickstoffmonoxid und die Durchblutung unterstützen, liefert eine tägliche, konsequente Einnahme langfristig die besten Ergebnisse.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1494,8 +1494,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué tan rápido voy a sentir los efectos?",
-            "answer": "<p>Algunos hombres notan más energía, confianza y aguante desde los primeros días. Pero como la fórmula trabaja apoyando el equilibrio hormonal, el flujo sanguíneo y la producción de óxido nítrico, los mejores resultados suelen llegar entre las 4 y 8 semanas de uso diario sin fallar. Con el uso constante, muchos reportan más ganas, mejor rendimiento y más aguante con el paso del tiempo.</p>",
+            "question": "Wie schnell werde ich die Wirkung spüren?",
+            "answer": "<p>Manche Männer bemerken schon in den ersten Tagen mehr Energie, Selbstvertrauen und Ausdauer. Da die Formel jedoch das hormonelle Gleichgewicht, die Durchblutung und die Produktion von Stickstoffmonoxid unterstützt, stellen sich die besten Ergebnisse in der Regel nach 4 bis 8 Wochen täglicher, konsequenter Einnahme ein. Bei regelmäßiger Anwendung berichten viele mit der Zeit von mehr Verlangen, besserer Leistung und mehr Ausdauer.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1503,8 +1503,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gomitas son de calidad?",
-            "answer": "<p>Nuestras Performance Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
+            "question": "Woher weiß ich, dass diese Gummies von hoher Qualität sind?",
+            "answer": "<p>Unsere Leistungs-Gummies werden in GMP-zertifizierten Anlagen hergestellt und von externen Laboren auf Reinheit und Sicherheit geprüft. Wir verwenden sorgfältig ausgewählte Inhaltsstoffe wie Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginin und Safran, die aufgrund ihrer nachgewiesenen Wirkung zur Unterstützung der männlichen Vitalität, des Verlangens, der Durchblutung und der Leistung ausgewählt wurden. Das Ergebnis ist eine saubere, kraftvolle Formel für Männer, die wirklich echte Unterstützung für ihre Leistung suchen.<br/><br/></p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1512,8 +1512,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomar las Gommies de Rendimiento junto con otros suplementos?",
-            "answer": "<p>Sí. Las Gummies de Rendimiento por lo general se pueden tomar junto con la mayoría de los suplementos que ya tomas a diario. Como la fórmula se enfoca en apoyar el equilibrio de la testosterona, el flujo sanguíneo y la energía natural, muchos hombres la combinan con multivitamínicos, proteína u otros productos de bienestar dentro de su rutina diaria. Si andas tomando algún medicamento con receta o tienes alguna condición médica, mejor consúltalo primero con tu médico.</p>",
+            "question": "Kann ich die Leistungs-Gummies zusammen mit anderen Supplements einnehmen?",
+            "answer": "<p>Ja. Die Leistungs-Gummies können in der Regel zusammen mit den meisten Supplements eingenommen werden, die du bereits täglich nimmst. Da sich die Formel auf die Unterstützung des Testosteron-Gleichgewichts, der Durchblutung und der natürlichen Energie konzentriert, kombinieren viele Männer sie mit Multivitaminen, Protein oder anderen Wellness-Produkten in ihrer täglichen Routine. Wenn du verschreibungspflichtige Medikamente einnimmst oder eine Vorerkrankung hast, solltest du das vorher mit deinem Arzt besprechen.<br/><br/></p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1521,8 +1521,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro usarlo a largo plazo?",
-            "answer": "<p>Sí. Las Gomitas de Rendimiento están hechas con ingredientes de origen natural, usados desde hace mucho para apoyar la vitalidad masculina y el equilibrio hormonal. A diferencia de los productos a base de estimulantes, esta fórmula trabaja apoyando la regulación hormonal natural del cuerpo, la circulación y los sistemas de energía, lo que la hace apta para usarse a diario sin problema, como parte de tu rutina de largo plazo.</p>",
+            "question": "Ist die langfristige Anwendung sicher?",
+            "answer": "<p>Ja. Die Leistungs-Gummies bestehen aus natürlichen Inhaltsstoffen, die schon lange zur Unterstützung der männlichen Vitalität und des hormonellen Gleichgewichts eingesetzt werden. Im Gegensatz zu Produkten auf Stimulanzien-Basis unterstützt diese Formel die natürliche hormonelle Regulation des Körpers, die Durchblutung und die Energiesysteme, wodurch sie sich problemlos für die tägliche Einnahme als Teil deiner langfristigen Routine eignet.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1539,7 +1539,7 @@
       ],
       "name": "FAQ accordion",
       "settings": {
-        "heading": "PREGUNTAS FRECUENTES",
+        "heading": "HÄUFIG GESTELLTE FRAGEN",
         "heading_color": "#212529",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,

@@ -94,7 +94,7 @@
               "type": "rating-badge",
               "name": "Rating badge",
               "settings": {
-                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "text": "<p>Bewertet mit <strong>4,5/5</strong> von <strong>Tausenden Kunden</strong></p>",
                 "icon_count": 5,
                 "icon_color": "#ff4c01",
                 "icon_size": 18,
@@ -208,8 +208,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "60 gomitas por envase",
-                        "description": "<p>Te alcanza para 2 meses completos, para que no interrumpas tu rutina.</p>",
+                        "title": "60 Gummies pro Packung",
+                        "description": "<p>Reicht für 2 volle Monate, damit du deine Routine nicht unterbrechen musst.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -219,8 +219,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Erecciones más firmes y duraderas, con flujo sanguíneo al máximo",
-                        "description": "<p>Un extra de circulación y rendimiento para que te sientas al cien en todo momento.</p>",
+                        "title": "Festere und länger anhaltende Erektionen, mit maximalem Blutfluss",
+                        "description": "<p>Ein Extra an Durchblutung und Leistung, damit du dich jederzeit zu 100 % fühlst.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -230,8 +230,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Sube tu testosterona, tus ganas y tu hombría.",
-                        "description": "<p>Recupera tu fuerza, tu deseo y tu confianza de forma natural.</p>",
+                        "title": "Steigert dein Testosteron, dein Verlangen und deine Männlichkeit.",
+                        "description": "<p>Gewinne deine Kraft, dein Verlangen und dein Selbstvertrauen auf natürliche Weise zurück.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -241,8 +241,8 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mayor confianza",
-                        "description": "<p>Menos cortisol, más confianza, control total.</p>",
+                        "title": "Mehr Selbstvertrauen",
+                        "description": "<p>Weniger Cortisol, mehr Selbstvertrauen, volle Kontrolle.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -363,12 +363,12 @@
                 "in_stock_color": "",
                 "low_stock_color": "",
                 "out_of_stock_color": "",
-                "in_stock_text": "Stock disponible",
+                "in_stock_text": "Auf Lager",
                 "low_stock_text": "",
                 "out_of_stock_text": "",
                 "show_delivery": true,
                 "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "delivery_text": "Geschätzte Lieferzeit: 3 bis 6 Werktage",
                 "alignment": "center",
                 "gap": 20,
                 "font_size_desktop": 14,
@@ -466,21 +466,21 @@
                 "product_perk_item_xGcHyk": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Devolución en 60 días"
+                    "text": "60 Tage Rückgaberecht"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_MmL3Hr": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Envío rápido"
+                    "text": "Schneller Versand"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_JL9G9Y": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Cancela cuando tú quieras"
+                    "text": "Jederzeit kündbar"
                   },
                   "blocks": {}
                 }
@@ -499,7 +499,7 @@
                 "badge_alt": "",
                 "badge_size_desktop": 68,
                 "badge_size_mobile": 48,
-                "title": "Así de seguros andamos de tus resultados. Pero si no quedas encantado, nos lo regresas y te devolvemos tu dinero.",
+                "title": "So sicher sind wir uns bei deinen Ergebnissen. Solltest du dennoch nicht begeistert sein, schickst du es uns zurück und wir erstatten dir dein Geld.",
                 "title_color": "#1a1a1a",
                 "title_size_desktop": 14,
                 "title_size_mobile": 12,
@@ -527,11 +527,11 @@
                 "badge_alt": "",
                 "badge_size_desktop": 68,
                 "badge_size_mobile": 48,
-                "title": "CUIDADO CON LAS RÉPLICAS BARATAS",
+                "title": "VORSICHT VOR BILLIGEN NACHAHMUNGEN",
                 "title_color": "{{ settings.color_palette.background }}",
                 "title_size_desktop": 14,
                 "title_size_mobile": 12,
-                "description": "Solo nuestra marca garantiza la alta calidad del producto utilizado por miles de personas para la vitalidad masculina.",
+                "description": "Nur unsere Marke garantiert die hohe Qualität des Produkts, das von Tausenden für die männliche Vitalität genutzt wird.",
                 "description_color": "{{ settings.color_palette.background }}",
                 "description_size": 12,
                 "background_color": "#c41731",
@@ -552,7 +552,7 @@
               "name": "Testimonial card",
               "settings": {
                 "avatar_image": "shopify://shop_images/personamexicana-clean_343daa89-82a6-44e7-a153-32d8add33526.webp",
-                "quote": "<p>Empecé a tomar TITAN PEAK Shilajit sobre todo por la energía, pero en un par de semanas noté bastante más que eso. Mi aguante mejoró, dejé de andar con el bajón de la tarde, y hasta mi ánimo se sintió más parejo. Lo que más me sorprendió fue lo mucho más marcado que me veía: menos hinchado, la cara más definida, y recuperé la confianza. Este es el primer suplemento que de verdad sentí que hacía algo.</p>",
+                "quote": "<p>Ich habe TITAN PEAK Shilajit vor allem wegen der Energie genommen, aber schon nach ein paar Wochen merkte ich deutlich mehr als das. Meine Ausdauer hat sich verbessert, das Nachmittagstief war weg, und sogar meine Stimmung fühlte sich ausgeglichener an. Am meisten hat mich überrascht, wie viel definierter ich aussah: weniger aufgedunsen, ein schärferes Gesicht, und ich habe mein Selbstvertrauen zurückgewonnen. Das ist das erste Supplement, bei dem ich wirklich das Gefühl hatte, dass es etwas bewirkt.<br/><br/></p>",
                 "reviewer_name": "Daniel J. 52 Años",
                 "reviewer_title": "",
                 "show_verified_badge": true,
@@ -797,9 +797,9 @@
           "settings": {
             "category": "All",
             "before_image": "shopify://shop_images/persona.webp",
-            "before_label": "Antes",
+            "before_label": "Vorher",
             "after_image": "shopify://shop_images/persona2.webp",
-            "after_label": "Después de 3 meses"
+            "after_label": "Nach 3 Monaten"
           },
           "blocks": {}
         },
@@ -808,9 +808,9 @@
           "settings": {
             "category": "Body composition",
             "before_image": "shopify://shop_images/persona3antes.webp",
-            "before_label": "Antes",
+            "before_label": "Vorher",
             "after_image": "shopify://shop_images/Gemini_Generated_Image_2hghy52hghy52hgh-clean.webp",
-            "after_label": "Después de 4 semanas"
+            "after_label": "Nach 4 Wochen"
           },
           "blocks": {}
         },
@@ -819,9 +819,9 @@
           "settings": {
             "category": "Energy levels",
             "before_image": "shopify://shop_images/persona4antes.webp",
-            "before_label": "Antes",
+            "before_label": "Vorher",
             "after_image": "shopify://shop_images/persona4despues.webp",
-            "after_label": "Después de 6 semanas"
+            "after_label": "Nach 6 Wochen"
           },
           "blocks": {}
         },
@@ -830,9 +830,9 @@
           "settings": {
             "category": "Body composition",
             "before_image": "shopify://shop_images/persona5antes.webp",
-            "before_label": "Antes",
+            "before_label": "Vorher",
             "after_image": "shopify://shop_images/persona5despues.webp",
-            "after_label": "Después de 8 semanas"
+            "after_label": "Nach 8 Wochen"
           },
           "blocks": {}
         }
@@ -845,12 +845,12 @@
       ],
       "name": "Before/after slider",
       "settings": {
-        "heading": "<p>MI TESTOSTERONA SE TRIPLICÓ <strong>Y MI MUJER LO NOTÓ ENSEGUIDA</strong></p>",
+        "heading": "<p>MEIN TESTOSTERON HAT SICH VERDREIFACHT, <strong>UND MEINE FRAU HAT ES SOFORT BEMERKT</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_accent_color": "#c9a84c",
         "heading_size_mobile": 30,
         "heading_size_desktop": 42,
-        "subheading": "<p>Mira las transformaciones y resultados increíbles que dan nuestras gomitas.</p>",
+        "subheading": "<p>Sieh dir die unglaublichen Verwandlungen und Ergebnisse an, die unsere Gummies liefern.</p>",
         "subheading_color": "#666666",
         "subheading_size": 18,
         "header_gap_mobile": 20,
@@ -918,9 +918,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "fire",
-            "badge": "Día 7",
-            "title": "Encendido",
-            "description": "<p>✔ El Shilajit empieza a reponer los minerales que traías agotados<br/>✔ El cortisol empieza a nivelarse → menos hinchazón y retención<br/>✔ Menos cansancio, más ganas de moverte en el día</p>"
+            "badge": "Tag 7",
+            "title": "Zündung",
+            "description": "<p>✓ Shilajit beginnt, die Mineralstoffe aufzufüllen, die dir gefehlt haben<br/>✓ Der Cortisolspiegel beginnt sich zu normalisieren → weniger Blähungen und Wassereinlagerungen<br/>✓ Weniger Müdigkeit, mehr Lust, dich tagsüber zu bewegen</p>"
           },
           "blocks": {}
         },
@@ -928,9 +928,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "lightning_bolt",
-            "badge": "Día 21",
-            "title": "Chispa",
-            "description": "<p>✔ El ácido fúlvico ayuda a absorber mejor los nutrientes y a subir la energía celular<br/>✔ El apoyo a la testosterona ya se empieza a notar → más ganas y más confianza<br/>✔ Notas mejor circulación y rendimiento<br/>✔ El cuerpo se empieza a ver más firme, menos volumen en panza y pecho</p>"
+            "badge": "Tag 21",
+            "title": "Funke",
+            "description": "<p>✓ Fulvinsäure hilft, Nährstoffe besser aufzunehmen und die zelluläre Energie zu steigern<br/>✓ Die Unterstützung des Testosterons macht sich bereits bemerkbar → mehr Verlangen und mehr Selbstvertrauen<br/>✓ Du spürst eine bessere Durchblutung und Leistung<br/>✓ Der Körper wirkt straffer, weniger Volumen an Bauch und Brust</p>"
           },
           "blocks": {}
         },
@@ -938,9 +938,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "plane",
-            "badge": "Semana 8",
-            "title": "DESPEGUE",
-            "description": "<p>✔ Testosterona, energía y rendimiento andan arriba de forma constante<br/>✔ Mejor circulación y aguante físico<br/>✔ Te ves más marcado, te recuperas mejor y traes energía todo el día</p>"
+            "badge": "Woche 8",
+            "title": "ABHEBEN",
+            "description": "<p>✓ Testosteron, Energie und Leistung bleiben konstant hoch<br/>✓ Bessere Durchblutung und körperliche Ausdauer<br/>✓ Du siehst definierter aus, erholst dich besser und hast den ganzen Tag Energie</p>"
           },
           "blocks": {}
         },
@@ -971,7 +971,7 @@
       ],
       "name": "Roadmap",
       "settings": {
-        "heading": "<p>QUÉ ESPERAR EN <strong>MENOS DE 8 SEMANAS</strong></p>",
+        "heading": "<p>WAS DICH IN WENIGER ALS <strong>8 WOCHEN ERWARTET</strong></p>",
         "heading_color": "#ffffff",
         "heading_size": 42,
         "accent_gradient_start": "#b8b8b8",
@@ -1018,77 +1018,77 @@
         "testimonial_peek_card_fEVKKU": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Esto arregló lo que yo creía que era pura vejez.\"</strong></p><p>\"Pensaba que andar cansado todo el tiempo era lo normal. Después de unas semanas me regresó la energía, mejoré en mis entrenos y volví a sentirme yo mismo.\"<br/></p>",
+            "quote": "<p><strong>\"Das hat das behoben, was ich für pure Altersschwäche hielt.\"</strong></p><p>\"Ich dachte, ständig müde zu sein wäre normal. Nach ein paar Wochen kam meine Energie zurück, ich habe mich beim Training verbessert und fühlte mich wieder wie ich selbst.\"<br/></p>",
             "star_count": 5,
-            "reviewer_name": "Omar H. 49 Años",
+            "reviewer_name": "Tobias P., 49 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_YDkHEr": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
+            "quote": "<p><strong>\"Meine Frau hört nicht auf zu fragen, was ich verändert habe.\"</strong></p><p>\"Ich habe ihr nicht gesagt, dass ich damit angefangen hatte, aber sie hat es bemerkt. Mehr Energie, bessere Leistung und insgesamt mehr Präsenz. Damit war eigentlich schon alles gesagt.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Bruno C 37 años",
+            "reviewer_name": "Matthias N., 37 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_jTWxeG": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"La neta no esperaba mucho, pero la mejora en circulación es real.\"</strong></p><p>\"Ando más despierto, con más energía, y se nota la diferencia: mejor rendimiento, más aguante y bastante más confianza.\"<br/><br/></p>",
+            "quote": "<p><strong>\"Ehrlich gesagt hatte ich nicht viel erwartet, aber die Verbesserung der Durchblutung ist real.\"</strong></p><p>\"Ich bin wacher, habe mehr Energie, und man merkt den Unterschied: bessere Leistung, mehr Ausdauer und deutlich mehr Selbstvertrauen.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Marcos M. 52 años",
+            "reviewer_name": "Florian G., 52 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_hBtJPV": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
+            "quote": "<p><strong>\"Schon nach 10 Tagen hatte ich richtig viel Energie.\"</strong></p><p>\"Kein Nachmittagstief mehr, und ich bin generell viel motivierter. Sogar beim Training fühle ich mich stärker. Das funktioniert wirklich.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Beto T. 42 años",
+            "reviewer_name": "Christian R., 42 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_FWMByT": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Rostro más marcado, más confianza.\"</strong></p><p>\"Empecé por la energía, pero noté que traía la cara menos hinchada y más definida. Nomás con eso ya se me subió la confianza una barbaridad.\"</p>",
+            "quote": "<p><strong>\"Definierteres Gesicht, mehr Selbstvertrauen.\"</strong></p><p>\"Ich habe wegen der Energie angefangen, aber bemerkte, dass mein Gesicht weniger aufgedunsen und definierter war. Allein das hat mein Selbstvertrauen enorm gesteigert.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Kevin R. 54 años",
+            "reviewer_name": "Daniel F., 54 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_mf6N8b": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Volví a sentirme yo mismo.\"</strong></p><p>\"Llevaba meses arrastrándome las tardes. Con esto recuperé las ganas de hacer algo después del jale, no solo tirarme en el sillón.\"</p>",
+            "quote": "<p><strong>\"Ich fühlte mich wieder wie ich selbst.\"</strong></p><p>\"Monatelang habe ich mich nachmittags nur noch durchgeschleppt. Damit habe ich wieder Lust bekommen, nach der Arbeit noch etwas zu unternehmen, statt mich nur aufs Sofa zu werfen.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Rubén A. 45 años",
+            "reviewer_name": "Markus S., 45 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_fMeJwF": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
+            "quote": "<p><strong>\"Schluss mit dem Nachmittagstief.\"</strong></p><p>\"Früher konnte ich um 17 Uhr schon nichts mehr leisten. Jetzt habe ich bis zum Abend Energie, ohne extra Kaffee zu brauchen.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Iván G. 44 años",
+            "reviewer_name": "Stefan K., 44 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         }
@@ -1104,7 +1104,7 @@
       ],
       "name": "Testimonial peek carousel",
       "settings": {
-        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
+        "heading": "<p>DIE VERBESSERUNG, DIE MÄNNER ÜBER 40 <strong>WIRKLICH BEMERKEN</strong></p>",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",

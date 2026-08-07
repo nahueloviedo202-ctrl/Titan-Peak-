@@ -364,7 +364,6 @@
       "blocks": {
         "customer_reviews_tab_nUmhez": {
           "type": "_customer-reviews-tab",
-          "disabled": true,
           "settings": {
             "tab_label": "LEISTUNGS-GUMMIES"
           },
@@ -511,7 +510,6 @@
         },
         "customer_reviews_tab_89zqP6": {
           "type": "_customer-reviews-tab",
-          "disabled": true,
           "settings": {
             "tab_label": "PURE SHILAJIT GUMMIES"
           },
@@ -731,21 +729,21 @@
                 "rating": 5,
                 "show_verified_badge": true,
                 "verified_badge_text": "Verifizierter Kunde",
-                "label_text": "BIENESTAR COMPLETO",
-                "review_text": "<p>Las compré sobre todo por el apoyo contra el estrés y superaron mis expectativas por todos lados. Duermo más profundo, mi mente está más clara y mi energía durante el día es mucho más pareja. El Ginkgo y el Ginseng se notan en la circulación. Las cápsulas ni se me olvida tomarlas.</p>"
+                "label_text": "GANZHEITLICHES WOHLBEFINDEN",
+                "review_text": "<p>Ich habe sie vor allem wegen der Unterstützung gegen Stress gekauft, und sie haben meine Erwartungen in jeder Hinsicht übertroffen. Ich schlafe tiefer, mein Kopf ist klarer und meine Energie ist über den Tag viel ausgeglichener. Ginkgo und Ginseng merkt man deutlich in der Durchblutung. Die Kapseln vergesse ich nie zu nehmen.</p>"
               },
               "blocks": {
                 "customer_review_tag_TpPYgV": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Alivio del Estrés"
+                    "text": "Stressabbau"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_ChdjN9": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mejor Enfoque"
+                    "text": "Besserer Fokus"
                   },
                   "blocks": {}
                 }
@@ -762,21 +760,21 @@
                 "rating": 5,
                 "show_verified_badge": true,
                 "verified_badge_text": "Verifizierter Kunde",
-                "label_text": "DESEO Y VITALIDAD",
-                "review_text": "<p>Llevo como dos meses y la diferencia se nota. Más ganas, mejor circulación y una sensación de vitalidad que ya tenía tiempo sin sentir. Se me hace válido que los ingredientes estén bien listados y sean de verdad: el Shilajit puro junto a la Ortiga Mayor sí cumple.</p>"
+                "label_text": "LUST UND VITALITÄT",
+                "review_text": "<p>Ich nehme es jetzt seit etwa zwei Monaten, und man merkt den Unterschied. Mehr Energie, bessere Durchblutung und ein Gefühl von Vitalität, das ich schon lange nicht mehr gespürt hatte. Mir ist wichtig, dass die Inhaltsstoffe klar aufgelistet und echt sind: reines Shilajit zusammen mit Brennnesselwurzel hält wirklich, was es verspricht.</p>"
               },
               "blocks": {
                 "customer_review_tag_3C7YR8": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Más Deseo"
+                    "text": "Mehr Lust"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_qKdHp4": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mejor Circulación"
+                    "text": "Bessere Durchblutung"
                   },
                   "blocks": {}
                 }
@@ -1032,7 +1030,7 @@
       "type": "rich-image",
       "name": "Rich image",
       "settings": {
-        "heading": "<p>POR QUÉ MILES DE CLIENTES CONFÍAN EN TITAN PEAK</p>",
+        "heading": "<p>WARUM TAUSENDE KUNDEN TITAN PEAK VERTRAUEN</p>",
         "heading_color": "#24222a",
         "heading_size_mobile": 28,
         "heading_size_desktop": 36,

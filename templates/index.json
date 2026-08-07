@@ -145,7 +145,7 @@
         "rating_badge_KrA9R4": {
           "type": "rating-badge",
           "settings": {
-            "text": "<p><strong>MILES</strong> DE CLIENTES SATISFECHOS</p>",
+            "text": "<p>TAUSENDE ZUFRIEDENE KUNDEN</p>",
             "icon_count": 5,
             "icon_color": "#e7b944",
             "icon_size": 21,
@@ -174,7 +174,7 @@
         "hero_heading_4iWJbj": {
           "type": "_hero-heading",
           "settings": {
-            "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
+            "heading": "<p><strong>HÖCHSTLEISTUNG</strong> BEGINNT MIT BESSERER ERNÄHRUNG</p>",
             "uppercase": true,
             "max_width": 30,
             "font_size_mobile": 24,
@@ -189,7 +189,7 @@
         "text_gDVUmi": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Los esenciales diarios de TITAN PEAK apoyan la circulación, la hidratación y el bienestar genera</strong>l</p>",
+            "text": "<p>Die täglichen Essentials von TITAN PEAK unterstützen die Durchblutung, die Flüssigkeitszufuhr und das allgemeine Wohlbefinden.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -215,7 +215,7 @@
         "hero_cta_button_iQmUEn": {
           "type": "_hero-cta-button",
           "settings": {
-            "label": "MÁS VENDIDOS",
+            "label": "BESTSELLER",
             "link": "shopify://collections/los-mas-vendidos",
             "open_in_new_tab": true,
             "show_icon": true,
@@ -236,7 +236,7 @@
         "hero_guarantee_badge_7NMFM7": {
           "type": "_hero-guarantee-badge",
           "settings": {
-            "text": "Garantía de Satisfacción de 30 Días",
+            "text": "30 Tage Zufriedenheitsgarantie",
             "icon_color": "#eed454",
             "text_color": "#ffffff",
             "icon_size": 16,
@@ -267,7 +267,7 @@
               "type": "_hero-stat-item",
               "settings": {
                 "value": "4K+",
-                "label": "Clientes en Todo el Mundo"
+                "label": "Kunden weltweit"
               },
               "blocks": {}
             },
@@ -275,7 +275,7 @@
               "type": "_hero-stat-item",
               "settings": {
                 "value": "95%",
-                "label": "Aumento de Energía y Concentración"
+                "label": "Mehr Energie und Konzentration"
               },
               "blocks": {}
             },
@@ -283,7 +283,7 @@
               "type": "_hero-stat-item",
               "settings": {
                 "value": "2750+",
-                "label": "Reseñas de 5 Estrellas"
+                "label": "5-Sterne-Bewertungen"
               },
               "blocks": {}
             },
@@ -291,7 +291,7 @@
               "type": "_hero-stat-item",
               "settings": {
                 "value": "93%",
-                "label": "Experimentó Mejor Recuperación"
+                "label": "Bessere Erholung erlebt"
               },
               "blocks": {}
             },
@@ -299,7 +299,7 @@
               "type": "_hero-stat-item",
               "settings": {
                 "value": "100%",
-                "label": "Ingredientes de Origen Natural"
+                "label": "Natürliche Inhaltsstoffe"
               },
               "blocks": {}
             }
@@ -364,32 +364,33 @@
       "blocks": {
         "customer_reviews_tab_nUmhez": {
           "type": "_customer-reviews-tab",
+          "disabled": true,
           "settings": {
-            "tab_label": "GUMMIES DE RENDIMIENTO"
+            "tab_label": "LEISTUNGS-GUMMIES"
           },
           "blocks": {
             "customer_review_card_VCk9ay": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Jorge M.",
+                "customer_name": "Markus S.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "ENERGÍA TODO EL DÍA",
-                "review_text": "<p>Ya le había entrado a todos los suplementos de energía que existen, y nada me funcionó, hasta esto. Para la tercera semana ya me despertaba con ganas, sin el bajón de la tarde, sin nerviosismo. La combinación de Ashwagandha y Shilajit hace su trabajo sin hacer ruido. Mis entrenos se sienten más fuertes y en el trabajo me concentro muchísimo mejor. Con dos gomitas al día es más que suficiente.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "ENERGIE DEN GANZEN TAG",
+                "review_text": "<p>Ich hatte schon alle Energie-Supplements ausprobiert, die es gibt, und nichts hat bei mir gewirkt – bis jetzt. In der dritten Woche bin ich schon voller Energie aufgewacht, ohne das Nachmittagstief, ohne Nervosität. Die Kombination aus Ashwagandha und Shilajit wirkt leise, aber zuverlässig. Mein Training fühlt sich stärker an und bei der Arbeit kann ich mich viel besser konzentrieren. Zwei Gummies am Tag reichen mehr als aus.</p>"
               },
               "blocks": {
                 "customer_review_tag_7eEqcT": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Energía Sostenida"
+                    "text": "Anhaltende Energie"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_AWzhWr": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Claridad Mental"
+                    "text": "Mentale Klarheit"
                   },
                   "blocks": {}
                 }
@@ -402,25 +403,25 @@
             "customer_review_card_XikKRR": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Alejandro D.",
+                "customer_name": "Stefan K.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "POTENCIADOR DE RESISTENCIA",
-                "review_text": "<p>Mi aguante en los entrenos mejoró de verdad desde que empecé con esto. Ya estoy rompiendo marcas personales que creía imposibles, y también me recupero más rápido. Como no lleva estimulantes, lo puedo tomar a cualquier hora, sin taquicardia ni problemas para dormir. Nomás un apoyo constante y confiable que se va acumulando con el tiempo.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "AUSDAUER-BOOSTER",
+                "review_text": "<p>Meine Ausdauer beim Training hat sich wirklich verbessert, seit ich damit angefangen habe. Ich breche schon persönliche Rekorde, die ich für unmöglich hielt, und ich erhole mich auch schneller. Da es keine Stimulanzien enthält, kann ich es zu jeder Tageszeit nehmen, ohne Herzrasen oder Schlafprobleme. Einfach eine konstante, verlässliche Unterstützung, die sich mit der Zeit aufbaut.</p>"
               },
               "blocks": {
                 "customer_review_tag_qJEbfY": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Rendimiento en el Entrenamiento"
+                    "text": "Leistung beim Training"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_BRLghN": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Recuperación Más Rápida"
+                    "text": "Schnellere Erholung"
                   },
                   "blocks": {}
                 }
@@ -433,32 +434,32 @@
             "customer_review_card_N378KN": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Fernando R.",
+                "customer_name": "Thomas B.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "BIENESTAR COMPLETO",
-                "review_text": "<p>Las compré sobre todo por el apoyo contra el estrés — la Ashwagandha fue lo que más me llamó la atención — y superaron mis expectativas por todos lados. Traigo la piel más clara, duermo más profundo y mi energía durante el día está mucho más pareja. Las gomitas también saben muy bien, así que ni se me olvida tomarlas.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "GANZHEITLICHES WOHLBEFINDEN",
+                "review_text": "<p>Ich habe sie vor allem wegen der Unterstützung gegen Stress gekauft — das Ashwagandha war das, was mich am meisten überzeugt hat — und sie haben meine Erwartungen in jeder Hinsicht übertroffen. Meine Haut ist klarer, ich schlafe tiefer und meine Energie ist über den Tag viel ausgeglichener. Die Gummies schmecken außerdem richtig gut, sodass ich gar nicht vergesse, sie zu nehmen.</p>"
               },
               "blocks": {
                 "customer_review_tag_Wz9zUQ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Alivio del Estrés"
+                    "text": "Stressabbau"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_qaEDKa": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Piel Más Clara"
+                    "text": "Klarere Haut"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_H8Vdzd": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mejor Sueño"
+                    "text": "Besserer Schlaf"
                   },
                   "blocks": {}
                 }
@@ -472,25 +473,25 @@
             "customer_review_card_mgQyPx": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Carlos L.",
+                "customer_name": "Andreas W.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "DESEO Y VITALIDAD",
-                "review_text": "<p>Llevo como dos meses y la diferencia se nota. Más ganas, mejor circulación y una sensación de vitalidad que ya tenía tiempo sin sentir. Se me hace válido que los ingredientes estén bien listados y estudiados clínicamente, y no sea una mezcla misteriosa nomás registrada. La combinación de L-Arginina y Maca sí cumple.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "LUST UND VITALITÄT",
+                "review_text": "<p>Ich nehme es jetzt seit etwa zwei Monaten, und man merkt den Unterschied. Mehr Energie, bessere Durchblutung und ein Gefühl von Vitalität, das ich schon lange nicht mehr gespürt hatte. Mir ist wichtig, dass die Inhaltsstoffe klar aufgelistet und klinisch untersucht sind, und nicht irgendeine geheimnisvolle Mischung, die nur als Marke eingetragen ist. Die Kombination aus L-Arginin und Maca hält wirklich, was sie verspricht.</p>"
               },
               "blocks": {
                 "customer_review_tag_FTgGwy": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Más Deseo"
+                    "text": "Mehr Lust"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_bXTETJ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mejor Circulación"
+                    "text": "Bessere Durchblutung"
                   },
                   "blocks": {}
                 }
@@ -510,6 +511,7 @@
         },
         "customer_reviews_tab_89zqP6": {
           "type": "_customer-reviews-tab",
+          "disabled": true,
           "settings": {
             "tab_label": "PURE SHILAJIT GUMMIES"
           },
@@ -517,25 +519,25 @@
             "customer_review_card_9xLhXQ": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Marcos S.",
+                "customer_name": "Michael H.",
                 "rating": 5,
                 "show_verified_badge": false,
                 "verified_badge_text": "Cliente Verificado",
-                "label_text": "CORAZÓN Y CIRCULACIÓN",
-                "review_text": "<p>Empecé a tomarlo para cuidar mi salud cardiovascular y en unas semanas mi frecuencia cardíaca en reposo bajó, y salir a correr se sintió más fácil. Se nota que el Shilajit y los minerales sí funcionan, y el formato en gomita ayuda a que sea fácil no dejarlo.</p>"
+                "label_text": "HERZ UND KREISLAUF",
+                "review_text": "<p>Ich habe es genommen, um meine Herz-Kreislauf-Gesundheit zu unterstützen, und innerhalb weniger Wochen ist mein Ruhepuls gesunken, und Joggen fiel mir leichter. Man merkt, dass Shilajit und die Mineralstoffe wirklich wirken, und das Gummy-Format macht es leicht, dranzubleiben.</p>"
               },
               "blocks": {
                 "customer_review_tag_AKcxAC": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Apoyo Cardiovascular"
+                    "text": "Herz-Kreislauf-Unterstützung"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_CRkJLq": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Mejor Circulación"
+                    "text": "Bessere Durchblutung"
                   },
                   "blocks": {}
                 }
@@ -548,32 +550,32 @@
             "customer_review_card_YKMGqB": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Raúl P.",
+                "customer_name": "Christian R.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "ENERGÍA PRE-ENTRENO NATURAL",
-                "review_text": "<p>Esto reemplazó mi pre-entreno de toda la vida. El impulso natural de óxido nítrico me da un empujón real en el gym, sin estimulantes artificiales ni esa sensación de hormigueo tan incómoda. Mi aguante en los entrenos de alta intensidad mejoró un montón y ya no termino tronado.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "NATÜRLICHE PRE-WORKOUT-ENERGIE",
+                "review_text": "<p>Das hat mein altbewährtes Pre-Workout komplett ersetzt. Der natürliche Stickstoffmonoxid-Schub gibt mir im Gym einen echten Push, ohne künstliche Stimulanzien und ohne dieses unangenehme Kribbeln. Meine Ausdauer bei intensiven Workouts hat sich enorm verbessert, und ich bin danach nicht mehr völlig erledigt.<br/></p>"
               },
               "blocks": {
                 "customer_review_tag_iG3eqj": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Óxido Nítrico"
+                    "text": "Stickstoffmonoxid"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_UhdpyJ": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Resistencia"
+                    "text": "Ausdauer"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_jmCeXj": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Orgánico"
+                    "text": "Bio"
                   },
                   "blocks": {}
                 }
@@ -587,25 +589,25 @@
             "customer_review_card_PRHH4b": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Samuel V.",
+                "customer_name": "Daniel F.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "ENERGÍA DIARIA",
-                "review_text": "<p>Era bien escéptico, pero al mes ya me convenció. Mi energía es mucho más pareja durante el día, no es un pico y luego el bajón, sino una subida natural y estable. Un suplemento simple y limpio que de verdad cumple.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "TÄGLICHE ENERGIE",
+                "review_text": "<p>Ich war sehr skeptisch, aber nach einem Monat hat es mich überzeugt. Meine Energie ist über den Tag viel ausgeglichener, kein Höhenflug mit anschließendem Absturz, sondern ein natürlicher, stabiler Anstieg. Ein einfaches, sauberes Supplement, das wirklich hält, was es verspricht.</p>"
               },
               "blocks": {
                 "customer_review_tag_e3qKTR": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Energía Estable"
+                    "text": "Stabile Energie"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_KQUAzT": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Fórmula Limpia"
+                    "text": "Saubere Formel"
                   },
                   "blocks": {}
                 }
@@ -618,25 +620,25 @@
             "customer_review_card_LMcE6W": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Andrés N.",
+                "customer_name": "Sebastian L.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "APOYO A LA RECUPERACIÓN",
-                "review_text": "<p>Antes las agujetas me duraban hasta tres días, bien de necio. Desde que lo metí a mi rutina, me recupero muchísimo más rápido y llego con las piernas frescas a los entrenos, aunque sean seguidos. El sabor también está bueno de verdad, que era lo que más me traía dudando.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "ERHOLUNGSUNTERSTÜTZUNG",
+                "review_text": "<p>Früher hielt mein Muskelkater bis zu drei Tage an, richtig hartnäckig. Seit ich es in meine Routine aufgenommen habe, erhole ich mich viel schneller und komme mit frischen Beinen zum Training, auch wenn die Einheiten aufeinanderfolgen. Der Geschmack ist außerdem wirklich gut, das war das, worüber ich mir am meisten Gedanken gemacht hatte.</p>"
               },
               "blocks": {
                 "customer_review_tag_btcRUt": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Recuperación Muscular"
+                    "text": "Muskelerholung"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_rKkGCg": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Buen Sabor"
+                    "text": "Guter Geschmack"
                   },
                   "blocks": {}
                 }
@@ -657,31 +659,31 @@
         "customer_reviews_tab_Hy8DKe": {
           "type": "_customer-reviews-tab",
           "settings": {
-            "tab_label": "SHILAJIT PURO DE MÁXIMA POTENCIA"
+            "tab_label": "REINES SHILAJIT MIT HÖCHSTER POTENZ"
           },
           "blocks": {
             "customer_review_card_XYLyyV": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Daniel R.",
+                "customer_name": "Florian G.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "ENERGÍA TODO EL DÍA",
-                "review_text": "<p>Ya le había entrado a todo lo que existe para el cansancio y nada me funcionó, hasta esto. Para la tercera semana ya me despertaba con ganas, sin el bajón de la tarde. La combinación de Ashwagandha y Shilajit hace su trabajo sin hacer ruido. Con dos cápsulas al día es más que suficiente.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "ENERGIE DEN GANZEN TAG",
+                "review_text": "<p>Ich hatte schon alles ausprobiert, was es gegen Müdigkeit gibt, und nichts hat bei mir gewirkt – bis jetzt. In der dritten Woche bin ich schon voller Energie aufgewacht, ohne das Nachmittagstief. Die Kombination aus Ashwagandha und Shilajit wirkt leise, aber zuverlässig. Zwei Kapseln am Tag reichen mehr als aus.</p>"
               },
               "blocks": {
                 "customer_review_tag_aLqrYi": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Energía Sostenida"
+                    "text": "Anhaltende Energie"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_cbTKMe": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Menos Estrés"
+                    "text": "Weniger Stress"
                   },
                   "blocks": {}
                 }
@@ -694,25 +696,25 @@
             "customer_review_card_tY6THF": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Emilio T.",
+                "customer_name": "Jan T.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
-                "label_text": "MÁS AGUANTE EN EL GYM",
-                "review_text": "<p>Mi resistencia en los entrenos mejoró de verdad desde que empecé con esto. Ya estoy superando marcas que creía imposibles, y también me recupero más rápido. Como no lleva estimulantes, lo puedo tomar a cualquier hora sin problemas para dormir. El Cordyceps y la Rhodiola se sienten de verdad.</p>"
+                "verified_badge_text": "Verifizierter Kunde",
+                "label_text": "MEHR AUSDAUER IM GYM",
+                "review_text": "<p>Meine Ausdauer beim Training hat sich wirklich verbessert, seit ich damit angefangen habe. Ich übertreffe schon Bestleistungen, die ich für unmöglich hielt, und ich erhole mich auch schneller. Da es keine Stimulanzien enthält, kann ich es zu jeder Tageszeit nehmen, ohne Schlafprobleme. Cordyceps und Rhodiola wirken wirklich spürbar.</p>"
               },
               "blocks": {
                 "customer_review_tag_jVKW7j": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Rendimiento Físico"
+                    "text": "Körperliche Leistung"
                   },
                   "blocks": {}
                 },
                 "customer_review_tag_HHtzAK": {
                   "type": "_customer-review-tag",
                   "settings": {
-                    "text": "Recuperación Más Rápida"
+                    "text": "Schnellere Erholung"
                   },
                   "blocks": {}
                 }
@@ -725,10 +727,10 @@
             "customer_review_card_eaWeTX": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Raúl G.",
+                "customer_name": "Matthias N.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
+                "verified_badge_text": "Verifizierter Kunde",
                 "label_text": "BIENESTAR COMPLETO",
                 "review_text": "<p>Las compré sobre todo por el apoyo contra el estrés y superaron mis expectativas por todos lados. Duermo más profundo, mi mente está más clara y mi energía durante el día es mucho más pareja. El Ginkgo y el Ginseng se notan en la circulación. Las cápsulas ni se me olvida tomarlas.</p>"
               },
@@ -756,10 +758,10 @@
             "customer_review_card_zfP4wn": {
               "type": "_customer-review-card",
               "settings": {
-                "customer_name": "Tomás V.",
+                "customer_name": "Tobias P.",
                 "rating": 5,
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente Verificado",
+                "verified_badge_text": "Verifizierter Kunde",
                 "label_text": "DESEO Y VITALIDAD",
                 "review_text": "<p>Llevo como dos meses y la diferencia se nota. Más ganas, mejor circulación y una sensación de vitalidad que ya tenía tiempo sin sentir. Se me hace válido que los ingredientes estén bien listados y sean de verdad: el Shilajit puro junto a la Ortiga Mayor sí cumple.</p>"
               },
@@ -965,8 +967,8 @@
       "name": "Customer reviews tabs",
       "settings": {
         "header_rating_stars": 5,
-        "rating_text": "<p>Valorado <strong>4.8/5</strong> por<strong> miles</strong> de clientes </p>",
-        "heading": "HISTORIAS REALES DE NUESTROS CLIENTES",
+        "rating_text": "<p>Bewertet mit 4,8/5 von Tausenden Kunden</p>",
+        "heading": "ECHTE GESCHICHTEN UNSERER KUNDEN",
         "container_max_width": 1320,
         "container_padding": 32,
         "container_padding_mobile": 16,

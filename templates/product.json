@@ -983,8 +983,8 @@
           "type": "full-width-image",
           "name": "Full width image",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_h3azq3h3azq3h3az-clean.webp",
-            "mobile_image": "shopify://shop_images/fix10mobile-clean.webp",
+            "image": "shopify://shop_images/product-tra-aleman14.webp",
+            "mobile_image": "shopify://shop_images/product-tra-aleman6-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
@@ -999,8 +999,8 @@
         "full_width_image_iy43nk": {
           "type": "full-width-image",
           "settings": {
-            "image": "shopify://shop_images/arreglado14.webp",
-            "mobile_image": "shopify://shop_images/fox.webp",
+            "image": "shopify://shop_images/product-tra-aleman11-clean.webp",
+            "mobile_image": "shopify://shop_images/product-tra-aleman4-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
@@ -1015,8 +1015,8 @@
         "full_width_image_kzLaHc": {
           "type": "full-width-image",
           "settings": {
-            "image": "shopify://shop_images/fix14.webp",
-            "mobile_image": "shopify://shop_images/fix8mobile-clean.webp",
+            "image": "shopify://shop_images/product-tra-aleman2-clean.webp",
+            "mobile_image": "shopify://shop_images/product-tra-aleman13-clean.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
@@ -1123,7 +1123,7 @@
       ],
       "name": "Image checklist",
       "settings": {
-        "image": "shopify://shop_images/arreglado3-clean_2d3294f7-4582-4c9c-a666-4d83ece1de2f.webp",
+        "image": "shopify://shop_images/product-tra-aleman3-clean.webp",
         "image_alt": "",
         "image_link": "",
         "image_radius": 10,

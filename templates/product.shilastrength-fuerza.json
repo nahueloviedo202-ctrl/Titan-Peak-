@@ -1185,8 +1185,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
             "image_alt": "",
-            "title": "ENERGÍA Y AGUANTE",
-            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
+            "title": "ENERGIE UND AUSDAUER",
+            "description": "<p>Hilft, eine gleichmäßige Energie, Ausdauer und Leistung den ganzen Tag über aufrechtzuerhalten.</p>"
           },
           "blocks": {}
         },
@@ -1195,8 +1195,8 @@
           "settings": {
             "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
             "image_alt": "",
-            "title": "CORTISOL Y ESTRÉS",
-            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
+            "title": "CORTISOL UND STRESS",
+            "description": "<p>Weniger Blähungen, weniger Müdigkeit, bessere Erholung.</p>"
           },
           "blocks": {}
         },
@@ -1205,8 +1205,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
             "image_alt": "",
-            "title": "TESTOSTERONA Y DESEO",
-            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
+            "title": "TESTOSTERON UND VERLANGEN",
+            "description": "<p>Hilft, gesunde Testosteronwerte und deine Männlichkeit zu erhalten.</p>"
           },
           "blocks": {}
         },
@@ -1215,8 +1215,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
             "image_alt": "",
-            "title": "CIRCULACIÓN Y RENDIMIENTO",
-            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
+            "title": "DURCHBLUTUNG UND LEISTUNG",
+            "description": "<p>Unterstützt den Blutfluss, die Ausdauer und die allgemeine körperliche Leistung.</p>"
           },
           "blocks": {}
         }
@@ -1229,13 +1229,13 @@
       ],
       "name": "Cards grid",
       "settings": {
-        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
+        "heading": "<p>DIE VORTEILE, DIE MÄNNER WIRKLICH <strong>SPÜREN</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
         "heading_accent_gradient_start": "#a99985",
         "heading_accent_gradient_end": "#ded1c2",
-        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
+        "subtitle": "<p>Echte Unterstützung für deine Energie, deine Hormone und deine Leistung, während du älter wirst.</p>",
         "subtitle_color": "{{ settings.color_palette.background }}",
         "subtitle_size_mobile": 16,
         "subtitle_size_desktop": 18,
@@ -1282,8 +1282,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/6cwoZI9fOflTkAYN.webp",
-            "title": "SHILAJIT (Alto en Ácido Fúlvico)",
-            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y le da fuerza a la energía, el aguante y la circulación.</p>",
+            "title": "SHILAJIT (Reich an Fulvinsäure)",
+            "description": "<p>Tiefgreifende mineralische Regeneration für optimale männliche Leistungsfähigkeit. Füllt essenzielle Spurenelemente wieder auf, unterstützt die Testosteronproduktion und stärkt Energie, Ausdauer und Durchblutung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1294,7 +1294,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.14.13_AM.webp",
             "title": "KSM-66 ASHWAGANDHA",
-            "description": "<p>Controla el cortisol y apoya la testosterona. Baja las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
+            "description": "<p>Reguliert Cortisol und unterstützt das Testosteron. Senkt die Stresshormone, verbessert die Erholung, steigert die Kraft und unterstützt gesunde Testosteronwerte.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1304,8 +1304,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.13.33_AM.webp",
-            "title": "RAÍZ DE MACA",
-            "description": "<p>Potenciador natural del deseo y el aguante. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
+            "title": "MACA-WURZEL",
+            "description": "<p>Natürlicher Booster für Verlangen und Ausdauer. Unterstützt die Libido, die Widerstandsfähigkeit und die körperliche Leistung und hilft, Hormone und tägliche Energie ins Gleichgewicht zu bringen.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1316,7 +1316,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.06_AM.webp",
             "title": "TONGKAT ALI",
-            "description": "<p>Amplificador de testosterona y fuerza. Estudiado clínicamente para apoyar los niveles de testosterona libre, mejorar la fuerza muscular y potenciar la vitalidad y el rendimiento masculino.</p>",
+            "description": "<p>Verstärker für Testosteron und Kraft. Klinisch untersucht zur Unterstützung des freien Testosteronspiegels, zur Verbesserung der Muskelkraft und zur Steigerung der männlichen Vitalität und Leistungsfähigkeit.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1327,7 +1327,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.28_AM.webp",
             "title": "BLACK MUSLI",
-            "description": "<p>Potenciador poderoso de la vitalidad. Se usa desde hace generaciones para apoyar la salud sexual, el aguante y el rendimiento masculino en general, mientras impulsa la fuerza y la recuperación.</p>",
+            "description": "<p>Kraftvoller Vitalitäts-Booster. Wird seit Generationen zur Unterstützung der sexuellen Gesundheit, der Ausdauer und der allgemeinen männlichen Leistungsfähigkeit eingesetzt und fördert dabei Kraft und Erholung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1338,7 +1338,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.53_AM.webp",
             "title": "GOKSHURA",
-            "description": "<p>Apoyo al rendimiento y a la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y le mete fuerza al aguante y al rendimiento.</p>",
+            "description": "<p>Unterstützung für Leistung und Durchblutung. Hilft, den Blutfluss zu verbessern, unterstützt den Testosteronspiegel und stärkt Ausdauer und Leistung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1349,7 +1349,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.49_AM.webp",
             "title": "KAUNCH (MUCUNA PRURIENS)",
-            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, las ganas y el impulso mental.</p>",
+            "description": "<p>Optimierer für Stimmung und Dopamin. Von Natur aus reich an L-Dopa, unterstützt es den Dopaminspiegel und steigert Stimmung, Motivation, Verlangen und mentalen Antrieb.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1359,8 +1359,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.09_AM.webp",
-            "title": "JENGIBRE",
-            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y baja la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
+            "title": "INGWER",
+            "description": "<p>Durchblutung und Verdauung. Verbessert den Blutfluss und reduziert Entzündungen, wodurch dein Körper die anderen Inhaltsstoffe besser aufnehmen und nutzen kann.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1370,8 +1370,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/C5POF3zft9M7_Apq.avif",
-            "title": "SEMILLA DE FENOGRECO",
-            "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia tú mismo, o te regresamos tu dinero sin hacerte ni una pregunta.</p>",
+            "title": "BOCKSHORNKLEESAMEN",
+            "description": "<p>Deine Vitalität sollte kein Glücksspiel sein. Probiere TITAN PEAK Shilajit 30 Tage lang aus und spüre selbst den Unterschied, oder wir erstatten dir dein Geld, ohne Fragen zu stellen.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1391,9 +1391,9 @@
       ],
       "name": "Ingredient steps",
       "settings": {
-        "heading_line_1": "INGREDIENTES QUE",
-        "heading_highlight": "SI CUMPLEN",
-        "subheading": "<p>Apoyo diario para tu energía, tu testosterona y tu rendimiento a nivel celular.</p>",
+        "heading_line_1": "INHALTSSTOFFE, DIE WIRKLICH HALTEN,",
+        "heading_highlight": "WAS SIE VERSPRECHEN",
+        "subheading": "<p>Tägliche Unterstützung für deine Energie, dein Testosteron und deine Leistung auf zellulärer Ebene.</p>",
         "heading_size_desktop": 52,
         "heading_size_mobile": 36,
         "heading_color": "{{ settings.color_palette.background }}",

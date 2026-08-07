@@ -66,12 +66,12 @@
               "type": "testimonial-card",
               "name": "Testimonial card",
               "settings": {
-                "avatar_image": "shopify://shop_images/Gemini_Generated_Image_rfee5prfee5prfee.webp",
-                "quote": "<p>Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.</p>",
-                "reviewer_name": "Héctor Fernández",
-                "reviewer_title": "Médico certificado, especialista en salud masculina",
+                "avatar_image": "shopify://shop_images/aleman-product9-clean_c3ad4387-032a-45e3-9908-74c9bc003a1c.webp",
+                "quote": "<p>Für Männer, die ihre Energie und ihren Antrieb zurückgewinnen möchten, empfehle ich den natürlichen Weg. Diese Kombination aus reinem Shilajit und adaptogenen Kräutern hilft auf sichere Weise dabei, die Ausdauer und das Wohlbefinden zu verbessern, um die volle Leistungsfähigkeit zu erreichen.</p>",
+                "reviewer_name": "Dr. Lukas M.",
+                "reviewer_title": "Approbierter Arzt, Spezialist für Männergesundheit",
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente verificado",
+                "verified_badge_text": "Verifizierter Kunde",
                 "verified_text_color": "#76af6d",
                 "verified_icon_color": "#1a8400",
                 "verified_font_size": 11,
@@ -130,7 +130,7 @@
               "type": "rating-badge",
               "name": "Rating badge",
               "settings": {
-                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "text": "<p>Bewertet mit<strong> 4,5/5</strong> von <strong>Tausenden Kunden</strong></p>",
                 "icon_count": 5,
                 "icon_color": "#ff4c01",
                 "icon_size": 18,
@@ -244,8 +244,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "60 cápsulas por envase",
-                        "description": "<p>Suministro para 2 meses, sin cortar tu rutina a la mitad.</p>",
+                        "title": "60 Kapseln pro Packung",
+                        "description": "<p>Vorrat für 2 Monate, ohne deine Routine auf halbem Weg zu unterbrechen.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -255,8 +255,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Fórmula 8 en 1 de alta potencia",
-                        "description": "<p>Shilajit, Ashwagandha, Rhodiola y más, trabajando juntos en una sola cápsula.</p>",
+                        "title": "Hochpotente 8-in-1-Formel",
+                        "description": "<p>Shilajit, Ashwagandha, Rhodiola und mehr, die gemeinsam in einer einzigen Kapsel wirken.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -266,8 +266,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Apoya tus niveles naturales de testosterona",
-                        "description": "<p>Aguanta más, te recuperas más rápido y rindes al máximo todo el día.</p>",
+                        "title": "Unterstützt deinen natürlichen Testosteronspiegel",
+                        "description": "<p>Mehr Ausdauer, schnellere Erholung und volle Leistung den ganzen Tag.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -277,8 +277,8 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Mayor confianza",
-                        "description": "<p>Menos cortisol, más confianza, control total.</p>",
+                        "title": "Mehr Selbstvertrauen",
+                        "description": "<p>Weniger Cortisol, mehr Selbstvertrauen, volle Kontrolle.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4_6e4e934b-a05d-45a3-a729-84293de8b356.svg",
                         "icon_size": 30
@@ -399,12 +399,12 @@
                 "in_stock_color": "",
                 "low_stock_color": "",
                 "out_of_stock_color": "",
-                "in_stock_text": "Stock disponible",
+                "in_stock_text": "Auf Lager",
                 "low_stock_text": "",
                 "out_of_stock_text": "",
                 "show_delivery": true,
                 "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "delivery_text": "Geschätzte Lieferzeit: 3 bis 6 Werktage",
                 "alignment": "center",
                 "gap": 20,
                 "font_size_desktop": 14,
@@ -502,21 +502,21 @@
                 "product_perk_item_xGcHyk": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Devolución en 60 días"
+                    "text": "60 Tage Rückgaberecht"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_MmL3Hr": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Envío rápido"
+                    "text": "Schneller Versand"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_JL9G9Y": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Cancela cuando tú quieras"
+                    "text": "Jederzeit kündbar"
                   },
                   "blocks": {}
                 }
@@ -561,8 +561,8 @@
               "settings": {
                 "icon": "shopify://shop_images/Capa_1.webp",
                 "icon_alt": "Guarantee",
-                "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
-                "background_color": "#FCFAF5",
+                "text": "Weniger als 1 % unserer Kunden nehmen unsere 30-Tage-Geld-zurück-Garantie in Anspruch.",
+                "background_color": "#fcfaf5",
                 "radius": 12,
                 "gap_desktop": 16,
                 "gap_mobile": 12,
@@ -615,8 +615,8 @@
                 "accordion_item_cMT4CH": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Detalles del producto",
-                    "content": "<p>TITAN PEAK ShilaStrength es una solución pura, probada en laboratorio y 100% natural para que los hombres mantengan un rendimiento físico de primera, mente clara, vitalidad y aguante.</p>",
+                    "title": "Produktdetails",
+                    "content": "<p>TITAN PEAK ShilaStrength ist eine reine, laborgeprüfte und zu 100 % natürliche Lösung, damit Männer eine erstklassige körperliche Leistungsfähigkeit, einen klaren Kopf, Vitalität und Ausdauer bewahren.</p>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -624,8 +624,8 @@
                 "accordion_item_yWJAnr": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Ingredientes",
-                    "content": "<ul><li><strong>Shilajit puro</strong> (9000mg) aporta ácido fúlvico y más de 80 minerales, apoyando la producción natural de testosterona y la energía celular.</li><li><strong>Ortiga Mayor</strong> ayuda a mantener niveles saludables de testosterona libre, apoyando el equilibrio hormonal.</li><li><strong>Panax Ginseng</strong> y Ginkgo Biloba favorecen la circulación y el flujo sanguíneo, potenciando el rendimiento físico.</li><li><strong>Ashwagandha</strong> ayuda a reducir los niveles de cortisol, favoreciendo la calma, el enfoque y mejor descanso.</li><li><strong>Rhodiola Rosea</strong> reduce la fatiga física y mental, mejorando el aguante ante el estrés.</li><li><strong>Hongo Cordyceps</strong> apoya la producción de energía celular (ATP), favoreciendo resistencia y recuperación.</li><li><strong>Cúrcuma</strong> actúa como antiinflamatorio natural, apoyando la recuperación muscular.</li></ul>",
+                    "title": "Inhaltsstoffe",
+                    "content": "<ul><li><strong>Reines Shilajit</strong> (9000 mg) liefert Fulvinsäure und über 80 Mineralstoffe und unterstützt die natürliche Testosteronproduktion sowie die zelluläre Energie.</li><li><strong>Große Brennnessel hilft</strong>, gesunde Werte an freiem Testosteron zu erhalten, und unterstützt das hormonelle Gleichgewicht.</li><li><strong>Panax Ginseng</strong> und Ginkgo Biloba fördern die Durchblutung und den Blutfluss und steigern die körperliche Leistung.</li><li><strong>Ashwagandha hilft</strong>, den Cortisolspiegel zu senken, und fördert Ruhe, Fokus und besseren Schlaf.</li><li><strong>Rhodiola Rosea</strong> reduziert körperliche und mentale Erschöpfung und verbessert die Widerstandsfähigkeit gegenüber Stress.</li><li><strong>Cordyceps-Pilz</strong> unterstützt die zelluläre Energieproduktion (ATP) und fördert Ausdauer und Erholung.</li><li><strong>Kurkuma</strong> wirkt als natürliches entzündungshemmendes Mittel und unterstützt die Muskelerholung.</li></ul>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -633,8 +633,8 @@
                 "accordion_item_BKxH6f": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Envíos y Devoluciones",
-                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de México. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 30 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
+                    "title": "Versand und Rückgabe",
+                    "content": "<ul><li><strong>Kostenloser Versand</strong>: Wir bieten kostenlosen Standardversand für alle Bestellungen an.</li><li><strong>Liefergebiet</strong>: Aktuell versenden wir innerhalb Deutschlands. Bestellungen kommen nach der Bearbeitung in der Regel innerhalb von 5 Tagen an, je nach Zielort.</li></ul><p>Rückgaben akzeptieren wir unter folgenden Bedingungen:<br/></p><ul><li>Rückgabefrist: Artikel müssen innerhalb von 30 Tagen nach Lieferung zurückgesendet werden.</li><li>Zustand des Artikels: Er muss unbenutzt, ungeöffnet und in der Originalverpackung sein.</li><li>Kaufnachweis: Für alle Rückgaben ist eine Quittung oder Bestellnummer erforderlich.</li></ul><p></p>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -832,77 +832,77 @@
         "testimonial_peek_card_fEVKKU": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Mi esposa fue la primera en notarlo.\"</strong></p><p>\"No le comenté nada, pero me preguntó qué había cambiado. Más energía, mejor humor, y se nota.\"</p>",
+            "quote": "<p><strong>\"Meine Frau hat es als Erste bemerkt.\"</strong></p><p>\"Ich habe ihr nichts gesagt, aber sie fragte mich, was sich verändert hätte. Mehr Energie, bessere Laune, und man merkt es.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Ricardo P. 47 años",
+            "reviewer_name": "Andreas W., 47 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_YDkHEr": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Mi vieja no deja de preguntarme qué cambié.\"</strong></p><p>\"No le dije que había empezado con esto, pero lo notó. Más energía, mejor rendimiento y más presencia en general. Con eso ya quedó todo dicho.\"</p>",
+            "quote": "<p><strong>\"Meine Frau hört nicht auf zu fragen, was ich verändert habe.\"</strong></p><p>\"Ich habe ihr nicht gesagt, dass ich damit angefangen hatte, aber sie hat es bemerkt. Mehr Energie, bessere Leistung und insgesamt mehr Präsenz. Damit war eigentlich schon alles gesagt.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Fernando G. 41 años",
+            "reviewer_name": "Benjamin K., 41 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_jTWxeG": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"No esperaba tanto, pero la mejora es real.\"</strong></p><p>\"Ando con más aguante, duermo mejor y hasta mi rendimiento en general mejoró bastante.\"</p>",
+            "quote": "<p><strong>\"Ich hatte nicht so viel erwartet, aber die Verbesserung ist real.\"</strong></p><p>\"Ich habe mehr Ausdauer, schlafe besser, und sogar meine allgemeine Leistung hat sich deutlich verbessert.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Arturo M. 50 años",
+            "reviewer_name": "Alexander K., 50 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_hBtJPV": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"A los 10 días ya traía la energía bien arriba.\"</strong></p><p>\"Sin bajones a media tarde, y ando mucho más motivado en general. Hasta en mis entrenos me siento más fuerte. Esto sí funciona.\"</p>",
+            "quote": "<p><strong>\"Schon nach 10 Tagen hatte ich richtig viel Energie.\"</strong></p><p>\"Kein Nachmittagstief mehr, und ich bin generell viel motivierter. Sogar beim Training fühle ich mich stärker. Das funktioniert wirklich.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Gerardo L. 44 años",
+            "reviewer_name": "Wolfgang B., 44 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_FWMByT": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Más definido, más seguro.\"</strong></p><p>\"Empecé por la energía, pero terminé notando que traigo la cara menos hinchada y me subió la confianza un buen.\"</p>",
+            "quote": "<p><strong>\"Definierter, selbstsicherer.\"</strong></p><p>\"Ich habe wegen der Energie angefangen, aber am Ende bemerkte ich, dass mein Gesicht weniger aufgedunsen war, und mein Selbstvertrauen stieg deutlich.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Kevin R. 54 años",
+            "reviewer_name": "Daniel F., 54 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_mf6N8b": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Volví a sentirme como antes.\"</strong></p><p>\"Llevaba meses arrastrando las tardes. Ahora tengo ganas de hacer algo después del trabajo, no solo tirarme al sillón.\"</p>",
+            "quote": "<p><strong>\"Ich fühlte mich wieder wie früher.\"</strong></p><p>\"Monatelang habe ich mich nachmittags nur noch durchgeschleppt. Jetzt habe ich Lust, nach der Arbeit noch etwas zu unternehmen, statt mich nur aufs Sofa zu werfen.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Adrián T. 46 años",
+            "reviewer_name": "Robert S., 46 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         },
         "testimonial_peek_card_fMeJwF": {
           "type": "_testimonial-peek-card",
           "settings": {
-            "quote": "<p><strong>\"Se acabaron los bajones de la tarde.\"</strong></p><p>\"Antes a las 5 ya no daba una. Ahora llego con energía hasta la noche, sin necesitar café de más.\"</p>",
+            "quote": "<p><strong>\"Schluss mit dem Nachmittagstief.\"</strong></p><p>\"Früher konnte ich um 17 Uhr schon nichts mehr leisten. Jetzt habe ich bis zum Abend Energie, ohne extra Kaffee zu brauchen.\"</p>",
             "star_count": 5,
-            "reviewer_name": "Iván G. 44 años",
+            "reviewer_name": "Stefan K., 44 Jahre",
             "show_verified": true,
-            "verified_text": "Comprador Verificado"
+            "verified_text": "Verifizierter Käufer"
           },
           "blocks": {}
         }
@@ -918,13 +918,13 @@
       ],
       "name": "Testimonial peek carousel",
       "settings": {
-        "heading": "<p>LA MEJORA QUE LOS HOMBRES MAYORES DE 40 DE <strong>VERDAD NOTAN</strong></p>",
+        "heading": "<p>DIE VERBESSERUNG, DIE MÄNNER ÜBER 40 <strong>WIRKLICH BEMERKEN</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
-        "heading_accent_dark": "#A99985",
-        "heading_accent_light": "#DED1C2",
+        "heading_accent_dark": "#a99985",
+        "heading_accent_light": "#ded1c2",
         "heading_size_mobile": 34,
         "heading_size_desktop": 42,
-        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
+        "subheading": "Mit dem Vertrauen von Männern, die eine echte Lösung gesucht haben, keinen weiteren Betrug mehr.",
         "subheading_color": "{{ settings.color_palette.background }}",
         "subheading_size": 14,
         "header_gap": 20,
@@ -939,15 +939,15 @@
         "autoplay": false,
         "autoplay_speed": 5,
         "show_arrows": true,
-        "arrow_background_color": "#A99985",
-        "arrow_border_color": "#A99985",
+        "arrow_background_color": "#a99985",
+        "arrow_border_color": "#a99985",
         "arrow_border_width": 1,
         "arrow_icon_color": "#ffffff",
         "arrow_size": 40,
         "arrow_radius": 25,
         "arrow_gap": 12,
-        "card_background_color": "#DAD2BC",
-        "card_border_color": "#DAD2BC",
+        "card_background_color": "#dad2bc",
+        "card_border_color": "#dad2bc",
         "card_border_width": 1,
         "card_radius": 6,
         "card_padding": 24,
@@ -978,9 +978,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "fire",
-            "badge": "Día 7",
-            "title": "Arranque",
-            "description": "<p>✓ El Shilajit empieza a reponer los minerales que traías agotados<br/>✓ La Ashwagandha ayuda a nivelar el cortisol → menos hinchazón y retención<br/>✓ Menos cansancio, más ganas de moverte en el día</p>"
+            "badge": "Tag 7",
+            "title": "Start",
+            "description": "<p>✓ Shilajit beginnt, die Mineralstoffe aufzufüllen, die dir gefehlt haben<br/>✓ Ashwagandha hilft, den Cortisolspiegel zu regulieren → weniger Blähungen und Wassereinlagerungen<br/>✓ Weniger Müdigkeit, mehr Lust, dich tagsüber zu bewegen</p>"
           },
           "blocks": {}
         },
@@ -988,9 +988,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "lightning_bolt",
-            "badge": "Día 21",
-            "title": "Aceleración",
-            "description": "<p>✓ El ácido fúlvico del Shilajit mejora la absorción de nutrientes y sube la energía celular<br/>✓ La Ashwagandha y el Ginseng ya se empiezan a notar → más ganas y más confianza<br/>✓ La Rhodiola te da mejor aguante ante el estrés físico y mental<br/>✓ El cuerpo se empieza a ver más firme, menos volumen en panza y pecho</p>"
+            "badge": "Tag 21",
+            "title": "Beschleunigung",
+            "description": "<p>✓ Die Fulvinsäure aus dem Shilajit verbessert die Nährstoffaufnahme und steigert die zelluläre Energie<br/>✓ Ashwagandha und Ginseng machen sich bereits bemerkbar → mehr Verlangen und mehr Selbstvertrauen<br/>✓ Rhodiola verbessert deine Widerstandsfähigkeit gegenüber körperlichem und mentalem Stress<br/>✓ Der Körper wirkt straffer, weniger Volumen an Bauch und Brust</p>"
           },
           "blocks": {}
         },
@@ -998,9 +998,9 @@
           "type": "_roadmap-step",
           "settings": {
             "icon": "plane",
-            "badge": "Semana 8",
-            "title": "Despegue Total",
-            "description": "<p>✓ Energía y rendimiento andan arriba de forma constante<br/>✓ Mejor circulación y aguante físico gracias al Ginseng y la Cúrcuma<br/>✓ Te ves más marcado, te recuperas mejor y traes energía todo el día</p>"
+            "badge": "Woche 8",
+            "title": "Vollständiges Abheben",
+            "description": "<p>✓ Energie und Leistung bleiben konstant hoch<br/>✓ Bessere Durchblutung und körperliche Ausdauer dank Ginseng und Kurkuma<br/>✓ Du siehst definierter aus, erholst dich besser und hast den ganzen Tag Energie</p>"
           },
           "blocks": {}
         },
@@ -1031,11 +1031,11 @@
       ],
       "name": "Roadmap",
       "settings": {
-        "heading": "<p>QUÉ ESPERAR EN <strong>MENOS DE 8 SEMANAS</strong></p>",
+        "heading": "<p>WAS DICH IN WENIGER ALS <strong>8 WOCHEN ERWARTET</strong></p>",
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_size": 42,
-        "accent_gradient_start": "#A99985",
-        "accent_gradient_end": "#DED1C2",
+        "accent_gradient_start": "#a99985",
+        "accent_gradient_end": "#ded1c2",
         "subheading": "",
         "subheading_color": "{{ settings.color_palette.foreground }}",
         "subheading_size": 14,
@@ -1044,16 +1044,16 @@
         "image_radius": 10,
         "image_gap": 60,
         "enable_scroll_animation": true,
-        "line_color": "#A99985",
-        "fill_color": "#C3B3A0",
+        "line_color": "#a99985",
+        "fill_color": "#c3b3a0",
         "line_width": 2,
         "item_indent": 50,
         "item_gap_desktop": 35,
         "item_gap_mobile": 15,
-        "circle_bg_color": "#A99985",
+        "circle_bg_color": "#a99985",
         "circle_size": 30,
         "circle_icon_color": "{{ settings.color_palette.foreground }}",
-        "badge_bg_color": "#A99985",
+        "badge_bg_color": "#a99985",
         "badge_text_color": "{{ settings.color_palette.background }}",
         "badge_radius": 50,
         "badge_size": 13,
@@ -1080,7 +1080,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Te levantas cansado aunque dormiste tus horas completas</p>",
+            "description": "<p>Du wachst müde auf, obwohl du deine vollen Stunden geschlafen hast</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1091,7 +1091,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu energía se acaba a media tarde y ya no rindes igual</p>",
+            "description": "<p>Deine Energie ist am frühen Nachmittag aufgebraucht, und du bringst nicht mehr die gleiche Leistung</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1102,7 +1102,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Notas que tu fuerza y tu masa muscular ya no responden como antes</p>",
+            "description": "<p>Du merkst, dass deine Kraft und deine Muskelmasse nicht mehr so reagieren wie früher</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1113,7 +1113,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>El estrés te tiene hinchado, irritable y sin ganas de nada</p>",
+            "description": "<p>Stress macht dich aufgedunsen, gereizt und lustlos</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1124,7 +1124,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tu deseo y tu rendimiento ya no son los de antes</p>",
+            "description": "<p>Dein Verlangen und deine Leistung sind nicht mehr die von früher</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1135,7 +1135,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Ya probaste de todo y buscas algo real, sin hormonas ni químicos</p>",
+            "description": "<p>Du hast schon alles ausprobiert und suchst etwas Echtes, ohne Hormone und ohne Chemikalien</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1156,7 +1156,7 @@
         "image_alt": "",
         "image_link": "",
         "image_radius": 0,
-        "kicker": "<p><strong>TITAN PEAK ES PARA TI SI...</strong></p>",
+        "kicker": "<p><strong>TITAN PEAK IST GENAU RICHTIG FÜR DICH, WENN...</strong></p>",
         "description": "",
         "content_width": "page-width",
         "image_position": "right",
@@ -1166,8 +1166,8 @@
         "item_gap_mobile": 16,
         "item_gap_desktop": 24,
         "badge_size": 32,
-        "badge_gradient_start": "#A99985",
-        "badge_gradient_end": "#DED1C2",
+        "badge_gradient_start": "#a99985",
+        "badge_gradient_end": "#ded1c2",
         "badge_ring_color": "#1a1a1a",
         "text_color": "#1a1a1a",
         "background_color": "#fcfaf5",
@@ -1233,8 +1233,8 @@
         "heading_color": "{{ settings.color_palette.background }}",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
-        "heading_accent_gradient_start": "#A99985",
-        "heading_accent_gradient_end": "#DED1C2",
+        "heading_accent_gradient_start": "#a99985",
+        "heading_accent_gradient_end": "#ded1c2",
         "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
         "subtitle_color": "{{ settings.color_palette.background }}",
         "subtitle_size_mobile": 16,
@@ -1248,7 +1248,7 @@
         "grid_gap_mobile": 15,
         "grid_gap_tablet": 18,
         "grid_gap_desktop": 25,
-        "card_background_color": "#DAD2BC",
+        "card_background_color": "#dad2bc",
         "card_border_color": "#252323",
         "card_border_width": 1,
         "card_border_radius": 12,
@@ -1397,9 +1397,9 @@
         "heading_size_desktop": 52,
         "heading_size_mobile": 36,
         "heading_color": "{{ settings.color_palette.background }}",
-        "highlight_color_start": "#A99985",
-        "highlight_color_mid": "#DED1C2",
-        "highlight_color_end": "#A99985",
+        "highlight_color_start": "#a99985",
+        "highlight_color_mid": "#ded1c2",
+        "highlight_color_end": "#a99985",
         "subheading_size_desktop": 18,
         "subheading_size_mobile": 14,
         "subheading_color": "{{ settings.color_palette.background }}",
@@ -1418,8 +1418,8 @@
         "autoplay_speed": 5,
         "show_arrows": true,
         "nav_button_size": 40,
-        "nav_button_bg_color": "#A99985",
-        "nav_button_border_color": "#A99985",
+        "nav_button_bg_color": "#a99985",
+        "nav_button_border_color": "#a99985",
         "nav_button_icon_color": "#ffffff",
         "show_numbers": false,
         "number_circle_size": 40,
@@ -1433,8 +1433,8 @@
         "card_border_color": "#252323",
         "image_aspect_ratio": "4 / 3",
         "image_fit": "cover",
-        "default_image_background_color": "#DAD2BC",
-        "default_content_background_color": "#DAD2BC",
+        "default_image_background_color": "#dad2bc",
+        "default_content_background_color": "#dad2bc",
         "content_padding_vertical": 16,
         "content_padding_horizontal": 12,
         "container_max_width": 1200,
@@ -1524,7 +1524,7 @@
         "header_gap_desktop": 40,
         "list_gap_mobile": 12,
         "list_gap_desktop": 16,
-        "card_background_color": "#A99985",
+        "card_background_color": "#a99985",
         "card_radius": 12,
         "trigger_padding_mobile": 16,
         "trigger_padding_desktop": 24,

@@ -1293,8 +1293,8 @@
           "settings": {
             "icon": "stopwatch",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_5.svg",
-            "title": "Energía",
-            "description": "<p>Ayuda a sostener la energía durante el día, el aguante y el rendimiento físico.</p>"
+            "title": "Energie",
+            "description": "<p>Hilft, die Energie über den Tag, die Ausdauer und die körperliche Leistung aufrechtzuerhalten.</p>"
           },
           "blocks": {}
         },
@@ -1303,8 +1303,8 @@
           "settings": {
             "icon": "lock",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_6.svg",
-            "title": "Concentración",
-            "description": "<p>Te ayuda a tener la mente más clara, más impulso y más agudeza.</p>"
+            "title": "Konzentration",
+            "description": "<p>Hilft dir, einen klareren Kopf, mehr Antrieb und mehr Schärfe zu haben.</p>"
           },
           "blocks": {}
         },
@@ -1313,8 +1313,8 @@
           "settings": {
             "icon": "recycle",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_7.svg",
-            "title": "Recuperación",
-            "description": "<p>Ayuda a que te recuperes más rápido, con más aguante y capacidad de resistencia.</p>"
+            "title": "Erholung",
+            "description": "<p>Hilft dir, dich schneller zu erholen, mit mehr Ausdauer und Widerstandsfähigkeit.</p>"
           },
           "blocks": {}
         },
@@ -1323,8 +1323,8 @@
           "settings": {
             "icon": "check_box",
             "custom_icon": "shopify://shop_images/Nuevo_documento_de_texto_8.svg",
-            "title": "Vitalidad",
-            "description": "<p>Le echa la mano a tu testosterona, tu fuerza y tu rendimiento como hombre.</p>"
+            "title": "Vitalität",
+            "description": "<p>Unterstützt dein Testosteron, deine Kraft und deine Leistungsfähigkeit als Mann.</p>"
           },
           "blocks": {}
         }
@@ -1337,19 +1337,19 @@
       ],
       "name": "Benefits grid",
       "settings": {
-        "heading": "<p>LO QUE TU CUERPO ESTÁ<strong> PERDIENDO</strong></p>",
+        "heading": "<p>WAS DEIN KÖRPER <strong>VERLIERT</strong></p>",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 42,
-        "subheading": "Tu energía, tus ganas y tu rendimiento no nomás se van desvaneciendo, van bajando a medida que tu cuerpo se queda sin minerales esenciales.",
+        "subheading": "Deine Energie, dein Verlangen und deine Leistung verblassen nicht nur, sie sinken zunehmend, während deinem Körper die essenziellen Mineralstoffe ausgehen.",
         "subheading_color": "#d1d1d1",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 16,
         "header_gap_mobile": 0,
         "header_gap_desktop": 0,
-        "image": "shopify://shop_images/porductfix9-clean.webp",
+        "image": "shopify://shop_images/aleman-product5-clean.webp",
         "desktop_image_position": "right",
         "mobile_image_position": "after_header",
         "image_radius": 15,
@@ -1391,8 +1391,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-02_at_7.03.00_PM.webp",
             "image_alt": "",
-            "title": "ENERGÍA Y AGUANTE",
-            "description": "<p>Ayuda a mantener una energía pareja, aguante y rendimiento todo el día.</p>"
+            "title": "ENERGIE UND AUSDAUER",
+            "description": "<p>Hilft, eine gleichmäßige Energie, Ausdauer und Leistung den ganzen Tag über aufrechtzuerhalten.</p>"
           },
           "blocks": {}
         },
@@ -1401,8 +1401,8 @@
           "settings": {
             "image": "shopify://shop_images/persona2_0fd5d5c6-9bbb-49da-b3ad-4157c24e59d0.webp",
             "image_alt": "",
-            "title": "CORTISOL Y ESTRÉS",
-            "description": "<p>Menos hinchazón, menos cansancio, mejor recuperación.</p>"
+            "title": "CORTISOL UND STRESS",
+            "description": "<p>Weniger Blähungen, weniger Müdigkeit, bessere Erholung.</p>"
           },
           "blocks": {}
         },
@@ -1411,8 +1411,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.49.25_AM.webp",
             "image_alt": "",
-            "title": "TESTOSTERONA Y DESEO",
-            "description": "<p>Ayuda a mantener niveles saludables de testosterona y tu hombría.</p>"
+            "title": "TESTOSTERON UND VERLANGEN",
+            "description": "<p>Hilft, gesunde Testosteronwerte und deine Männlichkeit zu erhalten.</p>"
           },
           "blocks": {}
         },
@@ -1421,8 +1421,8 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_1.48.36_AM.webp",
             "image_alt": "",
-            "title": "CIRCULACIÓN Y RENDIMIENTO",
-            "description": "<p>Apoya el flujo sanguíneo, el aguante y el rendimiento físico en general.</p>"
+            "title": "DURCHBLUTUNG UND LEISTUNG",
+            "description": "<p>Unterstützt den Blutfluss, die Ausdauer und die allgemeine körperliche Leistung.</p>"
           },
           "blocks": {}
         }
@@ -1435,13 +1435,13 @@
       ],
       "name": "Cards grid",
       "settings": {
-        "heading": "<p>LOS BENEFICIOS QUE LOS HOMBRES REALMENTE<strong> SIENTEN</strong></p>",
+        "heading": "<p>DIE VORTEILE, DIE MÄNNER WIRKLICH <strong>SPÜREN</strong></p>",
         "heading_color": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
         "heading_accent_gradient_start": "#b8b8b8",
         "heading_accent_gradient_end": "#ffffff",
-        "subtitle": "<p>Apoyo real para tu energía, tus hormonas y tu rendimiento conforme te haces grande.</p>",
+        "subtitle": "<p>Echte Unterstützung für deine Energie, deine Hormone und deine Leistung, während du älter wirst.</p>",
         "subtitle_color": "#ffffff",
         "subtitle_size_mobile": 16,
         "subtitle_size_desktop": 18,
@@ -1487,7 +1487,7 @@
         "image_text_accordion_paragraph_gYmm3Y": {
           "type": "_image-text-accordion-paragraph",
           "settings": {
-            "text": "<p>La mayoría de los suplementos se esconden detrás de etiquetas vagas. TITAN PEAK Shilajit está probado de forma independiente y es totalmente transparente, para que sepas exactamente qué te estás metiendo al cuerpo.</p>",
+            "text": "<p>Die meisten Supplements verstecken sich hinter vagen Angaben auf dem Etikett. TITAN PEAK Shilajit wird unabhängig geprüft und ist vollständig transparent, damit du genau weißt, was du zu dir nimmst.</p>",
             "text_color": "#e8d5a3",
             "font_size_mobile": 0.8,
             "font_size_desktop": 0.9,
@@ -1499,8 +1499,8 @@
         "image_text_accordion_item_6nKKR3": {
           "type": "_image-text-accordion-item",
           "settings": {
-            "question": "Probado por Laboratorios Externos para Pureza y Seguridad",
-            "answer": "<p>Cada lote se analiza en laboratorios independientes para descartar metales pesados, contaminantes, y confirmar que es cien por ciento auténtico.</p>",
+            "question": "Von externen Laboren auf Reinheit und Sicherheit geprüft",
+            "answer": "<p>Jede Charge wird in unabhängigen Laboren getestet, um Schwermetalle und Verunreinigungen auszuschließen und die hundertprozentige Echtheit zu bestätigen.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1508,8 +1508,8 @@
         "image_text_accordion_item_Nik8ej": {
           "type": "_image-text-accordion-item",
           "settings": {
-            "question": "82.8% de Ácido Fúlvico de Potencia Verificada",
-            "answer": "<p>Una de las concentraciones de ácido fúlvico más altas que hay en el mercado: el indicador clave de que estás ante un Shilajit del Himalaya auténtico y de verdad potente.</p>",
+            "question": "82,8 % Fulvinsäure mit geprüfter Wirksamkeit",
+            "answer": "<p>Eine der höchsten Fulvinsäure-Konzentrationen auf dem Markt: der entscheidende Indikator dafür, dass es sich um echtes und wirklich hochpotentes Himalaya-Shilajit handelt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1517,8 +1517,8 @@
         "image_text_accordion_item_4AtheR": {
           "type": "_image-text-accordion-item",
           "settings": {
-            "question": "Transparencia Total — Informes de Laboratorio Disponibles",
-            "answer": "<p>Con orgullo mostramos nuestros resultados de laboratorio en línea, para que nunca te quede la duda sobre la calidad o la potencia.</p>",
+            "question": "Volle Transparenz — Laborberichte verfügbar",
+            "answer": "<p>Wir zeigen unsere Laborergebnisse mit Stolz online, damit bei dir nie ein Zweifel an Qualität oder Wirksamkeit bleibt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1538,7 +1538,7 @@
         "image_text_accordion_button_JhX6Yi": {
           "type": "_image-text-accordion-button",
           "settings": {
-            "label": "COMPRAR AHORA",
+            "label": "JETZT KAUFEN",
             "link": "#product-information",
             "open_in_new_tab": false,
             "full_width": true,
@@ -1565,7 +1565,7 @@
       ],
       "name": "Image with accordion",
       "settings": {
-        "image": "shopify://shop_images/suplemento-clean.webp",
+        "image": "shopify://shop_images/aleman-product10-clean.webp",
         "image_alt": "",
         "image_link": "",
         "image_max_width": 800,
@@ -1575,8 +1575,8 @@
         "heading_above_image_mobile": true,
         "column_gap_mobile": 16,
         "column_gap_desktop": 40,
-        "heading": "PUREZA VERIFICADA-",
-        "heading_accent": "POTENCIA COMPROBADA",
+        "heading": "GEPRÜFTE REINHEIT–",
+        "heading_accent": "NACHGEWIESENE WIRKSAMKEIT",
         "heading_color": "#ffffff",
         "heading_accent_color": "#e8d5a3",
         "heading_size_mobile": 24,

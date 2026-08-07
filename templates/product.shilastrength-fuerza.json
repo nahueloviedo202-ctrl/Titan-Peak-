@@ -1452,8 +1452,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuánto voy a tardar en notar la diferencia?",
-            "answer": "<p>La mayoría de los hombres nota más energía y mejor circulación en los primeros 7 a 14 días. Para resultados al máximo y un apoyo completo a la próstata, te recomendamos usarlo a diario sin fallar durante 90 días, para que los minerales le lleguen bien a fondo a tu organismo.</p>",
+            "question": "Wie lange dauert es, bis ich den Unterschied merke?",
+            "answer": "<p>Die meisten Männer bemerken in den ersten 7 bis 14 Tagen mehr Energie und eine bessere Durchblutung. Für optimale Ergebnisse und umfassende Unterstützung der Prostata empfehlen wir eine tägliche, konsequente Anwendung über 90 Tage, damit die Mineralstoffe tief in deinen Organismus einwirken können.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1461,8 +1461,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro TITAN PEAK?",
-            "answer": "<p>Está hecho con ingredientes 100% naturales, fabricado en EE.UU. bajo estándares de calidad (GMP). Como con cualquier suplemento, si tomas medicamento controlado, tienes alguna condición médica o estás bajo tratamiento hormonal, consulta a tu doctor antes de usarlo.</p>",
+            "question": "Ist TITAN PEAK sicher?",
+            "answer": "<p>Es wird aus zu 100 % natürlichen Inhaltsstoffen hergestellt, produziert in den USA nach GMP-Qualitätsstandards. Wie bei jedem Supplement gilt: Wenn du verschreibungspflichtige Medikamente einnimmst, eine gesundheitliche Vorerkrankung hast oder dich in hormoneller Behandlung befindest, sprich vor der Anwendung mit deinem Arzt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1470,8 +1470,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿De verdad es diferente al shilajit que venden en Amazon?",
-            "answer": "<p>Sí. La mayoría de los shilajit sueltos en Amazon son solo resina o polvo, sin dosis estandarizada y con pureza variable. TITANPEAK combina Shilajit purificado de 9000mg con 7 ingredientes más (Ashwagandha, Rhodiola, Ginseng, Ortiga Mayor, Cordyceps, Ginkgo y Cúrcuma) en una dosis exacta por cápsula, no una resina cruda de calidad incierta.</p>",
+            "question": "Ist es wirklich anders als das Shilajit, das man bei Amazon kauft?",
+            "answer": "<p>Ja. Die meisten losen Shilajit-Produkte bei Amazon sind nur Harz oder Pulver, ohne standardisierte Dosierung und mit schwankender Reinheit. TITANPEAK kombiniert 9000 mg gereinigtes Shilajit mit 7 weiteren Inhaltsstoffen (Ashwagandha, Rhodiola, Ginseng, Große Brennnessel, Cordyceps, Ginkgo und Kurkuma) in einer exakten Dosis pro Kapsel – kein rohes Harz von ungewisser Qualität.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1479,8 +1479,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas cápsulas son de calidad?",
-            "answer": "<p>Se fabrican en EE.UU. bajo normas de calidad estrictas, con ingredientes purificados y dosis controlada en cada cápsula, a diferencia de la resina suelta donde nunca sabes bien qué tanto estás tomando.</p>",
+            "question": "Woher weiß ich, dass diese Kapseln von hoher Qualität sind?",
+            "answer": "<p>Sie werden in den USA nach strengen Qualitätsstandards hergestellt, mit gereinigten Inhaltsstoffen und einer kontrollierten Dosierung in jeder Kapsel – im Gegensatz zu losem Harz, bei dem du nie genau weißt, wie viel du eigentlich einnimmst.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1488,8 +1488,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
-            "answer": "<p>Con la mayoría de los suplementos no hay problema. Si tomas medicamento recetado, especialmente para presión arterial, hormonas o anticoagulantes, consulta a tu doctor antes de combinarlo para estar seguro.</p>",
+            "question": "Kann ich es mit anderen Supplements einnehmen? Und mit Medikamenten?",
+            "answer": "<p>Mit den meisten Supplements gibt es kein Problem. Wenn du verschreibungspflichtige Medikamente einnimmst, insbesondere gegen Bluthochdruck, Hormonpräparate oder Blutverdünner, sprich vor der Kombination sicherheitshalber mit deinem Arzt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1497,8 +1497,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Por qué en cápsula y no en resina o polvo?",
-            "answer": "<p>Porque la cápsula te da una dosis exacta cada vez, sin el sabor fuerte ni el desorden de andar midiendo resina. Mismo Shilajit puro, pero más práctico y preciso.</p>",
+            "question": "Warum als Kapsel und nicht als Harz oder Pulver?",
+            "answer": "<p>Weil die Kapsel dir jedes Mal eine exakte Dosis liefert, ohne den starken Geschmack und den Aufwand, Harz abzumessen. Dasselbe reine Shilajit, aber praktischer und präziser.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1514,7 +1514,7 @@
       ],
       "name": "FAQ accordion",
       "settings": {
-        "heading": "PREGUNTAS FRECUENTES",
+        "heading": "HÄUFIG GESTELLTE FRAGEN",
         "heading_color": "#141720",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,

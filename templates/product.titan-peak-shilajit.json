@@ -1919,17 +1919,17 @@
         "icon_size_mobile": 60,
         "icon_size_desktop": 80,
         "icon_margin_bottom": 10,
-        "heading": "PRUEBA TITAN PEAK 100% SIN RIESGO DURANTE 30 DÍAS",
+        "heading": "TESTE TITAN PEAK 30 TAGE LANG ZU 100 % RISIKOFREI",
         "heading_color": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 44,
         "heading_line_height": 1,
-        "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia por ti mismo, o te devolvemos tu dinero sin hacer preguntas.</p>",
+        "description": "<p>Deine Vitalität sollte kein Glücksspiel sein. Teste TITAN PEAK Shilajit 30 Tage lang und spüre selbst den Unterschied, oder wir erstatten dir dein Geld, ohne Fragen zu stellen.</p>",
         "description_color": "#ffffff",
         "description_size_mobile": 14,
         "description_size_desktop": 14,
         "description_line_height": 1.5,
-        "button_label": "PRUÉBALO SIN RIESGO",
+        "button_label": "RISIKOFREI TESTEN",
         "button_link": "#product-information",
         "button_open_in_new_tab": false,
         "button_gradient_start": "#e9e9e9",
@@ -1971,8 +1971,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuánto voy a tardar en notar la diferencia?",
-            "answer": "<p>La mayoría de los hombres nota más energía y mejor circulación en los primeros 7 a 14 días. Para resultados al máximo y un apoyo completo a la próstata, te recomendamos usarlo a diario sin fallar durante 90 días, para que los minerales le lleguen bien a fondo a tu organismo.</p>",
+            "question": "Wie lange dauert es, bis ich den Unterschied merke?",
+            "answer": "<p>Die meisten Männer bemerken in den ersten 7 bis 14 Tagen mehr Energie und eine bessere Durchblutung. Für optimale Ergebnisse und umfassende Unterstützung der Prostata empfehlen wir eine tägliche, konsequente Anwendung über 90 Tage, damit die Mineralstoffe tief in deinen Organismus einwirken können.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1980,8 +1980,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo se compara TITAN PEAK con esas pastillitas azules?",
-            "answer": "<p>A diferencia de las pastillas sintéticas, que te pueden dar taquicardia, dolor de cabeza y otros efectos secundarios peligrosos, TITAN PEAK es 100% natural. Usa Shilajit puro del Himalaya y L-Arginina para subir de forma natural el óxido nítrico y el flujo sanguíneo, sin el bajón sintético ni riesgos para tu salud.</p>",
+            "question": "Wie schneidet TITAN PEAK im Vergleich zu diesen kleinen blauen Pillen ab?",
+            "answer": "<p>Im Gegensatz zu synthetischen Pillen, die Herzrasen, Kopfschmerzen und andere gefährliche Nebenwirkungen verursachen können, ist TITAN PEAK zu 100 % natürlich. Es nutzt reines Himalaya-Shilajit und L-Arginin, um Stickstoffmonoxid und den Blutfluss auf natürliche Weise zu steigern – ohne synthetische Nebenwirkungen und ohne Risiken für deine Gesundheit.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1989,8 +1989,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Es seguro TITAN PEAK?",
-            "answer": "<p>Sí. Se fabrica en una planta certificada cGMP y registrada ante la FDA, con ingredientes non-GMO y probados en laboratorios externos para garantizar pureza y potencia. Sin rellenos artificiales, sin azúcar, sin estimulantes.</p>",
+            "question": "Ist TITAN PEAK sicher?",
+            "answer": "<p>Ja. Es wird in einer cGMP-zertifizierten und bei der FDA registrierten Anlage hergestellt, mit gentechnikfreien (Non-GMO) Inhaltsstoffen, die von externen Laboren auf Reinheit und Wirksamkeit geprüft werden. Ohne künstliche Füllstoffe, ohne Zucker, ohne Stimulanzien.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1998,8 +1998,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿De verdad es diferente al shilajit que venden en Amazon?",
-            "answer": "<p>Sí. La mayoría del shilajit que venden en Amazon es un polvo barato y de baja calidad, importado por unos cuantos pesos la unidad. El nuestro se cosecha en los picos del Himalaya a 5,180 metros, se seca al sol de forma natural durante 60 días, y está verificado por dibenzo-α-pironas, el marcador que de verdad manda y que los productos pirata no pueden replicar. Retamos a cualquier marca de Amazon a que muestre ese análisis... no van a poder.</p>",
+            "question": "Ist es wirklich anders als das Shilajit, das man bei Amazon kauft?",
+            "answer": "<p>Ja. Das meiste Shilajit, das bei Amazon verkauft wird, ist ein billiges, minderwertiges Pulver, das für ein paar Cent pro Einheit importiert wird. Unseres wird in den Gipfeln des Himalaya auf 5.180 Metern Höhe geerntet, 60 Tage lang auf natürliche Weise an der Sonne getrocknet und durch Dibenzo-α-Pyrone verifiziert – den entscheidenden Marker, den Fälschungen nicht replizieren können. Wir fordern jede Amazon-Marke heraus, diese Analyse vorzulegen … sie werden es nicht schaffen.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2007,8 +2007,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cómo sé que estas gomitas son de calidad?",
-            "answer": "<p>Nuestras Shilajit Gummies se hacen en plantas certificadas GMP y se prueban con laboratorios externos para garantizar pureza y seguridad. Usamos ingredientes bien seleccionados como Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginina y Azafrán, elegidos por su trayectoria comprobada apoyando la vitalidad masculina, las ganas, la circulación y el rendimiento. El resultado es una fórmula limpia y potente, hecha para los hombres que de verdad buscan un apoyo real en su rendimiento.</p>",
+            "question": "Woher weiß ich, dass diese Gummies von hoher Qualität sind?",
+            "answer": "<p>Unsere Shilajit Gummies werden in GMP-zertifizierten Anlagen hergestellt und von externen Laboren auf Reinheit und Sicherheit geprüft. Wir verwenden sorgfältig ausgewählte Inhaltsstoffe wie Shilajit, Ashwagandha, Maca, Panax Ginseng, L-Arginin und Safran, die aufgrund ihrer nachgewiesenen Wirkung zur Unterstützung der männlichen Vitalität, des Verlangens, der Durchblutung und der Leistung ausgewählt wurden. Das Ergebnis ist eine saubere, kraftvolle Formel für Männer, die wirklich echte Unterstützung für ihre Leistung suchen.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2016,8 +2016,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Puedo tomarlo con otros suplementos? ¿Y con medicamentos?",
-            "answer": "<p>Sí, nuestras gomitas se pueden tomar junto con la mayoría de los suplementos comunes. Están hechas para ser seguras y efectivas por sí solas o como parte de tu rutina diaria. Ahora, si tienes alguna condición de salud de antes, sobre todo relacionada con el corazón, mejor consúltalo con tu médico antes de combinarlas con otros productos.</p>",
+            "question": "Kann ich es mit anderen Supplements einnehmen? Und mit Medikamenten?",
+            "answer": "<p>Ja, unsere Gummies können zusammen mit den meisten gängigen Supplements eingenommen werden. Sie sind so konzipiert, dass sie sowohl allein als auch als Teil deiner täglichen Routine sicher und wirksam sind. Solltest du jedoch eine bestehende gesundheitliche Vorerkrankung haben, insbesondere im Zusammenhang mit dem Herzen, solltest du dies vor der Kombination mit anderen Produkten mit deinem Arzt besprechen.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2025,8 +2025,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Por qué en gomita y no en resina o polvo?",
-            "answer": "<p>La resina de shilajit cruda es difícil de manejar y tiene un sabor bien amargo y metálico que a la mayoría se le hace insoportable. Nuestra fórmula mejorada en gomita trae la dosis clínica exacta de más de 84 minerales, en un formato rico y práctico que hace de tu ritual diario de rendimiento algo fácil y hasta agradable.</p>",
+            "question": "Warum als Gummy und nicht als Harz oder Pulver?",
+            "answer": "<p>Rohes Shilajit-Harz ist schwer zu handhaben und hat einen sehr bitteren, metallischen Geschmack, den die meisten als unerträglich empfinden. Unsere verbesserte Gummy-Formel liefert die exakte klinische Dosis von über 84 Mineralstoffen in einem leckeren und praktischen Format, das dein tägliches Leistungsritual einfach und sogar angenehm macht.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -2043,7 +2043,7 @@
       ],
       "name": "FAQ accordion",
       "settings": {
-        "heading": "PREGUNTAS FRECUENTES",
+        "heading": "HÄUFIG GESTELLTE FRAGEN",
         "heading_color": "#141720",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,

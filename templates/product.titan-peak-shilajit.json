@@ -1622,7 +1622,7 @@
             "value": "94%",
             "percentage": 90,
             "title": "",
-            "description": "<p>reportó una energía diaria más pareja durante el primer mes.</p>",
+            "description": "<p>berichtete von einer gleichmäßigeren täglichen Energie im ersten Monat.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1634,7 +1634,7 @@
             "value": "91%",
             "percentage": 90,
             "title": "",
-            "description": "<p>sintió una mejora en su ánimo y equilibrio emocional general.</p>",
+            "description": "<p>spürte eine Verbesserung seiner Stimmung und seines allgemeinen emotionalen Gleichgewichts.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1646,7 +1646,7 @@
             "value": "96%",
             "percentage": 90,
             "title": "",
-            "description": "<p>notó mayor claridad mental y concentración.</p>",
+            "description": "<p>bemerkte mehr mentale Klarheit und Konzentration.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1658,7 +1658,7 @@
             "value": "90%",
             "percentage": 90,
             "title": "",
-            "description": "<p>reportó mejor circulación y vitalidad sexual.</p>",
+            "description": "<p>berichtete von besserer Durchblutung und sexueller Vitalität.</p>",
             "show_card_background": false
           },
           "blocks": {}
@@ -1672,14 +1672,14 @@
       ],
       "name": "Statistics grid",
       "settings": {
-        "heading": "LA PRUEBA ESTÁ",
-        "heading_accent": "EN LOS NÚMEROS",
+        "heading": "DER BEWEIS STECKT",
+        "heading_accent": "IN DEN ZAHLEN",
         "heading_color": "#ffffff",
         "heading_accent_dark": "#a3a3a3",
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 36,
         "heading_size_desktop": 52,
-        "subheading": "Mejoras reportadas por los mismos hombres que hicieron de TITAN PEAK parte de su rutina diaria.",
+        "subheading": "Verbesserungen, die von genau den Männern berichtet wurden, die TITAN PEAK zu einem festen Bestandteil ihres Alltags gemacht haben.",
         "subheading_color": "#ffffff",
         "subheading_size_mobile": 14,
         "subheading_size_desktop": 14,
@@ -1733,8 +1733,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/6cwoZI9fOflTkAYN.webp",
-            "title": "SHILAJIT (Alto en Ácido Fúlvico)",
-            "description": "<p>Restauración mineral profunda para un rendimiento masculino óptimo. Repone minerales traza esenciales, apoya la producción de testosterona y le da fuerza a la energía, el aguante y la circulación.</p>",
+            "title": "SHILAJIT (Reich an Fulvinsäure)",
+            "description": "<p>Tiefgreifende mineralische Regeneration für optimale männliche Leistungsfähigkeit. Füllt essenzielle Spurenelemente wieder auf, unterstützt die Testosteronproduktion und stärkt Energie, Ausdauer und Durchblutung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1745,7 +1745,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.14.13_AM.webp",
             "title": "KSM-66 ASHWAGANDHA",
-            "description": "<p>Controla el cortisol y apoya la testosterona. Baja las hormonas del estrés, mejora la recuperación, potencia la fuerza y apoya niveles saludables de testosterona.</p>",
+            "description": "<p>Reguliert Cortisol und unterstützt das Testosteron. Senkt die Stresshormone, verbessert die Erholung, steigert die Kraft und unterstützt gesunde Testosteronwerte.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1755,8 +1755,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.13.33_AM.webp",
-            "title": "RAÍZ DE MACA",
-            "description": "<p>Potenciador natural del deseo y el aguante. Apoya la libido, la resistencia y el rendimiento físico, ayudando a equilibrar las hormonas y la energía diaria.</p>",
+            "title": "MACA-WURZEL",
+            "description": "<p>Natürlicher Booster für Verlangen und Ausdauer. Unterstützt die Libido, die Widerstandsfähigkeit und die körperliche Leistung und hilft, Hormone und tägliche Energie ins Gleichgewicht zu bringen.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1767,7 +1767,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.06_AM.webp",
             "title": "TONGKAT ALI",
-            "description": "<p>Amplificador de testosterona y fuerza. Estudiado clínicamente para apoyar los niveles de testosterona libre, mejorar la fuerza muscular y potenciar la vitalidad y el rendimiento masculino.</p>",
+            "description": "<p>Verstärker für Testosteron und Kraft. Klinisch untersucht zur Unterstützung des freien Testosteronspiegels, zur Verbesserung der Muskelkraft und zur Steigerung der männlichen Vitalität und Leistungsfähigkeit.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1778,7 +1778,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.28_AM.webp",
             "title": "BLACK MUSLI",
-            "description": "<p>Potenciador poderoso de la vitalidad. Se usa desde hace generaciones para apoyar la salud sexual, el aguante y el rendimiento masculino en general, mientras impulsa la fuerza y la recuperación.</p>",
+            "description": "<p>Kraftvoller Vitalitäts-Booster. Wird seit Generationen zur Unterstützung der sexuellen Gesundheit, der Ausdauer und der allgemeinen männlichen Leistungsfähigkeit eingesetzt und fördert dabei Kraft und Erholung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1789,7 +1789,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.15.53_AM.webp",
             "title": "GOKSHURA",
-            "description": "<p>Apoyo al rendimiento y a la circulación. Ayuda a mejorar el flujo sanguíneo, apoya los niveles de testosterona y le mete fuerza al aguante y al rendimiento.</p>",
+            "description": "<p>Unterstützung für Leistung und Durchblutung. Hilft, den Blutfluss zu verbessern, unterstützt den Testosteronspiegel und stärkt Ausdauer und Leistung.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1800,7 +1800,7 @@
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.49_AM.webp",
             "title": "KAUNCH (MUCUNA PRURIENS)",
-            "description": "<p>Optimizador de ánimo y dopamina. Naturalmente rico en L-Dopa, apoya los niveles de dopamina, potenciando el ánimo, la motivación, las ganas y el impulso mental.</p>",
+            "description": "<p>Optimierer für Stimmung und Dopamin. Von Natur aus reich an L-Dopa, unterstützt es den Dopaminspiegel und steigert Stimmung, Motivation, Verlangen und mentalen Antrieb.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1810,8 +1810,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/Screenshot_2026-04-08_at_2.17.09_AM.webp",
-            "title": "JENGIBRE",
-            "description": "<p>Circulación y digestión. Mejora el flujo sanguíneo y baja la inflamación, ayudando a que tu cuerpo absorba y aproveche mejor el resto de los ingredientes.</p>",
+            "title": "INGWER",
+            "description": "<p>Durchblutung und Verdauung. Verbessert den Blutfluss und reduziert Entzündungen, wodurch dein Körper die anderen Inhaltsstoffe besser aufnehmen und nutzen kann.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1821,8 +1821,8 @@
           "type": "_ingredient-step-card",
           "settings": {
             "image": "shopify://shop_images/C5POF3zft9M7_Apq.avif",
-            "title": "SEMILLA DE FENOGRECO",
-            "description": "<p>Tu vitalidad no debería ser una apuesta. Prueba TITAN PEAK Shilajit durante 30 días y siente la diferencia tú mismo, o te regresamos tu dinero sin hacerte ni una pregunta.</p>",
+            "title": "BOCKSHORNKLEESAMEN",
+            "description": "<p>Deine Vitalität sollte kein Glücksspiel sein. Probiere TITAN PEAK Shilajit 30 Tage lang aus und spüre selbst den Unterschied, oder wir erstatten dir dein Geld, ohne Fragen zu stellen.</p>",
             "image_background_color": "",
             "content_background_color": ""
           },
@@ -1842,9 +1842,9 @@
       ],
       "name": "Ingredient steps",
       "settings": {
-        "heading_line_1": "INGREDIENTES QUE",
-        "heading_highlight": "SI CUMPLEN",
-        "subheading": "<p>Apoyo diario para tu energía, tu testosterona y tu rendimiento a nivel celular.</p>",
+        "heading_line_1": "INHALTSSTOFFE, DIE WIRKLICH HALTEN,",
+        "heading_highlight": "WAS SIE VERSPRECHEN",
+        "subheading": "<p>Tägliche Unterstützung für deine Energie, dein Testosteron und deine Leistung auf zellulärer Ebene.</p>",
         "heading_size_desktop": 52,
         "heading_size_mobile": 36,
         "heading_color": "#ffffff",

@@ -15,7 +15,7 @@
         "rating_badge_XfzaX9": {
           "type": "rating-badge",
           "settings": {
-            "text": "<p><strong>MILES</strong> DE CLIENTES SATISFECHOS</p>",
+            "text": "<p>TAUSENDE ZUFRIEDENE KUNDEN</p>",
             "icon_count": 5,
             "icon_color": "#e7b944",
             "icon_size": 21,
@@ -44,7 +44,7 @@
         "hero_heading_6aCCiC": {
           "type": "_hero-heading",
           "settings": {
-            "heading": "<p>EL <strong>RENDIMIENTO MÁXIMO</strong> EMPIEZA CON UNA MEJOR NUTRICIÓN</p>",
+            "heading": "<p><strong>HÖCHSTLEISTUNG</strong> BEGINNT MIT BESSERER ERNÄHRUNG</p>",
             "uppercase": true,
             "max_width": 30,
             "font_size_mobile": 24,
@@ -59,7 +59,7 @@
         "text_JDAw6V": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Los esenciales diarios de TITAN PEAK apoyan la circulación, la hidratación y el bienestar genera</strong>l</p>",
+            "text": "<p>Die täglichen Essentials von TITAN PEAK unterstützen die Durchblutung, die Flüssigkeitszufuhr und das allgemeine Wohlbefinden</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",

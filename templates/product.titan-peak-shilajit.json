@@ -1110,7 +1110,7 @@
         "heading_accent_light": "#ffffff",
         "heading_size_mobile": 34,
         "heading_size_desktop": 42,
-        "subheading": "Con la confianza de hombres que buscaban una solución real, no otro engaño más",
+        "subheading": "Mit dem Vertrauen von Männern, die eine echte Lösung gesucht haben, keinen weiteren Betrug mehr.",
         "subheading_color": "#ffffff",
         "subheading_size": 14,
         "header_gap": 20,
@@ -1163,7 +1163,7 @@
         "image_text_paragraph_A8DRRB": {
           "type": "_image-text-paragraph",
           "settings": {
-            "text": "<p><strong>Conforme los hombres se hacen grandes, los minerales esenciales se les agotan por el estrés, el mal dormir y las toxinas de hoy en día.</strong></p><p>Estos minerales son la base para la producción de energía, el equilibrio hormonal y la circulación.</p><p>Cuando a tu cuerpo se le acaban, todo se pone lento: desde tu aguante y tu recuperación hasta tu concentración y tu rendimiento.</p>",
+            "text": "<p><strong>Mit zunehmendem Alter gehen Männern durch Stress, schlechten Schlaf und die Toxine des heutigen Alltags wichtige Mineralstoffe verloren.</strong><br/><br/>Diese Mineralstoffe bilden die Grundlage für die Energieproduktion, das hormonelle Gleichgewicht und die Durchblutung.<br/><br/>Wenn deinem Körper diese ausgehen, wird alles langsamer: von deiner Ausdauer und Erholung bis hin zu deiner Konzentration und Leistung.</p>",
             "text_color": "#ffffff",
             "font_size_mobile": 1,
             "font_size_desktop": 1.2,
@@ -1175,7 +1175,7 @@
         "image_text_list_item_HDVqdr": {
           "type": "_image-text-list-item",
           "settings": {
-            "label": "Poca Energía y Fatiga",
+            "label": "Wenig Energie und Erschöpfung",
             "icon_style": "cross",
             "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
@@ -1191,7 +1191,7 @@
         "image_text_list_item_KLWmbJ": {
           "type": "_image-text-list-item",
           "settings": {
-            "label": "Menos Concentración y Claridad Mental",
+            "label": "Weniger Konzentration und mentale Klarheit",
             "icon_style": "cross",
             "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
@@ -1207,7 +1207,7 @@
         "image_text_list_item_3HTTYM": {
           "type": "_image-text-list-item",
           "settings": {
-            "label": "Recuperación y Resistencia Más Lentas",
+            "label": "Langsamere Erholung und Ausdauer",
             "icon_style": "cross",
             "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
@@ -1223,7 +1223,7 @@
         "image_text_list_item_79T9Ab": {
           "type": "_image-text-list-item",
           "settings": {
-            "label": "Peor Circulación y Rendimiento",
+            "label": "Schlechtere Durchblutung und Leistung",
             "icon_style": "cross",
             "icon_color": "#ba3030",
             "background_color": "#c54e4e33",
@@ -1239,7 +1239,7 @@
         "image_text_paragraph_RBM7ie": {
           "type": "_image-text-paragraph",
           "settings": {
-            "text": "<p>Los resultados varían. Los beneficios del producto se basan en investigación sobre los ingredientes y experiencias reportadas por consumidores.</p>",
+            "text": "<p>Die Ergebnisse können variieren. Die Vorteile des Produkts basieren auf Forschung zu den Inhaltsstoffen sowie auf von Verbrauchern berichteten Erfahrungen.</p>",
             "text_color": "#ffffff",
             "font_size_mobile": 0.8,
             "font_size_desktop": 0.9,
@@ -1259,7 +1259,7 @@
       ],
       "name": "Image with text",
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_vl9j4gvl9j4gvl9j-clean_1.webp",
+        "image": "shopify://shop_images/Gemini_Generated_Image_2jgejw2jgejw2jge-clean.webp",
         "image_alt": "",
         "image_link": "",
         "image_max_width": 800,

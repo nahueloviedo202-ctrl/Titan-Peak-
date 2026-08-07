@@ -67,11 +67,11 @@
               "name": "Testimonial card",
               "settings": {
                 "avatar_image": "shopify://shop_images/doctormexicanop.webp",
-                "quote": "<p>Para los hombres que buscan recuperar su energía y sus ganas, recomiendo irse por lo natural. Esta combinación de Shilajit puro con hierbas adaptógenas ayuda, de forma segura, a mejorar el aguante y el bienestar para rendir al máximo.</p>",
-                "reviewer_name": "Dr. Roberto Guzmán, M.D.",
-                "reviewer_title": "Médico certificado, especialista en salud masculina",
+                "quote": "<p>Für Männer, die ihre Energie und ihren Antrieb zurückgewinnen möchten, empfehle ich den natürlichen Weg. Diese Kombination aus reinem Shilajit und adaptogenen Kräutern hilft auf sichere Weise dabei, die Ausdauer und das Wohlbefinden zu verbessern, um die volle Leistungsfähigkeit zu erreichen.</p>",
+                "reviewer_name": "Dr. Lukas M.",
+                "reviewer_title": "Approbierter Arzt, Spezialist für Männergesundheit",
                 "show_verified_badge": true,
-                "verified_badge_text": "Cliente verificado",
+                "verified_badge_text": "Verifizierter Kunde",
                 "verified_text_color": "#76af6d",
                 "verified_icon_color": "#1a8400",
                 "verified_font_size": 11,
@@ -98,7 +98,7 @@
               "type": "wellness-benefits",
               "name": "Wellness benefits",
               "settings": {
-                "heading": "<p>ALIMENTA <strong>TU CUERPO Y MENTE</strong> DE FORMA NATURAL</p>",
+                "heading": "<p>ERNÄHRE <strong>KÖRPER UND GEIST</strong> AUF NATÜRLICHE WEISE</p>",
                 "columns_desktop": 4,
                 "columns_mobile": 2,
                 "column_gap_desktop": 24,
@@ -131,7 +131,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "heart_pulse",
-                    "text": "Le echa ganas a tu vitalidad y bienestar"
+                    "text": "Stärkt deine Vitalität und dein Wohlbefinden"
                   },
                   "blocks": {}
                 },
@@ -139,7 +139,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "lightning",
-                    "text": "Te da una energía pareja, sin bajones"
+                    "text": "Gibt dir gleichmäßige Energie, ohne Einbrüche"
                   },
                   "blocks": {}
                 },
@@ -147,7 +147,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "focus",
-                    "text": "Te ayuda a concentrarte y a recuperarte mejor"
+                    "text": "Hilft dir, dich besser zu konzentrieren und schneller zu erholen"
                   },
                   "blocks": {}
                 },
@@ -155,7 +155,7 @@
                   "type": "_wellness-benefit-item",
                   "settings": {
                     "icon": "star",
-                    "text": "Te sube la confianza"
+                    "text": "Steigert dein Selbstvertrauen"
                   },
                   "blocks": {}
                 }
@@ -204,7 +204,7 @@
               "type": "rating-badge",
               "name": "Rating badge",
               "settings": {
-                "text": "<p>Valorado <strong>4.5/5</strong> por <strong>Miles de Clientes</strong></p>",
+                "text": "<p>Bewertet mit 4,5/5 von Tausenden Kunden</p>",
                 "icon_count": 5,
                 "icon_color": "#ff4c01",
                 "icon_size": 18,
@@ -318,8 +318,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Energía y Vitalidad al Cien",
-                        "description": "<p>Prende tu energía y tu aguante físico con 3000mg de Shilajit puro.</p>",
+                        "title": "Energie und Vitalität zu 100 %",
+                        "description": "<p>Entfache deine Energie und deine körperliche Ausdauer mit 3000 mg reinem Shilajit.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto.svg",
                         "icon_size": 40
@@ -329,8 +329,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Ingredientes Herbales para el Bienestar Masculino",
-                        "description": "<p>Botánicos con toda la fuerza, como Ashwagandha y Maca, que le entran de lleno a tu hombría.</p>",
+                        "title": "Pflanzliche Inhaltsstoffe für das männliche Wohlbefinden",
+                        "description": "<p>Kraftvolle Pflanzenstoffe wie Ashwagandha und Maca, die gezielt deine Männlichkeit unterstützen.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto2.svg",
                         "icon_size": 40
@@ -340,8 +340,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Combo Natural de Concentración y Aguante",
-                        "description": "<p>Adaptógenos que te bajan el estrés del día mientras te aclaran la mente y te suben el ánimo.</p>",
+                        "title": "Natürliche Kombination für Konzentration und Ausdauer",
+                        "description": "<p>Adaptogene, die den Alltagsstress reduzieren, während sie den Kopf klären und die Stimmung heben.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto3.svg",
                         "icon_size": 40
@@ -351,8 +351,8 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Fórmula Limpia, Testeada Clínicamente",
-                        "description": "<p>De origen vegetal y probada por laboratorios externos, para que confíes en lo que te estás metiendo.</p>",
+                        "title": "Saubere, klinisch getestete Formel",
+                        "description": "<p>Pflanzlichen Ursprungs und von externen Laboren geprüft, damit du darauf vertrauen kannst, was du zu dir nimmst.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Nuevo_documento_de_texto_4.svg",
                         "icon_size": 40
@@ -403,7 +403,7 @@
               "type": "image-popup",
               "name": "Image popup",
               "settings": {
-                "trigger_text": "Información Suplementaria",
+                "trigger_text": "Zusätzliche Informationen",
                 "trigger_font_size": 20,
                 "trigger_font_weight": "700",
                 "trigger_underline": true,
@@ -472,12 +472,12 @@
                 "in_stock_color": "",
                 "low_stock_color": "",
                 "out_of_stock_color": "",
-                "in_stock_text": "Stock disponible",
+                "in_stock_text": "Auf Lager",
                 "low_stock_text": "",
                 "out_of_stock_text": "",
                 "show_delivery": true,
                 "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "delivery_text": "Geschätzte Lieferzeit: 3 bis 6 Werktage",
                 "alignment": "center",
                 "gap": 20,
                 "font_size_desktop": 14,
@@ -575,21 +575,21 @@
                 "product_perk_item_xGcHyk": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Devolución en 30 días"
+                    "text": "30 Tage Rückgaberecht"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_MmL3Hr": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Envío rápido"
+                    "text": "Schneller Versand"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_JL9G9Y": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Cancela cuando quieras"
+                    "text": "Jederzeit kündbar"
                   },
                   "blocks": {}
                 }
@@ -606,7 +606,7 @@
               "settings": {
                 "icon": "shopify://shop_images/Capa_1.webp",
                 "icon_alt": "Guarantee",
-                "text": "Menos del 1% de los clientes reclama nuestra Garantía de Devolución de 30 Días.",
+                "text": "Weniger als 1 % unserer Kunden nehmen unsere 30-Tage-Geld-zurück-Garantie in Anspruch.",
                 "background_color": "#fcfaf5",
                 "radius": 12,
                 "gap_desktop": 16,
@@ -660,8 +660,8 @@
                 "accordion_item_enahEm": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Detalles del producto",
-                    "content": "<p>TITAN PEAK Gomitas de Rendimiento son una solución pura, probada en laboratorio y 100% natural para que los hombres mantengan un rendimiento físico de primera, mente clara, vitalidad y aguante.</p>",
+                    "title": "Produktdetails",
+                    "content": "<p>TITAN PEAK Leistungs-Gummies sind eine reine, laborgeprüfte und zu 100 % natürliche Lösung, damit Männer eine erstklassige körperliche Leistungsfähigkeit, einen klaren Kopf, Vitalität und Ausdauer bewahren.</p>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -669,8 +669,8 @@
                 "accordion_item_M8kypY": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Ingredientes",
-                    "content": "<ul><li><strong>Ashwagandha KSM-66®</strong> ayuda a reducir el cortisol hasta un 27,9%, ayudándote a mantenerte relajado, seguro y presente.</li><li><strong>L-Arginina y Azafrán</strong> ayudan a potenciar la producción de óxido nítrico y la circulación, favoreciendo el flujo sanguíneo.</li><li><strong>Extracto de Shilajit</strong> junto a <strong>Maca y Azafrán</strong> contribuyen al aumento de la testosterona total y libre, y apoyan una buena calidad espermática.</li></ul>",
+                    "title": "Inhaltsstoffe",
+                    "content": "<ul><li>Ashwagandha KSM-66® hilft, den Cortisolspiegel um bis zu 27,9 % zu senken, und unterstützt dich dabei, entspannt, selbstsicher und präsent zu bleiben.</li><li>L-Arginin und Safran fördern die Produktion von Stickstoffmonoxid und die Durchblutung und unterstützen so den Blutfluss.</li><li>Shilajit-Extrakt trägt zusammen mit Maca und Safran zur Erhöhung des Gesamt- und freien Testosterons bei und unterstützt eine gute Spermienqualität</li></ul>",
                     "open_by_default": false
                   },
                   "blocks": {}
@@ -678,8 +678,8 @@
                 "accordion_item_zCtkXE": {
                   "type": "_accordion-item",
                   "settings": {
-                    "title": "Envíos y Devoluciones",
-                    "content": "<ul><li><strong>Envío gratis</strong>: ofrecemos envío estándar gratuito en todos los pedidos.</li><li><strong>Zona de entrega</strong>: actualmente enviamos dentro de México. Los pedidos suelen llegar en 5 días tras ser procesados, según el destino.</li></ul><p></p><p>Aceptamos devoluciones bajo las siguientes condiciones:<br/></p><ul><li><strong>Plazo de devolución</strong>: los artículos deben devolverse dentro de los 30 días posteriores a la entrega.</li><li><strong>Estado del artículo</strong>: deben estar sin usar, sin abrir y en su embalaje original.<br/>Comprobante de compra: se requiere recibo o número de pedido para todas las devoluciones.</li></ul>",
+                    "title": "Versand und Rückgabe",
+                    "content": "<ul><li>Kostenloser Versand: Wir bieten kostenlosen Standardversand für alle Bestellungen an.</li><li>Liefergebiet: Aktuell versenden wir innerhalb Deutschlands. Bestellungen kommen nach der Bearbeitung in der Regel innerhalb von 5 Tagen an, je nach Zielort.</li></ul><p><br/>Rückgaben akzeptieren wir unter folgenden Bedingungen:</p><ul><li>Rückgabefrist: Artikel müssen innerhalb von 30 Tagen nach Lieferung zurückgesendet werden.</li><li>Zustand des Artikels: Er muss unbenutzt, ungeöffnet und in der Originalverpackung sein.</li><li>Kaufnachweis: Für alle Rückgaben ist eine Quittung oder Bestellnummer erforderlich.<br/></li></ul>",
                     "open_by_default": false
                   },
                   "blocks": {}

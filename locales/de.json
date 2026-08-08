@@ -86,7 +86,7 @@
     "view_disclosure_information_for_product": "Offenlegungsinformationen für {{ product_title }} anzeigen"
   },
   "actions": {
-    "add_to_cart": "In den Warenkorb legen",
+    "add_to_cart": "IN DEN WARENKORB",
     "clear_all": "Alle löschen",
     "remove": "Entfernen",
     "view_in_your_space": "In deinem Raum ansehen",
@@ -312,7 +312,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "In den Warenkorb legen",
+      "add_to_cart": "IN DEN WARENKORB",
       "added_to_cart": "Zum Warenkorb hinzugefügt",
       "adding_to_cart": "Wird hinzugefügt...",
       "add_to_cart_error": "Fehler beim Hinzufügen zum Warenkorb",

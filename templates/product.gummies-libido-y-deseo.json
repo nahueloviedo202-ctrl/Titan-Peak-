@@ -208,8 +208,8 @@
                     "icon_benefits_item_jCh4aT": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Bien duro",
-                        "description": "<p>Notarás erecciones más firmes y duraderas.</p>",
+                        "title": "Steinhart",
+                        "description": "<p>Du wirst festere und länger anhaltende Erektionen bemerken.</p>",
                         "icon": "lightning_bolt",
                         "image_upload": "shopify://shop_images/icon-harder-fuller-erections-she-feels.png",
                         "icon_size": 40
@@ -219,8 +219,8 @@
                     "icon_benefits_item_bDBy68": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "De vuelta a la carga",
-                        "description": "<p>Un deseo que no se apaga.</p>",
+                        "title": "Zurück im Einsatz",
+                        "description": "<p>Ein Verlangen, das nicht erlischt.</p>",
                         "icon": "leaf",
                         "image_upload": "shopify://shop_images/icon-day-30-she-notices.avif",
                         "icon_size": 40
@@ -230,8 +230,8 @@
                     "icon_benefits_item_KVrADW": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Resistencia superior",
-                        "description": "<p>Ella se viene primero. Tú le sigues dando sin bajarle.</p>",
+                        "title": "Überlegene Ausdauer",
+                        "description": "<p>Sie kommt zuerst. Du machst ohne nachzulassen weiter.</p>",
                         "icon": "fire",
                         "image_upload": "shopify://shop_images/icon-she-finishes-first.png",
                         "icon_size": 40
@@ -241,8 +241,8 @@
                     "icon_benefits_item_4ja3AY": {
                       "type": "_icon-benefits-item",
                       "settings": {
-                        "title": "Absorción rápida",
-                        "description": "<p>Se disuelve bajo la lengua e ingresa al torrente sanguíneo en minutos, en lugar de permanecer horas en el estómago.</p>",
+                        "title": "Schnelle Aufnahme",
+                        "description": "<p>Löst sich unter der Zunge auf und gelangt innerhalb von Minuten in den Blutkreislauf, statt stundenlang im Magen zu verweilen.</p>",
                         "icon": "check_box",
                         "image_upload": "shopify://shop_images/Frame_174.png",
                         "icon_size": 40
@@ -293,12 +293,12 @@
               "type": "image-popup",
               "name": "Image popup",
               "settings": {
-                "trigger_text": "Información Suplementaria",
+                "trigger_text": "Zusätzliche Informationen",
                 "trigger_font_size": 20,
                 "trigger_font_weight": "700",
                 "trigger_underline": true,
                 "trigger_color": "",
-                "image": "shopify://shop_images/suplementos-clean.webp",
+                "image": "shopify://shop_images/product-tra-aleman15-clean-clean.webp",
                 "image_fit": "contain",
                 "image_radius": 8,
                 "text": "",
@@ -362,12 +362,12 @@
                 "in_stock_color": "#ff0000",
                 "low_stock_color": "",
                 "out_of_stock_color": "",
-                "in_stock_text": "Pocas unidades en stock",
+                "in_stock_text": "Nur noch wenige Einheiten auf Lager",
                 "low_stock_text": "",
                 "out_of_stock_text": "",
                 "show_delivery": true,
                 "delivery_icon_size": 24,
-                "delivery_text": "Entrega estimada en 3 a 6 días laborables",
+                "delivery_text": "Geschätzte Lieferzeit: 3 bis 6 Werktage",
                 "alignment": "center",
                 "gap": 20,
                 "font_size_desktop": 14,
@@ -465,21 +465,21 @@
                 "product_perk_item_xGcHyk": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Devolución en 30 días"
+                    "text": "30 Tage Rückgaberecht"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_MmL3Hr": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Envío rápido"
+                    "text": "Schneller Versand"
                   },
                   "blocks": {}
                 },
                 "product_perk_item_JL9G9Y": {
                   "type": "_product-perk-item",
                   "settings": {
-                    "text": "Pago seguro garantizado"
+                    "text": "Garantiert sichere Zahlung"
                   },
                   "blocks": {}
                 }
@@ -498,11 +498,11 @@
                 "badge_alt": "",
                 "badge_size_desktop": 68,
                 "badge_size_mobile": 48,
-                "title": "Que le tiemblen las piernas o te regresamos tu dinero.",
+                "title": "Lass ihre Beine zittern, oder du bekommst dein Geld zurück",
                 "title_color": "#1a1a1a",
                 "title_size_desktop": 14,
                 "title_size_mobile": 12,
-                "description": "Pruébalo 60 días. Si no quedas bien satisfecho, te regresamos hasta el último peso. Así de seguros andamos.",
+                "description": "Teste es 60 Tage lang. Solltest du nicht vollkommen zufrieden sein, erstatten wir dir bis auf den letzten Cent. So sicher sind wir uns.",
                 "description_color": "#1a1a1a",
                 "description_size": 12,
                 "background_color": "#fdf8ec",
@@ -552,19 +552,19 @@
                 "product_info_tab_quote_fE4JwN": {
                   "type": "_product-info-tab-quote",
                   "settings": {
-                    "tab_label": "Aprobado por médicos",
+                    "tab_label": "Von Ärzten geprüft",
                     "default_open": true,
-                    "quote": "\"La mayoría de los hombres no tienen problemas en la cama, sino problemas de circulación sanguínea. Esta fórmula combate ambos, utilizando L-arginina para estimular la producción de óxido nítrico y azafrán para potenciar la excitación, mejorando el rendimiento sexual de forma natural y sin los efectos secundarios del Viagra.\"",
+                    "quote": "\"Die meisten Männer haben keine Probleme im Bett, sondern Durchblutungsprobleme. Diese Formel bekämpft beides: mit L-Arginin zur Anregung der Stickstoffmonoxid-Produktion und Safran zur Steigerung der Erregung, für eine natürliche Verbesserung der sexuellen Leistungsfähigkeit – ohne die Nebenwirkungen von Viagra.\"",
                     "avatar": "shopify://shop_images/reviewr_image_beef_png_26cc6583-7863-4d49-84f7-34233b5a9dbc.png",
-                    "author_name": "Dr. Alejandro Ramírez, M.D.",
-                    "author_specialty": "Médico certificado y especialista en salud masculina."
+                    "author_name": "Dr. med. Sebastian Wagner",
+                    "author_specialty": "Approbierter Arzt und Spezialist für Männergesundheit."
                   },
                   "blocks": {}
                 },
                 "product_info_tab_comparison_JMAPXW": {
                   "type": "_product-info-tab-comparison",
                   "settings": {
-                    "tab_label": "Tabla comparativa",
+                    "tab_label": "Vergleichstabelle",
                     "default_open": false,
                     "brand_name": "TITAN PEAK",
                     "others_label": "Otros"
@@ -573,8 +573,8 @@
                     "product_info_comparison_row_wwRKHf": {
                       "type": "_product-info-comparison-row",
                       "settings": {
-                        "feature_name": "Funciona todos los días, no solo en una cita romántica.",
-                        "feature_sub": "Erección matutina, todo el día",
+                        "feature_name": "TITAN PEAK\tAndereFunktioniert jeden Tag, nicht nur bei einem romantischen Date.",
+                        "feature_sub": "Morgenerektion, den ganzen Tag",
                         "brand_has_feature": true,
                         "others_has_feature": false
                       },
@@ -583,8 +583,8 @@
                     "product_info_comparison_row_fpYbhz": {
                       "type": "_product-info-comparison-row",
                       "settings": {
-                        "feature_name": "Te trae bien prendido, sin necesidad de receta.",
-                        "feature_sub": "Ingredientes naturales, nada de pastillas sospechosas",
+                        "feature_name": "Hält dich aktiv, ganz ohne Rezept.",
+                        "feature_sub": "Natürliche Inhaltsstoffe, keine zweifelhaften Pillen",
                         "brand_has_feature": true,
                         "others_has_feature": false
                       },
@@ -594,8 +594,8 @@
                       "type": "_product-info-comparison-row",
                       "name": "Comparison row",
                       "settings": {
-                        "feature_name": "Sabe realmente bien.",
-                        "feature_sub": "Fácil de disfrutar cada día",
+                        "feature_name": "Schmeckt wirklich gut.",
+                        "feature_sub": "Einfach jeden Tag zu genießen",
                         "brand_has_feature": true,
                         "others_has_feature": false
                       },
@@ -611,9 +611,9 @@
                 "product_info_tab_ingredients_YHQ9f3": {
                   "type": "_product-info-tab-ingredients",
                   "settings": {
-                    "tab_label": "Ingredientes",
+                    "tab_label": "Inhaltsstoffe",
                     "default_open": false,
-                    "name_column_label": "Nombre",
+                    "name_column_label": "Name",
                     "mg_column_label": "MG"
                   },
                   "blocks": {
@@ -621,7 +621,7 @@
                       "type": "_product-info-ingredient-row",
                       "settings": {
                         "ingredient_name": "Maca Root Extract (10:1)",
-                        "ingredient_sub": "La razón por la que se rinde en la cama",
+                        "ingredient_sub": "Der Grund für deine Leistung im Bett",
                         "ingredient_mg": "500mg"
                       },
                       "blocks": {}
@@ -629,8 +629,8 @@
                     "product_info_ingredient_row_EKRFfd": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "Extracto de Raíz de Ashwagandha",
-                        "ingredient_sub": "Bloquea el cortisol. Desbloquea tu energía.",
+                        "ingredient_name": "Ashwagandha-Wurzelextrakt",
+                        "ingredient_sub": "Blockiert Cortisol. Setzt deine Energie frei.",
                         "ingredient_mg": "450mg"
                       },
                       "blocks": {}
@@ -639,7 +639,7 @@
                       "type": "_product-info-ingredient-row",
                       "settings": {
                         "ingredient_name": "Panax Ginseng",
-                        "ingredient_sub": "Mejora la producción de LH, el flujo sanguíneo y tiene propiedades antiinflamatorias.",
+                        "ingredient_sub": "Verbessert die LH-Produktion und den Blutfluss und wirkt entzündungshemmend.",
                         "ingredient_mg": "200mg"
                       },
                       "blocks": {}
@@ -647,8 +647,8 @@
                     "product_info_ingredient_row_h9fEBU": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "Azafrán",
-                        "ingredient_sub": "El azafrán inhibe la PDE5, aumenta el NO → erecciones más fuertes",
+                        "ingredient_name": "Safran",
+                        "ingredient_sub": "Safran hemmt PDE5, erhöht NO → stärkere Erektionen",
                         "ingredient_mg": "30mg"
                       },
                       "blocks": {}
@@ -656,8 +656,8 @@
                     "product_info_ingredient_row_KhzMMi": {
                       "type": "_product-info-ingredient-row",
                       "settings": {
-                        "ingredient_name": "L-Arginine",
-                        "ingredient_sub": "La razón de tú mayor erección",
+                        "ingredient_name": "L-Arginin",
+                        "ingredient_sub": "Der Grund für deine stärkere Erektion",
                         "ingredient_mg": "60mg"
                       },
                       "blocks": {}
@@ -674,63 +674,63 @@
                 "product_info_tab_faq_TMAQz9": {
                   "type": "_product-info-tab-faq",
                   "settings": {
-                    "tab_label": "Preguntas frecuentes",
+                    "tab_label": "Häufig gestellte",
                     "default_open": false
                   },
                   "blocks": {
                     "product_info_faq_item_VHbUr7": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Cómo tomo las TITAN PEAK Shilajit Gold?",
-                        "answer": "<p>Toma 2 gomitas al día, de preferencia acompañadas de alimento. La constancia es clave: el uso diario ayuda a que tu cuerpo aproveche al máximo la combinación de Shilajit, Ashwagandha, Maca, Ginseng Panax, Azafrán y L-Arginina de esta fórmula.<br/><br/>Para obtener mejores resultados, incorpora TITAN PEAK a tu rutina diaria de bienestar.</p>"
+                        "question": "Wie nehme ich die TITAN PEAK Shilajit Gold Gummies ein?",
+                        "answer": "<p>Nimm täglich 2 Gummies, vorzugsweise zusammen mit einer Mahlzeit. Regelmäßigkeit ist entscheidend: Die tägliche Einnahme hilft deinem Körper, die Kombination aus Shilajit, Ashwagandha, Maca, Panax Ginseng, Safran und L-Arginin in dieser Formel optimal zu nutzen. </p><p>Für beste Ergebnisse integriere TITAN PEAK in deine tägliche Wellness-Routine.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_hdxi7P": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Qué pasa si no me funciona?",
-                        "answer": "<p>Tu compra está respaldada por nuestra garantía de devolución de dinero a 60 días. Te recomendamos usar TITAN PEAK de forma constante durante al menos 90 a 120 días para experimentar todos los beneficios de la fórmula.<br/><br/>Si no quedas completamente satisfecho, simplemente ponte en contacto con nuestro equipo de soporte y lo resolveremos.</p>"
+                        "question": "Was passiert, wenn es bei mir nicht wirkt?",
+                        "answer": "<p>Was passiert, wenn es bei mir nicht wirkt?<br/>Dein Kauf ist durch unsere 60-Tage-Geld-zurück-Garantie abgesichert. Wir empfehlen, TITAN PEAK mindestens 90 bis 120 Tage lang konsequent einzunehmen, um alle Vorteile der Formel zu erfahren.</p><p>Solltest du nicht vollständig zufrieden sein, wende dich einfach an unser Support-Team, und wir finden eine Lösung.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_tFqbAp": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Cuándo veré resultados?",
-                        "answer": "<p>Los resultados varían de persona a persona. Algunos clientes reportan mejoras en su energía, concentración y vitalidad general desde las primeras semanas de uso constante.<br/><br/>Para obtener resultados óptimos, te recomendamos tomar TITAN PEAK diariamente durante al menos 8 a 12 semanas.</p>"
+                        "question": "Wann werde ich Ergebnisse sehen?",
+                        "answer": "<p>Die Ergebnisse variieren von Person zu Person. Manche Kunden berichten bereits in den ersten Wochen bei konsequenter Anwendung von Verbesserungen bei Energie, Konzentration und allgemeiner Vitalität.<br/><br/>Für optimale Ergebnisse empfehlen wir, TITAN PEAK mindestens 8 bis 12 Wochen lang täglich einzunehmen.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_hWMxkd": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Qué tan rápido es el envío?",
-                        "answer": "<p>Los pedidos se procesan de inmediato y se envían directamente desde nuestro centro logístico. La mayoría se despacha en un plazo de 24 horas hábiles, y recibirás la guía de rastreo en cuanto se realice el envío.<br/><br/>Los tiempos de entrega pueden variar según tu ubicación.</p>"
+                        "question": "Wie schnell ist der Versand?",
+                        "answer": "<p>Bestellungen werden sofort bearbeitet und direkt aus unserem Logistikzentrum versendet. Die meisten werden innerhalb von 24 Werkstunden versandt, und du erhältst deine Sendungsverfolgung, sobald der Versand erfolgt ist. </p><p>Die Lieferzeiten können je nach deinem Standort variieren.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_wHTXPq": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿TITAN PEAK está probado por terceros?",
-                        "answer": "<p>Sí. Cada lote se fabrica en una planta que cumple con las Buenas Prácticas de Fabricación (BPF) y se somete a pruebas de calidad, pureza y seguridad realizadas por laboratorios independientes. Creemos que tienes derecho a saber exactamente qué estás consumiendo.</p>"
+                        "question": "Wird TITAN PEAK von unabhängigen Dritten getestet?",
+                        "answer": "<p>Ja. Jede Charge wird in einer Anlage hergestellt, die den Standards der Guten Herstellungspraxis (GMP) entspricht, und von unabhängigen Laboren auf Qualität, Reinheit und Sicherheit geprüft. Wir sind der Meinung, dass du das Recht hast, genau zu wissen, was du zu dir nimmst.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_JpDpAC": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Para quién es TITAN PEAK?",
-                        "answer": "<p>TITAN PEAK está diseñado para hombres que buscan potenciar su energía, concentración, confianza y rendimiento en general. Ya sea que estés metido de lleno en el trabajo, el ejercicio, la vida familiar o las tres cosas, TITAN PEAK está formulado para ayudarte a dar el máximo cada día.</p>"
+                        "question": "Für wen ist TITAN PEAK gedacht?",
+                        "answer": "<p>TITAN PEAK wurde für Männer entwickelt, die ihre Energie, Konzentration, ihr Selbstvertrauen und ihre allgemeine Leistungsfähigkeit steigern möchten. Egal, ob du dich voll und ganz der Arbeit, dem Training, dem Familienleben oder allen dreien widmest, TITAN PEAK wurde entwickelt, um dir zu helfen, jeden Tag dein Bestes zu geben.</p>"
                       },
                       "blocks": {}
                     },
                     "product_info_faq_item_wfgfPq": {
                       "type": "_product-info-faq-item",
                       "settings": {
-                        "question": "¿Es perjudicial tomarlo junto a medicación?",
-                        "answer": "<p>No. Por lo general se puede tomar junto con la mayoría de los medicamentos recetados.</p>"
+                        "question": "Ist es schädlich, es zusammen mit Medikamenten einzunehmen?",
+                        "answer": "<p>Nein. Es kann in der Regel zusammen mit den meisten verschreibungspflichtigen Medikamenten eingenommen werden.</p>"
                       },
                       "blocks": {}
                     }
@@ -1024,7 +1024,7 @@
       ],
       "name": "Carousel brands",
       "settings": {
-        "heading": "Visto en:",
+        "heading": "Gesehen bei:",
         "heading_color": "#ffffff",
         "heading_size_mobile": 16,
         "heading_size_desktop": 20,
@@ -1045,9 +1045,9 @@
         "results_timeline_item_Bkbqxg": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>SEMANA 1</p>",
-            "subtitle": "Prendido",
-            "bullets": "<ul><li>Las erecciones matutinas regresan de repente</li><li>Te sientes más lleno con solo estar en la regadera</li><li>Las ganas de tocarla empiezan a resurgir</li><li>La energía es otra: te despiertas antes de que suene el despertador</li></ul>",
+            "period": "<p>WOCHE 1</p>",
+            "subtitle": "Angemacht",
+            "bullets": "<ul><li>Morgenerektionen kommen plötzlich zurück</li><li>Du fühlst dich schon unter der Dusche voller</li><li>Die Lust, sie zu berühren, kommt wieder zurück</li><li>Die Energie ist eine andere: Du wachst auf, bevor der Wecker klingelt</li></ul>",
             "icon": "lightning"
           },
           "blocks": {}
@@ -1055,9 +1055,9 @@
         "results_timeline_item_nE8Vez": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>MES 1</p>",
-            "subtitle": "Ella lo nota",
-            "bullets": "<ul><li>Te sentirá más duro que en años</li><li>Te dice \"algo traes distinto\" sin que le digas nada</li><li>Aguantas lo suficiente para que ella termine primero</li><li>Pasan de tener relaciones una vez por semana a que ella te ande buscando todas las noches</li></ul>",
+            "period": "<p>MONAT 1</p>",
+            "subtitle": "Sie merkt es",
+            "bullets": "<ul><li>Sie wird dich härter spüren als seit Jahren</li><li>Sie sagt dir \"irgendwas ist anders an dir\", ohne dass du ihr etwas gesagt hast</li><li>Du hältst lange genug durch, damit sie zuerst kommt</li><li>Ihr geht von einmal die Woche Sex zu jeder Nacht über, in der sie dich sucht</li></ul>",
             "icon": "star",
             "custom_icon": "shopify://shop_images/icon-day-30-she-notices.avif"
           },
@@ -1066,9 +1066,9 @@
         "results_timeline_item_eXFLhN": {
           "type": "_results-timeline-item",
           "settings": {
-            "period": "<p>MES 3+</p>",
-            "subtitle": "Su nueva adicción",
-            "bullets": "<ul><li>Duro como piedra, todo el tiempo</li><li>Ella toma la iniciativa antes que tú</li><li>Varias rondas y es ella la que se rinde</li><li>Se lo presume a sus amigas. Tú te enteras después. Y ni te importa.</li></ul>",
+            "period": "<p>MONAT 3+</p>",
+            "subtitle": "Ihre neue Sucht",
+            "bullets": "<ul><li>Steinhart, die ganze Zeit</li><li>Sie ergreift die Initiative vor dir</li><li>Mehrere Runden, und sie ist es, die aufgibt</li><li>Sie prahlt damit vor ihren Freundinnen. Du erfährst es später. Und es ist dir egal.</li></ul>",
             "icon": "heart_pulse",
             "custom_icon": "shopify://shop_images/icon-she-finishes-first.png"
           },
@@ -1082,7 +1082,7 @@
       ],
       "name": "Results timeline",
       "settings": {
-        "heading": "QUÉ ESPERAR: EJEMPLO DE LÍNEA DE RESULTADOS",
+        "heading": "WAS DICH ERWARTET: BEISPIEL-ERGEBNISVERLAUF",
         "section_width": "full-width",
         "container_max_width": 1440,
         "container_padding_desktop": 120,
@@ -1159,9 +1159,9 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_kdjwovkdjwovkdjw.webp",
             "image_alt": "",
-            "name": "Dr. Ricardo Mendoza",
-            "role": "Médico de Medicina Deportiva y Rendimiento Masculino",
-            "quote": "Lo que valoro de la fórmula de estas gomitas es la atención que le ponen a la salud circulatoria. Los ingredientes que favorecen la producción de óxido nítrico y un flujo sanguíneo saludable están realmente subutilizados en las pláticas sobre la salud masculina. Cuando mejora la circulación, todo lo demás tiende a mejorar: la energía, la resistencia y, sí, la libido. Este es el tipo de apoyo que me gustaría que mis pacientes varones conocieran. Una mejor circulación significa más energía, más resistencia y una mejor respuesta sexual.",
+            "name": "Dr. Andreas Hoffmann",
+            "role": "Facharzt für Sportmedizin und männliche Leistungsfähigkeit",
+            "quote": "\"Was ich an der Formel dieser Gummies schätze, ist die Aufmerksamkeit, die sie der Durchblutungsgesundheit widmen. Die Inhaltsstoffe, die die Produktion von Stickstoffmonoxid und einen gesunden Blutfluss fördern, werden in Gesprächen über die männliche Gesundheit wirklich zu wenig beachtet. Wenn sich die Durchblutung verbessert, verbessert sich tendenziell alles andere mit: die Energie, die Ausdauer und, ja, die Libido. Das ist die Art von Unterstützung, die ich mir wünschen würde, dass meine männlichen Patienten kennen. Eine bessere Durchblutung bedeutet mehr Energie, mehr Ausdauer und eine bessere sexuelle Reaktionsfähigkeit.\"",
             "quote_mark_gradient_start": "#c3941b",
             "quote_mark_gradient_end": "#ffed68"
           },
@@ -1172,9 +1172,9 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_rfee5prfee5prfee.webp",
             "image_alt": "",
-            "name": "Dr. Fernando Castillo",
-            "role": "Médico Certificado en Medicina Preventiva",
-            "quote": "La mayoría de los problemas de erección en los hombres se deben a tres factores que fallan al mismo tiempo: flujo sanguíneo débil, bajo deseo sexual y escasa producción de óxido nítrico. La maca restaura el deseo sexual, devolviendo las ganas. El azafrán dilata los vasos sanguíneos, permitiendo que llegue más sangre al tejido eréctil. Y el shilajit aporta a las células los minerales necesarios para mantener un flujo sanguíneo fuerte a largo plazo. Al combinar estos tres factores, los hombres no solo logran una erección más firme, sino que sus parejas notan la diferencia físicamente y alcanzan un nivel de rendimiento sexual que no habían experimentado en años.",
+            "name": "Dr. Julian Becker",
+            "role": "Zertifizierter Arzt für Präventivmedizin",
+            "quote": "\"Die meisten Erektionsprobleme bei Männern sind auf drei gleichzeitig auftretende Faktoren zurückzuführen: schwachen Blutfluss, geringes sexuelles Verlangen und geringe Stickstoffmonoxid-Produktion. Maca stellt das sexuelle Verlangen wieder her und bringt die Lust zurück. Safran erweitert die Blutgefäße und ermöglicht so, dass mehr Blut in das Schwellkörpergewebe gelangt. Und Shilajit versorgt die Zellen mit den notwendigen Mineralstoffen, um langfristig einen starken Blutfluss aufrechtzuerhalten. Durch die Kombination dieser drei Faktoren erreichen Männer nicht nur eine festere Erektion, sondern ihre Partnerinnen bemerken den Unterschied auch körperlich, und sie erreichen ein sexuelles Leistungsniveau, das sie seit Jahren nicht mehr erlebt hatten.\"",
             "quote_mark_gradient_start": "#c3941b",
             "quote_mark_gradient_end": "#ffed68"
           },
@@ -1185,9 +1185,9 @@
           "settings": {
             "image": "shopify://shop_images/reviewr_image_beef.png_1.webp",
             "image_alt": "",
-            "name": "Dr. Javier Salazar",
-            "role": "Médico de Familia",
-            "quote": "Desde el punto de vista hormonal, la relación entre el cortisol, la testosterona y el estrés diario está bien documentada. Lo que me resulta convincente es que se utiliza Ashwagandha KSM-66®, uno de los pocos adaptógenos con respaldo clínico genuino para la reducción del cortisol y el apoyo a los niveles naturales de testosterona del cuerpo. Al combinar esto con el perfil rico en minerales del Shilajit, se atiende la base hormonal que la mayoría de los hombres nunca toma en cuenta.",
+            "name": "Dr. Felix Neumann",
+            "role": "Hausarzt",
+            "quote": "\"Aus hormoneller Sicht ist der Zusammenhang zwischen Cortisol, Testosteron und alltäglichem Stress gut dokumentiert. Was mich überzeugt, ist der Einsatz von Ashwagandha KSM-66®, einem der wenigen Adaptogene mit echter klinischer Evidenz für die Cortisolsenkung und die Unterstützung des natürlichen Testosteronspiegels des Körpers. In Kombination mit dem mineralstoffreichen Profil von Shilajit wird die hormonelle Grundlage angegangen, die die meisten Männer nie berücksichtigen.\"",
             "quote_mark_gradient_start": "#c3941b",
             "quote_mark_gradient_end": "#ffed68"
           },
@@ -1201,7 +1201,7 @@
       ],
       "name": "Expert carousel",
       "settings": {
-        "heading": "Recomendado por Especialistas en Salud Masculina",
+        "heading": "EMPFOHLEN VON SPEZIALISTEN FÜR MÄNNERGESUNDHEIT",
         "heading_color": "#1a1a1a",
         "heading_size_mobile": 24,
         "heading_size_desktop": 32,
@@ -1278,7 +1278,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Tus erecciones ya no son tan firmes ni tan grandes como antes.</p>",
+            "description": "<p>Deine Erektionen sind nicht mehr so fest und groß wie früher.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1289,7 +1289,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Se te fue el deseo sexual.</p>",
+            "description": "<p>Dein sexuelles Verlangen ist verschwunden.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1300,7 +1300,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Pierdes la erección durante el sexo o no puedes mantenerla.</p>",
+            "description": "<p>Du verlierst die Erektion beim Sex oder kannst sie nicht aufrechterhalten.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1311,7 +1311,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Has notado que tu pene es más pequeño que cuando tenías veinte años.</p>",
+            "description": "<p>Du hast bemerkt, dass dein Penis kleiner ist als mit zwanzig.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1322,7 +1322,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Has probado otras soluciones y no te han funcionado, o te causaron efectos secundarios, o te generaron dependencia.</p>",
+            "description": "<p>Du hast andere Lösungen ausprobiert, die entweder nicht funktioniert, Nebenwirkungen verursacht oder eine Abhängigkeit erzeugt haben.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1333,7 +1333,7 @@
           "settings": {
             "icon_type": "icon",
             "title": "",
-            "description": "<p>Quieres recuperar la circulación sanguínea de forma natural para que tu cuerpo funcione por sí solo, sin necesidad de andar tomando pastillas.</p>",
+            "description": "<p>Du willst deine Durchblutung auf natürliche Weise wiederherstellen, damit dein Körper von allein funktioniert, ohne auf Pillen angewiesen zu sein.</p>",
             "description_font_size": 16,
             "vertical_alignment": "center"
           },
@@ -1354,7 +1354,7 @@
         "image_alt": "",
         "image_link": "",
         "image_radius": 10,
-        "kicker": "<p>TITAN PEAK ES PARA TI SI...</p>",
+        "kicker": "<p>TITAN PEAK IST GENAU RICHTIG FÜR DICH, WENN...</p>",
         "description": "",
         "content_width": "page-width",
         "image_position": "right",
@@ -1383,7 +1383,7 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1.webp",
             "title": "Ashwagandha",
-            "description": "Ayuda a reducir el cortisol, potencia la testosterona libre y mejora la resistencia al estrés.",
+            "description": "Hilft, den Cortisolspiegel zu senken, steigert das freie Testosteron und verbessert die Stressresistenz.",
             "background_color": ""
           },
           "blocks": {}
@@ -1393,7 +1393,7 @@
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1.webp",
             "title": "Shilajit",
-            "description": "Apoya el aumento de la testosterona total y libre, potenciando la energía celular (ATP).",
+            "description": "Unterstützt den Anstieg von Gesamt- und freiem Testosteron und fördert die zelluläre Energie (ATP).",
             "background_color": ""
           },
           "blocks": {}
@@ -1403,7 +1403,7 @@
           "settings": {
             "image": "shopify://shop_images/ginsjen_9c376acb-359a-4149-a743-00cc79cce187.webp",
             "title": "Panax Ginseng",
-            "description": "Ayuda a la producción de LH, mejora el flujo sanguíneo y tiene efecto antiinflamatorio.",
+            "description": "Unterstützt die LH-Produktion, verbessert die Durchblutung und wirkt entzündungshemmend.",
             "background_color": ""
           },
           "blocks": {}
@@ -1412,8 +1412,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/saffron.webp",
-            "title": "Azafrán",
-            "description": "Favorece la producción de óxido nítrico, mejorando la circulación.",
+            "title": "Safran",
+            "description": "Fördert die Produktion von Stickstoffmonoxid und verbessert die Durchblutung.",
             "background_color": ""
           },
           "blocks": {}
@@ -1422,8 +1422,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_7954ca93-780a-4ac0-aa31-a7f690a2b3a6.webp",
-            "title": "Maca Negra",
-            "description": "Potencia el deseo a través de vías naturales del sistema nervioso central, sin intervenir en las hormonas.",
+            "title": "Schwarze Maca",
+            "description": "Steigert das Verlangen über natürliche Wege des zentralen Nervensystems, ohne in den Hormonhaushalt einzugreifen.",
             "background_color": ""
           },
           "blocks": {}
@@ -1432,8 +1432,8 @@
           "type": "_ingredients-carousel-card",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_c1sqaoc1sqaoc1sq_1_1_9fc9d08a-a7bf-48af-a123-29d191717d0b.webp",
-            "title": "L-Arginina",
-            "description": "Se convierte en óxido nítrico, favoreciendo la vasodilatación y el flujo sanguíneo hacia zonas íntimas.",
+            "title": "L-Arginin",
+            "description": "Wird in Stickstoffmonoxid umgewandelt und fördert die Gefäßerweiterung sowie die Durchblutung intimer Bereiche.",
             "background_color": ""
           },
           "blocks": {}
@@ -1451,7 +1451,7 @@
               "settings": {
                 "icon": "seal_check",
                 "icon_color": "#1a1a1a",
-                "text": "Testeado por Laboratorios Externos",
+                "text": "Von externen Laboren getestet",
                 "text_color": "#1a1a1a"
               },
               "blocks": {}
@@ -1461,7 +1461,7 @@
               "settings": {
                 "icon": "seal_check",
                 "icon_color": "#1a1a1a",
-                "text": "Solución Pura y Natural",
+                "text": "Reine und natürliche Lösung",
                 "text_color": "#1a1a1a"
               },
               "blocks": {}
@@ -1483,8 +1483,8 @@
       ],
       "name": "Ingredients carousel",
       "settings": {
-        "heading_accent": "INGREDIENTES PODEROSOS",
-        "heading": "PARA UN RENDIMIENTO MÁXIMO",
+        "heading_accent": "KRAFTVOLLE INHALTSSTOFFE",
+        "heading": "FÜR HÖCHSTLEISTUNG",
         "subheading": "",
         "heading_size": 32,
         "heading_weight": "800",
@@ -1520,7 +1520,7 @@
         "autoplay": false,
         "autoplay_speed": 5,
         "transition_speed": 400,
-        "button_label": "COMPRAR AHORA",
+        "button_label": "JETZT KAUFEN",
         "button_link": "#product-information",
         "button_open_new_tab": false,
         "button_text_color": "#1a1a1a",
@@ -1555,7 +1555,7 @@
         "testimonial_carousel_card_awgqff": {
           "type": "_testimonial-carousel-card",
           "settings": {
-            "image": "shopify://shop_images/jorge-clean.webp",
+            "image": "shopify://shop_images/personaaleman2-clean.webp",
             "reviewer_name": "Jorge T.",
             "star_count": 5,
             "show_verified": true,

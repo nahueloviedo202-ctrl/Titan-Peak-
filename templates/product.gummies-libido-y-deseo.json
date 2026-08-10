@@ -94,7 +94,7 @@
               "type": "rating-badge",
               "name": "Rating badge",
               "settings": {
-                "text": "<p><strong>4.85/5</strong> basado en mas de 1.345 reseñas</p>",
+                "text": "<p><strong>4,85/5</strong> basierend auf mehr als <strong>1.345</strong> Bewertungen</p>",
                 "icon_count": 5,
                 "icon_color": "#ff4c01",
                 "icon_size": 18,
@@ -1541,13 +1541,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e3.webp",
-            "reviewer_name": "Alejandro G.",
+            "reviewer_name": "Alejandro G.Alexander G",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Más placer",
-            "quote": "<p>Esto sí fue otra cosa. Mi novia nunca se había podido venir con la penetración en cuatro años juntos. A la tercera semana con estas gomitas, se vino. Dos veces. Quedó temblando y no pudo ni hablar como cinco minutos. Me vio como si fuera otro vato. Pedí tres bolsas más antes de que se despertara al otro día.</p>",
+            "tag_text": "Mehr Lust",
+            "quote": "<p>Das war wirklich etwas anderes. Meine Freundin hatte in vier gemeinsamen Jahren noch nie beim Geschlechtsverkehr einen Orgasmus bekommen. In der dritten Woche mit diesen Gummies kam sie. Zweimal. Sie zitterte danach und konnte fünf Minuten lang nicht sprechen. Sie sah mich an, als wäre ich ein anderer Mann. Ich habe drei weitere Packungen bestellt, bevor sie am nächsten Tag aufwachte.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1556,13 +1556,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/personaaleman2-clean.webp",
-            "reviewer_name": "Jorge T.",
+            "reviewer_name": "Michael H.",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "No me suelta",
-            "quote": "<p>Tengo 46 años y mi vieja prácticamente ya no agarraba la iniciativa. Hacíamos lo mismo de siempre, a lo mucho una vez al mes, y hasta eso se sentía forzado. Empecé a tomar las gomitas para el rendimiento hace como 6 semanas y se volteó todo. Ando más duro que a los 30, aguanto un chorro más y ahora es ella la que me jala a la cama. El sábado me despertó a las 6 de la mañana. Para el faje. Esta mujer antes se hacía la del dolor de cabeza. Ahora hasta pone el despertador.</p>",
+            "tag_text": "Sie lässt mich nicht mehr los",
+            "quote": "<p>Ich bin 46 und meine Partnerin ergriff praktisch keine Initiative mehr. Wir haben immer dasselbe gemacht, höchstens einmal im Monat, und selbst das fühlte sich erzwungen an. Vor etwa 6 Wochen habe ich angefangen, die Leistungs-Gummies zu nehmen, und alles hat sich verändert. Ich bin härter als mit 30, halte viel länger durch, und jetzt ist sie es, die mich ins Bett zieht. Am Samstag bin ich um 6 Uhr morgens aufgewacht. Für Intimität. Früher hat diese Frau immer Kopfschmerzen vorgeschoben. Jetzt stellt sie sogar den Wecker.</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1571,13 +1571,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_ekkx01ekkx01ekkx-clean.webp",
-            "reviewer_name": "Gabi P.",
+            "reviewer_name": "Christoph P.",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Dijo que es el mejor sexo en 11 años",
-            "quote": "<p>Llevamos 11 años juntos y la semana pasada me dijo que el sexo está mejor que cuando andábamos empezando. La traigo \"más grande\" que en años, porque ya me llega bien la sangre. La otra noche se detuvo a media faena y me preguntó: '¿Qué te hiciste?'. Yo nomás sonreí. Una gomita al día. Eso es todo lo que cambié.</p>",
+            "tag_text": "Sie sagte, es sei der beste Sex seit 11 Jahren",
+            "quote": "<p>\"Wir sind seit 11 Jahren zusammen, und letzte Woche sagte sie mir, der Sex sei besser als am Anfang unserer Beziehung. Er ist 'größer' als seit Jahren, weil jetzt genug Blut ankommt. Neulich hielt sie mitten dabei inne und fragte mich: 'Was hast du gemacht?' Ich habe nur gelächelt. Eine Gummy am Tag. Das ist alles, was ich geändert habe.\"</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1586,13 +1586,13 @@
           "type": "_testimonial-carousel-card",
           "settings": {
             "image": "shopify://shop_images/3eac8ff705b8988a244b712423f6e144e1f9442e4.webp",
-            "reviewer_name": "Pedro",
+            "reviewer_name": "Simon",
             "star_count": 5,
             "show_verified": true,
-            "verified_text": "Verificado",
+            "verified_text": "Verifiziert",
             "show_tag": true,
-            "tag_text": "Volvió la mañanera, y también el tamaño",
-            "quote": "<p>\"Tenía más de un año sin despertar bien parado. Al noveno día con las gomitas de TITAN PEAK, desperté encendido y me quedé viendo el techo porque ya ni me acordaba de esa sensación. A la cuarta semana ya se notaba más grande a simple vista; no era que hubiera crecido de la nada, sino que por fin se llenaba completito porque la sangre ya estaba llegando bien. Mi esposa lo notó antes de que yo dijera nada. Sus palabras: 'Traes algo bien diferente ahí abajo'.\"</p>",
+            "tag_text": "Die Morgenerektion ist zurück, und auch die Größe",
+            "quote": "<p>\"Ich hatte über ein Jahr lang keine Morgenerektion mehr. Am neunten Tag mit den TITAN PEAK Gummies wachte ich erregt auf und starrte an die Decke, weil ich mich an dieses Gefühl kaum noch erinnern konnte. In der vierten Woche war er schon mit bloßem Auge größer zu sehen; er war nicht aus dem Nichts gewachsen, sondern füllte sich endlich vollständig, weil das Blut jetzt richtig ankam. Meine Frau bemerkte es, bevor ich überhaupt etwas gesagt habe. Ihre Worte: 'Du hast da unten irgendwas ganz anders'.\"</p>",
             "background_color": ""
           },
           "blocks": {}
@@ -1602,7 +1602,7 @@
           "name": "Rating badge",
           "static": true,
           "settings": {
-            "text": "<p><strong>4.85/5</strong> basado en mas de 1.345 reseñas</p>",
+            "text": "<p><strong>4,85/5</strong> basierend auf mehr als <strong>1.345</strong> Bewertungen</p>",
             "icon_count": 5,
             "icon_color": "#ff4c01",
             "icon_size": 18,
@@ -1637,7 +1637,7 @@
       ],
       "name": "Testimonial carousel",
       "settings": {
-        "heading": "<p>Descubre cómo más de 110.000 hombres mayores de 30 años consiguen erecciones más firmes, duran más y la satisfacen cada noche<br/></p>",
+        "heading": "<p>Entdecke, wie über 110.000 Männer über 30 festere Erektionen bekommen, länger durchhalten und sie jede Nacht befriedigen.</p>",
         "heading_color": "#1a1a1a",
         "heading_accent_color": "#a45b2c",
         "heading_size_mobile": 24,
@@ -1694,8 +1694,8 @@
         "faq_item_qFttK7": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuándo notaré la diferencia?",
-            "answer": "<p>La mayoría de los hombres sienten un aumento de energía y motivación desde la primera semana, y los beneficios más notorios en el rendimiento se hacen evidentes entre la segunda y la cuarta semana, conforme los ingredientes alcanzan su máxima absorción. La constancia es clave: tomar una gomita al día es lo que permite obtener los resultados que reportan nuestros clientes.</p>",
+            "question": "Wann werde ich den Unterschied merken?",
+            "answer": "<p>Die meisten Männer spüren bereits ab der ersten Woche mehr Energie und Motivation, und die deutlichsten Verbesserungen bei der Leistung zeigen sich zwischen der zweiten und vierten Woche, sobald die Inhaltsstoffe ihre maximale Aufnahme erreichen. Regelmäßigkeit ist entscheidend: Die tägliche Einnahme einer Gummy ist der Schlüssel zu den Ergebnissen, von denen unsere Kunden berichten.</p>",
             "open_by_default": true
           },
           "blocks": {}
@@ -1703,8 +1703,8 @@
         "faq_item_d4FBQP": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué diferencia hay con los otros productos?",
-            "answer": "<p>La mayoría de los productos del mercado subdosifican el ingrediente clave y esconden el resto detrás de una \"mezcla patentada\". Nuestra fórmula es totalmente transparente y se basa en una potente dosis de 2000 mg de shilajit, junto con dosis clínicamente ajustadas de ginseng panax, L-arginina y maca negra: la combinación que de verdad impulsa el flujo sanguíneo, el deseo y la resistencia, y no nada más una etiqueta que aparenta hacerlo.</p>",
+            "question": "Was unterscheidet euch von anderen Produkten?",
+            "answer": "<p>Die meisten Produkte auf dem Markt dosieren den Schlüsselinhaltsstoff zu niedrig und verstecken den Rest hinter einer \"proprietären Mischung\". Unsere Formel ist völlig transparent und basiert auf einer starken Dosis von 2000 mg Shilajit, zusammen mit klinisch abgestimmten Dosen von Panax Ginseng, L-Arginin und schwarzer Maca: die Kombination, die den Blutfluss, das Verlangen und die Ausdauer wirklich steigert – und nicht nur ein Etikett, das das vorgibt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1712,8 +1712,8 @@
         "faq_item_xUedVm": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Mi pareja podrá notarlo?",
-            "answer": "<p>En nuestra encuesta a clientes, el 93% dijo que su pareja notó la diferencia sin que se lo dijeran. No nomás estás comprando cómo te sientes tú, sino también lo que ellas experimentan.</p>",
+            "question": "Wird meine Partnerin es bemerken?",
+            "answer": "<p>In unserer Kundenumfrage gaben 93 % an, dass ihre Partnerin den Unterschied bemerkte, ohne dass sie es ihr gesagt hätten. Du kaufst nicht nur dafür, wie du dich fühlst, sondern auch dafür, was sie erlebt.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1721,8 +1721,8 @@
         "faq_item_n8ttME": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Necesito receta? ¿Es como la pastillita azul?",
-            "answer": "<p>Sin receta, sin ir a la farmacia, sin visitas incómodas al doctor. Estas gomitas trabajan con los sistemas propios de tu cuerpo —apoyando el óxido nítrico, la circulación y el deseo natural— en lugar de forzar una reacción química a corto plazo. Es un apoyo diario, no una pastilla de emergencia.</p>",
+            "question": "Brauche ich ein Rezept? Ist es wie die kleine blaue Pille?",
+            "answer": "<p>Kein Rezept, kein Gang zur Apotheke, keine unangenehmen Arztbesuche. Diese Gummies arbeiten mit den körpereigenen Systemen — sie unterstützen Stickstoffmonoxid, die Durchblutung und das natürliche Verlangen — anstatt eine kurzfristige chemische Reaktion zu erzwingen. Es ist eine tägliche Unterstützung, keine Notfall-Pille.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1730,8 +1730,8 @@
         "faq_item_6BLpLJ": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Tiene efectos secundarios?",
-            "answer": "<p>La fórmula está hecha con ingredientes de origen vegetal, sin estimulantes, así que no hay nerviosismo ni bajones. La mayoría de los hombres la toman a diario sin ningún problema, pero como con cualquier suplemento, consulta a tu médico si tomas medicamentos o tienes alguna condición de salud.</p>",
+            "question": "Gibt es Nebenwirkungen?",
+            "answer": "<p>Die Formel besteht aus pflanzlichen Inhaltsstoffen, ohne Stimulanzien, daher gibt es keine Nervosität und keine Einbrüche. Die meisten Männer nehmen sie täglich ohne Probleme ein, aber wie bei jedem Supplement solltest du deinen Arzt konsultieren, wenn du Medikamente einnimmst oder eine gesundheitliche Vorerkrankung hast.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1739,8 +1739,8 @@
         "faq_item_Acpckj": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Qué pasa si no me funciona?",
-            "answer": "<p>Entonces no pagas. Cada pedido está respaldado por nuestra garantía de devolución de dinero: pruébalo, dale una oportunidad real, y si no notas la diferencia, te devolvemos tu dinero. El único riesgo real es quedarte como estás.</p>",
+            "question": "Was passiert, wenn es bei mir nicht wirkt?",
+            "answer": "<p>Dann zahlst du nicht. Jede Bestellung ist durch unsere Geld-zurück-Garantie abgesichert: Probier es aus, gib ihm eine echte Chance, und wenn du keinen Unterschied bemerkst, erstatten wir dir dein Geld. Das einzige echte Risiko ist, so zu bleiben, wie du bist.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1748,8 +1748,8 @@
         "faq_item_rqGgB3": {
           "type": "_faq-item",
           "settings": {
-            "question": "¿Cuántas tomo, y cuándo?",
-            "answer": "<p>Solo dos gomitas al día. Muchos hombres las toman por la mañana para que ya estén haciendo efecto por la tarde, pero cualquier horario constante funciona; lo importante es no saltarse días.</p>",
+            "question": "Wie viele nehme ich, und wann?",
+            "answer": "<p>Nur zwei Gummies am Tag. Viele Männer nehmen sie morgens ein, damit sie am Nachmittag bereits wirken, aber jede feste Tageszeit funktioniert; wichtig ist nur, keinen Tag auszulassen.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1758,8 +1758,8 @@
           "type": "_faq-item",
           "name": "FAQ item",
           "settings": {
-            "question": "¿Cuánto tiempo tengo que tomarlo?",
-            "answer": "<p>Entre más tiempo mantengas la constancia, más se profundizan los beneficios. La mayoría de los hombres lo incorporan a su rutina diaria igual que un café por la mañana, porque los resultados se acumulan, y dejarlo significa perder el terreno ganado.</p>",
+            "question": "Wie lange muss ich es einnehmen?",
+            "answer": "<p>Je länger du dranbleibst, desto stärker vertiefen sich die Vorteile. Die meisten Männer machen es zu einem festen Bestandteil ihres Alltags, genau wie den Morgenkaffee, denn die Ergebnisse bauen aufeinander auf, und wer aufhört, verliert den gewonnenen Boden wieder.</p>",
             "open_by_default": false
           },
           "blocks": {}
@@ -1777,7 +1777,7 @@
       ],
       "name": "FAQ accordion",
       "settings": {
-        "heading": "PREGUNTAS FRECUENTES",
+        "heading": "HÄUFIG GESTELLTE FRAGEN",
         "heading_color": "#212529",
         "heading_size_mobile": 32,
         "heading_size_desktop": 40,

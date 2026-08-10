@@ -359,7 +359,7 @@
                 "inventory_threshold": 10,
                 "show_inventory_quantity": false,
                 "pulse_animation": true,
-                "in_stock_color": "#FF0000",
+                "in_stock_color": "#ff0000",
                 "low_stock_color": "",
                 "out_of_stock_color": "",
                 "in_stock_text": "Pocas unidades en stock",
@@ -1125,8 +1125,8 @@
           "type": "full-width-image",
           "name": "Full width image",
           "settings": {
-            "image": "shopify://shop_images/imagen1-clean.webp",
-            "mobile_image": "shopify://shop_images/imagen1mobile-clean.webp",
+            "image": "shopify://shop_images/aleman-product7-clean_14a28a92-2ad8-4894-889e-606e3bf75579.webp",
+            "mobile_image": "shopify://shop_images/aleman-product10-clean_cb94febf-e03f-4044-9966-6ac4cb9bfce9.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
@@ -1244,8 +1244,8 @@
         "full_width_image_wTgzRp": {
           "type": "full-width-image",
           "settings": {
-            "image": "shopify://shop_images/imagen2-clean.webp",
-            "mobile_image": "shopify://shop_images/mobile-clean_4bb17131-3bf2-4a67-9bd8-99e27095a220.webp",
+            "image": "shopify://shop_images/si.webp",
+            "mobile_image": "shopify://shop_images/aleman-product9-clean_91fe5ca6-404f-4f7b-8ad3-b244566e2ddb.webp",
             "alt": "",
             "link": "",
             "open_in_new_tab": false,
